@@ -1,10 +1,10 @@
 # coding2
 
 ### 메인 페이지
-https://kwonhyehyeon.github.io/coding2/index.html   
+http://127.0.0.1:5500/index.html 
 
 ### 자기소개 페이지
-https://kwonhyehyeon.github.io/coding2/class/index.html   
+http://127.0.0.1:5500/class/index.html
 
 ### 자바스크립트 메인 페이지
-https://kwonhyehyeon.github.io/coding2/javascript/index.html
+http://127.0.0.1:5500/javascript/index.html
