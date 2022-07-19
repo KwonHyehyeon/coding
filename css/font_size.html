@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기초</title>
+
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'GmarketSans';
+        }
+        #header {
+            padding: 2vw;
+            border-bottom: 1px dashed #dedede;
+        }
+        #header h1 {
+            font-size: 4vw;
+            margin-bottom: 2vw;
+        }
+        #header nav ul li {
+            list-style: none;
+            display: inline; /*가로정렬*/
+        }
+        #header nav ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.7vw 0.7vw;
+            display: inline-block;
+        }
+        #header nav ul li a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+       
+        .article h2 {
+            padding: 25px 0;
+        }
+        .article p{
+            line-height: 1.6;
+            padding: 0 8px;
+        }
+        .article .table {
+            width: 100%;
+            border-spacing: 0; /*테이블에서만 쓸 수 있고 테이블 여백임*/
+            border-collapse: collapse; /*테이블 붙이려면 위에꺼랑 이거 써주면 됨*/
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+        .article .table tr th {
+            border: 1px solid #dcdcdc;
+            padding: 10px;
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+        .article .table tr td{
+            border: 1px solid #dedede;
+            padding: 10px;
+        }
+        .article .table .center{
+            text-align: center;
+        }
+
+        /*미디어 쿼리 */
+        @media (max-width: 800px){
+            #header {
+                padding: 16px;
+            }
+            #header h1 {
+                font-size: 40px;
+            }
+            #header nav ul li a {
+                padding: 5px 10px;;
+                font-size: 18px;
+            }
+            #contents {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>CSS</h1>
+        <nav>    <!--h1의 자식 태그가 아닌 형제 태그임 부모는 header-->
+            <ul>
+                <li><a href="basic.html">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+                <li><a href="font_size.html">단위</a></li>
+            </ul>
+        </nav>
+    </header>
+    <article class="article">
+        <h2>01. font-size 단위의 고찰</h2>
+        <p>font-size는 문자의 글자 크기를 지정하는 속성입니다.<br>
+        글자 크기는 명시하지 않을 경우 16px이 기본값입니다.</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>단위</th>
+                    <th>설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>px</td>
+                    <td>해상도에 따라 상대적으로 다라지는 기본 단위</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>부모 요소의 글자 크기를 100% 기준으로 계산한 % 단위</td>
+                </tr>            
+                <tr>
+                    <td>em</td>
+                    <td>부모 요소의 글자 크기를 100% 기준으로 계산한 100 분의1 단위</td>
+                </tr>
+                <tr>
+                    <td>rem</td>
+                    <td>rem은 em과 비슷하나 부모 요소가 아닌 최상위 요소의 크기를 100% 기준으로 계산<br>
+                    rem은 r은 root 즉, html 요소 / html요소에서 지정한 글자 크기가 1rem이 됨.</td>
+                </tr>
+                <tr>
+                    <td>vw, vh</td>
+                    <td>vw는 뷰포트 너비값의 100분의 1 단위, vh는 뷰ㅗ트 높이값의 100분의 1 단위</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </article>
+</body>
