@@ -25,6 +25,11 @@ li {
     list-style: none;
 }
 
+/* 제목 초기화 */
+h1, h2, h3, h4, h5, h6 { /*제목 폰트 기본적으로 bold하기 때문에 얇게*/
+    font-weight: normal;
+}
+
 /* 모든 페이지 레이아웃 */
 body {  /*body는 기본태그여서 앞에 뭐 안 붙음*/
     padding: 40px;
@@ -36,6 +41,7 @@ body {  /*body는 기본태그여서 앞에 뭐 안 붙음*/
 }
 #main {
     border-bottom: 1px dashed #dcdcdc;
+    padding: 40px 0;
 }
 #footer {
     padding: 40px 0;
@@ -71,6 +77,30 @@ body {  /*body는 기본태그여서 앞에 뭐 안 붙음*/
     background-color: #000;
     color: #fff;
 }
+
+/* 메인 샘플 */
+.main_sample {
+    margin-top: 40px;
+    border-top: 1px dashed #dcdcdc;
+    padding-top: 40px;
+}
+.main_sample h3 {
+    font-size: 18px; /*em은 부모 기준으로 바뀌는거고 rem은 루트 기준 1rem = 16px*/
+    margin-bottom: 5px;
+}
+.main_sample p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.main_sample .script{
+
+}
+.main_sample .result{
+
+}
+
+
 
 @media (max-width: 800px){
     body {
