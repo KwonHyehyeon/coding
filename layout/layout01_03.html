@@ -1,61 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃01_03</title>
+    <title>레이아웃01</title>
+    <style>
+        * {
+           margin: 0;
+           padding: 0;
+   
+       }
+       body {
+           background-color: #fff3e0;
+       }
+       #wrap {
+           width: 1200px;
+           margin: 0 auto;
+           display: flex; /*가로로 정렬됨*/
+           flex-wrap: wrap; /*flex-item 요소들이 내부 로직에 의해 분할되어 여러 행에 걸쳐서 배치됨*/
+       }
+       #header {
+           width: 1200px;
+           height: 100px;
+           background-color: #FFE0B2;
+       }
+       #nav {
+           width: 1200px;
+           height: 100px;
+           background-color: #FFCC80
+       }
+       #aside {
+           width: 400px;
+           height: 780px;
+           background-color: #FFB74D;
+   
+           
+       }
+       #section {
+           width: 800px;
+           height: 780px;
+           background-color: #FFA726;
+       }
+       #footer {
+           width: 1200px;
+           height: 100px;
+           display: inline-block;
+           background-color: #FF9800;
+       }
+   </style>\
 </head>
-<style>
-     * {
-        margin: 0;
-
-    }
-    body {
-        background-color: #fff3e0;
-    }
-    #wrap {
-        width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    #header {
-        width: 1200px;
-        height: 100px;
-        background-color: #FFE0B2;
-    }
-    #nav {
-        width: 1200px;
-        height: 100px;
-        background-color: #FFCC80
-    }
-    #aside {
-        width: 400px;
-        height: 780px;
-        background-color: #FFB74D;
-
-        
-    }
-    #section {
-        width: 800px;
-        height: 780px;
-        background-color: #FFA726;
-    }
-    #footer {
-        width: 1200px;
-        height: 100px;
-        display: inline-block;
-        background-color: #FF9800;
-    }
-</style>
 <body>
     <div id="wrap">
-        <div id="header"></div>
-        <div id="nav"></div>
-        <div id="aside"></div>
-        <div id="section"></div>
-        <div id="footer"></div>
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <aside id="aside"></aside>
+        <section id="section"></section>
+        <footer id="footer"></footer>
     </div>
+     <!-- 
+        layout01_01 : float 방식 레이아웃
+        layout01_02 : float 방식 반응형 레이아웃
+        layout01_03 : flex 방식 레이아웃
+
+     -->
 </body>
 </html>

@@ -1,91 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃01_02</title>
-</head>
-<style>
-    * {
-        margin: 0;
-    }
-    body {
-        background-color: #fff3e0;
-    }
-    #wrap {
-        width: 1200px;
-        margin: 0 auto;
-    }
-    #header {
-        width: 100%;
-        height: 100px;
-        background-color: #FFE0B2;
-    }
-    #nav {
-        width: 100%;
-        height: 100px;
-        background-color: #FFCC80
-    }
-    #aside {
-        width: 30%;
-        height: 780px;
-        background-color: #FFB74D;
-        float: left;
-    }
-    #section {
-        width: 70%;
-        height: 780px;
-        background-color: #FFA726;
-        float: left;
-    }
-    #footer {
-        width: 100%;
-        height: 100px;
-        background-color: #FF9800;
-        clear: both;
-    }
-    @media (max-width:1220px){
-        #wrap {
-            width: 96%;
+    <title>레이아웃01</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
         }
-    }
-    @media (max-width:768px){
+        body {
+            background-color: #fff3e0;
+        }
         #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
             width: 100%;
+            height: 100px;
+            background-color: #FFE0B2;
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #FFCC80
         }
         #aside {
-        width: 30%;
-        height: 780px;
-        background-color: #FFB74D;
-        float: left;
+            width: 30%;
+            height: 780px;
+            background-color: #FFB74D;
+            float: left;
         }
         #section {
-        width: 70%;
-        height: 780px;
-        background-color: #FFA726;
-        float: left;
-        }  
-    }
-    
-    
-    @media (max-width:480px){
-        #wrap {
+            width: 70%;
+            height: 780px;
+            background-color: #FFA726;
+            float: left;
+        }
+        #footer {
             width: 100%;
+            height: 100px;
+            background-color: #FF9800;
+            clear: both;
         }
-        #aside {
-        width: 100%;
-        height: 300px;
-        background-color: #FFB74D;
-        }
-        #section {
-        width: 100%;
-        height: 480px;
-        background-color: #FFA726;
-        }  
 
-    }
-</style>
+        /* 미디어쿼리 */
+        @media (max-width:1300px){ /*1280됐을 때 스크롤바 생겨서 약간 오차있기때문에 */
+            #wrap {
+                width: 96%; /*스크롤바 안생기게 %로*/
+            }
+        }
+        @media (max-width:768px){ /*위에꺼 변형 없으므로 굳이 다 안 써줘도 됨!*/
+            #wrap {
+                width: 100%;
+            }
+        }
+        
+        
+        @media (max-width:480px){ /*wrap은 위에서 0-768px까지니깐 적용되니깐 생략가능, 변한 모양에 대한 값만 써주면 됨*/
+            #aside {
+            width: 100%;
+            height: 300px; /*height는 퍼센트로 쓸 수 없음!*/
+            }
+            #section {
+            width: 100%;
+            height: 480px;
+            }  
+    
+        }
+    </style>
+</head>
 <body>
     <div id="wrap">
         <div id="header"></div>
@@ -94,5 +80,11 @@
         <div id="section"></div>
         <div id="footer"></div>
     </div>
+
+        <!-- 
+        layout01_01 : float 방식 레이아웃
+        layout01_02 : float 방식 반응형 레이아웃
+
+     -->
 </body>
 </html>

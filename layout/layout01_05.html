@@ -16,59 +16,35 @@
         #wrap {
             width: 1200px;
             margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-areas: /*테이블 구조 짜준다고 생각하면 됨*/
+                "header header"
+                "nav nav"
+                "aside section"
+                "footer footer" ;
+            grid-template-columns: 400px 800px; /*width값인 가로를 400 800으로 지정해주는 것 그대신 자식들 width값 빼줘야함. */
+            grid-template-rows: 100px 100px 780px 100px; /* table의 첫번째칸 두번째칸 등의 height값을 정해줌*/
         }
+        
         #header {
-            width: 100%;
-            height: 100px;
             background-color: #FFE0B2;
+            grid-area: header; /*테이블 짠거에 이름 붙여주는 것임*/
         }
         #nav {
-            width: 100%;
-            height: 100px;
-            background-color: #FFCC80
+            background-color: #FFCC80;
+            grid-area: nav;
         }
         #aside {
-            width: 30%;
-            height: 780px;
             background-color: #FFB74D;
-    
+            grid-area: aside;
         }
         #section {
-            width: 70%;
-            height: 780px;
             background-color: #FFA726;
-    
+            grid-area: section;
         }
         #footer {
-            width: 100%;
-            height: 100px;
             background-color: #FF9800;
-    
-        }
-
-        /* 미디어쿼리 */
-        @media (max-width:1300px){
-            #wrap {
-                width: 96%;
-            }
-        }
-        @media (max-width:768px){
-            #wrap {
-                width: 100%;
-            }
-        }
-        @media (max-width:480px){
-            #aside {
-            width: 100%;
-            height: 300px;
-            }
-            #section {
-            width: 100%;
-            height: 480px;
-            }  
-    
+            grid-area: footer;
         }
     </style>
 </head>
@@ -85,6 +61,7 @@
         layout01_02 : float 방식 반응형 레이아웃
         layout01_03 : flex 방식 레이아웃
         layout01_04 : flex 방식 반응형 레이아웃
+        layout01_05 : grid 방식 레이아웃->복잡한 레이아웃을 편하게 가능함
      -->
 </body>
 </html>

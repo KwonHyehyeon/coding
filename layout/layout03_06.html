@@ -26,46 +26,37 @@
             background-color: #81D4FA;
         }
         #main {
+            display: grid;
+            grid-template-areas: 
+                "aside article1 article1"
+                "aside article2 article2"
+                "aside article3 article3" ;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 260px 260px 260px;
         }
         #aside {
-            width: 30%;
-            height: 780px;
             background-color: #4FC3F7;
-            float: left;
+            grid-area: aside;
         }
         #article1 {
-            width: 70%;
-            height: 260px;
             background-color: #29B6F6;
-            float: left;
+            grid-area: article1;
+
         }
     
         #article2 {
-            width: 70%;
-            height: 260px;
             background-color: #03A9F4;
-            float: left;
+            grid-area: article2;
+
         }
         #article3 {
-            width: 70%;
-            height: 260px;
             background-color: #039BE5;
-            float: left;
+            grid-area: article3;
         }
     
         #footer {
             height: 100px;
             background-color: #0288D1;
-        }
-        /* clearfix = 가상으로 요소를 주는 것->제일 안정적인 방법*/
-        .clearfix::before,
-        .clearfix::after {
-            content: '';
-            display: block;
-            line-height: 0;
-        }
-        .clearfix::after {
-            clear: both;
         }
     
         /* 미디어쿼리 */
@@ -73,43 +64,38 @@
             #wrap {
                 width: 96%;
             }
-            #article2 {
-                width: 35%;
-                height: 520px;
-            }
-            #article3 { 
-                width: 35%;
-                height: 520px;
+            #main {
+                grid-template-areas: 
+                    "aside article1 article1"
+                    "aside article2 article3"
+                    "aside article2 article3" ;
+                grid-template-columns: 30% 35% 35%;
+                grid-template-rows: 260px 520px;
             }
         }
         @media (max-width: 768px){
             #wrap {
-                width: 100%;
+                width: 100 %;
             }
-            #article1 {
-                width: 70%;
-                height: 390px;
+            #main {
+                grid-template-areas: 
+                    "aside article1"
+                    "aside article2" ;
+                grid-template-columns: 30% 70%;
+                grid-template-rows: 390px 390px;
             }
-            #article2 {
-                width: 70%;
-                height: 390px;
-            }
-            #article3 { 
+            #article3 {
                 display: none;
             }
         }
         @media (max-width: 480px){
-            #aside {
-                width: 100%;
-                height: 200px;
-            }
-            #article1 {
-                width: 100%;
-                height: 430px;
-            }
-            #article2 { 
-                width: 100%;
-                height: 150px;
+            #main {
+                grid-template-areas: 
+                    "aside"
+                    "article1"
+                    "article2";
+                grid-template-columns: 100%;
+                grid-template-rows: 200px 430px 150px;
             }
         }
         
@@ -120,7 +106,7 @@
     <div id="wrap">
         <div id="header"></div>
         <div id="nav"></div>
-        <div id="main" class="clearfix">
+        <div id="main">
             <div id="aside"></div>
             <div id="article1"></div>
             <div id="article2"></div>
