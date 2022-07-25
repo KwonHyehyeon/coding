@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃 03</title>
+    <title>레이아웃03</title>
     <style>
         * {
             margin: 0;
@@ -18,17 +18,19 @@
             margin: 0 auto;
         }
         #header {
+            width: 100%;
             height: 100px;
-            background-color: #b3e5fc;
+            background-color: #B3E5FC;
         }
         #nav {
+            width: 100%;
             height: 100px;
             background-color: #81D4FA;
         }
         #main {
             display: flex;
             flex-wrap: wrap;
-            flex-direction: column;
+            flex-direction: column; /*방향 정해주는 것*/
             height: 780px;
         }
         #aside {
@@ -41,6 +43,7 @@
             height: 260px;
             background-color: #29B6F6;
         }
+    
         #article2-1 {
             width: 100%;
             height: 260px;
@@ -51,14 +54,14 @@
             height: 260px;
             background-color: #039BE5;
         }
+    
         #footer {
             height: 100px;
-
             background-color: #0288D1;
         }
-
-        /* 미디어 쿼리 */
-        @media (max-width : 1300px){
+    
+        /* 미디어쿼리 */
+        @media (max-width: 1300px){
             #wrap {
                 width: 96%;
             }
@@ -73,8 +76,9 @@
                 width: 50%;
                 height: 520px;
             }
+
         }
-        @media (max-width : 768px){
+        @media (max-width: 768px){
             #wrap {
                 width: 100%;
             }
@@ -88,10 +92,9 @@
             }
             #article2-2 {
                 display: none;
-                
             }
         }
-        @media (max-width : 480px){
+        @media (max-width: 480px){
             #aside {
                 width: 100%;
                 height: 200px;
@@ -103,8 +106,10 @@
                 height: 150px;
             }
         }
+        
     </style>
 </head>
+
 <body>
     <div id="wrap">
         <div id="header"></div>
@@ -115,17 +120,16 @@
             <div id="article2">
                 <div id="article2-1"></div>
                 <div id="article2-2"></div>
-            </div>
+	        </div>
         </div>
         <div id="footer"></div>
     </div>
-
-    <!-- 
-        layout03_01 : float 방식 레이아웃 
-        layout03_02 : float 방식 반응형 레이아웃 
-        layout03_03 : flex 방식 레이아웃 
-        layout03_04 : flex 반응형 방식 레이아웃 
-        layout03_05 : grid 방식 레이아웃 
+    <!--  
+        layout03_01 : float 방식 레이아웃
+        layout03_02 : float 방식 반응형 레이아웃
+        layout03_03 : flex 방식 레이아웃
+        layout03_04 : flex 방식 반응형 레이아웃
+        layout03_05 : grid 방식 레이아웃->복잡한 레이아웃을 편하게 가능함
         layout03_06 : grid 방식 반응형 레이아웃 
     -->
 </body>
