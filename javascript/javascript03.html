@@ -79,31 +79,262 @@
         </div>
         <div class="main_sample">
             <div id="sample01" class="sample">
-                <h3>01. if문</h3>
-                <p>if(조건식)의 조건식이 true일 때 실행문이 동작하고, false이면 실행되지 않습니다.
+                <h3>01. 선언적 함수</h3>
+                <p>선언적 함수는 함수를 선언할 때 이름을 붙여주는 함수를 말합니다.<br>즉, 따로 변수에 넣어주지 않고 선언할 때 붙여준 이름으로 호출하면 됩니다.
                 </p>
                 <div class="script">
-<pre><code class="language-js">//false : 0, undefined, null, false
-//true : 1, "0", "1", 0&gt;10, [], {}
-if(1){
-    document.write("실행되었습니다(true).")
-} else {
-    document.write("실행되었습니다(false).")
+<pre><code class="language-js">function func(){
+    document.write("함수가 실행되었습니다.1")
 }
+func();
 </code></pre>                    
                 </div>
                 <div class="result">
                     <details>
                         <summary>결과보기</summary>
                         <div class="sample01_result"></div>
-                        실행되었습니다(true).
+                        <script>
+                        function func(){
+                            document.write("함수가 실행되었습니다.1<br>")
+                        }
+                        func();
+                        </script>
                     </details>
                 </div>
+            </div>
         </div>
         <!-- //section1 -->
 
-        <div class="main_script"></div>
-        <div class="main_desc"></div>
+        <div class="main_sample">
+            <div id="sample02" class="sample">
+                <h3>02. 익명 함수</h3>
+                <p>익명함수는 이름이 없는 함수입니다. 따라서 익명함수를 선언하고 사용하기 위해서는 변수에 넣어서 사용하여야 합니다.
+                </p>
+                <div class="script">
+<pre><code class="language-js">//데이터 타입(자료형) --> 타입스크립트가 보충해줌
+// const x = 100;
+// const x1 = "100";
+// const x2 = [];
+// const x3 = {};
+// const x4 = null, undefined;
+// const x5 = function(){};
+// const x6 = true, false;
+
+const func = function(){
+    document.write("함수가 실행되었습니다.2")
+}
+func();
+</code></pre>                    
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample02_result"></div>
+                        함수가 실행되었습니다.2
+                    </details>
+                </div>
+            </div>
+        </div>
+        <!-- //section2 -->
+
+        <div class="main_sample">
+            <div id="sample03" class="sample">
+                <h3>03. 매개변수 함수</h3>
+                <p>매개변수란 함수를 정의하면서, 함수 선언식의 괄호'()'안에 어떤 변수명을 쓰는 것입니다.
+                </p>
+                <div class="script">
+<pre><code class="language-js">function func(str){  //함수안에 들어간 str 파라미터, 인자, 변수라고 함 밑에func이 여기에 전달되서 document로 실행되는 것
+    document.write(str);
+}
+func("함수가 실행되었습니다.3<br>");
+</code></pre>                    
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample03_result"></div>
+                        <script>
+                        function func(str){  
+                            document.write(str);
+                        }
+                        func("함수가 실행되었습니다.3<br>");
+                        </script>
+                    </details>
+                </div>
+            </div>
+        </div>
+        <!-- //section3 -->
+
+        <div class="main_sample">
+            <div id="sample04" class="sample">
+                <h3>04. 리턴값 함수</h3>
+                <p>리턴값이란 함수가 어떤 기능을 수행하고 그 결과를 호출한 곳으로 돌려주는 값을 말합니다.<br>
+                    함수가 어떤 기능을 수행하고 돌려줄 값이 있으면 return 명령을 사용합니다.
+                </p>
+                <div class="script">
+<pre><code class="language-js">function func(){
+    const str = "함수가 실행되었습니다.4";
+    return str; //실행문은 아니나 결과값으로 저장되는 것
+}
+document.write(func());
+</code></pre>                    
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample04_result"></div>
+                        <script>
+                        function func(){
+                            const str = "함수가 실행되었습니다.4<br>";
+                            return str; 
+                        }
+                        document.write(func());
+                        </script>
+                    </details>
+                </div>
+            </div>
+        </div>
+        <!-- //section4 -->
+
+        <div class="main_sample">
+            <div id="sample05" class="sample">
+                <h3>05. 화살표 함수 : 선언적 함수</h3>
+                <p>화살표 함수는 func = () = > {} 이런 형태로 나타냅니다. 05.화살표 함수는 선언적 함수를 표현합니다. 
+                </p>
+                <div class="script">
+<pre><code class="language-js">func = () => { //function 귀찮아서 없애고 기호로! =>선언적 함수와 같은 것임
+    document.write("함수가 실행되었습니다.5<br>")
+}
+func(); 
+
+
+func = () => document.write("함수가 실행되었습니다.5<br>")
+
+func();
+</code></pre>                    
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample05_result"></div>
+                        <script>
+                        func = () => { 
+                            document.write("함수가 실행되었습니다.5<br>")
+                        }
+                        func(); 
+
+                        func = () => document.write("함수가 실행되었습니다.5<br>")
+
+                        func();
+                        </script>
+                    </details>
+                </div>
+            </div>
+        </div>
+        <!-- //section5 -->
+
+        <div class="main_sample">
+            <div id="sample06" class="sample">
+                <h3>06. 화살표 함수 : 익명 함수</h3>
+                <p>화살표 함수는 func = () = > {} 이런 형태로 나타냅니다. 06.화살표 함수는 익명 함수를 표현합니다. 
+                </p>
+                <div class="script">
+<pre><code class="language-js">const func = () => {
+    document.write("함수가 실행되었습니다.6<br>")
+}
+func();
+
+const func = () => document.write("함수가 실행되었습니다.6<br>")
+
+func();
+</code></pre>                    
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample06_result"></div>
+                        함수가 실행되었습니다.6
+                        함수가 실행되었습니다.6
+                    </details>
+                </div>
+            </div>
+        </div>
+        <!-- //section6 -->
+
+        <div class="main_sample">
+            <div id="sample07" class="sample">
+                <h3>07. 화살표 함수 : 매개변수 함수</h3>
+                <p>화살표 함수는 func = () = > {} 이런 형태로 나타냅니다. 07.화살표 함수는 매개변수 함수를 표현합니다. 
+                </p>
+                <div class="script">
+<pre><code class="language-js">func = (str) => {
+    document.write(str)
+}
+func("함수가 실행되었습니다.7");
+
+func = (str) => document.write(str); //앞에 const있어도 상관없음
+
+func("함수가 실행되었습니다.7");
+
+func = str => document.write(str); //괄호 생략 가능
+
+func("함수가 실행되었습니다.7");
+</code></pre>                    
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample07_result"></div>
+                        <script>
+                        func = (str) => {
+                            document.write(str)
+                        }
+                        func("함수가 실행되었습니다.7<br>");
+
+                        func = (str) => document.write(str); //앞에 const있어도 상관없음
+
+                        func("함수가 실행되었습니다.7<br>");
+        
+                        func = str => document.write(str); //괄호 생략 가능
+
+                        func("함수가 실행되었습니다.7<br>");
+                        </script>
+                    </details>
+                </div>
+            </div>
+        </div>
+        <!-- //section7 -->
+
+        <div class="main_sample">
+            <div id="sample08" class="sample">
+                <h3>08. 화살표 함수 : 리턴값 함수</h3>
+                <p>화살표 함수는 func = () = > {} 이런 형태로 나타냅니다. 08.화살표 함수는 리턴값 함수를 표현합니다. 
+                </p>
+                <div class="script">
+<pre><code class="language-js">func = () => {
+    const str = "함수가 실행되었습니다.8<br>"
+    return str;
+}
+document.write(func());
+</code></pre>                    
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample08_result"></div>
+                        <script>
+                        func = () => {
+                            const str = "함수가 실행되었습니다.8<br>"
+                            return str;
+                        }
+                        document.write(func());
+                        </script>
+                    </details>
+                </div>
+            </div>
+        </div>
+        <!-- //section8 -->
+
     </main>
     <!-- //main -->
 
@@ -183,13 +414,13 @@ if(1){
     }
     //06. 화살표 함수(익명 함수)
     {
-        // const func = function(){  //익명함수
-        //     document.write("함수가 실행되었습니다.6<br>")
-        // }
-        // func();
+        //  const func = function(){  //익명함수
+        //      document.write("함수가 실행되었습니다.6<br>")
+        //  }
+        //  func();
 
         // const func = () => {
-        //     document.write("함수가 실행되었습니다.6<br>")
+        //      document.write("함수가 실행되었습니다.6<br>")
         // }
         // func();
 
@@ -228,11 +459,11 @@ if(1){
         // }
         // document.write(func());
 
-        // func = () => {
-        //     const str = "함수가 실행되었씁니다.8<br>"
-        //     return str;
-        // }
-        // document.write(func());
+        func = () => {
+            const str = "함수가 실행되었씁니다.8<br>"
+            return str;
+        }
+        document.write(func());
         
     }
 
