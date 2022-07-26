@@ -35,7 +35,6 @@
                 <li><a href="type.html">데이터 타입</a></li>
                 <li><a href="function.html">함수</a></li>
 
-                
 
             </ul>
         </nav>
@@ -44,24 +43,30 @@
 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">데이터 타입(Data Type)</h2>
-            <p class="t_desc">데이터 타입(Data Type)은 <i>변수에 저장되는 데이터의 유형</i>으로 원시(Primitive)데이터 타입과 객체(Object) 데이터 타입으로 나눌 수 있습니다. 
-            </p>
-            <p class="t_desc2">
-                원시 데이터 타입 : number, string, boolean, undefined, null, symbol 등 <br>
-                객체 데이터 타입 : function, object, array 등
+            <h2 class="t_tit">함수</h2>
+            <p class="t_desc2">함수는 프로그램에서 반복적으로 사용되는 기능을 만들어 내기 위한 <i>코드들의 집합</i>으로 이해하면 됩니다.
             </p>
 
             <hr>
 
-            <h3 class="t_tit2">number(숫자) 데이터</h3> 
-            <p class="t_desc"><i>number 데이터</i>는 <i>정수, 소수점, 지수</i>를 표현할 수 있습니다.</p>
+            <h3 class="t_tit2">01. 선언적 함수</h3> 
+            <p class="t_desc"><i>선언적 함수</i>는 <i>function</i>키워드로 함수를 만드는 선언적 방식입니다.</p>
             <p class="t_box">
-                var num1 = 10;  //정수 <br>
-                var num2 = 10.5;//소수점 <br>
-                var num3 = le+2;//지수
+                function 함수 () { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문; <br>
+                }
             </p>
-            <h3 class="t_tit2">string(문자) 데이터</h3> 
+
+            <h3 class="t_tit2">선언적 함수의 호출</h3> 
+            <p class="t_desc">'<i>선언적 함수</i>'는 함수를 호출할 때 함수의 앞 또는 뒤에서 호출 가능합니다.</p>
+            <p class="t_desc">변수나 함수를 선언하지 않고 호출</p>
+            <p class="t_box">
+                function 함수 () { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문; <br>
+                }
+            </p>
+
+            <h3 class="t_tit2">익명 함수</h3> 
             <p class="t_desc"><i>string 데이터</i>는 ''또는 ""으로 표현할 수 있습니다. 보통 문자 데이터는 <i>작은따옴표</i>로 많이 표현합니다.</p>
             <p class="t_box">
                 var str1 = '문자'; <br>
@@ -69,7 +74,7 @@
                 var str3 = "문자는 '문자'" <br>
                 var str4 = '문자는 "문자"' <br>
             </p>
-            <h3 class="t_tit2">boolean(논리) 데이터</h3> 
+            <h3 class="t_tit2">return, 매개변수</h3> 
             <p class="t_desc"><i>boolean 데이터</i>는 true(참)과 false(거짓)의 값을 표현합니다.</p>
             <p class="t_box">
                 var temp1 = ( 5 > 4 ); → true가 나옴 <br>
@@ -83,13 +88,13 @@
                 var str4 = '문자는 "문자"' <br>
                 <p class="t_desc"><i>Boolean() 명령어는 변수의 값을 false나 true로 변환</i>시켜주는 명령어입니다.</p>
             </p>
-            <h3 class="t_tit2">undefined 데이터</h3> 
+            <h3 class="t_tit2">전역 변수와 지역 변수</h3> 
             <p class="t_desc"><i>undeifined 데이터</i>는 변수는 선언하였으나 데이터 값을 지정하지 않았을 경우나 객체의 속성 값을 지정하지 않았을 경우에 자동으로 저장되는 값입니다.</p>
             <p class="t_box">
                 var temp 1 =10;  → 변수 선언O, 데이터값 지정 O <br>
                 var temp2; → 데이터값 지정X : undefined  <br>
             </p>
-            <h3 class="t_tit2">null 데이터</h3> 
+            <h3 class="t_tit2">재귀 함수</h3> 
             <p class="t_desc"><i>null 데이터</i>는 undefined와 유사하나, 변수를 빈(empty) 상태(초기화)로 만들거나 데이터를 저장하였으므로 값이 존재하지 않을 때 null값을 반환합니다.</p>
             <p class="t_box">
                obj = null;  <br>
