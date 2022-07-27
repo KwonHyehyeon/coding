@@ -44,9 +44,8 @@
             <div class="document">
                 <h2 class="t_tit">레이아웃03</h2>
                 <p class="t_desc">
-                    이번 레이아웃은 전체 영역이 들어간 구조입니다.
-                    실제 사이트에서 이런 구조를 많이 사용하며, 컨테이너를 만들어서
-                    가운데 영역을 설정합니다. 
+                    이번 레이아웃은 총 7개의 구조였다가 media 768px일 때 6개의 구조로 변화하는 구조입니다. 이때 없어지는 칸에 display: none; 을 써주어야 합니다.
+                    
                 </p>
                 <div class="t_iframe">
                     <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Ftlad6yfI2ju7AVJEwQIMo1%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D31%253A39" allowfullscreen></iframe>
@@ -61,40 +60,110 @@
                     </p>
                 
                 <div class="t_code">
-<pre><code class="language-css">*{
+<pre><code class="language-css">* {
     margin: 0;
     padding: 0;
 }
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
 #header {
     height: 100px;
-    background-color: #E0F2F1;
+    background-color: #B3E5FC;
 }
 #nav {
-    height: 300px;
-    background-color: #80CBC4;
+    height: 100px;
+    background-color: #81D4FA;
 }
-#section { 
-    height: 580px;
-    background-color: #26A69A;
+#main {
 }
+#aside {
+    width: 30%;
+    height: 780px;
+    background-color: #4FC3F7;
+    float: left;
+}
+#article1 {
+    width: 70%;
+    height: 260px;
+    background-color: #29B6F6;
+    float: left;
+}
+
+#article2 {
+    width: 70%;
+    height: 260px;
+    background-color: #03A9F4;
+    float: left;
+}
+#article3 {
+    width: 70%;
+    height: 260px;
+    background-color: #039BE5;
+    float: left;
+}
+
 #footer {
     height: 100px;
-    background-color: #00897B;
+    background-color: #0288D1;
 }
-.container {
-    width: 1200px;
-    height: inherit; /*부모꺼 상속*/
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.3);
+/* clearfix = 가상으로 요소를 주는 것->제일 안정적인 방법*/
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: block;
+    line-height: 0;
 }
-@media (max-width: 1220px){
-    .container {
+.clearfix::after {
+    clear: both;
+}
+
+/* 미디어쿼리 */
+@media (max-width: 1300px){
+    #wrap {
         width: 96%;
+    }
+    #article2 {
+        width: 35%;
+        height: 520px;
+    }
+    #article3 { 
+        width: 35%;
+        height: 520px;
     }
 }
 @media (max-width: 768px){
-    .container {
+    #wrap {
         width: 100%;
+    }
+    #article1 {
+        width: 70%;
+        height: 390px;
+    }
+    #article2 {
+        width: 70%;
+        height: 390px;
+    }
+    #article3 { 
+        display: none;
+    }
+}
+@media (max-width: 480px){
+    #aside {
+        width: 100%;
+        height: 200px;
+    }
+    #article1 {
+        width: 100%;
+        height: 430px;
+    }
+    #article2 { 
+        width: 100%;
+        height: 150px;
     }
 }
 </code></pre>
@@ -120,40 +189,101 @@
                 </p>
                 
                 <div class="t_code">
-<pre><code class="language-css">*{
+<pre><code class="language-css">* {
     margin: 0;
     padding: 0;
 }
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
 #header {
     height: 100px;
-    background-color: #E0F2F1;
+    background-color: #b3e5fc;
 }
 #nav {
-    height: 300px;
-    background-color: #80CBC4;
+    height: 100px;
+    background-color: #81D4FA;
 }
-#section { 
-    height: 580px;
-    background-color: #26A69A;
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 780px;
+}
+#aside {
+    width: 30%;
+    height: 780px;
+    background-color: #4FC3F7;
+}
+#article1 {
+    width: 70%;
+    height: 260px;
+    background-color: #29B6F6;
+}
+#article2-1 {
+    width: 100%;
+    height: 260px;
+    background-color: #03A9F4;
+}
+#article2-2 {
+    width: 100%;
+    height: 260px;
+    background-color: #039BE5;
 }
 #footer {
     height: 100px;
-    background-color: #00897B;
+
+    background-color: #0288D1;
 }
-.container {
-    width: 1200px;
-    height: inherit; /*부모꺼 상속*/
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-@media (max-width: 1220px){
-    .container {
+
+/* 미디어 쿼리 */
+@media (max-width : 1300px){
+    #wrap {
         width: 96%;
     }
+    #article2 {
+        display: flex;
+    }
+    #article2-1 {
+        width: 50%;
+        height: 520px;
+    }
+    #article2-2 {
+        width: 50%;
+        height: 520px;
+    }
 }
-@media (max-width: 768px){
-    .container {
+@media (max-width : 768px){
+    #wrap {
         width: 100%;
+    }
+    #article1 {
+        width: 100%;
+        height: 390px;
+    }
+    #article2-1 {
+        width: 100%;
+        height: 390px;
+    }
+    #article2-2 {
+        display: none;
+        
+    }
+}
+@media (max-width : 480px){
+    #aside {
+        width: 100%;
+        height: 200px;
+    }
+    #article1 {
+        height: 430px;
+    }
+    #article2-1 {
+        height: 150px;
     }
 }
 </code></pre>
@@ -177,42 +307,93 @@
                     </p>
                     
                     <div class="t_code">
-    <pre><code class="language-css">*{
-        margin: 0;
-        padding: 0;
+    <pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav {
+    height: 100px;
+    background-color: #81D4FA;
+}
+#main {
+    display: grid;
+    grid-template-areas: 
+        "aside article1 article1"
+        "aside article2 article2"
+        "aside article3 article3" ;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 260px 260px 260px;
+}
+#aside {
+    background-color: #4FC3F7;
+    grid-area: aside;
+}
+#article1 {
+    background-color: #29B6F6;
+    grid-area: article1;
+}
+#article2 {
+    background-color: #03A9F4;
+    grid-area: article2;
+}
+#article3 {
+    background-color: #039BE5;
+    grid-area: article3;
+}
+#footer {
+    height: 100px;
+    background-color: #0288D1;
+}
+/* 미디어쿼리 */
+@media (max-width: 1300px){
+    #wrap {
+        width: 96%;
     }
-    #header {
-        height: 100px;
-        background-color: #E0F2F1;
+    #main {
+        grid-template-areas: 
+            "aside article1 article1"
+            "aside article2 article3"
+            "aside article2 article3" ;
+        grid-template-columns: 30% 35% 35%;
+        grid-template-rows: 260px 520px;
     }
-    #nav {
-        height: 300px;
-        background-color: #80CBC4;
+}
+@media (max-width: 768px){
+    #wrap {
+        width: 100%;
     }
-    #section { 
-        height: 580px;
-        background-color: #26A69A;
+    #main {
+        grid-template-areas: 
+            "aside article1"
+            "aside article2" ;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 390px 390px;
     }
-    #footer {
-        height: 100px;
-        background-color: #00897B;
+    #article3 {
+        display: none;
     }
-    .container {
-        width: 1200px;
-        height: inherit; /*부모꺼 상속*/
-        margin: 0 auto;
-        background-color: rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 480px){
+    #main {
+        grid-template-areas: 
+            "aside"
+            "article1"
+            "article2";
+        grid-template-columns: 100%;
+        grid-template-rows: 200px 430px 150px;
     }
-    @media (max-width: 1220px){
-        .container {
-            width: 96%;
-        }
-    }
-    @media (max-width: 768px){
-        .container {
-            width: 100%;
-        }
-    }
+}
     </code></pre>
                     </div>
                     <h4 class="t_tit">결과</h4>

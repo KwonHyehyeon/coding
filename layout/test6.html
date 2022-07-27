@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            
+        }
+        #wrap {
+            width: 100%;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+        }
+        #header {
+            height: 100px;
+            background-color: #F48080;
+
+        }
+        #banner {
+            height: 400px;
+            background-color: #EC5C5C;
+
+        }
+        #section {
+            height: 500px;
+            background-color: #FEA5A5;
+
+        }
+        #notice {
+            height: 500px;
+            background-color: #FFBFBF;
+
+        }
+        #footer {
+            height: 100px;
+            background-color: #FF9C9C;
+        }
+        .container {
+            width: 1200px;
+            height: inherit;
+            margin: 0 auto;
+            background-color: rgba(222, 222, 222, 0.5);
+            overflow: hidden;
+        }
+        #header .container .logo {
+            width: 300px;
+            height: 100px;
+            background-color: #F86464;
+            float: left;
+            line-height: 100px;
+
+        }
+        #header .container .menu {
+            width: 900px;
+            height: 100px;
+            float: left;
+            line-height: 100px;
+
+        }
+        #banner .ban_1{
+            width: 1200px;
+            height: 400px;
+            background-color: #FF8A8A;
+            line-height: 400px;
+
+        }
+        #section .container .box1 {
+            width: 1200px;
+            height: 250px;
+            background-color: #F39C9C;
+            float: left;
+            line-height: 250px;
+
+
+        }
+        #section .container .box1 .s_a{
+            width: 200px;
+            height: 250px;
+            background-color: #F39C9C;
+            float: left;
+            line-height: 250px;
+
+
+        }
+        #section .container .box1 .s_b{
+            width: 200px;
+            height: 250px;
+            background-color: #EA8686;
+            float: left;
+            line-height: 250px;
+
+        }
+        #section .container .box1 .s_c{
+            width: 200px;
+            height: 250px;
+            background-color: #EE7C7C;
+            float: left;
+            line-height: 250px;
+
+        }
+        #section .container .box1 .s_d{
+            width: 200px;
+            height: 250px;
+            background-color: #C87575;
+            float: left;
+            line-height: 250px;
+
+        }
+        #section .container .box1 .s_e{
+            width: 200px;
+            height: 250px;
+            background-color: #EB7B7B;
+            float: left;
+            line-height: 250px;
+
+        }
+        #section .container .box1 .s_f{
+            width: 200px;
+            height: 250px;
+            background-color: #D66B6B;
+            float: left;
+            line-height: 250px;
+        }
+        #section .container .box2 {
+            width: 1200px;
+            height: 250px;
+            background-color: #EA7F7F;
+            float: left;
+            line-height: 250px;
+        }
+        #notice .container .nbox1 {
+            width: 740px;
+            height: 500px;
+            background-color: #EB6666;
+            float: left;
+            line-height: 500px;
+        }
+        #notice .container .nbox2 {
+            width: 460px;
+            height: 250px;
+            background-color: #CE5F5F;
+            float: left;
+            line-height: 250px;
+        }
+        #notice .container .nbox3 {
+            width: 460px;
+            height: 250px;
+            background-color: #FE7F7F;
+            float: left;
+            line-height: 250px;
+        }
+        #footer .foot {
+            width: 1200px;
+            height: 100px;
+            background-color: #FF8888;
+            line-height: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">
+                <div class="logo"></div>
+                <div class="menu"></div>
+            </div>
+        </div>
+        <div id="banner">
+            <div class="container">
+                <div class="ban_1"></div>
+            </div>
+        </div>
+        <div id="section">
+            <div class="container">
+                <div class="box1">
+                    <div class="s_a"></div>
+                    <div class="s_b"></div>
+                    <div class="s_c"></div>
+                    <div class="s_d"></div>
+                    <div class="s_e"></div>
+                    <div class="s_f"></div>
+                </div>
+                <div class="box2"></div>
+            </div>
+        </div>
+        <div id="notice">
+            <div class="container">
+                <div class="nbox1"></div>
+                <div class="nbox2"></div>
+                <div class="nbox3"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="foot"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    
+    let name = ["로고", "메뉴", "이미지 슬라이드", "광고1", "광고2", "광고3","광고4","광고5","광고6",
+                "광고7", "공지사항1" , "공지사항2" , "공지사항3", "푸터"];
+
+    const obj = {a:"로고", b:"메뉴", c:"이미지 슬라이드", d:"광고1" , f:"광고2" , g:"광고3" , h:"광고4"
+                , i:"광고5" , j:"광고6" , k:"광고7", l:"공지사항1", m:"공지사항2", n:"공지사항3", o:"푸터"};
+
+                document.querySelector(".logo").innerHTML= obj.a
+                document.querySelector(".menu").innerHTML= obj.b
+                document.querySelector(".ban_1").innerHTML= obj.c
+                document.querySelector(".s_a").innerHTML= obj.d
+                document.querySelector(".s_b").innerHTML= obj.f
+                document.querySelector(".s_c").innerHTML= obj.g
+                document.querySelector(".s_d").innerHTML= obj.h
+                document.querySelector(".s_e").innerHTML= obj.i
+                document.querySelector(".s_f").innerHTML= obj.j
+                document.querySelector(".box2").innerHTML= obj.k
+                document.querySelector(".nbox1").innerHTML= obj.l
+                document.querySelector(".nbox2").innerHTML= obj.m
+                document.querySelector(".nbox3").innerHTML= obj.n
+                document.querySelector(".foot").innerHTML= obj.o
+    </script>
+    </script>
+</body>
+</html>
