@@ -11,33 +11,55 @@
         }
         add1();
         //console.log('전역' + sum1);
-        document.write('전역' + sum1 + "<br>")
+        //document.write('전역' + sum1 + "<br>")
         //함수의 지역변수
         var sum2 = 30;
         function add2() {
             var sum2 = 40;
             //console.log('지역' + sum2)
-            document.write('지역' + sum2 + "<br>")
+            //document.write('지역' + sum2 + "<br>")
 
         }
         add2();
         //console.log('전역' + sum2);
-        document.write('전역' + sum2 + "<br>")
+        //document.write('전역' + sum2 + "<br>")
         //블록의 지역변수
         var num1 = 50;
         if (num1 === 50) {
             var num1 =60;
         }
         //console.log('전역' + num1);
-        document.write('전역' + num1 + "<br>")
+        //document.write('전역' + num1 + "<br>")
         let num2 = 70;
         if (num2 === 70) {
             let num2 = 80;
             //console.log('지역' + num2);
-            document.write('지역' + num2 + "<br>")
+            //document.write('지역' + num2 + "<br>")
         }
         //console.log('전역' + num2);
-        document.write('전역' + num2)
+        //document.write('전역' + num2)
+    </script>
+    <script>
+        //01
+        {
+            var kor = 90;
+            function getScore(){
+                kor = 100;
+                document.write(kor);
+            }
+            getScore();
+            document.write(kor);
+        }
+        //02
+        {
+            var kor = 90;
+            function getScore(){
+                var kor = 100; //지역 변수
+                document.write(kor); //100
+            }
+            getScore();
+            document.write(kor); // 90
+        }
     </script>
 </head>
 <body>

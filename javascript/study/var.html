@@ -78,31 +78,66 @@
                 </tbody>
             </table>
             <br>
+            <!-- 설명 -->
             <h4 class="t_tit3">예시</h4>
-            <div class="t_box">
-                var <i>kor</i> = 90;<br>
-                function getScore() { <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kor = 100; //전역 변수 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(kor); // 100 <br>
-                } <br>
-                getScore(); <br>
-                console.log(kor); // 100
+            <div class="t_code">
+<pre><code>var kor = 90;
+function getScore(){
+    kor = 100;
+    document.write(kor);
+}
+getScore();
+document.write(kor);
+</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기 </summary>
+                        <script>
+                            var kor = 90;
+                            function getScore(){
+                                kor = 100;
+                                document.write(kor,"<br>");
+                            }
+                            getScore();
+                            document.write(kor);
+                        </script>
+                    </details>
+                </div>
             </div>
+            <!-- 예시코드1 -->
+            <br>
             <p class="t_desc">
                 함수 블록{}안에 있는 kor변수는 <i>전역 변수</i>입니다. <br>
                 ∴ getScore()함수를 호출하게 되면 kor 변수 값이 90에서 100으로 바뀌게 됩니다.
             </p>
             <br>
             <h4 class="t_tit3">예시</h4>
-            <div class="t_box">
-                var <i>kor</i> = 90;<br>
-                function getScore() { <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var kor = 100; //지역 변수 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(kor); // 100 <br>
-                } <br>
-                getScore(); <br>
-                console.log(kor); // 90
+            <div class="t_code">
+<pre><code>var kor = 90;
+function getScore(){
+    var kor = 100; //지역 변수
+    document.write(kor); //100
+}
+getScore();
+document.write(kor); // 90
+</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <script>
+                            var kor = 90;
+                            function getScore(){
+                                var kor = 100; //지역 변수
+                                document.write(kor, "<br>"); //100
+                            }
+                            getScore();
+                            document.write(kor); // 90
+                        </script>
+                    </details>
+                </div>
             </div>
+            <!-- 예시코드2 -->
+            <br>
             <p class="t_desc">
                 함수 블록{}안에 있는 kor변수를 var로 정의하였습니다. 함수 블록{}안에서 var로 선언된 변수는 <i>지역 변수</i>가 되며 함수 블록{}밖의 전역 변수 kor과 다른 별도의
                 변수가 됩니다.<br>
@@ -255,6 +290,43 @@
                     </details>
                 </div>
             </div>
+            <!-- 예시코드3 -->
+            
+            <h3 class="t_tit2">·var, let, const 비교 정리</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>변수 범위</th>
+                        <th>변수 선언</th>
+                        <th>특징</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">함수 레벨 스코프</td>
+                        <td class="ce">var</td>
+                        <td>
+                            · <i>변수를 중복</i>해서 선언 가능<br>
+                            · 함수 블록{} <i>내에서만</i> 지역 변수가 존재
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2">블록 레벨 스코프</td>
+                        <td class="ce">let</td>
+                        <td>
+                            · var와 같지만 같은 블록{}에서는 이미 선언한 변수를 <i>중복해서 선언할 수 없음</i> <br>
+                            · 블록{}, 제어문 블록{}에서도 지역 변수가 존재
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">const</td>
+                        <td>
+                            · 같은 블록{}에서는 이미 선언한 <i>변수를 중복해서 선언할 수 없고 저장된 값을 변경할 수도 없음</i> <br>
+                            · 블록{}, 제어문 블록{}에서도 지역 변수가 존재
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
     </main>
     <!-- //main -->
     <footer id="footer">
