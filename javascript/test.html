@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //01선언적 함수
+        {
+            function func(){
+                document.write("함수를 실행합니다.1<br>")
+            }
+            func();
+        }
+        //02익명 함수
+        {
+            const func = function(){
+                document.write("함수를 실행합니다.2<br>")
+            }
+            func();
+        }
+        //03매개 함수
+        {
+            function func(str){
+                document.write(str)
+            }
+            func("함수를 실행합니다.3<br>")
+        }
+        //04리턴값 함수
+        {
+            function func(){
+                const str = "함수를 실행합니다.4<br>"
+                return str;
+            }
+            document.write(func());
+        }
+        //05화살표 함수 : 선언적 함수
+        {
+            func = () => {
+                document.write("함수를 실행합니다.5<br>")
+            }
+            func();
+        }
+        //06화살표 함수 : 익명 함수
+        {
+            const func = () => {
+                document.write("함수를 실행합니다.6<br>")
+            }
+            func();
+        }
+        //07화살표 함수 : 매개
+        {
+            func = (str) => {
+                document.write(str)
+            }
+            func("함수를 실행합니다.7<br>")
+        }
+        //08화살표 함수 : 리턴값
+        {
+            func = () => {
+                const str = "함수를 실행합니다.8<br>"
+                return str;
+            }
+            document.write(func());
+
+        }
+
+    </script>
+</body>
+</html>
