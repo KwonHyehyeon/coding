@@ -8,64 +8,15 @@
 </head>
 <body>
     <script>
-        //01선언적 함수
+        //자바스크립트 예제 365페이지
+        //함수의 전변수
         {
-            function func(){
-                document.write("함수를 실행합니다.1<br>")
+            var sum1 = 10;
+            function add1() {
+                sum1 = 20;
             }
-            func();
-        }
-        //02익명 함수
-        {
-            const func = function(){
-                document.write("함수를 실행합니다.2<br>")
-            }
-            func();
-        }
-        //03매개 함수
-        {
-            function func(str){
-                document.write(str)
-            }
-            func("함수를 실행합니다.3<br>")
-        }
-        //04리턴값 함수
-        {
-            function func(){
-                const str = "함수를 실행합니다.4<br>"
-                return str;
-            }
-            document.write(func());
-        }
-        //05화살표 함수 : 선언적 함수
-        {
-            func = () => {
-                document.write("함수를 실행합니다.5<br>")
-            }
-            func();
-        }
-        //06화살표 함수 : 익명 함수
-        {
-            const func = () => {
-                document.write("함수를 실행합니다.6<br>")
-            }
-            func();
-        }
-        //07화살표 함수 : 매개
-        {
-            func = (str) => {
-                document.write(str)
-            }
-            func("함수를 실행합니다.7<br>")
-        }
-        //08화살표 함수 : 리턴값
-        {
-            func = () => {
-                const str = "함수를 실행합니다.8<br>"
-                return str;
-            }
-            document.write(func());
-
+            add1();
+            document.write('전역' + sum1);
         }
 
     </script>
