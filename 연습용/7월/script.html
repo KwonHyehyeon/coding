@@ -59,16 +59,16 @@
                 for(let i = 2; i<=9; i++){
                     for( let j=1; j<=9; j++){
                         let sum = i * j //결과값
-                        document.write(i + "*" + j + "=" + sum)
-                        document.write("<br>")
+                       // document.write(i + "*" + j + "=" + sum)
+                        //document.write("<br>")
                     }
                 }
             }
             //6단만 출력하기
             for(let i = 6; i<=6; i++){
                 for( let j=1; j<=9; j++){
-                    document.write(i + "*" + j + "=" )
-                    document.write("<br>")
+                  // document.write(i + "*" + j + "=" )
+                    //document.write("<br>")
                 }
             }
     
@@ -90,7 +90,7 @@
             //0부터99
             {
                 for( let i =0; i<100; i++){
-                    document.write(i)
+                   // document.write(i)
                 }
             }
         </script>
@@ -99,10 +99,10 @@
         {
             for( let i = 1; i<=100; i++){
                 if ( i % 5 == 0){
-                    document.write("<span style='color: blue'>"+i+"</span>");
+                 //   document.write("<span style='color: blue'>"+i+"</span>");
                 }  
                 if ( i % 7 == 0){
-                    document.write("<span style='color: red'>"+i+"</span>");
+                  //  document.write("<span style='color: red'>"+i+"</span>");
                 }              
             }
         }
@@ -112,9 +112,9 @@
         {
             for( let i = 1; i<=100; i++){
                 if (i % 2 == 0){
-                    document.write("<span style='color: red'>"+i+"</span>")
+                 //   document.write("<span style='color: red'>"+i+"</span>")
                 }else{
-                    document.write("<span style='color: blue'>"+i+"</span>")
+                 //   document.write("<span style='color: blue'>"+i+"</span>")
                 }
             }
         }
@@ -123,7 +123,7 @@
         //for문을 이용해서 1~100까지 출력(짝수는 빨간색, 홀수는 파란색) : 조건부 연산자
         {
             for( let i = 1; i<=100; i++){
-                (i % 2 == 0) ? document.write("<span style='color: red'>"+i+"</span>") : document.write("<span style='color: blue'>"+i+"</span>")
+        //        (i % 2 == 0) ? document.write("<span style='color: red'>"+i+"</span>") : document.write("<span style='color: blue'>"+i+"</span>")
             }
         }
 
@@ -146,16 +146,16 @@
             for(let i = 2; i<=9; i++){
                 for( let j=1; j<=9; j++){
                     let sum = i * j //결과값
-                    document.write(i + "*" + j + "=" + sum)
-                    document.write("<br>")
+             //       document.write(i + "*" + j + "=" + sum)
+            //        document.write("<br>")
                 }
             }
         }
         //6단만 출력하기
         for(let i = 6; i<=6; i++){
             for( let j=1; j<=9; j++){
-                document.write(i + "*" + j + "=" )
-                document.write("<br>")
+            //   document.write(i + "*" + j + "=" )
+            //    document.write("<br>")
             }
         }
 
@@ -186,7 +186,18 @@
                     table += "</tr>";
                 }
                 table += "<table>";
-                document.write(table)
+            //    document.write(table)
+        }
+        {
+            const a = 100;
+            const b = 200;
+            const c = "javascript"
+
+            const obj = { a:100, b:200, c: "javascript"}
+
+            document.write(obj.a);
+            document.write(obj.b);
+            document.write(obj.c);
         }
     </script>
     
