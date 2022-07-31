@@ -34,6 +34,10 @@
                 <li><a href="for.html">반복문</a></li>
                 <li><a href="if.html">조건문</a></li>
                 <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+
+
             </ul>
         </nav>
     </header>
@@ -240,6 +244,8 @@ for( let i =0; i&lt;=100 i+=2 ){  //i +=2 -> i = i + 2
                             }
                             if ( i % 7 == 0) {
                                 document.write("<span style='color: red'>"+i+"</span>","<br>");
+                            }else{
+                                document.write(i, "<br>")
                             }
                         }
                     </script>
@@ -390,7 +396,8 @@ document.write(table);
             <div class="t_result">
                 <details>
                     <summary>결과 확인하기</summary>
-                    <div class="result01"></div>
+                    <div class="result09"></div>
+                </details>
                     <style>
                         .testTable tr td {
                             border: 1px solid #000;
@@ -398,26 +405,22 @@ document.write(table);
                     </style>
                     <script>
                         let table = "<table class='testTable'>";
-                        for(let i=0; i<10; i++){
-                            table += "<tr>";
-                                for(let j=0; j<10; j++){  //for문 안에 for문은 중첩문!
-                                    table += "<td>♡</td>"
-                                }
-    
-    
-                            table += "</tr>";
+                        
+                            for(let i=0; i<10; i++){
+                                table += "<tr>";
+                                    for(let j=0; j<10; j++){  //for문 안에 for문은 중첩문!
+                                        table += "<td>♡</td>"
+                                    }
+                                table += "</tr>";
                         }
-    
                         table += "</table>"
                         //document.write(table);  
-                        document.querySelector(".result01").innerHTML = table;
+                        document.querySelector(".result09").innerHTML = table;
                     </script>
-                </details>
             </div>
-
         </div>
     </main>
-      <!-- //main -->
+    <!-- //main -->
 
     <footer id="footer">
         <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>

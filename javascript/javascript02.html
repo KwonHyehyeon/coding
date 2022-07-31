@@ -33,6 +33,9 @@
                 <li><a href="study/for.html">반복문</a></li>
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">데이터 타입</a></li>
+                <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
+
 
             </ul>
         </nav>
@@ -447,65 +450,94 @@ arr.map(function(element, index, array){ //데이터 불러올 때 저장할 때
 
         //07. 배열 데이터 불러오기 : forEach(); //자바에서 잘 씀
         {
-            const num = [100, 200, 300, 400, 500];
+            // const num = [100, 200, 300, 400, 500];
 
-            //forEach()
-            num.forEach(function(el){
-               //document.write(el);
-            });
+            // //forEach()
+            // num.forEach(function(el){
+            //    //document.write(el);
+            // });
             
-            //forEach(element, index, array) //el, i, arr 는 function의 요소임
-            num.forEach(function(el, index, array){
-               //document.write(array)
-            });
+            // //forEach(element, index, array) //el, i, arr 는 function의 요소임
+            // num.forEach(function(el, index, array){
+            //    //document.write(array)
+            // });
         }
 
         document.write("<br>")
 
         //08. 배열에 데이터 불러오기 : for of
         {
-            const arr = [100, 200, 300, 400, 500];
+            // const arr = [100, 200, 300, 400, 500];
 
-            for(let i of arr){
-                //document.write(i);
-            }
+            // for(let i of arr){
+            //     //document.write(i);
+            // }
         }
 
         document.write("<br>")
 
         //09. 배열에 데이터 불러오기 : for in
         {
-            const arr = [100, 200, 300, 400, 500];
+        //     const arr = [100, 200, 300, 400, 500];
 
-            for(let i in arr){
-            //document.write(i); //인덱스여서 순서알려주고, 01234
-            //document.write(arr[i]); //arr여서 값을 배열함. 100200300400500
+        //     for(let i in arr){
+        //     //document.write(i); //인덱스여서 순서알려주고, 01234
+        //     //document.write(arr[i]); //arr여서 값을 배열함. 100200300400500
 
-            }
-        }
+        //     }
+        // }
         
-        document.write("<br>", "<br>")
+        // document.write("<br>", "<br>")
         //10. 배열 데이터 부러오기 : map() 맵이라는 메서드
         {
             const arr = [100, 200, 300, 400, 500];
 
             //forEach 이용해서 값 출력
 
-            arr.forEach(function(element, index, array){ //데이터 불러올 때 값으로 불러옴
-                //document.write(element);
-                //document.write(index);
-                //document.write(array);
+            // arr.forEach(function(element, index, array){ //데이터 불러올 때 값으로 불러옴
+            //     //document.write(element);
+            //     //document.write(index);
+            //     //document.write(array);
                 
               
-            });
+            // });
 
-            document.write("<br>", "<br>")            
-            arr.map(function(element, index, array){ //데이터 불러올 때 저장할 때도 배열로 저장함
-                //document.write(element);
-                //document.write(index);
-                //document.write(array);
+            // document.write("<br>", "<br>")            
+            // arr.map(function(element, index, array){ //데이터 불러올 때 저장할 때도 배열로 저장함
+            //     //document.write(element);
+            //     //document.write(index);
+            //     //document.write(array);
                 
-            }); //먼저 (function(){}); 이렇게 써줘야 안헷갈림
+            // }); //먼저 (function(){}); 이렇게 써줘야 안헷갈림
+        }
+        //11.
+        {
+            const arr= [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            // //for문을 이용해서
+            // for( let i=0; i<arr.length; i++){
+            //     document.write(arr[i]);
+            // }
+            // document.write("<br><br>")
+            // //forEach문을 이용해서!
+            // arr.forEach(function(arr){
+            //     document.write(arr);
+            // });
+            // document.write("<br><br>")
+            // //map()을 이용해서 하나씩 출력!
+            // arr.map(function(arr){
+            //     document.write(arr);
+            // });
+            // document.write("<br><br>")
+            // //for in을 이용해서 하나씩 출력!
+            // for (let i in arr){
+            //     document.write(arr[i]);
+            // }
+            // document.write("<br><br>")
+            // //for of을 이용해서 하나씩 출력!
+            // for(let i of arr){
+            //     document.write(i);
+            }
         }
 
     </script>

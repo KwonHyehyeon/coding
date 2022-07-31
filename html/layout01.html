@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 권혜현</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main"> <!--사이트 하나에 main은 하나밖에 못 만들고 header는 많이 만들 수 있음-->
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블랙구조/인라인구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li class="active"><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">레이아웃01</h2>
+                <p class="t_desc">
+                    이번 레이아웃은 기본적인 구조로, 간단한 레이아웃 구조입니다. 
+                </p>
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Ftlad6yfI2ju7AVJEwQIMo1%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+                </div>
+
+                <h3 class="t_tit2">float을 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    float이란, 페이지에서 이미지와 텍스트를 인라인으로 어우러지게 할 수 있는 기능입니다.(구버전)<br>
+                    ※ float 속성을 적용하면 그 다음 요소에도 <i>float가 적용되어 버그</i>가 생길 수 있습니다. 이럴 때 사용할 수 있는 속성이 <i>"clear"</i> 입니다. <br><br>
+                    사용 방법<br>
+                    div태그는 block특성을 가지고 있기 때문에 세로로 나타납니다. 이를 가로로 정렬시켜주는 것이 <i>float</i>입니다. 
+                </p>
+                
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #fff3e0;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #FFE0B2;
+}
+#nav {
+    width: 100%;
+    height: 100px;
+    background-color: #FFCC80
+}
+#aside {
+    width: 30%;
+    height: 780px;
+    background-color: #FFB74D;
+    float: left;
+}
+#section {
+    width: 70%;
+    height: 780px;
+    background-color: #FFA726;
+    float: left;
+}
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color: #FF9800;
+    clear: both;
+}
+
+/* 미디어쿼리 */
+@media (max-width:1300px){ /*1280됐을 때 스크롤바 생겨서 약간 오차있기때문에 */
+    #wrap {
+        width: 96%; /*스크롤바 안생기게 %로*/
+    }
+}
+@media (max-width:768px){ /*위에꺼 변형 없으므로 굳이 다 안 써줘도 됨!*/
+    #wrap {
+        width: 100%;
+    }
+}
+
+
+@media (max-width:480px){ /*wrap은 위에서 0-768px까지니깐 적용되니깐 생략가능, 변한 모양에 대한 값만 써주면 됨*/
+    #aside {
+    width: 100%;
+    height: 300px; /*height는 퍼센트로 쓸 수 없음!*/
+    }
+    #section {
+    width: 100%;
+    height: 480px;
+    }  
+
+}
+</code></pre>
+                </div>
+                <h4 class="t_tit">결과</h4>
+                    <div class="iframe">
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="layout01(float반응형)" src="https://codepen.io/kwonhyehyeon/embed/QWmMgMe?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/QWmMgMe">
+                            layout01(float반응형)</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                <!--  float -->
+
+                <h3 class="t_tit2">flex을 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    flex란, 유연성을 뜻하며 레이아웃 배치 전용 기능으로 고안되었습니다. (신버전)<br>
+                    flex 아이템들은 <i>가로 방향으로 배치</i>되고 inline 요소들 처럼 아이템들의 width만큼을 차지하게 됩니다. <br><br>
+                    사용 방법<br>
+                    <i>display: flex;</i>
+                    아이템들을 더 이상 한 줄에 담을 여유 공간이 없을 때 아이템 줄바꿈을 어떻게 할지 결정하는 속성 : flex-wrap
+                    flex-wrap: wrap; 
+                </p>
+                
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #fff3e0;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #FFE0B2;
+}
+#nav {
+    width: 100%;
+    height: 100px;
+    background-color: #FFCC80
+}
+#aside {
+    width: 30%;
+    height: 780px;
+    background-color: #FFB74D;
+
+}
+#section {
+    width: 70%;
+    height: 780px;
+    background-color: #FFA726;
+
+}
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color: #FF9800;
+
+}
+
+/* 미디어쿼리 */
+@media (max-width:1300px){
+    #wrap {
+        width: 96%;
+    }
+}
+@media (max-width:768px){
+    #wrap {
+        width: 100%;
+    }
+}
+@media (max-width:480px){
+    #aside {
+    width: 100%;
+    height: 300px;
+    }
+    #section {
+    width: 100%;
+    height: 480px;
+    }  
+
+}
+</code></pre>
+                </div>
+                <h4 class="t_tit">결과</h4>
+                    <div class="iframe">
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="layout01(flex반응형)" src="https://codepen.io/kwonhyehyeon/embed/BardqKR?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/BardqKR">
+                            layout01(flex반응형)</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                    <!-- flex -->
+
+                    <h3 class="t_tit2">grid을 이용한 레이아웃</h3>
+                    <p class="t_desc2">
+                        grid는 2차원(행과 열)의 레이아웃 시스템을 제공합니다. 위의 방법들과는 달리, 더 복잡한 레이아웃을 만들기 위해서는 grid방법을 사용하는 것이 편리합니다.<br><br>
+                        사용 방법<br>
+                        <i>display: grid;</i>
+                        table처럼 행과 열을 나눠준 후에 area를 정해주면 됩니다.<br>
+                    </p>
+                    
+                    <div class="t_code">
+    <pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #fff3e0;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: /*테이블 구조 짜준다고 생각하면 됨*/
+        "header header"
+        "nav nav"
+        "aside section"
+        "footer footer"
+    ;
+    grid-template-columns: 30% 70%; /*  반응형은 % */
+    grid-template-rows: 100px 100px 780px 100px; /* table의 첫번째칸 두번째칸 등의 height값을 정해줌*/
+}
+
+#header {
+    background-color: #FFE0B2;
+    grid-area: header; /*테이블 짠거에 이름 붙여주는 것임*/
+}
+#nav {
+    background-color: #FFCC80;
+    grid-area: nav;
+}
+#aside {
+    background-color: #FFB74D;
+    grid-area: aside;
+}
+#section {
+    background-color: #FFA726;
+    grid-area: section;
+}
+#footer {
+    background-color: #FF9800;
+    grid-area: footer;
+}
+/* 미디어쿼리 */
+@media (max-width:1300px){
+    #wrap {
+        width: 96%;
+    }
+}
+@media (max-width:768px){
+    #wrap {
+        width: 100%;
+    }
+}
+@media (max-width:480px){
+    #wrap {
+        grid-template-areas: 
+            "header"
+            "nav"
+            "aside" 
+            "section"
+            "footer"
+        ;
+        grid-template-columns: 100%;
+        grid-template-rows: 100px 100px 300px 480px 100px; 
+    }
+}
+    </code></pre>
+                    </div>
+                    <h4 class="t_tit">결과</h4>
+                        <div class="iframe">
+                            <iframe height="300" style="width: 100%;" scrolling="no" title="layout01(grid반응형)" src="https://codepen.io/kwonhyehyeon/embed/RwMZeoR?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                                See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/RwMZeoR">
+                                layout01(grid반응형)</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                                on <a href="https://codepen.io">CodePen</a>.
+                            </iframe>
+                        </div>
+                        <!-- grid -->
+        </div>
+    </main>
+    <!-- //header -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.cm">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+    hljs.highlightAll();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
