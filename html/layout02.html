@@ -44,10 +44,10 @@
             <div class="document">
                 <h2 class="t_tit">레이아웃02</h2>
                 <p class="t_desc">
-                   이번 레이아웃은 가운데를 3분할한 구조입니다.
+                   이번 레이아웃은 가운데를 3분할한 구조입니다. 반응형으로 만들 때 바뀌는 구조를 주의해야 합니다.
                 </p>
                 <div class="t_iframe">
-                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Ftlad6yfI2ju7AVJEwQIMo1%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D31%253A38" allowfullscreen></iframe>
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Ftlad6yfI2ju7AVJEwQIMo1%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D31%253A38" allowfullscreen></iframe>
                 </div>
 
             <h3 class="t_tit2">float을 이용한 레이아웃</h3>
@@ -96,14 +96,12 @@ body {
     background-color: #66BB6A;
     float: left;
 }
-
 #article {
     width: 30%;
     height: 780px;
     background-color: #4CAF50;
     float: left;
 }
-
 #footer {
     width: 100%;
     height: 100px;
@@ -199,13 +197,11 @@ body {
     height: 780px;
     background-color: #66BB6A;
 }
-
 #article {
     width: 30%;
     height: 780px;
     background-color: #4CAF50;
 }
-
 #footer {
     height: 100px;
     background-color: #43A047;
@@ -268,7 +264,7 @@ body {
                     </p>
                     
                     <div class="t_code">
-<pre><code class="language-css">        * {
+<pre><code class="language-css">* {
     margin: 0;
     padding: 0;
 }
@@ -282,8 +278,7 @@ body {
 #header {
     height: 100px;
     background-color: #C8E6C9;
-}
-    
+}    
 #nav {
     height: 100px;
     background-color: #A5D6A7;
@@ -299,11 +294,9 @@ body {
 #section {
     background-color: #66BB6A;
 }
-
 #article {
     background-color: #4CAF50;
 }
-
 #footer {
     height: 100px;
     background-color: #43A047;
@@ -312,8 +305,7 @@ body {
 /* 미디어쿼리 */
 @media (max-width:1300px){
     #wrap {width: 96%;
-    }
-    
+    }    
 }
 @media (max-width:768px){
     #main {
@@ -333,7 +325,6 @@ body {
     #article {
         grid-area: article;
     }
-
 }  
 @media (max-width:480px){
     #main {
@@ -354,9 +345,8 @@ body {
     #article {
         grid-area: article;
     }
-
 }
-    </code></pre>
+</code></pre>
                     </div>
                     <h4 class="t_tit">결과</h4>
                         <div class="iframe">
