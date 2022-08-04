@@ -188,7 +188,15 @@
             box-sizing: border-box;
             text-align: center;
             font-family: "Cafe24Dangdanghae";
-            display: none;
+        }
+        .quiz_answer .input {
+            width: 100%;
+            border: 6px ridge #cacaca;
+            font-size: 22px;
+            padding: 13px 20px;
+            background-color: #fff;
+            font-family: "Cafe24Dangdanghae";
+            margin-bottom: 10px;
         }
         .quiz_view {
             background-color: #f5f5f5;
@@ -534,11 +542,11 @@
 
 <body>
     <header id="header">
-        <h1>Quiz <em>정답 확인하기 유형</em></h1>
+        <h1>Quiz <em>주관식 유형</em></h1>
         <nav>
             <ul>
-                <li class="active"><a href="quizEffect01.html">1</a></li>
-                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li class="active"><a href="quizEffect02.html">2</a></li>
                 <li><a href="quizEffect03.html">3</a></li>
                 <li><a href="quizEffect04.html">4</a></li>
                 <li><a href="quizEffect05.html">5</a></li>
@@ -578,6 +586,7 @@
                     </div>
                 </div>
                 <div class="quiz_answer">
+                    <input type="text" class="input" placeholder="정답을 적어주세요!">
                     <button class="confirm">정답 확인하기</button>
                     <div class="result"></div>
                 </div>
@@ -598,29 +607,45 @@
         const quizAsk = document.querySelector(".quiz_question .ask");          //퀴즈 질문
         const quizConfirm = document.querySelector(".quiz_answer .confirm");    //정답 확인 버튼
         const quizResult = document.querySelector(".quiz_answer .result");      //정답 결과
+        const quizInput = document.querySelector(".quiz_answer .input");        //사용자 정답
         const quizDog = document.querySelector(".quiz_view .dog");              //강아지
 
         //문제 정보
         const answerType = "웹디자인기능사";
-        const answerNum = 1;
-        const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 합니까?"
-        const answerResult = "연변대비"
+        const answerNum = "2";
+        const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업이미지통합 전략은 무엇인가요?"
+        let answerResult = "CIP" 
 
         //문제 출력
-        quizType.innerText = answerType;
-        quizNumber.innerText = answerNum + ". ";
-        quizAsk.innerText = answerAsk;
-        quizResult.innerText = answerResult;
+        quizType.textContent = answerType;
+        quizNumber.textContent = answerNum + ". ";
+        quizAsk.textContent = answerAsk;
+        quizResult.textContent = answerResult;
+
+        //정답 숨기기
+        quizResult.style.display = "none";
 
         //정답 확인
-        //정답 버튼을 클릭하면 확인버튼 안보이게... 숨겨진 정답은 보이게...
-        //정답을 확인하면 강아지가 웃고 있어야 함 //class like를 추가함!
-        quizConfirm.addEventListener("click", function(){
-            quizConfirm.style.display = "none";
-            quizResult.style.display = "block";
-            quizDog.classList.add("like")
-        }); //addEventListener = 버튼을 클릭하면 사건이 일어나게 하는 것
+        quizConfirm.addEventListener("click", () => {
+            
+            //사용자 정답
+            const userWord = quizInput.value.toLowerCase().trim(); //value값을 불러올 수 있다는 것 //toLowerCase는 소문자로 바꿔주는 것 //trim() 여백 없애주는 메서드
+            answerResult = answerResult.toLowerCase().trim();
 
+            console.log(userWord) 
+            console.log(answerResult) 
+
+            //사용자 정답 == 문제 정답
+            if(userWord == answerResult){
+                //정답
+                quizDog.classList.add("like");
+                //alert("정답입니다.")
+            } else {
+                //오답
+                quizDog.classList.add("dislike");
+                //alert("오답입니다.")
+            }
+        }); //정답버튼을 클릭했을 때 //function을 화살표 함수 () => {} 로 가능!
     </script>
 </body>
 
