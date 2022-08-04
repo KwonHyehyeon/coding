@@ -11,21 +11,26 @@
 </head>
 <body>
     <div class="document">
-        <h2 class="t_tit">Quiz 만드는 방법!</h2>
+        <h2 class="t_tit">Quiz 01.</h2>
         <p class="t_desc">
             웹디자인기능사 필기 문제를 이용하여 퀴즈를 만들어 봅시다.
         </p>
-    <iframe height="1000" style="width: 100%;" scrolling="no" title="quiz01" src="https://codepen.io/kwonhyehyeon/embed/KKooyqX?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-        See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/KKooyqX">
-        quiz01</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
-        on <a href="https://codepen.io">CodePen</a>.
-    </iframe>
-    <h2 class="t_tit">웹디자인기능사 01 문제</h2>
-    <p class="t_desc">
-        1. 
-    </p>
-    <div class="t_code">
-<pre><code>//선택자
+        <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect01.html" frameborder="0"></iframe>
+        </div>
+
+        <div class="t_link">
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/quizEffect01.html" target="_blank"
+            >원본 소스보기</a>
+        </div>
+
+        <h3 class="t_tit">자바스크립트 활용</h3>
+        <p class="t_desc2">
+            1. 선택자를 먼저 지정해주고 문제 정보를 정리해준 후 문제 출력을 위해 선택자와 문제 정보를 <i>innerText</i>를 이용하여 문제를 출력해줍니다.<br>
+            2. 정답을 확인하기 위한 버튼과 정답을 확인한 후의 화면을 디자인해줍니다. 이 때 정답을 확인하기 위해서 클릭하는 효과로 이벤트 객체인 <i>addEventListener()</i>메서드를 활용해 줍니다.
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">//선택자
 const quizType = document.querySelector(".quiz_type");                  //퀴즈 종류
 const quizNumber =  document.querySelector(".quiz_question .number");   //퀴즈 번호
 const quizAsk = document.querySelector(".quiz_question .ask");          //퀴즈 질문
@@ -58,10 +63,13 @@ quizConfirm.addEventListener("click", function(){
 }); //addEventListener = 버튼을 클릭하면 사건이 일어나게 하는 것
 </code></pre>
     </div>
+    <!-- document -->
+
     <footer id="footer">
         <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
     </footer>
     <!-- //footer -->
+
     <script src="../assets/js/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
