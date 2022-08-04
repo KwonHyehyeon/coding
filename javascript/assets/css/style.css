@@ -82,6 +82,12 @@ body {  /*body는 기본태그여서 앞에 뭐 안 붙음*/
     background-color: #000;
     color: #fff;
 }
+.header_nav .effect {
+    margin-top: 10px;
+}
+.header_nav .effect li a {
+    border-radius: 40px;
+}
 
 /* 메인 샘플 */
 .main_sample {
