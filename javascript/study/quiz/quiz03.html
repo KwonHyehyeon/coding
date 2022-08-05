@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">Quiz 03.</h2>
+        <p class="t_desc">
+            자바스크립트를 활용하여 웹디자인기능사 필기 2014년도 1회차 4개의 문제를 만들어봅시다! <br>
+        </p>
+        <div class="t_iframe" style="min-height: 1600px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect03.html" frameborder="0"></iframe>
+        </div>
+
+        <div class="t_link">
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/quizEffect03.html" target="_blank"
+            >원본 소스보기</a>
+        </div>
+        
+        <h3 class="t_tit">자바스크립트 활용</h3>
+        <p class="t_desc2">
+            ※ 주관식 문제 ※<br>
+            -input 활용 => quizInput (주관식 답을 넣어주기 위함)<br>
+            -<i>for문 또는 forEach문</i>을 통해 데이터가 많을 때를 고려해서 사용!(중요)<br>
+            -if문 활용 => 정답인지 아닌지에 대한 확인<br>
+            1. 선택자를 지정해준 후 문제 정보를 적어줍니다. <br>
+            2. 그 후 문제 출력을 위해 선택자와 문제 정보를 연결해줍니다. 이 때 <i>textContent</i>를 사용해 줍니다.<br>
+            여러 데이터를 저장하기 위해서는 for문이나 forEach문을 활용해줍니다.<br>
+            3. 정답을 숨겨놓기 위해서 정답(quizResult)를 <i>quizResult.style.diplay = "none"</i>으로 숨겨줍니다. <br>
+            이 때에도 데이터가 많으므로 변수i를 두어 for문이나 forEach문을 이용해주어야 편리합니다.<br>
+            4. 정답 확인을 위해 사용자의 정답이 필요한데 이를 userWord라고 지정해줍니다.<br>
+            5. <i>if문</i>을 활용하여 정답이었을 때와 정답이 아닐 때를 구분지어 줍니다.
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">//선택자
+const quizType = document.querySelectorAll(".quiz_type");                  //퀴즈 종류 //다중 선택을 하려면 반드시 querySelectorAll로 해주어야함 
+const quizNumber =  document.querySelectorAll(".quiz_question .number");   //퀴즈 번호
+const quizAsk = document.querySelectorAll(".quiz_question .ask");          //퀴즈 질문
+const quizConfirm = document.querySelectorAll(".quiz_answer .confirm");    //정답 확인 버튼
+const quizResult = document.querySelectorAll(".quiz_answer .result");      //정답 결과
+const quizInput = document.querySelectorAll(".quiz_answer .input");        //사용자 정답
+const quizView = document.querySelectorAll(".quiz_view");                  //강아지
+
+//문제정보
+const quizInfo = [
+    {
+        answerType: "웹디자인기능사2014년1회",
+        answerNum: "1",
+        answerAsk: "제품 디자인 과정 중 '완성 예상도' 라고도 하며 실물처럼 충실하고 정확히 표현하는 것을 무엇이라고 합니까?",
+        answerResult: "랜더링" 
+    },
+    {
+        answerType: "웹디자인기능사2014년1회",
+        answerNum: "2",
+        answerAsk: "디자인 요소 중 길이와 방향만을 나타낸 것은 무엇입니까?",
+        answerResult: "선" 
+    },
+    {
+        answerType: "웹디자인기능사2014년1회",
+        answerNum: "3",
+        answerAsk: "색의 3속성을 3차원의 공간 속에 계통적으로 배열한 것은 무엇입니까?",
+        answerResult: "색입체" 
+    },
+    {
+        answerType: "웹디자인기능사2014년1회",
+        answerNum: "4",
+        answerAsk: "인터넷 익스플로러 6.0에서 자주 방문하는 웹 사이트의 URL을 등록하는 기능은 무엇입니까?",
+        answerResult: "즐겨찾기" 
+    }
+]
+
+//문제 출력
+//for문 이용
+// for (let i = 0; i &lt;quizInfo.length; i++){
+//     quizType[i].textContent = quizInfo[i].answerType;
+//     quizNumber[i].textContent = quizInfo[i].answerNum + ". "
+//     quizAsk[i].textContent = quizInfo[i].answerAsk
+//     quizResult[i].textContent = quizInfo[i].answerResult
+// }
+//forEach문 이용
+quizInfo.forEach((e, i) => {
+    quizType[i].textContent = quizInfo[i].answerType;
+    quizNumber[i].textContent = quizInfo[i].answerNum + ". "
+    quizAsk[i].textContent = quizInfo[i].answerAsk
+    quizResult[i].textContent = quizInfo[i].answerResult
+});
+01
+quizType[0].textContent = quizInfo[0].answerType
+quizNumber[0].textContent = quizInfo[0].answerNum + ". "
+quizAsk[0].textContent = quizInfo[0].answerAsk
+quizResult[0].textContent = quizInfo[0].answerResult
+02
+quizType[1].textContent = quizInfo[1].answerType
+quizNumber[1].textContent = quizInfo[1].answerNum + ". "
+quizAsk[1].textContent = quizInfo[1].answerAsk
+quizResult[1].textContent = quizInfo[1].answerResult
+//03
+quizType[2].textContent = quizInfo[2].answerType
+quizNumber[2].textContent = quizInfo[2].answerNum + ". "
+quizAsk[2].textContent = quizInfo[2].answerAsk
+quizResult[2].textContent = quizInfo[2].answerResult
+//04
+quizType[3].textContent = quizInfo[3].answerType
+quizNumber[3].textContent = quizInfo[3].answerNum + ". "
+quizAsk[3].textContent = quizInfo[3].answerAsk
+quizResult[3].textContent = quizInfo[3].answerResult
+
+정답 숨기기(4개)
+quizResult[0].style.display = "none";
+quizResult[1].style.display = "none";
+quizResult[2].style.display = "none";
+quizResult[3].style.display = "none";
+
+for문 이용
+for(let i=0; i&lt;quizInfo.length; i++){
+    quizResult[i].style.display = "none";
+}
+
+forEach문 이용
+quizInfo.forEach((e, i) => {
+    quizResult[i].style.display = "none";
+});
+
+정답 확인하기
+quizConfirm.addEventListener("click", () => {
+   alert("ddd") //alert로 테스트 해보는게 좋음 //에러뜨는 이유 : 하나의 값이 아닌 버튼이 네개 여서!
+});
+//버튼이 네개이니깐 자바한테 알려준 후 확인시켜라!
+quizConfirm.forEach((btn, num) => {   //num을 통해 index를 가져와서 몇번째 문제의 사용자 정답인지 가져올 것
+    btn.addEventListener("click", () => {
+        ///alert("ddd") : 오류 확인해보기
+        //사용자 정답
+        const userword = quizInput[num].value.toLowerCase().trim();
+        // console.log(userWord)
+        // console.log(quizInfo[num].answerResult)
+        //사용자 정답 == 문제 정답
+        if (userword == quizInfo[num].answerResult){
+            //정답
+            //alert("정답");
+            quizView[num].classList.add("like"); //강아지가 웃는 거
+            quizConfirm[num].style.display = "none";
+        } else {
+            //오답
+            //alert("오답");
+            quizView[num].classList.add("dislike"); //강아지가 우는 거
+            quizConfirm[num].style.display = "none";
+            quizResult[num].style.display = "block";
+            quizInput[num].style.display = "none";
+        }
+    })
+});
+</code></pre>
+    </div>
+    <h4 class="t_tit3">우리 모두 메서드와 친해지길 바라!^.^*</h4>
+    <div class="t_box">
+        1. addEventListener() : 이벤트를 등록하는 메서드로서 '정답 확인하기' 버튼을 클릭하기 위해 사용해줍니다.<br>
+        2. toLowerCase() : 문자열을 소문자로 변환해서 반환하는 것입니다.<br>
+        3. trim() : 여백 공백을 제거한 문자열의 복사본을 리턴하는 메서드입니다.<br>
+        4. classList.add() : 클래스를 필요에 따라 삽입하는 것이며 반대는 classList.remove입니다. 
+    </div>
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    </script>
+</body>
+</html>
