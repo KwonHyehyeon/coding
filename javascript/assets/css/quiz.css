@@ -103,10 +103,11 @@ body {
 /* quiz_wrap */
 .quiz_wrap {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 150px;
+    flex-wrap: wrap;
 }
 .quiz {
     max-width: 500px;

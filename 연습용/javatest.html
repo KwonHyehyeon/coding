@@ -8,16 +8,25 @@
 </head>
 <body>
     <script>
+    {
         for (let i=2; i<=16; i*2){
             if ( i % 2 == 0  && i % 4 != 0) {
-                document.write("<span style='color: white'>" + i + "</span>","<br>");
+               document.write("<span style='color: white'>" + i + "</span>","<br>");
             }
             if ( i % 4  ==0) {
-                    document.write("<span style='color: black'>" + i + "</span>","<br>");
+                document.write("<span style='color: black'>" + i + "</span>","<br>");
             }
             }
   
-
+        for (let i=1; i<=100; i++){
+            if ( i % 5 == 0) {
+                document.write("<span style='color: blue'>" + i + "</span>","<br>");
+            }
+            if ( i % 7 == 0) {
+                document.write("<;span style='color: red'>" + i + "</span>","<br>");
+            }
+        }
+    }
     </script>
 </body>
 </html>

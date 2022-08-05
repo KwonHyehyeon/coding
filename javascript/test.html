@@ -8,17 +8,18 @@
 </head>
 <body>
     <script>
-        //자바스크립트 예제 365페이지
-        //함수의 전변수
-        {
-            var sum1 = 10;
-            function add1() {
-                sum1 = 20;
-            }
-            add1();
-            document.write('전역' + sum1);
+        const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        
+        //for문을 이용해서 하나씩 출력!
+        for(let i = 0; i < arr.length; i++){
+            document.write(arr[i]);
         }
-
+        document.write("<br>")
+        //forEach문
+        arr.forEach(function(el){ //콜백함수 : 첫번째가 작동하고 그다음 함수가 작동하는 것
+            document.write(el);
+        })
     </script>
+    
 </body>
 </html>
