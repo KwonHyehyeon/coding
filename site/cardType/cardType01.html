@@ -19,6 +19,9 @@
             margin: 0;
             padding: 0;
         }
+        h1, h2, h3, h4, h5, h6{
+            font-weight : normal;
+        }
         a{
             text-decoration: none;
             color: #000;
@@ -26,10 +29,7 @@
         img {
             width: 100%;
         }
-        h1, h2, h3, h4, h5, h6{
-            font-weight : normal;
-        }
-        
+
         /* common */
         .container { 
             width: 1160px;
@@ -64,7 +64,7 @@
             background: #f5f5f5;
         }
         .card__body {
-            padding: 20px;
+            padding: 24px;
         }
         .card__body .tit {
             font-size: 24px;
@@ -72,7 +72,7 @@
         }
         .card__body .desc {
             font-size: 18px;
-            line-height: 1.6;
+            line-height: 1.4;
             color: #666;
             margin-bottom: 20px;
             font-weight: 300;
@@ -85,8 +85,8 @@
         <h2>소중한 동물 친구들</h2>
         <p>우리 곁에 영원히 함께 할 소중한 동물 친구들에 대해 같이 알아봅시다.</p>
         <div class="card__inner container">
-            <article class="card__header"> <!--시맨틱태그 안에는 제목이 꼭 들어가야함!-->
-                <figure class="card"><!--이미지 가져오는 새로운 기능-->
+            <article class="card"> <!--시맨틱태그 안에는 제목이 꼭 들어가야함!-->
+                <figure class="card__header"><!--이미지 가져오는 새로운 기능-->
                     <img src="img/card_bg01.jpg" alt="기린"> <!--웹표준 준수하기 위함으로 alt적어주는 것 접근성을 향상 시키기 위함-->
                 </figure>
                 <div class="card__body">
@@ -101,7 +101,7 @@
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">코끼리</h3>   
-                    <p class="desc">기린은 후각과 청각이 뛰어난 동물로 울음소리는 잘 내지 않는 것으로 알려져 있습니다. 혀가 긴 기린은 무려 50센티 정도 되는 길이로 물건을 집을 수 있습니다. 대단하죠?......................</p>  
+                    <p class="desc">코끼리 코는 근육질로 되어 있으며, 윗입술과 더불어 길게 자라고 사람의 손과 같습니다. 머리는 거대하며, 목은 짧고 큰 몸을 지탱하기 위하여 네 개의 다리는 굵습니다.........................</p>  
                     <a class="btn" href="/">더 자세히 보기</a>     
                 </div>
             </article>
@@ -111,7 +111,7 @@
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">돌고래</h3>   
-                    <p class="desc">기린은 후각과 청각이 뛰어난 동물로 울음소리는 잘 내지 않는 것으로 알려져 있습니다. 혀가 긴 기린은 무려 50센티 정도 되는 길이로 물건을 집을 수 있습니다. 대단하죠?......................</p>  
+                    <p class="desc">돌고래는 고래목 이빨고래아목에 속하는 종류로 고래목에서는 가장 인간과 친숙하게 잘 알려진 동물입니다. 고래류 중에서 주둥이가 튀어나온 특징이 있습니다. 귀엽죠?....................</p>  
                     <a class="btn" href="/">더 자세히 보기</a>  
                 </div>    
             </article>
