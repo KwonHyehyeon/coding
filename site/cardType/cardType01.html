@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형01</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv2Gothic/NexonLv2Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv2Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6{
+            font-weight : normal;
+        }
+        
+        /* common */
+        .container { 
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        /* +는 형제 > 바로 밑에 있는 자식(그래서 다른 자식들한테는 해당 안됨) */
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;/*figma auto랑 같음*/
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-style: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .card__inner {
+            display: flex;
+            justify-content: space-between; /*양쪽 정렬 맞춰주는 것*/
+        }
+        .card {
+            width: 32%;
+            background: #f5f5f5;
+        }
+        .card__body {
+            padding: 20px;
+        }
+        .card__body .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .card__body .btn {}
+    </style>
+</head>
+<body>
+    <section id="cardType" class="card__wrap nexon section">
+        <h2>소중한 동물 친구들</h2>
+        <p>우리 곁에 영원히 함께 할 소중한 동물 친구들에 대해 같이 알아봅시다.</p>
+        <div class="card__inner container">
+            <article class="card__header"> <!--시맨틱태그 안에는 제목이 꼭 들어가야함!-->
+                <figure class="card"><!--이미지 가져오는 새로운 기능-->
+                    <img src="img/card_bg01.jpg" alt="기린"> <!--웹표준 준수하기 위함으로 alt적어주는 것 접근성을 향상 시키기 위함-->
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">기린</h3>   
+                    <p class="desc">기린은 후각과 청각이 뛰어난 동물로 울음소리는 잘 내지 않는 것으로 알려져 있습니다. 혀가 긴 기린은 무려 50센티 정도 되는 길이로 물건을 집을 수 있습니다. 대단하죠?......................</p>  
+                    <a class="btn" href="/">더 자세히 보기</a>     
+                </div>
+            </article>
+            <article class="card"> 
+                <figure class="card__header">
+                    <img src="img/card_bg02.jpg" alt="코끼리">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">코끼리</h3>   
+                    <p class="desc">기린은 후각과 청각이 뛰어난 동물로 울음소리는 잘 내지 않는 것으로 알려져 있습니다. 혀가 긴 기린은 무려 50센티 정도 되는 길이로 물건을 집을 수 있습니다. 대단하죠?......................</p>  
+                    <a class="btn" href="/">더 자세히 보기</a>     
+                </div>
+            </article>
+            <article class="card"> 
+                <figure class="card__header">
+                    <img src="img/card_bg03.jpg" alt="돌고래">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">돌고래</h3>   
+                    <p class="desc">기린은 후각과 청각이 뛰어난 동물로 울음소리는 잘 내지 않는 것으로 알려져 있습니다. 혀가 긴 기린은 무려 50센티 정도 되는 길이로 물건을 집을 수 있습니다. 대단하죠?......................</p>  
+                    <a class="btn" href="/">더 자세히 보기</a>  
+                </div>    
+            </article>
+        </div>
+    </section>
+</body>
+</html>
