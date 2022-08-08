@@ -157,6 +157,7 @@ body {
 .quiz_answer .result {
     width: 100%;
     font-size: 22px;
+    line-height: 1.4;
     padding: 13px 20px;
     border: 6px ridge #cacaca;
     box-sizing: border-box;
@@ -212,6 +213,50 @@ body {
     opacity: 1;
     animation: wobble 0.6s; /*wobble 좌우로 흔드는 애니메이션*/
 }
+.quiz_selects {
+    margin: 5px 0;
+}
+.quiz_selects label{
+    display: flex;
+}
+.quiz_selects label input {
+    position: absolute;
+    left: -9999px; 
+    /* input박스 없애기 위함 */
+}
+.quiz_selects label span {
+    font-style: 20px;
+    line-height: 1.3;
+    font-family: "Cafe24Dangdanghae";
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* input박스 가상으로 만드는 법 */
+.quiz_selects label span::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(254, 254, 254);
+    margin-right: 15px;
+    display: flex; 
+    flex-shrink: 0; /*동그라미 비율 맞춰줌*/
+    box-shadow: inset 0px 0px 0px 4px rgb(240, 173, 41);
+    /* inset x축 y축 블러 거리 */
+    transition: all 0.25s;
+}
+/* check했을 때 속성값주기 */
+.quiz_selects label input:checked + span {
+    background-color: rgba(255, 232, 172, 0.485);;
+}
+.quiz_selects label input:checked + span::before{
+    box-shadow: inset 0px 0px 0px 10px rgba(251, 192, 43, 0.779);
+}
+
 @keyframes wobble {
     0% {transform: translateX(0) rotate(0deg);}
     15% {transform: translateX(-25%) rotate(-5deg);}

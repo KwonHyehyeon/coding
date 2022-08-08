@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">Quiz 04.</h2>
+        <p class="t_desc">
+            자바스크립트를 활용하여 웹디자인기능사 필기 2013년도 5회차 문제를 통해 객관식 문제를 만들어봅시다! <br>
+        </p>
+        <div class="t_iframe" style="min-height: 2860px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect04.html" frameborder="0"></iframe>
+        </div>
+
+        <div class="t_link">
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/quizEffect04.html" target="_blank"
+            >원본 소스보기</a>
+        </div>
+        
+        <h3 class="t_tit">자바스크립트 활용</h3>
+        <p class="t_desc2">
+            ※ 객관식 문제 ※<br>
+            -input 활용 => quizInput (주관식 답을 넣어주기 위함)<br>
+            -<i>for문 또는 forEach문</i>을 통해 데이터가 많을 때를 고려해서 사용!(중요)<br>
+            -if문 활용 => 정답인지 아닌지에 대한 확인<br>
+            1. 선택자를 지정해준 후 문제 정보를 적어줍니다. <br>
+            2. 그 후 문제 출력을 위해 선택자와 문제 정보를 연결해줍니다. 이 때 <i>textContent</i>를 사용해 줍니다.<br>
+            여러 데이터를 저장하기 위해서는 for문이나 forEach문을 활용해줍니다.<br>
+            3. 정답을 숨겨놓기 위해서 정답(quizResult)를 <i>quizResult.style.diplay = "none"</i>으로 숨겨줍니다. <br>
+            이 때에도 데이터가 많으므로 변수i를 두어 for문이나 forEach문을 이용해주어야 편리합니다.<br>
+            4. 정답 확인을 위해 사용자의 정답이 필요한데 이를 userWord라고 지정해줍니다.<br>
+            5. <i>if문</i>을 활용하여 정답이었을 때와 정답이 아닐 때를 구분지어 줍니다.
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">//선택자
+const quizType = document.querySelector(".quiz_type");                   //퀴즈 종류 //다중 선택을 하려면 반드시 querySelectorAll로 해주어야함 
+const quizNumber =  document.querySelector(".quiz_question .number");   //퀴즈 번호
+const quizAsk = document.querySelector(".quiz_question .ask");          //퀴즈 질문
+const quizConfirm = document.querySelector(".quiz_answer .confirm");    //정답 확인 버튼
+const quizResult = document.querySelector(".quiz_answer .result");      //정답 결과
+const quizView = document.querySelector(".quiz_view");                  //강아지
+const quizSelects = document.querySelector(".quiz_selects");            //객관식보기
+const quizChoice = quizSelects.querySelectorAll(".choice");             //객관식 보기
+const quizSelect= quizSelects.querySelectorAll(".select");              //객관식 보기
+//데이터가 더 많아질 때
+
+//문제정보
+const quizInfo = [
+    {
+        answerType : "웹디자인 기능사 2013년 05회",
+        answerNum : "1",
+        answerAsk : "일반적으로 도구 개념으로 물건을 창조하는 디자인 분야는?",
+        answerChoice : ["시각디자인", "제품디자인", "환경디자인", "공예디자인"],
+        answerResult : "2",
+        answerEx : "도구 개념으로 물건을 창조하는 디자인은 제품디자인에 속합니다."
+    }
+];
+
+//문제 출력->실행문의 집합이 함수이므로 데이터가 많아질 시 자바스크립트에서는 함수로 블록화해주는게 편함!
+function updateQuiz(){
+    
+    quizType.textContent = quizInfo[0].answerType;
+    quizNumber.textContent = quizInfo[0].answerNum + ". ";
+    quizAsk.textContent = quizInfo[0].answerAsk;
+    quizResult.textContent = quizInfo[0].answerEx;
+    
+    //보기 출력
+    for( let i = 0; i &lt; 4; i++ ){
+        quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+    }
+    
+    //해설 숨기기
+    quizResult.style.display = "none";
+}
+updateQuiz();
+
+//정답 확인
+function answerQuiz(){
+    //사용자 선택한 정답 == 문제 정답
+    //사용자가 클릭한 input --> checked(.css)
+    for( let i=0; i&lt;quizSelect.length; i++){
+        if (quizSelect[i].checked == true){ //보기에 체크가 된 상태 //어디에 체크를 했는지 확인 후 정답 비교
+            //체크된 번호 == 문제 번호
+            if (quizSelect[i].value == quizInfo[0].answerResult){
+                //alert("정답")
+                quizView.classList.add("like")
+            } else {
+                //alert("오답")
+                quizView.classList.add("dislike");
+                quizResult.style.display = "block";
+                quizConfirm.style.display = "none";
+            }
+        } else {
+            // alert("정답을 체크하지 않았습니다.")
+        }
+    }
+}
+
+//정답 클릭
+quizConfirm.addEventListener("click", answerQuiz);
+</code></pre>
+        </div>
+        <h4 class="t_tit3">우리 모두 메서드와 친해지길 바라!^.^*</h4>
+        <div class="t_box">
+            1. addEventListener() : 이벤트를 등록하는 메서드로서 '정답 확인하기' 버튼을 클릭하기 위해 사용해줍니다.<br><br>
+            2. toLowerCase() : 문자열을 소문자로 변환해서 반환하는 것입니다.<br><br>
+            3. trim() : 여백 공백을 제거한 문자열의 복사본을 리턴하는 메서드입니다.<br><br>
+            4. classList.add() : 클래스를 필요에 따라 삽입하는 것이며 반대는 classList.remove입니다. 
+        </div>
+    </div>    
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    </script>
+</body>
+</html>
