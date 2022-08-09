@@ -17,6 +17,9 @@ https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect02.html
 https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect03.html
 https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect04.html
 
+### 사이트 제작하기
+https://KwonHyehyeon.github.io/coding/site/cardType/cardType01.html
+https://KwonHyehyeon.github.io/coding/site/cardType/cardType02.html
 
 ### HTML 메인 페이지
 
