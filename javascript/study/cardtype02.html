@@ -17,9 +17,9 @@
             <h2 class="t_tit">사이트 제작하기 : 카드 유형02</h2>
             <p class="t_box">
                 이번 카드 유형은 8개의 카드를 위 아래 4개씩 배치하는 것입니다.<br>
-                네모 안 화살표를 오른쪽에 배치하는 부분이 카드 유형01과는 다른 특징입니다.ㄴ
+                네모 안 화살표를 오른쪽에 배치하는 부분이 카드 유형01과는 다른 특징입니다.
             </p>
-            <h3 class="t_tit2">▶사이트 완성본</h3>
+            <h3 class="t_tit2">오늘 만들 사이트 형식</h3>
             <div class="iframe">
                 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D504%253A3" allowfullscreen></iframe>
             </div>
@@ -28,19 +28,26 @@
             <h4 class="t_tit3">1. Figma 사용해서 레이아웃 설정</h4>
             <p class="t_desc">
                 사이트를 만들기 위해서는 먼저 사이트 레이아웃을 설정해야 합니다. <br>
-                밑의 이미지와 같이 figma를 이용하여 레이아웃을 설정해줄 수 있습니다. " shift + R " 로 자 기능을 활용하여 레이아웃을 만들어줍니다. <br>
-                ※ 이 때, 칸이나 줄이 확실하게 맞아야 하며 오차없이 레이아웃을 설정해주는 것이 중요합니다.
+                밑의 이미지와 같이 figma를 이용하여 레이아웃을 설정해줄 수 있습니다. 
             </p>
+            <div class="t_box">
+                layout을 grid가 아닌 columns로 설정 후 count 12, margin 380을 주어 아래와 같은 형식을 만들어줍니다.
+            </div>
             <figure>
-                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B001.jpg?raw=true" alt="웹레이아웃01">
+                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EB%A7%8C%EB%93%A4%EA%B8%B002_02.jpg?raw=true" alt="웹레이아웃02_01">
             </figure>
+            <div class="t_box">
+                " shift + R " 로 자 기능을 활용하여 레이아웃을 만들어줍니다. <br>
+                ※ 이 때, 칸이나 줄이 확실하게 맞아야 하며 오차없이 레이아웃을 설정해주는 것이 중요합니다.
+            </div>
             <figure>
-                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B002.jpg?raw=true" alt="웹레이아웃02">
+                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EB%A7%8C%EB%93%A4%EA%B8%B002_01.jpg?raw=true" alt="웹레이아웃02_02">
             </figure>
             <h4 class="t_tit3">2. vscode를 통해 코딩해주기! : <i>HTML편</i></h4>
             <p class="t_desc">
                 레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
-                html의 body 부분에 레이아웃 구역을 정해줍니다.
+                html의 body 부분에 레이아웃 구역을 정해줍니다.<br>
+                이 때 카드 유형01과는 다르게 구역을 card__inner container를 통해 위와 아래 두 개의 구역으로 나눠주는 것이 중요합니다.
             </p>
             <div class="t_code">
 <pre><code>&lt;body&gt;
@@ -350,7 +357,15 @@
     }
 &lt;/style&gt;
 </code></pre>
-            </div>           
+            </div> 
+            <h3 class="t_tit2">▶완성본</h3>   
+            <div class="t_iframe" style="min-height: 1040px; padding-top: 0;">
+                <iframe src="https://KwonHyehyeon.github.io/coding/site/cardType/cardType02.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://KwonHyehyeon.github.io/coding/site/cardType/cardType02.html" target="_blank">실제 사이트 보기</a>
+                <a href="https://github.com/KwonHyehyeon/coding/blob/main/site/cardType/cardType02.html" target="_blank">원본 소스 보기</a>
+            </div>
         </div>
     </main>
     <!-- //main -->
