@@ -82,6 +82,9 @@
         .card__body .tit {
             font-size: 24px;
             margin-bottom: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; 
         }
 
         .card__body .desc {
@@ -90,6 +93,12 @@
             color: #666;
             margin-bottom: 20px;
             font-weight: 300;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;  /*줄효과 clamp : 3줄 효과*/
+            -webkit-box-orient: vertical;
+
         }
 
         .card__body .btn {}
@@ -97,7 +106,7 @@
 </head>
 
 <body>
-    <section id="cardType" class="card__wrap nexon section">
+    <section id="cardType01" class="card__wrap nexon section">
         <h2>소중한 동물 친구들</h2>
         <p>우리 곁에 영원히 함께 할 소중한 동물 친구들에 대해 같이 알아봅시다.</p>
         <div class="card__inner container">
@@ -105,7 +114,7 @@
                 <!--시맨틱태그 안에는 제목이 꼭 들어가야함!-->
                 <figure class="card__header">
                     <!--이미지 가져오는 새로운 기능-->
-                    <img src="img/card_bg01.jpg" alt="기린">
+                    <img src="img/card_bg01_01.jpg" alt="기린">
                     <!--웹표준 준수하기 위함으로 alt적어주는 것 접근성을 향상 시키기 위함-->
                 </figure>
                 <div class="card__body">
@@ -127,7 +136,7 @@
             </article>
             <article class="card">
                 <figure class="card__header">
-                    <img src="img/card_bg02.jpg" alt="코끼리">
+                    <img src="img/card_bg01_02.jpg" alt="코끼리">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">코끼리</h3>
@@ -148,7 +157,7 @@
             </article>
             <article class="card">
                 <figure class="card__header">
-                    <img src="img/card_bg03.jpg" alt="돌고래">
+                    <img src="img/card_bg01_03.jpg" alt="돌고래">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">돌고래</h3>
