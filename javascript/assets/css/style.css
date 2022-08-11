@@ -126,13 +126,26 @@ body {  /*body는 기본태그여서 앞에 뭐 안 붙음*/
 }
 .sample .table table tr td {
     border: 1px solid #e6e6e6;
-    padding: 3px;
+    padding: 6px;
 }
 .sample .table table tr td[class*="_P"] {
-    background: #000;
+    color: #fff;
 }
-
-
+.sample .table table tr td[class*="_P"]:hover {
+    color: #000;
+    cursor: help;
+}
+@media (max-width: 800px) {
+    .sample .table {
+        overflow-x: scroll;
+    }
+    .sample .table table {
+        width: 780px;
+    }
+    .sample .table table tr td[class*="_P"] {
+        color: #000;
+    }
+}
 
 
 /* 티스토리용 문서 */
