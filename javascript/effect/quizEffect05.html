@@ -76,7 +76,7 @@
                     4: "색지각 양의 합은 100이며, 이것은 명도, 채도, 색상의 합이다."
                 },
                 answerResult: "1",
-                answerEx: "NCS표색계는 RED, BLUE, YELLOW, GREEN의 명도값인 WHITE, BLACK을 합해 총 6가지 기초단위를 가지고 표기하는 방식입니다."
+                answerEx: "NCS표색계는 RED, BLUE, YELLOW, GREEN의 명도값인 WHITE, BLACK을 합해 총 6가지 기초단위를 가지고 표기하는 방식입니다. 20% 검정색도와 유채색도 30%이며 검은색 정도, 흰색성, 색채성의 합이 항상100이 됩니다."
             },
             {
                 answerType: "웹디자인 기능사 2013년 05회",
@@ -179,7 +179,7 @@
                                     <span class="choice">${question.answerChoice[2]}</span>
                                 </label>
                                 <label for="select3${number}">
-                                    <input type="radio" id="select3${number} class="select" name="select${number}" value="3"> 
+                                    <input type="radio" id="select3${number}" class="select" name="select${number}" value="3"> 
                                     <span class="choice">${question.answerChoice[3]}</span>
                                 </label>
                                 <label for="select4${number}">
@@ -204,13 +204,29 @@
         }
         updateQuiz();
 
-        //정답 확인 
-        function answerQuiz(){
-            const quizSelects = document.querySelectorAll(".quiz_selects");         //보기
-            const quizView = document.querySelectorAll(".quiz_view");               //강아지
-
+        //정답 확인
+        function answerQuiz() {
+            const quizSelects = document.querySelectorAll(".quiz_selects");    //보기
+            const quizView = document.querySelectorAll(".quiz_view");          //강아지
+            //사용자가 체크한 라디오 박스  == 문제 정답
+            quizInfo.forEach((question, number) => {
+                const quizSelectsWrap = quizSelects[number];                    //전체 보기 박스
+                const userSelector = `input[name=select${number}]:checked`;         //사용자가 클린한 라디오 박스
+                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
+                const quizView = document.querySelectorAll(".quiz_view");
+                console.log(quizSelects)
+                if (userAnswer == question.answerResult) {
+                    console.log("정답")
+                    quizView[number].classList.add("like");
+                } else {
+                    console.log("오답")
+                    quizView[number].classList.add("dislike");
+                    const div = document.createElement("div");
+                    quizSelectsWrap.appendChild(div).innerHTML = `<p class="result">${question.answerEx}</p>`;
+                }
+            });
         }
-        answerQuiz();
+        document.querySelector(".quiz_confirm .check").addEventListener("click", answerQuiz);
     </script>
 </body>
 
