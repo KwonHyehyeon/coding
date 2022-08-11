@@ -16,9 +16,8 @@
         <div class="document">
             <h2 class="t_tit">사이트 제작하기 : 카드 유형03</h2>
             <p class="t_box">
-                이번 카드 유형은 8개의 카드를 위 아래 4개씩 배치하는 것입니다.<br>
-                네모 안 화살표를 오른쪽에 배치하는 부분이 카드 유형01과는 다른 특징입니다.
-            </p>
+                이번 카드 유형은 큰 여백 안에 3개의 카드를 만들어 내는 유형입니다.<br>
+                카드를 분리하는 선, 그림 안에 글씨 넣기, 제일 밑 부분에 인물 정보 넣어주기 등 기존에 했던 카드유형과는 다른 새로운 부분들이 있으니 주의하셔야 합니다!
             <h3 class="t_tit2">오늘 만들 사이트 형식</h3>
             <div class="iframe">
                 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D511%253A192" allowfullscreen></iframe>            </div>
@@ -26,18 +25,14 @@
             <h3 class="t_tit2">사이트 제작 방법</h3>
             <h4 class="t_tit3">1. Figma 사용해서 레이아웃 설정</h4>
             <p class="t_desc">
-                사이트를 만들기 위해서는 먼저 사이트 레이아웃을 설정해야 합니다. <br>
-                밑의 이미지와 같이 figma를 이용하여 레이아웃을 설정해줄 수 있습니다. 
+                사이트를 만들기 위해서는 기존의 카드 유형의 방법들과 같이 먼저 사이트 레이아웃을 설정해야 합니다. <br>
+                figma를 이용하여 레이아웃을 설정해줄 수 있습니다. 
             </p>
             <div class="t_box">
-                layout을 grid가 아닌 columns로 설정 후 count 12, margin 380을 주어 아래와 같은 형식을 만들어줍니다.
-            </div>
-            
-            <div class="t_box">
+                layout을 grid가 아닌 columns로 설정 후 count 12, margin 380을 틀을 만들어줍니다.
                 " shift + R " 로 자 기능을 활용하여 레이아웃을 만들어줍니다. <br>
                 ※ 이 때, 칸이나 줄이 확실하게 맞아야 하며 오차없이 레이아웃을 설정해주는 것이 중요합니다.
             </div>
-            
             <h4 class="t_tit3">2. vscode를 통해 코딩해주기! : <i>HTML편</i></h4>
             <p class="t_desc">
                 레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
@@ -257,6 +252,39 @@
                 <a href="https://KwonHyehyeon.github.io/coding/site/cardType/cardType03.html" target="_blank">실제 사이트 보기</a>
                 <a href="https://github.com/KwonHyehyeon/coding/blob/main/site/cardType/cardType03.html" target="_blank">원본 소스 보기</a>
             </div>
+                        <h3 class="t_tit2">★ 새로 배운 내용 ★</h3>
+            <br>
+            <h4 class="t_tit3">긴 글을 한 줄로 표현하면?</i></h4>
+            <div class="t_box">
+                overflow: hidden;<br>
+                white-space: nowrap;<br>
+                text-overflow: ellipsis; /*아래 세개는 한 줄 효과!;*/<br>
+            </div>
+            <p class="t_desc">
+                위 코드는 어떤 글을 한 줄로 표현하고자 할 때 CSS style에 적어줘야 하는 내용입니다. <br>
+                <i>"overflow"</i>는 콘텐츠가 너무 크거나 길어서 요소의 블록 서식에 맞출 수 없을 때 처리법을 지정하는 속성입니다.<br>
+                : hidden;을 같이 써주면 블록 밖으로 컨텐츠가 나가지 않으며 블록보다 콘텐츠가 클 경우 큰 부분을 숨겨줍니다. 스크롤은 지원하지 않습니다.<br>
+                ※ overflow 속성이 효력을 갖기 위해선 반드시 블록 컨테이너의 높이(height 혹은 max-height)를 설정하거나, white-space를 nowrap으로 설정해주어야 합니다.<br>
+                <i>"white-space"</i>는 요소가 공백 문자를 처리하는 법을 지정하는 속성으로 : nowrap;을 써주었을 때 한 줄로 나타납니다.<br>
+                <i>"text-overflow"</i>는 white-space를 이용해 줄 바꿈을 하지 않을 때 넘치는 텍스트 처리를 어떻게 할 것 인지를 처리하는 속성입니다.<br>
+                넘치는 텍스트를 자르는 : clip;이 있으며 말 줄임표로 잘린 텍스트가 있다고 표시하는 : ellipsis;가 있습니다.<br>
+                ※ text-overflow 속성은 overflow 속성이 hidden, scroll, auto 이면서 white-space:nowrap일 경우일 때만 적용됩니다! 
+            </p>
+            <br>
+            <h4 class="t_tit3">긴 글을 세 줄로 표현하면?</i></h4>
+            <div class="t_box">
+                overflow: hidden;<br>
+                text-overflow: ellipsis;<br>
+                display: -webkit-box;<br>
+                -webkit-line-clamp: 3;  /*줄효과 clamp : 3줄 효과*/<br>
+                -webkit-box-orient: vertical;<br>
+            </div>
+            <p class="t_desc">
+                "-webkit-line-clamp"는 블록 컨테이너의 콘텐츠를 지정한 줄 수만큼으로 제한할 수 있는 속성입니다.<br>
+                display 속성을 -webkit-box 또는 -webkit-inline-box로, 그리고 -webkit-box-orient속성을 vertical로 설정한 경우에만
+                동작합니다.<br>
+                단순히 요소의 줄 수만을 제한하기 때문에 overflow : hidden; 속성과 함께 사용한다면 요소를 넘치는 텍스트를 감출 수 있습니다. 
+            </p>
         </div>
     </main>
     <!-- //main -->
