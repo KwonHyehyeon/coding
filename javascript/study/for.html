@@ -348,7 +348,7 @@ table += "&lt;tr&gt;";
             <div class="t_result">
                 <details>
                     <summary>결과 확인하기</summary>
-                    <div class="result01"></div>
+                    <div class="result01">
                     <style>
                         .testTable tr td {
                             border: 1px solid #000;
@@ -370,6 +370,7 @@ table += "&lt;tr&gt;";
                                     table += "<table>";
                                         document.write(table)      
                     </script>
+                    </div>
                 </details>
             </div>
 
@@ -396,7 +397,7 @@ document.write(table);
             <div class="t_result">
                 <details>
                     <summary>결과 확인하기</summary>
-                    <div class="result09"></div>
+                    <div class="result09">
                 </details>
                     <style>
                         .testTable tr td {
@@ -404,7 +405,7 @@ document.write(table);
                         }
                     </style>
                     <script>
-                        let table = "<table class='testTable'>";
+                        {let table = "<table class='testTable'>";
                         
                             for(let i=0; i<10; i++){
                                 table += "<tr>";
@@ -415,8 +416,9 @@ document.write(table);
                         }
                         table += "</table>"
                         //document.write(table);  
-                        document.querySelector(".result09").innerHTML = table;
+                        document.querySelector(".result09").innerHTML = table;}
                     </script>
+                    </div>
             </div>
         </div>
     </main>
@@ -446,7 +448,7 @@ document.write(table);
         //for문을 이용해서 1~100까지 출력(짝수는 빨간색, 홀수는 파란색) : 조건부 연산자
         {
             for( let i = 1; i<=100; i++){
-                (i % 2 == 0) ? document.write("<span style='color: red'>"+i+"</span>") : document.write("<span style='color: blue'>"+i+"</span>")
+                //(i % 2 == 0) ? document.write("<span style='color: red'>"+i+"</span>") : document.write("<span style='color: blue'>"+i+"</span>")
             }
         }
         document.write("<br>")
@@ -474,8 +476,8 @@ document.write(table);
         //6단만 출력하기
         for(let i = 6; i<=6; i++){
             for( let j=1; j<=9; j++){
-                document.write(i + "*" + j + "=" )
-                document.write("<br>")
+                //document.write(i + "*" + j + "=" )
+                //document.write("<br>")
             }
         }
         //for문을 이용해서 테이블 만들기
@@ -484,12 +486,12 @@ document.write(table);
             //let table로 저장 가능한 것
             let table = 1; //숫자
             let table1 = "1"; //문자
-            let table2 = tru; //불린(true, false)
+            let table2 = "true"; //불린(true, false)
             let table3 = []; //배열
             let table4 = {}; //객체
             let table5; //특수값(null, undefined)
             
-            let table = "<table>"; //문자열, []배열, {}객체, undefined, num 저장 가능
+            //let table = "<table>"; //문자열, []배열, {}객체, undefined, num 저장 가능
     
         }
         //0부터99
@@ -576,21 +578,21 @@ document.write(table);
             // let table4 = {}; //객체
             // let table5; //특수값(null, undefined)
             
-            let table = "<table class='testTable'>"; //문자열, []배열, {}객체, undefined, num 저장 가능
+            //let table = "<table class='testTable'>"; //문자열, []배열, {}객체, undefined, num 저장 가능
 
             //10번 반복(for문)
-            table += "<tr>";
-                z = 0;
-                for(let i = 1; i<=10; i++){
-                    table += "<tr>";
-                        for(let j = 1; j<=10; j++){
-                            z++;
-                            table += "<td>"+z+"</td>";
+            // table += "<tr>";
+            //     z = 0;
+            //     for(let i = 1; i<=10; i++){
+            //         table += "<tr>";
+            //             for(let j = 1; j<=10; j++){
+            //                 z++;
+            //                 table += "<td>"+z+"</td>";
                    
-                        }
-                    table += "</tr>";
-                }
-                table += "<table>";
+            //             }
+            //         table += "</tr>";
+            //     }
+            //     table += "<table>";
                 //document.write(table)
         }
     </script>
