@@ -11,7 +11,7 @@
 
     <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/Cafe24Dangdanghae/Cafe24Dangdanghae.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -32,57 +32,7 @@
 
     <main id="main">
         <div class="quiz_wrap">
-            <div class="quiz">
-                <span class="quiz_type"></span>
-                <h2 class="quiz_question">
-                    <span class="number"></span>
-                    <div class="ask"></div>
-                </h2>
-                <div class="quiz_view">
-                    <div class="true">정답입니다!</div>
-                    <div class="false">틀렸습니다!</div>
-                    <div class="dog">
-                        <div class="head">
-                            <div class="ears"></div>
-                            <div class="face"></div>
-                            <div class="eyes">
-                                <div class="teardrop"></div>
-                            </div>
-                            <div class="nose"></div>
-                            <div class="mouth">
-                                <div class="tongue"></div>
-                            </div>
-                            <div class="chin"></div>
-                        </div>
-                        <div class="body">
-                            <div class="tail"></div>
-                            <div class="legs"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz_answer">
-                    <div class="quiz_selects">
-                        <label for="select1"> <!--label은 인라인 구조이고 label의 for와 input id를 통해 연결시켜줌!-->
-                            <input type="radio" id="select1" class="select" name="select" value="1"> <!--radio는 동그라미 checkbox는 네모/ name은 input박스여서 사용가능한 것/value는 보기의 이름값을 알려주기 위함-->
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select2">
-                            <input type="radio" id="select2" class="select" name="select" value="2"> 
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select3">
-                            <input type="radio" id="select3" class="select" name="select" value="3"> 
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select4">
-                            <input type="radio" id="select4" class="select" name="select" value="4"> 
-                            <span class="choice"></span>
-                        </label>
-                    </div>
-                    <button class="confirm">정답 확인하기</button>
-                    <div class="result"></div>
-                </div>
-            </div>
+
         </div>
     </main>
     <!-- main -->
@@ -93,6 +43,175 @@
     <!-- footer -->
 
     <script>
+        // const num = [100, 200, 300, 400, 500];
+        // num.forEach(function(el, i){
+        //     //console.log(el);
+
+        //     document.querySelector(".quiz_wrap").innerHTML += el 
+        // })
+
+        //문제 정보
+        const quizInfo = [
+            {
+                answerType: "웹디자인 기능사 2013년 05회",
+                answerNum: "1",
+                answerAsk: "디자인 형태의 개념에서 조화(harmony)를 이루는 법칙과 거리가 먼 것은?",
+                answerChoice: {
+                    1: "균형",
+                    2: "대비",
+                    3: "통일",
+                    4: "색상"
+                },
+                answerResult: "4",
+                answerEx: "조화를 이루는 법칙은 균형, 대비, 통일, 유사, 균일, 강약, 변화가 있습니다."
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 05회",
+                answerNum: "2",
+                answerAsk: "NCS 표색계에 대한 설명으로 옳은 것은?",
+                answerChoice: {
+                    1: "색상환은 노랑(Y), 빨강(R), 파랑(B), 초록(G)으로 구분되어있다.",
+                    2: "기본 6색 중 흰색과 검정은 포함되지 않는다.",
+                    3: "20% 흰색도와 30%의 유채색도를 표시하고, 90%는 노랑색도를 지닌 백색이다.",
+                    4: "색지각 양의 합은 100이며, 이것은 명도, 채도, 색상의 합이다."
+                },
+                answerResult: "1",
+                answerEx: "NCS표색계는 RED, BLUE, YELLOW, GREEN의 명도값인 WHITE, BLACK을 합해 총 6가지 기초단위를 가지고 표기하는 방식입니다."
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 05회",
+                answerNum: "3",
+                answerAsk: "디자인의 요소 중 “형”에 대한 설명으로 옳지 않은 것은?",
+                answerChoice: {
+                    1: "한 개의 점은 공간의 위치를 가리킨다.",
+                    2: "점이 확대되면 면으로 이동된다.",
+                    3: "점의 운동에 의해서 선이 만들어 진다.",
+                    4: "이동하는 점의 자취가 입체를 이룬다."
+                },
+                answerResult: "4",
+                answerEx: "이동하는 점의 자취가 입체를 이루는 것은 구면이라고 하며 선이 이동한 자취는 면이라고 합니다."
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 05회",
+                answerNum: "4",
+                answerAsk: "우리나라의 교육부에 고시된 기본 색명은 몇 색상인가?",
+                answerChoice: {
+                    1: "5",
+                    2: "10",
+                    3: "15",
+                    4: "20"
+                },
+                answerResult: "4",
+                answerEx: "먼셀 색체계라고 하며 현재 우리나라의 공업 규격에서 색의 삼속성에 의한 표기 방법으로 제정되었고, 교육용 20색상환으로 채택된 색체계입니다."
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 05회",
+                answerNum: "5",
+                answerAsk: "일반적으로 도구 개념으로 물건을 창조하는 디자인 분야는?",
+                answerChoice: {
+                    1: "시각디자인 ",
+                    2: "제품디자인",
+                    3: "환경디자인",
+                    4: "공예디자인"
+                },
+                answerResult: "2",
+                answerEx: "도구 개념으로 물건을 창조하는 디자인은 제품디자인에 속합니다."
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 05회",
+                answerNum: "6",
+                answerAsk: "다음 중 색의 3속성을 나타내는 것은?",
+                answerChoice: {
+                    1: "color, value, chroma",
+                    2: "hue, black, saturation",
+                    3: "hue, value, cloudy",
+                    4: "hue, value, chroma"
+                },
+                answerResult: "4",
+                answerEx: "색의 3속성은 Hue(색상), Value(명도), Chroma(채도)입니다."
+            },
+        ];
+
+        //선택자
+        const quizWrap = document.querySelector(".quiz_wrap") //데이터 값
+
+        function updateQuiz() {
+            const exam = []
+
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                    <div class="quiz">
+                        <span class="quiz_type">${question.answerType}</span>
+                        <h2 class="quiz_question">
+                            <span class="number">${question.answerNum + ". "}</span>
+                            <div class="ask">${question.answerAsk}</div>
+                        </h2>
+                        <div class="quiz_view">
+                            <div class="true">정답입니다!</div>
+                            <div class="false">틀렸습니다!</div>
+                            <div class="dog">
+                                <div class="head">
+                                    <div class="ears"></div>
+                                    <div class="face"></div>
+                                    <div class="eyes">
+                                        <div class="teardrop"></div>
+                                    </div>
+                                    <div class="nose"></div>
+                                    <div class="mouth">
+                                        <div class="tongue"></div>
+                                    </div>
+                                    <div class="chin"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="tail"></div>
+                                    <div class="legs"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz_answer">
+                            <div class="quiz_selects">
+                                <label for="select1${number}"> 
+                                    <input type="radio" id="select1${number}" class="select" name="select${number}" value="1"> 
+                                    <span class="choice">${question.answerChoice[1]}</span>
+                                </label>
+                                <label for="select2${number}">
+                                    <input type="radio" id="select2${number}" class="select" name="select${number}" value="2"> 
+                                    <span class="choice">${question.answerChoice[2]}</span>
+                                </label>
+                                <label for="select3${number}">
+                                    <input type="radio" id="select3${number} class="select" name="select${number}" value="3"> 
+                                    <span class="choice">${question.answerChoice[3]}</span>
+                                </label>
+                                <label for="select4${number}">
+                                    <input type="radio" id="select4${number}" class="select" name="select${number}" value="4"> 
+                                    <span class="choice">${question.answerChoice[4]}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+
+            exam.push(`
+                <div class="quiz_confirm">
+                    <button class="check">정답 확인하기</button>
+                    <div class="ex"></div>
+                </div>
+            `)
+
+            //join으로 합쳐주기
+            quizWrap.innerHTML = exam.join(''); //textcontent로는 안됨 <태그를 text로 인식하기 때문
+        }
+        updateQuiz();
+
+        //정답 확인 
+        function answerQuiz(){
+            const quizSelects = document.querySelectorAll(".quiz_selects");         //보기
+            const quizView = document.querySelectorAll(".quiz_view");               //강아지
+
+        }
+        answerQuiz();
     </script>
 </body>
+
 </html>
