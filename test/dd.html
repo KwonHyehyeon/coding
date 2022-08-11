@@ -5,14 +5,14 @@
     &lt;meta charset="UTF-8"&gt;
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;카드 유형02&lt;/title&gt;
+    &lt;title&gt;카드 유형03&lt;/title&gt;
     &lt;style&gt;
         /* fonts */
-        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
 
-        .gmarketsans {
-            font-family: 'GmarketSans';
-            font-weight: 400;
+        .score {
+            font-family: 'SCoreDream';
+            font-weight: 300;
         }
 
         /* reset */
@@ -39,271 +39,185 @@
             width: 1160px;
             padding: 0 20px;
             margin: 0 auto;
-            min-width: 1160px;
         }
 
         .section {
             padding: 120px 0;
         }
 
-        /* +는 형제 &gt; 바로 밑에 있는 자식(그래서 다른 자식들한테는 해당 안됨) */
         .section&gt;h2 {
+            /* +는 형제 바로 밑에 있는 자식은 &gt; */
             font-size: 50px;
             line-height: 1;
-            /*figma auto랑 같음*/
             text-align: center;
             margin-bottom: 20px;
         }
 
         .section&gt;p {
-            font-style: 22px;
+            font-size: 22px;
             font-weight: 300;
             color: #666;
             text-align: center;
             margin-bottom: 70px;
-            line-height: 1.4;
         }
 
-        /* cardType */
+        /* blind */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            /*포토샵 클리핑 마스크 같은 것*/
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden
+        }
+
+        /* cardType03 */
+        body {
+            background-color: #2254c3;
+        }
+
         .card__inner {
             display: flex;
-            justify-content: space-between;
-            /*양쪽 정렬 맞춰주는 것*/
+            /*가로 정렬*/
         }
 
-        .card {
-            width: 275px;
-            background: #ffffff;
+        .card__inner .card {
+            padding: 26px;
+            width: 33.23333%;
+            background-color: #fff;
         }
+
+        .card__inner .card:nth-child(1) {
+            border-right: 1px solid #eee;
+        }
+
+        .card__inner .card:nth-child(2) {
+            border-right: 1px solid #eee;
+        }
+
         .card__header {
-            padding-bottom: 20px;
-        }
-        
-        .card__body {}
-
-        .card__body .tit {
-            font-size: 28px;
             position: relative;
         }
 
-        .card__body .desc {
-            font-size: 18px;
-            line-height: 1.4;
-            color: #666;
-            font-weight: 100;
-            margin: 10px 0 50px 0;
+        .card__header img {
+            border-radius: 10px;
+            box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
         }
 
-        .card__body .btn {
+        .card__header figcaption {
             position: absolute;
-            right: 0;
+            right: 10px;
+            top: 10px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            background-color: #fff;
+            text-align: center;
+            font-size: 14px;
+            color: #7b7b7b;
+        }
+        
+        .card__contents h3 {
+            font-size: 20px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .card__contents p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.7;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            margin-bottom: 30px;
+        }
+
+        .card__footer {
+            display: flex;
+            justify-content: flex-end; /*가로 끝으로 정렬*/
+        }
+
+        .card__footer h4 {
+            text-align: right;
+            color: #dd2a2a;
+        }
+
+        .card__footer em {
+            display: block;
+            color: #666;
+            font-style: normal; /*em태그로 인한 글자 기울임 방지*/
+        }
+        .card__footer span {
+            width: 40px;
+            height: 40px;
+            background: #000;
+            border-radius: 50%;
+            overflow: hidden;
+            display: block;
+            margin-left: 10px;
+            margin-top: -3px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
         }
     &lt;/style&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
-    &lt;section id="cardType" class="card_wrap gmarketsans section"&gt;
-        &lt;h2&gt;배우고 싶은 운동&lt;/h2&gt;
-        &lt;p&gt;
-            건강한 몸과 정신 수련을 위해 배우고 싶은 운동들입니다. &lt;br&gt;
-            기회가 되면 꼭 배우고 싶습니다.
-        &lt;/p&gt;
+    &lt;section id="cardType03" class="card__wrap score section"&gt;
+        &lt;h2 class="blind"&gt;건축의 세계&lt;/h2&gt;
+        &lt;!--섹션이 시맨틱태그여서 제목을 반드시 써줘야 하는데 눈에 안보이게 블라인드 처리--&gt;
         &lt;div class="card__inner container"&gt;
             &lt;article class="card"&gt;
                 &lt;figure class="card__header"&gt;
-                    &lt;img src="img/사이트02_01.jpg" alt="수영"&gt;
+                    &lt;img src="img/Rectangle.jpg" alt=""&gt;
+                    &lt;figcaption&gt;여름 별미&lt;/figcaption&gt;
                 &lt;/figure&gt;
-                &lt;div class="card__body"&gt;
-                    &lt;h3 class="tit"&gt;운동!
-                        &lt;span class="btn" aria-hidden="true"&gt;
-                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                xmlns="http://www.w3.org/2000/svg"&gt;
-                                &lt;path
-                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
-                                    fill="#BAEFEF" /&gt;
-                                &lt;path
-                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
-                                    fill="black" /&gt;
-                            &lt;/svg&gt;
-                        &lt;/span&gt;
-                    &lt;/h3&gt;
-                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
-                        건강(우울ㆍ불안ㆍ스트레스 감소,
-                        자존감 향상)에도 긍정적 영향을 ...&lt;/p&gt;
-                    &lt;a class="btn" href="/"&gt;
-                    &lt;/a&gt;
+                &lt;div class="card__contents"&gt;
+                    &lt;h3&gt;여름철 더위를 시원하게 이겨내기 위한 음식은? 바로 “ 화채”&lt;/h3&gt;
+                    &lt;p&gt;수박은 수분이 많아서 더위로 인해 땀이 났을 때 충분한 수분 보충이 가능합니다. 또한 수박을 먹으면 더운 한 여름에도 시원함을 느낄 수 있습니다.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="card__footer"&gt;
+                    &lt;h4&gt;김XX기자 &lt;em&gt;9개의 기사 더보기...&lt;/em&gt;&lt;/h4&gt;
+                    &lt;span&gt;&lt;img src="img/card_bg03_icon01.png" alt=""&gt;&lt;/span&gt;
                 &lt;/div&gt;
             &lt;/article&gt;
             &lt;article class="card"&gt;
                 &lt;figure class="card__header"&gt;
-                    &lt;img src="img/사이트02_02.jpg" alt="폴댄스"&gt;
+                    &lt;img src="img/Rectangle2.jpg" alt=""&gt;
+                    &lt;figcaption&gt;여름 별미&lt;/figcaption&gt;
                 &lt;/figure&gt;
-                &lt;div class="card__body"&gt;
-                    &lt;h3 class="tit"&gt;운동!
-                        &lt;span class="btn" aria-hidden="true"&gt;
-                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                xmlns="http://www.w3.org/2000/svg"&gt;
-                                &lt;path
-                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
-                                    fill="#BAEFEF" /&gt;
-                                &lt;path
-                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
-                                    fill="black" /&gt;
-                            &lt;/svg&gt;
-                        &lt;/span&gt;
-                    &lt;/h3&gt;
-                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
-                        건강(우울ㆍ불안ㆍ스트레스 감소,
-                        자존감 향상)에도 긍정적 영향을 ...&lt;/p&gt;
-                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;
+                &lt;div class="card__contents"&gt;
+                    &lt;h3&gt;여름철 더위를 시원하게 이겨내기 위한 음식은? 바로 “ 화채”&lt;/h3&gt;
+                    &lt;p&gt;수박은 수분이 많아서 더위로 인해 땀이 났을 때 충분한 수분 보충이 가능합니다. 또한 수박을 먹으면 더운 한 여름에도 시원함을 느낄 수 있습니다.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="card__footer"&gt;
+                    &lt;h4&gt;김XX기자 &lt;em&gt;9개의 기사 더보기...&lt;/em&gt;&lt;/h4&gt;
+                    &lt;span&gt;&lt;img src="img/card_bg03_icon02.png" alt=""&gt;&lt;/span&gt;
                 &lt;/div&gt;
             &lt;/article&gt;
             &lt;article class="card"&gt;
                 &lt;figure class="card__header"&gt;
-                    &lt;img src="img/사이트02_03.jpg" alt="발레"&gt;
+                    &lt;img src="img/Rectangle 19.jpg" alt=""&gt;
+                    &lt;figcaption&gt;여름 별미&lt;/figcaption&gt;
                 &lt;/figure&gt;
-                &lt;div class="card__body"&gt;
-                    &lt;h3 class="tit"&gt;운동!
-                        &lt;span class="btn" aria-hidden="true"&gt;
-                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                xmlns="http://www.w3.org/2000/svg"&gt;
-                                &lt;path
-                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
-                                    fill="#BAEFEF" /&gt;
-                                &lt;path
-                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
-                                    fill="black" /&gt;
-                            &lt;/svg&gt;
-                        &lt;/span&gt;
-                    &lt;/h3&gt;
-                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
-                        건강(우울ㆍ불안ㆍ스트레스 감소,
-                        자존감 향상)에도 긍정적 영향을 ...&lt;/p&gt;
-                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;
+                &lt;div class="card__contents"&gt;
+                    &lt;h3&gt;여름철 더위를 시원하게 이겨내기 위한 음식은? 바로 “ 화채”&lt;/h3&gt;
+                    &lt;p&gt;수박은 수분이 많아서 더위로 인해 땀이 났을 때 충분한 수분 보충이 가능합니다. 또한 수박을 먹으면 더운 한 여름에도 시원함을 느낄 수 있습니다.&lt;/p&gt;
                 &lt;/div&gt;
-            &lt;/article&gt;
-            &lt;article class="card"&gt;
-                &lt;figure class="card__header"&gt;
-                    &lt;img src="img/사이트02_04.jpg" alt="요가"&gt;
-                &lt;/figure&gt;
-                &lt;div class="card__body"&gt;
-                    &lt;h3 class="tit"&gt;운동!
-                        &lt;span class="btn" aria-hidden="true"&gt;
-                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                xmlns="http://www.w3.org/2000/svg"&gt;
-                                &lt;path
-                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
-                                    fill="#BAEFEF" /&gt;
-                                &lt;path
-                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
-                                    fill="black" /&gt;
-                            &lt;/svg&gt;
-                        &lt;/span&gt;
-                    &lt;/h3&gt;
-                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
-                        건강(우울ㆍ불안ㆍ스트레스 감소,
-                        자존감 향상)에도 긍정적 영향을 ...&lt;/p&gt;
-                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;
+                &lt;div class="card__footer"&gt;
+                    &lt;h4&gt;김XX기자 &lt;em&gt;9개의 기사 더보기...&lt;/em&gt;&lt;/h4&gt;
+                    &lt;span&gt;&lt;img src="img/card_bg03_icon03.png" alt=""&gt;&lt;/span&gt;
                 &lt;/div&gt;
             &lt;/article&gt;
         &lt;/div&gt;
-        &lt;!-- 위에 4개 --&gt;
-        &lt;div class="card__inner container"&gt;
-            &lt;article class="card"&gt;
-                &lt;figure class="card__header"&gt;
-                    &lt;img src="img/사이트02_05.jpg" alt="서핑"&gt;
-                &lt;/figure&gt;
-                &lt;div class="card__body"&gt;
-                    &lt;h3 class="tit"&gt;운동!
-                        &lt;span class="btn" aria-hidden="true"&gt;
-                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                xmlns="http://www.w3.org/2000/svg"&gt;
-                                &lt;path
-                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
-                                    fill="#BAEFEF" /&gt;
-                                &lt;path
-                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
-                                    fill="black" /&gt;
-                            &lt;/svg&gt;
-                        &lt;/span&gt;
-                    &lt;/h3&gt;
-                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
-                        건강(우울ㆍ불안ㆍ스트레스 감소,
-                        자존감 향상)에도 긍정적 영향을 미.&lt;/p&gt;
-                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;
-                &lt;/div&gt;
-            &lt;/article&gt;
-            &lt;article class="card"&gt;
-                &lt;figure class="card__header"&gt;
-                    &lt;img src="img/사이트02_06.jpg" alt="웨이크보드"&gt;
-                &lt;/figure&gt;
-                &lt;div class="card__body"&gt;
-                    &lt;h3 class="tit"&gt;운동!
-                        &lt;span class="btn" aria-hidden="true"&gt;
-                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
-                                &lt;path
-                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
-                                    fill="#BAEFEF" /&gt;
-                                &lt;path
-                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
-                                    fill="black" /&gt;
-                            &lt;/svg&gt;
-                        &lt;/span&gt;
-                    &lt;/h3&gt;
-                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
-                        건강(우울ㆍ불안ㆍ스트레스 감소,
-                        자존감 향상)에도 긍정적 영향을 미.&lt;/p&gt;
-                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;
-                &lt;/div&gt;
-            &lt;/article&gt;
-            &lt;article class="card"&gt;
-                &lt;figure class="card__header"&gt;
-                    &lt;img src="img/사이트02_07.jpg" alt="스포츠댄스"&gt;
-                &lt;/figure&gt;
-                &lt;div class="card__body"&gt;
-                    &lt;h3 class="tit"&gt;운동!
-                        &lt;span class="btn" aria-hidden="true"&gt;
-                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
-                                &lt;path
-                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
-                                    fill="#BAEFEF" /&gt;
-                                &lt;path
-                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
-                                    fill="black" /&gt;
-                            &lt;/svg&gt;
-                        &lt;/span&gt;
-                    &lt;/h3&gt;
-                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
-                        건강(우울ㆍ불안ㆍ스트레스 감소,
-                        자존감 향상)에도 긍정적 영향을 미.&lt;/p&gt;
-                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;    
-                &lt;/div&gt;
-            &lt;/article&gt;
-            &lt;article class="card"&gt;
-                &lt;figure class="card__header"&gt;
-                    &lt;img src="img/사이트02_08.jpg" alt="스노우보드"&gt;
-                &lt;/figure&gt;
-                &lt;div class="card__body"&gt;
-                    &lt;h3 class="tit"&gt;운동!
-                        &lt;span class="btn" aria-hidden="true"&gt;
-                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
-                                &lt;path
-                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
-                                    fill="#BAEFEF" /&gt;
-                                &lt;path
-                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
-                                    fill="black" /&gt;
-                            &lt;/svg&gt;
-                        &lt;/span&gt;
-                    &lt;/h3&gt;
-                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
-                        건강(우울ㆍ불안ㆍ스트레스 감소,
-                        자존감 향상)에도 긍정적 영향을 미.&lt;/p&gt;
-                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;
-                &lt;/div&gt;
-            &lt;/article&gt;
-        &lt;/div&gt;
-        &lt;!-- 아래 4개 --&gt;
     &lt;/section&gt;
 &lt;/body&gt;
 
