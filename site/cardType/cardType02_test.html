@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형04</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmarketsans {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        /* +는 형제 > 바로 밑에 있는 자식(그래서 다른 자식들한테는 해당 안됨) */
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            /*figma auto랑 같음*/
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-style: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+            line-height: 1.4;
+        }
+        /* cardType02 */
+        .card__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .card__inner .card{
+            width: 23.5%; 
+        }
+        .card__inner .card .card__header {
+        }
+        .card__inner .card .card__header img{
+            margin-bottom: 20px;   
+        }
+        .card__inner .card .card__body {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .card__inner .card .card__body h3 {
+            font-size: 28px;
+            margin-bottom: 10px;   
+        }
+        .card__inner .card .card__body p {
+            font-size: 18px;
+            color: #666;
+            font-weight: 100;
+            margin-bottom: 50px;
+            line-height: 1.4;
+        }
+        .card__inner .card .card__body span{
+            position: absolute;
+            right: 0;
+            top: 1px;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="cardType02" class="card__wrap gmarketsans section">
+        <h2>배우고 싶은 운동</h2>
+        <p>건강한 몸과 정신 수련을 위해 배우고 싶은 운동들입니다.<br>
+            기회가 되면 꼭 배우고 싶습니다.</p>
+        <div class="card__inner container">
+            <article class="card">
+                <div class="card__header">
+                    <figure>
+                        <img src="img/card_bg02_01.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="card__body">
+                    <h3>운동!</h3>
+                    <p>운동은 신체적 건강 이외에 심리적 
+                        건강(우울ㆍ불안ㆍ스트레스 감소, 
+                        자존감 향상)에도 긍정적 영향을 ...</p>
+                    <span>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z" fill="#BAEFEF"/>
+                            <path d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z" fill="black"/>
+                        </svg>
+                    </span>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                    <figure>
+                        <img src="img/card_bg02_02.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="card__body">
+                    <h3>운동!</h3>
+                    <p>운동은 신체적 건강 이외에 심리적 
+                        건강(우울ㆍ불안ㆍ스트레스 감소, 
+                        자존감 향상)에도 긍정적 영향을 ...</p>
+                    <span>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z" fill="#BAEFEF"/>
+                            <path d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z" fill="black"/>
+                        </svg>
+                    </span>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                    <figure>
+                        <img src="img/card_bg02_03.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="card__body">
+                    <h3>운동!</h3>
+                    <p>운동은 신체적 건강 이외에 심리적 
+                        건강(우울ㆍ불안ㆍ스트레스 감소, 
+                        자존감 향상)에도 긍정적 영향을 ...</p>
+                    <span>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z" fill="#BAEFEF"/>
+                            <path d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z" fill="black"/>
+                        </svg>
+                    </span>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                    <figure>
+                        <img src="img/card_bg02_04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="card__body">
+                    <h3>운동!</h3>
+                    <p>운동은 신체적 건강 이외에 심리적 
+                        건강(우울ㆍ불안ㆍ스트레스 감소, 
+                        자존감 향상)에도 긍정적 영향을 ...</p>
+                    <span>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z" fill="#BAEFEF"/>
+                            <path d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z" fill="black"/>
+                        </svg>
+                    </span>
+                </div>
+            </article>
+        </div>
+        <div class="card__inner container">
+            <article class="card">
+                <div class="card__header">
+                    <figure>
+                        <img src="img/card_bg02_05.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="card__body">
+                    <h3>운동!</h3>
+                    <p>운동은 신체적 건강 이외에 심리적 
+                        건강(우울ㆍ불안ㆍ스트레스 감소, 
+                        자존감 향상)에도 긍정적 영향을 ...</p>
+                    <span>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z" fill="#BAEFEF"/>
+                            <path d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z" fill="black"/>
+                        </svg>
+                    </span>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                    <figure>
+                        <img src="img/card_bg02_06.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="card__body">
+                    <h3>운동!</h3>
+                    <p>운동은 신체적 건강 이외에 심리적 
+                        건강(우울ㆍ불안ㆍ스트레스 감소, 
+                        자존감 향상)에도 긍정적 영향을 ...</p>
+                    <span>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z" fill="#BAEFEF"/>
+                            <path d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z" fill="black"/>
+                        </svg>
+                    </span>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                    <figure>
+                        <img src="img/card_bg02_07.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="card__body">
+                    <h3>운동!</h3>
+                    <p>운동은 신체적 건강 이외에 심리적 
+                        건강(우울ㆍ불안ㆍ스트레스 감소, 
+                        자존감 향상)에도 긍정적 영향을 ...</p>
+                    <span>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z" fill="#BAEFEF"/>
+                            <path d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z" fill="black"/>
+                        </svg>
+                    </span>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                    <figure>
+                        <img src="img/card_bg02_08.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="card__body">
+                    <h3>운동!</h3>
+                    <p>운동은 신체적 건강 이외에 심리적 
+                        건강(우울ㆍ불안ㆍ스트레스 감소, 
+                        자존감 향상)에도 긍정적 영향을 ...</p>
+                    <span>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z" fill="#BAEFEF"/>
+                            <path d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z" fill="black"/>
+                        </svg>
+                    </span>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
