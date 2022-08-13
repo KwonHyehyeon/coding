@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 시험</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/GothicA1/GothicA1.css');
+
+        .nanum {
+            font-family: 'GothicA1';
+            font-weight: 300;
+        }
+        
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section>h2 {
+            /* +는 형제 바로 밑에 있는 자식은 > */
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        /* blind */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            /*포토샵 클리핑 마스크 같은 것*/
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden
+        }
+
+        /* cardTypetest */
+        body {
+            background-color: #f5f5f5;
+        }
+        .card__inner {
+            border-right-color: #666;
+        }
+        #card__header {
+            border-top: 1px solid #000;
+        }
+        #card__header .card_head_name {
+            width: 78px;
+            height: 24px;
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+            padding: 0 3px;
+            margin-bottom: 25px;
+        }
+        .nav {
+            display: flex;
+        }
+        .airplane {
+            width: 60%;
+        }
+        .nav img {
+            height: 425px;
+            margin-right: 20px; 
+        }
+        .aside {
+            width: 40%;
+        }
+        .aside .aside_desc {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .aside .aside_tit {
+            font-size: 33px;
+            margin-bottom: 10px;
+        }
+        .aside .aside_desc02 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 34;            
+            -webkit-box-orient: vertical;
+            vertical-align: bottom;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="cardTypetest" class="card__wrap nanum section">
+        <h2 class="blind">내가 가 본 해외 여행지</h2>
+        <div class="card__inner container">
+            <div id="card__header">
+                <div class="card_head_name">여행지</div>
+            </div>
+            <article class="nav">
+                <figure class="airplane">
+                    <img src="img/cardtest01.jpg" alt="">
+                </figure>
+                <div class="aside">
+                    <p class="aside_desc">제가 다녀온 해외 여행지 궁금하시죠?</p>
+                    <h3 class="aside_tit">나의 경험으로 포스팅하는 해외여행지</h3>
+                    <p class="aside_desc">제 여행 포스팅이 마음에 드셨다면 구독...</p>
+                    <p class="aside_desc02">제가 여태까지 다녀온 여행지를 소개합니다! 저는 비행기를 타는 것을 좋아해서 해외여행을 많이는 아니지만 몇 번의 기회로 가보았는데요...지금 그 여행지들을 공개합니다! 두둥!</p>
+                </div>
+            </article>
+            
+            <div id="footer">
+                <div class="footer_desc">
+                    <h4>태국 <em>중학생 때 갔었는데 다시 한 번 가보고 싶습니다.</em></h4>
+                    <span><img src="" alt=""></span>
+                </div>
+                <div class="footer_desc">
+                    <h4>태국 <em>중학생 때 갔었는데 다시 한 번 가보고 싶습니다.</em></h4>
+                    <span><img src="" alt=""></span>
+                </div>
+                <div class="footer_desc">
+                    <h4>태국 <em>중학생 때 갔었는데 다시 한 번 가보고 싶습니다.</em></h4>
+                    <span><img src="" alt=""></span>
+                </div>
+                <div class="footer_desc">
+                    <h4>태국 <em>중학생 때 갔었는데 다시 한 번 가보고 싶습니다.</em></h4>
+                    <span><img src="" alt=""></span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형04</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/sebang/SebangGothic.css');
+        @import url('https://webfontworld.github.io/NanumSquare/NanumSquare.css');
+
+        .sebang {
+            font-family: 'SebangGothic';
+            font-weight: 400;
+        }
+        .square {
+            font-family: 'NanumSquare';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section > h2 {
+            /* +는 형제 바로 밑에 있는 자식은 > */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section > h2.tit {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+            text-align: left;
+            font-size: 14px;
+            font-family: 'SebangGothic';
+            margin-bottom: 30px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* blind */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden
+        }
+        /* cardType 04 */
+        .card__inner {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card .first {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .card.first .card__header{
+            width: 70%;
+        }
+        .card.first .card__contents{
+            width: 30%;
+        }
+
+        .card {
+            width: 25%;
+            background-color: #333;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card__header {
+            width: 30%;
+        }
+        .card__contents {
+            width: 70%;
+        }
+        .card__contents .sub{}
+        .card__contents .title{}
+        .card__contents .desc{}
+        .card__contents .more{}
+    </style>
+</head>
+<body>
+    <section id="cardType04" class="card__wrap section square">
+        <h2 class="tit">Tourist Spot</h2>
+        <div class="card__inner container">
+            <article class="card_first">
+                <figure class="card__header">
+                    <img src="img/card_bg04_01_big.jpg" alt="Tourist Spot">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">Tourist Spot</span>
+                    <h3 class="title">아름다웠던 해외 여행지 공유</h3>
+                    <p class="desc">제가 여태까지 다녀온 여행지를 소개합니다! 비행기를 타는 것을 좋아해서 해외여행을 몇 번의 기회로 가보았는데요...지금 그 여행지들을 공개합니다! 두둥!</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div> 
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg04_02_small.jpg" alt="Tourist Spot">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">Tourist Spot</span>
+                    <h3 class="title">아름다웠던 해외 여행지 공유</h3>
+                    <p class="desc">제가 여태까지 다녀온 여행지를 소개합니다! 비행기를 타는 것을 좋아해서 해외여행을 몇 번의 기회로 가보았는데요...지금 그 여행지들을 공개합니다! 두둥!</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div> 
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg04_03_small.jpg" alt="Tourist Spot">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">Tourist Spot</span>
+                    <h3 class="title">아름다웠던 해외 여행지 공유</h3>
+                    <p class="desc">제가 여태까지 다녀온 여행지를 소개합니다! 비행기를 타는 것을 좋아해서 해외여행을 몇 번의 기회로 가보았는데요...지금 그 여행지들을 공개합니다! 두둥!</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div> 
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg04_04_small.jpg" alt="Tourist Spot">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">Tourist Spot</span>
+                    <h3 class="title">아름다웠던 해외 여행지 공유</h3>
+                    <p class="desc">제가 여태까지 다녀온 여행지를 소개합니다! 비행기를 타는 것을 좋아해서 해외여행을 몇 번의 기회로 가보았는데요...지금 그 여행지들을 공개합니다! 두둥!</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div> 
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg04_05_small.jpg" alt="Tourist Spot">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">Tourist Spot</span>
+                    <h3 class="title">아름다웠던 해외 여행지 공유</h3>
+                    <p class="desc">제가 여태까지 다녀온 여행지를 소개합니다! 비행기를 타는 것을 좋아해서 해외여행을 몇 번의 기회로 가보았는데요...지금 그 여행지들을 공개합니다! 두둥!</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div> 
+            </article>
+        </div>
+    </section>
+</body>
+</html>
