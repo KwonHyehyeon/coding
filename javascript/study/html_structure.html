@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 구조 관련 요소</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">HTML 구조 관련 요소에 대해 알아봅시다!</h2>
+            <p class="t_desc">
+                HTML 구조 관련 요소에는 블록 레벨 요소와 인라인 레벨 요소가 있습니다.<br>
+                오늘은 <i>블록 레벨 요소</i>에 대해 공부해보겠습니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>요소 유형</th>
+                        <th>태그명</th>
+                        <th>태그의 의미 및 특징</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce" rowspan="12">블록 레벨 요소</td>
+                        <td class="ce" rowspan="2">&lt;header&gt;<br>&lt;/header&gt;</td>
+                        <td>1. HTML 문서의 헤더 영역을 의미하는 태그로 제목이나 내비게이션, 검색 등의 내용들을 포함할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있지만 &lt;header&gt;, &lt;footer&gt; 태그는 포함할 수 없습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2">&lt;section&gt;<br>&lt;/section&gt;</td>
+                        <td>1. HTML 문서에서 맥락이 같은 요소들을 주제별로 그룹화해주는 태그이며 섹션 주제에 대한 제목 요소 (&lt;h1&gt;~&lt;h6&gt;)를 포함하는 것이 좋습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2">&lt;footer&gt;<br>&lt;/footer&gt;</td>
+                        <td>1. HTML 문서의 푸터 영역을 의미하는 태그로 섹션 작성자나 저작권에 대한 정보, 관련된 문서의 링크를 포함할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있지만 &lt;header&gt;, &lt;footer&gt; 태그는 포함할 수 없습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2">&lt;nav&gt;<br>&lt;/nav&gt;</td>
+                        <td>1. HTML 문서의 메인 메뉴나 목차 등을 정의해 주는 태그입니다.</td>
+                    </tr>
+                    <tr>
+                        <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2">&lt;article&gt;<br>&lt;/article&gt;</td>
+                        <td>1. HTML 문서 내에서 독립적으로 배포 또는 재사용이 가능한 게시물, 뉴스 기사, 블로그 포스팅 등을 의미하는 태그이며 제목 요소 (&lt;h1&gt;~&lt;h6&gt;)를 포함하는 것이 좋습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2">&lt;aside&gt;<br>&lt;/aside&gt;</td>
+                        <td>1. 메인 콘텐츠와 직접적으로 관련이 없는 영역을 의미하는 태그이며 HTML 문서의 오른쪽이나 왼쪽의 사이드 메뉴나 광고 등의 영역으로 사용됩니다.</td>
+                    </tr>
+                    <tr>
+                        <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="t_tit3">예제</h4>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;구조 요소&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;&lt;a href="#"&gt;반응형웹&lt;/a&gt;&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;MENU01&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;MENU02&lt;/a&gt;&lt;/li&gt;     
+                &lt;li&gt;&lt;a href="#"&gt;MENU03&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;MENU04&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;MENU05&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;div id="container"&gt;
+        &lt;section&gt;
+            &lt;h2&gt;콘텐츠 그룹01&lt;/h2&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h2&gt;콘텐츠 그룹02&lt;/h2&gt;
+        &lt;/section&gt;
+        &lt;article&gt;
+            &lt;h2&gt;주요기사&lt;/h2&gt;
+        &lt;/article&gt;
+        &lt;aside&gt;광고&lt;/aside&gt;
+    &lt;/div&gt;
+    &lt;footer&gt;
+        &lt;address&gt;경기도 안양시 동안구      031)123-4567   noeyheyh9357@gmail.com&lt;/address&gt;
+        &lt;p&gt;COPYRIGHT @ All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="result"></div>
+                    <img width="250" alt="inline style" src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/css%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95_%EC%9D%B8%EB%9D%BC%EC%9D%B8%EC%8A%A4%ED%83%80%EC%9D%BC.jpg?raw=true">
+                </details>
+            </div>
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fe495fHgZSEyUxmP3G3VZD7%2FUntitled%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
