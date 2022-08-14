@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 미디어쿼리</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">미디어쿼리(media query)란 무엇일까?</h2>
+            <p class="t_desc">
+               미디어쿼리란, <i>뷰포트의 해상도에 따라 CSS를 분리</i>시키는 미디어쿼리는 반응형 프로젝트에서 반드시 필요한 기법입니다.
+            </p>
+            <p class="t_desc2">
+                ▶︎ 종류<br>
+                01. &lt;link ~ media=""&gt;<br>
+                02. @media <br>
+                03. media query를 흉내내는 script
+            </p>
+            <h3 class="t_tit2">01. &lt;link ~ media=""&gt;</h3>
+            <div class="t_box">
+                &lt;link rel="stylesheet" type="text/css" media="all and (min-width: 1000px)" href="style_pc.css"
+            </div>
+            <p class="t_desc">
+                위의 박스의 뜻은 최소 가로폭이 1000px, 즉 1000px보다 넓은 해상도일 때에 style_pc.css를 연결한다는 뜻입니다.<br>
+                태블릿이나 모바일 기기마다 가로폭이 다른데, 크롬 브라우저에서 개발자 도구(F12)를 열고 Toggle device Toolbar를 누르면 기기마다의
+                해상도도 확인할 수 있고 기기 모델도 추가할 수 있습니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>모바일 기기</th>
+                        <th>가로</th>
+                        <th>세로</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">iPhone X</td>
+                        <td class="ce">375</td>
+                        <td class="ce">812</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">iPhone 6,7,8</td>
+                        <td class="ce">375</td>
+                        <td class="ce">667</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">iPhone 6,7,8 plus</td>
+                        <td class="ce">414</td>
+                        <td class="ce">736</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">iPhone 5</td>
+                        <td class="ce">320</td>
+                        <td class="ce">568</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">Galaxy S5, S8</td>
+                        <td class="ce">360</td>
+                        <td class="ce">640</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">Galaxy Note 8</td>
+                        <td class="ce">360</td>
+                        <td class="ce">640</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">iPad Pro</td>
+                        <td class="ce">1024</td>
+                        <td class="ce">1366</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">...</td>
+                        <td class="ce">...</td>
+                        <td class="ce">...</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h3 class="t_tit2">▶ 비트맵(Bitmap) 방식이란?</h3>
+            
+            <h3 class="t_tit2">비트맵 방식의 장점과 단점</h3>
+            <div class="t_box">
+            -장점<br>
+            : 많은 픽셀로 정교하고 다양한 색상을 가진 이미지를 만들 수 있습니다.<br>
+            -단점<br>
+            : 이미지를 확대하고 축소할 수는 있으나, 깨짐 현상과 이미지 품질이 저하됩니다.
+            </div>
+            <hr>
+            <h3 class="t_tit2">▶ 벡터(Vector) 방식이란?</h3>
+            <p class="t_desc2">
+                <i>벡터(Vector) 방식</i>이란, 점과 곡선을 <i>수학적인 함수</i>로 정의해서 표현되는 이미지입니다.<br>
+                점과 점이 연결되어 선이 되고 선과 선이 연결되어 면이 되는 즉 점, 선, 면을 이용해 이미지를 표현합니다. 점,선,면을 수학적인 함수로 표현하기 때문에 벡터이미지는 원본 이미지를 크게 확장해도 깨지지 않습니다. <br>
+                비트맵의 픽셀과 다르게 크기 조절이나 변형으로도 <i>해상도가 깨지지 않습니다.</i><br>
+                로고, 서체, 아이콘 작업 등에 다양하게 이용되고 있으며 Adobe Illustrator프로그램은 벡터 방식입니다.
+            </p>
+            <figure>
+                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/%EB%B2%A1%ED%84%B0%EB%B0%A9%EC%8B%9D.jpg?raw=true" alt="벡터">
+            </figure>
+            <h3 class="t_tit2">벡터 방식의 장점과 단점</h3>
+            <div class="t_box">
+            -장점<br>
+            : 작업의 용이성 : 점과, 점으로 이루어진 선, 면으로 모든 그래픽 요소들이 이루어져 있기 때문에 간단하게 점과 선을 수정하는 과정으로 그래픽 작업을 유지하고 관리하기 쉽습니다.<br>
+            : 벡터 포맷의 작업 파일이 보존되는 한 자유로운 수정 가능<br>
+            -단점<br>
+            : 정교한 작업의 한계점
+            </div>
+            <hr>
+            <h3 class="t_tit2">▶ 비트맵 방식과 벡터 방식 정리</h3>
+            <figure>
+                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/%EB%B9%84%ED%8A%B8%EB%A7%B5%EB%B2%A1%ED%84%B0.png?raw=true" alt="비트맵 벡터">
+            </figure>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>비트맵(Bitmap)</th>
+                        <th>벡터(Vector)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">정의</td>
+                        <td>정사각형의 픽셀에 저장된 비트 정보의 집합</td>
+                        <td>수학적인 함수 관계로 만든 그래픽 이미지</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">확대</td>
+                        <td>계단 현상</td>
+                        <td>뚜렷한 외곽선</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">변화/회전</td>
+                        <td>이미지 품질 손상</td>
+                        <td>변화 없음</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">특징</td>
+                        <td>사실적인 표현, 특수 효과, 풍부한 색감 표현</td>
+                        <td>선명한 표현, 효과적인 응용 작업</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">단점</td>
+                        <td>이미지의 축소, 확대로 인한 이미지 품질 손상</td>
+                        <td>사진과 같은 이미지 그래픽의 정교한 작업의 한계점</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">확장자</td>
+                        <td>JPG,PNG,GIF 등</td>
+                        <td>AI, SVG, VML 등</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">프로그램</td>
+                        <td>포토샵, 페인터 등</td>
+                        <td>일러스트레이터, 플래시 등</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
