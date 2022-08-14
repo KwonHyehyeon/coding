@@ -51,6 +51,7 @@
                 </details>
             </div>        
             <!-- 01. 내부 스타일시트 -->
+            <hr>
             <h3 class="t_tit2">02. 외부 스타일시트</h3>
             <p class="t_desc">
                 CSS를 HTML 문서 안에 &lt;style&gt; 태그로 기재하여 HTML 문서 안에 CSS가 함께 저장되도록 하는 형태입니다.
@@ -81,26 +82,29 @@
                 </details>
             </div>
             <!-- 02. 외부 스타일시트 -->
+            <hr>
             <h3 class="t_tit2">03. @import</h3>
             <p class="t_desc">
                 CSS를 HTML 문서 안에 &lt;style&gt; 태그로 기재하여 HTML 문서 안에 CSS가 함께 저장되도록 하는 형태입니다.
             </p>
             <h4 class="t_tit3">예제</h4>
-            <hr>
             <div class="t_code">
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;내부 스타일시트&lt;/title&gt;
-    &lt;style type = "text/css"&gt;
-        p { color : red ;} /* 태그 안의 글자 색상을 빨간색으로 설정하라는 뜻 */
-    &lt;/style&gt;
+    &lt;title&gt;외부 스타일시트&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;p&gt;우리를 기쁘게 하는 것들.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
+</code></pre>
+            </div>
+            <div class="t_code">
+<pre><code>@charset "utf-8";
+p {color: red;}
 </code></pre>
             </div>
             <div class="result">
@@ -111,6 +115,7 @@
                 </details>
             </div>
             <!-- 03. @import -->
+            <hr>
             <h3 class="t_tit2">04. 인라인 스타일(inline style)</h3>
             <p class="t_desc">
                 CSS를 HTML 문서 안에 &lt;style&gt; 태그로 기재하여 HTML 문서 안에 CSS가 함께 저장되도록 하는 형태입니다.
