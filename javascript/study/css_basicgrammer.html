@@ -47,14 +47,19 @@
                 <details>
                     <summary>결과보기</summary>
                     <div class="result"></div>
-                    <img width="500" alt="instylesheet" src="">
+                    <img width="250" alt="instylesheet" src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/css%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95_%EB%82%B4%EB%B6%80%EC%8A%A4%ED%83%80%EC%9D%BC%EC%8B%9C%ED%8A%B8%EC%98%88%EC%A0%9C.jpg?raw=true">
                 </details>
             </div>        
             <!-- 01. 내부 스타일시트 -->
             <hr>
             <h3 class="t_tit2">02. 외부 스타일시트</h3>
             <p class="t_desc">
-                CSS를 HTML 문서 안에 &lt;style&gt; 태그로 기재하여 HTML 문서 안에 CSS가 함께 저장되도록 하는 형태입니다.
+                스타일 속성들을 따로 저장하여 HTML 문서에 파일명으로 연결할 수 있습니다.<br>
+                스타일은 *.css확장자를 가진 별도의 파일로 저장하고, HTML에서는 &lt;link&gt; 태그를 이용하여 선언합니다.
+            </p>
+            <p class="t_box">
+                <i>내부 스타일시트</i>는 <i>그 스타일이 기술된 페이지에만</i> 적용되는 반면,
+                <i>외부 스타일시트</i>는 <i>그 스타일이 선언한 모든 HTML 페이지</i>에 적용됩니다.
             </p>
             <h4 class="t_tit3">예제</h4>
             <div class="t_code">
@@ -71,6 +76,9 @@
 &lt;/html&gt;
 </code></pre>
             </div>
+            <p class="t_desc">
+                CSS 파일의 상단에는 @charset "utf-8";, @charset "euc-kr"; 등 html 문서에서 지정한 것과 동일한 문자셋을 지정합니다.
+            </p>
             <div class="t_code">
 <pre><code>@charset "utf-8";
 p {color: red;}
@@ -80,14 +88,15 @@ p {color: red;}
                 <details>
                     <summary>결과보기</summary>
                     <div class="result"></div>
-                    <img width="500" alt="outstylesheet" src="">
+                    <img width="250" alt="outstylesheet" src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/css%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95_%EC%99%B8%EB%B6%80%EC%8A%A4%ED%83%80%EC%9D%BC%EC%8B%9C%ED%8A%B8%EC%98%88%EC%A0%9C.jpg?raw=true">
                 </details>
             </div>
             <!-- 02. 외부 스타일시트 -->
             <hr>
             <h3 class="t_tit2">03. @import</h3>
             <p class="t_desc">
-                CSS를 HTML 문서 안에 &lt;style&gt; 태그로 기재하여 HTML 문서 안에 CSS가 함께 저장되도록 하는 형태입니다.
+                @import는 <i>CSS 안으로 다른 CSS 파일을 불러들일 경우</i> 사용합니다.<br>
+                CSS의 맨 윗줄에 기술합니다.
             </p>
             <h4 class="t_tit3">예제</h4>
             <div class="t_code">
@@ -110,40 +119,40 @@ p {color: red;}
                 <details>
                     <summary>결과보기</summary>
                     <div class="result"></div>
-                    <img width="500" alt="Element" src="">
+                    <img width="250" alt="import" src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/css%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95_import.jpg?raw=true">
                 </details>
             </div>
+            <br>
             <p class="t_desc">
-                CSS를 HTML 문서 안에 &lt;style&gt; 태그로 기재하여 HTML 문서 안에 CSS가 함께 저장되도록 하는 형태입니다.
+                @import는 어떤 CSS 파일 안에 공통 CSS를 불러들일 경우에도 사용할 수 있습니다.
             </p>
             <div class="t_code">
 <pre><code>@charset "utf-8";
-p {color: red;}
+@import url("common.css");
 </code></pre>
             </div>
             <p class="t_desc">
-                CSS를 HTML 문서 안에 &lt;style&gt; 태그로 기재하여 HTML 문서 안에 CSS가 함께 저장되도록 하는 형태입니다.
+                @import는 공통으로 들어가야 할 스타일을 따로 저장하여 다른 CSS에 삽입시켜 사용할 수 있도록 해줍니다.<br>
+                ※ CSS 파일을 너무 여러 개로 분리하면 복잡해질 수 있으니 용량이 적다면 하나의 파일로 저장하는 것이 좋음!
             </p>
             <!-- 03. @import -->
             <hr>
             <h3 class="t_tit2">04. 인라인 스타일(inline style)</h3>
             <p class="t_desc">
-                CSS를 HTML 문서 안에 &lt;style&gt; 태그로 기재하여 HTML 문서 안에 CSS가 함께 저장되도록 하는 형태입니다.
+                인라인 스타일은 <i>태그에 직접 CSS를 정의해주는 기법</i>으로, 해당 요소에 style=""형식으로 기술합니다.<br>
+                인라인 스타일은 내부스타일이나 외부스타일의 속성보다 우선으로 적용되기 때문에 우선순위가 절대적으로 높아야 할 경우에 사용할 수 있습니다.<br>
+                그러나, 공통CSS로는 수정할 수 없으며 일일이 html을 열어서 수정해야 하므로 많이 사용하지는 않습니다.
             </p>
             <h4 class="t_tit3">예제</h4>
-            <hr>
             <div class="t_code">
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;내부 스타일시트&lt;/title&gt;
-    &lt;style type = "text/css"&gt;
-        p { color : red ;} /* 태그 안의 글자 색상을 빨간색으로 설정하라는 뜻 */
-    &lt;/style&gt;
+    &lt;title&gt;인라인 스타일&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;p&gt;우리를 기쁘게 하는 것들.&lt;/p&gt;
+    &lt;p style="color: red;"&gt;우리를 기쁘게 하는 것들.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -152,11 +161,10 @@ p {color: red;}
                 <details>
                     <summary>결과보기</summary>
                     <div class="result"></div>
-                    <img width="500" alt="Element" src="">
+                    <img width="250" alt="inline style" src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/css%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95_%EC%9D%B8%EB%9D%BC%EC%9D%B8%EC%8A%A4%ED%83%80%EC%9D%BC.jpg?raw=true">
                 </details>
             </div>
-            <!-- 04. 인라인 스타일(inline style) -->
-                  
+            <!-- 04. 인라인 스타일(inline style) -->       
         </div>
     </main>
     <!-- //main -->
