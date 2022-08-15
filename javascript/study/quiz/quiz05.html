@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">Quiz 05.</h2>
+        <p class="t_desc">
+            자바스크립트를 활용하여 웹디자인기능사 필기 2013년도 5회차 문제를 통해 객관식 문제를 만들어봅시다! <br>
+        </p>
+        <div class="t_iframe" style="min-height: 1040px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect05.html" frameborder="0"></iframe>
+        </div>
+
+        <div class="t_link">
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/quizEffect045.html" target="_blank"
+            >원본 소스보기</a>
+        </div>
+        
+        <h3 class="t_tit">코드 참고</h3>
+        <div class="t_code">
+<pre><code class="language-js">&lt;script&gt;
+    // const num = [100, 200, 300, 400, 500];
+    // num.forEach(function(el, i){
+    //     //console.log(el);
+
+    //     document.querySelector(".quiz_wrap").innerHTML += el 
+    // })
+
+    //문제 정보
+    const quizInfo = [
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "1",
+            answerAsk: "디자인 형태의 개념에서 조화(harmony)를 이루는 법칙과 거리가 먼 것은?",
+            answerChoice: {
+                1: "균형",
+                2: "대비",
+                3: "통일",
+                4: "색상"
+            },
+            answerResult: "4",
+            answerEx: "조화를 이루는 법칙은 균형, 대비, 통일, 유사, 균일, 강약, 변화가 있습니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "2",
+            answerAsk: "NCS 표색계에 대한 설명으로 옳은 것은?",
+            answerChoice: {
+                1: "색상환은 노랑(Y), 빨강(R), 파랑(B), 초록(G)으로 구분되어있다.",
+                2: "기본 6색 중 흰색과 검정은 포함되지 않는다.",
+                3: "20% 흰색도와 30%의 유채색도를 표시하고, 90%는 노랑색도를 지닌 백색이다.",
+                4: "색지각 양의 합은 100이며, 이것은 명도, 채도, 색상의 합이다."
+            },
+            answerResult: "1",
+            answerEx: "NCS표색계는 RED, BLUE, YELLOW, GREEN의 명도값인 WHITE, BLACK을 합해 총 6가지 기초단위를 가지고 표기하는 방식입니다. 20% 검정색도와 유채색도 30%이며 검은색 정도, 흰색성, 색채성의 합이 항상100이 됩니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "3",
+            answerAsk: "디자인의 요소 중 “형”에 대한 설명으로 옳지 않은 것은?",
+            answerChoice: {
+                1: "한 개의 점은 공간의 위치를 가리킨다.",
+                2: "점이 확대되면 면으로 이동된다.",
+                3: "점의 운동에 의해서 선이 만들어 진다.",
+                4: "이동하는 점의 자취가 입체를 이룬다."
+            },
+            answerResult: "4",
+            answerEx: "이동하는 점의 자취가 입체를 이루는 것은 구면이라고 하며 선이 이동한 자취는 면이라고 합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "4",
+            answerAsk: "우리나라의 교육부에 고시된 기본 색명은 몇 색상인가?",
+            answerChoice: {
+                1: "5",
+                2: "10",
+                3: "15",
+                4: "20"
+            },
+            answerResult: "4",
+            answerEx: "먼셀 색체계라고 하며 현재 우리나라의 공업 규격에서 색의 삼속성에 의한 표기 방법으로 제정되었고, 교육용 20색상환으로 채택된 색체계입니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "5",
+            answerAsk: "일반적으로 도구 개념으로 물건을 창조하는 디자인 분야는?",
+            answerChoice: {
+                1: "시각디자인 ",
+                2: "제품디자인",
+                3: "환경디자인",
+                4: "공예디자인"
+            },
+            answerResult: "2",
+            answerEx: "도구 개념으로 물건을 창조하는 디자인은 제품디자인에 속합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "6",
+            answerAsk: "다음 중 색의 3속성을 나타내는 것은?",
+            answerChoice: {
+                1: "color, value, chroma",
+                2: "hue, black, saturation",
+                3: "hue, value, cloudy",
+                4: "hue, value, chroma"
+            },
+            answerResult: "4",
+            answerEx: "색의 3속성은 Hue(색상), Value(명도), Chroma(채도)입니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "7",
+            answerAsk: "시각디자인 분야에 해당하지 않는 것은?",
+            answerChoice: {
+                1: "그래픽디자인",
+                2: "광고디자인",
+                3: "편집디자인",
+                4: "가구디자인"
+            },
+            answerResult: "4",
+            answerEx: "가구디자인은 제품디자인에 속합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "8",
+            answerAsk: "선(Line)의 종류에 따른 의미로 틀린 것은?",
+            answerChoice: {
+                1: "사선 - 움직임이 있는 활력 있는 운동감, 불안정한 느낌에서 동적 원근감을 느낄 수 있다.",
+                2: "소용돌이선 - 빨려들 것 같은 혼돈과 환각을 의미한다.",
+                3: "수평선 - 대범한 퍼짐과 화려함을 의미한다.",
+                4: "수직선 - 상하공간으로의 방향성, 긴장, 엄숙 경직을 의미한다."
+            },
+            answerResult: "3",
+            answerEx: "수평선은 평온함과 안정감, 평화, 편안 등의 느낌을 줍니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "9",
+            answerAsk: "CIE(국제조명위원회) 표색계에 대한 설명으로 틀린 것은?",
+            answerChoice: {
+                1: "완전한 흰색, 완전한 검정색을 만들 수 없으므로 0.5~9.5까지의 기호로 나타낸다.",
+                2: "1~14까지의 채도를 사용하며, 일반적으로 짝수만을 기준으로 하고 있다.",
+                3: "헤링의 4원색 이론을 기본으로 하며, 기본색은 보라, 노랑, 빨강, 검정이다.",
+                4: "채도가 낮은 부분을 색표집에 의해서 활용할 때는 짝수의 기본에 1, 3을 추가하고 있다"
+            },
+            answerResult: "3",
+            answerEx: "헤링의 4원색 이론을 기본으로 한 것은 오스트발트 표색계를 의미합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "10",
+            answerAsk: "빛이 눈의 망막 위에서 해석되는 과정에서 혼색효과가 가져다주는 가법혼색으로 점표파 화가들이 많이 사용 하였고, 디더링의 혼색원리이기도 한 혼합방법을 무엇이라 하는가?",
+            answerChoice: {
+                1: "병치혼합",
+                2: "감색혼합",
+                3: "중간혼합",
+                4: "회전혼합"
+            },
+            answerResult: "1",
+            answerEx: "병치혼합은 선이나 점이 조밀하게 교차, 나열되었을 때 마치 인접한 색과 혼합된 것처럼 보이는 현상입니다. 감색혼합은 혼합할수록 원래 색보다 명도가 낮아지는 현상입니다. 중간혼합은 눈의 망막에서 일어나는 착시적 혼합입니다. 회전혼합은 회전원판에 색을 칠해 회전시키면, 눈의 망막에서 혼색되어 하나의 새로운 색으로 보이는 현상입니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "11",
+            answerAsk: "“반드시 수학적 법칙과 함께 생기며, 가장 뚜렷한 질서를 가진다. 18세기 중반에 시작된 산업혁명과 더불어 선구적인 디자이너들은 기계화에 의한 대량생산을 목적으로 합리적이고 실용적인 형태로 디자인하게 되었으며, 세잔(Cezanne)이 이 형태를 주장하였다.” 설명에 해당하는 형태는?",
+            answerChoice: {
+                1: "유기적 형태",
+                2: "기하학적 형태",
+                3: "윤곽형 형태",
+                4: "추상적 형태"
+            },
+            answerResult: "2",
+            answerEx: "유기적 형태와 구상적 형태는 자연적 형태에 속하며 추상적 형태와 기하학적 형태는 인공적 형태에 속합니다. 그 중 합리적이고 실용적인 형태는 기하학적 형태입니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "12",
+            answerAsk: "다음 중 색채 계획상 유의할 점으로 관련성이 가장 적은 것은?",
+            answerChoice: {
+                1: "안정성",
+                2: "사회성",
+                3: "심미성",
+                4: "도덕성"
+            },
+            answerResult: "4",
+            answerEx: "색체 계획상 유의할 점은 안정성, 사회성, 심미성 등이 있으나 도덕성은 색체 계획과 관련성이 적습니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "13",
+            answerAsk: "바우하우스에서 디자인이라는 용어 대신 사용한 것은?",
+            answerChoice: {
+                1: "데시나레",
+                2: "조형학",
+                3: "데생",
+                4: "심리학"
+            },
+            answerResult: "2",
+            answerEx: "바우하우스는 현대 디자인의 이정표를 정립한 예술 창작과 공학 기술의 통합 운동으로 '형태부여', '조형학' 이라는 용어를 디자인 대신 사용하였습니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "14",
+            answerAsk: "어느 색이 다른 색에 둘러싸여 있거나, 인접한 두 색을 동시에 둘 때 일어나는 대비를 무엇이라고 하는가?",
+            answerChoice: {
+                1: "동시대비",
+                2: "색상대비",
+                3: "연변대비",
+                4: "계시대비"
+            },
+            answerResult: "1",
+            answerEx: "색상대비는 색상이 다른 두 색을 동시에 인접시켜 놓았을 경우 두 색이 서로의 영향으로 인하여 색상차가 크게 나는 대비입니다. 연변대비는 두 색이 인접해 있을 때 경계면이 더욱 뚜렷하게 보이는 현상입니다. 계시대비는 색상을 순서로 정하여 연속적으로 시간차를 두고 보면서 각각 색이 보이는 변화로 음성잔상과 유사한 현상입니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "15",
+            answerAsk: "난색에 대한 설명과 관계가 있는 것은?",
+            answerChoice: {
+                1: "황색, 주황색 청자색은 수축과 후퇴를 나타낸다",
+                2: "적색, 주황색, 황색은 팽창과 진출을 나타낸다.",
+                3: "청록, 청, 청자색은 수축과 후퇴를 나타낸다.",
+                4: "적색, 주황색, 청자색은 팽창과 진출을 나타낸다"
+            },
+            answerResult: "2",
+            answerEx: "진출색은 주로 난색계로 채도가 높은 색을 의미합니다. 후퇴색을 주로 한색계로 채도가 낮은 색을 의미합니다. 팽창색은 주로 난색계로 명도가 높은 색을 의미합니다. 수축색은 주로 한색계로 명도가 낮은 색을 의미합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "16",
+            answerAsk: "색채 조화를 위한 배색에 있어 고려해야 할 사항으로 잘못된 것은?",
+            answerChoice: {
+                1: "배색할 때 전체 색조를 생각한 후, 색상 수를 될 수 있는 대로 많이 한다.",
+                2: "색의 전체적 인상을 통일하기 위해 색상, 명도, 채도 중 한 가지 공통된 부분을 만들어 준다.",
+                3: "비슷한 색상들로 이루어진 조화는 명도나 채도에 차이를 두어 대비 효과를 구성한다.",
+                4: "일반적으로 가벼운 색은 위쪽으로 하고, 무거운 색은 아래쪽으로 한다."
+            },
+            answerResult: "1",
+            answerEx: "배색을 할 때는 색상 수를 될 수 있는 대로 최소한 적게 하는 것이 좋습니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "17",
+            answerAsk: "게슈탈트(Gestalt)의 시각에 관한 원리가 아닌 것은?",
+            answerChoice: {
+                1: "유사성의 원리",
+                2: "착시성의 원리",
+                3: "폐쇄성의 원리",
+                4: "연속성의 원리"
+            },
+            answerResult: "2",
+            answerEx: "게슈탈트의 시각에 관한 원리로는 근접성, 유사성, 폐쇄성, 연속성의 원리가 있습니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "18",
+            answerAsk: "시각디자인 분야에 해당하지 않는 것은?",
+            answerChoice: {
+                1: "명암에 의한 균형 ",
+                2: "경험에 의한 균형",
+                3: "질감에 의한 균형",
+                4: "위치에 의한 균형"
+            },
+            answerResult: "2",
+            answerEx: "시각적 균형에는 명암, 질감, 위치에 의한 균형이 있습니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "19",
+            answerAsk: "색의 점이(점증)는 디자인의 원리 중 어느 영역에 속하는가?",
+            answerChoice: {
+                1: "균형",
+                2: "율동",
+                3: "반복",
+                4: "조화"
+            },
+            answerResult: "2",
+            answerEx: "율동에 포함되는 원리들로는 반복, 교차, 점이(점증), 방사, 강조가 있습니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "20",
+            answerAsk: "다음 두 개의 꽃 모양 중심에 있는 원의 실제크기는 동일하다. 그런데 왼쪽의 원이 오른쪽보다 커 보이는 현상은?",
+            answerChoice: {
+                1: "주변과의 대비에 의한 착시현상",
+                2: "반복원리에 의한 착시현상",
+                3: "폐쇄원리 의한 착시현상",
+                4: "연속원리 의한 착시현상"
+            },
+            answerResult: "1",
+            answerEx: "두 개의 사진은 중심 원에 둘러쌓인 원의 크기가 각각 다릅니다. 즉, 주변과의 대비에 의한 착시현상으로 이와 같은 현상이 나타나는 것입니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "21",
+            answerAsk: "로그인시 아이디 저장과 같이 웹 서버가 사용자에 관한 정보를 사용자 컴퓨터에 저장하도록 이용하는 것은?",
+            answerChoice: {
+                1: "Session",
+                2: "Cookie",
+                3: "MIME",
+                4: "IML"
+            },
+            answerResult: "2",
+            answerEx: "세션이란 id를 식별자로 구별하여 데이터를 사용자의 브라우저에 쿠키형태가 아닌 접속한 서버 DB에 정보를 저장합니다. MIME은 파일 변환을 의미합니다. IML이란 정보의 가치와 그 가치의 변화에 따라 정책에 근거해 정보가 생성되고 소멸될 때까지 적절한 저장 매체에 저장하고, 이동하며, 보관하는 일련의 프로세스입니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "22",
+            answerAsk: "다음 중 케이블에 흐르는 신호를 재생하고 중계하는 장치이며, 감쇠된 신호를 증폭하고 네트워크 거리를 연장하는 역할을 하는 네트워크 관련 장비에 해당하는 것은?",
+            answerChoice: {
+                1: "라우터",
+                2: "리피터",
+                3: "허브",
+                4: "게이트웨이"
+            },
+            answerResult: "2",
+            answerEx: "라우터란 컴퓨터 네트워크 간에 데이터 패킷을 전송하는 네트워크 장치입니다. 허브란 네트워크 장비를 연결해 주는 기능을 수행하는 장비입니다. 게이트웨이란 한 네트워크에서 다른 네트워크로 이동하기 위하여 거쳐야 하는 지점입니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "23",
+            answerAsk: "전자우편(e-mail)에 대한 설명으로 틀린 것은?",
+            answerChoice: {
+                1: "컴퓨터 통신망을 통하여 다른 사람에게 서신을 교환하는 것을 의미한다.",
+                2: "컴퓨터로 작성된 서신은 매우 빠르게 여러 사람에게 동시에 전송할 수 있다",
+                3: "작성된 서신과 함께 각종 디지털 정보를 함께 보낼 수 있다.",
+                4: "메일을 보낼 때 사용하는 일반적인 프로토콜은 FTP이고, 받을 때 사용되는 프로토콜은 POP1을 가장 많이 사용한다."
+            },
+            answerResult: "4",
+            answerEx: "메일을 보낼 때 사용하는 일반적인 프로토콜은 SMTP이고 받을 때 사용되는 프로토클은 POP3을 가장 많이 사용합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "24",
+            answerAsk: "다음 자바스크립트 연산자 중 우선순위가 가장 높은 것은?",
+            answerChoice: {
+                1: "|",
+                2: "/",
+                3: "&lt;",
+                4: "[]"
+            },
+            answerResult: "4",
+            answerEx: "자바스크립트 우선순위는 괄호()[], 승제연산자/%*, 가감 연산자+-, 상이성 관계연산자&lt;&gt;, 일치성 관계연산자==, 논리곱 연산자&&, 논리합 연산자||, 조건연산자?:, 배정연산자= 순입니다. "
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "25",
+            answerAsk: "최상위 도메인 edu와 동일한 성격을 갖는 서브 도메인의 이름은?",
+            answerChoice: {
+                1: "ac",
+                2: "go",
+                3: "or",
+                4: "re"
+            },
+            answerResult: "1",
+            answerEx: "ac는 전문대학 이상 교육기관이며 go는 정부기관이고 or은 비영리 기관, re는 연구소입니다. edu는 ac와 동일한 성격을 갖는 교육기관 도메인입니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "26",
+            answerAsk: "동시 접속자 수가 많아서 서비스 요청에 응답할 수 없는 경우에 발생하는 웹 브라우저 오류메시지는?",
+            answerChoice: {
+                1: "HTTP 403 Forbidden",
+                2: "HTTP 404 Not Found",
+                3: "HTTP 500 Internal Server Error",
+                4: "HTTP 503 Service Unavailable"
+            },
+            answerResult: "4",
+            answerEx: "403 : 접근 금지됨 &lt;br&gt; 404 : 파일을 찾을 수 없음 &lt;br&gt; 500 : 내부 서버 오류 &lt;br&gt; 503 : 동시 접속자 수가 많아 서비스 요청에 응답할 수 없음"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "27",
+            answerAsk: "HTML 문서를 작성할 대 글자 사이를 공백으로 띄우기 위해 사용하는 것은?",
+            answerChoice: {
+                1: "&amplt",
+                2: "&ampgt",
+                3: "&ampamp",
+                4: "&ampnbsp"
+            },
+            answerResult: "4",
+            answerEx: "&amplt; : &lt; &lt;br&gt; &ampgt; : &gt; &lt;br&gt; &ampamp; : &amp"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "28",
+            answerAsk: "다음 중 기본 HTML의 단점을 개선해 동적인 웹 페이지를 만들 수 있도록 하기 위한 것으로 브라우저에서 실행되어 서버의 부담이 적고, 이벤트에 대한 즉각적인 반응이 가능한 것은?",
+            answerChoice: {
+                1: "CGI",
+                2: "CSS",
+                3: "DHTML",
+                4: "WML"
+            },
+            answerResult: "3",
+            answerEx: "CGI : 웹 서버에서 동적인 페이지를 보여주기 위해 임의의 프로그램을 실행할 수 있도록 하는 기술 중 하나 &lt;br&gt;  CSS : 웹페이지를 꾸미려고 작성하는 코드 &lt;br&gt; WML : 이동통신용 단말기에 적합하도록 XML 기반으로 한 마크업 언어"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "29",
+            answerAsk: "HTTP 프로토콜에 대한 설명으로 가장 옳은 것은?",
+            answerChoice: {
+                1: "서버와 클라이언트 사이에서 파일을 전송하기 위한 프로토콜이다.",
+                2: "클라이언트에서 서버로 E-mail을 송신할 때 사용하는 프로토콜이다.",
+                3: "웹에서 서버와 클라이언트 사이에서 웹 문서 전송에 사용되는 프로토콜이다.",
+                4: "서버에서 클라이언트로 E-mail을 송신할 때 사용하는 프로토콜이다."
+            },
+            answerResult: "3",
+            answerEx: "1.FTP &lt;br&gt; 2.SMTP &lt;br&gt; 4. POP3, IMAP"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "30",
+            answerAsk: "웹 페이지를 제작할 때 사용하는 웹에디터의 종류가 아닌 것은?",
+            answerChoice: {
+                1: "ActiveX",
+                2: "Notepad",
+                3: "UltraEdit",
+                4: "Dreamweaver"
+            },
+            answerResult: "1",
+            answerEx: "웹 브라우저용 플러그인은 다양한 종류가 있는데 대표적인 것은 인터넷 익스플로러(Internet Explorer, 이하 IE)용 플로그인 액티브 액티브X(Active X)입니다. &lt;br&gt; 플러그인이란 메인프로그램인 웹브라우저가 처리하지 못하는 부분을 처리해 주는 작은 프로그램들을 뜻합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "31",
+            answerAsk: "웹 브라우저(browser)가 아닌 것은?",
+            answerChoice: {
+                1: "핫 자바(hot java)",
+                2: "익스프레스(express)",
+                3: "오페라(opera)",
+                4: "모자익(mosaic)"
+            },
+            answerResult: "2",
+            answerEx: "웹 브라우저의 종류 : 오페라, 사파리, 핫자바, 구글크롬, IE 등등"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "32",
+            answerAsk: "자바 스크립트에서 현재 활성화된 창을 닫는 명령어가 아닌 것은?",
+            answerChoice: {
+                1: "self.close()",
+                2: "top.close()",
+                3: "window.close()",
+                4: "opener.close()"
+            },
+            answerResult: "4",
+            answerEx: "opener는 현재 창을 생성한 창을 가리키는 명령어"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "33",
+            answerAsk: "웹 페이지에서 특정한 문장을 가장 큰 글씨로 화면에 출력하고자 할 대 사용되는 HTML 태그는?",
+            answerChoice: {
+                1: "&lt;H1&gt;",
+                2: "&lt;H3&gt;",
+                3: "&lt;H5&gt;",
+                4: "&lt;H6&gt;"
+            },
+            answerResult: "1",
+            answerEx: "&lt;Hn&gt; : 제목을 표시합니다. h(1~6)은 제목 크기로, H1이 가장 크고 H6이 가장 작습니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "34",
+            answerAsk: "PDF(Portable Document Format) 파일포맷을 웹 브라우저에서 구현하기 위해 설치하는 플러그인 프로그램은?",
+            answerChoice: {
+                1: "Acrobat Reader",
+                2: "Windows Media Player",
+                3: "Shockwave Flash Player",
+                4: "QuickTime player"
+            },
+            answerResult: "1",
+            answerEx: "PDF 파일을 웹 브라우저에서 구현하려면 Acrobat Reader라는 플러그인 프로그램이 필요합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "35",
+            answerAsk: "인터넷 익스플로러 6.0의 도구 메뉴의 인터넷 옵션 중에서 홈페이지를 볼 수 있는 등급, 사람의 신원 또는 웹사이트의 보안을 증명하는 문서와 사용자의 정보를 제공하는 것은?",
+            answerChoice: {
+                1: "연결",
+                2: "개인정보",
+                3: "보안",
+                4: "내용"
+            },
+            answerResult: "4",
+            answerEx: "개인정보는 인터넷 영역에 대한 개인 정보를 설정하는 것으로 쿠키 허용이 이 부분에 해당됩니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "36",
+            answerAsk: "다음 여러 검색엔진에서 연산자 “*”가 검색 결과에 주는 영향이 다른 하나는?",
+            answerChoice: {
+                1: "구글 : 인터넷*",
+                2: "네이버 : 인터넷*",
+                3: "알타비스타 : 인터넷*",
+                4: "야후 : 인터넷*"
+            },
+            answerResult: "1",
+            answerEx: "'*': 찾으려는 단어의 일부 문자를 이용하여 검색하는 절단 검색에 사용되는 와일드 카드&lt;br&gt; 다른 검색엔진과 달리 구글은 *가 한 문자가 아닌 한 단어로 대체됩니다. 예를 들어 인터*으로 검색하면 다른 검색엔진에서는 '인터뷰'와 같이 검색되지만 구글에서는 '인터넷 정보'와 같이 와일드 카드가 하나의 완전한 단어로 검색됩니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "37",
+            answerAsk: "URL의 일반적인 표현형식으로 맞는 것은?",
+            answerChoice: {
+                1: "프로토콜://화일경로/화일명",
+                2: "프로토콜://호스트주소[:포트번호]/화일경로/화일명",
+                3: "포트번호://프로토콜/화일경로/화일명",
+                4: "포트번호://프로토콜/호스트주소/화일경로/화일명"
+            },
+            answerResult: "2",
+            answerEx: "URL 표현 방식 : 프로토콜://호스트주소[:포트번호]/화일경로/화일명&lt;br&gt; 기억합시다!"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "38",
+            answerAsk: "www.hywoman.kr의 도메인 네임을 128.124.111.6과 같이 컴퓨터가 이해할 수 있는 숫자로 구성된 IP주소로 변경시켜주는 서버는?",
+            answerChoice: {
+                1: "DB server",
+                2: "Web server",
+                3: "DNS server",
+                4: "NMS server"
+            },
+            answerResult: "3",
+            answerEx: "DB server:데이터 저장 및 관리&lt;br&gt;Web Server:웹브라우저(클라이언트)로부터 요청을 받아 정적인 콘텐츠를 처리하는 시스템&lt;br&gt;DNS server:인터넷 도메인을 IP 주소로 변경&lt;br&gt; NMS server:네트워크 관리"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "39",
+            answerAsk: "자바스크립트의 특징으로 틀린 것은?",
+            answerChoice: {
+                1: "객체 지향 프로그램 언어로 내장 객체를 사용한다.",
+                2: "HTML 내에 삽입되어 홈페이지를 좀 더 동적이고 다양하게 제작할 수 있도록 한다.",
+                3: "대소문자를 구별하지 않는다.",
+                4: "데이터 형을 설정하지 않아도 된다."
+            },
+            answerResult: "3",
+            answerEx: "자바스크립트는 대소문자를 구별합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "40",
+            answerAsk: "라우팅 프로토콜에 해당하지 않는 것은?",
+            answerChoice: {
+                1: "BGP",
+                2: "NNTP",
+                3: "OSPF",
+                4: "RIP"
+            },
+            answerResult: "2",
+            answerEx: "라우팅 프로토콜 : RIP, EIGRP, OSPF, BGP"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "41",
+            answerAsk: "RGB 컬러 모드는 어떤 혼합방식으로 색상을 표현하는가?",
+            answerChoice: {
+                1: "가산 혼합",
+                2: "감산 혼합",
+                3: "병치 혼합",
+                4: "회전 혼합"
+            },
+            answerResult: "1",
+            answerEx: "RGB컬러 모드는 가산 혼합 방식을 CMYK방식은 감산 혼합 방식을 사용합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "42",
+            answerAsk: "웹 사이트의 전형적인 탐색구조에 대한 설명으로 틀린 것은?",
+            answerChoice: {
+                1: "선형적 구조는 하나의 홈페이지에서 다음 홈페이지로 또 다음 홈페이지로 연결된 구조로 주제별 검색에 많이 사용된다.",
+                2: "계층적 구조는 하나의 홈페이지가 있고 그 홈페이지의 메인페이지에는 단순한 메뉴로만 보여주고 하위페이지들로 연결되는 구조이다.",
+                3: "복합적 구조는 선형적 구조와 계층적 구조를 혼합한 것으로 단어별 검색에 많이 사용된다.",
+                4: "그물형 연결 구조는 대주제 검색을 위해 상호 연결하여 검색하기 위한 간결한 구조이다."
+            },
+            answerResult: "4",
+            answerEx: "그물형 연결 구조(네트워크 구조)는 개별 정보가 있는 웹 페이지의 정보를 순서 없이 나열한 형태로 수많은 페이지가 나열된 복잡한 구조입니다. 큰 주제가 정형화되어 있는 경우에는 복합적 구조가 적합합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "43",
+            answerAsk: "“정보의 구조가 완성되면 이러한 정보들 사이를 자유롭게 돌아다닐 수 있어야 하며, 하나의 최종 정보에 도달하는 방법이 반드시 하나일 필요는 없고, 위계적인 구조 이외에도 검색 창, 사이트 맵, 퀵 링크 등 다양한 경로와 방법을 통해 빠르고 쉽게 접근해서 원하는 정보를 찾아낼 수 있어야 한다.” 설명에 해당 하는 것은?",
+            answerChoice: {
+                1: "인터페이스",
+                2: "내비게이션",
+                3: "데이터베이스",
+                4: "프로토타입"
+            },
+            answerResult: "2",
+            answerEx: "인터페이스:구현된 것은 아무 것도 없는 밑그림만 있는 기본 설계도&lt;br&gt;데이터베이스:여러 사람들이 공유하고 사용할 목적으로 통합 관리되는 데이터들의 모임&lt;br&gt;프로토타입:원래의 형태 또는 전형적인 예, 기초 또는 표준"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "44",
+            answerAsk: "컴퓨터그래픽스 시스템의 입력 장치가 아닌 것은?",
+            answerChoice: {
+                1: "키보드",
+                2: "마우스",
+                3: "플로터",
+                4: "스캐너"
+            },
+            answerResult: "3",
+            answerEx: "플로터는 설계도면 등을 출력하는 대형 출력 장치 입니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "45",
+            answerAsk: "컴퓨터그래픽스의 렌더링에서 물체의 각 꼭지점(Vertex)에서 빛의 양을 계산한 후 그 값들을 보관하여 각 점에 색 값을 할당하는 쉐이딩 기법은?",
+            answerChoice: {
+                1: "Modeling",
+                2: "Flat",
+                3: "Ground",
+                4: "Phong"
+            },
+            answerResult: "3",
+            answerEx: "쉐이딩의 종류&lt;br&gt;모델링:컴퓨터 그래픽을 이용해 컴퓨터 내부의 가상공간에 3차원 모형을 만들어내는 행위&lt;br&gt;플랫:음영색만으로 면 전체를 칠하는 단순한 쉐이딩&lt;br&gt;고러드:꼭짓점에서의 조명(빛)을 계산하여 면을 채우는 방식&lt;br&gt;퐁:하이라이트나 반사공을 표현할 수 있음"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "46",
+            answerAsk: "웹디자인 프로세스에서 기획 단계에 설정될 내용이 아닌 것은?",
+            answerChoice: {
+                1: "전체 사이트 구조",
+                2: "색상의 전반적 분위기",
+                3: "메뉴 구성",
+                4: "이미지 편집"
+            },
+            answerResult: "4",
+            answerEx: "이미지 편집은 웹디자인 프로세스에서 기획 단계에 설정되지 않습니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "47",
+            answerAsk: "웹사이트를 디자인하기 위한 조건으로 옳지 않은 것은?",
+            answerChoice: {
+                1: "관리하기 쉽도록 관리자 중심으로 제작한다.",
+                2: "일관성 있는 레이아웃으로 배치한다.",
+                3: "웹사이트의 주제를 쉽게 파악할 수 있도록 구성한다.",
+                4: "내비게이션을 최적화 한다."
+            },
+            answerResult: "1",
+            answerEx: "웹 사이트를 디자인하기 위해서는 사용자 중심으로 제작하는 것이 적합합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "48",
+            answerAsk: "콘텐츠가 서로 조화를 이루어 논리적으로 보일 수 있도록 시각적 계층구조를 만드는 것을 무엇이라 하는가?",
+            answerChoice: {
+                1: "웹 컬러 디자인",
+                2: "웹 타이포그라피 디자인",
+                3: "웹 레이아웃 디자인",
+                4: "내비게이션 디자인"
+            },
+            answerResult: "3",
+            answerEx: "웹 타이포그라피 디자인:문자디자인&lt;br&gt;내비게이션 디자인:유저가 웹 사이트 내에서 자연스럽게 이동할 수 있도록 안내하는 시스템 "
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "49",
+            answerAsk: "다음 중 “사이에 있는 것(In Betweening)”이라는 뜻에서 유래한 용어로 각각의 프레임을 그리는 과정에서 중요한 장면만을 사람이 그려주면, 사이의 중간 모습들을 컴퓨터에서 만들어 주는 기능에 해당하는 애니메이션 기법은?",
+            answerChoice: {
+                1: "트위닝",
+                2: "어니언 스키닝",
+                3: "매핑",
+                4: "모델링"
+            },
+            answerResult: "1",
+            answerEx: "어니언 스키닝:여러개의 프레임을 한번에 볼 수 있도록 애니메이션 만화 및 동영상 편집에 사용되는 기법&lt;br&gt;매핑:3차원 물체의 표면에 세부적인 질감의 묘사를 하거나 색을 칠하는 기법&lt;br&gt;모델링:컴퓨터 내부의 가상공간에 3차원 모형을 만들어내는 행위"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "50",
+            answerAsk: "다음 중 웹 사이트에 등재할 이미지의 크기가 클 경우 크기를 조정하기 위한 가장 올바른 방법은?",
+            answerChoice: {
+                1: "웹에서 소스 수정으로 사이즈를 줄인다.",
+                2: "드림위버에서 이미지 크기를 줄인다.",
+                3: "포토샵의 이미지 사이즈에서 픽셀 수를 줄인다.",
+                4: "나모에서 웹용으로 저장할 때 Quality를 낮춘다."
+            },
+            answerResult: "3",
+            answerEx: "웹 사이트에 등재할 이미지의 크기가 클 때는 포토샵의 이미지 사이즈에 픽셀 수를 줄여주어야 합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "51",
+            answerAsk: "Photoshop에서 검정색 흰색의 이미지로 구성되어 선택된 영역이 합성되지 않도록 하는 마스크 역할을 하는 메뉴는?",
+            answerChoice: {
+                1: "레이어(Layer)",
+                2: "알파채널(Alpha Channel)",
+                3: "Z 버퍼(Z-buffer)",
+                4: "히스토리(History)"
+            },
+            answerResult: "2",
+            answerEx: "레이어:하나의 표면이나 여러 표면 사이를 덮고 있는 막&lt;br&gt;Z 버퍼:화면에 그려질 픽셀들의 Z값을 보관하는 특별한 버퍼&lt;br&gt;히스토리:포토샵 과정 기록"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "52",
+            answerAsk: "웹 사이트를 제작하기 위한 이미지 소스를 얻는 방법으로 적절하지 않는 것은?",
+            answerChoice: {
+                1: "사이트의 콘셉트에 맞추어 디지털 카메라로 사진을 찍는다.",
+                2: "포털 사이트에서 검색하여 나오는 이미지를 복사하여 활용한다.",
+                3: "적절한 이미지가 없으면 이미지 판매 사이트에서 구입할 수 있다.",
+                4: "이미지 편집 프로그램을 사용하여 직접 이미지를 제작한다."
+            },
+            answerResult: "2",
+            answerEx: "이미지를 복사하여 활용하는 방법은 이미지 소스를 얻는 방법으로 적절하지 않습니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "53",
+            answerAsk: "웹 애니메이션 제작시 시각적인 깜박임(Flicker)현상을 줄이기 위한 방법으로 가장 옳은 것은?",
+            answerChoice: {
+                1: "모니터의 크기를 최대한 큰 것을 사용한다.",
+                2: "초당 프레임 수를 최대한 높여서 제작한다",
+                3: "화려한 배색보다는 유사색을 이용하여 제작한다.",
+                4: "고해상도의 원본 이미지를 사용한다."
+            },
+            answerResult: "2",
+            answerEx: "깜빡임 현상을 줄이기 위해서는 FPS(Frame Per Second)를 최대한 높여 제작하는 것이 적절합니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "54",
+            answerAsk: "1949년 MIT에서 개발되었으며 수학적 데이터를 그래픽으로 표현한 컴퓨터는?",
+            answerChoice: {
+                1: "윌윈드(Whirlwind)",
+                2: "스케치패드(Sketch Pad)",
+                3: "페인트시스템(Paint System)",
+                4: "상호작용컴퓨터(Interactive Computer)"
+            },
+            answerResult: "1",
+            answerEx: "스캐치패드:1963년 이반 서덜랜드가 박사학위 논물을 위해 작성한 컴퓨터 프로그램&lt;br&gt;상호작용컴퓨터:인간과 컴퓨터 간의 상호작용에 대해 연구하는 학문 분야"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "55",
+            answerAsk: "웹 그래픽 제작 단계 중 색상(Color) 선택 단계의 작업에 해당하는 것은?",
+            answerChoice: {
+                1: "컴퓨터가 제공하는 여러 가지 기능의 효율적 사용에 대해 연구한다.",
+                2: "그려진 이미지를 계속적인 수정과정을 통하여 의도한 이미지로 형성한다.",
+                3: "표현하고자 하는 색상들은 색 혼합이나 색상, 명도, 채도들을 원하는 대로 조절할 수 있고, 색상을 다양하게 사용할 수 있다.",
+                4: "이미지가 선택되면 도구의 기능을 사용하여 축소나 확대 반복, 회전들을 화면상에 제공하며 이미지를 표현하기 위해 그래픽스 메뉴를 선택한다."
+            },
+            answerResult: "3",
+            answerEx: "색상 선택 단계에서는 색 혼합이나 색상, 명도, 채도들을 원하는 대로 다양하게 조절하고 사용할 수 있습니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "56",
+            answerAsk: "다음 중 내비게이션 디자인의 원칙으로 가장 옳은 것은?",
+            answerChoice: {
+                1: "일관성을 유지하며 현재 위치를 알 수 있도록 한다.",
+                2: "정보를 효율적으로 전달할 수 있도록 컬러를 선택한다.",
+                3: "콘텐츠가 서로 시각적 계층 구조와 형태로 구성되도록 한다",
+                4: "많은 내비게이션 요소를 배치하여 사용자 환경을 구축한다."
+            },
+            answerResult: "1",
+            answerEx: "내이게이션 디자인의 원칙 : 간단하게 만들기, 잘 보기에 만들기, 명확하게 만들기, 일관성있게 만들기"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "57",
+            answerAsk: "컴퓨터 그래픽스 활용 분야로 거리가 가장 먼 것은?",
+            answerChoice: {
+                1: "VR(Virtual Reality)",
+                2: "Animation",
+                3: "CAM",
+                4: "Simulation"
+            },
+            answerResult: "3",
+            answerEx: "CAM(Computer Aided Manufacturing)은 그래픽스 활용 분야가 아닌, 컴퓨터로 관리하는 제어 시스템을 의미"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "58",
+            answerAsk: "포토샵 CS4에서 픽셀의 색상 정보에 따라 일정 범위를 적용해 비슷한 색상 정보의 픽셀들을 한 번에 선택하게 해 주는 툴은?",
+            answerChoice: {
+                1: "도장 툴(Stamp Tool)",
+                2: "이미지 분할 툴(Slice Tool)",
+                3: "마술 봉 툴(Magic Wand Tool)",
+                4: "자석 올가미 툴(Magnetic Lasso Tool)"
+            },
+            answerResult: "3",
+            answerEx: "도장 툴:이미지 복제&lt;br&gt;이미지 분할 툴:조각내기&lt;br&gt;자석 올가미 툴:자유롭게 선택영역 만듦"
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "59",
+            answerAsk: "다음 그래픽 파일 포맷 중 비트맵 저장 방식이 아닌 것은?",
+            answerChoice: {
+                1: "GIF",
+                2: "JPEG",
+                3: "WMF",
+                4: "PCX"
+            },
+            answerResult: "3",
+            answerEx: "WMF는 윈도 메타 파일 형식이며 마이크로소프트사의 윈도에서 벡터 도형을 응용 프로그램 간에 교환하기 위해 저장하는 데 사용되는 도형 파일형식입니다. &lt;br&gt; PCX는 그래픽 이미지를 저장하는 형식의 하나로 Zsoft사에 의해 개발된 페인트 브러시 비트맵 파일입니다."
+        },
+        {
+            answerType: "웹디자인 기능사 2013년 05회",
+            answerNum: "60",
+            answerAsk: "마우스에 반응하는 플래시 무비를 만들기 위해 등록하는 심벌로 가장 적절한 것은?",
+            answerChoice: {
+                1: "그래픽 심벌",
+                2: "버튼 심벌",
+                3: "사운드 심벌",
+                4: "무비클럽 심벌"
+            },
+            answerResult: "2",
+            answerEx: "그래픽 심벌:정적인 이미지의 반복적인 사용이나 애니메이션을 위해 사용&lt;br&gt;무비클립심벌:하나의 프레임으로 연속적인 무비 재생이 가능하도록 할 때 사용"
+        },
+    ];
+
+    //선택자
+    const quizWrap = document.querySelector(".quiz_wrap") //데이터 값
+
+    function updateQuiz() {
+        const exam = []
+
+        quizInfo.forEach((question, number) =&gt; {
+            exam.push(`
+                &lt;div class="quiz"&gt;
+                    &lt;span class="quiz_type"&gt;${question.answerType}&lt;/span&gt;
+                    &lt;h2 class="quiz_question"&gt;
+                        &lt;span class="number"&gt;${question.answerNum + ". "}&lt;/span&gt;
+                        &lt;div class="ask"&gt;${question.answerAsk}&lt;/div&gt;
+                    &lt;/h2&gt;
+                    &lt;div class="quiz_view"&gt;
+                        &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
+                        &lt;div class="false"&gt;틀렸습니다!&lt;/div&gt;
+                        &lt;div class="dog"&gt;
+                            &lt;div class="head"&gt;
+                                &lt;div class="ears"&gt;&lt;/div&gt;
+                                &lt;div class="face"&gt;&lt;/div&gt;
+                                &lt;div class="eyes"&gt;
+                                    &lt;div class="teardrop"&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class="nose"&gt;&lt;/div&gt;
+                                &lt;div class="mouth"&gt;
+                                    &lt;div class="tongue"&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class="chin"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="body"&gt;
+                                &lt;div class="tail"&gt;&lt;/div&gt;
+                                &lt;div class="legs"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="quiz_answer"&gt;
+                        &lt;div class="quiz_selects"&gt;
+                            &lt;label for="select1${number}"&gt; 
+                                &lt;input type="radio" id="select1${number}" class="select" name="select${number}" value="1"&gt; 
+                                &lt;span class="choice"&gt;${question.answerChoice[1]}&lt;/span&gt;
+                            &lt;/label&gt;
+                            &lt;label for="select2${number}"&gt;
+                                &lt;input type="radio" id="select2${number}" class="select" name="select${number}" value="2"&gt; 
+                                &lt;span class="choice"&gt;${question.answerChoice[2]}&lt;/span&gt;
+                            &lt;/label&gt;
+                            &lt;label for="select3${number}"&gt;
+                                &lt;input type="radio" id="select3${number}" class="select" name="select${number}" value="3"&gt; 
+                                &lt;span class="choice"&gt;${question.answerChoice[3]}&lt;/span&gt;
+                            &lt;/label&gt;
+                            &lt;label for="select4${number}"&gt;
+                                &lt;input type="radio" id="select4${number}" class="select" name="select${number}" value="4"&gt; 
+                                &lt;span class="choice"&gt;${question.answerChoice[4]}&lt;/span&gt;
+                            &lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            `);
+        });
+
+        exam.push(`
+            &lt;div class="quiz_confirm"&gt;
+                &lt;button class="check"&gt;정답 확인하기&lt;/button&gt;
+                &lt;div class="ex"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        `)
+
+        //join으로 합쳐주기
+        quizWrap.innerHTML = exam.join(''); //textcontent로는 안됨 &lt;태그를 text로 인식하기 때문
+    }
+    updateQuiz();
+
+    //정답 확인
+    function answerQuiz() {
+        const quizSelects = document.querySelectorAll(".quiz_selects");    //보기
+        const quizView = document.querySelectorAll(".quiz_view");          //강아지
+        //사용자가 체크한 라디오 박스  == 문제 정답
+        quizInfo.forEach((question, number) =&gt; {
+            const quizSelectsWrap = quizSelects[number];                    //전체 보기 박스
+            const userSelector = `input[name=select${number}]:checked`;         //사용자가 클린한 라디오 박스
+            const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
+            const quizView = document.querySelectorAll(".quiz_view");
+            console.log(quizSelects)
+            if (userAnswer == question.answerResult) {
+                console.log("정답")
+                quizView[number].classList.add("like");
+            } else {
+                console.log("오답")
+                quizView[number].classList.add("dislike");
+                const div = document.createElement("div");
+                quizSelectsWrap.appendChild(div).innerHTML = `&lt;p class="result"&gt;${question.answerEx}&lt;/p&gt;`;
+            }
+        });
+    }
+    document.querySelector(".quiz_confirm .check").addEventListener("click", answerQuiz);
+&lt;/script&gt;
+</code></pre>
+        </div>
+    </div>    
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    </script>
+</body>
+</html>
