@@ -83,85 +83,233 @@
                 </tbody>
             </table>
             <hr>
-            <h3 class="t_tit2">▶ 비트맵(Bitmap) 방식이란?</h3>
-            
-            <h3 class="t_tit2">비트맵 방식의 장점과 단점</h3>
-            <div class="t_box">
-            -장점<br>
-            : 많은 픽셀로 정교하고 다양한 색상을 가진 이미지를 만들 수 있습니다.<br>
-            -단점<br>
-            : 이미지를 확대하고 축소할 수는 있으나, 깨짐 현상과 이미지 품질이 저하됩니다.
-            </div>
-            <hr>
-            <h3 class="t_tit2">▶ 벡터(Vector) 방식이란?</h3>
-            <p class="t_desc2">
-                <i>벡터(Vector) 방식</i>이란, 점과 곡선을 <i>수학적인 함수</i>로 정의해서 표현되는 이미지입니다.<br>
-                점과 점이 연결되어 선이 되고 선과 선이 연결되어 면이 되는 즉 점, 선, 면을 이용해 이미지를 표현합니다. 점,선,면을 수학적인 함수로 표현하기 때문에 벡터이미지는 원본 이미지를 크게 확장해도 깨지지 않습니다. <br>
-                비트맵의 픽셀과 다르게 크기 조절이나 변형으로도 <i>해상도가 깨지지 않습니다.</i><br>
-                로고, 서체, 아이콘 작업 등에 다양하게 이용되고 있으며 Adobe Illustrator프로그램은 벡터 방식입니다.
+            <h3 class="t_tit2">02. @media</h3>
+            <p class="t_desc">
+               처음 로딩할 때 성능이 저하되지 않도록 CSS 파일을 하나로 만들어서 CSS 내부에서 조건에 따라 분기시키는 넋이 일반적인 형태의 반응형웹 CSS입니다.
             </p>
-            <figure>
-                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/%EB%B2%A1%ED%84%B0%EB%B0%A9%EC%8B%9D.jpg?raw=true" alt="벡터">
-            </figure>
-            <h3 class="t_tit2">벡터 방식의 장점과 단점</h3>
             <div class="t_box">
-            -장점<br>
-            : 작업의 용이성 : 점과, 점으로 이루어진 선, 면으로 모든 그래픽 요소들이 이루어져 있기 때문에 간단하게 점과 선을 수정하는 과정으로 그래픽 작업을 유지하고 관리하기 쉽습니다.<br>
-            : 벡터 포맷의 작업 파일이 보존되는 한 자유로운 수정 가능<br>
-            -단점<br>
-            : 정교한 작업의 한계점
+                @media all and (min-width: 1000px) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/*모든 기기에서 해상도가 최소 1000px 인 경우 적용할 속성들*/<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/*all은 Media Type을 나타냄. and 전, 후에 띄어씀.*/<br>
+                }
             </div>
-            <hr>
-            <h3 class="t_tit2">▶ 비트맵 방식과 벡터 방식 정리</h3>
-            <figure>
-                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/%EB%B9%84%ED%8A%B8%EB%A7%B5%EB%B2%A1%ED%84%B0.png?raw=true" alt="비트맵 벡터">
-            </figure>
+            <h4 class="t_tit3">▶ Media Type 종류</h>
             <table class="t_table">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th>비트맵(Bitmap)</th>
-                        <th>벡터(Vector)</th>
+                        <th>Media Type</th>
+                        <th>설명</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="ce">정의</td>
-                        <td>정사각형의 픽셀에 저장된 비트 정보의 집합</td>
-                        <td>수학적인 함수 관계로 만든 그래픽 이미지</td>
+                        <td class="ce">all</td>
+                        <td>모든 미디어 장치에 사용 (기본값)</td>
                     </tr>
                     <tr>
-                        <td class="ce">확대</td>
-                        <td>계단 현상</td>
-                        <td>뚜렷한 외곽선</td>
+                        <td class="ce">print</td>
+                        <td>프린터에 사용</td>
                     </tr>
                     <tr>
-                        <td class="ce">변화/회전</td>
-                        <td>이미지 품질 손상</td>
-                        <td>변화 없음</td>
+                        <td class="ce">screen</td>
+                        <td>PC, 태블릿, 스마트폰에 사용</td>
                     </tr>
                     <tr>
-                        <td class="ce">특징</td>
-                        <td>사실적인 표현, 특수 효과, 풍부한 색감 표현</td>
-                        <td>선명한 표현, 효과적인 응용 작업</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">단점</td>
-                        <td>이미지의 축소, 확대로 인한 이미지 품질 손상</td>
-                        <td>사진과 같은 이미지 그래픽의 정교한 작업의 한계점</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">확장자</td>
-                        <td>JPG,PNG,GIF 등</td>
-                        <td>AI, SVG, VML 등</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">프로그램</td>
-                        <td>포토샵, 페인터 등</td>
-                        <td>일러스트레이터, 플래시 등</td>
+                        <td class="ce">speech</td>
+                        <td>스크린리더기가 페이지를 읽는데 사용</td>
                     </tr>
                 </tbody>
             </table>
+            <h3 class="t_tit2">예시</h3>
+            <div class="t_box">
+            body { color: red; }<br>
+            @media only screen and (max-width: 768px) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body { color: blue; }<br>
+            }
+            </div>
+            <p class="t_desc">
+                원래 글자색이 빨간색인데, <i>화면이 768px보다 작아졌을 때는 글자색을 파란색으로 지정한다는 뜻</i>이므로 PC에서는 글자 색상이 빨간색으로, 모바일에서는 파란색으로 나타나게 됩니다.
+            </p>
+            <h3 class="t_tit2">예시</h3>
+            <div class="t_box">
+            body { color: blue; }<br>
+            @media only screen and (min-width: 768px) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body { color: red; }<br>
+            }
+            </div>
+            <p class="t_desc">
+                원래 글자색이 파란색인데, <i>화면이 768px보다 커지면 글자색을 빨간색으로 지정한다는 뜻</i>
+            </p>
+            <h3 class="t_tit2">예시</h3>
+            <div class="t_box">
+            @media only screen and (orientation: portrait) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body { background: skyblue; }<br>
+            }
+            </div>
+            <p class="t_desc">
+                모바일 기기를 세워 <i>세로가 가로보다 긴 세로방향</i>이 되면 <i>배경색을 하늘색으로 지정한다는 뜻</i>
+            </p>
+            <h3 class="t_tit2">예시</h3>
+            <div class="t_box">
+            @media only screen and (orientation: landscape) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body { background: lightgreen; }<br>
+            }
+            </div>
+            <p class="t_desc">
+                모바일 기기를 눕혀 <i>가로가 세로보다 긴 가로방향</i>이 되면 <i>배경색을 연두색으로 지정한다는 뜻</i>
+            </p>
+            <h3 class="t_tit2">예시</h3>
+            <div class="t_box">
+            @media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body { color: red; }<br>
+            }
+            </div>
+            <p class="t_desc">
+                ※ 쉼표로 구분하여 조건을 추가할 수 있음.
+                <br>
+                가로가 600px에서 900px 사이일 때, 그리고 1100px 이상일 때에만 글자색을 빨간색으로 한다는 뜻
+            </p>
+            <hr><br>
+            <h4 class="t_tit">미디어쿼리를 이용해서 레이아웃을 만들어 봅시다!</h4><br>
+            <div class="iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fgc5BPvQ2aXoHF3PODadUeO%2FUntitled%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+            </div>
+            <br>
+            <div class="result">
+                <details>
+                    <summary><strong>HTML</strong></summary>
+                    <div class="t_code">
+<pre><code>&lt;body&gt;
+    &lt;div id="wrap"&gt;
+        &lt;header id="header"&gt;&lt;/header&gt;
+        &lt;main id="main"&gt;
+            &lt;div class="lnb"&gt;&lt;/div&gt;
+            &lt;content id="content"&gt;&lt;/content&gt;
+            &lt;aside id="aside"&gt;&lt;/aside&gt;
+        &lt;/main&gt;
+        &lt;footer id="footer"&gt;&lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <br>
+            <div class="result">
+                <details>
+                    <summary><strong>CSS</strong></summary>
+                    <div class="t_code">
+<pre><code>&lt;style&gt;
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    #wrap {
+        width: 100%;
+    }
+    #header {
+        height: 200px;
+        background-color: #FFCFB4;
+    }
+    #main {
+        display: flex;
+    }
+    .lnb {
+        width: 25%;
+        height: 600px;
+        background-color: #EEC28F;
+    }
+    #content {
+        width: 50%;
+        height: 600px;
+        background-color: #FFB054;
+    }
+    #aside {
+        width: 25%;
+        height: 600px;
+        background-color: #EDA046;
+    }
+    #footer {
+        height: 200px;
+        background-color: #FC9054;
+    }
+    /* 미디어쿼리 */
+    @media (max-width:1280px){}
+    @media (max-width:1024px){
+        #main {
+            flex-wrap: wrap;
+        }
+        .lnb {
+            width: 30%;
+            height: 400px;
+        }
+        #content {
+            width: 70%;
+            height: 400px;
+        }
+        #aside {
+            width: 100%;
+            height: 200px;
+        }
+    }
+    @media (max-width:768px){
+        .lnb {
+            width: 100%;
+            height: 200px;
+        }
+        #content {
+            width: 100%;
+            height: 200px;
+        }
+    }
+&lt;/style&gt;
+</code></pre>
+            </div>
+                </details>
+            </div>
+            <br>
+            <div class="result">
+                <details>
+                    <summary><strong>완성본</strong></summary>
+                    <div class="iframe">
+                        <iframe height="300" style="width: 500px;" scrolling="no" title="Untitled" src="https://codepen.io/kwonhyehyeon/embed/YzaJBaw?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/YzaJBaw">
+                            Untitled</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                </details>
+            </div>
+            <hr>
+            <h3 class="t_tit2">03. media query를 흉내내는 script</h3>
+            <div class="t_box">
+                function initLayout() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var widthWin = $(window).width()<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (widthWin &gt; 1000) $('body').addClass('mob').removeClass('pc');<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else $('body').removeClass('mob').addClass('pc');<br>
+                }
+            </div>
+            <p class="t_desc">
+               창의 가로 크기를 재고 1000px 보다 좁으면 body에 mob 클래스를 붙이고 pc 클래스는 제거하고, <br>
+               1000px 이상이면 body에 pc 클래스를 붙이고, mob 클래스는 제거한다는 뜻입니다.
+            </p>
+            <div class="t_box">
+                $(window).resize(function() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initLayout();<br>
+                });
+            </div>
+            <p class="t_desc">
+               미리 만들어둔 스크립트를 창 크기가 바뀔 때마다 실행합니다.
+            </p>
+            <div class="t_box">
+                ...<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body.mob { max-width: 720px; }<br>
+                ...
+            </div>
+            <p class="t_desc">
+               css에서 body.mob에 속성을 추가하면 모바일일 때의 속성이 등록되는 것입니다.
+            </p>
+            
         </div>
     </main>
     <!-- //main -->
