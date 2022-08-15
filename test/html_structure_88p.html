@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>구조 요소</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv2Gothic/NexonLv2Gothic.css');
+        
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NexonLv2Gothic';
+            font-size: 14px;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        /* common */
+        body {
+            background-color: #fff;
+        }
+        #wrap {
+            width: 1800px;
+            background-color: #666;
+            margin: 30px auto;
+        }
+        /* header */
+        #header {
+            width: 1800px;
+            height: 150px;
+            background-color: #c0e4ff;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #header .header_left {
+            width: 117px;
+            height: 110px;
+            background-color: #8bd2fa;
+            margin: 20px 30px;
+        }
+        .header_left .h1 {
+            width: 76px;
+            height: 22px;
+            background-color: #8f8f8f;
+            text-align: center;
+            margin: 10px 21px 25px 21px;
+            color: #fff;
+            line-height: 22px;
+        }
+        .header_left a{
+            color: #000;
+        }
+        .header_name {
+            width: 178px;
+            height: 26px;
+            margin: 14px auto;
+            background-color: #000;
+            color: #fff;
+            line-height: 26px;  
+            position: relative;  
+        }
+        .header_right {
+            width: 1500px;
+            height: 76px;
+            background-color: #8bd2fa;
+            position: absolute;
+            bottom: -90px;
+            left: -650px;
+        }
+        .header_right .nav {
+            width: 92px;
+            height: 26px;
+            background-color: #8f8f8f;
+            line-height: 26px;
+            margin: 12px 17px;
+        }
+        .header_right .MENU ul{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 300px;
+        }
+        .header_right .MENU ul li a {
+            color: #000;       
+        }
+        /* section */
+        #section {
+            width: 1800px;
+            height: 830px;
+            background-color: #c0e4ff;
+            margin: 30px auto;
+        }
+        #section span {
+            display: flex;
+            justify-content: center;
+            width: 126px;
+            height: 26px;
+            line-height: 26px;
+            background-color: #000;
+            color: #fff;
+        }
+        #section .section_box {
+            display: flex;
+        }
+        #section .section_box .s_box01 {
+            width: 589px;
+            height: 770px;
+            background-color: #8bd2fa;
+            margin: 4px 30px;  
+            position: relative;     
+        }
+        #section .section_box .s_box01 p {
+            width: 92px;
+            height: 26px;
+            background-color:#8f8f8f;
+            color: #fff;
+            margin: 26px 26px 0 26px;
+            line-height: 26px;
+        }
+        #section .section_box .s_box01 h2 {
+            position: absolute;
+            left: 40%;
+            top: 50%;
+        }
+
+        #section .section_box .s_box02 {
+            width: 589px;
+            height: 770px;
+            background-color: #8bd2fa;
+            margin: 4px 30px 4px 0;  
+            position: relative;      
+        }
+        #section .section_box .s_box02 p {
+            width: 92px;
+            height: 26px;
+            background-color:#8f8f8f;
+            color: #fff;
+            margin: 26px;
+            line-height: 26px;
+        }
+        #section .section_box .s_box02 h2 {
+            position: absolute;
+            left: 40%;
+            top: 50%;
+        }
+        #section .section_box .article .art_1 {
+            width: 562px;
+            height: 370px;
+            background-color: #8bd2fa;
+            margin: 4px 30px 30px 0;
+            position: relative;      
+        }
+        #section .section_box .article .art_1 p {
+            width: 126px;
+            height: 26px;
+            background-color:#8f8f8f;
+            color: #fff;
+            line-height: 26px;
+        }
+        #section .section_box .article .art_1 h2 {
+            position: absolute;
+            left: 45%;
+            top: 50%;
+        }
+        #section .section_box .article .art_2 {
+            width: 562px;
+            height: 370px;
+            background-color: #8bd2fa;
+            position: relative;
+        }
+        #section .section_box .article .art_2 p {
+            width: 126px;
+            height: 26px;
+            background-color:#8f8f8f;
+            color: #fff;
+            line-height: 26px;
+        }
+        #section .section_box .article .art_2 h2 {
+            position: absolute;
+            left: 45%;
+            top: 50%;
+        }
+        /* footer */
+        #footer {
+            width: 1800px;
+            height: 100px;
+            margin: 0 auto 30px auto;
+            background-color: #c0e4ff;
+            position: relative
+        }
+        #footer span {
+            display: flex;
+            justify-content: center;
+            width: 126px;
+            height: 26px;
+            line-height: 26px;
+            background-color: #000;
+            color: #fff;
+        }
+        #footer .f_box01  {
+            width: 912px;
+            height: 40px;
+            background-color: #8bd2fa;
+            margin: 9px 0 2px 22px;
+            position: absolute;
+            right: 730px;
+            top: 0;
+        }
+        #footer .f_box01 .adress {
+            width: 92px;
+            height: 26px;
+            background-color:#8f8f8f;
+            color: #fff;
+            line-height: 26px;
+        }
+        #footer .f_box01 .private {
+            position: absolute;
+            top: 12px;
+            left: 150px;
+        }
+        #footer .f_box02 {
+            width: 912px;
+            height: 40px;
+            background-color: #8bd2fa;
+            margin: 0 0 9px 22px;
+            position: absolute;
+            right: 730px;
+            top: 50px;
+        }
+        #footer .f_box02 .p {
+            width: 92px;
+            height: 26px;
+            background-color:#8f8f8f;
+            color: #fff;
+            line-height: 26px;
+        }
+        #footer .f_box02 .copy {
+            position: absolute;
+            top: 12px;
+            left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="header_left">
+                <div class="h1">h1</div>
+                <a href="#">반응형웹</a>
+            </div>
+            <div class="header_name">header
+                <div class="header_right">
+                        <div class="nav">nav</div>
+                        <div class="MENU">
+                            <ul>
+                                <li><a href="#">MENU01</a></li>
+                                <li><a href="#">MENU02</a></li>
+                                <li><a href="#">MENU03</a></li>
+                                <li><a href="#">MENU04</a></li>
+                                <li><a href="#">MENU05</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </header>
+        <section id="section">
+            <span>div</span>
+            <div class="section_box">
+                <div class="s_box01">
+                    <p>section</p>
+                    <h2>콘텐츠 그룹01</h2>
+                </div>
+                <div class="s_box02">
+                    <p>section</p>
+                    <h2>콘텐츠 그룹02</h2>
+                </div>
+                <div class="article">
+                    <div class="art_1">
+                        <p>article</p>
+                        <h2>주요기사</h2>
+                    </div>
+                    <div class="art_2">
+                        <p>article</p>
+                        <h2>광고</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <span>footer</span>
+            <div class="f_box01">
+                <p class="adress">address</p>
+                <p class="private">경기도 안양시 동안구&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;031)123-4567&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noeyheyh9357@gmail.com</p>
+            </div>
+            <div class="f_box02">
+                <p class="p">p</p>
+                <p class="copy">COPYRIGHT ⓒ ALL rights reserved</p>
+            </div>
+        </footer>
+   </div>
+</body>
+</html>

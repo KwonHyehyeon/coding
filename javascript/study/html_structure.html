@@ -126,15 +126,325 @@
             <div class="iframe">
                 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fe495fHgZSEyUxmP3G3VZD7%2FUntitled%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
             </div>
-            <h4 class="t_tit3">HTML</h4>
-            <div class="t_code">
-<pre><code>
+            <div class="result">
+                <details>
+                    <summary><strong>HTML</strong></summary>
+                    <div class="t_code">
+<pre><code>&lt;body&gt;
+    &lt;div id="wrap"&gt;
+        &lt;header id="header"&gt;
+            &lt;div class="header_left"&gt;
+                &lt;div class="h1"&gt;h1&lt;/div&gt;
+                &lt;a href="#"&gt;반응형웹&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="header_name"&gt;header
+                &lt;div class="header_right"&gt;
+                        &lt;div class="nav"&gt;nav&lt;/div&gt;
+                        &lt;div class="MENU"&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;MENU01&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;MENU02&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;MENU03&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;MENU04&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;MENU05&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                        &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/header&gt;
+        &lt;section id="section"&gt;
+            &lt;span&gt;div&lt;/span&gt;
+            &lt;div class="section_box"&gt;
+                &lt;div class="s_box01"&gt;
+                    &lt;p&gt;section&lt;/p&gt;
+                    &lt;h2&gt;콘텐츠 그룹01&lt;/h2&gt;
+                &lt;/div&gt;
+                &lt;div class="s_box02"&gt;
+                    &lt;p&gt;section&lt;/p&gt;
+                    &lt;h2&gt;콘텐츠 그룹02&lt;/h2&gt;
+                &lt;/div&gt;
+                &lt;div class="article"&gt;
+                    &lt;div class="art_1"&gt;
+                        &lt;p&gt;article&lt;/p&gt;
+                        &lt;h2&gt;주요기사&lt;/h2&gt;
+                    &lt;/div&gt;
+                    &lt;div class="art_2"&gt;
+                        &lt;p&gt;article&lt;/p&gt;
+                        &lt;h2&gt;광고&lt;/h2&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;footer id="footer"&gt;
+            &lt;span&gt;footer&lt;/span&gt;
+            &lt;div class="f_box01"&gt;
+                &lt;p class="adress"&gt;address&lt;/p&gt;
+                &lt;p class="private"&gt;경기도 안양시 동안구&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;031)123-4567&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noeyheyh9357@gmail.com&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="f_box02"&gt;
+                &lt;p class="p"&gt;p&lt;/p&gt;
+                &lt;p class="copy"&gt;COPYRIGHT ⓒ ALL rights reserved&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+   &lt;/div&gt;
+&lt;/body&gt;
 </code></pre>
             </div>
-            <h4 class="t_tit3">CSS</h4>
-            <div class="t_code">
-<pre><code>
+                </details>
+            </div>
+            <div class="result">
+                <details>
+                    <summary><strong>CSS</strong></summary>
+                    <div class="t_code">
+<pre><code>&lt;style&gt;
+    /* fonts */
+    @import url('https://webfontworld.github.io/NexonLv2Gothic/NexonLv2Gothic.css');
+    
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'NexonLv2Gothic';
+        font-size: 14px;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+    }
+    li {
+        list-style: none;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+    }
+    /* common */
+    body {
+        background-color: #fff;
+    }
+    #wrap {
+        width: 1800px;
+        background-color: #666;
+        margin: 30px auto;
+    }
+    /* header */
+    #header {
+        width: 1800px;
+        height: 150px;
+        background-color: #c0e4ff;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #header .header_left {
+        width: 117px;
+        height: 110px;
+        background-color: #8bd2fa;
+        margin: 20px 30px;
+    }
+    .header_left .h1 {
+        width: 76px;
+        height: 22px;
+        background-color: #8f8f8f;
+        text-align: center;
+        margin: 10px 21px 25px 21px;
+        color: #fff;
+        line-height: 22px;
+    }
+    .header_left a{
+        color: #000;
+    }
+    .header_name {
+        width: 178px;
+        height: 26px;
+        margin: 14px auto;
+        background-color: #000;
+        color: #fff;
+        line-height: 26px;  
+        position: relative;  
+    }
+    .header_right {
+        width: 1500px;
+        height: 76px;
+        background-color: #8bd2fa;
+        position: absolute;
+        bottom: -90px;
+        left: -650px;
+    }
+    .header_right .nav {
+        width: 92px;
+        height: 26px;
+        background-color: #8f8f8f;
+        line-height: 26px;
+        margin: 12px 17px;
+    }
+    .header_right .MENU ul{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 300px;
+    }
+    .header_right .MENU ul li a {
+        color: #000;       
+    }
+    /* section */
+    #section {
+        width: 1800px;
+        height: 830px;
+        background-color: #c0e4ff;
+        margin: 30px auto;
+    }
+    #section span {
+        display: flex;
+        justify-content: center;
+        width: 126px;
+        height: 26px;
+        line-height: 26px;
+        background-color: #000;
+        color: #fff;
+    }
+    #section .section_box {
+        display: flex;
+    }
+    #section .section_box .s_box01 {
+        width: 589px;
+        height: 770px;
+        background-color: #8bd2fa;
+        margin: 4px 30px;  
+        position: relative;     
+    }
+    #section .section_box .s_box01 p {
+        width: 92px;
+        height: 26px;
+        background-color:#8f8f8f;
+        color: #fff;
+        margin: 26px 26px 0 26px;
+        line-height: 26px;
+    }
+    #section .section_box .s_box01 h2 {
+        position: absolute;
+        left: 40%;
+        top: 50%;
+    }
+
+    #section .section_box .s_box02 {
+        width: 589px;
+        height: 770px;
+        background-color: #8bd2fa;
+        margin: 4px 30px 4px 0;  
+        position: relative;      
+    }
+    #section .section_box .s_box02 p {
+        width: 92px;
+        height: 26px;
+        background-color:#8f8f8f;
+        color: #fff;
+        margin: 26px;
+        line-height: 26px;
+    }
+    #section .section_box .s_box02 h2 {
+        position: absolute;
+        left: 40%;
+        top: 50%;
+    }
+    #section .section_box .article .art_1 {
+        width: 562px;
+        height: 370px;
+        background-color: #8bd2fa;
+        margin: 4px 30px 30px 0;
+        position: relative;      
+    }
+    #section .section_box .article .art_1 p {
+        width: 126px;
+        height: 26px;
+        background-color:#8f8f8f;
+        color: #fff;
+        line-height: 26px;
+    }
+    #section .section_box .article .art_1 h2 {
+        position: absolute;
+        left: 45%;
+        top: 50%;
+    }
+    #section .section_box .article .art_2 {
+        width: 562px;
+        height: 370px;
+        background-color: #8bd2fa;
+        position: relative;
+    }
+    #section .section_box .article .art_2 p {
+        width: 126px;
+        height: 26px;
+        background-color:#8f8f8f;
+        color: #fff;
+        line-height: 26px;
+    }
+    #section .section_box .article .art_2 h2 {
+        position: absolute;
+        left: 45%;
+        top: 50%;
+    }
+    /* footer */
+    #footer {
+        width: 1800px;
+        height: 100px;
+        margin: 0 auto 30px auto;
+        background-color: #c0e4ff;
+        position: relative
+    }
+    #footer span {
+        display: flex;
+        justify-content: center;
+        width: 126px;
+        height: 26px;
+        line-height: 26px;
+        background-color: #000;
+        color: #fff;
+    }
+    #footer .f_box01  {
+        width: 912px;
+        height: 40px;
+        background-color: #8bd2fa;
+        margin: 9px 0 2px 22px;
+        position: absolute;
+        right: 730px;
+        top: 0;
+    }
+    #footer .f_box01 .adress {
+        width: 92px;
+        height: 26px;
+        background-color:#8f8f8f;
+        color: #fff;
+        line-height: 26px;
+    }
+    #footer .f_box01 .private {
+        position: absolute;
+        top: 12px;
+        left: 150px;
+    }
+    #footer .f_box02 {
+        width: 912px;
+        height: 40px;
+        background-color: #8bd2fa;
+        margin: 0 0 9px 22px;
+        position: absolute;
+        right: 730px;
+        top: 50px;
+    }
+    #footer .f_box02 .p {
+        width: 92px;
+        height: 26px;
+        background-color:#8f8f8f;
+        color: #fff;
+        line-height: 26px;
+    }
+    #footer .f_box02 .copy {
+        position: absolute;
+        top: 12px;
+        left: 150px;
+    }
+&lt;/style&gt;
 </code></pre>
+            </div>
+                </details>
             </div>
             <h3 class="t_tit2">결과</h3>
             <br>
