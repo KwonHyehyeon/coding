@@ -15,52 +15,39 @@
         <p class="t_desc">
             자바스크립트를 활용하여 검색 화면을 만들어 봅시다.
         </p>
+        <hr>
+        <h3 class="t_tit2">HTML 태그 검색창 만들기!</h3>
         <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
-            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect01.html" frameborder="0"></iframe>
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/searchEffect01.html" frameborder="0"></iframe>
         </div>
-
         <div class="t_link">
-            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/quizEffect01.html" target="_blank"
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/searchEffect01.html" target="_blank"
             >원본 소스보기</a>
         </div>
-
-        <h3 class="t_tit">자바스크립트 활용</h3>
+        <h3 class="t_tit2">자바스크립트 활용</h3>
         <p class="t_desc2">
-            1. 선택자를 먼저 지정해주고 문제 정보를 정리해준 후 문제 출력을 위해 선택자와 문제 정보를 <i>innerText</i>를 이용하여 문제를 출력해줍니다.<br>
-            2. 정답을 확인하기 위한 버튼과 정답을 확인한 후의 화면을 디자인해줍니다. 이 때 정답을 확인하기 위해서 클릭하는 효과로 이벤트 객체인 <i>addEventListener()</i>메서드를 활용해 줍니다.
+            
         </p>
         <div class="t_code">
-<pre><code class="language-js">//선택자
-const quizType = document.querySelector(".quiz_type");                  //퀴즈 종류
-const quizNumber =  document.querySelector(".quiz_question .number");   //퀴즈 번호
-const quizAsk = document.querySelector(".quiz_question .ask");          //퀴즈 질문
-const quizConfirm = document.querySelector(".quiz_answer .confirm");    //정답 확인 버튼
-const quizResult = document.querySelector(".quiz_answer .result");      //정답 결과
-const quizDog = document.querySelector(".quiz_view .dog");              //강아지
+<pre><code class="language-js">&lt;script&gt;
+//선택자
+const searchBox = document.querySelector(".search__box input");            //검색 영역
+const searchList = document.querySelectorAll(".search__list ul li");       //목록 리스트
 
-//문제 정보
-const answerType = "웹디자인기능사";
-const answerNum = 1;
-const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 합니까?"
-const answerResult = "연변대비"
-
-//문제 출력
-quizType.innerText = answerType;
-quizNumber.innerText = answerNum + ". ";
-quizAsk.innerText = answerAsk;
-quizResult.innerText = answerResult;
-
-//정답 숨기기
-quizResult.style.display = "none";
-
-//정답 확인
-//정답 버튼을 클릭하면 확인버튼 안보이게... 숨겨진 정답은 보이게...
-//정답을 확인하면 강아지가 웃고 있어야 함 //class like를 추가함!
-quizConfirm.addEventListener("click", function(){
-    quizConfirm.style.display = "none";
-    quizResult.style.display = "block";
-    quizDog.classList.add("like")
-}); //addEventListener = 버튼을 클릭하면 사건이 일어나게 하는 것
+searchBox.addEventListener("keyup", () =&gt; {
+    const searchWord = searchBox.value;     //사용자가 입력한 키워드
+    
+    searchList.forEach(el =&gt; {
+        const cssName = el.dataset.name;
+        //만약에 indexOf가 true가 되면, false : 0이 되면
+        if(cssName.indexOf(searchWord)){
+            el.classList.add("hide");
+        } else {
+            el.classList.remove("hide");    //indexOf값이 0이 되는 값만 hide를 지워줍니다.
+        }
+    });
+}); 
+&lt;/script&gt;
 </code></pre>
     </div>
     <!-- document -->
@@ -73,40 +60,6 @@ quizConfirm.addEventListener("click", function(){
     <script src="../../assets/js/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
-    </script>
-    <script>
-        //선택자
-        const quizType = document.querySelector(".quiz_type");                  //퀴즈 종류
-        const quizNumber =  document.querySelector(".quiz_question .number");   //퀴즈 번호
-        const quizAsk = document.querySelector(".quiz_question .ask");          //퀴즈 질문
-        const quizConfirm = document.querySelector(".quiz_answer .confirm");    //정답 확인 버튼
-        const quizResult = document.querySelector(".quiz_answer .result");      //정답 결과
-        const quizDog = document.querySelector(".quiz_view .dog");              //강아지
-
-        //문제 정보
-        const answerType = "웹디자인기능사";
-        const answerNum = 1;
-        const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 합니까?"
-        const answerResult = "연변대비"
-
-        //문제 출력
-        quizType.innerText = answerType;
-        quizNumber.innerText = answerNum + ". ";
-        quizAsk.innerText = answerAsk;
-        quizResult.innerText = answerResult;
-
-
-        //정답 숨기기
-        quizResult.style.display = "none";
-
-        //정답 확인
-        //정답 버튼을 클릭하면 확인버튼 안보이게... 숨겨진 정답은 보이게...
-        //정답을 확인하면 강아지가 웃고 있어야 함 //class like를 추가함!
-        quizConfirm.addEventListener("click", function(){
-            quizConfirm.style.display = "none";
-            quizResult.style.display = "block";
-            quizDog.classList.add("like")
-        }); //addEventListener = 버튼을 클릭하면 사건이 일어나게 하는 것
     </script>
 </body>
 </html>
