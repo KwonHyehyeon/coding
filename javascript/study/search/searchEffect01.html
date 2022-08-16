@@ -26,7 +26,7 @@
             <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/searchEffect01.html" target="_blank"
             >원본 소스보기</a>
         </div>
-        <h3 class="t_tit2">카테고리 만들기</h3>
+        <h3 class="t_tit2">▶ 카테고리 만들기</h3>
         <p class="t_desc2">
             카테고리를 만들기 위해 HTML로 먼저 틀을 짜주어야 합니다. 
         </p>
@@ -100,14 +100,15 @@
             </div>
             <div class="result">
                 <details>
-                    <summary><strong>완성본</strong></summary>
+                    <summary><strong>완성본 보기</strong></summary>
                     <div class="iframe">
-                        <img src="" alt="서치이펙트카테고리">
+                        <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/%EC%84%9C%EC%B9%98%EC%9D%B4%ED%8E%99%ED%8A%B8_%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC.jpg?raw=true" alt="서치이펙트카테고리">
                     </div>
                 </details>
             </div>
             <!-- 카테고리 만들기 -->
-        <h3 class="t_tit2">내용 입력</h3>
+            <hr>
+        <h3 class="t_tit2">▶ 내용 입력</h3>
         <p class="t_desc2">
             searchEffect01.html, searchEffect01_css.html, searchEffect01_javascript.html 모든 페이지에 밑에와 같이 관련 내용을 정리해줍니다.
         </p>
@@ -153,24 +154,89 @@
     </p>
     <h3 class="t_tit2">CSS</h3>
     <div class="t_code">
-        <pre><code class="language-js">&lt;ul&gt;
-            &lt;li class="active"&gt;&lt;a href="searchEffect01.html"&gt;1&lt;/a&gt;
-                &lt;ul class="sub"&gt;
-                    &lt;li class="active"&gt;&lt;a href="searchEffect01.html"&gt;HTML&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="searchEffect01_css.html"&gt;CSS&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="searchEffect01_javascript.html"&gt;JAVASCRIPT&lt;/a&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/li&gt;
-            &lt;li&gt;&lt;a href="searchEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="searchEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="searchEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="searchEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="searchEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-        </code></pre>
+<pre><code class="language-js">/* main */
+#main {
+    margin: 50px 10px;
+}
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid  var(--htmlColor);
+    border-radius: 20px;
+    background-color: #f1f3f6;
+    text-align: center;
+    padding: 30px;
+}
+.search__wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.search__wrap > h1 {
+    font-family: 'Tmon';
+    color:  var(--htmlColor);
+    font-size: 6vw;
+    margin-bottom: 10px;
+}
+.search__box {
+    margin-bottom: 20px;
+}
+.search__box label{
+    position:absolute;
+    clip:rect(0 0 0 0);
+    width:1px;
+    height:1px;
+    margin:-1px;
+    overflow:hidden
+}
+.search__box input {
+--htmlColor : #223547;
+    border: 2px solid  var(--htmlColor); /*:root {--htmlColor : #223547;} 효과를 줌*/
+    padding: 15px 40px;
+    width: 70%;
+    border-radius: 50px;
+    font-size: 20px;
+}
+.search__tab li.active a {
+    background-color:  var(--htmlColor);
+    color: #fff;
+}
+.search__list li {
+    text-align-last: left;
+    line-height: 1.7;
+}
+.search__list li.hide {
+    display: none;
+}
+/* 미디어 쿼리*/
+@media (max-width: 600px)
+    .search__wrap {
+        padding: 20px;
+    }
+    .search__wrap > span {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .search__wrap > h1 {
+        font-size: 44px;
+    }
+    .search__box input {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary><strong>완성본 보기</strong></summary>
+                    <div class="iframe">
+                        <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/%EC%84%9C%EC%B9%98%EC%9D%B4%ED%8E%99%ED%8A%B8_%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC.jpg?raw=true" alt="서치이펙트카테고리">
+                    </div>
+                </details>
             </div>
             <!-- 내용 입력 -->
-        <h3 class="t_tit2">자바스크립트 활용 (공통) </h3>
+        <h3 class="t_tit2">▶ 자바스크립트 활용 (공통) </h3>
         <p class="t_desc2">
             자바스크립트를 활용하여 검색을 했을 때 검색한 결과가 나올 수 있도록  forEach문과 if문을 이용해서 코딩을 해줍니다.
         </p>
