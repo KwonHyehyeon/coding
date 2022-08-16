@@ -46,116 +46,102 @@
     <main id="main">
         <div class="document">
             <h2 class="t_tit">slice() / substring() / substr() 에 대해 알아봅시다!</h2>
-            <p class="t_desc">
-                자바스크립트를 다루기 위해서는 기초적인 특징과 기본 문법이 있습니다.
-                가장 기본이기 때문에 이 부분을 숙지하고 자바스크립트를 <i>공부</i>해야합니다.
-            </p>
-
-            <hr>
-
-            <h3 class="t_tit2">자바스크립트란?</h3>
+            <h3 class="t_tit2">01. slice() 메서드</h3>
             <p class="t_desc2">
-                JavaScript는 웹 페이지에서 복잡한 기능을 구현할 수 있도록 하는 스크립트 <i>프로그래밍 언어</i>입니다.
-                HTML은 정적인 레이아웃을 표현한다면, 자바스크립트는 동적인 기능을 표현합니다. 
-            </p>
-            <p class="t_desc">
-            자바스크립트는 1995년 넷스케이프 커뮤니케이션의 브렌던 아이크가 개발하였으며 Netscape Navigsator2.0에 구현되었습니다. 
-            1996년에는 마이크로소프트사의 Internet Explorer3.0 탑재되었으며 java 애플릿으로 구현된 웹 브라우저의 지지부진한 보급과 맞물려 빠르게 보급되었습니다. 1997년부터 ESMAScript를 따르는 표준화 작업을 통해 현재는 모든 브라우저에서 지원됩니다.
-            </p>
-
-            <h3 class="t_tit2">자바스크립트 기본 규칙</h3>
-            <h4 class="t_tit3">1. 세미콜론(;)</h4>
-            <p class="t_desc">
-                하나의 실행문이 끝나면 마지막에 세미콜론(;)을 붙여 줍니다.
-                세미콜론(;)을 붙여 주지 않아도 상관은 없습니다.
+                slice() 메서드는 주어진 배열의 start 인덱스부터 end 인덱스까지(단, end인덱스는 포함하지 않음)에 대한
+                <i>새로운 배열 객체로 반환</i>합니다.
             </p>
             <div class="t_box">
-                var num = 5<i>;</i><br>
-                document.write(num);
+                ★<strong>slice(start index, end index)</strong>★<br><br>
+                //start index<br>
+                : 0을 시작으로 하는 시작점에 대한 인덱스<br>
+                : 만약 음수라면 배열의 끝에서부터의 길이를 나타냄<br>
+                (-1이면 배열에서 제일 마지막 한 개 추출)<br>
+                : 배열의 길이보다 큰 값이면 빈 배열을 반환<br><br>
+                //end index<br>
+                : 추출을 종료할 인덱스(end index를 제외하고 추출)<br>
+                : end가 생략되면? 배열의 끝까지(배열의 길이) 추출<br>
+                : end가 배열의 길이보다 크다면? 배열의 끝(배열의 길이)까지 추출<br><br>
+                *규칙*<br>
+                <i>시작 위치 &lt; 끝나는 위치</i>
             </div>
-
-            <h4 class="t_tit3">2. 대소문자</h4>
-            <p class="t_desc">
-                자바스크립트 명령어는 <i>대소문자</i>를 구별합니다.
-                console과 Console은 각각 다른 문자열로 처리됩니다.
-            </p>
-
-            <h4 class="t_tit3">3. 들여쓰기</h4>
-            <p class="t_desc">
-                자바스크립트는 가독성을 위하여 <i>들여쓰기</i>를 사용합니다.
-            </p>
-
-            <h4 class="t_tit3">4. 주석</h4>
-            <p class="t_desc">
-               자바스크립트 주석은 일반적으로 특정 코드에 대한 설명을 입력하거나 
-               특정한 부분의 코드가 실행되지 않도록 사용합니다.
-               주석 표시는 프로그램에 영향을 미치지 않습니다.
-            </p>
-            
-            <hr> <!--주제와 주제를 나눌 때 <hr> 라인이 생겨서 수정할 수 있음 -->
-
-            <h3 class="t_tit2">출력하는 방법</h3>
-            <p class="t_desc">자바스크립트에서는 출력할 수 있는 방법이 여러가지가 있습니다.</p>
-            <table class="t_table">
-                <thead>
-                    <tr>
-                        <th>분류</th>
-                        <th>메서드</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="ce">입력</td>
-                        <td>prompt()</td>
-                    </tr>
-                    <tr>
-                        <td class="ce" rowspan="3">출력</td>
-                        <td>document.write()</td>
-                    </tr>
-                    <tr>
-                        <td>alert()</td>
-                    </tr>
-                    <tr>
-                        <td>console.log()</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">확인</td>
-                        <td>confirm()</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <hr>
-
-            <h3 class="t_tit2">자바스크립트 사용 방법</h3>
-            <p class="t_desc">
-                자바스크립트의 사용방법은 
-                1. 외부파일 연결하는 방법 
-                2. 스크립트 태그에 사용하는 방법 
-                3.태그에 직접 기술하는 방법이 등이 있습니다.
-            </p>
+            <h4 class="t_tit3">slice() 사용 예제 </h4>
             <div class="t_code">
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Javasript&lt;/title&gt;
-    &lt;!-- 1. 외부 파일로 로드하는 방법 --&gt;
-    &lt;script type="text/Javasript" src="js/script.js"&gt;&lt;/script&gt;
-    &lt;!-- 2. script 태그 사이에 기술하는 방법 --&gt;
-    &lt;script&gt;
-        document.write("Javasript");
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- 3. 태그에 직접 기술하는 방법 --&gt;
-    &lt;a href="#" onclick="alert('Javasript')"&gt;&lt;/a&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<pre><code>const str1 = "javascript reference";
+const currentStr1 = str1.slice(0);  //javascript reference
+const currentStr2 = str1.slice(1); //avascript reference
+const currentStr3 = str1.slice(2); //vascript reference
+const currentStr4 = str1.slice(0, 1); //j
+const currentStr5 = str1.slice(0, 2); //ja
+const currentStr6 = str1.slice(0, 3); //jav
+const currentStr7 = str1.slice(1, 2); //a
+const currentStr8 = str1.slice(1, 3); //av
+const currentStr9 = str1.slice(1, 4); //avs
+const currentStr10 = str1.slice(-1); //e
+const currentStr11 = str1.slice(-2); //ce
+const currentStr12 = str1.slice(-3); //nce
+const currentStr13 = str1.slice(-3, -1); //nc //-1 자리와 -3 자리르 바꾸면 더 큰 것이 앞으로 오기 때문에 값이 안 나옴!
+const currentStr14 = str1.slice(-3, -2); //n
+const currentStr15 = str1.slice(-3, -3); //
+const currentStr16 = str1.slice(1, 4); //ava
+const currentStr17 = str1.slice(4, 1); //'' 아무것도 안 나옴
 </code></pre>
+            </div>           
+            <hr>
+            <h3 class="t_tit2">02. substring() 메서드</h3>
+            <p class="t_desc2">
+                substring() 메서드는 문자열에서 특정한 구간의 문자열을 추출합니다.<br>
+            </p>
+            <div class="t_box">
+                ★<strong>substring(start index, end index)</strong>★<br><br>
+                : 리턴값은 잘라진 문자열, 즉 시작 인덱스부터 끝 인덱스 바로 앞까지 반환<br>
+                : end값은 생략 가능(시작부터 끝까지)
+                : start값이 end값보다 크다면 작은 숫자가 시작 위치로 큰 숫자가 종료 위치로 셋팅(slice() 메서드와 차이점)<br>
+                : 매개변수 둘 중에 한개 값이 음수값이라면 시작위치가 0으로 설정됨<br>
+                : 매개변수가 둘다 음수값이라면 반환값 없음
             </div>
-
-
+            <h4 class="t_tit3">substring() 사용 예제 </h4>
+            <div class="t_code">
+<pre><code>const str1 = "javascript reference";
+const currentStr18 = str1.substring(1, 4); //ava
+const currentStr19 = str1.substring(4, 1); //ava 
+</code></pre>
+            </div>   
+            <hr>
+            <h3 class="t_tit2">03. substr() 메서드</h3>
+            <p class="t_desc2">
+                substr() 메서드는 문자열에서 원하는 값을 추출하여 문자열을 반환하는 메서드 중 하나입니다.<br>
+                시작 위치에서 인자로 전달한 길이만큼 문자열을 잘라서 문자열로 리턴합니다.
+            </p>
+            <div class="t_box">
+                ★<strong>substr(start index, length) or substr(start index)</strong>★<br><br>
+                start[필수]<br>
+                : 자르는 문자의 시작 위치 값입니다.<br>
+                : 양수일 경우, 문자의 길이보다 작으면 빈문자열이 리턴<br>
+                : 음수일 경우, 시작위치는 문자열의 뒤에서부터 시작<br>
+                length[옵션]<br>
+                : 자르는 문자열의 길이 값입니다. 생략이 가능하며 생략을 하는 경우 문자열의 시작 위치부터 문자열의 끝까지 추출하여 반환합니다.<br>
+            </div>
+            <h4 class="t_tit3">substr() 사용 예제 </h4>
+            <div class="t_code">
+<pre><code>const str1 = "javascript reference";
+const currentStr20 = str1.substr(0); //javascript reference
+const currentStr21 = str1.substr(1); //avascript reference
+const currentStr22 = str1.substr(2); //vascript reference
+const currentStr23 = str1.substr(0, 1); //j
+const currentStr24 = str1.substr(0, 2); //ja
+const currentStr25 = str1.substr(0, 3); //jav
+const currentStr26 = str1.substr(1, 2); //av
+const currentStr27 = str1.substr(1, 3); //ava
+const currentStr28 = str1.substr(1, 4); //avas
+const currentStr29 = str1.substr(-1); //e
+const currentStr30 = str1.substr(-2); //ce
+const currentStr31 = str1.substr(-3); //nce
+const currentStr32 = str1.substr(-1, 1); //e
+const currentStr33 = str1.substr(-2, 2); //ce
+const currentStr34 = str1.substr(-3, 3); //nce
+</code></pre>
+            </div>  
         </div>
     </main>
     <!-- //main -->
