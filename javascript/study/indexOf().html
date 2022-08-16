@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : indexOf()</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="arraymethod.html">배열 객체</a></li>
+                <li><a href="built_in_function.html">내장 함수</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">indexOf()란?</h2>
+            <p class="t_desc2">
+                : 문자열에서 특정 문자의 위치를 찾기 위한 메서드입니다. <br>
+                : 검색된 문자열이 첫번째로 나타나는 위치의 index를 반환합니다.<br>
+                : 찾는 문자열이 없으면 -1을 반환합니다.<br>
+                : 문자를 찾을 때 대소문자를 구분합니다.
+            </p>
+            <div class="t_box">
+                <strong>indexOf("찾을 문자열", 찾을 문자열을 시작할 위치(숫자))</strong>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">indexOf() 사용예제</h3>
+            <div class="t_code">
+<pre><code>// "문자열" .indexOf(검색값)
+// "문자열" .indexOf(검색값, 위치값)
+const str1 = "javascript reference";
+const currentStr1 = str1.indexOf("javascript");             //0
+const currentStr2 = str1.indexOf("reference");              //11 ->위치값을 이야기함 시작이 11번째 부터
+const currentStr3 = str1.indexOf("j");                      //0
+const currentStr4 = str1.indexOf("a");                      //1
+const currentStr5 = str1.indexOf("v");                      //2
+const currentStr6 = str1.indexOf("jquery");                 //-1 ->데이터가 없을 때는 -1 출력
+const currentStr7 = str1.indexOf("b");                      //-1 
+const currentStr8 = str1.indexOf("javascript", 0);          //0
+const currentStr9 = str1.indexOf("javascript", 1);          //-1 
+const currentStr10 = str1.indexOf("reference", 0);          //11
+const currentStr11 = str1.indexOf("reference", 1);          //11 
+const currentStr12 = str1.indexOf("reference", 11);         //11 
+const currentStr13 = str1.indexOf("reference", 12);         //-1
+</code></pre>
+            </div>
+            <div class="t_result">
+                <details>
+                    <summary>결과 확인하기</summary>
+                    <div class="result01">
+                        0<br>
+                        11<br>
+                        0<br>
+                        1<br>
+                        2<br>
+                        -1<br>
+                        -1<br>
+                        0<br>
+                        -1<br>
+                        11<br>
+                        11<br>
+                        11<br>
+                        -1<br>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
