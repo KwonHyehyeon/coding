@@ -12,17 +12,10 @@
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
 </head>
 <body>
-    <header id="header">      
+    <header id="header"> 
         <nav>
             <ul>
                 <li class="active"><a href="searchEffect01.html">1</a>
-                    <ul class="sub">
-                        <li class="active"><a href="searchEffect01.html">HTML</a></li>
-                        <li><a href="searchEffect01_css.html">CSS</a></li>
-                        <li><a href="searchEffect01_javascript.html">JAVASCRIPT</a></li>
-                    </ul>
-                </li>
-
                 <li><a href="searchEffect02.html">2</a></li>
                 <li><a href="searchEffect03.html">3</a></li>
                 <li><a href="searchEffect04.html">4</a></li>
@@ -36,31 +29,47 @@
     <main id="main">
         <div class="search__wrap">
             <span>indexOf()을 이용하여 검색하기</span>
-            <h1>HTML 태그 검색하기</h1>
+            <h1>CSS 속성 검색하기</h1>
             <div class="search__box">
                 <label for="search">검색하기</label>
-                <input type="text" id="search" placeholder="HTML 태그를 입력해주세요!">
+                <input type="text" id="search" placeholder="CSS 속성을 입력해주세요!">
+            </div>
+            <div class="search__info">
+                <div>CSS 속성 갯수 : <span class="num">0</span></div>
             </div>
             <div class="search__list">
-                <div class="html">
+                <div class="css">
                     <ul>
-                        <li data-name="a"><strong>a</strong> : a 태그는 다른 페이지 이동을 설정합니다.</li>
-                        <li data-name="abbr"><strong>abbr</strong> : abbr 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.</li>
-                        <li data-name="acronym"><strong>acronym</strong> : acronym 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.</li>
-                        <li data-name="address"><strong>address</strong> : address 요소는 가까운 HTML 요소의 사람, 단체, 조직 등에 대한 연락처 정보를 나타냅니다.</li>
-                        <li data-name="applet"><strong>applet</strong> : applet 태그는 자바 애플릿을 보이게 하는 곳에 쓰입니다.</li>
-                        <li data-name="area"><strong>area</strong> : area 요소는 이미지의 핫스팟 영역을 정의하고 하이퍼링크를 추가할 수 있습니다.</li>
-                        <li data-name="article"><strong>article</strong> : article 요소는 문서, 페이지, 애플리케이션, 또는 사이트 안에서 독립적으로 구분해 배포하거나 재사용할 수 있는 구획을 나타냅니다.</li>
-                        <li data-name="aside"><strong>aside</strong> : aside 요소는 문서의 주요 내용과 간접적으로만 연관된 부분을 나타냅니다. </li>
-                        <li data-name="audio"><strong>audio</strong> : audio 요소는 문서에 소리 콘텐츠를 포함할 때 사용합니다.</li>
-                        <li data-name="b"><strong>b</strong> : b 요소는 독자의 주의를 요소의 콘텐츠로 끌기 위한 용도로 사용합니다.</li>
-                        <li data-name="base"><strong>base</strong> : base 요소는 문서 안의 모든 상대 URL이 사용할 기준 URL을 지정합니다. </li>
-                        <li data-name="bdi"><strong>bdi</strong> : b 요소는 독자의 주의를 요소의 콘텐츠로 끌기 위한 용도로 사용합니다.</li>
-                        <li data-name="bdo"><strong>bdo</strong> : bdo 요소는 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.</li>
-                        <li data-name="bgsound"><strong>bgsound</strong> : bdo 요소는 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.</li>
-                        <li data-name="big"><strong>big</strong> : bdo 요소는 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.</li>
-                        <li data-name="blink"><strong>blink</strong> : bdo 요소는 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.</li>
-                        <li data-name="blockquote"><strong>blockquote</strong> : blockquote요소는 안쪽의 텍스트가 긴 인용문임을 나타냅니다. 주로 들여쓰기를 한 것으로 그려집니다.</li>
+                        <li data-name=">align-content"><strong>align-content</strong> : align-content 속성은 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="align-items"><strong>align-items</strong> : align-items 속성은 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="align-self"><strong>align-self</strong> : align-self 속성은 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다.</li>
+                        <li data-name="all"><strong>all</strong> : all 속성은 요소의 속성을 초기화 또는 상속을 설정합니다.</li>
+                        <li data-name="animation"><strong>animation</strong> : animation 속성은 애니메이션과 관련된 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="animation-delay"><strong>animation-delay</strong> : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.</li>
+                        <li data-name="animation-direction"><strong>animation-direction</strong> : animation-direction 속성은 애니메이션 움직임 방향을 설정합니다.</li>
+                        <li data-name="animation-duration"><strong>animation-duration</strong> : animation-duration 속성은 애니메이션 움직임 시간을 설정합니다.</li>
+                        <li data-name="animation-fill-mode"><strong>animation-fill-mode</strong> : animation-iteration-count 속성은 애니메이션 반복 횟수 설정합니다.</li>
+                        <li data-name="animation-iteration-count"><strong>animation-iteration-count</strong> : animation-iteration-count 속성은 애니메이션 반복 횟수 설정합니다.</li>
+                        <li data-name="animation-name"><strong>animation-name</strong> : animation-name 속성은 애니메이션 keyframe 이름을 설정합니다.</li>
+                        <li data-name="animation-play-state"><strong>animation-play-state</strong> : animation-play-state 속성은 애니메이션 진행상태를 설정합니다.</li>
+                        <li data-name="animation-timing-function"><strong>animation-timing-function</strong> : backface-visibility 속성은 요소의 뒷면을 설정합니다. </li>
+                        <li data-name="backface-visibility"><strong>backface-visibility</strong> : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.</li>
+                        <li data-name="background"><strong>background</strong> : background 속성은 백그라운드 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="background-attachment"><strong>background-attachment</strong> : background-attachment 속성은 배경 이미지의 고정 여부를 설정합니다.</li>
+                        <li data-name="background-blend-mode"><strong>background-blend-mode</strong> : background-blend-mode 속성은 배경을 혼합했을 때의 상태를 설정합니다.</li>
+                        <li data-name="background-clip"><strong>background-clip</strong> : background-clip 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다..</li>
+                        <li data-name="background-image"><strong>background-image</strong> : background-image 속성은 백그라운드 이미지 및 배경 속성을 설정합니다.</li>
+                        <li data-name="background-origin"><strong>background-origin</strong> : background-origin 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.</li>
+                        <li data-name="background-position"><strong>background-position</strong> : background-position 속성은 백그라운드 이미지의 위치 영역을 설정합니다.</li>
+                        <li data-name="background-repeat"><strong>background-repeat</strong> : background-repeat 속성은 백그라운드 이미지 반복 여부를 설정합니다.</li>
+                        <li data-name="backdrop-filter"><strong>backdrop-filter</strong> : backdrop-filter 속성은 배경에 그래픽 효과를 설정합니다.</li>
+                        <li data-name="background-size"><strong>background-size</strong> :  background-size 속성은 요소 배경 이미지의 크기를 설정합니다.</li>
+                        <li data-name="border"><strong>border</strong> : border 속성은 요소의 테두리를 설정합니다. </li>
+                        <li data-name="border-bottom"><strong>border-bottom</strong> : border-bottom 속성은 요소의 아래쪽 테두리를 설정합니다.</li>
+                        <li data-name="border-bottom-color"><strong>border-bottom-color</strong> : border-bottom-color 속성은 요소의 아래쪽 테두리 색상을 지정합니다. </li>
+                        <li data-name="border-bottom-style"><strong>border-bottom-style</strong> : border-bottom-style 속성은 요소 테두리의 아래쪽 스타일을 지정합니다.</li>
+                        <li data-name="border-bottom-width"><strong>border-bottom-width</strong> : border-bottom-width 속성은 요소의 아래 테두리 너비를 지정합니다.</li>
+                        <li data-name="border-collapse"><strong>border-collapse</strong> : border-collapse CSS 속성은 표 테두리가 분리 또는 상쇄될 지를 결정합니다. </li>
                     </ul>
                 </div>
             </div>
@@ -78,7 +87,12 @@
         //선택자
         const searchBox = document.querySelector(".search__box input");            //검색 영역
         const searchList = document.querySelectorAll(".search__list ul li"); //목록 리스트
+        const searchInfo = document.querySelector(".search__info .num");
 
+        //전체 갯수 구하기
+        searchInfo.textContent = searchList.length;
+
+        //검색 영역
         searchBox.addEventListener("keyup", () => {
             const searchWord = searchBox.value;     //사용자가 입력한 키워드
             

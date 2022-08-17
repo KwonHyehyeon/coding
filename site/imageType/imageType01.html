@@ -4,274 +4,119 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>imageType01</title>
-    <style>
+    <title>이미지 유형01</title>
+    <style> 
+        /* fonts */
         @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
         .nexon {
             font-family: 'NexonLv1Gothic';
             font-weight: 400;
         }
-        /* reset */
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: normal;
-        }
-
-        a {
-            text-decoration: none;
-            color: #000;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        /* common */
-        .container {
-            width: 1160px;
-            padding: 0 20px;
-            margin: 0 auto;
-            min-width: 1160px;
-        }
-
-        .section {
-            padding: 120px 0;
-        }
-
-        /* +는 형제 > 바로 밑에 있는 자식(그래서 다른 자식들한테는 해당 안됨) */
-        .section>h2 {
-            font-size: 50px;
-            line-height: 1;
-            /*figma auto랑 같음*/
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .section>p {
-            font-style: 22px;
-            font-weight: 300;
-            color: #666;
-            text-align: center;
-            margin-bottom: 70px;
-        }
-        /* reset */
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: normal;
-        }
-
-        a {
-            text-decoration: none;
-            color: #000;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        /* common */
-        .container {
-            width: 1160px;
-            padding: 0 20px;
-            margin: 0 auto;
-            min-width: 1160px;
-        }
-
-        .section {
-            padding: 120px 0;
-        }
-
-        /* +는 형제 > 바로 밑에 있는 자식(그래서 다른 자식들한테는 해당 안됨) */
-        .section>h2 {
-            font-size: 50px;
-            line-height: 1;
-            /*figma auto랑 같음*/
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .section>p {
-            font-style: 22px;
-            font-weight: 300;
-            color: #666;
-            text-align: center;
-            margin-bottom: 70px;
-        }
 
         /* reset */
         * {
             margin: 0;
             padding: 0;
         }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: normal;
-        }
-
-        a {
+        a{
             text-decoration: none;
             color: #000;
         }
-
-        img {
-            width: 100%;
-        }
-
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal; /*제목 글 굵기 기본설정 해제*/
+        } 
         /* common */
         .container {
             width: 1160px;
             padding: 0 20px;
             margin: 0 auto;
-            min-width: 1160px;
         }
-
         .section {
             padding: 120px 0;
         }
-
-        /* +는 형제 > 바로 밑에 있는 자식(그래서 다른 자식들한테는 해당 안됨) */
-        .section>h2 {
+        .section > h2 {
             font-size: 50px;
-            line-height: 1;
-            /*figma auto랑 같음*/
             text-align: center;
             margin-bottom: 20px;
         }
-
-        .section>p {
-            font-style: 22px;
+        .section > p {
+            font-size: 22px;
             font-weight: 300;
-            color: #666;
             text-align: center;
             margin-bottom: 70px;
+            color: #666;
         }
         /* imageType */
-        .image__wrap {
-            width: 1160px;
-            margin: 0 auto;
+        .image__wrap {}
+        .image__wrap h2 {}
+        .image__wrap p {} /*section의 요소들과 같아서 section에 넣어줌(코드 재활용을 위해서)*/
+        #imageType01 {
+            height: 500px;
         }
-        #header {
-            text-align: center;
-        }
-        #header h1 {
-            font-size: 50px;
-            margin-top: 120px;
-        }
-        #header p {
-            font-size: 22px;
-            margin: 20px 0 70px 0;
-            color: #666;
-        }
+        .image__wrap {}
         .image__inner {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /*컨테이너 있고 이거쓰면 양쪽 끝으로 붙어서 사진 사이 떨어지게 함*/
         }
-        .image__header01{
-            width: 570px;
-            height: 350px;
-            margin-right: 20px;
-        }
-        .image__header01 img {
-            position: relative;
-        }
-        .article01 {
-            text-align: left;
-            position: absolute;
-            top: 650px;
-        }
-        .article01 .tit01 {
-            font-size: 36px;
+        .image {
+            width: 49%;
+            height: 370px;
+            padding: 200px 30px 30px 30px; /*글씨 옮기려고 넣는것*/
+            box-sizing: border-box;/*패딩을 쓰면 그만큼 커지기 때문에 이를 방지하는 것*/
             color: #fff;
+        }
+        .image.img1 {
+            background: url(img/카페음료01.jpg) no-repeat center / cover;
+        }
+        .image.img2 {
+            background: url(img/카페음료02.jpg) no-repeat center / cover;
+        }
+        .image__title {
+            font-size: 32px;
             margin-bottom: 10px;
         }
-        .article01 .desc01 {
+        .image__desc {
             font-size: 16px;
+            margin-bottom: 10px;
             line-height: 1.4;
-            color: #fff;
+            font-weight: 300;
+            padding-right: 100px;
             overflow: hidden;
-            text-overflow: ellipsis;
+            text-overflow: ellipsis; /*텍스트 흘렀을 때 ...으로 바꿔줌*/
             display: -webkit-box;
             -webkit-line-clamp: 2; 
             -webkit-box-orient: vertical;
             margin-bottom: 10px;
-            
         }
-        .image__header02{
-            width: 570px;
-            height: 350px;
-        }
-        .image__header02 img {
-            position: relative;
-
-        }
-        .article02 {
-            text-align: left;
-            position: absolute;
-            top: 630px;
-            left: 700px;
-        }
-        .article02 .tit02 {
-            font-size: 36px;
-            color: #fff;
-            margin-bottom: 10px;
-
-        }
-        .article02 .desc02{
+        .image__btn {
             font-size: 16px;
-            line-height: 1.4;
+            font-weight: 300;
+            background: #EB3A13;
             color: #fff;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            margin-bottom: 10px;
-
-        }
-        .btn {
-            font-size: 16px;
             padding: 10px 20px;
-            background-color: #666;
-            color: #fff;
+            display: inline-block;
         }
-
+        .image__btn.green {
+            background: #8EC534;
+        }
     </style>
 </head>
 <body>
     <section id="imageType01" class="image__wrap nexon section">
-        <header id="header">
-            <h1>맛있는 카페 음료들</h1>
-            <p>당신이 추천하는 가장 맛있는 카페 음료는 무엇인가요?</p>
-            <div class="image__inner container">
-                <figure class="image__header01">
-                    <img src="img/카페음료01.jpg" alt="음료">
-                    <article class="article01">
-                        <div class="tit01">달콤한 초코 라떼</div>
-                        <div class="desc01">초코라떼는 초코랑 우유랑 시럽이랑 섞인 음료로 위에 휘핑크림이 올라가는 달달한 음료입니다.</div>
-                        <a class="btn" href="/">
-                            자세히 보기
-                        </a>
-                    </article>
-                </figure>
-                <figure class="image__header02">
-                    <img src="img/카페음료02.jpg" alt="음료">
-                    <article class="article02">
-                        <div class="tit02">녹차 프라푸치노</div>
-                        <div class="desc02">녹차 프라푸치노는 녹차가루와 얼음을 갈고 우유와 함께 섞어 만든 시원하고 깔끔한 쉐이크류의 음료입니다.</div>
-                        <a class="btn" href="/">
-                            자세히 보기
-                        </a>
-                    </article>
-                </figure>
-            </div>
-        </header>
+        <h2>맛있는 카페 음료들</h2>
+        <p>당신이 추천하는 가장 맛있는 카페 음료는 무엇인가요?</p>
+        <div class="image__inner container">
+            <article class="image img1">
+                <h2 class="image__title">달콤한 초코 라떼</h2>
+                <p class="image__desc">초코라떼는 초코랑 우유랑 시럽이랑 섞인 음료로 위에 휘핑크림이 올라가는 달달한 음료입니다.</p>
+                <a class="image__btn" href="/" title="자세히 보기">자세히 보기</a>
+            </article>
+            <article class="image img2">
+                <h3 class="image__title">녹차 프라푸치노</h3>
+                <p class="image__desc">녹차 프라푸치노는 녹차가루와 얼음을 갈고 우유와 함께 섞어 만든 시원하고 깔끔한 쉐이크류의 음료입니다.</p>
+                <a class="image__btn green" href="/" title="자세히 보기">자세히 보기</a>
+            </article>
+        </div>
     </section>
 </body>
 </html>
