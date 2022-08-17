@@ -14,10 +14,10 @@
 <body>
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">사이트 제작하기 : 이미지 유형01</h2>
+            <h2 class="t_tit">사이트 제작하기 : 이미지 유형02</h2>
             <div class="t_box">
                 사이트 유형에는 이미지 유형도 있습니다.<br>
-                카크 유형이랑 비슷해보이지만 이미지 안에 글씨가 들어간다는 차이가 있습니다. 
+                카드 유형이랑 비슷해보이지만 이미지 안에 글씨가 들어간다는 차이가 있습니다. 
             </div>
             <h3 class="t_tit2">오늘 만들 사이트 형식</h3>
             <div class="iframe">
@@ -33,10 +33,10 @@
                 ※ 이 때, 칸이나 줄이 확실하게 맞아야 하며 오차없이 레이아웃을 설정해주는 것이 중요합니다.
             </p>
             <figure>
-                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/imagetype01_01.jpg?raw=true" alt="웹레이아웃01">
+                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/imagetype02_01.jpg?raw=true" alt="이미지유형02_01">
             </figure>
             <figure>
-                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/imagetype01_02.jpg?raw=true" alt="웹레이아웃02">
+                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/imagetype02_02.jpg?raw=true" alt="이미지유형02_02">
             </figure>
             <h4 class="t_tit3">2. vscode를 통해 코딩해주기! : <i>HTML편</i></h4>
             <p class="t_desc2">
@@ -47,27 +47,44 @@
                 ★ 레이아웃 틀 잡기<br>
                 1. section에 id값과 class값을 지정하기<br>
                 2. 제목과 설명하기<br>
-                3. 사진이 2개이므로 image__inner로 두 개의 카드 포함하기<br>
-                4. 카드의 공통된 요소와 각각의 카드 특징들이 있으므로 article로 각각의 카드 요소(이미지 제목, 설명, 자세히 보기)를 묶기<br>
-                5. article을 클래스 image로 묶어주고 각각의 특징이 있기 때문에 img1, img2를 추가 시켜주기<br>
-                6. btn의 색상이 카드별로 다르기 때문에 다른 한쪽에 green을 써주기(CSS로 색상을 따로 주기 위한 차별성)<br>
-                ※ 이미지는 CSS로 주는 방법(이미지는 CSS부분에서 참고하세요!)
+                3. 사진이 3개이므로 image__inner로 세 개의 카드 포함하기<br>
+                4. 카드의 공통된 요소와 각각의 카드 특징들이 있으므로 article로 각각의 카드 요소(이미지 제목, 자세히 보기)를 묶기<br>
+                5. 이미지랑 자세히 보기 다른 것과 충돌나지 않게 클래스 지정해주기<br>
+                6. article을 클래스 image로 묶어주고 각각의 특징이 있기 때문에 img1, img2를 추가 시켜주기<br>
+                7. 마지막 사진 안 박스에 색상 등 차별을 주어야 되기 때문에 article클래스에 각각 img1, img2, img3 넣어주기
             </div>
             <div class="t_code">
 <pre><code>&lt;body&gt;
-    &lt;section id="imageType01" class="image__wrap nexon section"&gt;
-        &lt;h2&gt;맛있는 카페 음료들&lt;/h2&gt;
-        &lt;p&gt;당신이 추천하는 가장 맛있는 카페 음료는 무엇인가요?&lt;/p&gt;
+    &lt;section id="imageType02" class="image__wrap gmarket section"&gt;
+        &lt;h1&gt;북극곰의 귀여운 사진들&lt;/h1&gt;
+        &lt;p&gt;곰은 사람을 찢어~맞는 말이지만 그래도 한없이 귀여운 북극곰들&lt;/p&gt;
         &lt;div class="image__inner container"&gt;
             &lt;article class="image img1"&gt;
-                &lt;h2 class="image__title"&gt;달콤한 초코 라떼&lt;/h2&gt;
-                &lt;p class="image__desc"&gt;초코라떼는 초코랑 우유랑 시럽이랑 섞인 음료로 위에 휘핑크림이 올라가는 달달한 음료입니다.&lt;/p&gt;
-                &lt;a class="image__btn" href="/" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;figure class="image__box"&gt;
+                    &lt;img src="img/polarbear1.jpg" alt="북극곰"&gt;
+                &lt;/figure&gt;
+                &lt;div class="image__desc"&gt;
+                    &lt;h3&gt;인사하는 북극곰&lt;/h3&gt;
+                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
             &lt;/article&gt;
             &lt;article class="image img2"&gt;
-                &lt;h3 class="image__title"&gt;녹차 프라푸치노&lt;/h3&gt;
-                &lt;p class="image__desc"&gt;녹차 프라푸치노는 녹차가루와 얼음을 갈고 우유와 함께 섞어 만든 시원하고 깔끔한 쉐이크류의 음료입니다.&lt;/p&gt;
-                &lt;a class="image__btn green" href="/" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;figure class="image__box"&gt;
+                    &lt;img src="img/polarbear2.jpg" alt="북극곰"&gt;
+                &lt;/figure&gt;
+                &lt;div class="image__desc"&gt;
+                    &lt;h3&gt;장난치는 북극곰&lt;/h3&gt;
+                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="image img3"&gt;
+                &lt;figure class="image__box"&gt;
+                    &lt;img src="img/polarbear3.jpg" alt="북극곰"&gt;
+                &lt;/figure&gt;
+                &lt;div class="image__desc"&gt;
+                    &lt;h3&gt;수영하는 북극곰&lt;/h3&gt;
+                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
             &lt;/article&gt;
         &lt;/div&gt;
     &lt;/section&gt;
@@ -80,37 +97,41 @@
                 피그마로 만들어 놓은 레이아웃을 보며 HTML로 구역을 정해준 후 CSS로 하나하나 디자인해 나가는 것이 중요합니다!
             </p>
             <div class="t_code">
-<pre><code>&lt;style&gt; 
+<pre><code> &lt;style&gt;
     /* fonts */
-    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
-    .nexon {
-        font-family: 'NexonLv1Gothic';
+    @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+    .gmarket {
+        font-family: 'GmarketSans';
         font-weight: 400;
     }
-
     /* reset */
     * {
         margin: 0;
         padding: 0;
     }
-    a{
-        text-decoration: none; /*밑줄 효과 없애기 위함*/
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+    }
+    a {
+        text-decoration: none;
         color: #000;
     }
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: normal; /*제목 글 굵기 기본설정 해제*/
-    } 
-    /* common (코드 재활용) */
+    img {
+        width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+    }
+    /* common */
     .container {
-        width: 1160px; 
+        width: 1160px;
         padding: 0 20px;
-        margin: 0 auto; /*화면 가운데로!*/
+        margin: 0 auto;
+        min-width: 1160px;  /* 반응형 할 때 없애주기 */
     }
     .section {
         padding: 120px 0;
     }
-    .section &gt; h2 { /*바로 자식 요소*/
+    .section &gt; h1 {
         font-size: 50px;
+        line-height: 1;
         text-align: center;
         margin-bottom: 20px;
     }
@@ -122,57 +143,90 @@
         color: #666;
     }
     /* imageType */
-    .image__wrap {}
-    .image__wrap h2 {}
-    .image__wrap p {} /*section의 요소들과 같아서 section에 넣어줌(코드 재활용을 위해서)*/
-    #imageType01 {
-        height: 500px;
-    }
-    .image__wrap {}
     .image__inner {
         display: flex;
         justify-content: space-between; /*컨테이너 있고 이거쓰면 양쪽 끝으로 붙어서 사진 사이 떨어지게 함*/
     }
     .image {
-        width: 49%;
-        height: 370px;
-        padding: 200px 30px 30px 30px; /*글씨 옮기려고 넣는것*/
-        box-sizing: border-box; /*패딩을 쓰면 그만큼 커지기 때문에 이를 방지하는 것*/
-        color: #fff;
+        width: 32%;
+        position: relative;
+        overflow: hidden; /* 이미지 안 박스 숨기는 효과 */
     }
-    .image.img1 {
-        background: url(img/cafe01.jpg) no-repeat center / cover; /*CSS로 이미지를 넣어주는 방법*/
+    .image__box {
+        height: 100%;
     }
-    .image.img2 {
-        background: url(img/cafe02.jpg) no-repeat center / cover;
-    }
-    .image__title {
-        font-size: 32px;
-        margin-bottom: 10px;
+    .image__box img {
+        transition: all 0.5s ease-in-out;
     }
     .image__desc {
-        font-size: 16px;
-        margin-bottom: 10px;
-        line-height: 1.4;
-        font-weight: 300;
-        padding-right: 100px;
-        overflow: hidden;
-        text-overflow: ellipsis; /*텍스트 흘렀을 때 ...으로 바꿔줌*/
-        display: -webkit-box;
-        -webkit-line-clamp: 2; 
-        -webkit-box-orient: vertical;
-        margin-bottom: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;     /* padding으로 인한 넘침 방지 */
+        backdrop-filter: blur(10px); /* 블러 효과 */
+        transition: all 0.3s ease-in-out; /*ease-in-out 빨리 올라와라(?) 효과 : 천천-보통-천천 */
     }
-    .image__btn {
-        font-size: 16px;
-        font-weight: 300;
-        background: #EB3A13;
+    .img1 .image__desc {
+        background: rgba(253, 167, 246, 0.5); /*박스 컬러*/
+    }
+    .img1 .image__desc h3 {
         color: #fff;
-        padding: 10px 20px;
-        display: inline-block;
     }
-    .image__btn.green { /*같은 클래스에 image__btn과 green을 써주었기 때문에 공백없이 연결해주어야 함*/
-        background: #8EC534;
+    .img1 .image__desc .more {
+        color: #fff;
+    }
+    .img2 .image__desc {
+        background-color: rgba(176, 233, 255, 0.5);
+    }
+    .img2 .image__desc h3 {
+        color: #006462;
+    }
+    .img2 .image__desc .more {
+        color: #006462;
+    }
+    .img3 .image__desc {
+        background-color: rgba(7, 139, 111, 0.5);
+    }
+    .img3 .image__desc h3 {
+        color: #183169;
+    }
+    .img3 .image__desc .more {
+        color: #183169;
+    }
+    .img1 .image__desc {
+        bottom: -100px;
+    }
+    .img1:hover .image__desc {
+        bottom: 0;
+    }
+    .img2 .image__desc {
+        bottom: -100px;
+    }
+    .img2:hover .image__desc {
+        bottom: 0;
+    }
+    .img3 .image__desc {
+        bottom: -100px; /* 이미지 안에서 안보이게 하려고 밑으로 -100만큼 내려주고 그것도 안보이게 하려고 위에 image에 overflow: hidden; 효과 */
+    }
+    .img3:hover .image__desc {
+        bottom: 0;
+    }
+    .image:hover .image__box img {
+        transform: scale(1.05); /* 마우스 가져가면 사진 커지는 효과 */
+    }
+    .image__desc h3 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    .image__desc .more {
+        font-size: 16px;
+        font-weight: 300;
+    }
+    .image__desc .more:hover {
+        text-decoration: underline; /*마우스 가져가면 밑줄 생김 효과*/
     }
 &lt;/style&gt;
 </code></pre>

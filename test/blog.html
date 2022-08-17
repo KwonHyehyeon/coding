@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블로그</title>
+    <style>
+    .main__add {
+	  background: #F5F5F5;
+	  margin-top: 100px;
+	  margin-bottom: 120px;
+	  position: relative;
+	  display: flex;
+	  justify-content: space-between;
+	  padding: 100px 0;
+	}
+	.main__add::before {
+	  content: '';
+	  width: 1000px;
+	  height: 100%;
+	  background-color: #F5F5F5;
+	  position: absolute;
+	  left: -1000px;
+	  top: 0;
+	  z-index: 1;
+	}
+	.main__add::after {
+	  content: '';
+	  width: 1000px;
+	  height: 100%;
+	  background-color: #F5F5F5;
+	  position: absolute;
+	  right: -1000px;
+	  top: 0;
+	  z-index: 1;
+	}
+	.main__add .card {
+	  width: 32%;
+	  height: 200px;
+	  background: #ccc;
+	}
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    img {
+        width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+    }
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+        min-width: 1160px;  /* 반응형 할 때 없애줄 것 */
+    }
+    .section {
+        padding: 120px 0;
+    }
+    .section > h1 {
+        font-size: 50px;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .section > p {
+        font-size: 22px;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 70px;
+        color: #666;
+    }
+    /* cardType */
+    {
+        
+    }
+    </style>
+</head>
+<body>
+    <div class="main__add">
+        <div class="card">
+            <article class="article">
+                <figure class="card__img">
+                    <img src="" alt="">
+                </figure>
+                <div class="card__box">
+                    <h3>HTML</h3>
+                    <a href="https://kwonhyehyeon.github.io/coding/html/alphabet.html">Study with me</a>
+                </div>
+            </article>
+        </div>
+        <div class="card">
+            <article class="article">
+                <figure class="card__img">
+                    <img src="" alt="">
+                </figure>
+                <div class="card__box">
+                    <h3>CSS</h3>
+                    <a href="https://kwonhyehyeon.github.io/coding/css/index.html">Study with me</a>
+                </div>
+            </article>
+        </div>
+        <div class="card">
+            <article class="article">
+                <figure class="card__img">
+                    <img src="" alt="">
+                </figure>
+                <div class="card__box">
+                    <h3>JAVASCRIPT</h3>
+                    <a href="https://kwonhyehyeon.github.io/coding/javascript/index.html">Study with me</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
