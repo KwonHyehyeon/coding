@@ -4,42 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이미지 유형 02</title>
-    <style>
+    <title>이미지 유형01</title>
+    <style> 
         /* fonts */
         @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
         .gmarket {
             font-family: 'GmarketSans';
             font-weight: 400;
         }
+
         /* reset */
         * {
             margin: 0;
             padding: 0;
         }
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: normal;
-        }
-        a {
+        a{
             text-decoration: none;
             color: #000;
         }
-        img {
-            width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
-        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal; /*제목 글 굵기 기본설정 해제*/
+        } 
         /* common */
         .container {
             width: 1160px;
             padding: 0 20px;
             margin: 0 auto;
-            min-width: 1160px;  /* 반응형 할 때 없애줄 것 */
         }
         .section {
             padding: 120px 0;
         }
-        .section > h1 {
+        .section > h2 {
             font-size: 50px;
-            line-height: 1;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -51,124 +47,90 @@
             color: #666;
         }
         /* imageType */
+        .image__wrap {}
+        .image__wrap h2 {}
+        .image__wrap p {} /*section의 요소들과 같아서 section에 넣어줌(코드 재활용을 위해서)*/
+        #imageType01 {
+            height: 500px;
+        }
+        .image__wrap {}
         .image__inner {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /*컨테이너 있고 이거쓰면 양쪽 끝으로 붙어서 사진 사이 떨어지게 함*/
         }
         .image {
             width: 32%;
-            position: relative;
-            overflow: hidden;
+            height: 520px;
+            padding: 420px 0px 10px 0px;/*글씨 옮기려고 넣는것*/
+            box-sizing: border-box;/*패딩을 쓰면 그만큼 커지기 때문에 이를 방지하는 것*/
+            color: #000;
+            
         }
-        .image__box {
-            height: 100%;
+        .image.img1 {
+            background: url(img/polarbear1.jpg) no-repeat center / cover;
         }
-        .image__box img {
-            transition: all 0.5s ease-in-out;
+        .box1 {
+            width: 371px;
+            height: 100px;
+            backdrop-filter: blur(4px);
+            background-color: rgba(243, 208, 232, 0.5);
         }
-        .image__desc {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
+        .image.img2 {
+            background: url(img/polarbear2.jpg) no-repeat center / cover;
+        }
+        .box2 {
+            width: 372px;
+            height: 100px;
+            backdrop-filter: blur(4px);
+            background-color: rgba(125, 197, 245, 0.5);
+        }
+        .image.img3 {
+            background: url(img/polarbear3.jpg) no-repeat center / cover;
+        }
+        .box3 {
+            width: 371px;
+            height: 100px;
+            backdrop-filter: blur(4px);
+            background-color: rgba(78, 126, 78, 0.5);
+        }
+        .image__title {
+            font-size: 22px;
+            margin-bottom: 10px;
             text-align: center;
-            padding: 20px;
-            box-sizing: border-box;     /* image__desc 박스 안넘치게 하기 */
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease-in-out;
+            padding-top: 25px;
+            color: #000;
         }
-        .img1 .image__desc {
-            background: rgba(253, 167, 246, 0.5);
-        }
-        .img1 .image__desc h3 {
-            color: #fff;
-        }
-        .img1 .image__desc .more {
-            color: #fff;
-        }
-        .img2 .image__desc {
-            background-color: rgba(176, 233, 255, 0.5);
-        }
-        .img2 .image__desc h3 {
-            color: #006462;
-        }
-        .img2 .image__desc .more {
-            color: #006462;
-        }
-        .img3 .image__desc {
-            background-color: rgba(7, 139, 111, 0.5);
-        }
-        .img3 .image__desc h3 {
-            color: #183169;
-        }
-        .img3 .image__desc .more {
-            color: #183169;
-        }
-        .img1 .image__desc {
-            bottom: -100px;
-        }
-        .img1:hover .image__desc {
-            bottom: 0;
-        }
-        .img2 .image__desc {
-            bottom: -100px;
-        }
-        .img2:hover .image__desc {
-            bottom: 0;
-        }
-        .img3 .image__desc {
-            bottom: -100px;
-        }
-        .img3:hover .image__desc {
-            bottom: 0;
-        }
-        .image:hover .image__box img {
-            transform: scale(1.05);
-        }
-        .image__desc h3 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        .image__desc .more {
+        .image__btn {
             font-size: 16px;
-            font-weight: 300;
-        }
-        .image__desc .more:hover {
-            text-decoration: underline;
+            font-weight: 400;
+            padding: 0px 140px;
+            display: inline-block;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <section id="imageType02" class="image__wrap gmarket section">
-        <h1>북극곰의 귀여운 사진들</h1>
+        <h2>북극곰의 귀여운 사진들</h2>
         <p>곰은 사람을 찢어~맞는 말이지만 그래도 한없이 귀여운 북극곰들</p>
         <div class="image__inner container">
             <article class="image img1">
-                <figure class="image__box">
-                    <img src="img/polarbear1.jpg" alt="북극곰">
-                </figure>
-                <div class="image__desc">
-                    <h3>인사하는 북극곰</h3>
-                    <a href="/" class="more" title="자세히 보기">자세히 보기</a>
-                </div>
+                <div class="box1">
+                    <h2 class="image__title">인사하는 북극곰</h2>
+                    <a class="image__btn" href="/" title="자세히 보기">자세히 보기</a>
+                </div>    
             </article>
             <article class="image img2">
-                <figure class="image__box">
-                    <img src="img/polarbear2.jpg" alt="북극곰">
-                </figure>
-                <div class="image__desc">
-                    <h3>장난치는 북극곰</h3>
-                    <a href="/" class="more" title="자세히 보기">자세히 보기</a>
-                </div>
+                <div class="box2">
+                    <h3 class="image__title">장난치는 북극곰</h3>
+                    <a class="image__btn" href="/" title="자세히 보기">자세히 보기</a>
+                </div> 
             </article>
             <article class="image img3">
-                <figure class="image__box">
-                    <img src="img/polarbear3.jpg" alt="북극곰">
-                </figure>
-                <div class="image__desc">
-                    <h3>수영하는 북극곰</h3>
-                    <a href="/" class="more" title="자세히 보기">자세히 보기</a>
-                </div>
+                <div class="box3">
+                    <h3 class="image__title">수영하는 북극곰</h3>
+                    <a class="image__btn" href="/" title="자세히 보기">자세히 보기</a>
+                </div> 
             </article>
         </div>
     </section>

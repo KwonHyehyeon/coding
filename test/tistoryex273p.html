@@ -1,98 +1,176 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>미디어쿼리레이아웃</title>
-    <style>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;이미지 유형 02&lt;/title&gt;
+    &lt;style&gt;
+        /* fonts */
         @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        .gmarket {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+        /* reset */
         * {
             margin: 0;
             padding: 0;
-            font-size: 64px;
-            font-family: 'GmarketSans';
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;  /* 반응형 할 때 없애줄 것 */
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section &gt; h1 {
+            font-size: 50px;
+            line-height: 1;
             text-align: center;
+            margin-bottom: 20px;
         }
-        #wrap {
-            width: 100%;
+        .section &gt; p {
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #666;
         }
-        #header {
-            height: 200px;
-            background-color: #FFCFB4;
-            line-height: 200px;
-        }
-        #main {
+        /* imageType */
+        .image__inner {
             display: flex;
+            justify-content: space-between;
         }
-        .lnb {
-            width: 25%;
-            height: 600px;
-            background-color: #EEC28F;
-            line-height: 600px;
+        .image {
+            width: 32%;
+            position: relative;
+            overflow: hidden;
         }
-        #content {
-            width: 50%;
-            height: 600px;
-            background-color: #FFB054;
-            line-height: 600px;
+        .image__box {
+            height: 100%;
         }
-        #aside {
-            width: 25%;
-            height: 600px;
-            background-color: #EDA046;
-            line-height: 600px;
+        .image__box img {
+            transition: all 0.5s ease-in-out;
         }
-        #footer {
-            height: 200px;
-            background-color: #FC9054;
-            line-height: 200px;
+        .image__desc {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;     /* image__desc 박스 안넘치게 하기 */
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease-in-out;
         }
-        /* 미디어쿼리 */
-        @media (max-width:1280px){}
-        @media (max-width:1024px){
-            #main {
-                flex-wrap: wrap;
-            }
-            .lnb {
-                width: 30%;
-                height: 400px;
-                line-height: 400px;
-            }
-            #content {
-                width: 70%;
-                height: 400px;
-                line-height: 400px;
-            }
-            #aside {
-                width: 100%;
-                height: 200px;
-                line-height: 200px;
-            }
+        .img1 .image__desc {
+            background: rgba(253, 167, 246, 0.5);
         }
-        @media (max-width:768px){
-            .lnb {
-                width: 100%;
-                height: 200px;
-                line-height: 200px;
-            }
-            #content {
-                width: 100%;
-                height: 200px;
-                line-height: 200px;
-            }
+        .img1 .image__desc h3 {
+            color: #fff;
         }
-    </style>
-</head>
-<body>
-    <div id="wrap">
-        <header id="header">header</header>
-        <main id="main">
-            <div class="lnb">lnb</div>
-            <content id="content">content</content>
-            <aside id="aside">aside</aside>
-        </main>
-        <footer id="footer">footer</footer>
-    </div>
-</body>
-</html>
+        .img1 .image__desc .more {
+            color: #fff;
+        }
+        .img2 .image__desc {
+            background-color: rgba(176, 233, 255, 0.5);
+        }
+        .img2 .image__desc h3 {
+            color: #006462;
+        }
+        .img2 .image__desc .more {
+            color: #006462;
+        }
+        .img3 .image__desc {
+            background-color: rgba(7, 139, 111, 0.5);
+        }
+        .img3 .image__desc h3 {
+            color: #183169;
+        }
+        .img3 .image__desc .more {
+            color: #183169;
+        }
+        .img1 .image__desc {
+            bottom: -100px;
+        }
+        .img1:hover .image__desc {
+            bottom: 0;
+        }
+        .img2 .image__desc {
+            bottom: -100px;
+        }
+        .img2:hover .image__desc {
+            bottom: 0;
+        }
+        .img3 .image__desc {
+            bottom: -100px;
+        }
+        .img3:hover .image__desc {
+            bottom: 0;
+        }
+        .image:hover .image__box img {
+            transform: scale(1.05);
+        }
+        .image__desc h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .image__desc .more {
+            font-size: 16px;
+            font-weight: 300;
+        }
+        .image__desc .more:hover {
+            text-decoration: underline;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section id="imageType02" class="image__wrap gmarket section"&gt;
+        &lt;h1&gt;북극곰의 귀여운 사진들&lt;/h1&gt;
+        &lt;p&gt;곰은 사람을 찢어~맞는 말이지만 그래도 한없이 귀여운 북극곰들&lt;/p&gt;
+        &lt;div class="image__inner container"&gt;
+            &lt;article class="image img1"&gt;
+                &lt;figure class="image__box"&gt;
+                    &lt;img src="img/polarbear1.jpg" alt="북극곰"&gt;
+                &lt;/figure&gt;
+                &lt;div class="image__desc"&gt;
+                    &lt;h3&gt;인사하는 북극곰&lt;/h3&gt;
+                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="image img2"&gt;
+                &lt;figure class="image__box"&gt;
+                    &lt;img src="img/polarbear2.jpg" alt="북극곰"&gt;
+                &lt;/figure&gt;
+                &lt;div class="image__desc"&gt;
+                    &lt;h3&gt;장난치는 북극곰&lt;/h3&gt;
+                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="image img3"&gt;
+                &lt;figure class="image__box"&gt;
+                    &lt;img src="img/polarbear3.jpg" alt="북극곰"&gt;
+                &lt;/figure&gt;
+                &lt;div class="image__desc"&gt;
+                    &lt;h3&gt;수영하는 북극곰&lt;/h3&gt;
+                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
