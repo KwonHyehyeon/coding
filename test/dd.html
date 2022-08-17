@@ -1,45 +1,111 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>구조 요소</title>
-    <style>
-        @import url('https://webfontworld.github.io/NexonLv2Gothic/NexonLv2Gothic.css');
-        
-        * {
-            font-family: 'NexonLv2Gothic';
-        }
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;검색 이펙트&lt;/title&gt;
 
-    </style>
-</head>
-<body>
-    <header>
-        <h1><a href="#">반응형웹</a></h1>
-        <nav>
-            <ul>
-                <li><a href="#">MENU01</a></li>
-                <li><a href="#">MENU02</a></li>     
-                <li><a href="#">MENU03</a></li>
-                <li><a href="#">MENU04</a></li>
-                <li><a href="#">MENU05</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div id="container">
-        <section>
-            <h2>콘텐츠 그룹01</h2>
-        </section>
-        <section>
-            <h2>콘텐츠 그룹02</h2>
-        </section>
-        <article>
-            <h2>주요기사</h2>
-        </article>
-        <aside>광고</aside>
-    </div>
-    <footer>
-        <address>경기도 안양시 동안구      031)123-4567   noeyheyh9357@gmail.com</address>
-        <p>COPYRIGHT @ All rights reserved.</p>
-    </footer>
-</body>
-</html>
+    &lt;link rel="stylesheet" href="../assets/css/search.css"&gt;
+
+    &lt;link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet"&gt;
+    &lt;link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header id="header"&gt; 
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li class="active"&gt;&lt;a href="searchEffect01.html"&gt;1&lt;/a&gt;
+                &lt;li&gt;&lt;a href="searchEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;!-- header --&gt;
+
+    &lt;main id="main"&gt;
+        &lt;div class="search__wrap"&gt;
+            &lt;span&gt;indexOf()을 이용하여 검색하기&lt;/span&gt;
+            &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+            &lt;div class="search__box"&gt;
+                &lt;label for="search"&gt;검색하기&lt;/label&gt;
+                &lt;input type="text" id="search" placeholder="CSS 속성을 입력해주세요!"&gt;
+            &lt;/div&gt;
+            &lt;div class="search__info"&gt;
+                &lt;div&gt;CSS 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="search__list"&gt;
+                &lt;div class="css"&gt;
+                    &lt;ul&gt;
+                        &lt;li data-name="&gt;align-content"&gt;&lt;strong&gt;align-content&lt;/strong&gt; : align-content 속성은 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="align-items"&gt;&lt;strong&gt;align-items&lt;/strong&gt; : align-items 속성은 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="align-self"&gt;&lt;strong&gt;align-self&lt;/strong&gt; : align-self 속성은 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="all"&gt;&lt;strong&gt;all&lt;/strong&gt; : all 속성은 요소의 속성을 초기화 또는 상속을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation"&gt;&lt;strong&gt;animation&lt;/strong&gt; : animation 속성은 애니메이션과 관련된 속성을 일괄적으로 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-delay"&gt;&lt;strong&gt;animation-delay&lt;/strong&gt; : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-direction"&gt;&lt;strong&gt;animation-direction&lt;/strong&gt; : animation-direction 속성은 애니메이션 움직임 방향을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-duration"&gt;&lt;strong&gt;animation-duration&lt;/strong&gt; : animation-duration 속성은 애니메이션 움직임 시간을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-fill-mode"&gt;&lt;strong&gt;animation-fill-mode&lt;/strong&gt; : animation-iteration-count 속성은 애니메이션 반복 횟수 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-iteration-count"&gt;&lt;strong&gt;animation-iteration-count&lt;/strong&gt; : animation-iteration-count 속성은 애니메이션 반복 횟수 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-name"&gt;&lt;strong&gt;animation-name&lt;/strong&gt; : animation-name 속성은 애니메이션 keyframe 이름을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-play-state"&gt;&lt;strong&gt;animation-play-state&lt;/strong&gt; : animation-play-state 속성은 애니메이션 진행상태를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-timing-function"&gt;&lt;strong&gt;animation-timing-function&lt;/strong&gt; : backface-visibility 속성은 요소의 뒷면을 설정합니다. &lt;/li&gt;
+                        &lt;li data-name="backface-visibility"&gt;&lt;strong&gt;backface-visibility&lt;/strong&gt; : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background"&gt;&lt;strong&gt;background&lt;/strong&gt; : background 속성은 백그라운드 속성을 일괄적으로 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background-attachment"&gt;&lt;strong&gt;background-attachment&lt;/strong&gt; : background-attachment 속성은 배경 이미지의 고정 여부를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background-blend-mode"&gt;&lt;strong&gt;background-blend-mode&lt;/strong&gt; : background-blend-mode 속성은 배경을 혼합했을 때의 상태를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background-clip"&gt;&lt;strong&gt;background-clip&lt;/strong&gt; : background-clip 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다..&lt;/li&gt;
+                        &lt;li data-name="background-image"&gt;&lt;strong&gt;background-image&lt;/strong&gt; : background-image 속성은 백그라운드 이미지 및 배경 속성을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background-origin"&gt;&lt;strong&gt;background-origin&lt;/strong&gt; : background-origin 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.&lt;/li&gt;
+                        &lt;li data-name="background-position"&gt;&lt;strong&gt;background-position&lt;/strong&gt; : background-position 속성은 백그라운드 이미지의 위치 영역을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background-repeat"&gt;&lt;strong&gt;background-repeat&lt;/strong&gt; : background-repeat 속성은 백그라운드 이미지 반복 여부를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="backdrop-filter"&gt;&lt;strong&gt;backdrop-filter&lt;/strong&gt; : backdrop-filter 속성은 배경에 그래픽 효과를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background-size"&gt;&lt;strong&gt;background-size&lt;/strong&gt; :  background-size 속성은 요소 배경 이미지의 크기를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="border"&gt;&lt;strong&gt;border&lt;/strong&gt; : border 속성은 요소의 테두리를 설정합니다. &lt;/li&gt;
+                        &lt;li data-name="border-bottom"&gt;&lt;strong&gt;border-bottom&lt;/strong&gt; : border-bottom 속성은 요소의 아래쪽 테두리를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="border-bottom-color"&gt;&lt;strong&gt;border-bottom-color&lt;/strong&gt; : border-bottom-color 속성은 요소의 아래쪽 테두리 색상을 지정합니다. &lt;/li&gt;
+                        &lt;li data-name="border-bottom-style"&gt;&lt;strong&gt;border-bottom-style&lt;/strong&gt; : border-bottom-style 속성은 요소 테두리의 아래쪽 스타일을 지정합니다.&lt;/li&gt;
+                        &lt;li data-name="border-bottom-width"&gt;&lt;strong&gt;border-bottom-width&lt;/strong&gt; : border-bottom-width 속성은 요소의 아래 테두리 너비를 지정합니다.&lt;/li&gt;
+                        &lt;li data-name="border-collapse"&gt;&lt;strong&gt;border-collapse&lt;/strong&gt; : border-collapse CSS 속성은 표 테두리가 분리 또는 상쇄될 지를 결정합니다. &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;!-- main --&gt;
+
+    &lt;footer id="footer"&gt;
+        &lt;a href="mailto:noeyheyh9357@gmail.com"&gt;noeyheyh9357@gmail.com&lt;/a&gt;
+    &lt;/footer&gt;
+    &lt;!-- footer --&gt;
+    
+
+    &lt;script&gt;
+        //선택자
+        const searchBox = document.querySelector(".search__box input");            //검색 영역
+        const searchList = document.querySelectorAll(".search__list ul li"); //목록 리스트
+        const searchInfo = document.querySelector(".search__info .num");
+
+        //전체 갯수 구하기
+        searchInfo.textContent = searchList.length;
+
+        //검색 영역
+        searchBox.addEventListener("keyup", () =&gt; {
+            const searchWord = searchBox.value;     //사용자가 입력한 키워드
+            
+            searchList.forEach(el =&gt; {
+                const cssName = el.dataset.name;
+                //만약에 indexOf가 true가 되면, false : 0이 되면
+                if(cssName.indexOf(searchWord)){
+                    el.classList.add("hide");
+                } else {
+                    el.classList.remove("hide");    //indexOf값이 0이 되는 값만 hide를 지워줍니다.
+                }
+            });
+        }); 
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
