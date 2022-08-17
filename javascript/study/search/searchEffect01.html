@@ -103,7 +103,7 @@
                 <details>
                     <summary><strong>완성본 보기</strong></summary>
                     <div class="iframe">
-                        <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/%EC%84%9C%EC%B9%98%EC%9D%B4%ED%8E%99%ED%8A%B8_%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC.jpg?raw=true" alt="서치이펙트카테고리">
+                        <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/searcheffect_category.jpg?raw=true" alt="서치이펙트카테고리">
                     </div>
                 </details>
             </div>
@@ -111,47 +111,40 @@
             <hr>
         <h3 class="t_tit2">▶ 내용 입력</h3>
         <p class="t_desc2">
-            searchEffect01.html, searchEffect01_css.html, searchEffect01_javascript.html 모든 페이지에 밑에와 같이 관련 내용을 정리해줍니다.
+            밑에와 같이 검색하면 찾을 수 있는 내용을 정리해줍니다.
         </p>
         <h3 class="t_tit2">HTML</h3>
         <div class="t_code">
-<pre><code class="language-js">&lt;main id="main"&gt;
-    &lt;div class="search__wrap"&gt;
-        &lt;span&gt;indexOf()을 이용하여 검색하기&lt;/span&gt;
-        &lt;h1&gt;HTML 태그 검색하기&lt;/h1&gt;
-        &lt;div class="search__box"&gt;
-            &lt;label for="search"&gt;검색하기&lt;/label&gt;
-            &lt;input type="text" id="search" placeholder="HTML 태그를 입력해주세요!"&gt;
-        &lt;/div&gt;
-        &lt;div class="search__list"&gt;
-            &lt;div class="html"&gt;
-                &lt;ul&gt;
-                    &lt;li data-name="a"&gt;&lt;strong&gt;a&lt;/strong&gt; : a 태그는 다른 페이지 이동을 설정합니다.&lt;/li&gt;
-                    &lt;li data-name="abbr"&gt;&lt;strong&gt;abbr&lt;/strong&gt; : abbr 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.&lt;/li&gt;
-                    &lt;li data-name="acronym"&gt;&lt;strong&gt;acronym&lt;/strong&gt; : acronym 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.&lt;/li&gt;
-                    &lt;li data-name="address"&gt;&lt;strong&gt;address&lt;/strong&gt; : address 요소는 가까운 HTML 요소의 사람, 단체, 조직 등에 대한 연락처 정보를 나타냅니다.&lt;/li&gt;
-                    &lt;li data-name="applet"&gt;&lt;strong&gt;applet&lt;/strong&gt; : applet 태그는 자바 애플릿을 보이게 하는 곳에 쓰입니다.&lt;/li&gt;
-                    &lt;li data-name="area"&gt;&lt;strong&gt;area&lt;/strong&gt; : area 요소는 이미지의 핫스팟 영역을 정의하고 하이퍼링크를 추가할 수 있습니다.&lt;/li&gt;
-                    &lt;li data-name="article"&gt;&lt;strong&gt;article&lt;/strong&gt; : article 요소는 문서, 페이지, 애플리케이션, 또는 사이트 안에서 독립적으로 구분해 배포하거나 재사용할 수 있는 구획을 나타냅니다.&lt;/li&gt;
-                    &lt;li data-name="aside"&gt;&lt;strong&gt;aside&lt;/strong&gt; : aside 요소는 문서의 주요 내용과 간접적으로만 연관된 부분을 나타냅니다. &lt;/li&gt;
-                    &lt;li data-name="audio"&gt;&lt;strong&gt;audio&lt;/strong&gt; : audio 요소는 문서에 소리 콘텐츠를 포함할 때 사용합니다.&lt;/li&gt;
-                    &lt;li data-name="b"&gt;&lt;strong&gt;b&lt;/strong&gt; : b 요소는 독자의 주의를 요소의 콘텐츠로 끌기 위한 용도로 사용합니다.&lt;/li&gt;
-                    &lt;li data-name="base"&gt;&lt;strong&gt;base&lt;/strong&gt; : base 요소는 문서 안의 모든 상대 URL이 사용할 기준 URL을 지정합니다. &lt;/li&gt;
-                    &lt;li data-name="bdi"&gt;&lt;strong&gt;bdi&lt;/strong&gt; : b 요소는 독자의 주의를 요소의 콘텐츠로 끌기 위한 용도로 사용합니다.&lt;/li&gt;
-                    &lt;li data-name="bdo"&gt;&lt;strong&gt;bdo&lt;/strong&gt; : bdo 요소는 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.&lt;/li&gt;
-                    &lt;li data-name="bgsound"&gt;&lt;strong&gt;bgsound&lt;/strong&gt; : bdo 요소는 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.&lt;/li&gt;
-                    &lt;li data-name="big"&gt;&lt;strong&gt;big&lt;/strong&gt; : bdo 요소는 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.&lt;/li&gt;
-                    &lt;li data-name="blink"&gt;&lt;strong&gt;blink&lt;/strong&gt; : bdo 요소는 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.&lt;/li&gt;
-                    &lt;li data-name="blockquote"&gt;&lt;strong&gt;blockquote&lt;/strong&gt; : blockquote요소는 안쪽의 텍스트가 긴 인용문임을 나타냅니다. 주로 들여쓰기를 한 것으로 그려집니다.&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
+<pre><code class="language-js">&lt;div class="search__wrap"&gt;
+    &lt;span&gt;indexOf()을 이용하여 검색하기&lt;/span&gt;
+    &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+    &lt;div class="search__box"&gt;
+        &lt;label for="search"&gt;검색하기&lt;/label&gt;
+        &lt;input type="text" id="search" placeholder="CSS 속성을 입력해주세요!"&gt;
+    &lt;/div&gt;
+    &lt;div class="search__info"&gt;
+        &lt;div&gt;CSS 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="search__list"&gt;
+        &lt;div class="css"&gt;
+            &lt;ul&gt;
+                &lt;li data-name="&gt;align-content"&gt;&lt;strong&gt;align-content&lt;/strong&gt; : align-content 속성은 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
+                &lt;li data-name="align-items"&gt;&lt;strong&gt;align-items&lt;/strong&gt; : align-items 속성은 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
+                &lt;li data-name="align-self"&gt;&lt;strong&gt;align-self&lt;/strong&gt; : align-self 속성은 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다.&lt;/li&gt;
+                &lt;li data-name="all"&gt;&lt;strong&gt;all&lt;/strong&gt; : all 속성은 요소의 속성을 초기화 또는 상속을 설정합니다.&lt;/li&gt;
+                &lt;li data-name="animation"&gt;&lt;strong&gt;animation&lt;/strong&gt; : animation 속성은 애니메이션과 관련된 속성을 일괄적으로 설정합니다.&lt;/li&gt;
+                &lt;li data-name="animation-delay"&gt;&lt;strong&gt;animation-delay&lt;/strong&gt; : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.&lt;/li&gt;
+                &lt;li data-name="animation-direction"&gt;&lt;strong&gt;animation-direction&lt;/strong&gt; : animation-direction 속성은 애니메이션 움직임 방향을 설정합니다.&lt;/li&gt;
+                &lt;li data-name="animation-duration"&gt;&lt;strong&gt;animation-duration&lt;/strong&gt; : animation-duration 속성은 애니메이션 움직임 시간을 설정합니다.&lt;/li&gt;
+            &lt;/ul&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/main&gt;
 </code></pre>
     </div>
     <p class="t_desc">
-        div태그에 클래스명을 search__list로 지정해준 후 그 안에 목록을 구성해야합니다. 데이터들을 입력할 때 HTML에서 사용자가 임의로 지정한 속성값으로 활용할 수 있기 때문에 data name을 입력해주어야 나중에 편리합니다.
+        h1을 통해 제목을 써준 후 .search__box를 통해 label로 검색하기를 넣어준 후 input으로 텍스트를 입력할 수 있는 검색창을 만들어 줍니다.<br>
+        search__info로 후에 자바스크립트를 통해 속성 갯수를 넣어 주기 위해 클래스를 num으로 지정해줍니다.<br>
+        div태그에 클래스명을 search__list로 지정해준 후 그 안에 목록을 구성해야합니다. 데이터들을 입력할 때 HTML에서 사용자가 임의로 지정한 속성값으로 활용할 수 있기 때문에 data name을 입력해주어야 나중에 편리합니다.<br>
     </p>
     <h3 class="t_tit2">CSS</h3>
     <div class="t_code">
@@ -232,21 +225,27 @@
                 <details>
                     <summary><strong>완성본 보기</strong></summary>
                     <div class="iframe">
-                        <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/%EC%84%9C%EC%B9%98%EC%9D%B4%ED%8E%99%ED%8A%B8_%EB%82%B4%EC%9A%A9%EC%9E%85%EB%A0%A5.jpg?raw=true" alt="서치이펙트내용입력">
+                        <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/seacheffect_content.jpg?raw=true" alt="서치이펙트내용입력">
                     </div>
                 </details>
             </div>
             <!-- 내용 입력 -->
         <h3 class="t_tit2">▶ 자바스크립트 활용 (공통) </h3>
         <p class="t_desc2">
-            자바스크립트를 활용하여 검색을 했을 때 검색한 결과가 나올 수 있도록  forEach문과 if문을 이용해서 코딩을 해줍니다.
+            자바스크립트를 활용하여 검색을 했을 때 검색한 결과가 나올 수 있도록  forEach문과 if문을 이용해서 코딩을 해줍니다.<br>
+            이 때 자바스크립트 카테고리에 있는 <i>indexOf() 메서드</i>를 이용하여 searchWord부분을 통해 0인지 1이상인지를 확인 후 true, false를 구분하여 값을 출력할 수 있습니다.
         </p>
         <div class="t_code">
 <pre><code class="language-js">&lt;script&gt;
 //선택자
 const searchBox = document.querySelector(".search__box input");            //검색 영역
-const searchList = document.querySelectorAll(".search__list ul li");       //목록 리스트
+const searchList = document.querySelectorAll(".search__list ul li"); //목록 리스트
+const searchInfo = document.querySelector(".search__info .num");
 
+//전체 갯수 구하기
+searchInfo.textContent = searchList.length;
+
+//검색 영역
 searchBox.addEventListener("keyup", () =&gt; {
     const searchWord = searchBox.value;     //사용자가 입력한 키워드
     
@@ -260,6 +259,7 @@ searchBox.addEventListener("keyup", () =&gt; {
         }
     });
 }); 
+&lt;/script&gt;
 &lt;/script&gt;
 </code></pre>
     </div>

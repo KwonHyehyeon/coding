@@ -15,8 +15,8 @@
     &lt;header id="header"&gt; 
         &lt;nav&gt;
             &lt;ul&gt;
-                &lt;li class="active"&gt;&lt;a href="searchEffect01.html"&gt;1&lt;/a&gt;
-                &lt;li&gt;&lt;a href="searchEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect01.html"&gt;1&lt;/a&gt;
+                &lt;li class="active"&gt;&lt;a href="searchEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
                 &lt;li&gt;&lt;a href="searchEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
                 &lt;li&gt;&lt;a href="searchEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
                 &lt;li&gt;&lt;a href="searchEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
@@ -28,41 +28,43 @@
 
     &lt;main id="main"&gt;
         &lt;div class="search__wrap"&gt;
-            &lt;span&gt;indexOf()을 이용하여 검색하기&lt;/span&gt;
+            &lt;span&gt;includes()을 이용하여 검색하기&lt;/span&gt;
             &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
             &lt;div class="search__box"&gt;
                 &lt;label for="search"&gt;검색하기&lt;/label&gt;
-                &lt;input type="text" id="search" placeholder="CSS 속성을 입력해주세요!"&gt;
+                &lt;input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!"&gt;
             &lt;/div&gt;
             &lt;div class="search__info"&gt;
-                &lt;div&gt;CSS 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+                &lt;div class="type"&gt;플렉스, 애니메이션, 백그라운드, 기타 등등 유형 별로 검색해보세요!&lt;/div&gt;
+                &lt;div&gt;전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
             &lt;/div&gt;
             &lt;div class="search__list"&gt;
                 &lt;div class="css"&gt;
                     &lt;ul&gt;
-                        &lt;li data-name="&gt;align-content"&gt;&lt;strong&gt;align-content&lt;/strong&gt; : align-content 속성은 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="align-items"&gt;&lt;strong&gt;align-items&lt;/strong&gt; : align-items 속성은 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="align-self"&gt;&lt;strong&gt;align-self&lt;/strong&gt; : align-self 속성은 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="all"&gt;&lt;strong&gt;all&lt;/strong&gt; : all 속성은 요소의 속성을 초기화 또는 상속을 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="animation"&gt;&lt;strong&gt;animation&lt;/strong&gt; : animation 속성은 애니메이션과 관련된 속성을 일괄적으로 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="animation-delay"&gt;&lt;strong&gt;animation-delay&lt;/strong&gt; : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="animation-direction"&gt;&lt;strong&gt;animation-direction&lt;/strong&gt; : animation-direction 속성은 애니메이션 움직임 방향을 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="animation-duration"&gt;&lt;strong&gt;animation-duration&lt;/strong&gt; : animation-duration 속성은 애니메이션 움직임 시간을 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="animation-fill-mode"&gt;&lt;strong&gt;animation-fill-mode&lt;/strong&gt; : animation-iteration-count 속성은 애니메이션 반복 횟수 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="animation-iteration-count"&gt;&lt;strong&gt;animation-iteration-count&lt;/strong&gt; : animation-iteration-count 속성은 애니메이션 반복 횟수 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="animation-name"&gt;&lt;strong&gt;animation-name&lt;/strong&gt; : animation-name 속성은 애니메이션 keyframe 이름을 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="animation-play-state"&gt;&lt;strong&gt;animation-play-state&lt;/strong&gt; : animation-play-state 속성은 애니메이션 진행상태를 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="animation-timing-function"&gt;&lt;strong&gt;animation-timing-function&lt;/strong&gt; : backface-visibility 속성은 요소의 뒷면을 설정합니다. &lt;/li&gt;
-                        &lt;li data-name="backface-visibility"&gt;&lt;strong&gt;backface-visibility&lt;/strong&gt; : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="background"&gt;&lt;strong&gt;background&lt;/strong&gt; : background 속성은 백그라운드 속성을 일괄적으로 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="background-attachment"&gt;&lt;strong&gt;background-attachment&lt;/strong&gt; : background-attachment 속성은 배경 이미지의 고정 여부를 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="background-blend-mode"&gt;&lt;strong&gt;background-blend-mode&lt;/strong&gt; : background-blend-mode 속성은 배경을 혼합했을 때의 상태를 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="background-clip"&gt;&lt;strong&gt;background-clip&lt;/strong&gt; : background-clip 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다..&lt;/li&gt;
-                        &lt;li data-name="background-image"&gt;&lt;strong&gt;background-image&lt;/strong&gt; : background-image 속성은 백그라운드 이미지 및 배경 속성을 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="background-origin"&gt;&lt;strong&gt;background-origin&lt;/strong&gt; : background-origin 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.&lt;/li&gt;
-                        &lt;li data-name="background-position"&gt;&lt;strong&gt;background-position&lt;/strong&gt; : background-position 속성은 백그라운드 이미지의 위치 영역을 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="background-repeat"&gt;&lt;strong&gt;background-repeat&lt;/strong&gt; : background-repeat 속성은 백그라운드 이미지 반복 여부를 설정합니다.&lt;/li&gt;
-                        &lt;li data-name="backdrop-filter"&gt;&lt;strong&gt;backdrop-filter&lt;/strong&gt; : backdrop-filter 속성은 배경에 그래픽 효과를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="accent-color" data-type="플렉스"&gt;&lt;strong&gt;accent-color&lt;/strong&gt; : accent-color&lt;/li&gt;
+                        &lt;li data-name="align-content" data-type="플렉스"&gt;&lt;strong&gt;align-content&lt;/strong&gt; : align-content 속성은 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="align-items" data-type="플렉스"&gt;&lt;strong&gt;align-items&lt;/strong&gt; : align-items 속성은 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="align-self" data-type="플렉스"&gt;&lt;strong&gt;align-self&lt;/strong&gt; : align-self 속성은 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="all" data-type="기타"&gt;&lt;strong&gt;all&lt;/strong&gt; : all 속성은 요소의 속성을 초기화 또는 상속을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation" data-type="애니메이션"&gt;&lt;strong&gt;animation&lt;/strong&gt; : animation 속성은 애니메이션과 관련된 속성을 일괄적으로 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-delay" data-type="애니메이션"&gt;&lt;strong&gt;animation-delay&lt;/strong&gt; : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-direction" data-type="애니메이션"&gt;&lt;strong&gt;animation-direction&lt;/strong&gt; : animation-direction 속성은 애니메이션 움직임 방향을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-duration" data-type="애니메이션"&gt;&lt;strong&gt;animation-duration&lt;/strong&gt; : animation-duration 속성은 애니메이션 움직임 시간을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-fill-mode" data-type="애니메이션"&gt;&lt;strong&gt;animation-fill-mode&lt;/strong&gt; : animation-iteration-count 속성은 애니메이션 반복 횟수 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-iteration-count" data-type="애니메이션"&gt;&lt;strong&gt;animation-iteration-count&lt;/strong&gt; : animation-iteration-count 속성은 애니메이션 반복 횟수 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-name" data-type="애니메이션"&gt;&lt;strong&gt;animation-name&lt;/strong&gt; : animation-name 속성은 애니메이션 keyframe 이름을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-play-state" data-type="애니메이션"&gt;&lt;strong&gt;animation-play-state&lt;/strong&gt; : animation-play-state 속성은 애니메이션 진행상태를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="animation-timing-function" data-type="애니메이션"&gt;&lt;strong&gt;animation-timing-function&lt;/strong&gt; : backface-visibility 속성은 요소의 뒷면을 설정합니다. &lt;/li&gt;
+                        &lt;li data-name="backface-visibility" data-type="기타"&gt;&lt;strong&gt;backface-visibility&lt;/strong&gt; : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background" data-type="백그라운드"&gt;&lt;strong&gt;background&lt;/strong&gt; : background 속성은 백그라운드 속성을 일괄적으로 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background-attachment" data-type="백그라운드"&gt;&lt;strong&gt;background-attachment&lt;/strong&gt; : background-attachment 속성은 배경 이미지의 고정 여부를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background-blend-mode" data-type="백그라운드"&gt;&lt;strong&gt;background-blend-mode&lt;/strong&gt; : background-blend-mode 속성은 배경을 혼합했을 때의 상태를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background-clip" data-type="백그라운드"&gt;&lt;strong&gt;background-clip&lt;/strong&gt; : background-clip 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다..&lt;/li&gt;
+                        &lt;li data-name="background-image" data-type="백그라운드"&gt;&lt;strong&gt;background-image&lt;/strong&gt; : background-image 속성은 백그라운드 이미지 및 배경 속성을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background-origin" data-type="백그라운드"&gt;&lt;strong&gt;background-origin&lt;/strong&gt; : background-origin 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.&lt;/li&gt;
+                        &lt;li data-name="background-position" data-type="백그라운드"&gt;&lt;strong&gt;background-position&lt;/strong&gt; : background-position 속성은 백그라운드 이미지의 위치 영역을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="background-repeat" data-type="백그라운드"&gt;&lt;strong&gt;background-repeat&lt;/strong&gt; : background-repeat 속성은 백그라운드 이미지 반복 여부를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="backdrop-filter" data-type="효과"&gt;&lt;strong&gt;backdrop-filter&lt;/strong&gt; : backdrop-filter 속성은 배경에 그래픽 효과를 설정합니다.&lt;/li&gt;
                         &lt;li data-name="background-size"&gt;&lt;strong&gt;background-size&lt;/strong&gt; :  background-size 속성은 요소 배경 이미지의 크기를 설정합니다.&lt;/li&gt;
                         &lt;li data-name="border"&gt;&lt;strong&gt;border&lt;/strong&gt; : border 속성은 요소의 테두리를 설정합니다. &lt;/li&gt;
                         &lt;li data-name="border-bottom"&gt;&lt;strong&gt;border-bottom&lt;/strong&gt; : border-bottom 속성은 요소의 아래쪽 테두리를 설정합니다.&lt;/li&gt;
@@ -70,6 +72,128 @@
                         &lt;li data-name="border-bottom-style"&gt;&lt;strong&gt;border-bottom-style&lt;/strong&gt; : border-bottom-style 속성은 요소 테두리의 아래쪽 스타일을 지정합니다.&lt;/li&gt;
                         &lt;li data-name="border-bottom-width"&gt;&lt;strong&gt;border-bottom-width&lt;/strong&gt; : border-bottom-width 속성은 요소의 아래 테두리 너비를 지정합니다.&lt;/li&gt;
                         &lt;li data-name="border-collapse"&gt;&lt;strong&gt;border-collapse&lt;/strong&gt; : border-collapse CSS 속성은 표 테두리가 분리 또는 상쇄될 지를 결정합니다. &lt;/li&gt;
+                        &lt;!-- 121-240 --&gt;
+                        &lt;li data-name="counter-increment" data-type="카운터"&gt;&lt;strong&gt;counter-increment&lt;/strong&gt; : counter-increment 속성은 콘텐츠의 순서 상태를 정의합니다.&lt;/li&gt;
+                        &lt;li data-name="counter-reset" data-type="카운터"&gt;&lt;strong&gt;counter-reset&lt;/strong&gt; : counter-reset 속성은 콘텐츠의 숫자를 초기화합니다.&lt;/li&gt;
+                        &lt;li data-name="counter-set" data-type="카운터"&gt;&lt;strong&gt;counter-set&lt;/strong&gt; : counter-set &lt;/li&gt;
+                        &lt;li data-name="cursor" data-type="효과"&gt;&lt;strong&gt;cursor&lt;/strong&gt; : cursor 속성은 마우스 포인터가 요소 위에 있을 때 표시할 마우스 커서를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="direction" data-type="효과"&gt;&lt;strong&gt;direction&lt;/strong&gt; : direction 속성은 텍스트, 테이블 열 및 가로 오버플로의 방향을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="display" data-type="효과"&gt;&lt;strong&gt;display&lt;/strong&gt; : display 속성은 블록 또는 인라인 요소로 처리되는지 여부와 그 자식에 사용되는 레이아웃을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="empty-cells" data-type="테이블"&gt;&lt;strong&gt;empty-cells&lt;/strong&gt; : empty-cells 속성은 테이블의 빈요소의 속성을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="filter" data-type="효과"&gt;&lt;strong&gt;filter&lt;/strong&gt; : filter 속성은 이미지의 비쥬얼 효과를 정의합니다.&lt;/li&gt;
+                        &lt;li data-name="flex" data-type="플렉스"&gt;&lt;strong&gt;flex&lt;/strong&gt; : flex 속성은 플렉스 항목이 플렉스 컨테이너에서 사용 가능한 공간에 맞게 확장되거나 축소되는 방식을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="flex-basis" data-type="플렉스"&gt;&lt;strong&gt;flex-basis&lt;/strong&gt; : flex-basis 속성은 플렉스 항목의 초기 기본 크기를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="flex-direction" data-type="플렉스"&gt;&lt;strong&gt;flex-direction&lt;/strong&gt; : flex-direction 속성은 주 축과 방향을 정의하는 플렉스 컨테이너에 플렉스 항목을 배치하는 방법을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="flex-flow" data-type="플렉스"&gt;&lt;strong&gt;flex-flow&lt;/strong&gt; : flex-flow 속성은 요소의 정렬 방향과 줄 속성을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="flex-grow" data-type="플렉스"&gt;&lt;strong&gt;flex-grow&lt;/strong&gt; : flex-grow 속성은 요소의 크기를 숫자를 통해 늘려줍니다.&lt;/li&gt;
+                        &lt;li data-name="flex-shrink" data-type="플렉스"&gt;&lt;strong&gt;flex-shrink&lt;/strong&gt; : flex-shrink 속성은 요소의 크기를 숫자를 통해 줄여줍니다.&lt;/li&gt;
+                        &lt;li data-name="flex-wrap" data-type="플렉스"&gt;&lt;strong&gt;flex-wrap&lt;/strong&gt; : flex-wrap 속성은 플렉스 항목을 한 줄로 강제 적용할지 아니면 여러 줄로 줄바꿈할 수 있는지 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="float" data-type="플롯"&gt;&lt;strong&gt;float&lt;/strong&gt; : float 속성은 블록요소의 정렬 상태를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="font" data-type="폰트"&gt;&lt;strong&gt;font&lt;/strong&gt; : font 폰트 스타일, 폰트 변형, 폰트 두께, 폰트 사이즈, 폰트 간격, 폰트 종류를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="font-family" data-type="폰트"&gt;&lt;strong&gt;font-family&lt;/strong&gt; : font-family 속성은 글꼴을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="font-feature-settings" data-type="폰트"&gt;&lt;strong&gt;font-feature-settings&lt;/strong&gt; : font-feature-settings&lt;/li&gt;
+                        &lt;li data-name="font-kerning" data-type="폰트"&gt;&lt;strong&gt;font-kerning&lt;/strong&gt; : font-kerning 속성은 글꼴에 저장된 커닝 정보의 사용을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="font-language-override" data-type="폰트"&gt;&lt;strong&gt;font-language-override&lt;/strong&gt; : font-language-override&lt;/li&gt;
+                        &lt;li data-name="font-optical-sizing" data-type="폰트"&gt;&lt;strong&gt;font-optical-sizing&lt;/strong&gt; : font-optical-sizing&lt;/li&gt;
+                        &lt;li data-name="font-size" data-type="폰트"&gt;&lt;strong&gt;font-size&lt;/strong&gt; : font-size 속성은 글꼴의 크기를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="font-size-adjust" data-type="폰트"&gt;&lt;strong&gt;font-size-adjust&lt;/strong&gt; : font-size-adjust 속성은 현재 글꼴 크기(대문자 크기를 정의함)를 기준으로 소문자 크기를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="font-stretch" data-type="폰트"&gt;&lt;strong&gt;font-stretch&lt;/strong&gt; : font-stretch 속성은 글꼴에서 일반, 축소 또는 확장된 면을 선택합니다.&lt;/li&gt;
+                        &lt;li data-name="font-style" data-type="폰트"&gt;&lt;strong&gt;font-style&lt;/strong&gt; : font-style 속성은 글꼴의 스타일을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="font-synthesis" data-type="폰트"&gt;&lt;strong&gt;font-synthesis&lt;/strong&gt; : font-synthesis&lt;/li&gt;
+                        &lt;li data-name="font-variant" data-type="폰트"&gt;&lt;strong&gt;font-variant&lt;/strong&gt; : font-variant 속성은 글꼴을 변형을 정의합니다.&lt;/li&gt;
+                        &lt;li data-name="font-variant-alternates" data-type="폰트"&gt;&lt;strong&gt;ffont-variant-alternates&lt;/strong&gt; : font-variant-alternates&lt;/li&gt;
+                        &lt;li data-name="font-variant-caps" data-type="폰트"&gt;&lt;strong&gt;font-variant-caps&lt;/strong&gt; : font-variant-caps&lt;/li&gt;
+                        &lt;li data-name="font-variant-east-asian" data-type="폰트"&gt;&lt;strong&gt;font-variant-east-asian&lt;/strong&gt; : font-variant-east-asian&lt;/li&gt;
+                        &lt;li data-name="font-variant-ligatures" data-type="폰트"&gt;&lt;strong&gt;font-variant-ligatures&lt;/strong&gt; : font-variant-ligatures&lt;/li&gt;
+                        &lt;li data-name="font-variant-numeric" data-type="폰트"&gt;&lt;strong&gt;font-variant-numeric&lt;/strong&gt; : font-variant-numeric&lt;/li&gt;
+                        &lt;li data-name="font-variant-position" data-type="폰트"&gt;&lt;strong&gt;font-variant-position&lt;/strong&gt; : font-variant-position&lt;/li&gt;
+                        &lt;li data-name="font-variation-settings" data-type="폰트"&gt;&lt;strong&gt;font-variation-settings&lt;/strong&gt; : font-variation-settings&lt;/li&gt;
+                        &lt;li data-name="font-weight" data-type="폰트"&gt;&lt;strong&gt;font-weight&lt;/strong&gt; : font-weight 속성은 글꼴의 두께(또는 굵기)를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="forced-color-adjust"&gt;&lt;strong&gt;forced-color-adjust&lt;/strong&gt; : forced-color-adjust&lt;/li&gt;
+                        &lt;li data-name="gap (grid-gap)"&gt;&lt;strong&gt;gap (grid-gap)&lt;/strong&gt; : gap (grid-gap)&lt;/li&gt;
+                        &lt;li data-name="grid" data-type="그리드"&gt;&lt;strong&gt;grid&lt;/strong&gt; : grid 속성은 2차원(행과 열)의 레이아웃 시스템을 제공합니다.&lt;/li&gt;
+                        &lt;li data-name="grid-area" data-type="그리드"&gt;&lt;strong&gt;grid-area&lt;/strong&gt; : grid-area 속성은 Grid 라인으로 둘러싸인 사각형 영역으로, 그리드 셀의 집합입니다.&lt;/li&gt;
+                        &lt;li data-name="grid-auto-columns" data-type="그리드"&gt;&lt;strong&gt;grid-auto-columns&lt;/strong&gt; : grid-auto-columns&lt;/li&gt;
+                        &lt;li data-name="grid-auto-flow" data-type="그리드"&gt;&lt;strong&gt;grid-auto-flow&lt;/strong&gt; : grid-auto-flow&lt;/li&gt;
+                        &lt;li data-name="grid-auto-rows" data-type="그리드"&gt;&lt;strong&gt;grid-auto-rows&lt;/strong&gt; : grid-auto-rows&lt;/li&gt;
+                        &lt;li data-name="grid-column" data-type="그리드"&gt;&lt;strong&gt;grid-column&lt;/strong&gt; : grid-column&lt;/li&gt;
+                        &lt;li data-name="grid-column-end" data-type="그리드"&gt;&lt;strong&gt;grid-column-end&lt;/strong&gt; : grid-column-end&lt;/li&gt;
+                        &lt;li data-name="grid-column-start" data-type="그리드"&gt;&lt;strong&gt;grid-column-start&lt;/strong&gt; : grid-column-start&lt;/li&gt;
+                        &lt;li data-name="grid-row" data-type="그리드"&gt;&lt;strong&gt;grid-row&lt;/strong&gt; : grid-row&lt;/li&gt;
+                        &lt;li data-name="grid-row-end" data-type="그리드"&gt;&lt;strong&gt;grid-row-end&lt;/strong&gt; : grid-row-end&lt;/li&gt;
+                        &lt;li data-name="grid-row-start" data-type="그리드"&gt;&lt;strong&gt;grid-row-start&lt;/strong&gt; : grid-row-start&lt;/li&gt;
+                        &lt;li data-name="grid-template" data-type="그리드"&gt;&lt;strong&gt;grid-template&lt;/strong&gt; : grid-template 속성은 grid-template-rows, grid-template-columns, grid-template-areas를 합친 것입니다.&lt;/li&gt;
+                        &lt;li data-name="grid-template-areas" data-type="그리드"&gt;&lt;strong&gt;grid-template-areas&lt;/strong&gt; : grid-template-areas 속성은 영역을 지정하고 격자에 셀을 설정하고 이름을 할당합니다.&lt;/li&gt;
+                        &lt;li data-name="grid-template-columns" data-type="그리드"&gt;&lt;strong&gt;grid-template-columns&lt;/strong&gt; : grid-template-columns 속성은 컨테이너에 grid 트랙의 크기들을 지정해주는 속성으로 열의 배치를 의미합니다.&lt;/li&gt;
+                        &lt;li data-name="grid-template-rows" data-type="그리드"&gt;&lt;strong&gt;grid-template-rows&lt;/strong&gt; : grid-template-rows 속성은 컨테이너에 grid 트랙의 크기들을 지정해주는 속성으로 행의 배치를 의미합니다.&lt;/li&gt;
+                        &lt;li data-name="hanging-punctuation"&gt;&lt;strong&gt;hanging-punctuation&lt;/strong&gt; : hanging-punctuation 속성은 글시의 시작 및 끝의 위치 정의합니다.&lt;/li&gt;
+                        &lt;li data-name="height"&gt;&lt;strong&gt;height&lt;/strong&gt; : height 속성은 세로값을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="hyphenate-character"&gt;&lt;strong&gt;hyphenate-character&lt;/strong&gt; : hyphenate-character&lt;/li&gt;
+                        &lt;li data-name="hyphens"&gt;&lt;strong&gt;hyphens&lt;/strong&gt; : hyphens&lt;/li&gt;
+                        &lt;li data-name="image-orientation" data-type="이미지"&gt;&lt;strong&gt;image-orientation&lt;/strong&gt; : image-orientation&lt;/li&gt;
+                        &lt;li data-name="image-rendering" data-type="이미지"&gt;&lt;strong&gt;image-rendering&lt;/strong&gt; : image-rendering&lt;/li&gt;
+                        &lt;li data-name="image-resolution" data-type="이미지"&gt;&lt;strong&gt;image-resolution&lt;/strong&gt; : image-resolution&lt;/li&gt;
+                        &lt;li data-name="ime-mode"&gt;&lt;strong&gt;ime-mode&lt;/strong&gt; : ime-mode&lt;/li&gt;
+                        &lt;li data-name="initial-letter"&gt;&lt;strong&gt;initial-letter&lt;/strong&gt; : initial-letter&lt;/li&gt;
+                        &lt;li data-name="initial-letter-align"&gt;&lt;strong&gt;initial-letter-align&lt;/strong&gt; : initial-letter-align&lt;/li&gt;
+                        &lt;li data-name="inline-size"&gt;&lt;strong&gt;inline-size&lt;/strong&gt; : inline-size&lt;/li&gt;
+                        &lt;li data-name="inset"&gt;&lt;strong&gt;inset&lt;/strong&gt; : inset&lt;/li&gt;
+                        &lt;li data-name="inset-block"&gt;&lt;strong&gt;inset-block&lt;/strong&gt; : inset-block&lt;/li&gt;
+                        &lt;li data-name="inset-block-end"&gt;&lt;strong&gt;inset-block-end&lt;/strong&gt; : inset-block-end&lt;/li&gt;
+                        &lt;li data-name="inset-block-start"&gt;&lt;strong&gt;inset-block-start&lt;/strong&gt; : iinset-block-start&lt;/li&gt;
+                        &lt;li data-name="inset-inline"&gt;&lt;strong&gt;inset-inline&lt;/strong&gt; : inset-inline&lt;/li&gt;
+                        &lt;li data-name="inset-inline-end"&gt;&lt;strong&gt;inset-inline-end&lt;/strong&gt; : inset-inline-end&lt;/li&gt;
+                        &lt;li data-name="inset-inline-start"&gt;&lt;strong&gt;inset-inline-start&lt;/strong&gt; : inset-inline-start&lt;/li&gt;
+                        &lt;li data-name="isolation"&gt;&lt;strong&gt;isolation&lt;/strong&gt; : isolation&lt;/li&gt;
+                        &lt;li data-name="justify-content"&gt;&lt;strong&gt;justify-content&lt;/strong&gt; : justify-content 속성은 콘텐츠의 좌우 관계 정렬 상태를 정의합니다.&lt;/li&gt;
+                        &lt;li data-name="justify-items"&gt;&lt;strong&gt;justify-items&lt;/strong&gt; : justify-items&lt;/li&gt;
+                        &lt;li data-name="justify-self	"&gt;&lt;strong&gt;justify-self&lt;/strong&gt; : justify-self&lt;/li&gt;
+                        &lt;li data-name="left"&gt;&lt;strong&gt;left&lt;/strong&gt; : left 속성은 요소의 왼쪽 속성을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="letter-spacing"&gt;&lt;strong&gt;letter-spacing&lt;/strong&gt; : letter-spacing 속성은 글자 사이의 간격을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="line-break"&gt;&lt;strong&gt;line-break&lt;/strong&gt; : line-break&lt;/li&gt;
+                        &lt;li data-name="line-height"&gt;&lt;strong&gt;line-height&lt;/strong&gt; : line-height 속성은 문장과 문장 사이의 간격을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="line-height-step"&gt;&lt;strong&gt;line-height-step&lt;/strong&gt; : line-height-step&lt;/li&gt;
+                        &lt;li data-name="list-style"&gt;&lt;strong&gt;list-style&lt;/strong&gt; : list-style 속성은 목록 스타일을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="list-style-image"&gt;&lt;strong&gt;list-style-image&lt;/strong&gt; : list-style-image 속성은 목록 마커의 이미지를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="list-style-position"&gt;&lt;strong&gt;list-style-position&lt;/strong&gt; : list-style-position 속성은 목록 마커의 위치 속성을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="list-style-type"&gt;&lt;strong&gt;list-style-type&lt;/strong&gt; : list-style-type 속성은 목록 마커의 유형을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="margin"&gt;&lt;strong&gt;margin&lt;/strong&gt; : margin 속성은 요소의 바깥쪽 여백을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="margin-block"&gt;&lt;strong&gt;margin-block&lt;/strong&gt; : margin-block&lt;/li&gt;
+                        &lt;li data-name="margin-block-end"&gt;&lt;strong&gt;margin-block-end&lt;/strong&gt; : margin-block-end&lt;/li&gt;
+                        &lt;li data-name="margin-block-start"&gt;&lt;strong&gt;margin-block-start&lt;/strong&gt; : margin-block-start&lt;/li&gt;
+                        &lt;li data-name="margin-bottom"&gt;&lt;strong&gt;margin-bottom&lt;/strong&gt; : margin-bottom 속성은 요소의 아래 바깥쪽 여백을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="margin-inline"&gt;&lt;strong&gt;margin-inline&lt;/strong&gt; : margin-inline&lt;/li&gt;
+                        &lt;li data-name="margin-inline-end"&gt;&lt;strong&gt;margin-inline-end&lt;/strong&gt; : margin-inline-end&lt;/li&gt;
+                        &lt;li data-name="margin-inline-start"&gt;&lt;strong&gt;margin-inline-start&lt;/strong&gt; : margin-inline-start&lt;/li&gt;
+                        &lt;li data-name="margin-left"&gt;&lt;strong&gt;margin-left&lt;/strong&gt; : margin-left 속성은 요소의 왼쪽 바깥쪽 여백을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="margin-right"&gt;&lt;strong&gt;margin-right&lt;/strong&gt; : margin-right 속성은 요소의 오른쪽 바깥쪽 여백을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="margin-top"&gt;&lt;strong&gt;margin-top&lt;/strong&gt; : margin-top 속성은 요소의 윗부분 바깥쪽 여백을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="margin-trim"&gt;&lt;strong&gt;margin-trim&lt;/strong&gt; : margin-trim&lt;/li&gt;
+                        &lt;li data-name="mask"&gt;&lt;strong&gt;mask&lt;/strong&gt; : mask 속성은 아이템이 부분적으로만 보여지게 하거나 혹은 완전히 가려서 보여지지 않게 할 수 있는 기능입니다.&lt;/li&gt;
+                        &lt;li data-name="mask-border"&gt;&lt;strong&gt;mask-border&lt;/strong&gt; : mask-border&lt;/li&gt;
+                        &lt;li data-name="mask-border-mode"&gt;&lt;strong&gt;mask-border-mode&lt;/strong&gt; : mask-border-mode&lt;/li&gt;
+                        &lt;li data-name="mask-border-outset"&gt;&lt;strong&gt;mask-border-outset&lt;/strong&gt; : mask-border-outset&lt;/li&gt;
+                        &lt;li data-name="mask-border-repeat"&gt;&lt;strong&gt;mask-border-repeat&lt;/strong&gt; : mmask-border-repeat&lt;/li&gt;
+                        &lt;li data-name="mask-border-slice"&gt;&lt;strong&gt;mask-border-slice&lt;/strong&gt; : mask-border-slice&lt;/li&gt;
+                        &lt;li data-name="mask-border-source"&gt;&lt;strong&gt;mask-border-source&lt;/strong&gt; : mask-border-source&lt;/li&gt;
+                        &lt;li data-name="mask-border-width"&gt;&lt;strong&gt;mask-border-width&lt;/strong&gt; : mask-border-width&lt;/li&gt;
+                        &lt;li data-name="mask-clip"&gt;&lt;strong&gt;mask-clip&lt;/strong&gt; : mask-clip&lt;/li&gt;
+                        &lt;li data-name="mask-composite"&gt;&lt;strong&gt;mask-composite&lt;/strong&gt; : mask-composite&lt;/li&gt;
+                        &lt;li data-name="mask-image"&gt;&lt;strong&gt;mask-image&lt;/strong&gt; : mask-image&lt;/li&gt;
+                        &lt;li data-name="mask-mode"&gt;&lt;strong&gt;mask-mode&lt;/strong&gt; : mask-mode&lt;/li&gt;
+                        &lt;li data-name="mask-origin"&gt;&lt;strong&gt;mask-origin&lt;/strong&gt; : mask-origin&lt;/li&gt;
+                        &lt;li data-name="mask-position"&gt;&lt;strong&gt;mask-position&lt;/strong&gt; : mask-position&lt;/li&gt;
+                        &lt;li data-name="mask-repeat"&gt;&lt;strong&gt;mask-repeat&lt;/strong&gt; : mask-repeat&lt;/li&gt;
+                        &lt;li data-name="mask-size"&gt;&lt;strong&gt;mask-size&lt;/strong&gt; : mask-size&lt;/li&gt;
+                        &lt;li data-name="mask-type"&gt;&lt;strong&gt;mask-type&lt;/strong&gt; : mask-type&lt;/li&gt;
+                        &lt;li data-name="max-block-size"&gt;&lt;strong&gt;max-block-size&lt;/strong&gt; : max-block-size&lt;/li&gt;
+                        &lt;li data-name="max-height"&gt;&lt;strong&gt;max-height&lt;/strong&gt; : max-height 속성은 요소의 최대 높이를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="max-inline-size"&gt;&lt;strong&gt;max-inline-size&lt;/strong&gt; : max-inline-size&lt;/li&gt;
+                        &lt;li data-name="max-width"&gt;&lt;strong&gt;max-width&lt;/strong&gt; : max-width 속성은 요소의 최대 너비를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="min-block-size"&gt;&lt;strong&gt;min-block-size&lt;/strong&gt; : min-block-size&lt;/li&gt;
+                        &lt;li data-name="min-height"&gt;&lt;strong&gt;min-height&lt;/strong&gt; : min-height 속성은 요소의 최소 높이를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="min-inline-size"&gt;&lt;strong&gt;min-inline-size&lt;/strong&gt; : min-inline-size&lt;/li&gt;
+                        
                     &lt;/ul&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
@@ -89,23 +213,29 @@
         const searchList = document.querySelectorAll(".search__list ul li"); //목록 리스트
         const searchInfo = document.querySelector(".search__info .num");
 
-        //전체 갯수 구하기
-        searchInfo.textContent = searchList.length;
+        //전체 갯수 설정하기 
+        for(let i=1; i&lt;=searchList.length; i++){
+            const searchInfo = document.querySelector(".search__info .num")
 
-        //검색 영역
+            searchInfo.innerHTML = i;
+        };
+
+        //
         searchBox.addEventListener("keyup", () =&gt; {
             const searchWord = searchBox.value;     //사용자가 입력한 키워드
-            
+
             searchList.forEach(el =&gt; {
-                const cssName = el.dataset.name;
-                //만약에 indexOf가 true가 되면, false : 0이 되면
-                if(cssName.indexOf(searchWord)){
-                    el.classList.add("hide");
+                const cssName = el.dataset.name;    //CSS 속성 모든 값 js: dataset.name(데이터 불러오기)
+                //console.log(cssName)
+
+                //"all".includes("all")   //true
+                if(cssName.includes(searchWord)){
+                    el.classList.remove("hide");
                 } else {
-                    el.classList.remove("hide");    //indexOf값이 0이 되는 값만 hide를 지워줍니다.
+                    el.classList.add("hide");
                 }
-            });
-        }); 
+            })
+        })
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
