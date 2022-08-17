@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : 문자열 메서드02</title>
+    <title>자바스크립트 : 문자열 메서드03</title>
     
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -45,40 +45,57 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">toUppercase() / toLowercase() 에 대해 알아봅시다!</h2>
-            <h3 class="t_tit2">toUppercase() 메서드란?</h3>
+            <h2 class="t_tit">trim() / trimStart() / trimEnd() 에 대해 알아봅시다!</h2>
+            <h3 class="t_tit2">trim() 메서드란?</h3>
             <p class="t_desc2">
-                : 문자열을 대문자로 변환해서 반환
+                : 문자열의 앞쪽, 뒤쪽 공백을 모두 제거한 문자열을 반환
             </p>
             <div class="t_box">
-                <strong>string.toUpperCase()</strong>
+                <strong>string.trim()</strong>
             </div>
-            <h3 class="t_tit2">toLowercase() 메서드란?</h3>
+            <h3 class="t_tit2">trimStart() 메서드란?</h3>
             <p class="t_desc2">
-                : 문자열을 소문자로 변환해서 반환
+                : 문자열의 앞쪽 공백을 모두 제거한 문자열을 반환
             </p>
             <div class="t_box">
-                <strong>string.toLowerCase()</strong>
+                <strong>string.trimStart()</strong>
+            </div>
+            <h3 class="t_tit2">trimEnd() 메서드란?</h3>
+            <p class="t_desc2">
+                : 문자열의 뒤쪽 공백을 모두 제거한 문자열을 반환
+            </p>
+            <div class="t_box">
+                <strong>string.trimEnd()</strong>
             </div>
             <hr>
 
-            <h3 class="t_tit2">toUppercase() / toLowercase() 메서드 사용예제</h3>
+            <h3 class="t_tit2">trim() / trimStart() / trimEnd() 메서드 사용예제</h3>
             <div class="t_code">
-<pre><code>>const str1 = "javascript";
-const currestStr1 = str1.toUpperCase() 
+<pre><code>const str1 = "       javascript       ";
+const currentStr1 = str1.trim();
 
-document.querySelector(".sample02_N1").innerHTML = "1";
-document.querySelector(".sample02_Q1").innerHTML = "javascript";
-document.querySelector(".sample02_M1").innerHTML = "toUpperCase()";
-document.querySelector(".sample02_P1").innerHTML =currestStr1;
+document.querySelector(".sample03_N1").innerHTML = "1";
+document.querySelector(".sample03_Q1").innerHTML = "str1";
+document.querySelector(".sample03_M1").innerHTML = "trim()";
+document.querySelector(".sample03_P1").innerHTML = currentStr1;
 
-const str2 = "JAVASCRIPT"
-const currestStr2 = str2.toLowerCase() 
+//console.log()공백확인 가능
 
-document.querySelector(".sample02_N2").innerHTML = "2";
-document.querySelector(".sample02_Q2").innerHTML = "JAVASCRIPT";
-document.querySelector(".sample02_M2").innerHTML = "toLowerCase()";
-document.querySelector(".sample02_P2").innerHTML =currestStr2;
+const str2 = "       javascript       ";
+const currentStr2 = str2.trimStart();
+
+document.querySelector(".sample03_N2").innerHTML = "2";
+document.querySelector(".sample03_Q2").innerHTML = "str2";
+document.querySelector(".sample03_M2").innerHTML = "trimStart()";
+document.querySelector(".sample03_P2").innerHTML = currentStr2;
+
+const str3 = "       javascript       ";
+const currentStr3 = str3.trimEnd();
+
+document.querySelector(".sample03_N3").innerHTML = "3";
+document.querySelector(".sample03_Q3").innerHTML = "str3";
+document.querySelector(".sample03_M3").innerHTML = "trimEnd()";
+document.querySelector(".sample03_P3").innerHTML = currentStr3;
 </code></pre>
             </div>
             <div class="t_result">
@@ -97,15 +114,21 @@ document.querySelector(".sample02_P2").innerHTML =currestStr2;
                             <tbody>
                                 <tr>
                                     <td class="ce">1</td>
+                                    <td class="ce">str1</td>
+                                    <td class="ce">trim()</td>
                                     <td class="ce">javascript</td>
-                                    <td class="ce">toUpperCase()</td>
-                                    <td class="ce">JAVASCRIPT</td>
                                 </tr>
                                 <tr>
                                     <td class="ce">2</td>
-                                    <td class="ce">JAVASCRIPT</td>
-                                    <td class="ce">toLowerCase()</td>
-                                    <td class="ce">javascript</td>
+                                    <td class="ce">str2</td>
+                                    <td class="ce">trimStart()</td>
+                                    <td class="ce">javascript____</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">3</td>
+                                    <td class="ce">str3</td>
+                                    <td class="ce">trimEnd()</td>
+                                    <td class="ce">____javascript</td>
                                 </tr>
                             </tbody>
                         </table>
