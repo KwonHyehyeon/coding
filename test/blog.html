@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>블로그</title>
     <style>
+    @import url('https://webfontworld.github.io/goodchoice/Jalnan.css');
     .main__add {
-	  background: #F5F5F5;
+	  background: #000;
 	  margin-top: 100px;
 	  margin-bottom: 120px;
 	  position: relative;
@@ -37,8 +38,8 @@
 	}
 	.main__add .card {
 	  width: 32%;
-	  height: 200px;
 	  background: #ccc;
+      margin: 20px;
 	}
     /* reset */
     * {
@@ -55,19 +56,47 @@
 
     /* cardType */
     .card {
-
+        display: flex;
     }
-    .card__img {
-
+    .card__box1 {
+        width: 100%;
+        height: 100px;
+        background-color: #fff;
     }
-    .card__box1 {}
     .card__box2 {}
     .card__box3 {}
     .card__box h3 {}
     .card__box a {}
-    .card_tit {}
+    .card_tit {
+        margin-bottom: 5px;
+        text-align: center;
+        font-family: 'Jalnan';
+    }
     .card_more {
-        
+        text-decoration: none;
+        font-family: 'Jalnan';
+        text-align: center;
+    }
+    .card_more:hover {
+        text-decoration: underline;
+        border-radius: 20px;
+        background-color: rgb(249, 167, 24, 0.5);
+    }
+    .card_more.blue:hover {
+        background-color: rgb(59, 193, 242, 0.5);
+    }
+    .card_more.yellow:hover {
+        background-color: rgb(242, 239, 33, 0.5);
+    }
+    a {
+        display: inline-block;
+    }
+    .card__img img{
+        transition: all 0.15s ease-in-out;
+    }
+    .article:hover .card__img img {
+        transform: scale(1.05);
+        border-radius: 5px;
     }
     </style>
 </head>
@@ -80,7 +109,7 @@
                 </figure>
                 <div class="card__box1">
                     <h3 class="card_tit">HTML</h3>
-                    <a href="https://kwonhyehyeon.github.io/coding/html/alphabet.html" class="card_more">Study with me</a>
+                    <a href="https://kwonhyehyeon.github.io/coding/html/alphabet.html" class="card_more">함께 공부해요!</a>
                 </div>
             </article>
         </div>
@@ -91,7 +120,7 @@
                 </figure>
                 <div class="card__box2">
                     <h3 class="card_tit">CSS</h3>
-                    <a href="https://kwonhyehyeon.github.io/coding/css/index.html" class="card_more">Study with me</a>
+                    <a href="https://kwonhyehyeon.github.io/coding/css/index.html" class="card_more blue">함께 공부해요!</a>
                 </div>
             </article>
         </div>
@@ -102,7 +131,7 @@
                 </figure>
                 <div class="card__box3">
                     <h3 class="card_tit">JAVASCRIPT</h3>
-                    <a href="https://kwonhyehyeon.github.io/coding/javascript/index.html" class="card_more">Study with me</a>
+                    <a href="https://kwonhyehyeon.github.io/coding/javascript/index.html" class="card_more yellow">함께 공부해요!</a>
                 </div>
             </article>
         </div>
