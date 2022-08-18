@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CSS : Sass</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">SASS에 대해 알아봅시다!</h2><br>
+            <p class="t_desc2">
+                : <i>CSS의 단점을 보완하기 위해 만든 CSS 전처리기입니다.</i>보통 CSS를 사용하다보면 단순 반복되는 부분이 많은 등, 불편함이 느껴지기 마련인데, SASS는 이 부분을 거의 완전하게 해소시켜주는
+                스타일 언어입니다. SASS에는 Sass와 SCSS가 있습니다. <br><br>
+                : CSS의 확장팩 같은 언어이기 때문에 CSS 파일 그 자체를 SCSS로 확장자만 바꾸어줘도 정삭적으로 작동합니다. <br>
+                다만, SASS자체는 개발자용 언어이기 때문에 웹브라우저가 읽을 수 없습니다. <br>
+                따라서, 중간에 컴파일러를 거쳐서 CSS로 변환하여 HTML에 연결해야 합니다.
+            </p>
+            <!-- SASS설명 -->
+            <hr>
+            <h3 class="t_tit2">★ CSS의 단점 ★</h3>
+            <div class="t_box">
+                : 선택자(Selector)을 만들 때 매번 불필요한 부모요소 선택자를 적어야 합니다.<br>
+                : function 같은게 없으니, 규모가 큰 프로젝트의 경우 자동화하기 어렵고 모든 것을 수동으로 변경해야 합니다.<br>
+                : 결국 중복되는 코드가 많아 코드 줄 수가 길어져 유지보수에 마이너스적인 요소가 됩니다.
+            </div>
+            <h3 class="t_tit2">★ CSS와 SASS의 차이 ★</h3>
+            <p class="t_desc">
+                CSS 내에서 변수 처리 유무 : SASS를 쓰는 가장 큰 이유!
+            </p><br>
+            <h4 class="t_tit3">✔️일반적인 CSS 문법</h4>
+            <div class="t_code">
+<pre><code>.box ul {
+    width: 300px;    
+}
+.box ul li {
+    color: #000;
+    background: url("./image.jpg");
+}
+.box ul li:last-child {
+    margin-right: 10px;
+}
+</code></pre>
+            </div>
+            <h4 class="t_tit3">✔️SASS 문법</h4>
+            <P class="t_desc">브라켓이 {}이 없으니 ※주의※</P>
+            <div class="t_code">
+<pre><code>.box ul {
+    width: 300px
+    li
+      color: #000
+      background: url("./image.jpg")
+      &:last-child
+        margin-right: 10px
+</code></pre>
+            </div>
+            <!-- CSS와 SASS 차이 -->
+            <h3 class="t_tit2">★ SASS와 SCSS의 차이 ★</h3>
+            <p class="t_desc">
+                SCSS는 SASS 버전이 업데이트되면서 기존 CSS와 호환성을 높이기 위해서 도입된 문법<br>
+            </p>
+            <h3 class="t_tit2">★ 여기서 잠깐! SCSS란? ★</h3>
+            <p class="t_desc">
+                : Sass의 3버전에서 등장한 언어<br>
+                : CSS와 완전히 호환되도록 새로운 구문을 도입한 CSS의 상위 호환 스타일 시트<br>
+            </p>
+            <div class="t_box">
+                ✔️SASS, SCSS에서 기존의 CSS의 기능 부재 단점을 보완한 다양한 기능 추가<br>
+                ✔️SASS는 들여 쓰기 + 줄 바꿈 형식, SCSS는 중괄호 + 세미클론 형식
+            </div>
+            <!-- SASS와 SCSS 차이 -->
+            <hr>
+            <h3 class="t_tit2">Sass 변수(Variables)</h3><br>
+            <p class="t_desc2">
+                : Sass를 사용하는 가장 직접적인 방법은 값을 변수에 담아 사용하는 것입니다.<br>
+                직접 값을 입력하는 대신 변수를 사용하면 같은 목적의 값을 하나의 변수로 관리하며 여러 곳에 할당할 수 있고, 실수로 값을 잘못 입력할 경우를 줄여주며, 값을 수정하기도 훨씬 쉬워집니다!
+            </p>
+            <div class="t_box">
+                👌변수($) 정의하기<br>
+                : 변수 이름은 반드시 $ 기호로 시작합니다. → 변수가 어떻게 어디서 사용되는지 한 눈에 알아볼 수 있음!<br>
+                👌변수($) 사용하기<br>
+                : 다양한 곳에서 사용할 수 있지만 가장 기본적인 사용법은 속성값으로 할당하는 것입니다.<br>
+                👌변수($) 범위<br>
+                : 전역과 지역
+            </div>
+            <h3 class="t_tit2">★ SCSS Sass → CSS ★</h3>
+            <p class="t_desc">
+                예시를 통해 같은 SCSS와 Sass의 변수와 CSS 변수는 어떤 차이가 있는지 알아봅시다.<br>
+            </p>
+            <h4 class="t_tit3">✔️SCSS</h4>
+            <div class="t_code">
+<pre><code>$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+</code></pre>
+            </div>
+            <h4 class="t_tit3">✔️Sass</h4>
+            <div class="t_code">
+<pre><code>$font-stack: Helvetica, sans-serif
+$primary-color: #333
+
+body
+  font: 100% $font-stack
+  color: $primary-color
+</code></pre>
+            </div>
+            <h4 class="t_tit3">✔️CSS</h4>
+            <div class="t_code">
+<pre><code>body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+} 
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

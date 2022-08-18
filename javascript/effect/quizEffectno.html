@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Cafe24Dangdanghae/Cafe24Dangdanghae.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(여러문제) 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li class="active"><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- header -->
+
+    <main id="main">
+        <div class="quiz_wrap">
+        </div>
+    </main>
+    <!-- main -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- footer -->
+
+    <script>
+        // const num = [100, 200, 300, 400, 500];
+        // num.forEach(function(el, i){
+        //     //console.log(el);
+
+        //     document.querySelector(".quiz_wrap").innerHTML += el 
+        // })
+
+        //문제 정보
+        const quizInfo = [
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 19,
+                answerAsk: "신문광고의 구성요소 중 조형적 요소가 아닌 것은?",
+                answerChoice: {
+                    1 : "헤드라인",
+                    2 : "일러스트레이션",
+                    3 : "심볼 마크",
+                    4 : "보더 라인",
+                },
+                answerResult: "1",
+                answerEx: "?",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 22,
+                answerAsk: "웹서버의 일반적인 동작 과정으로 옳은 것은?",
+                answerChoice: {
+                    1 : "연결설정→클라이언트가 정보요청→서버의 응답→연결종료",
+                    2 : "연결설정→서버의 응답→클라이언트가 정보요청→연결종료",
+                    3 : "클라이언트가 정보요청→연결설정→서버의 응답→연결종료",
+                    4 : "클라이언트가 정보요청→서버의 응답→연결설정→연결종료",
+                },
+                answerResult: "1",
+                answerEx: "연결을 설정해야 연결이 되겠죠? 정보를 요청해야 응답을 할 수 가 있겠습니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 28,
+                answerAsk: "개방형 시스템의 상호접속을 위한 참조모델로 ISO에서 제정한 것은?",
+                answerChoice: {
+                    1 : "OSI 7 Layer",
+                    2 : "Kermit",
+                    3 : "Proxy",
+                    4 : "Archie",
+                },
+                answerResult: "1",
+                answerEx: "ISO osi 7 layer, iso -> osi 외워주세요",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 31,
+                answerAsk: "인터넷 익스플로러 6.0에서 웹페이지의 글자가 깨져 보이는 경우에는 [보기]-[인코딩] 메뉴에서 무엇을 선택해야 하는가",
+                answerChoice: {
+                    1 : "자동선택",
+                    2 : "자동복구",
+                    3 : "오류복구",
+                    4 : "오류보기",
+                },
+                answerResult: "1",
+                answerEx: "?",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 33,
+                answerAsk: "인터넷의 시조이며, 미 국방성이 군사목적으로 UCLA, 스탠포드 대학 등이 보유한 컴퓨터 네트워크로 연결한 것은 무엇일까?",
+                answerChoice: {
+                    1 : "USENET",
+                    2 : "FTP",
+                    3 : "WAIS",
+                    4 : "ARPANET",
+                },
+                answerResult: "4",
+                answerEx: "인터넷의 시조 = 알파넷.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 34,
+                answerAsk: "다음과 관련 있는 TCP/IP 프로토콜 계층으로 옳은 것은? SMTP, FTP, Telnet, HTTP",
+                answerChoice: {
+                    1 : "물리 계층",
+                    2 : "네트워크 계층",
+                    3 : "전송 계층",
+                    4 : "응용 계층",
+                },
+                answerResult: "4",
+                answerEx: "여러가지 프로토콜들이 나오면 응용계층을 생각해주세요.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 36,
+                answerAsk: "자바스크립트의 일반적인 장점으로 틀린 것은?",
+                answerChoice: {
+                    1 : "운영체제의 제한을 받지 않는다.",
+                    2 : "문법이 간단해 손쉽게 프로그램을 만들 수 있다.",
+                    3 : "HTML 문서 내에 직접 코드를 삽입하므로 신속하게 작성할 수 있다.",
+                    4 : "게임, 메신저, 채팅방 등을 개발하는데 적합하다.",
+                },
+                answerResult: "2",
+                answerEx: "메신저나 채팅방은 서버 프로그램이 필요하겠죠? 일반적인 장점으로 적합하진 않은 것 같아요.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 39,
+                answerAsk: "위지웍(WYSIWYG) 기반의 웹 에디터가 아닌 것은?",
+                answerChoice: {
+                    1 : "Namo Web Editor",
+                    2 : "FrontPage",
+                    3 : "Edit Plus",
+                    4 : "Netscape Composer",
+                },
+                answerResult: "3",
+                answerEx: "에딧플러스는 메모장 같은 형식으로 하드코딩에 특화되어있죠, 위지위그란\
+                이미지 같은걸 드래그앤 드롭같은 사용자 편의기능을 제공하는 방식의 에디터를 말합니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 41,
+                answerAsk: "컴퓨터그래픽스의 역사 중 제4세대에 해당하는 래스터 스캔형 CRT 시대에 대한 설명으로 거리가 먼 것은?",
+                answerChoice: {
+                    1 : "색, 면으로 입체물의 표면을 도색할 수 있게 되었다.",
+                    2 : "프랙탈 이론을 실천한 여러 사례가 발표되었다.",
+                    3 : "슈퍼리얼리즘과 사실주의적인 경향을 갖고 있다.",
+                    4 : "보잉사가 CRT를 구사하여 제트 여객기 보잉 737을 설계하였다.",
+                },
+                answerResult: "4",
+                answerEx: "보잉737 은 1964년 부터 생산되었고 래스터스캔 CRT는 1980년도의 기술이다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 43,
+                answerAsk: "웹페이지를 작성할 때 배경이미지와 메뉴에 관한 설명으로 틀린 것은?",
+                answerChoice: {
+                    1 : "스타일 시트를 이용하여 배경 이미지의 반복 횟수를 증가시킨다.",
+                    2 : "배경 이미지가 클 경우 용량 증가로 로딩이 늦어진다.",
+                    3 : "메뉴는 메타포를 이용하여 디자인한다.",
+                    4 : "배경의 색상을 분할시켜 사용하면 프레임이 사용된 것처럼 보인다.",
+                },
+                answerResult: "1",
+                answerEx: "배경이미지의 반복 횟수를 증가시키면 그만큼 로딩시간이 길어지겠죠?",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 44,
+                answerAsk: "웹 페이지 저작에 필요한 S/W 중 웹에디터가 아닌 것은?",
+                answerChoice: {
+                    1 : "Internet Space Builder",
+                    2 : "EditPlus",
+                    3 : "Hotdog Professional",
+                    4 : "Dramweaver",
+                },
+                answerResult: "1",
+                answerEx: "Internet Space Builder은 3D 기술을 제작하는 쪽이라고 하네요.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 45,
+                answerAsk: `
+                다음 설명과 같은 애니메이션 기법은?
+                <br>- 배경그림은 그래도 두고 캐릭터만 움직이게 하는 기법
+                <br>- 1915년 허드(Earl Hurd)가 고안
+                <br>- 종이에 그린 그림을 셀룰로이드에 옳긴 뒤, 그 뒷면에 채색을 한 다음 배경 위에 놓고 촬영하는 기법
+                `,
+                answerChoice: {
+                    1 : "셀 애니메이션",
+                    2 : "그림 애니메이션",
+                    3 : "모델 애니메이션",
+                    4 : "컴퓨터 애니메이션",
+                },
+                answerResult: "1",
+                answerEx: "배경은 그대로 두고 캐릭터만 움직인다? => 셀 애니메이션",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 46,
+                answerAsk: "애니메이션 기법에 대한 설명이 틀린 것은?",
+                answerChoice: {
+                    1 : "플립북 애니메이션은 프레임의 모든 그림을 그려서 저장하므로 제작 시간이 많이 소요된다.",
+                    2 : "셀 애니메이션은 하나의 배경과 여러 개의 전경을 제작 후 합성하여 하나의 프레임을 만든다.",
+                    3 : "컴퓨터를 이용한 키 프레임 애니메이션은 선형보간법으로 중간 프레임을 자동 생성할 수 있다.",
+                    4 : "모핑 애니메이션은 전통적인 애니메이션 기법으로 용량이 작아 인터넷 환경에 적합하다.",
+                },
+                answerResult: "4",
+                answerEx: "모핑은 영화나 뮤직비디오에서 많이 사용합니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 47,
+                answerAsk: "일반적인 애니메이션 제작과정으로 옳은 것은?",
+                answerChoice: {
+                    1 : "스토리보드 - 기획 - 제작 - 음향 - 레코딩",
+                    2 : "스토리보드 - 제작 - 기획 - 음향 - 레코딩",
+                    3 : "기획 - 스토리보드 - 제작 - 음향 - 레코딩",
+                    4 : "기획 - 스토리보드 - 음향 - 제작 - 레코딩",
+                },
+                answerResult: "3",
+                answerEx: "기획을 해야 스토리 보드를 작성할 수 있습니다. 주제가 생기니까요. 그리고 음향효과는 제작을 다 한 후 넣습니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 51,
+                answerAsk: "웹 페이지에서 사용되는 버튼을 가장 부적절하게 제작한 것은?",
+                answerChoice: {
+                    1 : "문자 버튼의 색상과 배경이 변한다.",
+                    2 : "애니메이션 효과로 움직이는 버튼을 제작한다.",
+                    3 : "모든 버튼이 자연스럽게 사라진다.",
+                    4 : "흔들리는 이미지가 메뉴로 바뀐다.",
+                },
+                answerResult: "3",
+                answerEx: "만약 버튼이 쥐도새도 모르게 사라진다면 당황스럽겠죠? 사용자가 의도해서 사라지는것이 아니라면",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 52,
+                answerAsk: "웹디자인 프로세스에 대한 설명으로 틀린 것은?",
+                answerChoice: {
+                    1 : "프로젝트 기획 - 목표설정, 시장조사, 개발전략수립",
+                    2 : "웹 사이트 기획 - 사이트 콘셉트 정의, 자료수집. 분석",
+                    3 : "웹 사이트 디자인 - 콘텐츠 제작 및 배치",
+                    4 : "웹 사이트 구축 - 테스트 및 디버깅",
+                },
+                answerResult: "4",
+                answerEx: "테스트 및 디버깅 단계는 다 개발하고 유지보수 단계에서 실행하는 것 입니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 54,
+                answerAsk: "곡선(곡면)이나 사선(사면)을 표현할 때 바탕과 이미지 사이의 경계를 부드럽게 처리해 주는 것은?",
+                answerChoice: {
+                    1 : "매핑",
+                    2 : "앨리어싱",
+                    3 : "안티앨리어싱",
+                    4 : "디더링",
+                },
+                answerResult: "3",
+                answerEx: "픽셀 이미지의 계단현상을 부드럽게 처리해주는 기법을 안티엘리어싱이라고 합니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 55,
+                answerAsk: "웹디자인에 사용하기 위하여 사진이나 그림 등을 스캔 받을 때 나타나는 현상으로 스캔 받은 이미지에 물결무늬가 격자처럼 교차되어 보이는 것을 무엇이라고 하는가?",
+                answerChoice: {
+                    1 : "Dithering",
+                    2 : "Scanning",
+                    3 : "Moire",
+                    4 : "Water Mark",
+                },
+                answerResult: "3",
+                answerEx: "모아레(Moire) 란 두 개 이상의 주기적인 패턴(Periodic Pattern)이 겹쳐질 때 만들어지는 간섭무늬(Interference Fringe)를 지칭하는 것으로 다양한 분야에서 매우 광범위하게 사용되어 지고 있죠.",
+            },
+        ];
+
+        //선택자
+        const quizWrap = document.querySelector(".quiz_wrap") //데이터 값
+
+        function updateQuiz() {
+            const exam = []
+
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                    <div class="quiz">
+                        <span class="quiz_type">${question.answerType}</span>
+                        <h2 class="quiz_question">
+                            <span class="number">${question.answerNum + ". "}</span>
+                            <div class="ask">${question.answerAsk}</div>
+                        </h2>
+                        <div class="quiz_view">
+                            <div class="true">정답입니다!</div>
+                            <div class="false">틀렸습니다!</div>
+                            <div class="dog">
+                                <div class="head">
+                                    <div class="ears"></div>
+                                    <div class="face"></div>
+                                    <div class="eyes">
+                                        <div class="teardrop"></div>
+                                    </div>
+                                    <div class="nose"></div>
+                                    <div class="mouth">
+                                        <div class="tongue"></div>
+                                    </div>
+                                    <div class="chin"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="tail"></div>
+                                    <div class="legs"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz_answer">
+                            <div class="quiz_selects">
+                                <label for="select1${number}"> 
+                                    <input type="radio" id="select1${number}" class="select" name="select${number}" value="1"> 
+                                    <span class="choice">${question.answerChoice[1]}</span>
+                                </label>
+                                <label for="select2${number}">
+                                    <input type="radio" id="select2${number}" class="select" name="select${number}" value="2"> 
+                                    <span class="choice">${question.answerChoice[2]}</span>
+                                </label>
+                                <label for="select3${number}">
+                                    <input type="radio" id="select3${number}" class="select" name="select${number}" value="3"> 
+                                    <span class="choice">${question.answerChoice[3]}</span>
+                                </label>
+                                <label for="select4${number}">
+                                    <input type="radio" id="select4${number}" class="select" name="select${number}" value="4"> 
+                                    <span class="choice">${question.answerChoice[4]}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+
+            exam.push(`
+                <div class="quiz_confirm">
+                    <button class="check">정답 확인하기</button>
+                    <div class="ex"></div>
+                </div>
+            `)
+
+            //join으로 합쳐주기
+            quizWrap.innerHTML = exam.join(''); //textcontent로는 안됨 <태그를 text로 인식하기 때문
+        }
+        updateQuiz();
+
+        //정답 확인
+        function answerQuiz() {
+            const quizSelects = document.querySelectorAll(".quiz_selects");    //보기
+            const quizView = document.querySelectorAll(".quiz_view");          //강아지
+            //사용자가 체크한 라디오 박스  == 문제 정답
+            quizInfo.forEach((question, number) => {
+                const quizSelectsWrap = quizSelects[number];                    //전체 보기 박스
+                const userSelector = `input[name=select${number}]:checked`;         //사용자가 클린한 라디오 박스
+                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
+                const quizView = document.querySelectorAll(".quiz_view");
+                console.log(quizSelects)
+                if (userAnswer == question.answerResult) {
+                    console.log("정답")
+                    quizView[number].classList.add("like");
+                } else {
+                    console.log("오답")
+                    quizView[number].classList.add("dislike");
+                    const div = document.createElement("div");
+                    quizSelectsWrap.appendChild(div).innerHTML = `<p class="result">${question.answerEx}</p>`;
+                }
+            });
+        }
+        document.querySelector(".quiz_confirm .check").addEventListener("click", answerQuiz);
+    </script>
+</body>
+
+</html>
