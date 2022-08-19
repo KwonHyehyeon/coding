@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형 02</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        .gmarket {
+            font-family: 'GmarketSans';
+            font-weight: 300;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+            vertical-align: top; /*인라인으로 여백 생겨서 해줘야 사진 딱 맞음*/
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;  /* 반응형 할 때 없애줄 것 */
+        }
+        .container-fluid {
+            width: 100%;
+            padding: 0 100px;
+            box-sizing: border-box;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h1 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #666;
+        }
+
+         /* ir 효과 (이미지 대체 효과 == art) */
+         .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        /* imageType */
+        .image__inner {
+            display: grid;
+            grid-template-areas:
+                "box1 box1 box2 box3" 
+                "box1 box1 box4 box5" 
+            ; 
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 20px;
+        }
+        .image {
+            position: relative;
+            overflow: hidden;
+        }
+        .image__inner .image {}
+        .image__inner .image:nth-child(1) {
+            grid-area: box1; /*이름 지정할 때 큰 따옴표 안씀*/
+            background:  url(img/imageType03_01.jpg);
+            background-size: cover;
+        }
+        .image__inner .image:nth-child(2) {
+            grid-area: box2;
+        }
+        .image__inner .image:nth-child(3) {
+            grid-area: box3;
+        }
+        .image__inner .image:nth-child(4) {
+            grid-area: box4;
+        }
+        .image__inner .image:nth-child(5) {
+            grid-area: box5;
+
+        }
+        .image__box {}
+        .image__desc {
+            position: absolute;
+            left: 0;
+            bottom: -100%;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 16px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        .image:hover .image__desc{
+            bottom: 0;
+        }
+        .image__desc h3 {
+            font-size: 20px;
+        }
+        .image__desc p {
+            font-size: 16px;
+            color: #666;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .image__sns {
+            position: absolute;
+            right: -100px;
+            top: 10px;
+            transition: all 0.4s ease;
+        }
+        .image__sns a {
+            width: 36px;
+            height: 360px;
+            background: #fff;
+            display: block;
+            margin-bottom: 5px;
+            background: url(img/image_bg03_icon.svg);
+        }
+        .image__sns a:nth-child(1) {}
+        .image__sns a:nth-child(2) {
+            background-position: -50px 0;
+        }
+        .image__sns a:nth-child(3) {
+            background-position: -100px 0;
+        }
+        .image__sns a:nth-child(4) {
+            background-position: -150px 0;
+        }
+        .image__sns a:nth-child(5) {
+            background-position: -200px 0;
+        }
+
+        .image:hover .image__sns {
+            right: 10px;
+        } 
+    </style>
+</head>
+<body>
+    <section id="imageType03" class="image__wrap gmarket section">
+        <h1>영양 만점 비타민 풍부 과일들</h1>
+        <p>우리들의 건강을 위해서 충분한 비타민과 갖가지의 영양소를 고루 갖춘 과일들을 소개합니다!</p>
+        <div class="image__inner container-fluid">
+            <article class="image">
+                <!-- <figure class="image__box">
+                    <img src="img/imageType03_01.jpg" alt="과일">
+                </figure> -->
+                <div class="image__desc">
+                    <h3>바나나</h3>
+                    <p>구경와~</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/imageType03_01.jpg" alt="과일">
+                </figure>
+                <div class="image__desc">
+                    <h3>바나나</h3>
+                    <p>ㅇㄹㅇ</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir"></span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/imageType03_01.jpg" alt="과일">
+                </figure>
+                <div class="image__desc">
+                    <h3>ㄴㅇㄹ</h3>
+                    <p>ㄴㅇㄹ</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir"></span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/imageType03_01.jpg" alt="과일">
+                </figure>
+                <div class="image__desc">
+                    <h3>ㄴㅇㄹ</h3>
+                    <p>ㄴㅇㄹ</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir"></span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/imageType03_01.jpg" alt="과일">
+                </figure>
+                <div class="image__desc">
+                    <h3>ㄴㅇㄹ</h3>
+                    <p>ㄴㅇㄹ</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir"></span></a>
+                </div>
+            </article>
+        </div>
+        </div>
+    </section>
+</body>
+</html>
