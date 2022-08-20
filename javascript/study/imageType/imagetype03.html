@@ -26,18 +26,17 @@
             </div>
             <hr>
             <h3 class="t_tit2">사이트 제작 방법</h3>
-            <h4 class="t_tit3">1. Figma 사용해서 레이아웃 설정</h4>
+            <h4 class="t_tit3">1. 이번 유형은 어떤 유형일까?</h4>
             <p class="t_desc2">
-                사이트를 만들기 위해서는 먼저 사이트 레이아웃을 설정해야 합니다. <br>
-                밑의 이미지와 같이 figma를 이용하여 레이아웃을 설정해줄 수 있습니다. <br>
-                그리드를 통해 기본적인 틀을 먼저 잡아준 후  " shift + R " 로 자 기능을 활용하여 레이아웃을 만들어줍니다. <br>
-                ※ 이 때, 칸이나 줄이 확실하게 맞아야 하며 오차없이 레이아웃을 설정해주는 것이 중요합니다.
+                이번 이미지 유형은 이미지 유형02와 같이 사진에 마우스를 가져갔을 때 새로운 박스가 생기게 하는 유형입니다.<br>
+                유형02와 다른 점은 레이아웃 구조와 마우스를 가져갔을 때 박스 안에 아이콘까지 나타나게 하는 것입니다.<br>
+                자세하게 배워봅시다!
             </p>
             <figure>
-                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/imagetype02_01.jpg?raw=true" alt="이미지유형02_01">
+                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/imagetype03.png?raw=true" alt="이미지유형03">
             </figure>
             <figure>
-                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/imagetype02_02.jpg?raw=true" alt="이미지유형02_02">
+                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/imagetype03_01.png?raw=true" alt="이미지유형03_01">
             </figure>
             <h4 class="t_tit3">2. vscode를 통해 코딩해주기! : <i>HTML편</i></h4>
             <p class="t_desc2">
@@ -47,46 +46,99 @@
             <div class="t_box">
                 ★ 레이아웃 틀 잡기<br>
                 1. section에 id값과 class값을 지정하기<br>
-                2. 제목과 설명하기<br>
+                2. 제목과 설명 작성하기<br>
                 3. 사진이 3개이므로 image__inner로 세 개의 카드 포함하기<br>
-                4. 카드의 공통된 요소와 각각의 카드 특징들이 있으므로 article로 각각의 카드 요소(이미지 제목, 자세히 보기)를 묶기<br>
+                4. 카드의 공통된 요소와 각각의 카드 특징들이 있으므로 article로 각각의 카드 요소(이미지, 이미지 제목과 설명, 아이콘들)를 묶기<br>
                 5. 이미지랑 자세히 보기 다른 것과 충돌나지 않게 클래스 지정해주기<br>
-                6. article을 클래스 image로 묶어주고 각각의 특징이 있기 때문에 img1, img2를 추가 시켜주기<br>
-                7. 마지막 사진 안 박스에 색상 등 차별을 주어야 되기 때문에 article클래스에 각각 img1, img2, img3 넣어주기
+                6. 첫번째 이미지는 CSS백그라운드로 넣을거여서 첫번째 이미지 들어가는 figure부분은 주석처리해주기<br>
             </div>
             <div class="t_code">
 <pre><code>&lt;body&gt;
-    &lt;section id="imageType02" class="image__wrap gmarket section"&gt;
-        &lt;h1&gt;북극곰의 귀여운 사진들&lt;/h1&gt;
-        &lt;p&gt;곰은 사람을 찢어~맞는 말이지만 그래도 한없이 귀여운 북극곰들&lt;/p&gt;
-        &lt;div class="image__inner container"&gt;
-            &lt;article class="image img1"&gt;
-                &lt;figure class="image__box"&gt;
-                    &lt;img src="img/polarbear1.jpg" alt="북극곰"&gt;
-                &lt;/figure&gt;
+    &lt;section id="imageType03" class="image__wrap gmarket section"&gt;
+        &lt;h1&gt;영양 만점 비타민 풍부 과일들&lt;/h1&gt;
+        &lt;p&gt;우리들의 건강을 위해서 충분한 비타민과 갖가지의 영양소를 고루 갖춘 과일들을 소개합니다!&lt;/p&gt;
+        &lt;div class="image__inner container-fluid"&gt;
+            &lt;article class="image"&gt;
+                &lt;!-- &lt;figure class="image__box"&gt;
+                    &lt;img src="img/imageType03_01.jpg" alt="과일"&gt;
+                &lt;/figure&gt; --&gt;
                 &lt;div class="image__desc"&gt;
-                    &lt;h3&gt;인사하는 북극곰&lt;/h3&gt;
-                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                    &lt;h3&gt;바나나&lt;/h3&gt;
+                    &lt;p&gt;구경와~&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="image__sns"&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;클립&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;트위터&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;인스타&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;유튜브&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;페이스북&lt;/span&gt;&lt;/a&gt;
                 &lt;/div&gt;
             &lt;/article&gt;
-            &lt;article class="image img2"&gt;
+            &lt;article class="image"&gt;
                 &lt;figure class="image__box"&gt;
-                    &lt;img src="img/polarbear2.jpg" alt="북극곰"&gt;
+                    &lt;img src="img/imageType03_02.jpg" alt="과일"&gt;
                 &lt;/figure&gt;
                 &lt;div class="image__desc"&gt;
-                    &lt;h3&gt;장난치는 북극곰&lt;/h3&gt;
-                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                    &lt;h3&gt;사과&lt;/h3&gt;
+                    &lt;p&gt;아침에 먹는 사과가 금사과다?&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="image__sns"&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;클립&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;트위터&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;인스타&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;유튜브&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;페이스북&lt;/span&gt;&lt;/a&gt;
                 &lt;/div&gt;
             &lt;/article&gt;
-            &lt;article class="image img3"&gt;
+            &lt;article class="image"&gt;
                 &lt;figure class="image__box"&gt;
-                    &lt;img src="img/polarbear3.jpg" alt="북극곰"&gt;
+                    &lt;img src="img/imageType03_03.jpg" alt="과일"&gt;
                 &lt;/figure&gt;
                 &lt;div class="image__desc"&gt;
-                    &lt;h3&gt;수영하는 북극곰&lt;/h3&gt;
-                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                    &lt;h3&gt;아보카도&lt;/h3&gt;
+                    &lt;p&gt;아보카도가 과일이었다는 사실?&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="image__sns"&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;클립&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;트위터&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;인스타&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;유튜브&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;페이스북&lt;/span&gt;&lt;/a&gt;
                 &lt;/div&gt;
             &lt;/article&gt;
+            &lt;article class="image"&gt;
+                &lt;figure class="image__box"&gt;
+                    &lt;img src="img/imageType03_04.jpg" alt="과일"&gt;
+                &lt;/figure&gt;
+                &lt;div class="image__desc"&gt;
+                    &lt;h3&gt;파인애플&lt;/h3&gt;
+                    &lt;p&gt;새콤달콤한 과일&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="image__sns"&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;클립&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;트위터&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;인스타&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;유튜브&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;페이스북&lt;/span&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="image"&gt;
+                &lt;figure class="image__box"&gt;
+                    &lt;img src="img/imageType03_05.jpg" alt="과일"&gt;
+                &lt;/figure&gt;
+                &lt;div class="image__desc"&gt;
+                    &lt;h3&gt;포도&lt;/h3&gt;
+                    &lt;p&gt;씨있는 포도도 먹게될 걸?&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="image__sns"&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;클립&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;트위터&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;인스타&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;유튜브&lt;/span&gt;&lt;/a&gt;
+                    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;페이스북&lt;/span&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
         &lt;/div&gt;
     &lt;/section&gt;
 &lt;/body&gt;
@@ -97,8 +149,16 @@
                 style을 통해 CSS를 설정해줍니다. <br>
                 피그마로 만들어 놓은 레이아웃을 보며 HTML로 구역을 정해준 후 CSS로 하나하나 디자인해 나가는 것이 중요합니다!
             </p>
+            <div class="t_box">
+                ★ 레이아웃 스타일 넣기<br>
+                ∙ 그리드 사용 → display: gird / grid-template-areas / grid-template-columns / grid-template-rows<br>
+                ∙ .image__inner .image:nth-child(1)을 통해 이미지 중 첫번째 이미지한테 스타일을 준다는 것이므로 여기에 background: url()로 이미지 첨부<br>
+                ∙ background-size: cover을 넣어주어야 정해 놓은 레이아웃 사이즈에 알맞게 들어감 (안그러면, 하나의 이미지가 여러개가 나타나 패턴처럼 나타남)<br>
+                ∙ 아이콘 넣어줄 때 a태그는 인라인 구조이므로 display: block으로 바꿔주어야 세로 정렬 형태로 들어감<br>
+                ∙ 그리고 이미지 2번째, 3번째, 4번째, 5번째의 아이콘 지정해주고 마우스 가져갔을 때 없었다 나오는 위치값 지정해주면 끝!<br>
+            </div>
             <div class="t_code">
-<pre><code> &lt;style&gt;
+<pre><code>&lt;style&gt;
     /* fonts */
     @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
     .gmarket {
@@ -119,116 +179,138 @@
     }
     img {
         width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+        vertical-align: top; /*인라인으로 여백 생겨서 해줘야 사진 딱 맞음*/
     }
     /* common */
     .container {
         width: 1160px;
         padding: 0 20px;
         margin: 0 auto;
-        min-width: 1160px;  /* 반응형 할 때 없애주기 */
+        min-width: 1160px;  /* 반응형 할 때 없애줄 것 */
+    }
+    .container-fluid {
+        width: 100%;
+        padding: 0 100px;
+        box-sizing: border-box;
     }
     .section {
         padding: 120px 0;
     }
-    .section &gt; h1 {
+    .section > h1 {
         font-size: 50px;
         line-height: 1;
         text-align: center;
         margin-bottom: 20px;
     }
-    .section &gt; p {
+    .section > p {
         font-size: 22px;
         font-weight: 300;
         text-align: center;
         margin-bottom: 70px;
         color: #666;
     }
+
+    /* ir 효과 (이미지 대체 효과 == alt) */
+    .ir {
+        display: block;
+        overflow: hidden;
+        font-size: 0;
+        line-height: 0;
+        text-indent: -9999px;
+    }
+
     /* imageType */
     .image__inner {
-        display: flex;
-        justify-content: space-between; /*컨테이너 있고 이거쓰면 양쪽 끝으로 붙어서 사진 사이 떨어지게 함*/
+        display: grid;
+        grid-template-areas:
+            "box1 box1 box2 box3" 
+            "box1 box1 box4 box5" 
+        ; 
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 20px;
     }
     .image {
-        width: 32%;
         position: relative;
-        overflow: hidden; /* 이미지 안 박스 숨기는 효과 */
+        overflow: hidden;
     }
-    .image__box {
-        height: 100%;
+    .image__inner .image {}
+    .image__inner .image:nth-child(1) {
+        grid-area: box1; /*이름 지정할 때 큰 따옴표 안씀*/
+        background:  url(img/imageType03_01.jpg);
+        background-size: cover; /* 프레임 사이즈에 딱 맞게 들어가는 것*/
     }
-    .image__box img {
-        transition: all 0.5s ease-in-out;
+    .image__inner .image:nth-child(2) {
+        grid-area: box2;
     }
+    .image__inner .image:nth-child(3) {
+        grid-area: box3;
+    }
+    .image__inner .image:nth-child(4) {
+        grid-area: box4;
+    }
+    .image__inner .image:nth-child(5) {
+        grid-area: box5;
+
+    }
+    .image__box {}
     .image__desc {
         position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: -100%;
         width: 100%;
-        text-align: center;
-        padding: 20px;
-        box-sizing: border-box;     /* padding으로 인한 넘침 방지 */
-        backdrop-filter: blur(10px); /* 블러 효과 */
-        transition: all 0.3s ease-in-out; /*ease-in-out 빨리 올라와라(?) 효과 : 천천-보통-천천 */
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        padding: 16px;
+        box-sizing: border-box;
+        transition: all 0.4s ease;
     }
-    .img1 .image__desc {
-        background: rgba(253, 167, 246, 0.5); /*박스 컬러*/
-    }
-    .img1 .image__desc h3 {
-        color: #fff;
-    }
-    .img1 .image__desc .more {
-        color: #fff;
-    }
-    .img2 .image__desc {
-        background-color: rgba(176, 233, 255, 0.5);
-    }
-    .img2 .image__desc h3 {
-        color: #006462;
-    }
-    .img2 .image__desc .more {
-        color: #006462;
-    }
-    .img3 .image__desc {
-        background-color: rgba(7, 139, 111, 0.5);
-    }
-    .img3 .image__desc h3 {
-        color: #183169;
-    }
-    .img3 .image__desc .more {
-        color: #183169;
-    }
-    .img1 .image__desc {
-        bottom: -100px;
-    }
-    .img1:hover .image__desc {
+    .image:hover .image__desc{
         bottom: 0;
-    }
-    .img2 .image__desc {
-        bottom: -100px;
-    }
-    .img2:hover .image__desc {
-        bottom: 0;
-    }
-    .img3 .image__desc {
-        bottom: -100px; /* 이미지 안에서 안보이게 하려고 밑으로 -100만큼 내려주고 그것도 안보이게 하려고 위에 image에 overflow: hidden; 효과 */
-    }
-    .img3:hover .image__desc {
-        bottom: 0;
-    }
-    .image:hover .image__box img {
-        transform: scale(1.05); /* 마우스 가져가면 사진 커지는 효과 */
     }
     .image__desc h3 {
-        font-size: 24px;
-        margin-bottom: 5px;
+        font-size: 20px;
     }
-    .image__desc .more {
+    .image__desc p {
         font-size: 16px;
+        color: #666;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         font-weight: 300;
     }
-    .image__desc .more:hover {
-        text-decoration: underline; /*마우스 가져가면 밑줄 생김 효과*/
+    .image__sns {
+        position: absolute;
+        right: -100px;
+        top: 10px;
+        transition: all 0.4s ease;
     }
+    .image__sns a {
+        width: 36px;
+        height: 36px;
+        background: #fff;
+        border-radius: 50%;
+        display: block;
+        margin-bottom: 5px;
+        background: url(img/image_bg03_icon.svg);
+    }
+    .image__sns a:nth-child(1) {}
+    .image__sns a:nth-child(2) {
+        background-position: -50px 0;
+    }
+    .image__sns a:nth-child(3) {
+        background-position: -100px 0;
+    }
+    .image__sns a:nth-child(4) {
+        background-position: -150px 0;
+    }
+    .image__sns a:nth-child(5) {
+        background-position: -200px 0;
+    }
+
+    .image:hover .image__sns {
+        right: 10px;
+    } 
 &lt;/style&gt;
 </code></pre>
             </div>
