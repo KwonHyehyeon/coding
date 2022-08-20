@@ -10,7 +10,7 @@
         @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
         .gmarket {
             font-family: 'GmarketSans';
-            font-weight: 300;
+            font-weight: 400;
         }
         /* reset */
         * {
@@ -57,7 +57,7 @@
             color: #666;
         }
 
-         /* ir 효과 (이미지 대체 효과 == art) */
+         /* ir 효과 (이미지 대체 효과 == alt) */
          .ir {
             display: block;
             overflow: hidden;
@@ -110,7 +110,7 @@
             backdrop-filter: blur(10px);
             padding: 16px;
             box-sizing: border-box;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
         .image:hover .image__desc{
             bottom: 0;
@@ -124,6 +124,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            font-weight: 300;
         }
         .image__sns {
             position: absolute;
@@ -133,8 +134,9 @@
         }
         .image__sns a {
             width: 36px;
-            height: 360px;
+            height: 36px;
             background: #fff;
+            border-radius: 50%;
             display: block;
             margin-bottom: 5px;
             background: url(img/image_bg03_icon.svg);
