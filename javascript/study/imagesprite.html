@@ -16,326 +16,53 @@
             <h2 class="t_tit">CSS : 이미지 스프라이트 / IR 효과 / 백그라운드 표현에 대해 알아봅시다!</h2><br>
             <h3 class="t_tit2">📎이미지 스프라이트(Image Sprite)란?</h3><br>
             <p class="t_desc2">
-                여러 개의 배경 이미지를 하나의 파일로 제작한 후 <i>background-position 속성을 이용</i>하여 이미지를 배치하는 방법입니다.<br>
-                간단하게 말해서, 하나로 뭉친 파일을 다운 받아 필요 부분만 똑 떼어 사용하는 기법입니다.<br>
-                실제로 네이버에서는 메인페이지에서 이 기법을 굉장히 광범위하게 사용하고 있습니다. 
+                : 여러 개의 배경 이미지를 하나의 파일로 제작한 후 <i>background-position 속성을 이용</i>하여 이미지를 배치하는 방법입니다.<br>
+                : 간단하게 말해서, 하나로 뭉친 파일을 다운 받아 필요 부분만 똑 떼어 사용하는 기법입니다.<br>
+                : 실제로 네이버에서는 메인페이지에서 이 기법을 굉장히 광범위하게 사용하고 있습니다. 
             </p>
-            <h3 class="t_tit2">➰왜 사용하는 걸까?</h3>
+            <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/imagesprite.png?raw=true" alt="이미지 스프라이트">
+            <p class="t_desc">
+                [참고] 한 칸의 크기를 50cm로 잡아주었으며 아이콘 크기는 36cm로 정해주었으며 아이콘 안 이미지의 크기는 20cm로 정해주었습니다.(가로, 세로 동일)
+            </p>
+            <h3 class="t_tit2">➰왜 사용하는 걸까? (장점)</h3>
             <div class="t_box">
                 📌 서버로의 요청 횟수를 줄여 사이트 로딩 속도를 줄여줌<br>
                 📌 많은 이미지 파일을 관리하는 대신 <i>하나의 스프라이트 이미지 파일만</i> 관리하면 돼서 편리<br>
-
-                ⋮
+                📌 브라우저 자원과 유지보수 측면에서 이미지 스프라이트 사용하는 것이 좋음<br>
             </div>
-            <p class="t_desc">
-                이런 이유로 정확하게 블록, 인라인 구조를 이해해야 합니다. 그럼 같이 블록구조가 무엇인지, 인라인구조가 무엇인지, 어떤 종류가 있는지에 대해 차근차근 알아봅시다!
-            </p>
-            <hr>
-            <h3 class="t_tit2">📎블록 구조란?</h3><br>
-            <p class="t_desc2">
-                블록 구조는 쉽게 말해서 가로폭 전체의 넓이를 가지는 직사각형 형태인 하나의 박스입니다. 그러므로 한 줄에 하나만 표현되는 것이 특징입니다.
-            </p>
-            <div class="t_iframe">
-                <iframe style="border: 10px solid rgba(67, 67, 69, 0.162); border-radius: 30px;" width="350" height="300" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FV5u2R6rOWUuVYrfDMg8tMe%2FUntitled%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
-            </div><br>
-            <p class="t_desc">
-                📌블록 구조는 가로폭 전체 넓이를 가지는 직사각형의 하나의 박스이다보니 <i>가로로 정렬이 되지 않습니다.</i><br>
-                📌블록 구조는 영역을 표현하는 부분이기 때문에 <i>마진값이나 패딩값이 먹히는 구조</i>입니다.<br>
-                📌블록 구조는 <i>블록 구조 안에 블록 구조</i>가 올 수 있으며 <i>인라인 구조</i>도 올 수 있습니다.⭐️⭐️⭐️<br>
-                📌블록 구조는 <i>display: inline</i>과 같이 CSS명령어로 블록 구조를 인라인 구조의 속성으로 변경할 수 있습니다.⭐️⭐️⭐️<br>
-
-            </p>
-
-            <h3 class="t_tit2">➰블록 태그 종류</h3>
-            <p class="t_desc2">
-                ➿ Layout 태그들<br>
-                ➿ Heading 태그들<br>
-                ➿ Lists 태그들<br>
-                ➿ 자주쓰는 기타 block 태그들<br>
-                ➿ 그 외 block 속성을 가진 태그들
-            </p><br>
-            <h4 class="t_tit3">➿ 레이아웃 태그들</h4>
-            <table class="t_table">
-                <thead>
-                    <tr>
-                        <th>태그 이름</th>
-                        <th>종류</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="ce">&lt;header&gt;</td>
-                        <td>
-                            ∙ html layout 태그 중 하나로 상단영역에 위치<br>
-                            ∙ 사이트 이름, 문서 대표제목, 로고 등을 포함
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;nav&gt;</td>
-                        <td>
-                            ∙ 다른 페이지 또는 현재 페이지 내부로의 이동을 위한 링크들이 모여있음<br>
-                            ∙ 보통 카테고리, 메뉴들의 집합을 표현할 때 사용
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;section&gt;</td>
-                        <td>
-                            ∙ html layout 태그 중 하나로 header 태그와 footer 태그 사이에 위치<br>
-                            ∙ 여러 article을 포함하며 본문을 표현하는 영역
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;article&gt;</td>
-                        <td>
-                            ∙ section 내부에 위치하며 컨텐츠의 제목, 내용을 포함
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;aside&gt;</td>
-                        <td>
-                            ∙ html layout 태그 중 하나로 header 태그와 footer 태그 사이에 위치<br>
-                            ∙ 보조 메뉴, 광고 등 본문(section)과 상관없는 내용을 표시
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;footer&gt;</td>
-                        <td>
-                            ∙ html layout 태그 중 하나로 하단영역에 위치<br>
-                            ∙ 저작권, 저자의 이름, 연락처 등을 표시
-                        </td>
-                    </tr>
-                </tbody>
-            </table><br>
-            <!-- 레이아웃 태그들 -->
-            <h4 class="t_tit3">➿ Heading 태그들</h4>
-            <table class="t_table">
-                <thead>
-                    <tr>
-                        <th>태그 이름</th>
-                        <th>종류</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="ce">&lt;h1&gt;~&lt;h6&gt;</td>
-                        <td>
-                            ∙ heading 태그로 보통 제목을 표현하는데 사용<br>
-                            ∙ h1 → h6태그로 갈수록 크기는 줄어듦<br>
-                            ∙ h1 태그는 가장 중요한 제목에만 한번 사용<br>
-                            ∙ 이외의 태그들은 몇번을 사용해도 상관 X<br>
-                        </td>
-                    </tr>
-                </tbody>
-            </table><br>
-            <!-- 헤딩 태그들 -->
-            <h4 class="t_tit3">➿ Lists 태그들</h4>
-            <table class="t_table">
-                <thead>
-                    <tr>
-                        <th>태그 이름</th>
-                        <th>종류</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="ce">&lt;ul&gt;</td>
-                        <td>
-                            ∙ 순서가 필요없는 리스트를 표현할 때 사용<br>
-                            ∙ 리스트 내부의 아이템들을 li태그를 사용
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;ol&gt;</td>
-                        <td>
-                            ∙ 순서가 필요한 리스트를 표현할 때 사용<br>
-                            ∙ 리스트 내부의 아이템들을 li태그를 사용
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;li&gt;</td>
-                        <td>
-                            ∙ 내부의 아이템이 무엇인지에 대해 설명
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;dl&gt;</td>
-                        <td>
-                            ∙ 사람 또는 사물 등의 단어를 설명하는 리스트에서 사용
-                            ∙ 리스트 내부의 아이템들을 dt 또는 dd태그를 사용
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;dt&gt;</td>
-                        <td>
-                            ∙ 단어의 이름을 정의
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;dd&gt;</td>
-                        <td>
-                            ∙ 단어에 대해 설명
-                        </td>
-                    </tr>
-                </tbody>
-            </table><br>
-            <!-- 리스트 태그들 -->
-            <h4 class="t_tit3">➿ 자주쓰는 기타 block 태그들</h4>
-            <table class="t_table">
-                <thead>
-                    <tr>
-                        <th>태그 이름</th>
-                        <th>종류</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="ce">&lt;div&gt;</td>
-                        <td>
-                            ∙ 영역을 나눌 때 사용하는 태그
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;p&gt;</td>
-                        <td>
-                            ∙ 문단 또는 문장을 나눌 때 사용<br>
-                            ∙ 문장을 작성할 때 p태그에 작성(줄바꾸기 기능)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;form&gt;</td>
-                        <td>
-                            ∙ 사용자가 입력한 데이터를 서버로 전송하기 위해 사용
-                        </td>
-                    </tr>
-                </tbody>
-            </table><br>
-            <!-- 자주쓰는 기타 block 태그들 -->
-            <h4 class="t_tit3">➿ 그 외 block 속성을 가진 태그들</h4>
+            <h3 class="t_tit2">❗️주의할 점</h3>
             <div class="t_box">
-                ∙ &lt;address&gt;<br>
-                ∙ &lt;blockquote&gt;<br>
-                ∙ &lt;canvas&gt;<br>
-                ∙ &lt;fieldset&gt;<br>
-                ∙ &lt;figcaption&gt;<br>
-                ∙ &lt;figure&gt;<br>
-                ∙ &lt;hr&gt;<br>
-                ∙ &lt;main&gt;<br>
-                ∙ &lt;noscript&gt;<br>
-                ∙ &lt;pre&gt;<br>
-                ∙ &lt;table&gt;<br>
-                ∙ &lt;tfoot&gt;<br>
-                ∙ &lt;video&gt;<br>
+                이미지 스프라이트 사용시 img 태그가 아닌 css의 background-image로 처리되기 때문에 alt속성을 지정해줄 수 없습니다.<br>
+                따라서 아이콘, 로고와 같이 의미상 크게 중요하지 않은 이미지의 경우에는 이 기법을 사용하는 것이 좋습니다.
             </div>
-            <!-- 그 외 태그들 -->
-            <hr>
-            <h3 class="t_tit2">📎인라인 구조란?</h3><br>
-            <p class="t_desc2">
-                인라인 구조는 쉽게 말해서 하나의 테스트입니다. 
-            </p>
-            <div class="t_iframe">
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FV5u2R6rOWUuVYrfDMg8tMe%2FUntitled%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
-            </div><br>
-            <p class="t_desc">
-                📌인라인 구조는 한 줄에 여러 개를 표현할 수 있으며 <i>가로로 정렬이 됩니다.</i><br>
-                📌인라인 구조는 텍스트 부분만 영역으로 존재하기 때문에 <i>패딩이나 마진이 먹히지 않습니다.</i>그러나, <i>좌우는 먹힙니다.</i><br>
-                📌인라인 구조는 <i>항상 블록 요소안에 포함</i>되어 있으며 <i>인라인 요소안에 다른 인라인 요소가 포함</i>될 수 있습니다.⭐️⭐️⭐️<br>
-                📌인라인 구조는 기본적으로 컨텐츠가 끝나는 지점까지 넓이로 가지기 때문에 임의로 width, height로 변형을 줄 수가 없습니다.<br>
-                📌인라인 구조는 line-height로 줄의 높낮이를 조절할 수 있으며 text-align으로 텍스트의 중앙, 좌, 우측을 정렬할 수 있습니다.<br>
-                📌인라인 구조는 줄바꿈이 없으며 우측으로 바로 이어서 표시가 됩니다.<br>
-                📌인라인 구조는 <i>display: block</i>과 같이 CSS명령어로 인라인 구조를 블록 구조의 속성으로 변경할 수 있습니다.⭐️⭐️⭐️<br>
-                📌인라인 구조는 <i>display: inline-block</i>과 같이 CSS명령어로 인라인 구조를 인라인 구조와 블록 구조의 속성을 모두 갖는 속성으로 변경할 수 있습니다.⭐️⭐️⭐️
-            </p>
-            <h3 class="t_tit2">➰인라인 태그 종류</h3>
-            <p class="t_desc2">
-                ➿ 자주 쓰는 inline 태그들<br>
-                ➿ 그 외 inline 속성을 가진 태그들
-            </p><br>
-            <h4 class="t_tit3">➿ 자주쓰는 inline 태그들</h4>
-            <table class="t_table">
-                <thead>
-                    <tr>
-                        <th>태그 이름</th>
-                        <th>종류</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="ce">&lt;span&gt;</td>
-                        <td>
-                            ∙ inline요소들을 그룹화하거나 영역을 나눌 때 사용하는 태그
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;a&gt;</td>
-                        <td>
-                            ∙ 링크를 통해 다른페이지, 문서 등을 연결해주는 태그
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;img&gt;</td>
-                        <td>
-                            ∙ 이미지를 삽입하는 태그로 지정한 이미지경로를 통해 이미지를 불러옴
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;button&gt;</td>
-                        <td>
-                            ∙ 클릭할 수 있는 버튼을 생성하는 태그
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;br&gt;</td>
-                        <td>
-                            ∙ 줄바꿈할 때 사용
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;input&gt;</td>
-                        <td>
-                            ∙ 사용자로부터 입력을 받을 때 사용하며 form태그 내부에서 많이 사용
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">&lt;script&gt;</td>
-                        <td>
-                            ∙ javascript와 같은 스크립트 코드를 정의할 때 사용
-                        </td>
-                    </tr>
-                </tbody>
-            </table><br>
-            <!-- 자주쓰는 inline 태그들 -->
-            <h4 class="t_tit3">➿ 그 외 inline 속성을 가진 태그들</h4>
+            <h3 class="t_tit2">➰단점</h3>
             <div class="t_box">
-                ∙ &lt;abbr&gt;<br>
-                ∙ &lt;acronym&gt;<br>
-                ∙ &lt;b&gt;<br>
-                ∙ &lt;bdo&gt;<br>
-                ∙ &lt;big&gt;<br>
-                ∙ &lt;cite&gt;<br>
-                ∙ &lt;code&gt;<br>
-                ∙ &lt;dfn&gt;<br>
-                ∙ &lt;em&gt;<br>
-                ∙ &lt;i&gt;<br>
-                ∙ &lt;kbd&gt;<br>
-                ∙ &lt;label&gt;<br>
-                ∙ &lt;map&gt;<br>
-                ∙ &lt;object&gt;<br>
-                ∙ &lt;output&gt;<br>
-                ∙ &lt;q&gt;<br>
-                ∙ &lt;samp&gt;<br>
-                ∙ &lt;select&gt;<br>
-                ∙ &lt;small&gt;<br>
-                ∙ &lt;strong&gt;<br>
-                ∙ &lt;sub&gt;<br>
-                ∙ &lt;sup&gt;<br>
-                ∙ &lt;textarea&gt;<br>
-                ∙ &lt;time&gt;<br>
-                ∙ &lt;tt&gt;<br>
-                ∙ &lt;var&gt;<br>
+                📌 이미지 개수가 늘어남에 따라 스프라이트 자체의 용량이 커질 수 있음<br>
+                📌 일부 이미지, 로고의 수정이 필요한 경우 유지 보수가 까다로움<br>
             </div>
-            <!-- 그 외 태그들 -->
-            <h3 class="t_tit2">👁 블록 / 인라인 구조 한 눈에 보기!</h3>
-            <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/blockinline.png?raw=true" alt="블록인라인 구조 사진">
+            <h3 class="t_tit2">➰이미지 스프라이트 사용시 필수적인 CSS요소들</h3>
+            <div class="t_box">
+                ∙ width, height : 삽입할 이미지 크기 결정<br>
+                ∙ background-image : 삽입할 이미지의 경로 설정<br>
+                ∙ background-position : 이미지에서 사용할 이미지의 위치 설정
+            </div>
+            <hr>
+            <h3 class="t_tit2">📎IR 효과란?(웹 준수하여 CSS 사용하는 방법)</h3><br>
+            <p class="t_desc2">
+                : 이미지 대체 텍스트를 제공하기 위한 CSS 기법으로 다양한 CSS기법을 사용하여 <i>이미지 대체 텍스트</i>를 제공할 수 있습니다.<br>
+                : 대체로 이미지 스프라이트와 같이 사용을 많이 합니다.
+            </p>
+            <h3 class="t_tit2">➰의미있는 이미지의 대체 텍스트를 제공하는 경우</h3>
+            <div class="t_code">
+<pre><code>.ir_pm {
+    display: block;
+    overflow : hidden;
+    font-size: 0;
+    line-height: 0px;
+    text-indent: -9999px;
+}
+</code></pre>
+            
         </div>
     </main>
     <!-- //main -->
