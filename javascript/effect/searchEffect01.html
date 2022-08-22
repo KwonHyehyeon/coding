@@ -28,7 +28,7 @@
 
     <main id="main">
         <div class="search__wrap">
-            <span>indexOf()을 이용하여 검색하기</span>
+            <span>indexOf( )/search( )을 이용하여 검색하기</span>
             <h1>CSS 속성 검색하기</h1>
             <div class="search__box">
                 <label for="search">검색하기</label>
@@ -455,7 +455,7 @@
             searchList.forEach(el => {
                 const cssName = el.dataset.name;
                 //만약에 indexOf가 true가 되면, false : 0이 되면
-                if(cssName.indexOf(searchWord)){
+                if(cssName.indexOf(searchWord)){ //indexOf() = search()
                     el.classList.add("hide");
                 } else {
                     el.classList.remove("hide");    //indexOf값이 0이 되는 값만 hide를 지워줍니다.
