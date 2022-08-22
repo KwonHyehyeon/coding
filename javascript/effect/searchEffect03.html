@@ -483,16 +483,25 @@
                     const cssName = el.querySelector("strong").innerText;   // CSS 속성 텍스트
                     // console.log(cssName)
                     // 알파벳 첫글자 == CSS 속성의 첫글자
-                    if(searchWord.charAt(0) === cssName.charAt(0)) {
+                    if(searchWord.charAt(0) === cssName.charAt(0)){
                         el.classList.remove("hide");
-                        // 전체 개수 구하기 (알파벳별)
-                        searchInfo.textContent = cssName.length;
+                        count++;
                     } else {
                         el.classList.add("hide");
                     }
+                    searchInfo.textContent = count;
                 });
+                count = 0;
             });
         });
+                    // if(searchWord.charAt(0) === cssName.charAt(0)) {
+                    //     el.classList.remove("hide");
+                    //     // 전체 개수 구하기 (알파벳별)
+                    //     //searchInfo.textContent = cssName.length;
+                        
+                    // } else {
+                    //     el.classList.add("hide");
+                    // }
     </script>
 </body>
 </html>
