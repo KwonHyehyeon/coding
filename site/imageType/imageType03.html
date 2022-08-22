@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이미지 유형 02</title>
+    <title>이미지 유형 03</title>
     <style>
         /* fonts */
         @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
         .gmarket {
             font-family: 'GmarketSans';
-            font-weight: 300;
+            font-weight: 400;
         }
         /* reset */
         * {
@@ -57,8 +57,8 @@
             color: #666;
         }
 
-         /* ir 효과 (이미지 대체 효과 == art) */
-         .ir {
+        /* ir 효과 (이미지 대체 효과 == alt) */
+        .ir {
             display: block;
             overflow: hidden;
             font-size: 0;
@@ -85,7 +85,7 @@
         .image__inner .image:nth-child(1) {
             grid-area: box1; /*이름 지정할 때 큰 따옴표 안씀*/
             background:  url(img/imageType03_01.jpg);
-            background-size: cover;
+            background-size: cover; /* 프레임 사이즈에 딱 맞게 들어가는 것*/
         }
         .image__inner .image:nth-child(2) {
             grid-area: box2;
@@ -110,7 +110,7 @@
             backdrop-filter: blur(10px);
             padding: 16px;
             box-sizing: border-box;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
         .image:hover .image__desc{
             bottom: 0;
@@ -124,6 +124,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            font-weight: 300;
         }
         .image__sns {
             position: absolute;
@@ -133,8 +134,9 @@
         }
         .image__sns a {
             width: 36px;
-            height: 360px;
+            height: 36px;
             background: #fff;
+            border-radius: 50%;
             display: block;
             margin-bottom: 5px;
             background: url(img/image_bg03_icon.svg);
@@ -172,60 +174,75 @@
                     <p>구경와~</p>
                 </div>
                 <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">클립</span></a>
+                    <a href="#" class="link"><span class="ir">트위터</span></a>
+                    <a href="#" class="link"><span class="ir">인스타</span></a>
+                    <a href="#" class="link"><span class="ir">유튜브</span></a>
                     <a href="#" class="link"><span class="ir">페이스북</span></a>
-                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
                 </div>
             </article>
             <article class="image">
                 <figure class="image__box">
-                    <img src="img/imageType03_01.jpg" alt="과일">
+                    <img src="img/imageType03_02.jpg" alt="과일">
                 </figure>
                 <div class="image__desc">
-                    <h3>바나나</h3>
-                    <p>ㅇㄹㅇ</p>
+                    <h3>사과</h3>
+                    <p>아침에 먹는 사과가 금사과다?</p>
                 </div>
                 <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">클립</span></a>
+                    <a href="#" class="link"><span class="ir">트위터</span></a>
+                    <a href="#" class="link"><span class="ir">인스타</span></a>
+                    <a href="#" class="link"><span class="ir">유튜브</span></a>
                     <a href="#" class="link"><span class="ir">페이스북</span></a>
-                    <a href="#" class="link"><span class="ir"></span></a>
                 </div>
             </article>
             <article class="image">
                 <figure class="image__box">
-                    <img src="img/imageType03_01.jpg" alt="과일">
+                    <img src="img/imageType03_03.jpg" alt="과일">
                 </figure>
                 <div class="image__desc">
-                    <h3>ㄴㅇㄹ</h3>
-                    <p>ㄴㅇㄹ</p>
+                    <h3>아보카도</h3>
+                    <p>아보카도가 과일이었다는 사실?</p>
                 </div>
                 <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">클립</span></a>
+                    <a href="#" class="link"><span class="ir">트위터</span></a>
+                    <a href="#" class="link"><span class="ir">인스타</span></a>
+                    <a href="#" class="link"><span class="ir">유튜브</span></a>
                     <a href="#" class="link"><span class="ir">페이스북</span></a>
-                    <a href="#" class="link"><span class="ir"></span></a>
                 </div>
             </article>
             <article class="image">
                 <figure class="image__box">
-                    <img src="img/imageType03_01.jpg" alt="과일">
+                    <img src="img/imageType03_04.jpg" alt="과일">
                 </figure>
                 <div class="image__desc">
-                    <h3>ㄴㅇㄹ</h3>
-                    <p>ㄴㅇㄹ</p>
+                    <h3>파인애플</h3>
+                    <p>새콤달콤한 과일</p>
                 </div>
                 <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">클립</span></a>
+                    <a href="#" class="link"><span class="ir">트위터</span></a>
+                    <a href="#" class="link"><span class="ir">인스타</span></a>
+                    <a href="#" class="link"><span class="ir">유튜브</span></a>
                     <a href="#" class="link"><span class="ir">페이스북</span></a>
-                    <a href="#" class="link"><span class="ir"></span></a>
                 </div>
             </article>
             <article class="image">
                 <figure class="image__box">
-                    <img src="img/imageType03_01.jpg" alt="과일">
+                    <img src="img/imageType03_05.jpg" alt="과일">
                 </figure>
                 <div class="image__desc">
-                    <h3>ㄴㅇㄹ</h3>
-                    <p>ㄴㅇㄹ</p>
+                    <h3>포도</h3>
+                    <p>씨있는 포도도 먹게될 걸?</p>
                 </div>
                 <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">클립</span></a>
+                    <a href="#" class="link"><span class="ir">트위터</span></a>
+                    <a href="#" class="link"><span class="ir">인스타</span></a>
+                    <a href="#" class="link"><span class="ir">유튜브</span></a>
                     <a href="#" class="link"><span class="ir">페이스북</span></a>
-                    <a href="#" class="link"><span class="ir"></span></a>
                 </div>
             </article>
         </div>
