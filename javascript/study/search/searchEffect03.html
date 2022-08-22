@@ -112,14 +112,13 @@
             📌 원하는 알파벳 카테고리를 클릭했을 시 그 알파벳이 첫글자인 단어들이 나오도록 자바스크립트 활용
         </p>
         <div class="t_code">
-<pre><code class="language-js">&lt;script&gt;
-    // 선택자
+<pre><code class="language-js"> // 선택자
     const searchKeyword = document.querySelectorAll(".search__info .keyword span");   // 알파벳
     const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
     const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
     // 전체 개수 구하기
     searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력
-    
+
     searchKeyword.forEach(el => {
         el.addEventListener("click", () => {
             const searchWord = el.innerText;    // 사용자가 클릭한 알파벳
@@ -128,15 +127,17 @@
                 const cssName = el.querySelector("strong").innerText;   // CSS 속성 텍스트
                 // console.log(cssName)
                 // 알파벳 첫글자 == CSS 속성의 첫글자
-                if(searchWord.charAt(0) === cssName.charAt(0)) {
+                if(searchWord.charAt(0) === cssName.charAt(0)){
                     el.classList.remove("hide");
+                    count++;
                 } else {
                     el.classList.add("hide");
                 }
+                searchInfo.textContent = count;
             });
+            count = 0;
         });
     });
-&lt;/script&gt;
 </code></pre>
     </div>
     <!-- document -->
