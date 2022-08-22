@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 문자열 메서드13</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="arraymethod.html">배열 객체</a></li>
+                <li><a href="built_in_function.html">내장 함수</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">📎 match() 이란?</h2>
+            <p class="t_desc2">
+                : 특정 텍스트 안에 검색할 단어, 찾고싶은 단어가 있는 경우 <i>해당 텍스트가 문구에 포함되어 있는지 확인</i>하는 메서드입니다.<br>
+                : 단어뿐만 아니라 <i>정규표현식을 사용</i>하여 특정 패턴을 검색하는 것 가능<br>
+            </p>
+            <div class="t_box">
+                <strong>string.match('찾을 단어')</strong><br>
+            </div>
+            <div class="t_box">
+                반환(배열로 표현됨) : [] : 예시 참고!
+                정규식 지원됨
+            </div>
+            <hr>
+            <h3 class="t_tit2">🔍 match() 메서드 사용예제 (★주석이 리턴값입니다!★)</h3>
+            <div class="t_code">
+<pre><code>const str1 = "javascript reference";
+const currentStr1 = str1.match("javascript");       //javascript
+const currentStr2 = str1.match("reference");       //reference
+const currentStr3 = str1.match("r");               //r
+const currentStr4 = str1.match(/reference/);       //reference
+const currentStr5 = str1.match(/Reference/);       //null
+const currentStr6 = str1.match(/Reference/i);      //reference
+const currentStr7 = str1.match(/r/g);              //['r', 'r', 'r'] //r 전부 찾기
+const currentStr8 = str1.match(/e/g);              //['e', 'e', 'e', 'e'] //e 전부 찾기
+</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
