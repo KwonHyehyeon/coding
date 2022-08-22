@@ -100,144 +100,42 @@
                <details>
                    <summary><strong>완성본 보기</strong></summary>
                    <div class="iframe">
-                       <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/searcheffect_category.jpg?raw=true" alt="서치이펙트카테고리">
+                       <img style="width: 700px" src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/searchEffect03css.png?raw=true" alt="서치이펙트카테고리">
                    </div>
                </details>
             </div>
             <!-- 카테고리 만들기 -->
             <hr>
-        <h3 class="t_tit2">▶ 내용 입력</h3>
-        
-        <h3 class="t_tit2">HTML</h3>
-        <div class="t_code">
-<pre><code class="language-js">&lt;div class="search__wrap"&gt;
-    &lt;span&gt;includes()을 이용하여 검색하기&lt;/span&gt;
-    &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
-    &lt;div class="search__box"&gt;
-        &lt;label for="search"&gt;검색하기&lt;/label&gt;
-        &lt;input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!"&gt;
-    &lt;/div&gt;
-    &lt;div class="search__info"&gt;
-        &lt;div class="type"&gt;플렉스, 애니메이션, 백그라운드, 기타 등등 유형 별로 검색해보세요!&lt;/div&gt;
-        &lt;div&gt;전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="search__list"&gt;
-        &lt;div class="css"&gt;
-            &lt;ul&gt;
-                &lt;li data-name="accent-color" data-type="플렉스"&gt;&lt;strong&gt;accent-color&lt;/strong&gt; : accent-color&lt;/li&gt;
-                &lt;li data-name="align-content" data-type="플렉스"&gt;&lt;strong&gt;align-content&lt;/strong&gt; : align-content 속성은 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
-                &lt;li data-name="align-items" data-type="플렉스"&gt;&lt;strong&gt;align-items&lt;/strong&gt; : align-items 속성은 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
-                &lt;li data-name="align-self" data-type="플렉스"&gt;&lt;strong&gt;align-self&lt;/strong&gt; : align-self 속성은 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다.&lt;/li&gt;
-                &lt;li data-name="all" data-type="기타"&gt;&lt;strong&gt;all&lt;/strong&gt; : all 속성은 요소의 속성을 초기화 또는 상속을 설정합니다.&lt;/li&gt;
-                &lt;li data-name="animation" data-type="애니메이션"&gt;&lt;strong&gt;animation&lt;/strong&gt; : animation 속성은 애니메이션과 관련된 속성을 일괄적으로 설정합니다.&lt;/li&gt;
-                &lt;li data-name="animation-delay" data-type="애니메이션"&gt;&lt;strong&gt;animation-delay&lt;/strong&gt; : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.&lt;/li&gt;
-                &lt;li data-name="animation-direction" data-type="애니메이션"&gt;&lt;strong&gt;animation-direction&lt;/strong&gt; : animation-direction 속성은 애니메이션 움직임 방향을 설정합니다.&lt;/li&gt;
-                &lt;li data-name="animation-duration" data-type="애니메이션"&gt;&lt;strong&gt;animation-duration&lt;/strong&gt; : animation-duration 속성은 애니메이션 움직임 시간을 설정합니다.&lt;/li&gt;
-                &lt;li data-name="animation-fill-mode" data-type="애니메이션"&gt;&lt;strong&gt;animation-fill-mode&lt;/strong&gt; : animation-iteration-count 속성은 애니메이션 반복 횟수 설정합니다.&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-    </div>   
-    <div class="t_box">
-        1. h1을 통해 제목을 써준 후 .search__box를 통해 label로 검색하기를 넣어준 후 input으로 텍스트를 입력할 수 있는 검색창을 만들어 줍니다.<br>
-        2. search__info로 후에 자바스크립트를 통해 속성 갯수를 넣어 주기 위해 클래스를 num으로 지정해줍니다.<br>
-        3. div태그에 클래스명을 search__list로 지정해준 후 그 안에 목록을 구성해야합니다.<br>
-        4. 데이터들을 입력할 때 HTML에서 사용자가 임의로 지정한 속성값으로 활용할 수 있기 때문에 data name을 입력해주어야 나중에 편리합니다.<br>
-        5. data-type을 정해주어 나중에 데이터타입을 통해 정보를 찾을 수 있게끔 해줍니다.
-    </div>
-    <h3 class="t_tit2">CSS</h3>
-    <p class="t_desc2">
-        새로
-    </p>
-    <div class="t_code">
-<pre><code class="language-js">/* header */
-#header {
-    display: flex;
-    justify-content: space-between;
-}
-#header nav {
-    margin: 10px;
-}
-#header nav li {
-    position: relative;
-    display: inline;
-}
-#header nav li a {
-    width: 30px;
-    height: 30px;
-    border: 1px solid  var(--htmlColor);
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    line-height: 30px;
-    font-family: 'NexonLv1Gothic';
-}
-#header nav li.active a {
-    background-color:  var(--htmlColor);
-    color: #fff;
-}
-#header nav li .sub {
-    position: absolute;
-    left: 0;
-    top: 35px;
-    width: 400px;
-}
-#header nav li .sub li a {
-    width: auto;
-    background-color: transparent;
-    color:  var(--htmlColor);
-    border: 0;
-    text-align: left;
-    line-height: 1.2;
-}
-#header nav li .sub li.active a {
-    text-decoration: underline;
-}
-</code></pre>
-            </div>
-            <div class="result">
-                <details>
-                    <summary><strong>완성본 보기</strong></summary>
-                    <div class="iframe">
-                        <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/searcheffect_content02.jpg?raw=true" alt="서치이펙트내용입력">
-                    </div>
-                </details>
-            </div>
-            <!-- 내용 입력 -->
         <h3 class="t_tit2">▶ 자바스크립트 활용 (공통) </h3>
         <p class="t_desc2">
-            자바스크립트를 활용하여 검색을 했을 때 검색한 결과가 나올 수 있도록  forEach문과 if문을 이용해서 코딩을 해줍니다.<br>
-            includes() 메서드를 이용해서 
+            📌 자바스크립트를 활용하여 전체 개수 구하기<br>
+            📌 원하는 알파벳 카테고리를 클릭했을 시 그 알파벳이 첫글자인 단어들이 나오도록 자바스크립트 활용
         </p>
         <div class="t_code">
 <pre><code class="language-js">&lt;script&gt;
-//선택자
-const searchBox = document.querySelector(".search__box input");            //검색 영역
-const searchList = document.querySelectorAll(".search__list ul li");       //목록 리스트
-const searchInfo = document.querySelector(".search__info .num");
-
-//전체 갯수 설정하기 
-for(let i=1; i&lt;=searchList.length; i++){
-    const searchInfo = document.querySelector(".search__info .num")
-    searchInfo.innerHTML = i;
-};
-
-//
-searchBox.addEventListener("keyup", () =&gt; {
-    const searchWord = searchBox.value;     //사용자가 입력한 키워드
-    searchList.forEach(el =&gt; {
-        const cssName = el.dataset.name;    //CSS 속성 모든 값 js: dataset.name(데이터 불러오기)
-        //console.log(cssName)
-        //"all".includes("all")   //true
-        if(cssName.includes(searchWord)){   //searchWord값이 포함됐을 때
-            el.classList.remove("hide");
-        } else {
-            el.classList.add("hide");
-        }
-    })
-})
+    // 선택자
+    const searchKeyword = document.querySelectorAll(".search__info .keyword span");   // 알파벳
+    const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
+    const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
+    // 전체 개수 구하기
+    searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력
+    
+    searchKeyword.forEach(el => {
+        el.addEventListener("click", () => {
+            const searchWord = el.innerText;    // 사용자가 클릭한 알파벳
+            // console.log(searchWord);
+            searchList.forEach(el => {
+                const cssName = el.querySelector("strong").innerText;   // CSS 속성 텍스트
+                // console.log(cssName)
+                // 알파벳 첫글자 == CSS 속성의 첫글자
+                if(searchWord.charAt(0) === cssName.charAt(0)) {
+                    el.classList.remove("hide");
+                } else {
+                    el.classList.add("hide");
+                }
+            });
+        });
+    });
 &lt;/script&gt;
 </code></pre>
     </div>
