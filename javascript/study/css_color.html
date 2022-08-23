@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS: 색상</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">CSS 색깔을 지정하는 방법에 대해 알아봅시다!</h2><br>
+            <h3 class="t_tit2">📎 CSS 색깔을 지정하는 4가지 방법</h3><br>
+            <p class="t_box">
+                📌 이름<br>
+                📌 16진수<br>
+                📌 RGB 또는 RGBA<br>
+                📌 HSL 또는 HSLA<br>
+            </p>
+            <h3 class="t_tit2">➰이름을 사용해서...</h3>
+            <div class="t_desc2">
+               <i>색상의 이름을 직접 써서</i> 컬러를 지정할 수 있습니다.<br>
+               브라우저가 인식할 수 있는 색상 이름은 대략 147개입니다.<br>
+               👍🏻 : 쉽게 색상 지정 가능<br>
+               👎🏻 : 표현 색상 한정적, 이름 외우고 있어야 함
+            </div>
+            <div class="t_iframe">
+                <iframe height="300" style="width: 700px;" scrolling="no" title="색상01" src="https://codepen.io/kwonhyehyeon/embed/KKoYdpa?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/KKoYdpa">
+                    색상01</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <h3 class="t_tit2">➰16진수를 사용해서...</h3>
+            <div class="t_desc2">
+                2자리씩 3개의 16진수로 색상을 표현합니다. #00(빨강)FF(초록)99(파랑)<br>
+                여기서 2자리씩 차지하고 있는 3개의 16진수는 각각 RED, GREEN, BLUE를 의미합니다.<br>
+                16진수로 색상을 표시할 때는 '#' 기호로 시작합니다.<br>
+                각 2자리의 16진수는 00~FF까지를 표현할 수 있습니다. (10진수로는 0~255)<br>
+            </div>
+            <div class="t_iframe">
+                <iframe height="300" style="width: 700px;" scrolling="no" title="Untitled" src="https://codepen.io/kwonhyehyeon/embed/KKoYpJM?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/KKoYpJM">
+                    Untitled</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <h3 class="t_tit2">➰16진수(HEX)를 사용해서...</h3>
+            <div class="t_desc2">
+                2자리씩 3개의 16진수로 색상을 표현합니다. #00(빨강)FF(초록)99(파랑)<br>
+                여기서 2자리씩 차지하고 있는 3개의 16진수는 각각 RED, GREEN, BLUE를 의미합니다.<br>
+                16진수로 색상을 표시할 때는 '#' 기호로 시작합니다.<br>
+                각 2자리의 16진수는 00~FF까지를 표현할 수 있습니다. (10진수로는 0~255)<br>
+            </div>
+            <div class="t_iframe">
+                <iframe height="300" style="width: 700px;" scrolling="no" title="Untitled" src="https://codepen.io/kwonhyehyeon/embed/KKoYpJM?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/KKoYpJM">
+                    Untitled</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <div class="t_box">
+                #ff0000 <br>
+                : Red 자리만 FF이고, 나머지는 0이므로, 빨강색을 의미<br>
+                #00ff00<br>
+                : Green 자리만 FF이고, 나머지는 0이므로, 초록색을 의미<br>
+                #0000ff<br>
+                : Blue 자리만 FF이고, 나머지는 0이므로, 파랑색을 의미<br>
+                #ffffff<br>
+                : 모두 FF이면 흰색<br>
+                #000000<br>
+                : 모두 00이면 검정색
+            </div>
+            <h3 class="t_tit2">➰RGB 또는 RGBA를 사용해서...</h3>
+            <h4 class="t_tit3">➿RGB</h4>
+            <div class="t_desc2">
+                RGB는 16진수 대신 10진수를 사용합니다.<br>
+                Red, Green, Blue 이 세가지 색상을 0~255 사이의 숫자로 표현합니다.
+            </div>
+            <div class="t_iframe">
+                <iframe height="300" style="width: 700px;" scrolling="no" title="색상03" src="https://codepen.io/kwonhyehyeon/embed/GRxLpWR?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/GRxLpWR">
+                    색상03</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <h4 class="t_tit3">➿RGBA</h4>
+            <div class="t_desc2">
+                RGBA는 RGB에 추가로 색상의 불투명도를 지정할 수 있습니다.<br>
+                ‣ A는 alpha의 약자<br>
+                A는 0.0~1.0까지의 값을 가집니다.<br>
+                0은 0% 불투명, 0.5는 50% 불투명, 1은 100% 불투명을 의미합니다.
+            </div>
+            <div class="t_iframe">
+                <iframe height="300" style="width: 700px;" scrolling="no" title="색상03_01" src="https://codepen.io/kwonhyehyeon/embed/JjLVYJe?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/JjLVYJe">
+                    색상03_01</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <h3 class="t_tit2">➰HSL 또는 HSLA를 사용해서...</h3>
+            <div class="t_desc2">
+                HSL은 색상, 채도, 명도를 나타냅니다.<br>
+                RGBA와 마찬가지로 알파값을 옵션으로 추가할 수 있습니다.
+            </div>
+            <div class="t_box">
+                🪄색상(Hue)<br>
+                Hue는 360도의 색상환으로 나타냅니다.<br>
+                0도는 빨강, 120도는 초록, 240은 파랑입니다.<br><br>
+
+                🪄채도(Saturation)<br>
+                채도(Saturation)은 0~100%로 표현됩니다.<br>
+                0일수록 채도가 낮고, 100이 채도가 가장 높습니다.<br><br>
+
+                🪄명도(Lightness)<br>
+                명도(Lightness)는 0~100%로 표현합니다.<br>
+                0은 검정, 100은 흰색입니다.<br><br>
+
+                🪄불투명도(Alpha, Opacity)<br>
+                0.0~1.0까지의 값을 가집니다.<br>
+                0은 0% 불투명, 0.5는 50% 불투명, 1은 100% 불투명을 의미합니다.
+            </div>
+            <div class="t_iframe">
+                <iframe height="300" style="width: 700px;" scrolling="no" title="색상04" src="https://codepen.io/kwonhyehyeon/embed/gOeyavP?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/gOeyavP">
+                    색상04</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
