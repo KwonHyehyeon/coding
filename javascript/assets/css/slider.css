@@ -1,0 +1,101 @@
+/* fonts */
+@import url('https://webfontworld.github.io/BMJua/BMJua.css');
+* {
+    font-family: 'BMJua';;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%; /*스크롤바 안생김*/
+    height: 100vh; /*기기마다 다르기 때문에*/
+}
+body .img01{
+    background: #000 url(../img/effect_bg@2x01.jpg) no-repeat center / cover
+}
+body .img02{
+    background: #000 url(../img/effect_bg@2x02.jpg) no-repeat center / cover
+}
+body .img03{
+    background: #000 url(../img/effect_bg@2x03.jpg) no-repeat center / cover
+}
+body .img04{
+    background: #000 url(../img/effect_bg@2x04.jpg) no-repeat center / cover
+}
+body .img05{
+    background: #000 url(../img/effect_bg@2x05.jpg) no-repeat center / cover
+}
+body .img06{
+    background: #000 url(../img/effect_bg@2x06.jpg) no-repeat center / cover
+}
+body .img07{
+    background: #000 url(../img/effect_bg@2x07.jpg) no-repeat center / cover
+}
+body .img08{
+    background: #000 url(../img/effect_bg@2x08.jpg) no-repeat center / cover
+}
+body .img09 {
+    background: #000 url(../img/effect_bg@2x09.jpg) no-repeat center / cover
+}
+body .img10{
+    background: #000 url(../img/effect_bg@2x10.jpg) no-repeat center / cover
+}
+body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    z-index: -1;
+}
+img {
+    width: 100%;
+    vertical-align: top;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* header */
+#header {
+    color: #fff;
+    padding: 20px;
+}
+#header h1{
+    display: inline-block;
+    font-weight: 300;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #fff;
+}
+#header p{
+    margin-bottom: 10px;
+}
+#header li {
+    display: inline-block;
+}
+#header li a {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+/* footer */
+#footer {}
+#footer .source {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-size: 14px;
+}
