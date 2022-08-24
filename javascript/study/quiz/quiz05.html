@@ -13,7 +13,9 @@
     <div class="document">
         <h2 class="t_tit">Quiz 05.</h2>
         <p class="t_desc">
-            자바스크립트를 활용하여 웹디자인기능사 필기 2013년도 5회차 문제를 통해 객관식(여러문제) 확인하기를 점수까지 나오도록 만들어봅시다! <br>
+            자바스크립트를 활용하여 웹디자인기능사 필기 2013년도 5회차 문제를 통해 객관식(여러문제) 확인하기를 점수까지 나오도록 만들어봅시다!<br>
+            몇 문제 중에 몇 개가 정답인지와 점수, 합격여부를 알려주는 기능을 만들었습니다.<br>
+            ✽ 참고 : 100점을 60문제로 나누면 1.666・・・・이 나오는데 깔끔하게 소수점을 버리는 Math.floor()라는 메서드를 사용해보았습니다. <br>
         </p>
         <div class="t_iframe" style="min-height: 1040px; padding-top: 0;">
             <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect05.html" frameborder="0"></iframe>
@@ -27,7 +29,122 @@
         
         <h3 class="t_tit">코드 참고</h3>
         <div class="t_code">
-<pre><code class="language-js">
+<pre><code class="language-js">//문제 정보 (밑 문제 처럼 60개 만들어야 함. 나머지는 생략함)
+const quizInfo = [
+    {
+        answerType: "웹디자인 기능사 2013년 05회",
+        answerNum: "1",
+        answerAsk: "디자인 형태의 개념에서 조화(harmony)를 이루는 법칙과 거리가 먼 것은?",
+        answerChoice: {
+            1: "균형",
+            2: "대비",
+            3: "통일",
+            4: "색상"
+        },
+        answerResult: "4",
+        answerEx: "조화를 이루는 법칙은 균형, 대비, 통일, 유사, 균일, 강약, 변화가 있습니다."
+    },
+];
+const quizWrap = document.querySelector(".quiz_wrap");
+let quizScore = 0;
+// 문제 출력 //배열 exam 안에 push메서드를 통해 퀴즈 내용 추가해주기!
+function updateQuiz(){
+    const exam = [];
+    quizInfo.forEach((question, number) =&gt; {
+        exam.push(`
+        &lt;div class="quiz"&gt;
+        &lt;span class="quiz_type"&gt;${question.answerType}&lt;/span&gt;
+        &lt;h2 class="quiz_question"&gt;
+            &lt;span class="number"&gt;${question.answerNum}. &lt;/span&gt;
+            &lt;div class="ask"&gt;${question.answerAsk}&lt;/div&gt;
+        &lt;/h2&gt;
+        &lt;div class="quiz_view"&gt;
+            &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
+            &lt;div class="false"&gt;틀렸습니다!!&lt;/div&gt;
+            &lt;div class="dog"&gt;
+                &lt;div class="head"&gt;
+                    &lt;div class="ears"&gt;&lt;/div&gt;
+                    &lt;div class="face"&gt;&lt;/div&gt;
+                    &lt;div class="eyes"&gt;
+                        &lt;div class="teardrop"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="nose"&gt;&lt;/div&gt;
+                    &lt;div class="mouth"&gt;
+                        &lt;div class="tongue"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="chin"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="body"&gt;
+                    &lt;div class="tail"&gt;&lt;/div&gt;
+                    &lt;div class="legs"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="quiz_answer"&gt;
+            &lt;div class="quiz_selects"&gt;
+                &lt;label for="select1${number}"&gt;
+                    &lt;input type="radio" id="select1${number}" class="select" name="select${number}" value="1"&gt;
+                    &lt;span class="choice"&gt;${question.answerChoice[1]}&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;label for="select2${number}"&gt;
+                    &lt;input type="radio" id="select2${number}" class="select" name="select${number}" value="2"&gt;
+                    &lt;span class="choice"&gt;${question.answerChoice[2]}&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;label for="select3${number}"&gt;
+                    &lt;input type="radio" id="select3${number}" class="select" name="select${number}" value="3"&gt;
+                    &lt;span class="choice"&gt;${question.answerChoice[3]}&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;label for="select4${number}"&gt;
+                    &lt;input type="radio" id="select4${number}" class="select" name="select${number}" value="4"&gt;
+                    &lt;span class="choice"&gt;${question.answerChoice[4]}&lt;/span&gt;
+                &lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+        `);
+    });
+    exam.push(`
+        &lt;div class="quiz_confirm"&gt;
+            &lt;button class="check"&gt;정답 확인하기&lt;/button&gt;
+            &lt;div class="ex"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    `);
+    quizWrap.innerHTML = exam.join(''); //베열에 생기는 ,없애줌
+}
+updateQuiz();
+
+// 정답 확인
+const answerQuiz = () =&gt; {
+    const quizSelects = document.querySelectorAll(".quiz_selects");   //객관식 보기
+    //사용자가 체크한 보기 == 문제 정답
+    quizInfo.forEach((question, number) =&gt; {
+        const userSelector = `input[name=select${number}]:checked`;//사용자가 체크한 것
+        const quizSelectsWrap = quizSelects[number];
+        const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;
+        const quizView = document.querySelectorAll(".quiz_view");
+        if(userAnswer == question.answerResult){
+            //console.log("정답");
+            quizView[number].classList.add("like")
+            quizScore++;
+        } else {
+            //console.log("오답");
+            quizView[number].classList.add("dislike")
+            const divBox = document.createElement("div");//자바스크립트로 태그 추가하는 법
+            quizSelectsWrap.appendChild(divBox).innerHTML = `&lt;p class="result"&gt;${question.answerEx}&lt;/p&gt;`
+        }
+    });
+    //맞힌 갯수 / 전체 갯수 / 점수 / 합or불합
+    let totalScore = quizScore * 1.66666667;  
+
+    if(quizScore &gt;= 40){
+        document.querySelector(".check").innerHTML = "결과" + quizInfo.length + "문제 중 " + quizScore + "개 정답. 점수: " + Math.floor(totalScore) + "점" + " 합격입니다.🙆🏻‍♀️"
+    } else {
+        document.querySelector(".check").innerHTML = "결과" +  quizInfo.length + "문제 중 " + quizScore + "개 정답. 점수: " + Math.floor(totalScore) + "점" + " 불합격입니다.🙅🏻‍♀️"
+          
+    }
+}
+// 정답 클릭
+document.querySelector(".quiz_confirm .check").addEventListener("click", answerQuiz);
 </code></pre>
         </div>
     </div>    

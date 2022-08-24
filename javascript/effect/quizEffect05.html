@@ -876,8 +876,8 @@
             },
         ];
         const quizWrap = document.querySelector(".quiz_wrap");
-        let quizScore = "";
-        // 문제 출력
+        let quizScore = 0;
+        // 문제 출력 //배열 exam 안에 push메서드를 통해 퀴즈 내용 추가해주기!
         function updateQuiz(){
             const exam = [];
             quizInfo.forEach((question, number) => {
@@ -936,50 +936,45 @@
             exam.push(`
                 <div class="quiz_confirm">
                     <button class="check">정답 확인하기</button>
-                    <div class="ex">
-                        <div class="allnum">전체 문제 수<p class="num"></p></div>
-                        <div class="goodjob">맞힌 개수<p class="num"></p></div>
-                    </div>
+                    <div class="ex"></div>
                 </div>
             `);
-            quizWrap.innerHTML = exam.join('');
+            quizWrap.innerHTML = exam.join(''); //베열에 생기는 ,없애줌
         }
         updateQuiz();
-        // 전체 문제 수
-        const allNum = document.querySelector(".allnum .num");
-        quizInfo.textcontent = 
-        // 내가 맞힌 수
-        console.log(quizScore);
+        
         // 정답 확인
         const answerQuiz = () => {
             const quizSelects = document.querySelectorAll(".quiz_selects");   //객관식 보기
             //사용자가 체크한 보기 == 문제 정답
             quizInfo.forEach((question, number) => {
-                const userSelector = `input[name=select${number}]:checked`;
+                const userSelector = `input[name=select${number}]:checked`;//사용자가 체크한 것
                 const quizSelectsWrap = quizSelects[number];
                 const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;
                 const quizView = document.querySelectorAll(".quiz_view");
                 if(userAnswer == question.answerResult){
-                    console.log("정답");
+                    //console.log("정답");
                     quizView[number].classList.add("like")
                     quizScore++;
                 } else {
-                    console.log("오답");
+                    //console.log("오답");
                     quizView[number].classList.add("dislike")
-                    const divBox = document.createElement("div");
+                    const divBox = document.createElement("div");//자바스크립트로 태그 추가하는 법
                     quizSelectsWrap.appendChild(divBox).innerHTML = `<p class="result">${question.answerEx}</p>`
                 }
             });
+            //맞힌 갯수 / 전체 갯수 / 점수 / 합or불합
+            let totalScore = quizScore * 1.66666667;  
 
-           
+            if(quizScore >= 40){
+                document.querySelector(".check").innerHTML = "결과" + quizInfo.length + "문제 중 " + quizScore + "개 정답. 점수: " + Math.floor(totalScore) + "점" + " 합격입니다.🙆🏻‍♀️"
+            } else {
+                document.querySelector(".check").innerHTML = "결과" +  quizInfo.length + "문제 중 " + quizScore + "개 정답. 점수: " + Math.floor(totalScore) + "점" + " 불합격입니다.🙅🏻‍♀️"
+                  
+            }
         }
         // 정답 클릭
         document.querySelector(".quiz_confirm .check").addEventListener("click", answerQuiz);
-        //마지막 문제
-            if(quizInfo.length -1 == quizCount){
-                
-                quizConfirm.textContent = "총" + quizInfo.length + "문제 중에" + quizScore + "문제를 맞추었습니다." 
-            }
     </script>
 </body>
 </html>
