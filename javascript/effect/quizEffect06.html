@@ -233,6 +233,7 @@
         }
         //정답 확인 버튼
         const answerQuiz = () => {
+            //전체문제 중 몇 개 맟췄다.
             if(quizInfo.length -1 == quizCount){
                 quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞추었습니다.`; //탬플릿 문자열 사용(편리함)
             }

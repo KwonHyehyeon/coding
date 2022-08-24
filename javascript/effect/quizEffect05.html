@@ -876,7 +876,7 @@
             },
         ];
         const quizWrap = document.querySelector(".quiz_wrap");
-        let quizScore = 0;
+        let quizScore = "";
         // 문제 출력
         function updateQuiz(){
             const exam = [];
@@ -950,7 +950,7 @@
         quizInfo.textcontent = 
         // 내가 맞힌 수
         console.log(quizScore);
-        // 정답 확인 버튼
+        // 정답 확인
         const answerQuiz = () => {
             const quizSelects = document.querySelectorAll(".quiz_selects");   //객관식 보기
             //사용자가 체크한 보기 == 문제 정답
@@ -975,18 +975,11 @@
         }
         // 정답 클릭
         document.querySelector(".quiz_confirm .check").addEventListener("click", answerQuiz);
-        //정답 확인 버튼
-        const answerQuiz = () => {
-            quizCount++;
-            updateQuiz(quizCount);
-            quizView.classList.remove("like", "dislike");
-
-            //마지막 문제
+        //마지막 문제
             if(quizInfo.length -1 == quizCount){
                 
                 quizConfirm.textContent = "총" + quizInfo.length + "문제 중에" + quizScore + "문제를 맞추었습니다." 
             }
-        }
     </script>
 </body>
 </html>
