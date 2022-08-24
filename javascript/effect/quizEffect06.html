@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Cafe24Dangdanghae/Cafe24Dangdanghae.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz06</a> <em>객관식(여러문제) 확인하기 : 슬라이드 형식</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li class="active"><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- header -->
+
+    <main id="main">
+        <div class="quiz_wrap">
+            <div class="quiz">
+                <span class="quiz_type"></span>
+                <h2 class="quiz_question">
+                    <!-- <span class="number"></span>
+                    <div class="ask"></div> -->
+                </h2>
+                <div class="quiz_view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">틀렸습니다!</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz_answer">
+                    <div class="quiz_selects">
+                        <!-- <label for="select1"> 
+                            <input type="radio" id="select1" class="select" name="select" value="1"> 
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select2">
+                            <input type="radio" id="select2" class="select" name="select" value="2"> 
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select3">
+                            <input type="radio" id="select3" class="select" name="select" value="3"> 
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select4">
+                            <input type="radio" id="select4" class="select" name="select" value="4"> 
+                            <span class="choice"></span>
+                        </label> -->
+                    </div>
+                    <div class="result"></div>
+                    <button class="confirm">다음 문제로! Next Level 🏃🏻‍♀️</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- main -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- footer -->
+
+    <script>
+        // 문제 정보
+        const quizInfo = [
+            {
+                answerType: "웹디자인 기능사 2013년 05회",
+                answerNum: "1",
+                answerAsk: "디자인 형태의 개념에서 조화(harmony)를 이루는 법칙과 거리가 먼 것은?",
+                answerChoice: [
+                    "균형",
+                    "대비",
+                    "통일",
+                    "색상"
+                ],
+                answerResult: "색상",
+                answerEx: "조화를 이루는 법칙은 균형, 대비, 통일, 유사, 균일, 강약, 변화가 있습니다."
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 05회",
+                answerNum: "2",
+                answerAsk: "NCS 표색계에 대한 설명으로 옳은 것은?",
+                answerChoice: [
+                    "색상환은 노랑(Y), 빨강(R), 파랑(B), 초록(G)으로 구분되어있다.",
+                    "기본 6색 중 흰색과 검정은 포함되지 않는다.",
+                    "20% 흰색도와 30%의 유채색도를 표시하고, 90%는 노랑색도를 지닌 백색이다.",
+                    "색지각 양의 합은 100이며, 이것은 명도, 채도, 색상의 합이다."
+                ],
+                answerResult: "색상환은 노랑(Y), 빨강(R), 파랑(B), 초록(G)으로 구분되어있다.",
+                answerEx: "NCS표색계는 RED, BLUE, YELLOW, GREEN의 명도값인 WHITE, BLACK을 합해 총 6가지 기초단위를 가지고 표기하는 방식입니다. 20% 검정색도와 유채색도 30%이며 검은색 정도, 흰색성, 색채성의 합이 항상100이 됩니다."
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 05회",
+                answerNum: "3",
+                answerAsk: "디자인의 요소 중 “형”에 대한 설명으로 옳지 않은 것은?",
+                answerChoice: [
+                    "한 개의 점은 공간의 위치를 가리킨다.",
+                    "점이 확대되면 면으로 이동된다.",
+                    "점의 운동에 의해서 선이 만들어 진다.",
+                    "이동하는 점의 자취가 입체를 이룬다."
+                ],
+                answerResult: "이동하는 점의 자취가 입체를 이룬다.",
+                answerEx: "이동하는 점의 자취가 입체를 이루는 것은 구면이라고 하며 선이 이동한 자취는 면이라고 합니다."
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 05회",
+                answerNum: "4",
+                answerAsk: "우리나라의 교육부에 고시된 기본 색명은 몇 색상인가?",
+                answerChoice: [
+                    "5",
+                    "10",
+                    "15",
+                    "20"
+                ],
+                answerResult: "20",
+                answerEx: "먼셀 색체계라고 하며 현재 우리나라의 공업 규격에서 색의 삼속성에 의한 표기 방법으로 제정되었고, 교육용 20색상환으로 채택된 색체계입니다."
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 05회",
+                answerNum: "5",
+                answerAsk: "일반적으로 도구 개념으로 물건을 창조하는 디자인 분야는?",
+                answerChoice: [
+                    "시각디자인 ",
+                    "제품디자인",
+                    "환경디자인",
+                    "공예디자인"
+                ],
+                answerResult: "제품디자인",
+                answerEx: "도구 개념으로 물건을 창조하는 디자인은 제품디자인에 속합니다."
+            },
+        
+        ];
+            
+        const quizQuestion = document.querySelector(".quiz_question")   
+        const quizSelects = document.querySelector(".quiz_selects")
+        const quizType = document.querySelector(".quiz_type")
+        const quizResult = document.querySelector(".quiz_answer .result")
+        const quizConfirm = document.querySelector(".quiz_answer .confirm")
+        const quizView = document.querySelector(".quiz_view")
+        let quizCount = 0;
+        let quizScore = 0;
+        //  문제 출력
+        const updateQuiz = (index) => {
+            const questionTag = `
+            <span class="number">${quizInfo[index].answerNum}</span>
+            <div class="ask">${quizInfo[index].answerAsk}</div>
+            `
+            const choiceTag = `
+                <label for="select1"> 
+                    <input type="radio" id="select1" class="select" name="select" value="1"> 
+                    <span class="choice">${quizInfo[index].answerChoice[0]}</span>
+                </label>
+                <label for="select2">
+                    <input type="radio" id="select2" class="select" name="select" value="2"> 
+                    <span class="choice">${quizInfo[index].answerChoice[1]}</span>
+                </label>
+                <label for="select3">
+                    <input type="radio" id="select3" class="select" name="select" value="3"> 
+                    <span class="choice">${quizInfo[index].answerChoice[2]}</span>
+                </label>
+                <label for="select4">
+                    <input type="radio" id="select4" class="select" name="select" value="4"> 
+                    <span class="choice">${quizInfo[index].answerChoice[3]}</span>
+                </label>
+            `;
+            
+            //문제 출력
+            quizType.innerHTML = quizInfo[index].answerType;    //문제 유형
+            quizQuestion.innerHTML = questionTag;   //번호, 질문
+            quizSelects.innerHTML = choiceTag;      //객관식
+            quizResult.innerHTML = quizInfo[index].answerEx //해설
+
+
+            const quizChoice = quizSelects.querySelectorAll(".choice");
+
+            for(let i=0; i<quizChoice.length; i++){
+                quizChoice[i].setAttribute("onclick", "choiceSelected(this)") //
+            }
+            
+            // 문제, 해설 숨기기
+            quizResult.style.display = "none";
+            quizConfirm.style.display = "none";
+        }
+        updateQuiz(quizCount);
+
+        const choiceSelected = (answer) => {
+            //alert(answer.textContent);
+            let userAnswer = answer.textContent;                    //사용자가 체크한 정답
+            let currentAnswer = quizInfo[quizCount].answerResult;   //문제의 정답[index못 들어감]
+
+            if(userAnswer == currentAnswer){
+                console.log("정답");
+                quizScore++;
+                quizView.classList.add("like");
+            } else {
+                console.log("오답");
+                quizView.classList.add("dislike");
+                quizResult.style.display = "block";
+            }
+            quizConfirm.style.display = "block";
+        }
+        //정답 확인 버튼
+        const answerQuiz = () => {
+            if(quizInfo.length -1 == quizCount){
+                
+                quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞추었습니다.`;
+            }
+            quizCount++;
+            updateQuiz(quizCount);
+            quizView.classList.remove("like", "dislike");
+
+            //마지막 문제
+            
+        }
+        
+
+        quizConfirm.addEventListener("click", answerQuiz);
+
+    </script>
+</body>
+</html>
