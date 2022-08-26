@@ -1,4 +1,5 @@
 /* 웹폰트 */
+@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
 @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
 /*css에서는 임포트로 연결 가능*/
 
@@ -7,7 +8,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'NexonLv1Gothic';
+    font-family: 'GmarketSans';
     font-size: 16px;
     line-height: 1.6;
 }
@@ -50,26 +51,37 @@ body {  /*body는 기본태그여서 앞에 뭐 안 붙음*/
 #footer a:hover{
     text-decoration: underline;
 }
+
+/* container */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 /* 헤더 영역 */
+#header {
+    text-align: center;
+}
 #header h1 a{
-    font-size: 60px;
+    font-size: 80px;
     font-weight: 700;
+    color: #0243f1;
 }
 .header_nav ul li {
     display: inline;
 }  
 .header_nav ul li.active a {  /*li와 active가 동등한 위치여서 붙여쓰는 것/자식요소 아님!*/
-    background-color: #000;
+    background-color: #0243f1;
     color: #fff;
 }
 .header_nav ul li a {
-    border: 1px solid #222;
+    border: 1px solid #0243f1;
     padding: 8px 25px;
     display: inline-block; /*인라인 요소는 유지하면서 블록 성질 먹혀라*/
     margin-bottom: 7px;
 }  
 .header_nav ul li a:hover {
-    background-color: #000;
+    background-color: #0243f1;
     color: #fff;
 }
 .header_nav .study {
@@ -103,9 +115,51 @@ body {  /*body는 기본태그여서 앞에 뭐 안 붙음*/
     margin-bottom: 10px;
     color: #666;
 }
-
 .main_sample .result{
     margin-bottom: 80px;
+    margin-top: 10px;
+    background: #d0deffbb;
+    border-radius: 5px;
+    padding: 10px;
+}
+/* intro_menu */
+.intro_menu {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.01);
+    padding: 2vw;
+    border-radius: 1vw;
+    font-size: 1vw;
+    text-align: center;
+}
+.intro_menu li {
+    font-size: 20px;
+}
+.intro_menu li a {
+    color: rgb(66, 5, 249);
+    border: 3px dashed #fff;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 10px;
+    padding: 1px;
+}
+.intro_menu li a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 600px){
+    .intro_menu {
+        width: 90%;
+        padding: 14px;
+    }
+    .intro_menu li {
+        font-size: 16px;
+    }
+    .intro_menu li a {
+        font-size: 16px;
+    }
 }
 /* sample */
 .sample {

@@ -29,20 +29,21 @@
                 <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul class="effect">
-                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
-                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
-                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
-                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
-                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
-                <li><a href="effect/parallaxEffect01.html">패랠랙스 효과</a></li>
-                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패랠랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
             </ul>
         </nav>
     </header>
     <!-- //header -->
 
     <main id="main">
-        <div class="main_menu">
+        <div class="container">
+            <div class="main_menu">
             <ul>
                 <li><a href="#samples01">01. if문</a></li>
                 <li><a href="#samples02">02. if문 생략</a></li>
@@ -57,9 +58,8 @@
                 <li><a href="#samples11">11. break문</a></li>
                 <li><a href="#samples12">12. continue문</a></li>
             </ul>
-        </div>
-
-        <div class="main_sample">
+            </div>
+            <div class="main_sample">
             <div id="sample01" class="sample">
                 <h3>01. if문</h3>
                 <p>if(조건식)의 조건식이 true일 때 실행문이 동작하고, false이면 실행되지 않습니다.
@@ -81,10 +81,8 @@ if(1){
                         실행되었습니다(true).
                     </details>
                 </div>
-        </div>
+            </div>
         <!-- //section1 -->
-
-        <div class="main_sample">
             <div id="sample02" class="sample">
                 <h3>02. if문 생략</h3>
                 <p>if(조건식) 다음의 {}를 생략할 수 있습니다. 하지만, 생략할 경우 if문에 포함되는 실행문은 단 한 줄만 포합됩니다.
@@ -105,7 +103,6 @@ else document.write("실행되었습니다(false).");
                 </div>
         </div>
         <!-- //section2 -->
-        <div class="main_sample">
             <div id="sample03" class="sample">
                 <h3>03. 다중 if문</h3>
                 <p>조건으로 더욱 구체적인 결과를 얻고자 할 때 다중 if문을 사용하고 if와 else if를 통해 나타냅니다.
@@ -134,7 +131,6 @@ if( num == 90 ){
                 </div>
         </div>
         <!-- //section3 -->
-        <div class="main_sample">
             <div id="sample04" class="sample">
                 <h3>04. 중첩 if문</h3>
                 <p>if문 안에 또 다른 조건의 if문이 들어있는 것을 중첩 if문이라고 합니다. if중첩횟수에는 제약이 없습니다.<br>
@@ -165,7 +161,6 @@ if( num == 100 ){
                 </div>
         </div>
         <!-- //section4 -->
-        <div class="main_sample">
             <div id="sample05" class="sample">
                 <h3>05. 삼항 연산자</h3>
                 <p>삼항 연산자는 세 개의 항(피연산자 3개)이 있는 연산자를 말합니다. <br>
@@ -195,7 +190,6 @@ if( num == 100 ){
                 </div>
         </div>
         <!-- //section5 -->
-        <div class="main_sample">
             <div id="sample06" class="sample">
                 <h3>06. switch문</h3>
                 <p>변수가 갖는 값에 따라 실행문을 선택하는 조건 제어문입니다. 
@@ -230,7 +224,6 @@ switch( num ){
                 </div>
         </div>
         <!-- //section6 -->
-        <div class="main_sample">
             <div id="sample07" class="sample">
                 <h3>07. while문</h3>
                 <p>for문이 정해진 횟수만큼 반복한다면, while 문은 조건식이 true일 경우에 계속해서 반복합니다.
@@ -276,7 +269,6 @@ do {
                 </div>
         </div>
         <!-- //section8 -->
-        <div class="main_sample">
             <div id="sample09" class="sample">
                 <h3>09. for문</h3>
                 <p>반복횟수를 알고 있을 때 주로 사용합니다.
@@ -296,7 +288,6 @@ do {
                 </div>
         </div>
         <!-- //section9 -->
-        <div class="main_sample">
             <div id="sample10" class="sample">
                 <h3>10. 중첩 for문</h3>
                 <p>중첩 for(반복)문은 반복문 안에 새로운 반복문이 들어가 있는 것을 이야기합니다. 중첩의 횟수는 제한이 없습니다. 또한 어떠한 반복문을 중첩하더라도 상관없습니다.
@@ -319,7 +310,6 @@ do {
                 </div>
         </div>
         <!-- //section10 -->
-        <div class="main_sample">
             <div id="sample11" class="sample">
                 <h3>11. break문</h3>
                 <p>break문은 반복문 안에서 break문을 만나면 실행의 흐름이 멈추는 것입니다.
@@ -350,7 +340,6 @@ do {
                 </div>
         </div>
         <!-- //section11 -->
-        <div class="main_sample">
             <div id="sample12" class="sample">
                 <h3>12. continue문</h3>
                 <p>break문과는 달리 continue문은 반복을 끝내지 않습니다. 해당 '조건문만' 실행하지 않고, 반복문을 이어서 실행하는 제어문입니다.
@@ -381,8 +370,9 @@ do {
                 </div>
         </div>
         <!-- //section12 -->
+    </div>
     
-    
+            </div>
         </div>
     </main>
     <!-- //main -->

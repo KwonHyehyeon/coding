@@ -30,20 +30,21 @@
                 <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul class="effect">
-                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
-                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
-                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
-                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
-                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
-                <li><a href="effect/parallaxEffect01.html">패랠랙스 효과</a></li>
-                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패랠랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
             </ul>
         </nav>
     </header>
     <!-- //header -->
 
     <main id="main">
-        <div class="main_menu">
+        <div class="container">
+            <div class="main_menu">
             <ul>
                 <li><a href="sample01">01. 선언적 함수</a></li>
                 <li><a href="sample02">02. 익명 함수</a></li>
@@ -75,6 +76,7 @@
                 <li><a href="sample28">28. 클래스</a></li>
                 <li><a href="sample29">29. 클래스 상속</a></li>
             </ul>
+            </div>
             <div class="main_sample">
                 <div id="sample01" class="sample">
                     <h3>01. 선언적 함수</h3>
@@ -99,7 +101,9 @@ func();
                         </script>
                     </details>
                 </div>
+                </div>
             </div>
+        </div>
         <!-- //section1 -->
 
         <div class="main_sample">
@@ -753,7 +757,7 @@ info3.result();
         <!-- //section18 -->
         <div class="main_sample">
             <div id="sample19" class="sample">
-                <h3>19. 함수 유형 : 함수와 매개변수를 이용한 형태</h3>
+                <h3>19. 함수 유형 : 객체 리터럴 함수</h3>
                 <p>함수 : 실행문, 재활용
                 </p>
                 <div class="script">
@@ -796,6 +800,83 @@ info3.result();
             </div>
         </div>
         <!-- //section19 -->
+        <div class="main_sample">
+            <div id="sample20" class="sample">
+                <h3>20. 즉시 실행 함수</h3>
+                <p>함수 : 실행문, 재활용
+                </p>
+                <div class="script">
+<pre><code class="language-js">(function func(){
+    document.write("함수가 실행되었습니다.")
+}());
+
+(() => {
+    document.write("함수가 시랭되었습니다.");
+})();
+</code></pre>                    
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample20_result">
+                            1. 함수가 실행되었습니다.<br>2. 자바스크립트가 실행되었습니다.<br>3. 제이쿼리가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+        <!-- //section21 -->
+        <div class="main_sample">
+            <div id="sample21" class="sample">
+                <h3>21. 파라미터 함수</h3>
+                <p>함수 : 실행문, 재활용
+                </p>
+                <div class="script">
+<pre><code class="language-js">// function func(str){
+//     document.write(str)
+// }
+// func("함수가 실행되었습니다.")
+function func(str = "함수가 실행되었습니다."){
+    document.write(str);
+}
+func();
+</code></pre>                    
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample21_result">
+                            1. 함수가 실행되었습니다.<br>2. 자바스크립트가 실행되었습니다.<br>3. 제이쿼리가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+        <!-- //section21 -->
+        <div class="main_sample">
+            <div id="sample22" class="sample">
+                <h3>22. 아규먼트 함수</h3>
+                <p>함수 : 실행문, 재활용
+                </p>
+                <div class="script">
+<pre><code class="language-js">function func(a, b){
+    document.write(arguments[0]);
+    document.write(arguments[1]);
+}
+func("함수가 실행되었습니다.", "함수가 실행되었습니다.")
+</code></pre>                    
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample22_result">
+                            1. 함수가 실행되었습니다.<br>2. 자바스크립트가 실행되었습니다.<br>3. 제이쿼리가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+        <!-- //section21 -->
 </div>
     </main>
     <!-- //main -->
@@ -1058,6 +1139,36 @@ info3.result();
     //css의 class와는 다르다.
     {
         
+    }
+    //20. 즉시 실행 함수
+    {
+        // (function func(){
+        //     document.write("함수가 실행되었습니다.")
+        // }());
+
+        (() => {
+            document.write("함수가 시랭되었습니다.");
+        })();
+    }
+    //21.파라미터(인자) 함수
+    {
+        // function func(str){
+        //     document.write(str)
+        // }
+        // func("함수가 실행되었습니다.")
+
+        function func(str = "함수가 실행되었습니다."){
+            document.write(str);
+        }
+        func();
+    }
+    //22. 아큐먼트 함수
+    {
+        function func(a, b){
+            document.write(arguments[0]);
+            document.write(arguments[1]);
+        }
+        func("함수가 실행되었습니다.", "함수가 실행되었습니다.")
     }
 </script>
 
