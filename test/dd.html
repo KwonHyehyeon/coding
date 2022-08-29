@@ -1,4 +1,14 @@
-&lt;div class="loading"&gt;
-    &lt;span class="circle1"&gt;&lt;/span&gt;
-    &lt;span class="circle2"&gt;&lt;/span&gt;
-&lt;/div&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        let currentIndex = 0;
+
+        setInterval(() =&gt; {
+            currentIndex = (currentIndex + 1) % $(".slider").length;
+
+            //$() = document.querySelector 간략화
+            //css에 써주지 않고 제이쿼리 안에서 쓰는 법
+            $(".slider__inner").css("position", "relative");
+            $(".slider__inner").animate({ left: -800 * currentIndex }, 600);
+            //    transform : "translateX("+ -800 * currentIndex +")"
+        }, 2000);
+    &lt;/script&gt;
