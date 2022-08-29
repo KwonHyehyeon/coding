@@ -12,10 +12,10 @@ body.img01 {
     background: #000 url(../img/effect_bg@2x020.jpg) no-repeat center / cover;
 }
 body.img02 {
-    background: #000 url(../img/effect_bg02@2x-min.jpg) no-repeat center / cover;
+    background: #000 url(../img/effect_bg@2x05.jpg) no-repeat center / cover;
 }
 body.img03 {
-    background: #000 url(../img/effect_bg03@2x-min.jpg) no-repeat center / cover;
+    background: #000 url(../img/effect_bg@2x09.jpg) no-repeat center / cover;
 }
 body.img04 {
     background: #000 url(../img/effect_bg04@2x-min.jpg) no-repeat center / cover;
@@ -59,6 +59,7 @@ a {
 /* scroll */
 ::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
 }
 ::-webkit-scrollbar-track {
     background: transparent;
@@ -72,6 +73,19 @@ a {
     background: #555;
 }
 
+/* layout */
+#header {
+    /* position 속성을 이용했을 때 요소를 겹치게 놓을 수 있습니다. header는 이미 포지션 앱솔루트 들어가 있으므로 넣지 않아도됨*/
+    z-index: 2000;
+}
+#main {
+    position: relative;
+    z-index: 1000;
+}
+#footer {
+    position: relative;
+    z-index: 3000;
+}
 
 /* header */
 #header {
@@ -129,7 +143,7 @@ a {
     position: absolute;
     right: 20px;
     bottom: 20px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .modal__btn:hover {
     background-color: #fff;
@@ -334,8 +348,9 @@ a {
         display: none;
     }
 }
-@media (max-width: 600px){
+@media (max-width: 800px){
     #header {
+        width: 100%;
         text-align: center;
     }
     #header h1 {

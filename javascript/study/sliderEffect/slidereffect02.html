@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트 02</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">🗒 슬라이드 이펙트 02</h2>
+        <p class="t_desc">
+            📌 .<br>
+            📌 
+        </p>
+        <hr>
+        <h3 class="t_tit2">HTML 태그 검색창 만들기!</h3>
+        <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect02.html" frameborder="0"></iframe>
+        </div>
+        <div class="t_link">
+            <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect02.html" target="_blank"
+            >실제 사이트보기</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/sliderEffect02.html" target="_blank"
+            >원본 소스보기</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/assets/css/slider.css" target="_blank"
+            >CSS 소스보기</a>
+        </div>  
+        <h3 class="t_tit2">HTML</h3>
+        <p class="t_desc2">
+            첫글자를 클릭하면 관련 단어가 나올 수 있도록 div태그를 이용하여 class를 keyword로 지정해주어 a부터 z까지 작성합니다.<br>
+            전체 속성 갯수가 뜨는 부분도 있으니 이 부분도 div태그로 묶어주어야 합니다.
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">&lt;div class="search__wrap"&gt;
+&lt;span&gt;charAt()을 이용하여 검색하기&lt;/span&gt;
+&lt;h1&gt;CSS 속성 첫글자 검색하기&lt;/h1&gt;
+&lt;div class="search__info"&gt;
+    &lt;div class="keyword"&gt;
+        &lt;span&gt;a&lt;/span&gt;
+        &lt;span&gt;b&lt;/span&gt;
+        &lt;span&gt;c&lt;/span&gt;
+        &lt;span&gt;d&lt;/span&gt;
+        &lt;span&gt;e&lt;/span&gt;
+        &lt;span&gt;f&lt;/span&gt;
+        &lt;span&gt;g&lt;/span&gt;
+        &lt;span&gt;h&lt;/span&gt;
+        &lt;span&gt;i&lt;/span&gt;
+        &lt;span&gt;j&lt;/span&gt;
+        &lt;span&gt;k&lt;/span&gt;
+        &lt;span&gt;l&lt;/span&gt;
+        &lt;span&gt;m&lt;/span&gt;
+        &lt;span&gt;n&lt;/span&gt;
+        &lt;span&gt;o&lt;/span&gt;
+        &lt;span&gt;p&lt;/span&gt;
+        &lt;span&gt;q&lt;/span&gt;
+        &lt;span&gt;r&lt;/span&gt;
+        &lt;span&gt;s&lt;/span&gt;
+        &lt;span&gt;t&lt;/span&gt;
+        &lt;span&gt;u&lt;/span&gt;
+        &lt;span&gt;v&lt;/span&gt;
+        &lt;span&gt;w&lt;/span&gt;
+        &lt;span&gt;x&lt;/span&gt;
+        &lt;span&gt;y&lt;/span&gt;
+        &lt;span&gt;z&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+    <h3 class="t_tit2">CSS</h3>
+    <p class="t_desc2">
+        새로 추가된 CSS 부분입니다.<br>
+        span태그로 묶어주어서 inline이지만 화면을 줄였을 때 깨지는 부분이 있어서 block화 시켜주어야 합니다.<br>
+        그 때 display: inline-block;을 사용합니다.
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">.search__info .keyword {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+}
+</code></pre>
+    </div>
+            <div class="result">
+               <details>
+                   <summary><strong>완성본 보기</strong></summary>
+                   <div class="iframe">
+                       <img style="width: 700px" src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/searchEffect03css.png?raw=true" alt="서치이펙트카테고리">
+                   </div>
+               </details>
+            </div>
+            <!-- 카테고리 만들기 -->
+            <hr>
+        <h3 class="t_tit2">▶ 자바스크립트 활용 (공통) </h3>
+        <p class="t_desc2">
+            📌 자바스크립트를 활용하여 전체 개수 구하기<br>
+            📌 원하는 알파벳 카테고리를 클릭했을 시 그 알파벳이 첫글자인 단어들이 나오도록 자바스크립트 활용
+        </p>
+        <div class="t_code">
+<pre><code class="language-js"> // 선택자
+    const searchKeyword = document.querySelectorAll(".search__info .keyword span");   // 알파벳
+    const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
+    const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
+    let count = 0;
+    // 전체 개수 구하기
+    searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력
+
+    searchKeyword.forEach(el => {
+        el.addEventListener("click", () => {
+            const searchWord = el.innerText;    // 사용자가 클릭한 알파벳
+            // console.log(searchWord);
+            searchList.forEach(el => {
+                const cssName = el.querySelector("strong").innerText;   // CSS 속성 텍스트
+                // console.log(cssName)
+                // 알파벳 첫글자 == CSS 속성의 첫글자
+                if(searchWord.charAt(0) === cssName.charAt(0)){
+                    el.classList.remove("hide");
+                    count++;
+                } else {
+                    el.classList.add("hide");
+                }
+                searchInfo.textContent = count;
+            });
+            count = 0;
+        });
+    });
+</code></pre>
+    </div>
+    <!-- document -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

@@ -139,8 +139,8 @@ body {  /*body는 기본태그여서 앞에 뭐 안 붙음*/
     font-size: 20px;
 }
 .intro_menu li a {
-    color: rgb(66, 5, 249);
-    border: 3px dashed #fff;
+    color: rgb(187, 187, 187);
+    border: 2px dashed #fff;
     border-radius: 10px;
     font-size: 20px;
     margin: 10px;
@@ -148,6 +148,8 @@ body {  /*body는 기본태그여서 앞에 뭐 안 붙음*/
 }
 .intro_menu li a:hover {
     text-decoration: underline;
+    color: #fff;
+    background-color: #666;
 }
 @media (max-width: 600px){
     .intro_menu {
