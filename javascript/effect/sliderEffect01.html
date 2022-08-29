@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>슬라이드</title>
+    <title>슬라이드 이펙트01</title>
 
     <link rel="stylesheet" href="../assets/css/slider.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -50,7 +50,7 @@
         @media (max-width: 800px){
             .slider__img {
                 width: 400px;
-                height: 250px;
+                height: 225px;
         }
         }
     </style>
@@ -75,10 +75,10 @@
             <div class="slider__wrap">
                 <div class="slider__img">
                     <div class="slider"><img src="../assets/img/effect_bg06.jpg" alt="이미지1"></div>
-                    <div class="slider"><img src="../assets/img/effect_bg012.jpg" alt="이미지2"></div>
-                    <div class="slider"><img src="../assets/img/effect_bg020.jpg" alt="이미지3"></div>
-                    <div class="slider"><img src="../assets/img/effect_bg018.jpg" alt="이미지4"></div>
-                    <div class="slider"><img src="../assets/img/effect_bg05.jpg" alt="이미지5"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg03.jpg" alt="이미지2"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg04.jpg" alt="이미지3"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg08.jpg" alt="이미지4"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg010.jpg" alt="이미지5"></div>
                 </div>
             </div>
         </section>
@@ -86,7 +86,7 @@
     <!-- main -->
     <footer id="footer">
         <div class="modal__wrap">
-            <div class="modal__btn">소스보기</div>
+            <div class="modal__btn">소스 보기</div>
             <div class="modal__cont">
                 <div class="modal__box">
                     <div class="title">
@@ -141,7 +141,7 @@
                                 </span>
                             </div>
                         </div>
-                        <span class="plus">
+                        <span class="plus" aria-label="true">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                                 <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                 <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -151,52 +151,52 @@
                     <div class="cont">
                         <div class="active">
 <pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap");
-    const sliderImg = sliderWrap.querySelector(".slider__img");
-    const slider = sliderWrap.querySelectorAll(".slider")
+const sliderImg = sliderWrap.querySelector(".slider__img");
+const slider = sliderWrap.querySelectorAll(".slider")
 
-    let currentIndex = 0;       //현재 보이는 이미지
+let currentIndex = 0;       //현재 보이는 이미지
+let sliderCount = slider.length;    //이미지 갯수
+
+//만들어 놓은 함수 쓰는 것 //1000=1초  //1초마다 형성
+setInterval(() => {
+    let nextIndex = (currentIndex + 1) % 5; //다음 이미지 
+   //console.log("실행")
+
+   //첫번째 이미지 안보이게
+   //두번째 이미지 보이게
+
+   slider[currentIndex].style.opacity = "0"    //첫번째 이미지 안 보이게 처리
+   slider[nextIndex].style.opacity = "1"    //두번째 이미지 보이게 처리
+
+   currentIndex = nextIndex;
+   //0 1 2 3 4 5 6 7 
+   //0 1 2 3 4 5 6 7 
+},3000)
+
+//대입 및 설명
+let currentIndex = 0;       //현재 보이는 이미지
     let sliderCount = slider.length;    //이미지 갯수
 
     //만들어 놓은 함수 쓰는 것 //1000=1초  //1초마다 형성
     setInterval(() => {
-        let nextIndex = (currentIndex + 1) % 5; //다음 이미지 
-       //console.log("실행")
-
+        let nextIndex = (currentIndex + 1) % sliderCount; //다음 이미지 
+        //1, 2, 3, 4, 5, 6, 7, 8, 9,...
+        //나머지 : 1, 2, 3, 4, 0, 1, 2, 3, 4, 0...
+        //console.log("실행")
+       
        //첫번째 이미지 안보이게
        //두번째 이미지 보이게
 
        slider[currentIndex].style.opacity = "0"    //첫번째 이미지 안 보이게 처리
        slider[nextIndex].style.opacity = "1"    //두번째 이미지 보이게 처리
 
-       currentIndex = nextIndex;
+       currentIndex = nextIndex; //=: 오른쪽 값을 왼쪽으로 대입
        //0 1 2 3 4 5 6 7 
        //0 1 2 3 4 5 6 7 
     },3000)
-
-    //대입 및 설명
-    let currentIndex = 0;       //현재 보이는 이미지
-        let sliderCount = slider.length;    //이미지 갯수
-
-        //만들어 놓은 함수 쓰는 것 //1000=1초  //1초마다 형성
-        setInterval(() => {
-            let nextIndex = (currentIndex + 1) % sliderCount; //다음 이미지 
-            //1, 2, 3, 4, 5, 6, 7, 8, 9,...
-            //나머지 : 1, 2, 3, 4, 0, 1, 2, 3, 4, 0...
-            //console.log("실행")
-           
-           //첫번째 이미지 안보이게
-           //두번째 이미지 보이게
-
-           slider[currentIndex].style.opacity = "0"    //첫번째 이미지 안 보이게 처리
-           slider[nextIndex].style.opacity = "1"    //두번째 이미지 보이게 처리
-
-           currentIndex = nextIndex; //=: 오른쪽 값을 왼쪽으로 대입
-           //0 1 2 3 4 5 6 7 
-           //0 1 2 3 4 5 6 7 
-        },3000)
 </code></pre>
                         </div>
-                        <div>
+                        <div style="height: 100%">
 <pre><code class="language-html">&lt;div class="slider__wrap"&gt;
     &lt;div class="slider__img"&gt;
         &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg06.jpg" alt="이미지1"&gt;&lt;/div&gt;
@@ -208,7 +208,7 @@
 &lt;/div&gt;
 </code></pre>
                         </div>
-                        <div>
+                        <div style="height: 100%">
 <pre><code class="language-css">/* slider */
 .slider__wrap {
     width: 100%;
@@ -248,13 +248,11 @@
 @media (max-width: 800px){
     .slider__img {
         width: 400px;
-        height: 250px;
-}
+        height: 225px;
+    }
 }
 </code></pre>
                         </div>
-                        <div></div>
-                        <div></div>
                     </div>
                 </div>
                 <div class="modal__close">
