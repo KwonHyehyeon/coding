@@ -18,6 +18,8 @@ https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect03.html
 https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect04.html
 https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect05.html
 
+### 텍스트 유형
+https://kwonhyehyeon.github.io/coding/site/textType/textType01.html
 ### 사이트 제작하기
 https://KwonHyehyeon.github.io/coding/site/cardType/cardType01.html
 https://KwonHyehyeon.github.io/coding/site/cardType/cardType02.html
