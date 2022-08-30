@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : jquery 필터 선택자</title>
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">📎 jQuery : 필터 선택자란?</h2><br>
+            <p class="t_desc2">
+                선택자에 ':'이 붙은 선택자
+            </p>
+            <h3 class="t_tit2">➰ 필터 선택자의 종류</h3><br>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th>설명</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:even</td>
+                        <td class="ce">$("tr:even")</td>
+                        <td>tr 요소 중 짝수 행만 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:odd</td>
+                        <td class="ce">$("tr:odd")</td>
+                        <td>tr 요소 중 홀수 행만 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:first</td>
+                        <td class="ce">$("tr:first")</td>
+                        <td>첫 번째 td 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:last</td>
+                        <td class="ce">$("tr:last")</td>
+                        <td>마지막 td 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:header</td>
+                        <td class="ce">$(":header")</td>
+                        <td>헤딩(h1~h6) 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:eq()</td>
+                        <td class="ce">$("li:eq(0)")</td>
+                        <td>index가 0인 li 요소를 선택합니다. index는 0번이 첫 번째 요소입니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:gt()</td>
+                        <td class="ce">$("li:gt(0)")</td>
+                        <td>index가 0보다 큰 li 요소들을 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:lt()</td>
+                        <td class="ce">$("li:lt(2)")</td>
+                        <td>index가 2보다 작은 li 요소들을 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:not()</td>
+                        <td class="ce">$("li:not(.bg)")</td>
+                        <td>li 요소 중에서 class명 bg가 아닌 li 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:root</td>
+                        <td class="ce">$(":root")</td>
+                        <td>html을 의미합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:animated</td>
+                        <td class="ce">$(":animated")</td>
+                        <td>움직이는 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h3 class="t_tit2">📎 jquery 속성 선택자 사용 예시</h3><br>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt; 
+    &lt;html lang="ko"&gt; 
+    &lt;head&gt; 
+        &lt;meta charset="UTF-8"&gt; 
+        &lt;title&gt;속성 선택자&lt;title&gt; 
+        &lt;style&gt; 
+            li {
+                margin: 5px;
+            }
+        &lt;/style&gt; 
+        &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt; 
+        &lt;script&gt; 
+            $(document).ready(function() {
+                $(".list1 &gt; li[class='list_1']").css("border", "2px solid red");
+                $(".list1 &gt; li[class!='list_1']").css("border", "2px solid orange");
+                $(".list2 &gt; li[class~='list']").css("background", "yellow");
+                $(".list2 &gt; li[class*='list']").css("border", "2px solid green");
+                $(".list3 &gt; li[class|='list']").css("border", "2px solid blue");
+                $(".list4 &gt; li[class^='list']").css("border", "2px solid navy");
+                $(".list4 &gt; li[class$='bg']").css("background", "purple");
+            });
+        &lt;/script&gt; 
+    &lt;/head&gt; 
+    &lt;body&gt; 
+        &lt;ul class="list1"&gt;
+            &lt;li class="list_1"&gt;내용1_1&lt;/li&gt;
+            &lt;li class="list_2"&gt;내용1_2&lt;/li&gt;
+            &lt;li class="list_3"&gt;내용1_3&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul class="list2"&gt;
+            &lt;li class="list bg"&gt;내용2_1&lt;/li&gt;
+            &lt;li class="list_1"&gt;내용2_2&lt;/li&gt;
+            &lt;li class="list_2"&gt;내용2_3&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul class="list3"&gt;
+            &lt;li class="list"&gt;내용3_1&lt;/li&gt;
+            &lt;li class="list-1"&gt;내용3_2&lt;/li&gt;
+            &lt;li class="list-bg"&gt;내용3_3&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul class="list4"&gt;
+            &lt;li class="list"&gt;내용4_1&lt;/li&gt;
+            &lt;li class="list-1"&gt;내용4_2&lt;/li&gt;
+            &lt;li class="list-bg"&gt;내용4_3&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/body&gt; 
+    &lt;/html&gt;
+</code></pre>
+                </div>
+            <h3 class="t_tit2">⭐️ 결과 ⭐️</h3><br>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe style="width: 800px; height: 500px;" scrolling="no" title="속성선택자 예제" src="https://codepen.io/kwonhyehyeon/embed/qBoeogx?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/qBoeogx">
+                    속성선택자 예제</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
