@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : jquery</title>
+    <title>자바스크립트 : jquery 선택자</title>
     
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -13,13 +13,70 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">jquery에 대해 알아봅시다!</h2><br>
-            <h3 class="t_tit2">📎제이쿼리(jquery)란?</h3><br>
-            <p class="t_desc2">
-                : 자바스크립트 언어를 간편하게 사용할 수 있도록 <i>단순화시킨 오픈 소스 기반의 자바스크핍트 라이브러리</i>입니다.<br>
-                : 빠르고 기능이 풍부한 자바스크립트입니다.<br>
-                : $() 함수를 통해 생성된 요소를 제이쿼리 객체라고 합니다.
-            </p>
+            <h2 class="t_tit">jQuery 선택자</h2><br>
+            <h3 class="t_tit2">📎 기본 선택자란?</h3><br>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th>설명</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">태그 선택자</td>
+                        <td class="ce">$("p")</td>
+                        <td>p 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">id 선택자</td>
+                        <td class="ce">$("gnb")</td>
+                        <td>#gnb 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">class 선택자</td>
+                        <td class="ce">$(".logo")</td>
+                        <td>.logo인 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">자식 선택자</td>
+                        <td class="ce">$("#gnb > ul > li")</td>
+                        <td>#gnb의 자식 요소의 자식 요소 li를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">하위 선택자</td>
+                        <td class="ce">$("#gnb ul")</td>
+                        <td>#gnb의 하위에 있는 모든 ul 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">인접 선택자</td>
+                        <td class="ce">$("#visual + #content")</td>
+                        <td>#visual 다음에 오는 #content 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">형제 선택자</td>
+                        <td class="ce">$("#visual ~ #footer")</td>
+                        <td>#visual의 형제 요소 #footer를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">종속 선택자</td>
+                        <td class="ce">$("div.util")</td>
+                        <td>div 요소 중 class가 util인 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">그룹 선택자</td>
+                        <td class="ce">$(".left, .right, #banner")</td>
+                        <td>.left, .right, #banner 요소들을 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">전체 선택자</td>
+                        <td class="ce">$("*")</td>
+                        <td>모든 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+
             <h3 class="t_tit2">➰특징</h3>
             <div class="t_box">
                 📌 문서 객체 모델(DOM)과 이벤트에 관한 처리를 손쉽게 구현 가능<br>
