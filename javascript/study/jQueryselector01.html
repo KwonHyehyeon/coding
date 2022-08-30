@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : jquery 선택자</title>
+    <title>자바스크립트 : jquery 기본 선택자</title>
     
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -77,7 +77,7 @@
                 </tbody>
             </table>
 
-            <h3 class="t_tit2">➰특징</h3>
+            <h3 class="t_tit2">➰예제</h3>
             <div class="t_box">
                 📌 문서 객체 모델(DOM)과 이벤트에 관한 처리를 손쉽게 구현 가능<br>
                 📌 Ajax 응용 프로그램 및 플러그인도 제이쿼리를 활용하여 빠르게 개발 가능<br>
@@ -128,26 +128,69 @@
 </code></pre>
                 </div>
             <hr>
-            <h3 class="t_tit2">📎 jquery 사용 예시</h3><br>
+            <h3 class="t_tit2">📎 jquery 기본 선택자 사용 예시</h3><br>
             <div class="t_code">
-<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-    let currentIndex = 0;
-
-    setInterval(() =&gt; {
-        currentIndex = (currentIndex + 1) % $(".slider").length;
-
-        //$() = document.querySelector 간략화
-        //css에 써주지 않고 제이쿼리 안에서 쓰는 법
-        $(".slider__inner").css("position", "relative");
-        $(".slider__inner").animate({ left: -800 * currentIndex }, 600);
-        //    transform : "translateX("+ -800 * currentIndex +")"
-    }, 2000);
-&lt;/script&gt;
+<pre><code>&lt;!DOCTYPE html&gt; 
+    &lt;html lang="ko"&gt; 
+    &lt;head&gt; 
+        &lt;meta charset="UTF-8"&gt; 
+        &lt;title&gt;기본 선택자&lt;/title&gt; 
+        &lt;style&gt; 
+            * {
+                margin: 5px;
+            }
+        &lt;/style&gt; 
+        &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt; 
+        &lt;script&gt; 
+            $(document).ready(function() {
+                $("p").css("border", "4px solid red");
+                $("#gnb").css("border", "4px solid orange");
+                $(".logo").css("border", "4px solid yellow");
+                $("#gnb &gt; ul &gt; li").css("border", "4px solid green");
+                $("#gnb ul").css("border", "4px solid blue");
+                $("#visual + #content").css("border", "4px solid navy");
+                $("#visual ~ #footer").css("border", "4px solid purple");
+                $("div.util").css("border", "4px solid pink");
+                $(".left,.right,#banner").css("border", "4px solid gray");
+            });
+        &lt;/script&gt; 
+    &lt;/head&gt; 
+    &lt;body&gt; 
+        &lt;header id="header"&gt;
+            &lt;div class="logo"&gt;로고&lt;/div&gt;
+            &lt;div class="util"&gt;회원가입&lt;/div&gt;
+            &lt;nav id="gnb"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;메뉴
+                        &lt;ul&gt;
+                            &lt;li&gt;메뉴1_1&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+            &lt;div id="visual"&gt;
+                &lt;p&gt;비주얼&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div id="content"&gt;
+                &lt;div class="left"&gt;왼쪽&lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;div class="util"&gt;오른쪽&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div id="banner"&gt;배너&lt;/div&gt;
+            &lt;footer id="footer"&gt;푸터&lt;/footer&gt;
+        &lt;/header&gt;
+    &lt;/body&gt; 
+    &lt;/html&gt;
 </code></pre>
                 </div>
+            <h3 class="t_tit2">⭐️ 결과 ⭐️</h3><br>
             <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
-                <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect02.html" frameborder="0"></iframe>
+                <iframe height="150" style="width: 800px;" scrolling="no" title="jquery 예제 4_3" src="https://codepen.io/kwonhyehyeon/embed/zYWgdyM?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/zYWgdyM">
+                    jquery 예제 4_3</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
             </div>
     </main>
     <!-- //main -->

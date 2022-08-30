@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : jquery 속성 선택자</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery 선택자</h2><br>
+            <h3 class="t_tit2">📎 기본 선택자란?</h3><br>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th>설명</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">요소[속성]</td>
+                        <td class="ce">$("span[class]")</td>
+                        <td>span 요소 중 class 속성을 가지고 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성='값']</td>
+                        <td class="ce">$("span[class='abc']")</td>
+                        <td>span 요소 중 class가 'abc'인 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성!='값']</td>
+                        <td class="ce">$("span[class!='abc']")</td>
+                        <td>span 요소 중 class가 abc'가 아닌 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성~='값']</td>
+                        <td class="ce">$("span[class~='abc']")</td>
+                        <td>
+                            span 요소 중 class가 'abc'를 포함하는 요소를 선택합니다.<br>
+                            'abc' 앞뒤로 연결된 문자가 없어야 합니다. 'bg abc'는 선택되나 'bg_abc'는 선택되지 않습니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성*='값']</td>
+                        <td class="ce">$("span[class*='abc']")</td>
+                        <td>
+                            span 요소 중 class가 'abc'를 포함하는 요소를 모두 선택합니다. 'bg abc', 'bg_abc' 모두 선택합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성|='값']</td>
+                        <td class="ce">$("span[class|='abc']")</td>
+                        <td>                        
+                            span 요소 중 class가 'abc'나 'abc-'로 시작하는 요소를 선택합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성^='값']</td>
+                        <td class="ce">$("span[class^='abc']")</td>
+                        <td>span 요소 중 class가 'abc'로 시작하는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성$='값']</td>
+                        <td class="ce">$("span[class$='abc']")</td>
+                        <td>span 요소 중 class가 'abc'로 끝나는 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2">➰예제</h3>
+            <div class="t_box">
+                📌 문서 객체 모델(DOM)과 이벤트에 관한 처리를 손쉽게 구현 가능<br>
+                📌 Ajax 응용 프로그램 및 플러그인도 제이쿼리를 활용하여 빠르게 개발 가능<br>
+                📌 jQuery는 크로스 플랫폼을 지원하기 때문에 어떠한 브라우저에서도 동일하게 동작합니다. 
+                <br>브라우저 호환성을 고려하여 대체 코드를 작성할 필요가 없습니다.<br>
+                📌 네이티브 DOM API 보다 직관적이고 편리한 API를 제공합니다.<Br>
+                CSS 스타일의 selector를 사용할 수 있으며 조작 또한 유연하게 할 수 있습니다.<br>
+                📌 다양한 플러그인이 존재하며 다른 라이브러리들과 충돌을 일으키지 않습니다.
+            </div>
+            <h3 class="t_tit2">➰jQuery 기본 형식</h3>
+            <div class="t_box">
+                <strong>$(document).ready(function(){<br>
+                      실행문;<br>
+                };</strong><br>
+            </div>
+            <div class="t_box">
+                <strong>$(function(){<br>
+                      실행문;<br>
+                };</strong><br>
+            </div>
+            <div class="t_box">
+                : $ 기호는 제이쿼리를 의미하며, 제이쿼리에 접근할 수 있게 해주는 식별자 입니다.<br>
+                : 선택자를 이용하여 원하는 HTML 요소를 선택하고 동작 함수를 정의하여 선택된 요소에 원하는 동작을 설정합니다.<br>
+                : $() 함수는 선택된 HTML 요소를 제이쿼리에서 이용할 수 있는 형태로 생성해 주는 역할을 합니다.<br>
+                : $() 함수의 인수로는 HTML 태그 이름 뿐만 아니라, CSS 선택자를 전달하여 특정 HTML 요소를 선택할 수 있습니다.<br>
+
+            </div>
+                <h3 class="t_tit2">➰jQuery 다운로드 방식</h3>
+                <p class="t_desc2">
+                    📌 jQuery 라이브러리 다운로드<br>
+                    : https://jquery.com/download에 접속하여 'Download the compressed, production jQuery 3.3.1'을 다운로드 합니다.<br>
+                    📌 HTML 문서에서 jQuery 라이브러리 연결하기<br>
+                    : html문서를 jQuery 라이브러리와 같은 경로에 저장합니다. <i>라이브러리가 잘 연결되었는지 확인하기 위해 jQuery 명령어 $(document).ready()를 사용</i>합니다.<br>
+                </p>
+                <h4 class="t_tit3">📌 CDN 호스트를 사용하는 방법</h4>
+                <p class="t_desc2">
+                    : https://jquery.com 사이트에 접속하여 맞는 버전을 선택 후 CDN을 카피
+                </p>
+                <div class="t_code">
+<pre><code>&lt;script src="http://code.jquery.com/jquery-3.5.1.min.js"&gt;&lt;/script&gt;
+</code></pre>
+                </div>
+                <h4 class="t_tit3">📌 HTML 문서에서 jQuery 라이브러리 연결하는 방법</h4>
+                <div class="t_code">
+<pre><code>&lt;script src="jquery-3.5.1.min.js"
+"integrity="sha256-FgpCb/KJQ1LNfOu91ta32o/NMZxltwRo8QtmkMRdAU8="crossorigin="anonymous"&gt;
+&gt;&lt;/script&gt;
+</code></pre>
+                </div>
+            <hr>
+            <h3 class="t_tit2">📎 jquery 기본 선택자 사용 예시</h3><br>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt; 
+    &lt;html lang="ko"&gt; 
+    &lt;head&gt; 
+        &lt;meta charset="UTF-8"&gt; 
+        &lt;title&gt;기본 선택자&lt;/title&gt; 
+        &lt;style&gt; 
+            * {
+                margin: 5px;
+            }
+        &lt;/style&gt; 
+        &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt; 
+        &lt;script&gt; 
+            $(document).ready(function() {
+                $("p").css("border", "4px solid red");
+                $("#gnb").css("border", "4px solid orange");
+                $(".logo").css("border", "4px solid yellow");
+                $("#gnb &gt; ul &gt; li").css("border", "4px solid green");
+                $("#gnb ul").css("border", "4px solid blue");
+                $("#visual + #content").css("border", "4px solid navy");
+                $("#visual ~ #footer").css("border", "4px solid purple");
+                $("div.util").css("border", "4px solid pink");
+                $(".left,.right,#banner").css("border", "4px solid gray");
+            });
+        &lt;/script&gt; 
+    &lt;/head&gt; 
+    &lt;body&gt; 
+        &lt;header id="header"&gt;
+            &lt;div class="logo"&gt;로고&lt;/div&gt;
+            &lt;div class="util"&gt;회원가입&lt;/div&gt;
+            &lt;nav id="gnb"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;메뉴
+                        &lt;ul&gt;
+                            &lt;li&gt;메뉴1_1&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+            &lt;div id="visual"&gt;
+                &lt;p&gt;비주얼&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div id="content"&gt;
+                &lt;div class="left"&gt;왼쪽&lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;div class="util"&gt;오른쪽&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div id="banner"&gt;배너&lt;/div&gt;
+            &lt;footer id="footer"&gt;푸터&lt;/footer&gt;
+        &lt;/header&gt;
+    &lt;/body&gt; 
+    &lt;/html&gt;
+</code></pre>
+                </div>
+            <h3 class="t_tit2">⭐️ 결과 ⭐️</h3><br>
+            <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+                <iframe height="150" style="width: 800px;" scrolling="no" title="jquery 예제 4_3" src="https://codepen.io/kwonhyehyeon/embed/zYWgdyM?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/zYWgdyM">
+                    jquery 예제 4_3</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
