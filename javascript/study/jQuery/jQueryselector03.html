@@ -85,64 +85,572 @@
                 </tbody>
             </table>
             <hr>
-            <h3 class="t_tit2">📎 jquery 속성 선택자 사용 예시</h3><br>
+            <h3 class="t_tit2">📎 jquery 필터 선택자 사용 예시</h3><br>
             <div class="t_code">
-<pre><code>&lt;!DOCTYPE html&gt; 
-    &lt;html lang="ko"&gt; 
-    &lt;head&gt; 
-        &lt;meta charset="UTF-8"&gt; 
-        &lt;title&gt;속성 선택자&lt;title&gt; 
-        &lt;style&gt; 
-            li {
-                margin: 5px;
-            }
-        &lt;/style&gt; 
-        &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt; 
-        &lt;script&gt; 
-            $(document).ready(function() {
-                $(".list1 &gt; li[class='list_1']").css("border", "2px solid red");
-                $(".list1 &gt; li[class!='list_1']").css("border", "2px solid orange");
-                $(".list2 &gt; li[class~='list']").css("background", "yellow");
-                $(".list2 &gt; li[class*='list']").css("border", "2px solid green");
-                $(".list3 &gt; li[class|='list']").css("border", "2px solid blue");
-                $(".list4 &gt; li[class^='list']").css("border", "2px solid navy");
-                $(".list4 &gt; li[class$='bg']").css("background", "purple");
-            });
-        &lt;/script&gt; 
-    &lt;/head&gt; 
-    &lt;body&gt; 
-        &lt;ul class="list1"&gt;
-            &lt;li class="list_1"&gt;내용1_1&lt;/li&gt;
-            &lt;li class="list_2"&gt;내용1_2&lt;/li&gt;
-            &lt;li class="list_3"&gt;내용1_3&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;ul class="list2"&gt;
-            &lt;li class="list bg"&gt;내용2_1&lt;/li&gt;
-            &lt;li class="list_1"&gt;내용2_2&lt;/li&gt;
-            &lt;li class="list_2"&gt;내용2_3&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;ul class="list3"&gt;
-            &lt;li class="list"&gt;내용3_1&lt;/li&gt;
-            &lt;li class="list-1"&gt;내용3_2&lt;/li&gt;
-            &lt;li class="list-bg"&gt;내용3_3&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;ul class="list4"&gt;
-            &lt;li class="list"&gt;내용4_1&lt;/li&gt;
-            &lt;li class="list-1"&gt;내용4_2&lt;/li&gt;
-            &lt;li class="list-bg"&gt;내용4_3&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/body&gt; 
-    &lt;/html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;기본 필터 선택자&lt;/title&gt;
+    &lt;style&gt;
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            border: 1px solid #333;
+        }
+        li {
+            color: white;
+            margin: 5px;
+        }
+    &lt;/style&gt;
+    &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function() {
+            $("tr:even").css("background", "red");
+            $("tr:odd").css("background", "orange");
+            $("td:first").css("background", "yellow");
+            $("td:last").css("background", "green");
+            $(":header").css("background", "blue");
+            $("li:eq(0)").css("background", "navy");
+            $("li:gt(0)").css("background", "purple");
+            $("li:lt(3)").css("border", "4px solid gray");
+            $(":root").css("background", "lightgray");
+            (function upDown() {
+                $("h2").slideToggle(2000,upDown);
+            })();
+             $(":animated").css("border","4px solid darkred");
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;제목1&lt;/h1&gt;
+    &lt;h2&gt;제목2&lt;/h2&gt;
+    &lt;table&gt;
+        &lt;caption&gt;기본 필터 선택자&lt;/caption&gt;
+        &lt;colgroup&gt;
+            &lt;col&gt;
+            &lt;col&gt;
+            &lt;col&gt;
+        &lt;/colgroup&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;/td&gt;
+                &lt;td&gt;2&lt;/td&gt;
+                &lt;td&gt;3&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;4&lt;/td&gt;
+                &lt;td&gt;5&lt;/td&gt;
+                &lt;td&gt;6&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;7&lt;/td&gt;
+                &lt;td&gt;8&lt;/td&gt;
+                &lt;td&gt;9&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;10&lt;/td&gt;
+                &lt;td&gt;11&lt;/td&gt;
+                &lt;td&gt;12&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;ul&gt;
+        &lt;li class="bg"&gt;내용1&lt;/li&gt;
+        &lt;li class="bg"&gt;내용2&lt;/li&gt;
+        &lt;li class="bg"&gt;내용3&lt;/li&gt;
+        &lt;li&gt;내용4&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
                 </div>
             <h3 class="t_tit2">⭐️ 결과 ⭐️</h3><br>
             <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
-                <iframe style="width: 800px; height: 500px;" scrolling="no" title="속성선택자 예제" src="https://codepen.io/kwonhyehyeon/embed/qBoeogx?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/qBoeogx">
-                    속성선택자 예제</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                <iframe style="width: 800px; height: 500px;" scrolling="no" title="필터선택자" src="https://codepen.io/kwonhyehyeon/embed/wvmVbvJ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/wvmVbvJ">
+                    필터선택자</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- 필터 선택자 종류 -->
+            <h3 class="t_tit2">➰ 자식 필터 선택자</h3><br>
+            <p class="t_desc2">
+                : 'child'가 붙은 선택자는 요소가 순차적으로 나열되어 있을 때 사용하고, "of-type"이 붙은 선택자는 요소가 순차적으로 나열되어 있지 않아도 동일 요소이면 선택이 가능합니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th>설명</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:first-child</td>
+                        <td class="ce">$("span:first-child")</td>
+                        <td>첫 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:last-child</td>
+                        <td class="ce">$("span:last-child")</td>
+                        <td>마지막 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:first-of-type</td>
+                        <td class="ce">$("span:first-of-type")</td>
+                        <td>span 요소 중에서 첫 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:last-of-type</td>
+                        <td class="ce">$("span:last-of-type")</td>
+                        <td>span 요소 중에서 마지막 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:nth-child()</td>
+                        <td class="ce">$("span:nth-child(2)")</td>
+                        <td>
+                            두 번째 span 요소를 선택합니다.<br>
+                            nth-child(2n)은 2, 4, 6, ...번째 요소를 선택하고, <br>
+                            nth-child(2n+1)은 1, 3, 5, ...번째 요소를 선택합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:nth-last-child()</td>
+                        <td class="ce">$("span:nth-last-child(2)")</td>
+                        <td>마지막에서 두 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:nth-of-type()</td>
+                        <td class="ce">$("span:nth-of-type(2)")</td>
+                        <td>span 요소 중에서 두 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:nth-last-of-type()</td>
+                        <td class="ce">$("span:nth-last-of-type(2)")</td>
+                        <td>span 요소 중에서 마지막에서 두 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:only-child</td>
+                        <td class="ce">$("div > span:only-child")</td>
+                        <td>div의 자식 요소에서 오직 span 요소가 하나만 있는 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:only-of-type</td>
+                        <td class="ce">$("div > span:only-of-type")</td>
+                        <td>div의 자식 요소에서 span 요소가 하나만 있는 span 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h3 class="t_tit2">📎 jquery 자식 필터 선택자 사용 예시</h3><br>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;기본 필터 선택자&lt;/title&gt;
+    &lt;style&gt;
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            border: 1px solid #333;
+        }
+        li {
+            color: white;
+            margin: 5px;
+        }
+    &lt;/style&gt;
+    &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function() {
+            $("tr:even").css("background", "red");
+            $("tr:odd").css("background", "orange");
+            $("td:first").css("background", "yellow");
+            $("td:last").css("background", "green");
+            $(":header").css("background", "blue");
+            $("li:eq(0)").css("background", "navy");
+            $("li:gt(0)").css("background", "purple");
+            $("li:lt(3)").css("border", "4px solid gray");
+            $(":root").css("background", "lightgray");
+            (function upDown() {
+                $("h2").slideToggle(2000,upDown);
+            })();
+             $(":animated").css("border","4px solid darkred");
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;제목1&lt;/h1&gt;
+    &lt;h2&gt;제목2&lt;/h2&gt;
+    &lt;table&gt;
+        &lt;caption&gt;기본 필터 선택자&lt;/caption&gt;
+        &lt;colgroup&gt;
+            &lt;col&gt;
+            &lt;col&gt;
+            &lt;col&gt;
+        &lt;/colgroup&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;/td&gt;
+                &lt;td&gt;2&lt;/td&gt;
+                &lt;td&gt;3&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;4&lt;/td&gt;
+                &lt;td&gt;5&lt;/td&gt;
+                &lt;td&gt;6&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;7&lt;/td&gt;
+                &lt;td&gt;8&lt;/td&gt;
+                &lt;td&gt;9&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;10&lt;/td&gt;
+                &lt;td&gt;11&lt;/td&gt;
+                &lt;td&gt;12&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;ul&gt;
+        &lt;li class="bg"&gt;내용1&lt;/li&gt;
+        &lt;li class="bg"&gt;내용2&lt;/li&gt;
+        &lt;li class="bg"&gt;내용3&lt;/li&gt;
+        &lt;li&gt;내용4&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+            <h3 class="t_tit2">⭐️ 결과 ⭐️</h3><br>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe style="width: 800px; height:500px" scrolling="no" title="자식 필터 선택자" src="https://codepen.io/kwonhyehyeon/embed/RwMXmWr?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/RwMXmWr">
+                    자식 필터 선택자</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- 자식 필터 선택자 -->
+            <h3 class="t_tit2">➰ 콘텐츠 필터 선택자</h3><br>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th>설명</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:contains()</td>
+                        <td class="ce">$("p:contains('html')")</td>
+                        <td>p 요소 중에서 'html'텍스트를 포함하고 있는 p요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:empty</td>
+                        <td class="ce">$("div:empty")</td>
+                        <td>div 요소 중에서 자식 요소가 없는 div 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:parent</td>
+                        <td class="ce">$("span:parent")</td>
+                        <td>span 요소 중에서 자식 요소가 있는 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:has()</td>
+                        <td class="ce">$("section:has(article)")</td>
+                        <td>section 요소 중에서 article을 하위 요소로 가지고 있는 section 요소를 선택합니다.</td>
+                    </tr>
+                
+                </tbody>
+            </table>
+            <hr>
+            <h3 class="t_tit2">📎 jquery 콘텐츠 필터 선택자 사용 예시</h3><br>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;콘텐츠 필터 선택자&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 5px;
+        }
+        #m1 &gt; p:last-child{
+            height: 20px;
+        }
+        span {
+            display: inline-block;
+            height: 20px;
+        }
+    &lt;/style&gt;
+    &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function() {
+            $("#m1 &gt; p:contains('html')").css("border","4px solid red");
+            $("#m1 &gt; p:empty").css("border","4px solid orange");
+            $("#m2 &gt; span:parent").css("border","4px solid yellow");
+            $("#m3 &gt; section:has(article)").css("border","4px solid green");
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="m1"&gt;
+        &lt;p&gt;html, css, javascript&lt;/p&gt;
+        &lt;p&gt;html5와 웹표준&lt;/p&gt;
+        &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id="m2"&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt;span&gt;내용1&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div id="m3"&gt;
+        &lt;section&gt;
+            &lt;article&gt;내용2_1&lt;/article&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;div&gt;
+                &lt;article&gt;내용2_2&lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+            <h3 class="t_tit2">⭐️ 결과 ⭐️</h3><br>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe style="width: 800px; height:500px" scrolling="no" title="콘텐츠 필터 선택자" src="https://codepen.io/kwonhyehyeon/embed/oNqKRBg?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/oNqKRBg">
+                    콘텐츠 필터 선택자</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- 콘텐츠 필터 선택자 -->
+            <h3 class="t_tit2">➰ 폼 필터 선택자</h3><br>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th>설명</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:text</td>
+                        <td class="ce">$("input:text")</td>
+                        <td>&lt;input type="text"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:password</td>
+                        <td class="ce">$("input:password")</td>
+                        <td>&lt;input type="password"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:image</td>
+                        <td class="ce">$("input:image")</td>
+                        <td>&lt;input type="image"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:file</td>
+                        <td class="ce">$("input:file")</td>
+                        <td>&lt;input type="file"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:button</td>
+                        <td class="ce">$(":button")</td>
+                        <td>&lt;input type="button"&gt;,&lt;button&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:checkbox</td>
+                        <td class="ce">$("input:checkbox")</td>
+                        <td>&lt;input type="techeckboxxt"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:radio</td>
+                        <td class="ce">$("input:radio")</td>
+                        <td>&lt;input type="radio"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:submit</td>
+                        <td class="ce">$("input:submit")</td>
+                        <td>&lt;input type="submit"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:reset</td>
+                        <td class="ce">$("input:reset")</td>
+                        <td>&lt;input type="reset"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:input</td>
+                        <td class="ce">$(":input")</td>
+                        <td>모든 &lt;input&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:checked</td>
+                        <td class="ce">$("input:checked")</td>
+                        <td>&lt;input&gt; 요소에 checked 속성이 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:selected</td>
+                        <td class="ce">$("option:selected")</td>
+                        <td>&lt;option&gt; 요소에 selected 속성이 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:focus</td>
+                        <td class="ce">$("input:focus")</td>
+                        <td>현재 &lt;input&gt;에 포커스가 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:disabled</td>
+                        <td class="ce">$("input:disabled")</td>
+                        <td>&lt;input&gt; 요소에 disabled 속성이 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:enabled</td>
+                        <td class="ce">$("input:enabled")</td>
+                        <td>&lt;input&gt; 요소 중 disabled가 아닌 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h3 class="t_tit2">📎 jquery 폼 필터 선택자 사용 예시</h3><br>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;form 필터 선택자&lt;/title&gt;
+    &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+         $(document).ready(function() {
+            $("input:text").css("background","red");
+            $("input:password").css("background","orange");
+            $(":button").css("background","yellow");
+            $("input:checked + label").css("background","green");
+            $("option:selected").css("color","blue");
+            $("textarea:disabled").css("background","pink");
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;&lt;input type="text"&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;input type="password"&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;button&gt;확인&lt;/div&gt;
+    &lt;div&gt;&lt;input type="checkbox" id="css" checked="checked"&gt;&lt;label for="css"&gt;css&lt;/label&gt;&lt;/div&gt;
+    &lt;div&gt;
+        &lt;select&gt;
+            &lt;option&gt;과목선택&lt;/option&gt;
+            &lt;option&gt;javascript&lt;/option&gt;
+            &lt;option selected="selected"&gt;jQuery&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;textarea cols="20" id="" rows="5" disabled="disabled"&gt;javascript&lt;/textarea&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+            <h3 class="t_tit2">⭐️ 결과 ⭐️</h3><br>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe style="width: 800px; height: 500px;" scrolling="no" title="폼 필터 선택자" src="https://codepen.io/kwonhyehyeon/embed/bGvXyxM?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/bGvXyxM">
+                    폼 필터 선택자</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
                     on <a href="https://codepen.io">CodePen</a>.
                 </iframe>
             </div>
+            <!-- 폼 필터 선택자 -->
+            <h3 class="t_tit2">➰ 가시성 필터 선택자</h3><br>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th>설명</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:hidden</td>
+                        <td class="ce">div:hidden</td>
+                        <td>div 요소 중 hidden인 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:visible</td>
+                        <td class="ce">div:visible</td>
+                        <td>div 요소 중 visible 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h3 class="t_tit2">📎 jquery 가시성 필터 선택자 사용 예시</h3><br>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;콘텐츠 필터 선택자&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 5px;
+        }
+        #m1 &gt; p:last-child{
+            height: 20px;
+        }
+        span {
+            display: inline-block;
+            height: 20px;
+        }
+    &lt;/style&gt;
+    &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function() {
+            $("#m1 &gt; p:contains('html')").css("border","4px solid red");
+            $("#m1 &gt; p:empty").css("border","4px solid orange");
+            $("#m2 &gt; span:parent").css("border","4px solid yellow");
+            $("#m3 &gt; section:has(article)").css("border","4px solid green");
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="m1"&gt;
+        &lt;p&gt;html, css, javascript&lt;/p&gt;
+        &lt;p&gt;html5와 웹표준&lt;/p&gt;
+        &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id="m2"&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt;span&gt;내용1&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div id="m3"&gt;
+        &lt;section&gt;
+            &lt;article&gt;내용2_1&lt;/article&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;div&gt;
+                &lt;article&gt;내용2_2&lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+            <h3 class="t_tit2">⭐️ 결과 ⭐️</h3><br>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe style="width: 800px; height: 500px;" scrolling="no" title="폼 필터 선택자" src="https://codepen.io/kwonhyehyeon/embed/bGvXyxM?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/bGvXyxM">
+                    폼 필터 선택자</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <!-- 폼 필터 선택자 -->
     </main>
     <!-- //main -->
     <footer id="footer">

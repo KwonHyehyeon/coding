@@ -1,10 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;기본 필터 선택자&lt;/title&gt;
+    &lt;style&gt;
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            border: 1px solid #333;
+        }
+        li {
+            color: white;
+            margin: 5px;
+        }
+    &lt;/style&gt;
+    &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function() {
+            $("tr:even").css("background", "red");
+            $("tr:odd").css("background", "orange");
+            $("td:first").css("background", "yellow");
+            $("td:last").css("background", "green");
+            $(":header").css("background", "blue");
+            $("li:eq(0)").css("background", "navy");
+            $("li:gt(0)").css("background", "purple");
+            $("li:lt(3)").css("border", "4px solid gray");
+            $(":root").css("background", "lightgray");
+            (function upDown() {
+                $("h2").slideToggle(2000,upDown);
+            })();
+             $(":animated").css("border","4px solid darkred");
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;제목1&lt;/h1&gt;
+    &lt;h2&gt;제목2&lt;/h2&gt;
+    &lt;table&gt;
+        &lt;caption&gt;기본 필터 선택자&lt;/caption&gt;
+        &lt;colgroup&gt;
+            &lt;col&gt;
+            &lt;col&gt;
+            &lt;col&gt;
+        &lt;/colgroup&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;/td&gt;
+                &lt;td&gt;2&lt;/td&gt;
+                &lt;td&gt;3&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;4&lt;/td&gt;
+                &lt;td&gt;5&lt;/td&gt;
+                &lt;td&gt;6&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;7&lt;/td&gt;
+                &lt;td&gt;8&lt;/td&gt;
+                &lt;td&gt;9&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;10&lt;/td&gt;
+                &lt;td&gt;11&lt;/td&gt;
+                &lt;td&gt;12&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;ul&gt;
+        &lt;li class="bg"&gt;내용1&lt;/li&gt;
+        &lt;li class="bg"&gt;내용2&lt;/li&gt;
+        &lt;li class="bg"&gt;내용3&lt;/li&gt;
+        &lt;li&gt;내용4&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
