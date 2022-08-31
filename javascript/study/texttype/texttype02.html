@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 제작하기 : 텍스트 유형02</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 제작하기 : 📝 텍스트 유형02</h2>
+            <p class="t_box">
+                텍스트 유형은 이미지가 아닌 말 그대로 텍스트로 이루어진 유형입니다.<br>
+                이번 유형은 제목과 주제별 내용들을 나누어 구조를 짜주어야 합니다.
+            </p>
+            <h3 class="t_tit2">오늘 만들 사이트 형식</h3>
+            <div class="iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1870%253A2031" allowfullscreen></iframe>
+            <hr>
+            <h3 class="t_tit2">사이트 제작 방법</h3>
+            <h4 class="t_tit3">1. Figma 사용해서 레이아웃 설정</h4>
+            <p class="t_desc">
+                사이트를 만들기 위해서는 먼저 사이트 레이아웃을 설정해야 합니다. (그리드 이용)<br>
+                밑의 이미지와 같이 figma를 이용하여 레이아웃을 설정해줄 수 있습니다. " shift + R " 로 자 기능을 활용하여 레이아웃을 만들어줍니다. <br>
+                ※ 이 때, 칸이나 줄이 확실하게 맞아야 하며 오차없이 레이아웃을 설정해주는 것이 중요합니다.
+            </p>
+            <figure>
+                <img style="width: 700px" src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/textType01.png?raw=true" alt="텍스트유형01">
+            </figure>
+            <h4 class="t_tit3">2. vscode를 통해 코딩해주기! : <i>HTML편</i></h4>
+            <p class="t_desc">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.<br>
+                텍스트 유형01을 svg를 이용하여 짜주었다면 이번에는 이미지 스프라이트를 이용해서 짜주어 보겠습니다!
+            </p>
+            <div class="result">
+                <details>
+                    <summary>코드 보기</summary>
+                    <div class="t_code">
+<pre><code>&lt;body&gt;
+    &lt;section id="textType01" class="text__wrap gmarketsans container section"&gt;
+        &lt;header id="header"&gt;
+            &lt;p class="address"&gt;경기도 의왕시&lt;/p&gt;
+            &lt;h2 class="title"&gt;주민센터 &lt;br&gt;스포츠 프로그램&lt;/h2&gt;
+            &lt;p class="desc"&gt;
+                주민센터 스포츠 프로그램이 열렸습니다.&lt;br&gt;
+                이 지역 사람들을 위해 다양한 스포츠를 배울 기회를 저렴한 비용으로 얻을 수 있습니다.
+            &lt;/p&gt;
+        &lt;/header&gt;
+        &lt;div class="text_container"&gt; &lt;!--가운데 영역 container--&gt;
+            &lt;article class="text"&gt;
+                &lt;div class="icon swim"&gt;&lt;/div&gt;
+                &lt;h3 class="tit"&gt;수영&lt;/h3&gt;
+                &lt;p class="desc"&gt;초급수업과 중급수업 고급수업으로 구성되어 있으며 오전 6시부터 오후9시까지 반이 구성되어 있습니다.&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="text"&gt;
+                &lt;div class="icon yoga"&gt;&lt;/div&gt;
+                &lt;h3 class="tit"&gt;요가&lt;/h3&gt;
+                &lt;p class="desc"&gt;초급수업과 중급수업 고급수업으로 구성되어 있으며 오전 6시부터 오후9시까지 반이 구성되어 있습니다. &lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="text"&gt;
+                &lt;div class="icon badmin"&gt;&lt;/div&gt;
+                &lt;h3 class="tit"&gt;배드민턴&lt;/h3&gt;
+                &lt;p class="desc"&gt;초급수업과 중급수업 고급수업으로 구성되어 있으며 오전 6시부터 오후9시까지 반이 구성되어 있습니다. &lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="text"&gt;
+                &lt;div class="icon pingpong"&gt;&lt;/div&gt;
+                &lt;h3 class="tit"&gt;탁구&lt;/h3&gt;
+                &lt;p class="desc"&gt;초급수업과 중급수업 고급수업으로 구성되어 있으며 오전 6시부터 오후9시까지 반이 구성되어 있습니다. &lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;               
+</code></pre>
+            </div>
+                </details>
+            </div>
+            <h4 class="t_tit3">3. vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <p class="t_desc">
+                style을 통해 CSS를 설정해줍니다. <br>
+                피그마로 만들어 놓은 레이아웃을 보며 HTML로 구역을 정해준 후 CSS로 하나하나 디자인해 나가는 것이 중요합니다!
+            </p>
+            <div class="result">
+                <details>
+                    <summary>코드 보기</summary>
+                    <div class="t_code">
+<pre><code>/* fonts */
+@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+.gmarketsans {
+    font-family: 'GmarketSans';
+    font-weight: 400;
+}
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    width: 100%;
+}
+/* common */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.section {
+    padding: 120px 0;
+}
+.section &gt; h2 {     /* +는 형제 바로 밑에 있는 자식은 &gt; */
+    font-size: 50px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.section &gt; p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+    margin-bottom: 10px;
+}
+/* ir 효과 (이미지 대체 효과 == art) */
+.ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+/* textType */ 
+.text__wrap {
+    display: flex;
+}
+#header{
+    width: 35%;
+}    
+#header .address {
+    width: 149px;
+    height: 20px;
+    background-color: red;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+#header .title {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 42px 40px 0;
+}
+#header .desc {
+    margin: 0 42px 40px 0;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+.text_container {
+    width: 65%;
+    display: flex;
+    flex-wrap: wrap;
+} 
+.text {
+    width: 44%;
+    margin: 20px;
+}    
+.text .tit {
+    font-size: 24px;
+    margin-bottom: 20px;
+}                                   
+.text .desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+/* image sprite */
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background: url(img/Frame\ 33.svg) no-repeat center; /*백그라운드로 아이콘 넣어주기(이미지스프라이트)*/
+}
+.swim {
+    background-color: #B0B7F7;
+    background-position: 8px;
+}   
+.yoga {
+    background-color: #B7B6B6;
+    background-position: -32px;
+}   
+.badmin {
+    background-color: #B0F0AF;
+    background-position: -72px;
+}   
+.pingpong {
+    background-color: #EFE196;
+    background-position: -112px;
+}           
+</code></pre>
+            </div>
+                </details>
+            </div>
+            
+            <h3 class="t_tit2">▶완성본</h3>   
+            <div class="t_iframe" style="min-height: 1040px; padding-top: 0;">
+                <iframe src="https://kwonhyehyeon.github.io/coding/site/textType/textType02.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://kwonhyehyeon.github.io/coding/site/textType/textType02.html" target="_blank">실제 사이트 보기</a>
+                <a href="https://github.com/KwonHyehyeon/coding/blob/936ebce8106cf8e68be55a72355779005b6fe407/site/textType/textType02.html" target="_blank">원본 소스 보기</a>
+            </div>          
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
