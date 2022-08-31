@@ -119,7 +119,6 @@
                     </tr>
                 </tbody>
             </table>
-            <hr>
             <h3 class="t_tit2">📎 jquery 기본 탐색 선택자 사용 예시</h3><br>
             <div class="t_code">
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -178,6 +177,7 @@
                   on <a href="https://codepen.io">CodePen</a>.
                 </iframe>
             </div>
+            <hr>
             <!-- 기본 탐색 선택자 종류 -->
             <h3 class="t_tit2">➰ 기타 탐색 선택자</h3><br>
             <table class="t_table">
@@ -212,92 +212,51 @@
                         <td class="ce">is()</td>
                         <td>
                             선택한 요소를 판별해 주는 선택자로 보통 if 문의 조건식에 사용됩니다.<br>
-                            if(("div").children().is("p")){<br>
+                            if($("div").children().is("p")){<br>
                                 console.log("p요소가 맞습니다.");<br>
                             }
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <hr>
             <h3 class="t_tit2">📎 jquery 기타 탐색 선택자 사용 예시</h3><br>
             <div class="t_code">
 <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+&lt;html lang="ko"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;기본 필터 선택자&lt;/title&gt;
+    &lt;title&gt;기타 탐색 선택자&lt;/title&gt;
     &lt;style&gt;
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td {
-            border: 1px solid #333;
-        }
-        li {
-            color: white;
+        * {
             margin: 5px;
         }
     &lt;/style&gt;
-    &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;!-- &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt; --&gt;
     &lt;script&gt;
-        $(document).ready(function() {
-            $("tr:even").css("background", "red");
-            $("tr:odd").css("background", "orange");
-            $("td:first").css("background", "yellow");
-            $("td:last").css("background", "green");
-            $(":header").css("background", "blue");
-            $("li:eq(0)").css("background", "navy");
-            $("li:gt(0)").css("background", "purple");
-            $("li:lt(3)").css("border", "4px solid gray");
-            $(":root").css("background", "lightgray");
-            (function upDown() {
-                $("h2").slideToggle(2000,upDown);
-            })();
-             $(":animated").css("border","4px solid darkred");
+         $(document).ready(function() {
+            $("#m1 &gt; div").add("#m1 &gt; p").css("border", "2px solid red")
+            $("#m2").children("p").addBack().css("border","2px solid orange");
+            $("#m3").find("span").css("border","2px solid yellow").end().find("em").css("border","2px solid green");
+            if($("#m4").children().is("p")){
+                console.log("p 요소가 존재합니다.");
+            }
         });
     &lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;제목1&lt;/h1&gt;
-    &lt;h2&gt;제목2&lt;/h2&gt;
-    &lt;table&gt;
-        &lt;caption&gt;기본 필터 선택자&lt;/caption&gt;
-        &lt;colgroup&gt;
-            &lt;col&gt;
-            &lt;col&gt;
-            &lt;col&gt;
-        &lt;/colgroup&gt;
-        &lt;tbody&gt;
-            &lt;tr&gt;
-                &lt;td&gt;1&lt;/td&gt;
-                &lt;td&gt;2&lt;/td&gt;
-                &lt;td&gt;3&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;4&lt;/td&gt;
-                &lt;td&gt;5&lt;/td&gt;
-                &lt;td&gt;6&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;7&lt;/td&gt;
-                &lt;td&gt;8&lt;/td&gt;
-                &lt;td&gt;9&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;10&lt;/td&gt;
-                &lt;td&gt;11&lt;/td&gt;
-                &lt;td&gt;12&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/tbody&gt;
-    &lt;/table&gt;
-    &lt;ul&gt;
-        &lt;li class="bg"&gt;내용1&lt;/li&gt;
-        &lt;li class="bg"&gt;내용2&lt;/li&gt;
-        &lt;li class="bg"&gt;내용3&lt;/li&gt;
-        &lt;li&gt;내용4&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;div id="m1"&gt;
+        &lt;div&gt;내용1_1&lt;/div&gt;&lt;p&gt;내용1_2&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id="m2"&gt;
+        &lt;p&gt;내용2&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id="m3"&gt;
+        &lt;span&gt;내용3_1&lt;/span&gt;&lt;em&gt;내용3_2&lt;/em&gt;
+    &lt;/div&gt;
+    &lt;div id="m4"&gt;
+        &lt;p&gt;내용4&lt;/p&gt;
+    &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -310,6 +269,7 @@
                   on <a href="https://codepen.io">CodePen</a>.
                 </iframe>
             </div>
+            <img style="width: 600px; height: 50px;" src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/fineseletorex.png?raw=true" alt="consolelog">
             <!-- 기타 탐색 선택자 -->
     </main>
     <!-- //main -->

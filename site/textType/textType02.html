@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 유형02</title>
+    <style>
+        /* fonts */
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmarketsans {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {     /* +는 형제 바로 밑에 있는 자식은 > */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .section > p {
+            font-size: 16px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* ir 효과 (이미지 대체 효과 == art) */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        /* textType */ 
+        .text__wrap {
+            display: flex;
+        }
+        #header{
+            width: 35%;
+        }    
+        #header .address {
+            width: 149px;
+            height: 20px;
+            background-color: red;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            margin-bottom: 20px;
+        }
+        #header .title {
+            font-size: 50px;
+            font-weight: 700;
+            margin: 0 42px 40px 0;
+        }
+        #header .desc {
+            margin: 0 42px 40px 0;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+        .text_container {
+            width: 65%;
+            display: flex;
+            flex-wrap: wrap;
+        } 
+        .text {
+            width: 44%;
+            margin: 20px;
+        }    
+        .text .tit {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }                                   
+        .text .desc {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        /* image sprite */
+        .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            background: url(img/Frame\ 33.svg) no-repeat center; /*백그라운드로 아이콘 넣어주기*/
+        }
+        .swim {
+            background-color: #B0B7F7;
+            background-position: 8px;
+        }   
+        .yoga {
+            background-color: #B7B6B6;
+            background-position: -32px;
+        }   
+        .badmin {
+            background-color: #B0F0AF;
+            background-position: -72px;
+        }   
+        .pingpong {
+            background-color: #EFE196;
+            background-position: -112px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="textType01" class="text__wrap gmarketsans container section">
+        <header id="header">
+            <p class="address">경기도 의왕시</p>
+            <h2 class="title">주민센터 <br>스포츠 프로그램</h2>
+            <p class="desc">
+                주민센터 스포츠 프로그램이 열렸습니다.<br>
+                이 지역 사람들을 위해 다양한 스포츠를 배울 기회를 저렴한 비용으로 얻을 수 있습니다.
+            </p>
+        </header>
+        <div class="text_container"> <!--가운데 영역 container-->
+            <article class="text">
+                <div class="icon swim"></div>
+                <h3 class="tit">수영</h3>
+                <p class="desc">초급수업과 중급수업 고급수업으로 구성되어 있으며 오전 6시부터 오후9시까지 반이 구성되어 있습니다.</p>
+            </article>
+            <article class="text">
+                <div class="icon yoga"></div>
+                <h3 class="tit">요가</h3>
+                <p class="desc">초급수업과 중급수업 고급수업으로 구성되어 있으며 오전 6시부터 오후9시까지 반이 구성되어 있습니다. </p>
+            </article>
+            <article class="text">
+                <div class="icon badmin"></div>
+                <h3 class="tit">배드민턴</h3>
+                <p class="desc">초급수업과 중급수업 고급수업으로 구성되어 있으며 오전 6시부터 오후9시까지 반이 구성되어 있습니다. </p>
+            </article>
+            <article class="text">
+                <div class="icon pingpong"></div>
+                <h3 class="tit">탁구</h3>
+                <p class="desc">초급수업과 중급수업 고급수업으로 구성되어 있으며 오전 6시부터 오후9시까지 반이 구성되어 있습니다. </p>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
