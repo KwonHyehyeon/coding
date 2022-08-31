@@ -592,64 +592,39 @@
             <h3 class="t_tit2">📎 jquery 가시성 필터 선택자 사용 예시</h3><br>
             <div class="t_code">
 <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+&lt;html lang="ko"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;콘텐츠 필터 선택자&lt;/title&gt;
+    &lt;title&gt;visibility 필터 선택자&lt;/title&gt;
     &lt;style&gt;
-        * {
-            margin: 5px;
-        }
-        #m1 &gt; p:last-child{
-            height: 20px;
-        }
-        span {
-            display: inline-block;
-            height: 20px;
+        #vis {
+            display: none;
         }
     &lt;/style&gt;
     &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
     &lt;script&gt;
-        $(document).ready(function() {
-            $("#m1 &gt; p:contains('html')").css("border","4px solid red");
-            $("#m1 &gt; p:empty").css("border","4px solid orange");
-            $("#m2 &gt; span:parent").css("border","4px solid yellow");
-            $("#m3 &gt; section:has(article)").css("border","4px solid green");
+         $(document).ready(function() {
+            console.log($("div:hidden").text());
+            $("div:visible").css("background","orange");
         });
     &lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;div id="m1"&gt;
-        &lt;p&gt;html, css, javascript&lt;/p&gt;
-        &lt;p&gt;html5와 웹표준&lt;/p&gt;
-        &lt;p&gt;&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div id="m2"&gt;
-        &lt;span&gt;&lt;/span&gt;
-        &lt;span&gt;내용1&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div id="m3"&gt;
-        &lt;section&gt;
-            &lt;article&gt;내용2_1&lt;/article&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;div&gt;
-                &lt;article&gt;내용2_2&lt;/article&gt;
-            &lt;/div&gt;
-        &lt;/section&gt;
-    &lt;/div&gt;
+    &lt;div id="vis"&gt;내용1&lt;/div&gt;
+    &lt;div&gt;내용2&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
                 </div>
             <h3 class="t_tit2">⭐️ 결과 ⭐️</h3><br>
             <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
-                <iframe style="width: 800px; height: 500px;" scrolling="no" title="폼 필터 선택자" src="https://codepen.io/kwonhyehyeon/embed/bGvXyxM?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/bGvXyxM">
-                    폼 필터 선택자</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                <iframe style="width: 800px; height: 500px;" scrolling="no" title="가시성 필터 선택자" src="https://codepen.io/kwonhyehyeon/embed/RwMXmvg?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/RwMXmvg">
+                    가시성 필터 선택자</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
                     on <a href="https://codepen.io">CodePen</a>.
                 </iframe>
             </div>
+            <img style="width: 600px; height: 100px;" src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/visibility%20selector.png?raw=true" alt="consolelog">
             <!-- 폼 필터 선택자 -->
     </main>
     <!-- //main -->
