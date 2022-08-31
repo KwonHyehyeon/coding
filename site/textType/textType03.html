@@ -78,12 +78,18 @@
             padding: 0 70px;
         }
         .text__body {
+            min-height: ;
             width: 32%;
             padding: 30px;
             background-color: #fff;
             box-sizing: border-box;
             border-radius: 10px;
+            transition: all 0.3s;
         }
+        /* .text__body:hover {
+            transform: scale(1.01);
+
+        } */
         .text__body .desc {
             font-weight: 500;
             font-size: 18px;
@@ -131,8 +137,11 @@
             margin-bottom: 20px;
             background-position: -91px;
         }
+        .profile {
+            min-width: 800px;
+        }
         .name {
-            font-size: 28px;
+            font-size: 26px;
             display: inline;
             position: absolute;
             top: 540px;
@@ -189,7 +198,7 @@
                     <div class="line"></div>
                     <div class="profile">
                         <div class="icon circle1"></div>
-                        <div class="name">권규비</div>
+                        <div class="name"><span>권규비</span></div>
                         <div class="stars good1"></div>
                         <div class="career">안산 23년차</div>
                     </div>
@@ -203,7 +212,7 @@
                     <div class="line"></div>
                     <div class="profile">
                         <div class="icon circle2"></div>
-                        <div class="name">권장첸</div>
+                        <div class="name"><span>권장첸</span></div>
                         <div class="stars soso"></div>
                         <div class="career">안산 0년차</div>
                     </div>
@@ -217,9 +226,9 @@
                     <div class="line"></div>
                     <div class="profile">
                         <div class="icon circle3"></div>
-                        <div class="name">강유진</div>
+                        <div class="name"><span>강유진</span></div>
                         <div class="stars good2"></div>
-                        <div class="career">안산 27년차</div>
+                        <div class="career"><span>안산 27년차</span></div>
                     </div>
                     <div class="line"></div>
                     <div class="more"><a class="btn" href="/">
