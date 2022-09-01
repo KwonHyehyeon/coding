@@ -19,23 +19,20 @@
                 우리가 웹사이트를 볼 때 반드시 필요한 부분이 어디인가요?<br>
                 바로 헤더 영역입니다. 주로 메뉴나 목차 등으로 구성되어 있으며 로그인 혹은 회원가입 등도 볼 수 있습니다.
             </div>
-            <h3 class="t_tit2">헤어(header)부분 함께 만들어 보아요❗️</h3>
+            <h3 class="t_tit2">헤더(header)부분 함께 만들어 보아요❗️</h3>
+            <hr>
+            <h3 class="t_tit2">🔨 제작 방법</h3>
             <div class="iframe">
                 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D2258%253A1771" allowfullscreen></iframe>
             </div>
-            <hr>
-            <h3 class="t_tit2">🔨 제작 방법</h3>
-            <h4 class="t_tit3">1. Figma 사용</h4>
+            <h4 class="t_tit3">➰ Figma 사용</h4>
             <p class="t_desc2">
                 사이트를 만들기 위해서는 먼저 사이트 레이아웃을 설정해야 합니다. <br>
-                밑의 이미지와 같이 figma를 이용하여 레이아웃을 설정해줄 수 있습니다. <br>
-                그리드를 통해 기본적인 틀을 먼저 잡아준 후  " shift + R " 로 자 기능을 활용하여 레이아웃을 만들어줍니다. <br>
+                figma를 이용하여 레이아웃을 설정해줄 수 있습니다. <br>
+                그리드를 통해 기본적인 틀을 먼저 잡아준 후 " shift + R " 로 자 기능을 활용하여 레이아웃을 만들어줍니다. <br>
                 ※ 이 때, 칸이나 줄이 확실하게 맞아야 하며 오차없이 레이아웃을 설정해주는 것이 중요합니다.
-            </p>
-            <figure>
-                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/imagetype01_01.jpg?raw=true" alt="웹레이아웃01">
-            </figure>
-            <h4 class="t_tit3">2. vscode를 통해 코딩해주기! : <i>HTML편</i></h4>
+            </p><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>HTML편</i></h4>
             <p class="t_desc2">
                 레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
                 html의 body 부분에 레이아웃 구역을 정해줍니다.
@@ -43,10 +40,10 @@
             <div class="t_box">
                 ★ 레이아웃 틀 잡기<br>
                 1. section에 id값과 class값을 지정하기<br>
-                2. 영역(header__logo, header__menu, header__member)을 나누어 줍니다.<br>  
+                2. 영역(header__logo, header__menu, header__member)을 나누어 줍니다.<br>
             </div>
             <div class="t_code">
-<pre><code>&lt;section id="headerType" class="header__wrap nexon"&gt;
+                <pre><code>&lt;section id="headerType" class="header__wrap nexon"&gt;
     &lt;div class="header__inner"&gt;
         &lt;div class="header__logo"&gt;
             &lt;a href="#"&gt;web &lt;em&gt;site&lt;/em&gt;&lt;/a&gt;
@@ -66,14 +63,14 @@
     &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
-            </div>
-            <h4 class="t_tit3">3. vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            </div><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
             <p class="t_desc2">
                 style을 통해 CSS를 설정해줍니다. <br>
                 피그마로 만들어 놓은 레이아웃을 보며 HTML로 구역을 정해준 후 CSS로 하나하나 디자인해 나가는 것이 중요합니다!
             </p>
             <div class="t_code">
-<pre><code>       /* fonts */
+                <pre><code>       /* fonts */
 @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
 .nexon {
     font-family: 'NexonLv1Gothic';
@@ -176,14 +173,16 @@ em {
 }
 </code></pre>
             </div>
-            <h3 class="t_tit2">▶완성본</h3>   
+            <h3 class="t_tit2">▶완성본</h3>
             <div class="t_iframe" style="min-height: 1040px; padding-top: 0;">
-                <iframe src="https://KwonHyehyeon.github.io/coding/site/headerType/headerType.html" frameborder="0"></iframe>
+                <iframe src="https://KwonHyehyeon.github.io/coding/site/headerType/headerType.html"
+                    frameborder="0"></iframe>
             </div>
             <div class="t_link">
                 <a href="https://KwonHyehyeon.github.io/coding/site/headerType/headerType.html" target="_blank">실제 사이트 보기</a>
-                <a href="https://github.com/KwonHyehyeon/coding/blob/main/site/headerType/headerType.html" target="_blank">원본 소스 보기</a>
-            </div>          
+                <a href="https://github.com/KwonHyehyeon/coding/blob/main/site/headerType/headerType.html"
+                    target="_blank">원본 소스 보기</a>
+            </div>
         </div>
     </main>
     <!-- //main -->
@@ -196,4 +195,5 @@ em {
         hljs.highlightAll();
     </script>
 </body>
+
 </html>
