@@ -8,6 +8,75 @@
     
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
+    <style>
+    .sample .view {
+        border: 1px solid #e6e6e6;
+        padding: 30px 20px 20px 20px;
+    }
+    .sample .blue{
+        background-color: #7db0e391;
+        padding: 10px 20px;
+        border-radius: 5px 5px 0 0;
+        margin-bottom: 0;
+        color: rgb(0, 0, 0);
+    }
+    .sample .sbox {
+        width: 400px;
+        height: 200px;
+        background-color: #a2cbfa;
+        border: 1px solid #4390e1;
+        padding: 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+        color: #fff;
+        text-align: center;
+    }
+    .sample .sbox::after {
+        content: '';
+        width: 480px;
+        height: 280px;
+        border: 1px dashed #4390e1;
+        position: absolute;
+        left: -21px;
+        top: -21px;
+    }
+    .sample .sbox::before {
+        content: '';
+        width: 398px;
+        height: 198px;
+        border: 1px dashed #4390e1;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+    }
+    .sample .sResult {
+        text-align: center;
+        padding-top: 10px;
+    }
+    .sample .button {
+        border: 1px solid  #e6e6e6;
+        padding: 20px;
+        border-top: 0;
+        text-align: center;
+    }
+    .sample .button a{
+        border: 1px solid  #4390e1;
+        color: rgb(90, 176, 247);
+        border-radius: 40px;
+        padding: 10px 20px;
+        display: inline-block;
+        margin: 5px;
+        text-decoration: none;
+    }
+    .sample .button a:hover {
+        background-color: #4390e1;
+        color: #fff;
+        text-decoration: none;
+    }
+    </style>
 </head>
 <body>
     <!-- //header -->
@@ -15,56 +84,267 @@
         <div class="document">
             <h2 class="t_tit">Javascript 요소 크기 메서드에 대해 알아봅시다!</h2><br>
             <h3 class="t_tit2">📎 Javascript 요소 크기 메서드 종류</h3><br>
-            <table class="t_table">
-                01. 요소 속성 : 크기 및 위치 : element.clientWidth : 요소의 가로값(마진/보더 미포함)<br>
-                02. 요소 속성 : 크기 및 위치 : element.clientHeight : 요소의 높이값(마진/보더 미포함)<br>
-                03. 요소 속성 : 크기 및 위치 : element.clientTop : 요소의 Y축값(부모기준)<br>
-                04. 요소 속성 : 크기 및 위치 : element.clientLeft : 요소의 X축값(부모기준)<br>
-                05. 요소 속성 : 크기 및 위치 : element.offsetWidth : 요소의 가로값(보더/패딩 포함)<br>
-                06. 요소 속성 : 크기 및 위치 : element.offsetHeight : 요소의 높이값(보더/패딩 포함)<br>
-                07. 요소 속성 : 크기 및 위치 : element.offsetTop : 요소의 Y축값(문서 기준)<br>
-                08. 요소 속성 : 크기 및 위치 : element.offsetLeft : 요소의 X축값(문서 기준)<br>
-                09. 요소 메서드 : 크기 및 위치 : element.getBoundingClientRect() : top, left, right, bottom, x, y, width, height
-            </table>
-            <div class="t_iframe">
-                <iframe style="width: 1200px; height:700px" scrolling="no" title="요소 크기 메서드" src="https://codepen.io/kwonhyehyeon/embed/KKRPRpd?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/KKRPRpd">
-                    요소 크기 메서드</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
-                    on <a href="https://codepen.io">CodePen</a>.
-                </iframe>
+            <div class="t_desc">
+                속성은 가져오는 것 밖에 못하고 메서드는 값을 설정해줄 수 있습니다.
             </div>
-            <h3 class="t_tit2">➰display :none; </h3>
-            <div class="t_box">
-                객체를 안 보이게 하는 첫번째 방법으로, display에 none을 넣어주면 눈에도 안 보이고 자리도 차지하지 않고 숨어있게 합니다.<br>
-                ※ 객체를 안 보이게 하는 display방법 중에 hidden도 있습니다.<br>
-                none과 hidden 의 차이는 공간부분에서 차이가 있는데 <i>none</i>은 눈에 안보이게 감추어 있으며 공간의 크기도 0으로 처리되어 아래에 있던 그림이나 글자들이 위로 올라와 붙습니다.<br>
-                반면 <i>hidden</i>은 눈에 안 보이게 사라지게 하지만 그 자리가 그대로 빈 공간이 됩니다. 쉽게 말해, 워드 작성할 때 글자를 삭제하지 않고 하얀색으로 바꿔서 모니터에 안보이게 하는 것과 같은 것입니다.
-            
-            </div><br>
-            <h3 class="t_tit2">➰opacity : 0; </h3>
-            <div class="t_box">
-                opacity는 요소의 투명도를 지정하는 것입니다. 속0부터 1사이의 소수점 단위의 숫자 값을 지정하며 기본값은 1이며 소수점 값을 입력할 시 0은 생략이 가능합니다(0.8 = .8).<br>
-                <i>opacity: 0;</i> 은 요소가 화면상에 존재하지만 단지 보이지 않는 것입니다. 그러나 자리는 차지하고 있는 것이 특징입니다.
-            
-            </div><br>
-            <h3 class="t_tit2">➰visibility: hidden;  </h3>
-            <div class="t_box">
-                visibility는 요소에 의해 생선된 박스를 렌더링할 것인지를 결정합니다. 기본적으로 이 값은 상속되지 않습니다.<br>
-                요소를 숨기는 방법으로는 <i>visibility: hidden;</i>이 있습니다.<br>
-                박스가 보이지 않지만 공간을 확보하기 때문에 레이아웃에 영향을 미치는 특징이 있습니다.
-            </div><br>
-            <h3 class="t_tit2">➰transform: scale(0);  </h3>
-            <div class="t_box">
-                <i>transform</i>은 변형과 관련된 기능으로 scale과 함께 쓰면 평면에서의 확대 또는 축소 효과를 줄 수 있습니다.<br>
-                transform: scale(0);을 해주면 요소를 감춥니다. 그러나 이것 역시 그 자리는 그대로 차지하게 됩니다.
-            </div><br>
-            <h3 class="t_tit2">➰width: 0; height: 0; </h3>
-            <div class="t_box">
-                width는 너비이며 height는 높이이니깐 둘다 0의 값으로 설정해줬을 때 박스가 0*0이므로 차지하는 부분이 없어져 숨겨집니다. <br>
-                0*0으로 부피도 0이므로 자리는 당연히 차지 하지 않고 아예 숨겨집니다.<br>
-                이 때 텍스트가 있는데 같이 숨기고 싶다면 웹 접근성을 위해서 blind를 적어주고 blind 스타일을 overflow: hidden;으로 처리해주면 됩니다.
-            </div><br>
-           
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>속성/메서드 이름</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">01</td>
+                        <td>element.clientWidth</td>
+                        <td>요소의 가로값(마진/보더 미포함)</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">02</td>
+                        <td>element.clientHeight</td>
+                        <td>요소의 높이값(마진/보더 미포함)</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">03</td>
+                        <td>element.clientTop</td>
+                        <td>요소의 Y축값(부모기준)</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">04</td>
+                        <td>element.clientLeft</td>
+                        <td>요소의 X축값(부모기준)</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">05</td>
+                        <td>element.offsetWidth</td>
+                        <td>요소의 가로값(보더/패딩 포함)</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">06</td>
+                        <td>element.offsetHeight</td>
+                        <td>요소의 가로값(보더/패딩 포함)</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">07</td>
+                        <td>element.offsetTop</td>
+                        <td>요소의 Y축값(문서 기준)</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">08</td>
+                        <td>element.offsetLeft</td>
+                        <td>요소의 X축값(문서 기준)</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">09</td>
+                        <td>element.getBoundingClientRect()</td>
+                        <td>op, left, right, bottom, x, y, width, height</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">📎 완성본</h3><br>
+            <div class="result">
+                <details>
+                    <summary>코드 보기 : HTML</summary>
+                    <div class="t_code">
+<pre><code class="language-js">&lt;div class="main_sample"&gt;
+    &lt;div id="sample01" class="sample"&gt;
+        &lt;h3 class="blue"&gt;01. 위치 및 크기를 표현하는 속성 및 메서드&lt;/h3&gt;
+        &lt;div class="view"&gt;
+            &lt;div class="sbox"&gt;
+                &lt;span&gt;
+                    width: 400px&lt;br&gt;
+                    margin: 20px&lt;br&gt;
+                    border: 1px&lt;br&gt;
+                    padding: 20px
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;p class="sResult"&gt;여기에 결과값이 표시됩니다.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="button"&gt;
+            &lt;a href="#" class="btn1"&gt;박스의 가로값(clientWidth)을 구합니다.&lt;/a&gt;
+            &lt;a href="#" class="btn2"&gt;박스의 높이값(clientHeight)을 구합니다.&lt;/a&gt;
+            &lt;a href="#" class="btn3"&gt;박스의 Y축값(clientTop)을 구합니다.&lt;/a&gt;
+            &lt;a href="#" class="btn4"&gt;박스의 X축값(clientLeft)을 구합니다.&lt;/a&gt;
+            &lt;a href="#" class="btn5"&gt;박스의 가로값(offsetWidth)을 구합니다.&lt;/a&gt;
+            &lt;a href="#" class="btn6"&gt;박스의 높이값(offsetHeight)을 구합니다.&lt;/a&gt;
+            &lt;a href="#" class="btn7"&gt;박스의 Y축값(offsetTop)을 구합니다.&lt;/a&gt;
+            &lt;a href="#" class="btn8"&gt;박스의 X축값(offsetLeft)을 구합니다.&lt;/a&gt;
+            &lt;a href="#" class="btn9"&gt;박스의 X축값(getBoundingClientRect())을 구합니다.&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>코드 보기 : CSS</summary>
+                    <div class="t_code">
+<pre><code class="language-js">.sample .view {
+    border: 1px solid #e6e6e6;
+    padding: 30px 20px 20px 20px;
+}
+.sample .blue{
+    background-color: #7db0e391;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
+    color: rgb(0, 0, 0);
+}
+.sample .sbox {
+    width: 400px;
+    height: 200px;
+    background-color: #a2cbfa;
+    border: 1px solid #4390e1;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    color: #fff;
+    text-align: center;
+}
+.sample .sbox::after {
+    content: '';
+    width: 480px;
+    height: 280px;
+    border: 1px dashed #4390e1;
+    position: absolute;
+    left: -21px;
+    top: -21px;
+}
+.sample .sbox::before {
+    content: '';
+    width: 398px;
+    height: 198px;
+    border: 1px dashed #4390e1;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.sample .sResult {
+    text-align: center;
+    padding-top: 10px;
+}
+.sample .button {
+    border: 1px solid  #e6e6e6;
+    padding: 20px;
+    border-top: 0;
+    text-align: center;
+}
+.sample .button a{
+    border: 1px solid  #4390e1;
+    color: rgb(90, 176, 247);
+    border-radius: 40px;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 5px;
+    text-decoration: none;
+}
+.sample .button a:hover {
+    background-color: #4390e1;
+    color: #fff;
+    text-decoration: none;
+}
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>코드 보기 : JS</summary>
+                    <div class="t_code">
+<pre><code class="language-js">const box1 = document.querySelector("#sample01 .sbox");
+
+document.querySelector("#sample01 .btn1").addEventListener("click", (e) => {
+    e.preventDefault()
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은" + box1.clientWidth + "px(마진/보더 불포함, 패딩포함) 입니다."
+})
+document.querySelector("#sample01 .btn2").addEventListener("click", (e) => {
+    e.preventDefault()
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 높이값은" + box1.clientHeight + "px(마진/보더 불포함, 패딩포함) 입니다."
+})
+document.querySelector("#sample01 .btn3").addEventListener("click", (e) => {
+    e.preventDefault()
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 Y축값은" + box1.clientTop + "px(부모 기준) 입니다."
+})
+document.querySelector("#sample01 .btn4").addEventListener("click", (e) => {
+    e.preventDefault()
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 X축값은" + box1.clientLeft + "px(부모 기준) 입니다."
+})
+document.querySelector("#sample01 .btn5").addEventListener("click", (e) => {
+    e.preventDefault()
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은" + box1.offsetWidth + "px(보더/패딩 포함) 입니다."
+})
+document.querySelector("#sample01 .btn6").addEventListener("click", (e) => {
+    e.preventDefault()
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 높이값은" + box1.offsetHeight + "px(보더/패딩 포함) 입니다."
+})
+document.querySelector("#sample01 .btn7").addEventListener("click", (e) => {
+    e.preventDefault()
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 Y축값은" + box1.offsetTop + "px(문서 기준) 입니다."
+})
+document.querySelector("#sample01 .btn8").addEventListener("click", (e) => {
+    e.preventDefault()
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 X축값은" + box1.offsetLeft + "px(문서 기준) 입니다."
+})
+document.querySelector("#sample01 .btn9").addEventListener("click", (e) => {
+    e.preventDefault()
+    const box = document.querySelector("#sample01 .sbox")
+    const result = document.querySelector("#sample01 .sResult")
+    const rect = box.getBoundingClientRect();
+
+    result.innerHTML = "";
+
+    for(let key in rect){
+        //변수 안에 데이터 타입 아는 방법 //키값에서 함수가 아닌 것 찾기
+        if(typeof rect[key] !== "function"){
+            //데이터 span에 넣어주기
+            let span = document.createElement("span");
+            span.textContent = `${key}: ${rect[key]}`;
+            result.appendChild(span);
+        };
+    }; 
+});
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/quizEffect03.html" target="_blank"
+                >원본 소스보기</a>
+            </div>
+            <div class="main_sample">
+                <div id="sample01" class="sample">
+                    <h3 class="blue">위치 및 크기를 표현하는 속성 및 메서드</h3>
+                    <div class="view">
+                        <div class="sbox">
+                            <span>
+                                width: 400px<br>
+                                margin: 20px<br>
+                                border: 1px<br>
+                                padding: 20px
+                            </span>
+                        </div>
+                        <p class="sResult">여기에 결과값이 표시됩니다.</p>
+                    </div>
+                    <div class="button">
+                        <a href="#" class="btn1">박스의 가로값(clientWidth)을 구합니다.</a>
+                        <a href="#" class="btn2">박스의 높이값(clientHeight)을 구합니다.</a>
+                        <a href="#" class="btn3">박스의 Y축값(clientTop)을 구합니다.</a>
+                        <a href="#" class="btn4">박스의 X축값(clientLeft)을 구합니다.</a>
+                        <a href="#" class="btn5">박스의 가로값(offsetWidth)을 구합니다.</a>
+                        <a href="#" class="btn6">박스의 높이값(offsetHeight)을 구합니다.</a>
+                        <a href="#" class="btn7">박스의 Y축값(offsetTop)을 구합니다.</a>
+                        <a href="#" class="btn8">박스의 X축값(offsetLeft)을 구합니다.</a>
+                        <a href="#" class="btn9">박스의 X축값(getBoundingClientRect())을 구합니다.</a>
+                    </div>
+                </div>
+                <!-- //sample01 -->
+            </div>
         </div>
     </main>
     <!-- //main -->
@@ -72,12 +352,65 @@
         <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
     </footer>
     <!-- //footer -->
+    <script>
+        const box1 = document.querySelector("#sample01 .sbox");
+
+        document.querySelector("#sample01 .btn1").addEventListener("click", (e) => {
+            e.preventDefault()
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은" + box1.clientWidth + "px(마진/보더 불포함, 패딩포함) 입니다."
+        })
+        document.querySelector("#sample01 .btn2").addEventListener("click", (e) => {
+            e.preventDefault()
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 높이값은" + box1.clientHeight + "px(마진/보더 불포함, 패딩포함) 입니다."
+        })
+        document.querySelector("#sample01 .btn3").addEventListener("click", (e) => {
+            e.preventDefault()
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 Y축값은" + box1.clientTop + "px(부모 기준) 입니다."
+        })
+        document.querySelector("#sample01 .btn4").addEventListener("click", (e) => {
+            e.preventDefault()
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 X축값은" + box1.clientLeft + "px(부모 기준) 입니다."
+        })
+        document.querySelector("#sample01 .btn5").addEventListener("click", (e) => {
+            e.preventDefault()
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은" + box1.offsetWidth + "px(보더/패딩 포함) 입니다."
+        })
+        document.querySelector("#sample01 .btn6").addEventListener("click", (e) => {
+            e.preventDefault()
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 높이값은" + box1.offsetHeight + "px(보더/패딩 포함) 입니다."
+        })
+        document.querySelector("#sample01 .btn7").addEventListener("click", (e) => {
+            e.preventDefault()
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 Y축값은" + box1.offsetTop + "px(문서 기준) 입니다."
+        })
+        document.querySelector("#sample01 .btn8").addEventListener("click", (e) => {
+            e.preventDefault()
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 X축값은" + box1.offsetLeft + "px(문서 기준) 입니다."
+        })
+        document.querySelector("#sample01 .btn9").addEventListener("click", (e) => {
+            e.preventDefault()
+            const box = document.querySelector("#sample01 .sbox")
+            const result = document.querySelector("#sample01 .sResult")
+            const rect = box.getBoundingClientRect();
+        
+            result.innerHTML = "";
+        
+            for(let key in rect){
+                //변수 안에 데이터 타입 아는 방법 //키값에서 함수가 아닌 것 찾기
+                if(typeof rect[key] !== "function"){
+                    //데이터 span에 넣어주기
+                    let span = document.createElement("span");
+                    span.textContent = `${key}: ${rect[key]}`;
+                    result.appendChild(span);
+                };
+            }; 
+        });
+    </script>
     <script src="../assets/js/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
     </script>
-    <script>
-    </script>
+    
 </body>
 </html>
 

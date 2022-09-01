@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 제작하기 : 헤더부분</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🧷 사이트를 제작해보자! [💁🏻‍♀️ 헤더 영역 편]</h2>
+            <div class="t_box">
+                우리가 웹사이트를 볼 때 반드시 필요한 부분이 어디인가요?<br>
+                바로 헤더 영역입니다. 주로 메뉴나 목차 등으로 구성되어 있으며 로그인 혹은 회원가입 등도 볼 수 있습니다.
+            </div>
+            <h3 class="t_tit2">헤어(header)부분 함께 만들어 보아요❗️</h3>
+            <div class="iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D2258%253A1771" allowfullscreen></iframe>
+            </div>
+            <hr>
+            <h3 class="t_tit2">🔨 제작 방법</h3>
+            <h4 class="t_tit3">1. Figma 사용</h4>
+            <p class="t_desc2">
+                사이트를 만들기 위해서는 먼저 사이트 레이아웃을 설정해야 합니다. <br>
+                밑의 이미지와 같이 figma를 이용하여 레이아웃을 설정해줄 수 있습니다. <br>
+                그리드를 통해 기본적인 틀을 먼저 잡아준 후  " shift + R " 로 자 기능을 활용하여 레이아웃을 만들어줍니다. <br>
+                ※ 이 때, 칸이나 줄이 확실하게 맞아야 하며 오차없이 레이아웃을 설정해주는 것이 중요합니다.
+            </p>
+            <figure>
+                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/imagetype01_01.jpg?raw=true" alt="웹레이아웃01">
+            </figure>
+            <h4 class="t_tit3">2. vscode를 통해 코딩해주기! : <i>HTML편</i></h4>
+            <p class="t_desc2">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.
+            </p>
+            <div class="t_box">
+                ★ 레이아웃 틀 잡기<br>
+                1. section에 id값과 class값을 지정하기<br>
+                2. 영역(header__logo, header__menu, header__member)을 나누어 줍니다.<br>  
+            </div>
+            <div class="t_code">
+<pre><code>&lt;section id="headerType" class="header__wrap nexon"&gt;
+    &lt;div class="header__inner"&gt;
+        &lt;div class="header__logo"&gt;
+            &lt;a href="#"&gt;web &lt;em&gt;site&lt;/em&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="header__menu"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;헤더 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;슬라이드 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;배너 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;컨텐츠 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;푸터 영역&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="header__member"&gt;
+            &lt;a href="#"&gt;로그인&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+            <h4 class="t_tit3">3. vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <p class="t_desc2">
+                style을 통해 CSS를 설정해줍니다. <br>
+                피그마로 만들어 놓은 레이아웃을 보며 HTML로 구역을 정해준 후 CSS로 하나하나 디자인해 나가는 것이 중요합니다!
+            </p>
+            <div class="t_code">
+<pre><code>       /* fonts */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+.nexon {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
+}
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal; /*제목 글 굵기 기본설정 해제*/
+} 
+em {
+    font-style: normal;
+}
+/* common */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.section {
+    padding: 120px 0;
+}
+.section > h2 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section > p {
+    font-size: 22px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 70px;
+    color: #666;
+}
+.section > span {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: underline;
+    margin-bottom: 16px;
+}
+/* headerType */
+.header__inner {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+.header__logo {
+    width: 20%;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase; /* 대문자로 변경 */
+}
+.header__logo em{
+    font-size: 18px;
+    font-weight: 400;
+}
+.header__menu {
+    width: 60%;
+    text-align: center;
+}
+.header__menu li {
+    display: inline; /* div태그니깐 inline으로 바꿔주어야 가로 정렬 가능 */
+}
+.header__menu li a{
+    padding: 13px 30px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+.header__menu li a:hover{
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+.header__member {
+    width: 20%;
+    text-align: right;
+}
+.header__member a {
+    font-size: 16px;
+    border: 1px solid #000;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+.header__member a:hover {
+    background-color: #000;
+    color: #fff;
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">▶완성본</h3>   
+            <div class="t_iframe" style="min-height: 1040px; padding-top: 0;">
+                <iframe src="https://KwonHyehyeon.github.io/coding/site/headerType/headerType.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://KwonHyehyeon.github.io/coding/site/headerType/headerType.html" target="_blank">실제 사이트 보기</a>
+                <a href="https://github.com/KwonHyehyeon/coding/blob/main/site/headerType/headerType.html" target="_blank">원본 소스 보기</a>
+            </div>          
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
