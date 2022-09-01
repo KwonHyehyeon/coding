@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>슬라이드 이펙트 02</title>
+    <title>슬라이드 이펙트 03</title>
 
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/dracula.css">
 </head>
 <body>
     <div class="document">
-        <h2 class="t_tit">🎞 슬라이드 이펙트 - 좌로 움직이기</h2>
+        <h2 class="t_tit">🎞 슬라이드 이펙트 - 좌로 움직이기(연속적으로)</h2>
         <p class="t_desc">
-            📌 흔히 우리가 아는 슬라이드 효과입니다. 왼쪽으로 슥-슥- 지나가는 슬라이드 효과를 만들어봅시다!<br>
+            📌 흔히 우리가 아는 슬라이드 효과입니다. 왼쪽으로 슥-슥- 지나가는 슬라이드 효과를 만들어봅시다! + 연속적으로!!!<br>
         </p>
         <hr>
-        <h3 class="t_tit2">슬라이드 이펙트 - 좌로 움직이기 효과 완성⭐️</h3>
+        <h3 class="t_tit2">슬라이드 이펙트 - 좌로 움직이기(연속적으로) 효과 완성⭐️</h3>
         <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
             <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect03.html" frameborder="0"></iframe>
         </div>
         <div class="t_link">
             <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect03.html" target="_blank"
-            >실제 사이트보기</a>
+            >움직이는 슬라이드가 궁금하다면?💡</a>
             <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/sliderEffect03.html" target="_blank"
             >원본 소스보기</a>
             <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/assets/css/slider.css" target="_blank"
@@ -30,17 +30,22 @@
         </div>  
         <h3 class="t_tit2">HTML</h3>
         <p class="t_desc2">
-            전체적인 틀을 짜주는 것입니다. 
+            코드가 굉장히 길어서 코드 보기를 펼쳐 봐주세요 :)<br>
+            슬라이드에 들어갈 이미지를 넣어준 후 소스보기에 넣어줘야 할 틀을 구성해줍니다.
         </p>
-        <div class="t_code">
-<pre><code class="language-js">&lt;body class="img01"&gt;
+
+        <div class="result">
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">&lt;body class="img03"&gt;
     &lt;header id="header"&gt;
-        &lt;h1&gt;javascript Slider Effect01&lt;/h1&gt;
-        &lt;p&gt;슬라이드 이펙트 - 트랜지션 효과&lt;/p&gt;
+        &lt;h1&gt;javascript Slider Effect03&lt;/h1&gt;
+        &lt;p&gt;슬라이드 이펙트 - 좌로 움직이기(연속적으로)&lt;/p&gt;
         &lt;ul&gt;
-            &lt;li class="active"&gt;&lt;a href="sliderEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="sliderEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="sliderEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="sliderEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="sliderEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="sliderEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="sliderEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="sliderEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
@@ -52,18 +57,20 @@
         &lt;section id="sliderType01"&gt;
             &lt;div class="slider__wrap"&gt;
                 &lt;div class="slider__img"&gt;
-                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg06.jpg" alt="이미지1"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg012.jpg" alt="이미지2"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg020.jpg" alt="이미지3"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg018.jpg" alt="이미지4"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg05.jpg" alt="이미지5"&gt;&lt;/div&gt;   &lt;!-- 슬라이드에 들어갈 이미지를 넣어줌 --&gt;
+                    &lt;div class="slider__inner"&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg02.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg06.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg07.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg018.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg05.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/section&gt;
     &lt;/main&gt;
     &lt;!-- main --&gt;
     &lt;footer id="footer"&gt;
-        &lt;div class="modal__wrap"&gt; &lt;!-- 화면 위에 화면창 만들어주기(부가적인 것 가능) --&gt;
+        &lt;div class="modal__wrap"&gt;
             &lt;div class="modal__btn"&gt;소스보기&lt;/div&gt;
             &lt;div class="modal__cont"&gt;
                 &lt;div class="modal__box"&gt;
@@ -125,10 +132,123 @@
                                 &lt;path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
                             &lt;/svg&gt;
                         &lt;/span&gt;
-                    &lt;/div&gt;    &lt;!-- 새로운 창 구조 정해주기 (밑에는 pre, code태그를 이용해 안에 들어갈 내용을 써주면 됨(생략함)) --&gt;
+                    &lt;/div&gt;
+                    &lt;div class="cont"&gt;
+                        &lt;div class="active"&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;const sliderWrap = document.querySelector(".slider__wrap")
+const sliderImg = document.querySelector(".slider__img")        //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner")    //움직이는 영역
+const slider = document.querySelectorAll(".slider")             //각각 이미지
 
-                    &lt;!-- 창 닫기 구현 --&gt;
-                    &lt;div class="modal__close"&gt;
+let currentIndex = 0;       //현재 보이는 이미지
+let sliderCount = slider.length //이미지 갯수
+let sliderWidth = sliderImg.offsetWidth ;   //이미지 가로값 //위드값 구할 수 있음 offsetWidth
+//첫번째 이미지 이미지 슬라이드 끝난 후 반복되게 복사
+let sliderClone = sliderInner.firstElementChild.cloneNode(true); //첫번째 이미지 복사 //첫번째 요소 선택 firstElementChild //cloneNode(true) 이미지 복사 : true라고 적어줘야함
+
+sliderInner.appendChild(sliderClone);   //첫번째 이미지를 마지막에 넣어줌 //appendChild 자식요소 넣어주는 것
+
+function sliderEffect(){
+    //초에 사진 증가
+    currentIndex++;
+    sliderInner.style.transition = "all 0.6s";
+    sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)"
+    // sliderInner.style.transform = "translateX(-800px)";
+    // sliderInner.style.transform = "translateX(-1600px)";
+    // sliderInner.style.transform = "translateX(-2400px)";
+    // sliderInner.style.transform = "translateX(-3600px)";
+    // sliderInner.style.transform = "translateX(-4000px)";
+    // sliderInner.style.transform = "translateX(-4800px)";
+    //마지막 사진에 위치했을 때
+    if(currentIndex == sliderCount){
+        //setTimeout 시간 지정해주고 효과 주는 것
+        setTimeout(() =&gt; {
+            sliderInner.style.transition = "0s"
+            sliderInner.style.transform = "translateX(0px)";
+        }, 700);
+        
+        currentIndex = 0;
+    } 
+}
+setInterval(sliderEffect, 2000);
+&lt;/code&gt;&lt;/pre&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&lt;section id="sliderType01"&gt;
+    &lt;div class="slider__wrap"&gt;
+        &lt;div class="slider__img"&gt;
+            &lt;div class="slider__inner"&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg02.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg05.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg07.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg018.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg05.jpg" alt="이미지5"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;/code&gt;&lt;/pre&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+&lt;pre&gt;&lt;code class="language-css"&gt;/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* slider__img :  이미지 보이는 영역*/
+.slider__img {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    /* 나머지 이미지 가리기 */
+    overflow: hidden; 
+}
+/* slide__inner : 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+.slider__inner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 4800px; /*위에를 써주고 이걸 써주어야 가로로 정렬됨 , 첫이미지 복사했으니까 기존 4000에서 4800으로 변경해주어야함*/ 
+    height: 450px;
+    /* position: relative; 제이쿼리 썼을 때 이미지 넘겨지게 설정-&gt;제이쿼리에서 따로 설정해줌 */
+}
+/* slider : 개별적인 이미지 */
+.slider {
+    position: relative;
+    width: 800px;
+    height: 450px;
+}
+.slider::before {
+    position:absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0, 0, 0, 0.4);
+    color:#fff;
+    padding: 5px 10px;
+}
+/* z-index 필요없음 */
+.slider:nth-child(1)::before {content: '이미지1';}
+.slider:nth-child(2)::before {content: '이미지2';}
+.slider:nth-child(3)::before {content: '이미지3';}
+.slider:nth-child(4)::before {content: '이미지4';}
+.slider:nth-child(5)::before {content: '이미지5';}
+.slider:nth-child(6)::before {content: '이미지1';}
+
+@media (max-width: 800px){
+    .slider__img {
+        width: 400px;
+        height: 250px;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;&lt;/div&gt;
+                        &lt;div&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="modal__close"&gt;
                     &lt;span class="close"&gt;
                         &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
                             &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
@@ -138,13 +258,20 @@
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
+    &lt;/footer&gt;
 </code></pre>
-    </div>
-    <h3 class="t_tit2">CSS</h3>
+                </div>
+            </details>
+        </div>
+
+        <h3 class="t_tit2">CSS</h3>
     <p class="t_desc2">
         부분적인 CSS입니다. 미디어쿼리도 사용했습니다.<br>
         전체적인 CSS를 보시려면 위 CSS보기를 참고해주세요!
     </p>
+    <div class="result">
+    <details>
+    <summary>코드 보기</summary>
     <div class="t_code">
 <pre><code class="language-js">/* slider */
 .slider__wrap {
@@ -166,9 +293,9 @@
 .slider__inner {
     display: flex;
     flex-wrap: wrap;
-    width: 4000px; /*위에를 써주고 이걸 써주어야 가로로 정렬됨*/
+    width: 4800px; /*위에를 써주고 이걸 써주어야 가로로 정렬됨 , 첫이미지 복사했으니까 기존 4000에서 4800으로 변경해주어야함*/ 
     height: 450px;
-    /* position: relative; 제이쿼리 썼을 때 이미지 넘겨지게 설정->제이쿼리에서 따로 설정해줌 */
+    /* position: relative; 제이쿼리 썼을 때 이미지 넘겨지게 설정-&gt;제이쿼리에서 따로 설정해줌 */
 }
 /* slider : 개별적인 이미지 */
 .slider {
@@ -184,127 +311,69 @@
     color:#fff;
     padding: 5px 10px;
 }
+/* z-index 필요없음 */
 .slider:nth-child(1)::before {content: '이미지1';}
 .slider:nth-child(2)::before {content: '이미지2';}
 .slider:nth-child(3)::before {content: '이미지3';}
 .slider:nth-child(4)::before {content: '이미지4';}
 .slider:nth-child(5)::before {content: '이미지5';}
-.slider:nth-child(1) {z-index: 5;}
-.slider:nth-child(2) {z-index: 4;}
-.slider:nth-child(3) {z-index: 3;}
-.slider:nth-child(4) {z-index: 2;}
-.slider:nth-child(5) {z-index: 1;}
-
+.slider:nth-child(6)::before {content: '이미지1';}
 @media (max-width: 800px){
     .slider__img {
         width: 400px;
         height: 250px;
     }
-    #header h1{
-        line-height: 1.2;
-    }
 }
 </code></pre>
+            </div>
+        </details>
     </div>
-            <hr>
-        <h3 class="t_tit2">▶ 자바스크립트 활용 (공통) : 설명은 주석을 참고해주세요!</h3>
-        <p class="t_desc2">
-            📌 방법 1 : 자바스크립트
-        </p>
-        <div class="t_code">
-<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap");
-const sliderImg= document.querySelector(".slider__img");        //보여지는 영역
-const sliderInner = document.querySelector(".slider__inner");   //움직이는 영역
-const slider = document.querySelectorAll(".slider");               //이미지
-let currentIndex = 0;               //현재 이미지
-let sliderCount = slider.length;    //이미지 갯수
-
-//사진넘어가기 부드럽게
-sliderInner.style.transition = "all 0.6s"
-//슬라이드 움직임 계산
-//sliderInner.style.transform += "translateX(0px)";         800 * 0
-//sliderInner.style.transform += "translateX(-800px)";      800 * 1
-//sliderInner.style.transform += "translateX(-1600px)";     800 * 2
-//sliderInner.style.transform += "translateX(-2400px)";     800 * 3
-//sliderInner.style.transform += "translateX(-3200px)";     800 * 4
-//슬라이드 움직이기
-//setInterval : 함수는 어떤 코드를 일정한 시간 간격을 두고 반복해서 실행하고 싶을 때 사용
-setInterval(() => {
-    //currentIndex++;
-    
-    //이미지 수가 어떻든 그거에 맞게 슬라이드 움직이게 하는 방법 
-    //01. 
-    currentIndex = (currentIndex + 1) % 5;  //12340123401234...
-    //02. 
-    // if(currentIndex &lt; 4){
-    //     currentIndex++;
-    // } else {
-    //     currentIndex = 0;
-    // }
-    //삼항연산자로 써주면...
-    //(currentIndex &lt; 4) ? currentIndex++ : currentIndex = 0
-        console.log(currentIndex);
-    // let nextIndex = (currentIndex + 1) % sliderCount; //다음 이미지 
-    //1, 2, 3, 4, 5, 6, 7, 8, 9,...
-    //나머지 : 1, 2, 3, 4, 0, 1, 2, 3, 4, 0...
-    // sliderInner.style.transform += "translateX(-100px)";    //= : 동작X += : 움직임
-    sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";    //transform으로 움직임 주니깐 +=해제해야함 
-}, 1000);
-</code></pre>
-    </div>
-    <h3 class="t_tit2">요약</h3>
-    <div class="t_code">
-<pre><code class="language-js">const sliderInner = document.querySelector(".slider__inner");
-const slider = document.querySelectorAll(".slider");
-let currentIndex = 0;
-
-sliderInner.style.transition = "all 0.6s"
-
-setInterval(()=>{
-    currentIndex = (currentIndex + 1) % slider.length;
-    sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
-}, 2000);
-</code></pre>
-    </div>
+    <h3 class="t_tit2">Javascript</h3>
     <p class="t_desc2">
-        📌 방법 2 : GSAP
+        자바스크립트를 이용하여 슬라이드가 연속으로 화면 전환을 하는 방법을 찾아야 합니다.<br>
+        주석에 설명이 있으니 주석을 참고해주세요!
     </p>
+    <div class="result">
+    <details>
+    <summary>코드 보기</summary>
     <div class="t_code">
-<pre><code class="language-js">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-    const slider = document.querySelectorAll(".slider");
-    let currentIndex = 0;
-    //let sliderCount = slider.length;
-    setInterval(() =&gt; {
-        currentIndex = (currentIndex + 1) % ".slider".length;
-        //to 선택자 document.write 안써도 인식함
-        //밑에와 같은 구조로 써줄 것
-        gsap.to(".slider__inner", {
-            //duration : 0.6, 
-            x : -800 * currentIndex, //객체 스타일 구조
-        });
-    }, 2000);
-&lt;/script&gt;
+<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap")
+const sliderImg = document.querySelector(".slider__img")        //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner")    //움직이는 영역
+const slider = document.querySelectorAll(".slider")             //각각 이미지
+let currentIndex = 0;       //현재 보이는 이미지
+let sliderCount = slider.length //이미지 갯수
+let sliderWidth = sliderImg.offsetWidth ;   //이미지 가로값 //위드값 구할 수 있음 offsetWidth
+//첫번째 이미지 이미지 슬라이드 끝난 후 반복되게 복사
+let sliderClone = sliderInner.firstElementChild.cloneNode(true); //첫번째 이미지 복사 //첫번째 요소 선택 firstElementChild //cloneNode(true) 이미지 복사 : true라고 적어줘야함
+sliderInner.appendChild(sliderClone);   //첫번째 이미지를 마지막에 넣어줌 //appendChild 자식요소 넣어주는 것
+function sliderEffect(){
+    //초에 사진 증가
+    currentIndex++;
+    sliderInner.style.transition = "all 0.6s";
+    sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)"
+    // sliderInner.style.transform = "translateX(-800px)";
+    // sliderInner.style.transform = "translateX(-1600px)";
+    // sliderInner.style.transform = "translateX(-2400px)";
+    // sliderInner.style.transform = "translateX(-3600px)";
+    // sliderInner.style.transform = "translateX(-4000px)";
+    // sliderInner.style.transform = "translateX(-4800px)";
+    //마지막 사진에 위치했을 때
+    if(currentIndex == sliderCount){
+        //setTimeout 시간 지정해주고 효과 주는 것
+        setTimeout(() =&gt; {
+            sliderInner.style.transition = "0s"
+            sliderInner.style.transform = "translateX(0px)";
+        }, 700);
+        
+        currentIndex = 0;
+    }
+}
+    setInterval(sliderEffect, 2000);
 </code></pre>
-</div>
-    <p class="t_desc2">
-        📌 방법 3 : jQeury
-    </p>
-    <div class="t_code">
-<pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-    let currentIndex = 0;
-    setInterval(() =&gt; {
-        currentIndex = (currentIndex + 1) % $(".slider").length;
-        //$() = document.querySelector 간략화
-        //css에 써주지 않고 제이쿼리 안에서 쓰는 법
-        $(".slider__inner").css("position", "relative");
-        $(".slider__inner").animate({ left: -800 * currentIndex }, 600);
-        //    transform : "translateX("+ -800 * currentIndex +")"
-    }, 2000);
-&lt;/script&gt;
-</code></pre>
-</div>
+            </div>
+        </details>
+    </div>
 <!-- document -->
 
     <footer id="footer">

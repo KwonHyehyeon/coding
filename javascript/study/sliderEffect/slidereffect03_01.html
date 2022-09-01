@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트 03</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">🎞 슬라이드 이펙트 - 좌로 움직이기(연속적으로)</h2>
+        <p class="t_desc">
+            📌 흔히 우리가 아는 슬라이드 효과입니다. 왼쪽으로 슥-슥- 지나가는 슬라이드 효과를 만들어봅시다! + 연속적으로!!!<br>
+        </p>
+        <hr>
+        <h3 class="t_tit2">슬라이드 이펙트 - 좌로 움직이기(연속적으로) 효과 완성⭐️</h3>
+        <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect03.html" frameborder="0"></iframe>
+        </div>
+        <div class="t_link">
+            <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect03.html" target="_blank"
+            >실제 사이트보기</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/sliderEffect03.html" target="_blank"
+            >원본 소스보기</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/assets/css/slider.css" target="_blank"
+            >CSS 소스보기</a>
+        </div>  
+        <h3 class="t_tit2">HTML</h3>
+        <p class="t_desc2">
+            코드가 굉장히 길기 때문에 보고 싶은 분들은 코드 보기를 누른 후 봐주세요.
+        </p>
+        
+        <div class="t_code">
+<pre><code class="language-js">
+</code></pre>
+    </div>
+    <h3 class="t_tit2">CSS</h3>
+    <p class="t_desc2">
+        부분적인 CSS입니다. 미디어쿼리도 사용했습니다.<br>
+        전체적인 CSS를 보시려면 위 CSS보기를 참고해주세요!
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">
+</code></pre>
+    </div>
+            <hr>
+        <h3 class="t_tit2">▶ 자바스크립트 활용 (공통) : 설명은 주석을 참고해주세요!</h3>
+        <p class="t_desc2">
+            📌 방법 1 : 자바스크립트
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg= document.querySelector(".slider__img");        //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner");   //움직이는 영역
+const slider = document.querySelectorAll(".slider");               //이미지
+let currentIndex = 0;               //현재 이미지
+let sliderCount = slider.length;    //이미지 갯수
+
+//사진넘어가기 부드럽게
+sliderInner.style.transition = "all 0.6s"
+//슬라이드 움직임 계산
+//sliderInner.style.transform += "translateX(0px)";         800 * 0
+//sliderInner.style.transform += "translateX(-800px)";      800 * 1
+//sliderInner.style.transform += "translateX(-1600px)";     800 * 2
+//sliderInner.style.transform += "translateX(-2400px)";     800 * 3
+//sliderInner.style.transform += "translateX(-3200px)";     800 * 4
+//슬라이드 움직이기
+//setInterval : 함수는 어떤 코드를 일정한 시간 간격을 두고 반복해서 실행하고 싶을 때 사용
+setInterval(() => {
+    //currentIndex++;
+    
+    //이미지 수가 어떻든 그거에 맞게 슬라이드 움직이게 하는 방법 
+    //01. 
+    currentIndex = (currentIndex + 1) % 5;  //12340123401234...
+    //02. 
+    // if(currentIndex &lt; 4){
+    //     currentIndex++;
+    // } else {
+    //     currentIndex = 0;
+    // }
+    //삼항연산자로 써주면...
+    //(currentIndex &lt; 4) ? currentIndex++ : currentIndex = 0
+        console.log(currentIndex);
+    // let nextIndex = (currentIndex + 1) % sliderCount; //다음 이미지 
+    //1, 2, 3, 4, 5, 6, 7, 8, 9,...
+    //나머지 : 1, 2, 3, 4, 0, 1, 2, 3, 4, 0...
+    // sliderInner.style.transform += "translateX(-100px)";    //= : 동작X += : 움직임
+    sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";    //transform으로 움직임 주니깐 +=해제해야함 
+}, 1000);
+</code></pre>
+    </div>
+    <h3 class="t_tit2">요약</h3>
+    <div class="t_code">
+<pre><code class="language-js">const sliderInner = document.querySelector(".slider__inner");
+const slider = document.querySelectorAll(".slider");
+let currentIndex = 0;
+
+sliderInner.style.transition = "all 0.6s"
+
+setInterval(()=>{
+    currentIndex = (currentIndex + 1) % slider.length;
+    sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
+}, 2000);
+</code></pre>
+    </div>
+    <p class="t_desc2">
+        📌 방법 2 : GSAP
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    const slider = document.querySelectorAll(".slider");
+    let currentIndex = 0;
+    //let sliderCount = slider.length;
+    setInterval(() =&gt; {
+        currentIndex = (currentIndex + 1) % ".slider".length;
+        //to 선택자 document.write 안써도 인식함
+        //밑에와 같은 구조로 써줄 것
+        gsap.to(".slider__inner", {
+            //duration : 0.6, 
+            x : -800 * currentIndex, //객체 스타일 구조
+        });
+    }, 2000);
+&lt;/script&gt;
+</code></pre>
+</div>
+    <p class="t_desc2">
+        📌 방법 3 : jQeury
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    let currentIndex = 0;
+    setInterval(() =&gt; {
+        currentIndex = (currentIndex + 1) % $(".slider").length;
+        //$() = document.querySelector 간략화
+        //css에 써주지 않고 제이쿼리 안에서 쓰는 법
+        $(".slider__inner").css("position", "relative");
+        $(".slider__inner").animate({ left: -800 * currentIndex }, 600);
+        //    transform : "translateX("+ -800 * currentIndex +")"
+    }, 2000);
+&lt;/script&gt;
+</code></pre>
+</div>
+<!-- document -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
