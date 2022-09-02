@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헤더 타입</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal; /*제목 글 굵기 기본설정 해제*/
+        } 
+        em {
+            font-style: normal;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #666;
+        }
+        .section > span {
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            text-decoration: underline;
+            margin-bottom: 16px;
+        }
+
+        /* header */
+        .header__inner {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            /* background-color: #666; */
+            /* border-bottom: 1px solid #ccc; */
+        }
+        .header__logo {
+            width: 30%;
+        }
+        .header__logo > img {
+            width: 100px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        .header__menu {
+            width: 80%;
+            text-align: right;
+            margin-bottom: 10px;
+
+        }
+        .header__menu li {
+            display: inline;
+
+        }
+        .header__menu li a{
+            padding-left: 60px;
+            transition: background-color 0.3s;
+        }
+        .header__menu li a:last-child {
+            margin-right: 0px;
+        }
+        /* slider */
+        .slider__inner{
+            display: flex;
+            flex-wrap: wrap;
+            width: 4800px;
+            height: 450px;
+            margin-bottom: 20px;
+        }
+        .slider > img {
+            width: 1160px;
+            height: 450px;
+            overflow: hidden; 
+        }
+        .slider__img {
+            overflow: hidden;
+        }
+        /* 롯데월드 소식 영역 */
+        #box {
+            width: 1160px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .notice {
+            width: 560px;
+
+        }
+        .notice__all {
+            border: 2px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 30px 20px 30px;
+            box-sizing: border-box;
+        }
+        .notice__title > h2 {
+            font-weight: 700;
+            font-size: 18px; 
+            margin-bottom: 20px;           
+        }
+        .notice__title > h2 > em {
+            font-size: 16px;
+            color: #999;
+        }
+        .notice__title > a {
+            font-size: 16px;
+            display: block;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        .notice__date {
+            text-align: right;
+        }
+        .morearea {
+            margin-bottom: 10px;
+        }
+        .morearea > a {
+            font-size: 14px; 
+            font-weight: 400;
+            color: #999;
+        }
+        .morearea > a > img {
+            width: 18x;
+            height: 18px;
+        }
+        .notice__date p {
+            font-size: 16px;
+            line-height: 1.9;
+            font-weight: 400;
+            color: #999;
+        }
+        .advertise {
+            
+        }
+        .advertise > img {
+            width: 580px;
+            height: 210px;
+        }
+        /* 프로그램들 */
+        #program > h3 {
+            font-weight: 700;
+            margin: 35px 0 20px 0;
+            display: flex;
+            
+        }
+        #program  {
+        }
+        .program__all {
+            display: flex;
+            justify-content: space-between;
+        }
+        .pbox {
+        }
+        .pbox img {
+            width: 275px;
+            padding-right: 20px;
+            margin: 0 -10px 20px 5px;
+        }
+        .pbox p {
+            font-size: 16px;
+            font-weight: 400;
+            color: #777;
+            margin-bottom: 50px;
+        }
+        /* 라인 */
+        .line {
+            width: 1160px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+        }
+        /* 푸터 */
+        #footer .address {
+            font-size: 14px;
+            font-weight: 300;
+            color: rgb(107, 107, 107);
+            margin: 30px 0;
+            line-height: 1.8;
+        }
+        #footer .copy {
+            font-size: 12px;
+            font-weight: 300;
+            color: rgb(149, 147, 147);
+        }
+    </style>
+</head>
+<body>
+    <div class="mission container section">
+        <section id="header" class="header__wrap nexon">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <img src="../site1/assets/img/test01.jpg" alt="">
+                </div>
+                <div class="header__menu">
+                    <ul>
+                        <li><a href="#">즐길거리</a></li>
+                        <li><a href="#">요금/우대혜택</a></li>
+                        <li><a href="#">참여프로그램</a></li>
+                        <li><a href="#">이용가이드</a></li>
+                        <li><a href="#">소통서비스</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- 헤더 영역 -->
+        <section id="slider">
+                <div class="slider__img">
+                    <div class="slider__inner">
+                        <div class="slider"><img src="../site1/assets/img/test02.jpg" alt="이미지1"></div>
+                        <div class="slider"><img src="../site1/assets/img/test02_01.jpg" alt="이미지2"></div>
+                        <div class="slider"><img src="../site1/assets/img/test02_03.jpg" alt="이미지3"></div>
+                    </div>
+                </div>
+        </section>
+        <!-- 슬라이더 영역 -->
+        <section id="box">
+            <section class="notice">
+                <div class="notice__all">
+                    <div class="notice__title">
+                        <h2>롯데월드 소식  | <em> 뉴스∙공지</em></h2>
+                        <a href="">그럴싸진관 미라클</a>
+                        <a href="">드림스테이지 '힘내 소중한 너'</a>
+                        <a href="">'힘내 소중한 너' 음원 발매</a>
+                        <a href="">이용 요금 조정 안내</a>
+                    </div>
+                    <div class="notice__date">
+                        <div class="morearea">
+                            <a class="more" href="#">
+                                더보기
+                                <img src="../site1/assets/img/test03.jpg" alt="">
+                            </a>
+                        </div>
+                        <p>2018.11.19</p>
+                        <p>2018.11.21</p>
+                        <p>2018.11.13</p>
+                        <p>2018.11.12</p>
+                    </div>    
+                </div>                
+            </section>
+            <!-- 롯데월드 소식 영역 -->
+            <section class="advertise">
+                <img src="../site1/assets/img/test04.jpg" alt="">
+            </section>
+            <!-- 혜택, 광고 영역 -->
+        </section>
+        <!-- 소식, 광고 영역 --> 
+        <section id="program">
+            <h3>특별한 경험</h3>
+            <div class="program__all">
+                <div class="pbox">
+                    <img src="../site1/assets/img/test06.jpg" alt="">
+                    <p>연간 회원 안내</p>
+                </div>
+                <div class="pbox">
+                    <img src="../site1/assets/img/test07.jpg" alt="">
+                    <p>프리미엄 투어</p>
+                </div>
+                <div class="pbox">
+                    <img src="../site1/assets/img/test08.jpg" alt="">
+                    <p>공연 참여 프로그램</p>
+                </div>
+                <div class="pbox">
+                    <img src="../site1/assets/img/test09.jpg" alt="">
+                    <p>단체 프로그램</p>
+                </div>
+            </div>
+        </section>
+        <!-- 사진, 프로그램 영역 -->
+        <div class="line"></div>
+        <!-- 라인 -->
+        <footer id="footer">
+            <div class="address">
+                서울특별시 송파구 올림픽대로 240 호텔롯데 롯데월드 | 대표자:박동기<br>
+                사업자등록번호:219-85-00014 | 통신판매업신고번호:송파 제5513호 | 전화:1661-2000
+            </div>
+            <div class="copy">
+                COPYRIGHT 2018 LOTTEWORLD.ALL RIGHTS RESERVED
+            </div>
+        </footer>
+        <!-- 푸터 영역 -->
+    </div>
+    <script>
+        const sliderWrap = document.querySelector(".slider__wrap")
+        const sliderImg = document.querySelector(".slider__img")        //보여지는 영역
+        const sliderInner = document.querySelector(".slider__inner")    //움직이는 영역
+        const slider = document.querySelectorAll(".slider")             //각각 이미지
+
+        let currentIndex = 0;       //현재 보이는 이미지
+        let sliderCount = slider.length //이미지 갯수
+        let sliderWidth = sliderImg.offsetWidth ;   //이미지 가로값 //위드값 구할 수 있음 offsetWidth
+        //첫번째 이미지 이미지 슬라이드 끝난 후 반복되게 복사
+        let sliderClone = sliderInner.firstElementChild.cloneNode(true); //첫번째 이미지 복사 //첫번째 요소 선택 firstElementChild //cloneNode(true) 이미지 복사 : true라고 적어줘야함
+        sliderInner.appendChild(sliderClone);   //첫번째 이미지를 마지막에 넣어줌 //appendChild 자식요소 넣어주는 것
+
+        function sliderEffect(){
+            //초에 사진 증가
+            currentIndex++;
+            sliderInner.style.transition = "all 0.6s";
+            sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)"
+            // sliderInner.style.transform = "translateX(-800px)";
+            // sliderInner.style.transform = "translateX(-1600px)";
+            // sliderInner.style.transform = "translateX(-2400px)";
+            // sliderInner.style.transform = "translateX(-3600px)";
+            // sliderInner.style.transform = "translateX(-4000px)";
+            // sliderInner.style.transform = "translateX(-4800px)";
+
+            //마지막 사진에 위치했을 때
+            if(currentIndex == sliderCount){
+                //setTimeout 시간 지정해주고 효과 주는 것
+                setTimeout(() => {
+                    sliderInner.style.transition = "0s"
+                    sliderInner.style.transform = "translateX(0px)";
+                }, 700);
+                
+                currentIndex = 0;
+            }
+            
+
+        }
+        setInterval(sliderEffect, 2000);
+    </script>
+</body>
+</html>
