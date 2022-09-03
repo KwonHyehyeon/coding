@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 속성 관련 메서드</title>
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🧷 jQuery : 속성 관련 메서드</h2>
+            <h3 class="t_tit2">➰ attr() 메서드</h3>
+            <p class="t_desc2">
+                선택한 요소의 attribute(속성)를 선택, 생성, 변경할 수 있습니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>실행 분류</th>
+                        <th>형식</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">취득</td>
+                        <td>$("a").attr("href");</td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2">생성, 변경</td>
+                        <td>$("a").attr("href", "http://www.icoxpublish.com/").attr("target", "_blank");</td>
+                    </tr>
+                    <tr>
+                        <td>$("a").attr({href: "http://www.icoxpublish.com/", target: "_blank"});</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">콜백 함수</td>
+                        <td>$("a").attr(<i>"href"</i>, function(<i>index</i>, <i>h</i>) { <br>
+                            　// <i>index</i>는 각 a 요소의 index 0,1,2 <br>
+                            　// <i>h</i>은 각 a 요소 href 속성 <br>
+                            <i>return</i> attribute (속성) // 각 a 요소의 속성을 생성 및 변경합니다. <br>
+                            });<br>
+                            ....<br>
+                            <i>&lt;a href="http://www.daum.net" target="_blank" title="새창">다음&lt;/a></i> <br>
+                            <i>&lt;a href="http://www.naver.com" target="_blank" title="새창">네이버&lt;/a></i> <br>
+                            <i>&lt;a href="http://www.nate.com" target="_blank" title="새창">네이트&lt;/a></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">➿ attr() 메서드 사용 예시</h3>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt; 
+&lt;html lang="ko"&gt;  
+&lt;head&gt; 
+    &lt;meta charset="UTF-8"&gt;  
+    &lt;title&gt;attr() 메서드&lt;/title&gt; 
+    &lt;script src="jquery-3.3.1.min.js"&gt; &lt;/script&gt;  
+    &lt;script&gt;  
+        $(document).ready(function() {
+            console.log($("#site &gt;  a:eq(0)").attr("href"));
+            $("#site &gt;  a:eq(1)").attr("href", "http://m.naver.com").text("네이버 모바일");
+            $("#site a").attr("title", function() {
+                return "새창";
+            });
+        });
+    &lt;/script&gt; 
+&lt;/head&gt;  
+&lt;body&gt; 
+    &lt;div id="site"&gt; 
+        &lt;a href="http://www.daum.net" target="_blank"&gt;다음&lt;/a&gt; 
+        &lt;a href="http://www.naver.com" target="_blank"&gt;네이버&lt;/a&gt; 
+        &lt;a href="http://www.nate.com" target="_blank"&gt;네이트&lt;/a&gt; 
+    &lt;/div&gt; 
+&lt;/body&gt; 
+&lt;/html&gt; 
+</code></pre>
+            </div>
+            <h3 class="t_tit2">⭐️ 결과 ⭐️</h3>
+            <div class="t_iframe" style="min-height: 300px; padding-top: 0;">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kwonhyehyeon/embed/XWqWvRp?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/XWqWvRp">
+                    Untitled</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div> 
+            <!-- attr 메서드-->
+            <hr>
+            <h3 class="t_tit2">➰ prop() 메서드</h3>
+            <p class="t_desc2">
+                attr()가 html attribute(속성)에 관련된 메서드라면 prop()은 자바스크립트 property(프로퍼티)에 관련된 메서드입니다.<br> 
+                prop() 메서드는 요소의 속성을 true/, false로 제어할 수 있습니다.
+            </p>
+            <h3 class="t_tit2">➿ prop() 메서드 사용 예시</h3>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt; 
+&lt;html lang="ko"&gt; 
+&lt;head&gt; 
+    &lt;meta charset="UTF-8"&gt; 
+    &lt;title&gt;prop() 메서드&lt;/title&gt; 
+    &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt; 
+    &lt;script&gt; 
+        $(document).ready(function() {
+            console.log($("input:checkbox").eq(0).attr("checked"));
+            console.log($("input:checkbox").eq(1).prop("checked"));
+            $("input:checkbox").eq(0).attr("checked", "checked");
+            $("input:checkbox").eq(1).prop("checked", true);
+            console.log($("input:checkbox").eq(0).attr("checked"));
+            console.log($("input:checkbox").eq(1).prop("checked"));
+        });
+    &lt;/script&gt; 
+&lt;/head&gt; 
+&lt;body&gt; 
+    &lt;input type="checkbox" id="html"&gt;&lt;label for="html"&gt;html&lt;/label&gt;
+    &lt;input type="checkbox" id="css"&gt;&lt;label for="css"&gt;css&lt;/label&gt;
+&lt;/body&gt; 
+&lt;/html&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">⭐️ 결과 ⭐️</h3>
+            <div class="t_iframe" style="min-height: 300px; padding-top: 0;">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="jq prop class" src="https://codepen.io/kwonhyehyeon/embed/zYjYgPw?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/zYjYgPw">
+                    jq prop class</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div> 
+            <p class="t_box">
+                attr() 메서드는 checked 속성이 요소에 추가되는 반면 prop() 메서드의 true는 자바스크립트의 프로퍼티로 처리됩니다.
+            </p>
+            <!-- prop() 메서드 -->
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
