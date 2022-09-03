@@ -102,7 +102,24 @@ body {
 }
 
 /* 퀴즈 모달 소스 보기 */
-.window__cont {
+.window__btn {
+    cursor: pointer;
+    color: #000;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.window__btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+.window__box {
+    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
     min-width: 70%;
     min-height: 70vh;
     /* position: fixed; */
@@ -120,25 +137,6 @@ body {
     align-items: center;
     transform: scale(0);
     justify-content: center; */
-}
-.window__btn {
-    cursor: pointer;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 50px;
-    display: inline-block;
-    padding: 10px 20px;
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.window__btn:hover {
-    background-color: #fff;
-    color: #3d3d63;
-}
-.window__box {
-    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
 }
 .window__box .title-bar {
   background-color: #000080;
