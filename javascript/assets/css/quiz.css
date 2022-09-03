@@ -100,27 +100,26 @@ body {
 #footer a:hover {
     text-decoration: underline;
 }
+
 /* 퀴즈 모달 소스 보기 */
-.quiz__window {
-    
-  }
 .window__cont {
-    min-width: 360px;
-    min-height: 220px;
-    position: fixed;
+    min-width: 70%;
+    min-height: 70vh;
+    /* position: fixed; */
     background-color: #c7c7c7;
     padding: 4px;
     border-left: 2px solid #FCFCFC;
     border-top: 2px solid #FCFCFC;
     border-right: 2px solid #2A2A2A;
     border-bottom: 2px solid #2A2A2A;
-    left: 0;
-    top: 0;
-    overflow-x: hidden;
+    left: 220px;
+    bottom:90px;
+    position: absolute;
+    /* overflow-x: hidden;
     display: flex;
     align-items: center;
     transform: scale(0);
-    justify-content: center;
+    justify-content: center; */
 }
 .window__btn {
     cursor: pointer;
@@ -132,12 +131,16 @@ body {
     position: absolute;
     right: 20px;
     bottom: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .window__btn:hover {
     background-color: #fff;
     color: #3d3d63;
 }
-.title-bar {
+.window__box {
+    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
+}
+.window__box .title-bar {
   background-color: #000080;
   padding: 4px;
   height: 30px;
@@ -146,7 +149,7 @@ body {
   justify-content: flex-end;
   align-items: center;
 }
-.title-bar > .minimize, .title-bar > .maximize, .title-bar > .close {
+.window__box .title-bar > .minimize, .window__cont .title-bar > .maximize, .title-bar > .close {
   width: 26px;
   height: 22px;
   background-color: #c7c7c7;
@@ -158,35 +161,35 @@ body {
   justify-content: center;
   cursor: pointer;
 }
-.title-bar > .minimize:hover, .title-bar > .maximize:hover, .title-bar > .close:hover {
+.window__box .title-bar > .minimize:hover, .window__cont .title-bar > .maximize:hover, .title-bar > .close:hover {
   background-color: #bababa;
   border-left: 2px solid #2A2A2A;
   border-top: 2px solid #2A2A2A;
   border-right: 2px solid #FCFCFC;
   border-bottom: 2px solid #FCFCFC;
 }
-.title-bar > .minimize {
+.window__box .title-bar > .minimize {
   align-items: flex-end;
 }
-.title-bar > .minimize > .symbol {
+.window__box .title-bar > .minimize > .symbol {
   width: 60%;
   height: 3px;
   background-color: #000000;
   margin-bottom: 2px;
 }
-.title-bar > .maximize > .symbol {
+.window__box .title-bar > .maximize > .symbol {
   width: 70%;
   height: 80%;
   border: 2px solid #000000;
   border-top-width: 4px;
 }
-.title-bar > .close > .symbol {
+.window__box .title-bar > .close > .symbol {
   width: 70%;
   height: 3px;
   background-color: #000000;
   transform: rotate(45deg);
 }
-.title-bar > .close > .symbol::after {
+.window__box .title-bar > .close > .symbol::after {
   content: "";
   top: 0;
   left: 0;
@@ -196,19 +199,29 @@ body {
   background-color: #000000;
   transform: rotate(90deg);
 }
-
-.menu-bar > span {
-  padding: 8px;
-  display: inline-block;
-  cursor: pointer;
+.menu-bar {
+    display: flex;
 }
-.menu-bar > span::first-letter {
+.menu-bar div {
+    display: flex;
+    cursor: pointer;
+    padding: 0 20px;
+}
+.menu-bar > div.active{
+    background-color: #bababa;
+}
+.menu-bar em {
+    font-style: normal;
+}
+.menu-bar > em::first-letter {
   text-decoration: underline;
 }
-.menu-bar > span:hover {
+.menu-bar > em:hover {
   background-color: #bababa;
 }
-
+/* .menu-bar > div.active {
+  background-color: #bababa;
+} */
 .content-container {
   border-left: 2px solid #2A2A2A;
   border-top: 2px solid #2A2A2A;
@@ -217,13 +230,23 @@ body {
 }
 .content-container > .content {
   display: flex;
-  height: 260px;
+  height: 500px;
+  overflow: hidden;
+}
+.content-container .content .main> div {
+    display: none;
+}
+.content-container .content .main > div.active {
+    display: block;
+    height: 100%;
 }
 .content-container > .content > .main, .content-container > .content > .scroll-left {
   height: 100%;
 }
 .content-container > .content > .main {
   width: calc(100% - 26px);
+  text-align-last: left;
+  margin: 10px;
 }
 .content-container > .content > .scroll {
   width: 26px;
