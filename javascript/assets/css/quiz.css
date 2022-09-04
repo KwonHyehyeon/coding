@@ -132,17 +132,27 @@ body {
     left: 220px;
     bottom:90px;
     position: absolute;
+    transform: scale(0);
     /* overflow-x: hidden;
     display: flex;
     align-items: center;
-    transform: scale(0);
     justify-content: center; */
 }
 .window__box.show {
-    transform: scale(1);
+    animation: foldOut 1s ease forwards;
 }
 .window__box.show.hide {
-    transform: scale(0);
+    animation: foldIn 1s 0.5s ease backwards;
+}
+@keyframes foldOut {
+    0% {transform: scale(0) scaleX(0.002);}
+    50% {transform: scale(1) scaleX(0.002);}
+    100% {transform: scale(1) scaleX(1);}
+}
+@keyframes foldIn {
+    0% {transform: scale(1) scaleX(1);}
+    50% {transform: scale(1) scaleX(0.002);}
+    100% {transform: scale(0) scaleX(0.002);}
 }
 .window__box .title-bar {
   background-color: #000080;
@@ -153,7 +163,7 @@ body {
   justify-content: flex-end;
   align-items: center;
 }
-.window__box .title-bar > .minimize, .window__cont .title-bar > .maximize, .title-bar > .close {
+.window__box .title-bar > .minimize, .window__box .title-bar > .maximize, .title-bar > .close {
   width: 26px;
   height: 22px;
   background-color: #c7c7c7;
@@ -165,7 +175,7 @@ body {
   justify-content: center;
   cursor: pointer;
 }
-.window__box .title-bar > .minimize:hover, .window__cont .title-bar > .maximize:hover, .title-bar > .close:hover {
+.window__box .title-bar > .minimize:hover, .window__box .title-bar > .maximize:hover, .title-bar > .close:hover {
   background-color: #bababa;
   border-left: 2px solid #2A2A2A;
   border-top: 2px solid #2A2A2A;
@@ -236,6 +246,7 @@ body {
   display: flex;
   height: 500px;
   overflow: hidden;
+  margin: 0 0 0 10px;
 }
 .content-container .content .main> div {
     display: none;
@@ -244,84 +255,40 @@ body {
     display: block;
     height: 100%;
 }
-.content-container > .content > .main, .content-container > .content > .scroll-left {
+/* .content-container > .content > .main, .content-container > .content > .scroll-left {
   height: 100%;
-}
+} */
 .content-container > .content > .main {
-  width: calc(100% - 26px);
-  text-align-last: left;
-  margin: 10px;
+  width: 100%;
+  text-align: left;
+  overflow: scroll;
+  overflow-x: hidden;
 }
-.content-container > .content > .scroll {
+/* .content-container > .content > .scroll {
   width: 26px;
-}
+} */
 
-.scroll {
-  background-color: #D7D7D7;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
+/* scroll */
+.content-container > .content > .main::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
 }
-.scroll > .progress {
-  width: 24px;
-  height: 70%;
-  cursor: pointer;
-  border-left: 2px solid #FCFCFC;
-  border-top: 2px solid #FCFCFC;
-  border-right: 2px solid #2A2A2A;
-  border-bottom: 2px solid #2A2A2A;
-  background-color: #c7c7c7;
+.content-container > .content > .main::-webkit-scrollbar-track {    
+    background: #d7d7d7;
 }
-.scroll > .progress:hover {
-  background-color: #bababa;
+.content-container > .content > .main::-webkit-scrollbar-thumb {
+    width: 24px;
+    height: 70%;
+    cursor: pointer;
+    background: #c7c7c7;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    border-right: 2px solid #2A2A2A;
+    border-bottom: 2px solid #2A2A2A;
 }
-.scroll > .start, .scroll > .end {
-  width: 24px;
-  height: 22px;
-  position: relative;
-  border-left: 2px solid #FCFCFC;
-  border-top: 2px solid #FCFCFC;
-  border-right: 2px solid #2A2A2A;
-  border-bottom: 2px solid #2A2A2A;
-  background-color: #c7c7c7;
-}
-.scroll > .start:hover, .scroll > .end:hover {
-  background-color: #bababa;
-  border-left: 2px solid #2A2A2A;
-  border-top: 2px solid #2A2A2A;
-  border-right: 2px solid #FCFCFC;
-  border-bottom: 2px solid #FCFCFC;
-}
-.scroll > .start::after, .scroll > .end::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 6px;
-  left: 4px;
-  border-top: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #000000;
-}
-.scroll > .end::after {
-  transform: rotate(180deg);
-}
-.scroll.-row {
-  flex-direction: row;
-}
-.scroll.-row > .progress {
-  width: 30%;
-  height: 24px;
-}
-.scroll.-row > .start::after {
-  transform: rotate(-90deg);
-}
-.scroll.-row > .end::after {
-  transform: rotate(90deg);
-}
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #bababa;
+} */
 /* quiz_wrap */
 .quiz_wrap {
     display: flex;

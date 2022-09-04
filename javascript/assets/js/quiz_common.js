@@ -2,7 +2,7 @@
 
 // 모달
 const modalBtn = document.querySelector(".window__btn");
-const modalClose = document.querySelector(".close");
+const modalClose = document.querySelector(".title-bar .close");
 const modalCont = document.querySelector(".window__box");
 modalBtn.addEventListener("click", () => {
     modalCont.classList.add("show");
