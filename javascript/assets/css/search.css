@@ -417,5 +417,9 @@ li {
 
 /* 코드블럭 글씨 */
 .hljs-property {
-    color: pink;
+    color: 
+    pink;
+}
+.hljs-name {
+    color: rgb(217, 124, 124);
 }

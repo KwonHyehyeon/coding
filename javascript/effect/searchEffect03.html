@@ -7,7 +7,7 @@
     <title>검색 이펙트</title>
 
     <link rel="stylesheet" href="../assets/css/search.css">
-    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <link rel="stylesheet" href="../assets/css/draculasearch.css">
 
     <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
@@ -502,15 +502,268 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
+<pre><code class="language-js">// 선택자
+const searchKeyword = document.querySelectorAll(".search__info .keyword span");   // 알파벳
+const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
+const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
+let count = 0;
+// 전체 개수 구하기
+searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력
+searchKeyword.forEach(el => {
+    el.addEventListener("click", () => {
+        const searchWord = el.innerText;    // 사용자가 클릭한 알파벳
+        // console.log(searchWord);
+        searchList.forEach(el => {
+            const cssName = el.querySelector("strong").innerText;   // CSS 속성 텍스트
+            // console.log(cssName)
+            // 알파벳 첫글자 == CSS 속성의 첫글자
+            if(searchWord.charAt(0) === cssName.charAt(0)){
+                el.classList.remove("hide");
+                count++;
+            } else {
+                el.classList.add("hide");
+            }
+            searchInfo.textContent = count;
+        });
+        count = 0;
+    });
+});
+            // if(searchWord.charAt(0) === cssName.charAt(0)) {
+            //     el.classList.remove("hide");
+            //     // 전체 개수 구하기 (알파벳별)
+            //     //searchInfo.textContent = cssName.length;
+                
+            // } else {
+            //     el.classList.add("hide");
+            // }
 </code></pre>
                         </div>
                         <div style="height: 100%">
-<pre><code class="language-html">
+<pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;charAt()을 이용하여 검색하기&lt;/span&gt;
+        &lt;h1&gt;CSS 속성 첫글자 검색하기&lt;/h1&gt;
+
+        &lt;div class="search__info"&gt;
+            &lt;div class="keyword"&gt;
+                &lt;span&gt;a&lt;/span&gt;
+                &lt;span&gt;b&lt;/span&gt;
+                &lt;span&gt;c&lt;/span&gt;
+                &lt;span&gt;d&lt;/span&gt;
+                &lt;span&gt;e&lt;/span&gt;
+                &lt;span&gt;f&lt;/span&gt;
+                &lt;span&gt;g&lt;/span&gt;
+                &lt;span&gt;h&lt;/span&gt;
+                &lt;span&gt;i&lt;/span&gt;
+                &lt;span&gt;j&lt;/span&gt;
+                &lt;span&gt;k&lt;/span&gt;
+                &lt;span&gt;l&lt;/span&gt;
+                &lt;span&gt;m&lt;/span&gt;
+                &lt;span&gt;n&lt;/span&gt;
+                &lt;span&gt;o&lt;/span&gt;
+                &lt;span&gt;p&lt;/span&gt;
+                &lt;span&gt;q&lt;/span&gt;
+                &lt;span&gt;r&lt;/span&gt;
+                &lt;span&gt;s&lt;/span&gt;
+                &lt;span&gt;t&lt;/span&gt;
+                &lt;span&gt;u&lt;/span&gt;
+                &lt;span&gt;v&lt;/span&gt;
+                &lt;span&gt;w&lt;/span&gt;
+                &lt;span&gt;x&lt;/span&gt;
+                &lt;span&gt;y&lt;/span&gt;
+                &lt;span&gt;z&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div&gt;전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="search__list"&gt;
+            &lt;div class="css"&gt;
+                &lt;ul&gt;
+                    &lt;!-- 단어와 뜻 써주기 --&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
 </code></pre>
                         </div>
                         <div style="height: 100%">
-<pre><code class="language-css">
+<pre><code class="language-css">:root {
+    --htmlColor : #223547;
+    --cssColor : #472222;
+    --javascriptColor : #224736;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'NexonLv1Gothic';
+    color: var(--htmlColor) ;
+}
+*, *:before, *:after {
+    box-sizing:border-box;
+}
+a {
+    text-decoration: none;
+    color:  var(--htmlColor) ;
+}
+li {
+    list-style: none;
+}
+
+/* header */
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+#header nav {
+    margin: 10px;
+}
+#header nav li {
+    position: relative;
+    display: inline;
+}
+#header nav li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid  var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'NexonLv1Gothic';
+}
+#header nav li.active a {
+    background-color:  var(--htmlColor);
+    color: #fff;
+}
+#header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+}
+#header nav li .sub li a {
+    width: auto;
+    background-color: transparent;
+    color:  var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+#header nav li .sub li.active a {
+    text-decoration: underline;
+}
+/* main */
+#main {
+    margin: 50px 10px;
+}
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid  var(--htmlColor);
+    border-radius: 20px;
+    background-color: #f1f3f6;
+    text-align: center;
+    padding: 30px;
+}
+.search__wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.search__wrap > h1 {
+    font-family: 'Tmon';
+    color:  var(--htmlColor);
+    font-size: 6vw;
+    margin-bottom: 10px;
+}
+.search__box {
+    margin-bottom: 20px;
+}
+.search__box label{
+    position:absolute;
+    clip:rect(0 0 0 0);
+    width:1px;
+    height:1px;
+    margin:-1px;
+    overflow:hidden
+}
+.search__box input {
+    border: 2px solid  var(--htmlColor);
+    padding: 15px 40px;
+    width: 70%;
+    border-radius: 50px;
+    font-size: 20px;
+}
+.search__tab li.active a {
+    background-color:  var(--htmlColor);
+    color: #fff;
+}
+.search__list {}
+.search__list li {
+    text-align-last: left;
+    line-height: 1.7;
+}
+.search__list li.hide {
+    display: none;
+}
+.search__list li.show {
+    display: block;
+}
+.search__info {
+    text-align: right;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--htmlColor);
+}
+.search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+}
+@media (max-width: 600px){
+    .search__wrap {
+        padding: 20px;
+    }
+    .search__wrap > span {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .search__wrap > h1 {
+        font-size: 44px;
+    }
+    .search__box input {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+/* footer */
+#footer {
+    text-align: center;
+}
+#footer a {
+    color: #000;
+    font-family: 'NexonLv1Gothic';
+    padding-bottom: 50px;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
 </code></pre>
                         </div>
                     </div>
@@ -528,7 +781,7 @@
     </footer>
     <!-- footer -->
     
-    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/highlight.min.search.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
         // 선택자
