@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 제작하기 : 슬라이드</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🧷 사이트를 제작해보자! [💁🏻‍♀️ 슬라이드 영역 편]</h2>
+            <div class="t_box">
+                슬라이드 영역은 많은 웹사이트에서 흔히 볼 수 있는 영역으로 이미지를 넘길 수 있습니다.
+            </div>
+            <h3 class="t_tit2">슬라이드 유형을 함께 만들어 보아요❗️</h3>
+            <hr>
+            <h3 class="t_tit2">🔨 제작 방법</h3>
+            <div class="iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D2464%253A1905" allowfullscreen></iframe>
+            </div>
+            <h4 class="t_tit3">➰ Figma 사용</h4>
+            <p class="t_desc2">
+                사이트를 만들기 위해서는 먼저 사이트 레이아웃을 설정해야 합니다. <br>
+                figma를 이용하여 그리드를 통해 해당 영역을 설정해줄 수 있습니다. <br>
+            </p><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>HTML편</i></h4>
+            <p class="t_desc2">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.
+            </p>
+            <div class="t_code">
+<pre><code>&lt;section id="sliderType" class="slider__wrap"&gt;
+    &lt;h2 class="blind"&gt;슬라이드 영역&lt;/h2&gt;
+    &lt;div class="slider__inner"&gt;
+        &lt;div class="slider"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="desc"&gt;
+                    &lt;span&gt;DEVELOPER&lt;/span&gt;
+                    &lt;h3&gt;NEW PROJECT&lt;/h3&gt;
+                    &lt;p&gt;
+                        너무 무리하지 말아요! 이미 당신은 잘하고 있고!&lt;br&gt;
+                        앞으로도 잘 할 수 있어요! 
+                    &lt;/p&gt;
+                    &lt;div class="btn"&gt;
+                        &lt;a href="#"&gt;자세히보기&lt;/a&gt;
+                        &lt;a href="#" class="black"&gt;사이트보기&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__arrow"&gt;
+                &lt;a href="#" class="left"&gt;&lt;span class="ir"&gt;이전 이미지&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="right"&gt;&lt;span class="ir"&gt;다음 이미지&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__dot"&gt;
+                &lt;a href="#" class="dot active"&gt;&lt;span class="ir"&gt;1&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;2&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;3&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="play"&gt;&lt;span class="ir"&gt;플레이&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="stop"&gt;&lt;span class="ir"&gt;정지&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <p class="t_desc2">
+                style을 통해 CSS를 설정해줍니다. <br>
+            </p>
+            <div class="t_code">
+<pre><code>/* slider */
+.slider__inner {
+    margin-top: 40px;
+}
+.slider {
+    position: relative;
+}
+.slider__img {
+    background: url(img/slider_bg01.jpg) no-repeat center / cover;
+}
+.slider__img .desc {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+.slider__img .desc span {
+    font-size: 16px;
+    background-color: #fff;
+    padding: 1px 14px 0 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+    border-radius: 30px;
+}
+.slider__img .desc h3 {
+    font-size: 110px;
+    font-weight: 300;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-left: -8px;
+}
+.slider__img .desc p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.45;
+    margin-bottom: 130px;
+}
+.slider__img .desc .btn a{
+    font-size: 16px;
+    background-color: #fff;
+    padding: 11px 50px;
+    display: inline-block;
+}
+.slider__img .desc .btn a.black {
+    background-color: #000;
+    color: #fff;
+}
+.slider__arrow a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 56px;
+    background-image:url(img/slider_icon.svg);
+}
+.slider__arrow a.left {
+    left: 20px;
+}
+.slider__arrow a.right {
+    right: 20px;
+    background-position: -50px 0;
+}
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+}
+.slider__dot  a {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(img/slider_icon.svg);
+    background-position: -20px -70px;
+}
+.slider__dot a.active {
+    background-position: 0 -70px;
+} 
+.slider__dot a.play {
+    background-position: -40px -70px;
+}
+.slider__dot a.stop {
+    background-position: -60px -70px;
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">▶완성본</h3>
+            <div class="t_iframe" style="min-height: 1040px; padding-top: 0;">
+                <iframe src="https://KwonHyehyeon.github.io/coding/site/slideType/slideType01.html"
+                    frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://KwonHyehyeon.github.io/coding/site/slideType/slideType01.html" target="_blank">실제 사이트 보기</a>
+                <a href="https://github.com/KwonHyehyeon/coding/blob/main/site/slideType/slideType01.html"
+                    target="_blank">원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
