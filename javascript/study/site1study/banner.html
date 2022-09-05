@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 제작하기 : 이미지텍스트</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🧷 사이트를 제작해보자! [💁🏻‍♀️ 배너 영역 편]</h2>
+            <div class="t_box">
+                배너란, 홈페이지의 한 쪽에 특정 웹 사이트의 이름이나 내용을 배너 유형은 배너 안에 약간의 글이 적혀 있는 유형으로 이름이나 내용을 부착하여 홍보하는 이미지를 말합니다.
+            </div>
+            <h3 class="t_tit2">배너 유형을 함께 만들어 보아요❗️</h3>
+            <hr>
+            <h3 class="t_tit2">🔨 제작 방법</h3>
+            <div class="iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D2461%253A1792" allowfullscreen></iframe>
+            </div>
+            <h4 class="t_tit3">➰ Figma 사용</h4>
+            <p class="t_desc2">
+                사이트를 만들기 위해서는 먼저 사이트 레이아웃을 설정해야 합니다. <br>
+                figma를 이용하여 그리드를 통해 해당 영역을 설정해줄 수 있습니다. <br>
+            </p><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>HTML편</i></h4>
+            <p class="t_desc2">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.
+            </p>
+            <div class="t_code">
+<pre><code>&lt;section id="bannerType" class="banner__wrap"&gt;
+    &lt;h2 class="blind"&gt;배너 영역&lt;/h2&gt;
+    &lt;div class="banner__inner"&gt;
+        &lt;h3 class="title"&gt;유튜버 입짧은 혠&lt;/h3&gt;
+        &lt;p class="desc"&gt;
+            다양한 먹방 영상을 유튜브를 통해 제공하고 있습니다.
+            &lt;a href="#" title="유튜브 페이지로 이동"&gt;&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;span class="small"&gt;배너 유형01&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <p class="t_desc2">
+                style을 통해 CSS를 설정해줍니다. <br>
+                하나하나 세심하게 스타일을 넣어주는 것이 중요합니다.
+            </p>
+            <div class="t_code">
+<pre><code>/* bannerType */
+.banner__inner {
+    background-image: url(img/banner_bg01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
+}
+.banner__inner .title{
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+.banner__inner .desc{
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
+}
+.banner__inner .desc a {
+    color: #fff;
+    display: block;
+}
+.banner__inner .desc a:hover {
+    text-decoration: underline;
+}
+.banner__inner .small{
+    font-size: 16px;
+    text-decoration: underline;
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">▶완성본</h3>
+            <div class="t_iframe" style="min-height: 1040px; padding-top: 0;">
+                <iframe src="https://KwonHyehyeon.github.io/coding/site/bannerType/bannerType01.html"
+                    frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://KwonHyehyeon.github.io/coding/site/bannerType/bannerType01.html" target="_blank">실제 사이트 보기</a>
+                <a href="https://github.com/KwonHyehyeon/coding/blob/main/bannerType/bannerType01.html"
+                    target="_blank">원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
