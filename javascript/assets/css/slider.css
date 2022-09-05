@@ -81,6 +81,8 @@ a {
     z-index: 2000;
 }
 #main {
+    width: 100%;
+    height: 100vh;
     position: relative;
     z-index: 1000;
 }
@@ -150,7 +152,7 @@ a {
     /*flex가 우선 순위이기 때문에 밑에다 적어주어야 함*/
     /* opacity: 0;  */
     /* opacity 0 줘서 클릭 안됨 */
-    transform: scale(1);
+    transform: scale(0);
 }
 .modal__btn {
     cursor: pointer;
