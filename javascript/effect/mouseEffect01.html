@@ -221,15 +221,231 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
+<pre><code class="language-js">      // 마우스 따라다니게 하기
+// 마우스가 움직였을 때 마우스 움직이는 값(event)을 가져올 수 있음
+window.addEventListener("mousemove", (event) => {
+  document.querySelector(".clientX").innerText = event.clientX
+  document.querySelector(".clientY").innerText = event.clientY
+  document.querySelector(".offsetX").innerText = event.offsetX
+  document.querySelector(".offsetY").innerText = event.offsetY
+  document.querySelector(".pageX").innerText = event.pageX
+  document.querySelector(".pageY").innerText = event.pageY
+  document.querySelector(".screenX").innerText = event.screenX
+  document.querySelector(".screenY").innerText = event.screenY
+});
+const cursor = document.querySelector(".mouse__cursor")
+window.addEventListener("mousemove", (e) => {
+  //const cursor = document.querySelector(".mouse__cursor")
+  //커서에 포지션 되어있기 때문에 left
+  //px 처럼 단위값을 써주어야 실행됨
+  cursor.style.left = e.clientX -25 + "px";
+  cursor.style.top = e.clientY -25 + "px";
+});
+// document.querySelector(".style1").addEventListener("mouseover", () => {
+//   //작동안함 : 위에 지역변수 이기 때문에
+//   //cursor.classList.add(".style1");
+//   cursor.classList.add("style1");
+// })
+// document.querySelector(".style1").addEventListener("mouseout", () => {
+//   cursor.classList.remove("style1");
+  
+// })
+// document.querySelector(".style2").addEventListener("mouseover", () => {
+//   cursor.classList.add("style2");
+// })
+// document.querySelector(".style2").addEventListener("mouseout", () => {
+//   cursor.classList.remove("style2");
+// })
+// document.querySelector(".style3").addEventListener("mouseover", () => {
+//   cursor.classList.add("style3");
+// })
+// document.querySelector(".style3").addEventListener("mouseout", () => {
+//   cursor.classList.remove("style3");
+// })
+// document.querySelector(".style4").addEventListener("mouseover", () => {
+//   cursor.classList.add("style4");
+// })
+// document.querySelector(".style4").addEventListener("mouseout", () => {
+//   cursor.classList.remove("style4");
+// })
+// document.querySelector(".style5").addEventListener("mouseover", () => {
+//   cursor.classList.add("style5");
+// })
+// document.querySelector(".style5").addEventListener("mouseout", () => {
+//   cursor.classList.remove("style5");
+// })
+// document.querySelector(".style6").addEventListener("mouseover", () => {
+//   cursor.classList.add("style6");
+// })
+// document.querySelector(".style6").addEventListener("mouseout", () => {
+//   cursor.classList.remove("style6");
+// })
+// for(let i=1; i&lt;7; i++){
+//   document.querySelector(".style" + i).addEventListener("mouseover", () => {
+//     cursor.classList.add("style" + i)})
+//   document.querySelector(".style" + i).addEventListener("mouseout", () => {
+//    cursor.classList.remove("style" + i)})
+// };
+//forEach() 나
+// const num = [1, 2, 3, 4, 5, 6]
+// num.forEach((el)=>{
+//   document.querySelector(".style" + [el]).addEventListener("mouseover", () => {
+//     cursor.classList.add("style" + [el])})
+//   document.querySelector(".style" + [el]).addEventListener("mouseout", () => {
+//     cursor.classList.remove("style" + [el])})
+// })
+//forEach() 선생님
+// document.querySelectorAll(".mouse__wrap span").forEach((span, num) => {
+//   span.addEventListener("mouseover", () => {
+//     cursor.classList.add("style" + (num+1))
+//   })
+//   span.addEventListener("mouseout", () => {
+//     cursor.classList.remove("style" + (num+1))
+//   })
+// })
+//속성값 가져오기 (만약에 class="style55"이럴때 : 클래스 명이 바껴도 상관없게!)
+//getAttribute
+document.querySelectorAll(".mouse__wrap span").forEach( span => {
+  let attr = span.getAttribute("class");
+  span.addEventListener("mouseover", () => {
+    cursor.classList.add(attr)
+  })
+  span.addEventListener("mouseout", () => {
+    cursor.classList.remove(attr)
+  })
+})
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-html">
+<pre><code class="language-html">&lt;main id="main"&gt;
+  &lt;section id="mouseType"&gt;
+    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+    &lt;div class="mouse__wrap"&gt;
+        &lt;p&gt;The &lt;span class="style1"&gt;future&lt;/span&gt; depends on what we &lt;span class="style2"&gt;do&lt;/span&gt; in the &lt;span class="style3"&gt;present&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;span class="style4"&gt;미래&lt;/span&gt;는 &lt;span class="style5"&gt;현재&lt;/span&gt; 우리가 무엇을 &lt;span class="style6"&gt;하는가&lt;/span&gt;에 달려 있다.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+    &lt;div class="mouse__info"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;clientX : &lt;span class="clientX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;clientY : &lt;span class="clientY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;offsetX : &lt;span class="offsetX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;offsetY : &lt;span class="offsetY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;pageX : &lt;span class="pageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;pageY : &lt;span class="pageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;screenX : &lt;span class="screenX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;screenY : &lt;span class="screenY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">
+<pre><code class="language-css">/* mouseType */
+.mouse__wrap {
+  /* vw라고 써주면 스크롤바 생기기 때문에 */
+  width: 100%;
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+  /* 두 줄로 나오게 하기 */
+  flex-direction: column;
+  cursor: none;
+}
+.mouse__wrap p {
+  font-size: 2vw;
+  line-height: 2;
+  font-weight: 300;
+}
+.mouse__wrap p:last-child {
+  font-size: 3vw;
+  font-weight: 300;
+}
+.mouse__wrap p span {
+  border-bottom: 0.15vw dashed rgb(255, 253, 164); 
+  color: rgb(255, 253, 164);
+}
+@media (max-width: 800px) {
+  .mouse__wrap p {
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .mouse__wrap p:last-child {
+    font-size: 40px;
+    line-height: 1.5;
+    text-align: center;
+    /* 단어로 끊기 */
+    word-break: keep-all;
+  }
+}
+.mouse__cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid#fff;
+  background-color: rgba(225,225,225,0.1);
+  /* 선택이나 클릭 안되게 할 때 */
+  user-select: none;
+  pointer-events: none;
+  transition: 
+    background-color 0.3s,
+    border-color 0.3s,
+    /* style 2에 트랜스폼줬으니 여기도 줘야함 */
+    transform 0.6s,
+    border-radius 0.3s
+    ;
+}
+.mouse__cursor.style1{
+  background-color: rgba(229, 67, 215, 0.484);
+  border-color: #de78f3;
+}
+.mouse__cursor.style2{
+  background-color: rgba(111, 235, 94, 0.584);
+  border-color: #9bfd7d;
+  /* 커지고 y축으로 회전 */
+  transform: scale(2) rotateY(720deg);
+}
+.mouse__cursor.style3{
+  background-color: rgba(90, 128, 233, 0.721);
+  border-color: #2f3cb4;
+  /* 커지고 x축으로 회전 */
+  transform: scale(1.5) rotateX(720deg);
+}
+.mouse__cursor.style4{
+  background-color: rgba(235, 235, 69, 0.606);
+  border-color: #f2fc59;
+  /* 커지는 효과 */
+  transform: scale(10);
+}
+.mouse__cursor.style5{
+  background-color: rgba(243, 209, 141, 0.868);
+  border-color: #f5ab77;
+}
+.mouse__cursor.style6{
+  background-color: rgba(145, 248, 131, 0.846);
+  border-color: #ccfdb0;
+  border-radius: 0;
+  /* 커지는 효과 */
+  transform: scale(5); 
+}
+.mouse__info {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+}
 </code></pre>
                         </div>
                     </div>
