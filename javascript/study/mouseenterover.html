@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS: 색상</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">📎 mouseEnter와 mouseOver의 차이점에 대해 알아봅시다.</h2>
+            <div class="t_desc">
+                mouseEnter와 mouseOver는 어떤 요소 안으로 마우스가 들어오면 <i>들어오는 순간을 감지</i>하는 마우스 이벤트입니다.<br>
+                🧩 반대 : mouseOut과 mouseLeave : 마우스가 어떤 요소 밖으로 이동하는 순간을 감지<br>
+                🧩 일반적으로 mouseOver는 mouseOut와 짝을 이루고, mouseEnter는 mouseLeave와 짝을 이루어 사용합니다.
+             </div>
+             <div class="t_desc2">
+                ➰짝꿍<br>
+                mouseOver ⎯ mouseOut<br>
+                mouseEnter ⎯ mouseLeave
+             </div>
+             <hr>
+            <h3 class="t_tit2">📎 mouseOver와 mouseEnter 차이 </h3>
+            <p class="t_box">
+                <i>이벤트 버블링</i> : 한 요소에 이벤트가 발생하면 이 요소에 할당된 핸들러가 동작하고, 이어서 부모 요소의 핸들러가 동작하고 최상단의
+                부모 요소를 만날 때까지 반복되면서 핸들러가 동작하는 현상
+            </p><br>
+            <div class="t_desc">
+                ➰ mouseOver/mouseOut는 이벤트가 발생할 때 버블링이 일어나며 상위 요소로 전파됩니다.<br>
+                ∙ preventDefault 메서드를 호출하여 이벤트의 기본 동작을 취소할 수 있습니다.<br><br>
+                ➰ mouseEnter/mouseLeave는 이벤트가 발생할 때 버블링이 일어나지 않아 자기 자신만이 이벤트를 받습니다. 즉, target과 currentTarget이 항상 일치합니다.<br>
+                ∙ preventDefault 메서드를 호출하여 이벤트의 기본 동작을 취소할 수 없습니다.
+            </div>
+            <hr>
+            <h3 class="t_tit2">📎 mouseOver와 mouseEnter 예시 </h3><br>
+            <div class="t_iframe">
+                <iframe style="height: 500px; width: 100%;" scrolling="no" title="mouseenter over 차이" src="https://codepen.io/kwonhyehyeon/embed/ExLaGem?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/ExLaGem">
+                    mouseenter over 차이</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

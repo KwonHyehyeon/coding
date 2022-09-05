@@ -79,17 +79,20 @@
       .mouse__cursor.style2{
         background-color: rgba(111, 235, 94, 0.584);
         border-color: #9bfd7d;
+        /* 커지고 y축으로 회전 */
+
         transform: scale(2) rotateY(720deg);
       }
       .mouse__cursor.style3{
         background-color: rgba(90, 128, 233, 0.721);
         border-color: #2f3cb4;
+        /* 커지고 x축으로 회전 */
         transform: scale(1.5) rotateX(720deg);
-
       }
       .mouse__cursor.style4{
         background-color: rgba(235, 235, 69, 0.606);
         border-color: #f2fc59;
+        /* 커지는 효과 */
         transform: scale(10);
 
       }
@@ -101,10 +104,9 @@
         background-color: rgba(145, 248, 131, 0.846);
         border-color: #ccfdb0;
         border-radius: 0;
-        transform: scale(5);
-
+        /* 커지는 효과 */
+        transform: scale(5); 
       }
-
       .mouse__info {
         position: absolute;
         left: 20px;
@@ -258,9 +260,7 @@
         document.querySelector(".screenY").innerText = event.screenY
       });
 
-
       const cursor = document.querySelector(".mouse__cursor")
-
 
       window.addEventListener("mousemove", (e) => {
         //const cursor = document.querySelector(".mouse__cursor")
