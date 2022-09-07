@@ -1,427 +1,774 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : if문</title>
-    
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <style>
+        .sample {
+            box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+            margin-bottom: 40px;
+        }
+        .sample em {
+            display: none;
+        }
+        .sample h3 {
+            background: #f6f6f6; 
+            height: 40px;
+            padding-top: 13px;
+            margin-bottom: 0;
+            border-radius: 15px 15px 0 0;
+        }
+        .sample h3 span {
+            display: block;
+            width: 15px; height: 15px; 
+            background-color:#E96E4C;
+            border-radius: 50%;
+            margin-left:15px;
+            position: relative;
+            margin-top: 5px;
+        }
+        .sample h3 span::before {
+            content: '';
+            width: 15px; height: 15px; 
+            background-color: #E6A935;
+            border-radius: 50%;
+            position: absolute; 
+            left: 23px; top: 0;
+        }
+        .sample h3 span::after {
+            content: '';
+            width: 15px; height: 15px; 
+            background-color: #85C33D;
+            border-radius: 50%;
+            position: absolute; 
+            left: 45px; top: 0;
+        }
+        .t_tit2 {
+            margin-bottom: 20px !important;
+        }
+    </style>
 </head>
 <body>
-    <header id="header">
-        <h1><a href="../index.html">Javascript</a></h1>
-        <nav class="header_nav">
-            <ul>
-                <li><a href="../javascript01.html">데이터 저장하기</a></li>
-                <li><a href="../javascript02.html">데이터 불러오기</a></li>
-                <li><a href="../javascript03.html">데이터 실행하기</a></li>
-                <li><a href="../javascript04.html">데이터 제어하기</a></li>
-            </ul>
-            <ul>
-                <li><a href="../javascript05.html">문자열 객체</a></li>
-                <li><a href="../javascript06.html">배열 객체</a></li>
-                <li><a href="../javascript07.html">수학 객체</a></li>
-                <li><a href="../javascript08.html">숫자 객체</a></li>
-                <li><a href="../javascript09.html">브라우저 객체</a></li>
-                <li><a href="../javascript10.html">요소 객체</a></li>
-                <li><a href="../javascript11.html">이벤트 객체</a></li>
-            </ul>
-            <ul class="study">
-                <li><a href="basic.html">기본 규칙</a></li>
-                <li><a href="operator.html">연산자</a></li>
-                <li><a href="for.html">반복문</a></li>
-                <li><a href="if.html">조건문</a></li>
-                <li><a href="type.html">데이터 타입</a></li>
-                <li><a href="function.html">함수</a></li>
-                <li><a href="var.html">지역변수/전역변수</a></li>
-                <li><a href="element.html">요소 선택</a></li>
-                <li><a href="arraymethod.html">배열 객체</a></li>
-                <li><a href="built_in_function.html">내장 함수</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- //header -->
-    <main id="main">
-        <div class="document">
-            
-            <h3 class="t_tit2">조건문</h2>
-            <p class="t_desc">
-                조건문은 특정 조건 만족 시(true인 경우)실행하는 명령의 집합이며, 종류로는 <i>if</i>와 <i>switch</i>가 있다.
-            </p>
-            
-            <h3 class="t_tit2">if문</h3>
-            <p class="t_desc2">if문은 조건식의 결과가 <i>참(true)이면 주어진 실행문을 실행</i>하고, 거짓(false)이면 아무것도 실행하지 않는 문장입니다.</p>
-            <p class="t_desc">- if문의 형식 ①</p>
-            <p class="t_box">
-                if (조건식) {<br>
-                &nbsp;&nbsp;&nbsp;실행문; <br>
-                }
-            </p>
-            <p class="t_desc">- if문의 형식 ②</p>
-            <p class="t_box">
-                if (조건식) {<br>
-                &nbsp;&nbsp;&nbsp;실행문1; <br>
-                } else <br>
-                &nbsp;&nbsp;&nbsp;실행문2; <br>
-                }
-            </p>
-            <p class="t_desc">- if문의 형식 ③</p>
-            <p class="t_box">
-                if (조건식1) {<br>
-                &nbsp;&nbsp;&nbsp;실행문; <br>
-                } else if (조건식2) {<br>
-                &nbsp;&nbsp;&nbsp;실행문2; <br>
-                } else { <br>
-                &nbsp;&nbsp;&nbsp;실행문3; <br>
-                }
-            </p>
-            <p class="t_desc">- if문의 형식 ④</p>
-            <p class="t_desc">if문은 if문 안에 또 다른 if문을 중첩하여 사용할 수 있습니다. </p>
-            <p class="t_box">
-                if (조건식1) {<br>
-                &nbsp;&nbsp;if (조건식2) { <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;실행문; <br>
-                &nbsp;&nbsp;} <br>
-                }
-            </p>
-
-            <h3 class="t_tit2">switch문</h3>
-            <p class="t_desc2">switch문은 if~else문과 마찬가지로 주어진 조건 값에 따라 프로그램이 다른 명령을 수행하도록 하는 조건문입니다. </p>
-            <p class="t_desc">switch문은 if문과 달리 특정 조건에 만족했을 때 블록{} 을 스스로 빠져나가지 못합니다. <br>따라서 <i>break 명령어</i>를 주어 switch case문의 블록{}을 빠져 나가도록 합니다. </p>
-            <p class="t_box">
-                for ( 초기값; 조건식; 증감값 ){<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;실행문<br>
-                }
-            </p>
-
-            <main id="main">
-                <div id="sample01" class="sample">
-                    <h3>01. if문</h3>
-                    <p>if(조건식)의 조건식이 true일 때 실행문이 동작하고, false이면 실행되지 않습니다.
-                    </p>
-                    <div class="script">
-                    <div class="t_code">
-<pre><code class="language-js">//false : 0, undefined, null, false
-//true : 1, "0", "1", 0&gt;10, [], {}
-if(1){
-    document.write("실행되었습니다(true).")
-} else {
-    document.write("실행되었습니다(false).")
-}
-</code></pre>                    
-                    </div>
-                    <div class="result">
-                        <details>
-                            <summary>결과보기</summary>
-                            <div class="sample01_result"></div>
-                            실행되었습니다(true).
-                        </details>
-                    </div>
-                    </div>
+    <div class="document">
+        <h2 class="t_tit">📎 SVG</h2>
+        <p class="t_desc2">
+            스케일러블 벡터 그래픽스(Scalable Vector Graphics, SVG)는 2차원 벡터 그래픽을 표현하기 위한 XML 기반의 파일 형식으로, 1999년 W3C(World Wide Web
+            Consortium)의 주도하에 개발된 오픈 표준의 벡터 그래픽 파일 형식이다. SVG 형식의 이미지와 그 작동은 XML 텍스트 파일들로 정의 되어 검색화·목록화·스크립트화가 가능하며 필요하다면
+            압축도 가능하다.
+        </p>
+        <p class="t_box">
+            1. 인터넷 익스플로러9 버전 이상부터 지원됩니다.<br>
+            2. XML을 이용하여 라인, 곡선, 기하학적인 그래픽 표현이 가능합니다.<br>
+            3. 벡터 방식이기 때문에 확대하거나 축소가 가능합니다.<br>
+            4. DOM 단위로 컨트롤이 가능하지만 문서 복잡도가 증가되면 렌더링이 느려집니다.
+        </p>
+        <style>
+            .svgBox {
+                padding: 40px;
+            }
+            .svgBox>svg {
+                width: 160px;
+                height: 160px;
+                background: #FFEBEE;
+                margin: 6px;
+            }
+        </style>
+            <h3 class="t_tit2">사각형(rect)</h3>
+            <div class="sample">
+                <h3><span></span><em class="sr-only">svg</em></h3>
+                <div class="svgBox svg1">
+                    <svg>
+                        <rect width="100" height="100" fill="#f48fb1" x="30" y="30" />
+                    </svg>
+                    <svg>
+                        <rect width="100" height="100" fill="#f48fb1" x="30" y="30" stroke="#880e4f" stroke-width="5" />
+                    </svg>
+                    <svg>
+                        <rect fill="#F48FB1" width="100" height="100" x="30" y="30" rx="20" ry="20" />
+                    </svg>
+                    <svg>
+                        <rect fill="#F48FB1" width="100" height="100" x="30" y="30" rx="20" ry="20" stroke="#880E4F"
+                            stroke-width="5" />
+                    </svg>
+                    <svg>
+                        <rect fill="#F48FB1" width="100" height="100" x="30" y="30" rx="40" ry="40" />
+                    </svg>
+                    <svg>
+                        <rect fill="#F48FB1" width="100" height="100" x="30" y="30" rx="60" ry="60" stroke="#880E4F"
+                            stroke-width="5" />
+                    </svg>
                 </div>
-            <!-- //section1 -->
-    
-            <div class="main_sample">
-                <div id="sample02" class="sample">
-                    <h3>02. if문 생략</h3>
-                    <p>if(조건식) 다음의 {}를 생략할 수 있습니다. 하지만, 생략할 경우 if문에 포함되는 실행문은 단 한 줄만 포합됩니다.
-                    </p>
-                    <div class="script">
-                    <div class="t_code">
-<pre><code class="language-js">const num = 100;
-    
-if(num) document.write("실행되었습니다(true)."); //{} 생략 가능
-else document.write("실행되었습니다(false).");
-</code></pre>                    
-                    </div>
-                    <div class="result">
-                        <details>
-                            <summary>결과보기</summary>
-                            <div class="sample02_result"></div>
-                            실행되었습니다(true).
-                        </details>
-                    </div>
-                    </div>
-
-                </div>
-            <!-- //section2 -->
-            <div class="main_sample">
-                <div id="sample03" class="sample">
-                    <h3>03. 다중 if문</h3>
-                    <p>조건으로 더욱 구체적인 결과를 얻고자 할 때 다중 if문을 사용하고 if와 else if를 통해 나타냅니다.
-                    </p>
-                    <div class="script">
-                    <div class="t_code">
-<pre><code class="language-js">const num = 100;
-if( num == 90 ){
-    document.write("실행되었습니다(num==90)");
-} else if( num == 100) {
-    document.write("실행되었습니다(num==100)");
-} else if( num == 110) {
-    document.write("실행되었습니다(num==110)");
-} else if( num == 120) {
-    document.write("실행되었습니다(num==120)");
-} else {
-    document.write("실행되었습니다(num==값이없음)");
-}
-</code></pre>                    
-                    </div>
-                    <div class="result">
-                        <details>
-                            <summary>결과보기</summary>
-                            <div class="sample03_result"></div>
-                            실행되었습니다(num==100)
-                        </details>
-                    </div>
-                    </div>
-
             </div>
-            <!-- //section3 -->
-            <div class="main_sample">
-                <div id="sample04" class="sample">
-                    <h3>04. 중첩 if문</h3>
-                    <p>if문 안에 또 다른 조건의 if문이 들어있는 것을 중첩 if문이라고 합니다. if중첩횟수에는 제약이 없습니다.<br>
-                    ※중첩은 if문 뿐만아니라 swich문 for문 while문 do-while문과 함께 중첩시켜 사용할 수도 있습니다.
-                    </p>
-                    <div class="script">
-                    <div class="t_code">
-<pre><code class="language-js">const num = 100;
-    
-if( num == 100 ){
-    document.write("실행되었습니다.(1)");
-    if( num == 100 ){
-        document.write("실행되었습니다.(2)");
-        if( num == 100 ){
-            document.write("실행되었습니다.(3)");
-        }    
-    }
-} else {
-    document.write("실행되었습니다.(4)");
-}
-</code></pre>                    
-                    </div>
-                    <div class="result">
-                        <details>
-                            <summary>결과보기</summary>
-                            <div class="sample04_result"></div>
-                            실행되었습니다.(1)실행되었습니다.(2)실행되었습니다.(3)
-                        </details>
-                    </div>
-                    </div>
-
+            <div class="t_code">
+<pre class="line-numbers language-html"><code>&lt;div class="svgBox svg1"&gt;
+    &lt;svg&gt;
+    &lt;rect fill="#F48FB1" width="100" height="100" x="30" y="30" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;rect fill="#F48FB1" width="100" height="100" x="30" y="30" stroke="#880E4F" stroke-width="5" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;rect fill="#F48FB1" width="100" height="100" x="30" y="30" rx="20" ry="20" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;rect fill="#F48FB1" width="100" height="100" x="30" y="30" rx="20" ry="20" stroke="#880E4F" stroke-width="5" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;rect fill="#F48FB1" width="100" height="100" x="30" y="30" rx="40" ry="40" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;rect fill="#F48FB1" width="100" height="100" x="30" y="30" rx="60" ry="60" stroke="#880E4F" stroke-width="5" /&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
             </div>
-            <!-- //section4 -->
-            <div class="main_sample">
-                <div id="sample05" class="sample">
-                    <h3>05. 삼항 연산자</h3>
-                    <p>삼항 연산자는 세 개의 항(피연산자 3개)이 있는 연산자를 말합니다. <br>
-                    조건식(피연산자1) ? 값 or 연산식(true)일 경우 : 값 or 연산식(false)일 경우; 로 나타냅니다.
-                    </p>
-                    <div class="script">
-                    <div class="t_code">
-<pre><code class="language-js">const num = 100;
-    
-//num의 값이 100이면 true를 출력하고, 아니면 false를 출력하세요.
-if( num == 100 ){
-    document.write("true");
-}else {
-    document.write("false");
-}
-    
-//밑 형식(삼항연산자)을 더 많이 씀->규모가 크면 더 효율적임 (위에 꺼 줄여서, 간략하게 표현)
-(num == 100) ? document.write("true") : document.write("false")
-</code></pre>                    
-                    </div>
-                    <div class="result">
-                        <details>
-                            <summary>결과보기</summary>
-                            <div class="sample05_result"></div>
-                            true<br><br>
-                            true
-                        </details>
-                    </div>
-                    </div>
-                </div>
-            <!-- //section5 -->
-            <div class="main_sample">
-                <div id="sample06" class="sample">
-                    <h3>06. if문 예제(교재p.343)</h3>
-                    <div class="script">
-                    <div class="t_code">
-<pre><code class="language-js">var html = Number(prompt('html 점수입력', ''));
-var css = Number(prompt('css 점수입력', ''));
-var javascript = Number(prompt('javascript 점수입력', ''));
-var avg = (html + css + javascript) / 3;
-var comment;
-if (avg &gt;= 60) {
-    if (html &lt; 40) {
-        comment = 'HTML' + '40점 미만 불합격';
-    }else if (css &lt; 40) {
-        comment = 'CSS' + '40점 미만 불합격';
-    }else if (javascript &lt; 40) {
-        comment = 'JAVASCRIPT' + '40점 미만 불합격';
-    }else {
-        comment = '평균' + avg + '점 합격';
-    }
-}else {
-    comment = '평균' + avg + '점 불합격';
-}
-document.write(comment);
-</code></pre>                    
-                    </div>
-                    <div class="result">
-                        <details>
-                            <summary>결과보기</summary>
-                            <div class="sample05_result"></div>
-                            평균 90점 합격<br>
-                            평균 59점 불합격
-                            
-                        </details>
-                    </div>
-                   </div>
-                </div>
-            <!-- //section6 -->
+        <!-- //Intro1 -->
 
+        <!-- Intro2 -->
+        <div class="bs-docs-section">
+            <h3 class="t_tit2">원형(circle, ellipse)</h3>
+            <div class="sample">
+                <h3><span></span><em class="sr-only">svg</em></h3>
+                <div class="svgBox svg2">
+                    <svg>
+                        <circle fill="#F48FB1" r="60" cx="80" cy="80" />
+                    </svg>
+                    <svg>
+                        <circle fill="#F48FB1" r="60" cx="80" cy="80" stroke="#880E4F" stroke-width="5" />
+                    </svg>
+                    <svg>
+                        <ellipse fill="#F48FB1" rx="60" ry="40" cx="80" cy="80" />
+                    </svg>
+                    <svg>
+                        <ellipse fill="#F48FB1" rx="60" ry="40" cx="80" cy="80" stroke="#880E4F" stroke-width="5" />
+                    </svg>
+                    <svg>
+                        <ellipse fill="#F48FB1" rx="40" ry="60" cx="80" cy="80" />
+                    </svg>
+                    <svg>
+                        <ellipse fill="#F48FB1" rx="40" ry="60" cx="80" cy="80" stroke="#880E4F" stroke-width="5" />
+                    </svg>
+                </div>
+            </div>
+            <div class="t_code">
+<pre class="line-numbers language-html"><code>&lt;div class="svgBox svg1"&gt;
+    &lt;svg&gt;
+    &lt;circle fill="#F48FB1" r="60" cx="80" cy="80" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;circle fill="#F48FB1" r="60" cx="80" cy="80" stroke="#880E4F" stroke-width="5" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;ellipse fill="#F48FB1" rx="60" ry="40" cx="80" cy="80" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;ellipse fill="#F48FB1" rx="60" ry="40" cx="80" cy="80" stroke="#880E4F" stroke-width="5" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;ellipse fill="#F48FB1" rx="40" ry="60" cx="80" cy="80" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;ellipse fill="#F48FB1" rx="40" ry="60" cx="80" cy="80" stroke="#880E4F" stroke-width="5" /&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <!-- //Intro2 -->
 
+        <!-- Intro3 -->
+        <div class="bs-docs-section">
+            <h2 id="intro3" class="page-header t_tit2">다각형(polygon)</h2>
+            <div class="sample">
+                <h3><span></span><em class="sr-only">svg</em></h3>
+                <div class="svgBox svg3">
+                    <svg>
+                        <polygon points="7.57,107.791 120.613,7.417 151.018,155.5" fill="#f48fb1" />
+                    </svg>
+                    <svg>
+                        <polygon points="149.504,49.308 142.858,123.653 75.149,155.069 
+                        14.089,112.141 20.735,37.796 88.442,6.379" fill="#f48fb1" />
+                    </svg>
+                    <svg>
+                        <polygon points="80.291,4.525 133.531,26.148 155.887,79.084 
+                        134.263,132.324 81.327,154.68 28.087,133.056 5.731,80.12 27.355,26.881" fill="#f48fb1" />
+                    </svg>
+                    <svg>
+                        <polygon points="7.181,76.21 54.245,57.615 65.609,8.304 97.837,47.318 
+                        148.247,42.888 121.101,85.595 140.892,132.168 91.887,119.548 53.709,152.762 50.568,102.256"
+                            fill="#f48fb1" />
+                    </svg>
+                    <svg>
+                        <polygon points="143.861,97.72 110.549,93.575 131.555,119.76 
+                        102.364,103.184 111.75,135.413 91.125,108.928 87.462,142.295 78.543,109.933 62.39,139.36 66.534,106.048 40.35,127.054 
+                        56.927,97.863 24.696,107.248 51.182,86.624 17.813,82.962 50.176,74.042 20.749,57.889 54.062,62.033 33.056,35.849 62.246,52.425 
+                        52.86,20.195 73.485,46.681 77.148,13.313 86.067,45.675 102.221,16.248 98.076,49.561 124.261,28.555 107.684,57.745 
+                        139.914,48.36 113.429,68.984 146.796,72.647 114.434,81.566" fill="#f48fb1" />
+                    </svg>
+                    <svg>
+                        <polygon points="95.38,83.799 137.548,115.206 92.281,88.457 
+                        119.22,133.61 87.636,91.575 95.244,143.6 82.152,92.678 69.271,143.654 76.662,91.598 45.255,133.766 72.004,88.499 
+                        26.852,115.438 68.887,83.854 16.861,91.462 67.783,78.369 16.807,65.489 68.863,72.88 26.695,41.473 71.962,68.222 45.023,23.069 
+                        76.607,65.104 68.999,13.079 82.091,64.001 94.972,13.024 87.581,65.081 118.988,22.914 92.239,68.179 137.393,41.241 
+                        95.357,72.825 147.382,65.217 96.46,78.309 147.437,91.189" fill="#f48fb1" />
+                    </svg>
+                </div>
+            </div>
+            <div class="t_code">
+<pre class="line-numbers language-html"><code>&lt;div class="svgBox svg3"&gt;
+    &lt;svg&gt;
+    &lt;polygon points="136,141 10,101 108,12" fill="#F48FB1" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;polygon points="121,131 56,140 15,89 39,27 104,18 145,70" fill="#F48FB1"/&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;polygon points="115,134 71,144 30,124 12,82 26,39 64,14 108,20 139,53 142,98" fill="#F48FB1" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;polygon points="133,129 87,115 50,144 49,96 9,70 54,54 67,8 96,47 144,45 116,84" fill="#F48FB1" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;polygon points="128,130 94,111 88,149 73,114 45,141 53,104 15,110 44,84 10,66 48,62 30,28 64,47 70,9 85,45 113,17 105,55 143,49 114,75 148,92 110,96" fill="#F48FB1" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;polygon points="80,8.15 81.84,70.37 106.02,13.02 85.26,71.69 128.53,26.96 87.98,74.17 144.49,48.08 89.62,77.46
+    151.73,73.55 89.96,81.12 149.29,99.91 88.95,84.65 137.49,123.61 86.74,87.59 117.93,141.45 83.61,89.52 93.24,151.01 80,90.2
+    66.76,151.01 76.39,89.52 42.07,141.45 73.26,87.59 22.51,123.61 71.05,84.65 10.71,99.91 70.04,81.12 8.27,73.55 70.38,77.46
+    15.51,48.08 72.02,74.17 31.47,26.96 74.74,71.69 53.98,13.02 78.16,70.37" fill="#F48FB1" /&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <!-- //Intro3 -->
 
-            <div class="main_sample">
-                <div id="sample06" class="sample">
-                    <h3>07. switch문</h3>
-                    <p>변수가 갖는 값에 따라 실행문을 선택하는 조건 제어문입니다. 
-                    조건식의 결과가 많을 경우 if문을 사용하게 되면 코드가 복잡해집니다. 반면, switch문은 변수값에 따라서 실행문이 결정되기 때문에 if문보다 더욱 간결하게 코드를 만들 수 있습니다.
-                    </p>
-                    <div class="script">
-                    <div class="t_code">
-<pre><code class="language-js">const num = 100;
-    
-switch( num ){
-    case 100 :
-        document.write("실행되었습니다.(num==100)");
-        break;
-    case 110 :
-        document.write("실행되었습니다.(num==110)");
-        break;
-    case 120 :
-        document.write("실행되었습니다.(num==120)");
-        break;
-    case 130 :
-        document.write("실행되었습니다.(num==130)");
-        break;
-    default :
-        document.write("실행되었습니다.(num==값이 없음)");
-</code></pre>                    
+        <!-- Intro4 -->
+        <div class="bs-docs-section">
+            <h2 id="intro4" class="page-header t_tit2">패스(path)</h2>
+            <div class="sample">
+                <h3><span></span><em class="sr-only">svg</em></h3>
+                <div class="svgBox svg4">
+                    <svg class="svg">
+                        <path fill="none" stroke="#880E4F" stroke-width="2"
+                            d="M7,154.667c0-82.358,65.152-149,145.667-149" />
+                    </svg>
+                    <svg class="svg">
+                        <path fill="none" stroke="#880E4F" stroke-width="2"
+                            d="M151.534,123.547c-33.711,33.711-88.369,33.711-122.08,0
+                        c-26.97-26.969-26.97-70.695,0-97.665c21.575-21.576,56.556-21.576,78.131,0c17.261,17.26,17.261,45.245,0.001,62.504
+                        c-13.809,13.809-36.196,13.809-50.005,0c-11.046-11.046-11.046-28.956,0-40.002c8.837-8.837,23.166-8.837,32.003,0
+                        c7.069,7.07,7.07,18.532,0,25.602c-5.656,5.657-14.826,5.657-20.482,0c-4.524-4.524-4.524-11.86,0-16.385" />
+                    </svg>
+                    <svg class="svg">
+                        <path fill="none" stroke="#880E4F" stroke-width="2" d="M82.671,81.243c50.565,48.259,14.182,69.191-2.135,1.229
+                        c16.316,67.962-25.611,65.895-2.46-0.122c-23.151,66.017-57.304,41.617-2.004-1.432c-55.3,43.049-70.84,4.057-0.912-2.288
+                        c-69.929,6.345-61.919-34.86,0.47-2.417c-62.389-32.442-33.374-62.777,1.703-1.78c-35.076-60.997,5.73-70.826,2.395-0.577
+                        c3.335-70.249,42.981-56.458,2.326,0.81c40.655-57.268,66.554-24.232,1.521,1.938c65.033-26.17,68.953,15.62,0.23,2.452
+                        C152.526,92.225,133.236,129.502,82.671,81.243z" />
+                    </svg>
+                    <svg class="svg">
+                        <path fill="none" stroke="#880E4F" stroke-width="2" d="M131.502,129.683c-44.4-42.871-49.621-39.867-34.943,20.102
+                        c-14.678-59.969-20.694-60.265-40.261-1.983c19.566-58.281,14.666-61.783-32.799-23.436C70.963,86.018,68.733,80.421,8.573,86.918
+                        c60.16-6.497,61.31-12.409,7.692-39.569c53.617,27.16,57.781,22.808,27.864-29.131c29.917,51.938,35.772,50.527,39.189-9.441
+                        c-3.417,59.969,2.272,61.948,38.075,13.245c-35.803,48.703-32.086,53.443,24.869,31.726C89.308,75.465,89.87,81.462,150.03,93.884
+                        C89.87,81.462,87.102,86.812,131.502,129.683z" />
+                    </svg>
+                    <svg class="svg">
+                        <path fill="none" stroke="#880E4F" stroke-width="2" d="M58.665,139.312c0-6.873,42-6.873,42-13.747s-42-6.874-42-13.748
+                        s42-6.874,42-13.748c0-6.872-42-6.872-42-13.744c0-6.874,42-6.874,42-13.747c0-6.877-42-6.877-42-13.753
+                        c0-6.874,42-6.874,42-13.748c0-6.878-42-6.878-42-13.757s42-6.879,42-13.758" />
+                    </svg>
+                    <svg class="svg">
+                        <path fill="none" stroke="#880E4F" stroke-width="2" d="M93.108,91.478c42.049,30.58-13.048,57.425-13.347,6.503
+                        c0.299,50.922-55.041,24.58-13.405-6.381c-41.636,30.961-55.545-28.728-3.37-14.458c-52.176-14.27-14.181-62.359,9.204-11.649
+                        c-23.385-50.71,37.901-50.989,14.846-0.067c23.055-50.922,61.484-3.179,9.309,11.565C148.521,62.245,135.157,122.058,93.108,91.478
+                        z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="t_code">
+<pre class="line-numbers language-html"><code>&lt;div class="svgBox svg3"&gt;
+    &lt;svg class="svg"&gt;
+    &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M7,154.667c0-82.358,65.152-149,145.667-149"/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+    &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M151.534,123.547c-33.711,33.711-88.369,33.711-122.08,0
+    c-26.97-26.969-26.97-70.695,0-97.665c21.575-21.576,56.556-21.576,78.131,0c17.261,17.26,17.261,45.245,0.001,62.504
+    c-13.809,13.809-36.196,13.809-50.005,0c-11.046-11.046-11.046-28.956,0-40.002c8.837-8.837,23.166-8.837,32.003,0
+    c7.069,7.07,7.07,18.532,0,25.602c-5.656,5.657-14.826,5.657-20.482,0c-4.524-4.524-4.524-11.86,0-16.385"/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+    &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M82.671,81.243c50.565,48.259,14.182,69.191-2.135,1.229
+    c16.316,67.962-25.611,65.895-2.46-0.122c-23.151,66.017-57.304,41.617-2.004-1.432c-55.3,43.049-70.84,4.057-0.912-2.288
+    c-69.929,6.345-61.919-34.86,0.47-2.417c-62.389-32.442-33.374-62.777,1.703-1.78c-35.076-60.997,5.73-70.826,2.395-0.577
+    c3.335-70.249,42.981-56.458,2.326,0.81c40.655-57.268,66.554-24.232,1.521,1.938c65.033-26.17,68.953,15.62,0.23,2.452
+    C152.526,92.225,133.236,129.502,82.671,81.243z"/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+    &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M131.502,129.683c-44.4-42.871-49.621-39.867-34.943,20.102
+    c-14.678-59.969-20.694-60.265-40.261-1.983c19.566-58.281,14.666-61.783-32.799-23.436C70.963,86.018,68.733,80.421,8.573,86.918
+    c60.16-6.497,61.31-12.409,7.692-39.569c53.617,27.16,57.781,22.808,27.864-29.131c29.917,51.938,35.772,50.527,39.189-9.441
+    c-3.417,59.969,2.272,61.948,38.075,13.245c-35.803,48.703-32.086,53.443,24.869,31.726C89.308,75.465,89.87,81.462,150.03,93.884
+    C89.87,81.462,87.102,86.812,131.502,129.683z"/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+    &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M58.665,139.312c0-6.873,42-6.873,42-13.747s-42-6.874-42-13.748
+    s42-6.874,42-13.748c0-6.872-42-6.872-42-13.744c0-6.874,42-6.874,42-13.747c0-6.877-42-6.877-42-13.753
+    c0-6.874,42-6.874,42-13.748c0-6.878-42-6.878-42-13.757s42-6.879,42-13.758"/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="svg"&gt;
+    &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M93.108,91.478c42.049,30.58-13.048,57.425-13.347,6.503
+    c0.299,50.922-55.041,24.58-13.405-6.381c-41.636,30.961-55.545-28.728-3.37-14.458c-52.176-14.27-14.181-62.359,9.204-11.649
+    c-23.385-50.71,37.901-50.989,14.846-0.067c23.055-50.922,61.484-3.179,9.309,11.565C148.521,62.245,135.157,122.058,93.108,91.478
+    z"/&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <!-- //Intro4 -->
+
+        <!-- Intro5 -->
+        <div class="bs-docs-section">
+            <h2 id="intro5" class="page-header t_tit2">라인(line, polyline)</h2>
+            <div class="sample">
+                <h3><span></span><em class="sr-only">svg</em></h3>
+                <div class="svgBox svg5">
+                    <svg style="background: #E3F3FD">
+                        <line x1="0" y1="0" x2="200" y2="200" stroke="#0D47A1" stroke-width="2" fill="none" />
+                    </svg>
+                    <svg style="background: #E3F3FD">
+                        <line x1="50" y1="50" x2="200" y2="200" stroke="#0D47A1" stroke-width="2" fill="none" />
+                    </svg>
+                    <svg style="background: #E3F3FD">
+                        <line x1="100" y1="100" x2="200" y2="200" stroke="#0D47A1" stroke-width="2" fill="none" />
+                    </svg>
+                    <svg style="background: #E3F3FD">
+                        <polyline points="21,17.2 21,139.2 117,52.2" stroke="#0D47A1" stroke-width="2" fill="none" />
+                    </svg>
+                    <svg style="background: #E3F3FD">
+                        <polyline points="21,17.2 21,139.2 122,28.2 141,139.2" stroke="#0D47A1" stroke-width="2"
+                            fill="none" />
+                    </svg>
+                    <svg style="background: #E3F3FD">
+                        <polyline points="21,17.2 21,139.2 122,28.2 141,139.2 23.5,11.7" stroke="#0D47A1"
+                            stroke-width="2" fill="none" />
+                    </svg>
+                </div>
+            </div>
+            <div class="t_code">
+<pre class="line-numbers language-html"><code>&lt;div class="svgBox svg3"&gt;
+    &lt;svg&gt;
+    &lt;line x1="0" y1="0" x2="200" y2="200" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;line x1="50" y1="50" x2="200" y2="200" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;line x1="100" y1="100" x2="200" y2="200" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;polyline points="21,17.2 21,139.2 117,52.2" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;polyline points="21,17.2 21,139.2 122,28.2 141,139.2" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;polyline points="21,17.2 21,139.2 122,28.2 141,139.2 23.5,11.7" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <!-- //Intro5 -->
+
+        <!-- Intro6 -->
+        <div class="bs-docs-section">
+            <h2 id="intro6" class="page-header t_tit2">클리핑 마스크(Clip-path)</h2>
+            <div class="sample">
+                <h3><span></span><em class="sr-only">svg</em></h3>
+                <div class="svgBox svg6">
+                    <svg>
+                        <image xlink:href="https://raw.githubusercontent.com/kwonhyehyeon/coding/main/animation/img/bg.jpg"
+                            width="160" height="160" />
+                    </svg>
+                    <svg>
+                        <image xlink:href="https://raw.githubusercontent.com/kwonhyehyeon/coding/main/animation/img/bg.jpg"
+                            width="160" height="160" clip-path="circle(60px at center)" />
+                    </svg>
+                    <svg>
+                        <clipPath id="clipPath1">
+                            <polygon points="136,141 10,101 108,12" />
+                        </clipPath>
+                        <image xlink:href="https://raw.githubusercontent.com/kwonhyehyeon/coding/main/animation/img/bg.jpg"
+                            width="160" height="160" clip-path="url(#clipPath1)" />
+                    </svg>
+                    <svg>
+                        <clipPath id="clipPath2">
+                            <polygon points="121,131 56,140 15,89 39,27 104,18 145,70" />
+                        </clipPath>
+                        <image xlink:href="https://raw.githubusercontent.com/kwonhyehyeon/coding/main/animation/img/bg.jpg"
+                            width="160" height="160" clip-path="url(#clipPath2)" />
+                    </svg>
+                    <svg>
+                        <clipPath id="clipPath3">
+                            <polygon points="133,129 87,115 50,144 49,96 9,70 54,54 67,8 96,47 144,45 116,84" />
+                        </clipPath>
+                        <image xlink:href="https://raw.githubusercontent.com/kwonhyehyeon/coding/main/animation/img/bg.jpg"
+                            width="160" height="160" clip-path="url(#clipPath3)" />
+                    </svg>
+                    <svg>
+                        <clipPath id="clipPath4">
+                            <polygon
+                                points="128,130 94,111 88,149 73,114 45,141 53,104 15,110 44,84 10,66 48,62 30,28 64,47 70,9 85,45 113,17 105,55 143,49 114,75 148,92 110,96" />
+                        </clipPath>
+                        <image xlink:href="https://raw.githubusercontent.com/kwonhyehyeon/coding/main/animation/img/bg.jpg"
+                            width="160" height="160" clip-path="url(#clipPath4)" />
+                    </svg>
+                </div>
+            </div>
+            <div class="t_code">
+<pre class="line-numbers language-html"><code>&lt;div class="svgBox svg3"&gt;
+    &lt;svg&gt;
+    &lt;image xlink:href="img/bg.png" width="160" height="160" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;image xlink:href="img/bg.png" width="160" height="160"
+        clip-path="circle(60px at center)" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;clipPath id="clipPath1"&gt;
+        &lt;polygon points="136,141 10,101 108,12" /&gt;
+    &lt;/clipPath&gt;
+    &lt;image xlink:href="img/bg.png" width="160" height="160" clip-path="url(#clipPath1)" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;clipPath id="clipPath2"&gt;
+        &lt;polygon points="121,131 56,140 15,89 39,27 104,18 145,70" /&gt;
+    &lt;/clipPath&gt;
+    &lt;image xlink:href="img/bg.png" width="160" height="160" clip-path="url(#clipPath2)" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;clipPath id="clipPath3"&gt;
+        &lt;polygon points="133,129 87,115 50,144 49,96 9,70 54,54 67,8 96,47 144,45 116,84" /&gt;
+    &lt;/clipPath&gt;
+    &lt;image xlink:href="img/bg.png" width="160" height="160" clip-path="url(#clipPath3)" /&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;clipPath id="clipPath4"&gt;
+        &lt;polygon
+            points="128,130 94,111 88,149 73,114 45,141 53,104 15,110 44,84 10,66 48,62 30,28 64,47 70,9 85,45 113,17 105,55 143,49 114,75 148,92 110,96" /&gt;
+    &lt;/clipPath&gt;
+    &lt;image xlink:href="img/bg.png" width="160" height="160" clip-path="url(#clipPath4)" /&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <!-- //Intro6 -->
+
+        <!-- Intro7 -->
+        <style>
+            @font-face {
+                font-family: 'SCoreDream';
+                font-weight: 900;
+                font-style: normal;
+                src: url('https://cdn.jsdelivr.net/gh/webfontworld/score/SCoreDreamBlack.eot');
+                src: url('https://cdn.jsdelivr.net/gh/webfontworld/score/SCoreDreamBlack.eot?#iefix') format('embedded-opentype'),
+                    url('https://cdn.jsdelivr.net/gh/webfontworld/score/SCoreDreamBlack.woff2') format('woff2'),
+                    url('https://cdn.jsdelivr.net/gh/webfontworld/score/SCoreDreamBlack.woff') format('woff'),
+                    url('https://cdn.jsdelivr.net/gh/webfontworld/score/SCoreDreamBlack.ttf') format("truetype");
+                font-display: swap;
+            }
+        
+            .svg7 {
+                display: flex;
+            }
+        
+            .text-wrap {
+                background-color: #e3f3fd;
+                width: 160px;
+                height: 160px;
+                margin: 6px;
+                display: inline-block;
+                overflow: hidden;
+            }
+        
+            .text-clip {
+                font-size: 70px;
+                text-align: center;
+                font-family: 'SCoreDream';
+                text-transform: uppercase;
+                line-height: 160px;
+                -webkit-text-fill-color: #0d47a1;
+            }
+        
+            .text-clip.c2 {
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                background-image: url(https://raw.githubusercontent.com/kwonhyehyeon/coding/main/animation/img/bg.jpg);
+                background-size: 100%;
+            }
+        
+            .text-clip.c3 {
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                background-image: linear-gradient(60deg, #ff5858, #f09819);
+            }
+        
+            .text-clip.c4 {
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                -webkit-text-stroke: 2px #0d47a1;
+            }
+        </style>
+        <div class="bs-docs-section">
+            <h2 id="intro7" class="page-header t_tit2">클리핑 마스크(Clip-path)</h2>
+            <div class="sample">
+                <h3><span></span><em class="sr-only">svg</em></h3>
+                <div class="svgBox svg7">
+                    <svg>
+                        <text class="text-clip" fill="#f48fb1" x="7" y="110" font-family="SCoreDream" font-size="70"
+                            font-weight="900">SVG</text>
+                    </svg>
+                    <svg>
+                        <pattern id="pattern1" patternunites="useSpaceOuUse" width="100%" height="100%">
+                            <image xlink:href="https://raw.githubusercontent.com/kwonhyehyeon/coding/main/animation/img/bg.jpg" width="160" height="160" />
+                        </pattern>
+                        <text class="text-clip" fill="url(#pattern1)" x="7" y="110" font-family="SCoreDream"
+                            font-size="70" font-weight="900">SVG</text>
+                    </svg>
+                    <div class="text-wrap">
+                        <div class="text-clip">SVG</div>
                     </div>
-                    <div class="result">
-                        <details>
-                            <summary>결과보기</summary>
-                            <div class="sample06_result"></div>
-                            실행되었습니다.(num==100)
-                        </details>
+                    <div class="text-wrap">
+                        <div class="text-clip c2">SVG</div>
                     </div>
+                    <div class="text-wrap">
+                        <div class="text-clip c3">SVG</div>
+                    </div>
+                    <div class="text-wrap">
+                        <div class="text-clip c4">SVG</div>
                     </div>
                 </div>
-        </main>
-            <!-- //section7 -->
-            <div class="main_sample">
-                <div id="sample06" class="sample">
-                    <h3>08. switch문 예제(교재p.344)</h3>
-                    <div class="script">
-                    <div class="t_code">
-<pre><code class="language-js">var classification = prompt('아동, 청소년, 성인 중 선택 입력','');
-switch (classification) {
-    case '아동':
-        classification += ': 입장료 무료';
-        break;
-    case '청소년':
-        classification += ': 입장료 2,000원';
-        break;
-    case '성인':
-        classification += ': 입장료 5,000원';
-        break;
-    default:
-        classification = '입력 값을 다시 확인하세요';
-}
-document.write(classification)
-</code></pre>                    
-                    </div>
-                    <div class="result">
-                        <details>
-                            <summary>결과보기</summary>
-                            <div class="sample05_result"></div>
-                            입력 : 청소년<br>
-                            청소년: 입장료 2,000원
-                            
-                        </details>
-                    </div>
-                    </div>
+            </div>
+            <div class="t_code">
+<pre class="line-numbers language-html"><code>&lt;div class="svgBox svg7"&gt;
+    &lt;svg&gt;
+    &lt;text fill="#f48fb1" x="7" y="110" font-family="SCoreDream" font-size="70"
+        font-weight="900"&gt;SVG&lt;/text&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;pattern id="pattern1" patternunites="useSpaceOuUse" width="100%" height="100%"&gt;
+        &lt;image xlink:href="img/bg2.png" width="160" height="160" /&gt;
+    &lt;/pattern&gt;
+    &lt;text fill="url(#pattern1)" x="7" y="110" font-family="SCoreDream" font-size="70"
+        font-weight="900"&gt;SVG&lt;/text&gt;
+    &lt;/svg&gt;
+    &lt;div class="text-wrap"&gt;
+        &lt;div class="text-clip"&gt;SVG&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="text-wrap"&gt;
+        &lt;div class="text-clip c2"&gt;SVG&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="text-wrap"&gt;
+        &lt;div class="text-clip c3"&gt;SVG&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="text-wrap"&gt;
+        &lt;div class="text-clip c4"&gt;SVG&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+            </div>
+        </div>
+        <!-- //Intro7 -->
+
+        <!-- Intro8 -->
+        <style>
+            .ani1 {
+                width: 100px;
+                height: 100px;
+                x: 30px;
+                y: 30px;
+                fill: none;
+                stroke: #880E41;
+                stroke-width: 2px;
+                stroke-dasharray: 50;
+                stroke-dashoffset: 50;
+                animation: ani1 1s infinite linear alternate-reverse;
+            }
+        
+            @keyframes ani1 {
+                0% {
+                    stroke-dashoffset: 50;
+                }
+            
+                100% {
+                    stroke-dashoffset: 0;
+                }
+            }
+        
+            .ani2 {
+                width: 100px;
+                height: 100px;
+                x: 30px;
+                y: 30px;
+                fill: none;
+                stroke: #880E41;
+                stroke-width: 2px;
+                stroke-dasharray: 400;
+                stroke-dashoffset: 400;
+                animation: ani2 2s infinite linear alternate-reverse;
+            }
+        
+            @keyframes ani2 {
+                0% {
+                    stroke-dashoffset: 400;
+                }
+            
+                100% {
+                    stroke-dashoffset: 0;
+                }
+            }
+        
+            .ani3 {
+                animation: ani3 1s infinite linear alternate-reverse;
+                stroke-dasharray: 230px;
+                stroke-dashoffset: 230px;
+            }
+        
+            @keyframes ani3 {
+                0% {
+                    stroke-dashoffset: 230px;
+                }
+            
+                100% {
+                    stroke-dashoffset: 0;
+                }
+            }
+        
+            .ani4 {
+                animation: ani4 1s infinite linear alternate-reverse;
+                stroke-dasharray: 605px;
+                stroke-dashoffset: 605px;
+            }
+        
+            @keyframes ani4 {
+                0% {
+                    stroke-dashoffset: 605px;
+                }
+            
+                100% {
+                    stroke-dashoffset: 0;
+                }
+            }
+        
+            .ani5 {
+                animation: ani5 1s infinite linear alternate-reverse;
+                stroke-dasharray: 411px;
+                stroke-dashoffset: 411px;
+            }
+        
+            @keyframes ani5 {
+                0% {
+                    stroke-dashoffset: 411px;
+                }
+            
+                100% {
+                    stroke-dashoffset: 0px;
+                }
+            }
+        
+            .ani6 {
+                animation: ani6 1s infinite linear alternate-reverse;
+                stroke-dasharray: 614px;
+                stroke-dashoffset: 614px;
+            }
+        
+            @keyframes ani6 {
+                0% {
+                    stroke-dashoffset: 614px;
+                }
+            
+                100% {
+                    stroke-dashoffset: 0;
+                }
+            }
+        </style>
+        <div class="bs-docs-section">
+            <h2 id="intro8" class="page-header t_tit2">애니메이션</h2>
+            <div class="sample">
+                <h3><span></span><em class="sr-only">svg</em></h3>
+                <div class="svgBox svg8">
+                    <svg>
+                        <rect class="ani1"></rect>
+                    </svg>
+                    <svg>
+                        <rect class="ani2"></rect>
+                    </svg>
+                    <svg style="background: #E3F3FD">
+                        <path class="ani3" fill="none" stroke="#0D47A1" stroke-width="2"
+                            d="M7,154.667c0-82.358,65.152-149,145.667-149" />
+                    </svg>
+                    <svg style="background: #E3F3FD">
+                        <path class="ani4" fill="none" stroke="#0D47A1" stroke-width="2" d="M151.534,123.547c-33.711,33.711-88.369,33.711-122.08,0
+        c-26.97-26.969-26.97-70.695,0-97.665c21.575-21.576,56.556-21.576,78.131,0c17.261,17.26,17.261,45.245,0.001,62.504
+        c-13.809,13.809-36.196,13.809-50.005,0c-11.046-11.046-11.046-28.956,0-40.002c8.837-8.837,23.166-8.837,32.003,0
+        c7.069,7.07,7.07,18.532,0,25.602c-5.656,5.657-14.826,5.657-20.482,0c-4.524-4.524-4.524-11.86,0-16.385" />
+                    </svg>
+                    <svg style="background: #E3F3FD">
+                        <path class="ani5" fill="none" stroke="#0D47A1" stroke-width="2" d="M58.665,139.312c0-6.873,42-6.873,42-13.747s-42-6.874-42-13.748
+                        s42-6.874,42-13.748c0-6.872-42-6.872-42-13.744c0-6.874,42-6.874,42-13.747c0-6.877-42-6.877-42-13.753
+                        c0-6.874,42-6.874,42-13.748c0-6.878-42-6.878-42-13.757s42-6.879,42-13.758" />
+                    </svg>
+                    <svg style="background: #E3F3FD">
+                        <path class="ani6" fill="none" stroke="#0D47A1" stroke-width="2" d="M93.108,91.478c42.049,30.58-13.048,57.425-13.347,6.503
+                        c0.299,50.922-55.041,24.58-13.405-6.381c-41.636,30.961-55.545-28.728-3.37-14.458c-52.176-14.27-14.181-62.359,9.204-11.649
+                        c-23.385-50.71,37.901-50.989,14.846-0.067c23.055-50.922,61.484-3.179,9.309,11.565C148.521,62.245,135.157,122.058,93.108,91.478
+                        z" />
+                    </svg>
                 </div>
-        </main>
-<footer id="footer">
-    <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
-</footer>
-              <!-- //footer --> 
-<script src="../assets/js/highlight.min.js"></script>
+            </div>
+            <div class="t_code">
+<pre class="line-numbers language-html"><code>&lt;div class="svgBox svg8"&gt;
+    &lt;svg&gt;
+    &lt;rect class="ani1"&gt;&lt;/rect&gt;
+    &lt;/svg&gt;
+    &lt;svg&gt;
+    &lt;rect class="ani2"&gt;&lt;/rect&gt;
+    &lt;/svg&gt;
+    &lt;svg style="background: #E3F3FD"&gt;
+    &lt;path class="ani3" fill="none" stroke="#0D47A1" stroke-width="2"
+        d="M7,154.667c0-82.358,65.152-149,145.667-149" /&gt;
+    &lt;/svg&gt;
+    &lt;svg style="background: #E3F3FD"&gt;
+    &lt;path class="ani4" fill="none" stroke="#0D47A1" stroke-width="2" d="M151.534,123.547c-33.711,33.711-88.369,33.711-122.08,0
+    c-26.97-26.969-26.97-70.695,0-97.665c21.575-21.576,56.556-21.576,78.131,0c17.261,17.26,17.261,45.245,0.001,62.504
+    c-13.809,13.809-36.196,13.809-50.005,0c-11.046-11.046-11.046-28.956,0-40.002c8.837-8.837,23.166-8.837,32.003,0
+    c7.069,7.07,7.07,18.532,0,25.602c-5.656,5.657-14.826,5.657-20.482,0c-4.524-4.524-4.524-11.86,0-16.385" /&gt;
+    &lt;/svg&gt;
+    &lt;svg style="background: #E3F3FD"&gt;
+    &lt;path class="ani5" fill="none" stroke="#0D47A1" stroke-width="2" d="M58.665,139.312c0-6.873,42-6.873,42-13.747s-42-6.874-42-13.748
+    s42-6.874,42-13.748c0-6.872-42-6.872-42-13.744c0-6.874,42-6.874,42-13.747c0-6.877-42-6.877-42-13.753
+    c0-6.874,42-6.874,42-13.748c0-6.878-42-6.878-42-13.757s42-6.879,42-13.758" /&gt;
+    &lt;/svg&gt;
+    &lt;svg style="background: #E3F3FD"&gt;
+    &lt;path class="ani6" fill="none" stroke="#0D47A1" stroke-width="2" d="M93.108,91.478c42.049,30.58-13.048,57.425-13.347,6.503
+    c0.299,50.922-55.041,24.58-13.405-6.381c-41.636,30.961-55.545-28.728-3.37-14.458c-52.176-14.27-14.181-62.359,9.204-11.649
+    c-23.385-50.71,37.901-50.989,14.846-0.067c23.055-50.922,61.484-3.179,9.309,11.565C148.521,62.245,135.157,122.058,93.108,91.478
+    z" /&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+<script src="../../assets/js/highlight.min.js"></script>
 <script>
     hljs.highlightAll();
 </script>
-<script>
-    //if문 예제
-    {
-        // var html = Number(prompt('html 점수입력', ''));
-        // var css = Number(prompt('css 점수입력', ''));
-        // var javascript = Number(prompt('javascript 점수입력', ''));
-        // var avg = (html + css + javascript) / 3;
-        // var comment;
-        // if (avg >= 60) {
-        //     if (html < 40) {
-        //         comment = 'HTML' + '40점 미만 불합격';
-        //     }else if (css < 40) {
-        //         comment = 'CSS' + '40점 미만 불합격';
-        //     }else if (javascript < 40) {
-        //         comment = 'JAVASCRIPT' + '40점 미만 불합격';
-        //     }else {
-        //         comment = '평균' + avg + '점 합격';
-        //     }
-        // }else {
-        //     comment = '평균' + avg + '점 불합격';
-        // }
-        //document.write(comment);
-    }
-    //switch문 예제
-    {
-        // var classification = prompt('아동, 청소년, 성인 중 선택 입력','');
-        // switch (classification) {
-        //     case '아동':
-        //         classification += ': 입장료 무료';
-        //         break;
-        //     case '청소년':
-        //         classification += ': 입장료 2,000원';
-        //         break;
-        //     case '성인':
-        //         classification += ': 입장료 5,000원';
-        //         break;
-        //     default:
-        //         classification = '입력 값을 다시 확인하세요';
-        // }
-        //document.write(classification)
-
-    }
-</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
