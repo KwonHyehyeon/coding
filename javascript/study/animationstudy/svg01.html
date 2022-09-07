@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : if문</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="arraymethod.html">배열 객체</a></li>
+                <li><a href="built_in_function.html">내장 함수</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            
+            <h3 class="t_tit2">조건문</h2>
+            <p class="t_desc">
+                조건문은 특정 조건 만족 시(true인 경우)실행하는 명령의 집합이며, 종류로는 <i>if</i>와 <i>switch</i>가 있다.
+            </p>
+            
+            <h3 class="t_tit2">if문</h3>
+            <p class="t_desc2">if문은 조건식의 결과가 <i>참(true)이면 주어진 실행문을 실행</i>하고, 거짓(false)이면 아무것도 실행하지 않는 문장입니다.</p>
+            <p class="t_desc">- if문의 형식 ①</p>
+            <p class="t_box">
+                if (조건식) {<br>
+                &nbsp;&nbsp;&nbsp;실행문; <br>
+                }
+            </p>
+            <p class="t_desc">- if문의 형식 ②</p>
+            <p class="t_box">
+                if (조건식) {<br>
+                &nbsp;&nbsp;&nbsp;실행문1; <br>
+                } else <br>
+                &nbsp;&nbsp;&nbsp;실행문2; <br>
+                }
+            </p>
+            <p class="t_desc">- if문의 형식 ③</p>
+            <p class="t_box">
+                if (조건식1) {<br>
+                &nbsp;&nbsp;&nbsp;실행문; <br>
+                } else if (조건식2) {<br>
+                &nbsp;&nbsp;&nbsp;실행문2; <br>
+                } else { <br>
+                &nbsp;&nbsp;&nbsp;실행문3; <br>
+                }
+            </p>
+            <p class="t_desc">- if문의 형식 ④</p>
+            <p class="t_desc">if문은 if문 안에 또 다른 if문을 중첩하여 사용할 수 있습니다. </p>
+            <p class="t_box">
+                if (조건식1) {<br>
+                &nbsp;&nbsp;if (조건식2) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문; <br>
+                &nbsp;&nbsp;} <br>
+                }
+            </p>
+
+            <h3 class="t_tit2">switch문</h3>
+            <p class="t_desc2">switch문은 if~else문과 마찬가지로 주어진 조건 값에 따라 프로그램이 다른 명령을 수행하도록 하는 조건문입니다. </p>
+            <p class="t_desc">switch문은 if문과 달리 특정 조건에 만족했을 때 블록{} 을 스스로 빠져나가지 못합니다. <br>따라서 <i>break 명령어</i>를 주어 switch case문의 블록{}을 빠져 나가도록 합니다. </p>
+            <p class="t_box">
+                for ( 초기값; 조건식; 증감값 ){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문<br>
+                }
+            </p>
+
+            <main id="main">
+                <div id="sample01" class="sample">
+                    <h3>01. if문</h3>
+                    <p>if(조건식)의 조건식이 true일 때 실행문이 동작하고, false이면 실행되지 않습니다.
+                    </p>
+                    <div class="script">
+                    <div class="t_code">
+<pre><code class="language-js">//false : 0, undefined, null, false
+//true : 1, "0", "1", 0&gt;10, [], {}
+if(1){
+    document.write("실행되었습니다(true).")
+} else {
+    document.write("실행되었습니다(false).")
+}
+</code></pre>                    
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample01_result"></div>
+                            실행되었습니다(true).
+                        </details>
+                    </div>
+                    </div>
+                </div>
+            <!-- //section1 -->
+    
+            <div class="main_sample">
+                <div id="sample02" class="sample">
+                    <h3>02. if문 생략</h3>
+                    <p>if(조건식) 다음의 {}를 생략할 수 있습니다. 하지만, 생략할 경우 if문에 포함되는 실행문은 단 한 줄만 포합됩니다.
+                    </p>
+                    <div class="script">
+                    <div class="t_code">
+<pre><code class="language-js">const num = 100;
+    
+if(num) document.write("실행되었습니다(true)."); //{} 생략 가능
+else document.write("실행되었습니다(false).");
+</code></pre>                    
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample02_result"></div>
+                            실행되었습니다(true).
+                        </details>
+                    </div>
+                    </div>
+
+                </div>
+            <!-- //section2 -->
+            <div class="main_sample">
+                <div id="sample03" class="sample">
+                    <h3>03. 다중 if문</h3>
+                    <p>조건으로 더욱 구체적인 결과를 얻고자 할 때 다중 if문을 사용하고 if와 else if를 통해 나타냅니다.
+                    </p>
+                    <div class="script">
+                    <div class="t_code">
+<pre><code class="language-js">const num = 100;
+if( num == 90 ){
+    document.write("실행되었습니다(num==90)");
+} else if( num == 100) {
+    document.write("실행되었습니다(num==100)");
+} else if( num == 110) {
+    document.write("실행되었습니다(num==110)");
+} else if( num == 120) {
+    document.write("실행되었습니다(num==120)");
+} else {
+    document.write("실행되었습니다(num==값이없음)");
+}
+</code></pre>                    
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample03_result"></div>
+                            실행되었습니다(num==100)
+                        </details>
+                    </div>
+                    </div>
+
+            </div>
+            <!-- //section3 -->
+            <div class="main_sample">
+                <div id="sample04" class="sample">
+                    <h3>04. 중첩 if문</h3>
+                    <p>if문 안에 또 다른 조건의 if문이 들어있는 것을 중첩 if문이라고 합니다. if중첩횟수에는 제약이 없습니다.<br>
+                    ※중첩은 if문 뿐만아니라 swich문 for문 while문 do-while문과 함께 중첩시켜 사용할 수도 있습니다.
+                    </p>
+                    <div class="script">
+                    <div class="t_code">
+<pre><code class="language-js">const num = 100;
+    
+if( num == 100 ){
+    document.write("실행되었습니다.(1)");
+    if( num == 100 ){
+        document.write("실행되었습니다.(2)");
+        if( num == 100 ){
+            document.write("실행되었습니다.(3)");
+        }    
+    }
+} else {
+    document.write("실행되었습니다.(4)");
+}
+</code></pre>                    
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample04_result"></div>
+                            실행되었습니다.(1)실행되었습니다.(2)실행되었습니다.(3)
+                        </details>
+                    </div>
+                    </div>
+
+            </div>
+            <!-- //section4 -->
+            <div class="main_sample">
+                <div id="sample05" class="sample">
+                    <h3>05. 삼항 연산자</h3>
+                    <p>삼항 연산자는 세 개의 항(피연산자 3개)이 있는 연산자를 말합니다. <br>
+                    조건식(피연산자1) ? 값 or 연산식(true)일 경우 : 값 or 연산식(false)일 경우; 로 나타냅니다.
+                    </p>
+                    <div class="script">
+                    <div class="t_code">
+<pre><code class="language-js">const num = 100;
+    
+//num의 값이 100이면 true를 출력하고, 아니면 false를 출력하세요.
+if( num == 100 ){
+    document.write("true");
+}else {
+    document.write("false");
+}
+    
+//밑 형식(삼항연산자)을 더 많이 씀->규모가 크면 더 효율적임 (위에 꺼 줄여서, 간략하게 표현)
+(num == 100) ? document.write("true") : document.write("false")
+</code></pre>                    
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample05_result"></div>
+                            true<br><br>
+                            true
+                        </details>
+                    </div>
+                    </div>
+                </div>
+            <!-- //section5 -->
+            <div class="main_sample">
+                <div id="sample06" class="sample">
+                    <h3>06. if문 예제(교재p.343)</h3>
+                    <div class="script">
+                    <div class="t_code">
+<pre><code class="language-js">var html = Number(prompt('html 점수입력', ''));
+var css = Number(prompt('css 점수입력', ''));
+var javascript = Number(prompt('javascript 점수입력', ''));
+var avg = (html + css + javascript) / 3;
+var comment;
+if (avg &gt;= 60) {
+    if (html &lt; 40) {
+        comment = 'HTML' + '40점 미만 불합격';
+    }else if (css &lt; 40) {
+        comment = 'CSS' + '40점 미만 불합격';
+    }else if (javascript &lt; 40) {
+        comment = 'JAVASCRIPT' + '40점 미만 불합격';
+    }else {
+        comment = '평균' + avg + '점 합격';
+    }
+}else {
+    comment = '평균' + avg + '점 불합격';
+}
+document.write(comment);
+</code></pre>                    
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample05_result"></div>
+                            평균 90점 합격<br>
+                            평균 59점 불합격
+                            
+                        </details>
+                    </div>
+                   </div>
+                </div>
+            <!-- //section6 -->
+
+
+
+            <div class="main_sample">
+                <div id="sample06" class="sample">
+                    <h3>07. switch문</h3>
+                    <p>변수가 갖는 값에 따라 실행문을 선택하는 조건 제어문입니다. 
+                    조건식의 결과가 많을 경우 if문을 사용하게 되면 코드가 복잡해집니다. 반면, switch문은 변수값에 따라서 실행문이 결정되기 때문에 if문보다 더욱 간결하게 코드를 만들 수 있습니다.
+                    </p>
+                    <div class="script">
+                    <div class="t_code">
+<pre><code class="language-js">const num = 100;
+    
+switch( num ){
+    case 100 :
+        document.write("실행되었습니다.(num==100)");
+        break;
+    case 110 :
+        document.write("실행되었습니다.(num==110)");
+        break;
+    case 120 :
+        document.write("실행되었습니다.(num==120)");
+        break;
+    case 130 :
+        document.write("실행되었습니다.(num==130)");
+        break;
+    default :
+        document.write("실행되었습니다.(num==값이 없음)");
+</code></pre>                    
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample06_result"></div>
+                            실행되었습니다.(num==100)
+                        </details>
+                    </div>
+                    </div>
+                </div>
+        </main>
+            <!-- //section7 -->
+            <div class="main_sample">
+                <div id="sample06" class="sample">
+                    <h3>08. switch문 예제(교재p.344)</h3>
+                    <div class="script">
+                    <div class="t_code">
+<pre><code class="language-js">var classification = prompt('아동, 청소년, 성인 중 선택 입력','');
+switch (classification) {
+    case '아동':
+        classification += ': 입장료 무료';
+        break;
+    case '청소년':
+        classification += ': 입장료 2,000원';
+        break;
+    case '성인':
+        classification += ': 입장료 5,000원';
+        break;
+    default:
+        classification = '입력 값을 다시 확인하세요';
+}
+document.write(classification)
+</code></pre>                    
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample05_result"></div>
+                            입력 : 청소년<br>
+                            청소년: 입장료 2,000원
+                            
+                        </details>
+                    </div>
+                    </div>
+                </div>
+        </main>
+<footer id="footer">
+    <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+</footer>
+              <!-- //footer --> 
+<script src="../assets/js/highlight.min.js"></script>
+<script>
+    hljs.highlightAll();
+</script>
+<script>
+    //if문 예제
+    {
+        // var html = Number(prompt('html 점수입력', ''));
+        // var css = Number(prompt('css 점수입력', ''));
+        // var javascript = Number(prompt('javascript 점수입력', ''));
+        // var avg = (html + css + javascript) / 3;
+        // var comment;
+        // if (avg >= 60) {
+        //     if (html < 40) {
+        //         comment = 'HTML' + '40점 미만 불합격';
+        //     }else if (css < 40) {
+        //         comment = 'CSS' + '40점 미만 불합격';
+        //     }else if (javascript < 40) {
+        //         comment = 'JAVASCRIPT' + '40점 미만 불합격';
+        //     }else {
+        //         comment = '평균' + avg + '점 합격';
+        //     }
+        // }else {
+        //     comment = '평균' + avg + '점 불합격';
+        // }
+        //document.write(comment);
+    }
+    //switch문 예제
+    {
+        // var classification = prompt('아동, 청소년, 성인 중 선택 입력','');
+        // switch (classification) {
+        //     case '아동':
+        //         classification += ': 입장료 무료';
+        //         break;
+        //     case '청소년':
+        //         classification += ': 입장료 2,000원';
+        //         break;
+        //     case '성인':
+        //         classification += ': 입장료 5,000원';
+        //         break;
+        //     default:
+        //         classification = '입력 값을 다시 확인하세요';
+        // }
+        //document.write(classification)
+
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
