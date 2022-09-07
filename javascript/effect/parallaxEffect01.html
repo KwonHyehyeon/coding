@@ -7,7 +7,7 @@
     <title>패럴랙스 이펙트01</title>
     <link rel="stylesheet" href="../assets/css/parallax.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
-    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <link href="https://webfontwor0000ld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
     <style>
@@ -94,7 +94,7 @@
             background-repeat: no-repeat;
             background-position: center center;
              /* 사진안짤리게 */
-             background-size: cover;
+            background-size: cover;
             width: 110%;
             height: 110%;
             left: -5%;
@@ -604,7 +604,7 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
         //스크롤 이동
         document.querySelectorAll("#parallax__nav li a").forEach(li => {
             li.addEventListener("click", (e) => {
-                //클릭하면 이벤트 막아줌
+                //클릭하면 이벤트 막아줌(바로 딱 나오게 하는게 아니라 그 후에 부드럽게 나오게 하기 위함)
                 e.preventDefault();
                 //li = li a태그들 href = secton1,2,...
                 document.querySelector(li.getAttribute("href")).scrollIntoView({
@@ -622,10 +622,6 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
         // document.querySelector(".offset7").innerText = document.getElementById("section7").offsetTop;
         // document.querySelector(".offset8").innerText = document.getElementById("section8").offsetTop;
         // document.querySelector(".offset9").innerText = document.getElementById("section9").offsetTop;
-
-
-    
-        
     </script>
 </body>
 </html>

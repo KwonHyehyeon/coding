@@ -48,11 +48,11 @@
             </div>
             <div class="header__menu">
                 <ul>
-                    <li><a href="#">헤더 영역</a></li>
-                    <li><a href="#">슬라이드 영역</a></li>
-                    <li><a href="#">배너 영역</a></li>
-                    <li><a href="#">컨텐츠 영역</a></li>
-                    <li><a href="#">푸터 영역</a></li>
+                    <li class="active"><a href="#section1">헤더 영역</a></li>
+                    <li><a href="#section2">슬라이드 영역</a></li>
+                    <li><a href="#section3">배너 영역</a></li>
+                    <li><a href="#section4">컨텐츠 영역</a></li>
+                    <li><a href="#section5">푸터 영역</a></li>
                 </ul>
             </div>
             <div class="header__member">
@@ -63,7 +63,7 @@
     <!-- headerType -->
     
     <main id="mainType">
-        <section id="sliderType" class="slider__wrap">
+        <section id="sliderType" class="slider__wrap content__item">
             <h2>슬라이드 영역</h2>
             <div class="slider__inner">
                 <div class="slider">
@@ -97,7 +97,7 @@
         </section>
         <!-- sliderType -->
 
-        <section id="imageType" class="image__wrap nexon section">
+        <section id="imageType" class="image__wrap nexon section content__item">
             <h2>맛있는 카페 음료들</h2>
             <p>당신이 추천하는 가장 맛있는 카페 음료는 무엇인가요?</p>
             <div class="image__inner container">
@@ -115,7 +115,7 @@
         </section>
         <!--//imageType-->
 
-        <section id="imageTextType" class="imageText__wrap nexon section gray">
+        <section id="imageTextType" class="imageText__wrap nexon section gray content__item">
             <h2 class="blind">유용한 사이트 살펴보기</h2>
             <div class="imgText__inner container">
                 <div class="imgText__txt">
@@ -141,7 +141,7 @@
         </section>
         <!--//imgTextType-->
 
-        <section id="cardType" class="card__wrap nexon section gray">
+        <section id="cardType" class="card__wrap nexon section gray content__item">
             <h2>소중한 동물 친구들</h2>
             <p>우리 곁에 영원히 함께 할 소중한 동물 친구들에 대해 같이 알아봅시다.</p>
             <div class="card__inner container">
@@ -215,7 +215,7 @@
         </section>
         <!--//cardType-->
 
-        <section id="bannerType" class="banner__wrap">
+        <section id="bannerType" class="banner__wrap content__item">
             <h2 class="blind">배너 영역</h2>
             <div class="banner__inner">
                 <h3 class="title">유튜버 입짧은 혠</h3>
@@ -228,7 +228,7 @@
         </section>
         <!--//bannerType-->
 
-        <section id="textType" class="text__wrap nexon section">
+        <section id="textType" class="text__wrap nexon section content__item">
             <!-- 쓸 거 없을 때 div나 span -->
             <span>텍스트 유형01</span>
             <h2 class="mb70">요즘 핫한 인기 어플들</h2>
@@ -269,7 +269,7 @@
     </main>
     <!-- mainType -->
     
-    <footer id="footerType" class="footer__wrap nexon section gray">
+    <footer id="footerType" class="footer__wrap nexon section gray content__item">
         <h2 class="blind">푸터 영역</h2>
         <div class="footer__inner container">
             <div class="footer__menu">
@@ -330,5 +330,108 @@
         </div>
     </footer>
     <!-- footerType -->
+    <script>
+         //스크롤 됐을 때
+         window.addEventListener("scroll", () => {
+            // let scrollTop = window.pageYOffset;
+            //let scrollTop = window.scrollY;
+            //let scrollTop = document.documentElement.scrollTop;
+            //셋 중 하나로 해도 다 된다는 뜻
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+            //Math.round() 반올림 Math.ceil사용 가능
+            //scroll.innerText = Math.round(scrollTop);
+
+            //박스값이 스크롤 탑 값보다 커지거나 같으면
+            // if(scrollTop >= document.getElementById("section1").offsetTop){
+            //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+            //         li.classList.remove("active")
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(1)").classList.add("active");
+            // }
+            // if(scrollTop >= document.getElementById("section2").offsetTop){
+            //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+            //         li.classList.remove("active")
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(2)").classList.add("active");
+            // }
+            // if(scrollTop >= document.getElementById("section3").offsetTop){
+            //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+            //         li.classList.remove("active")
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(3)").classList.add("active");
+            // }
+            // if(scrollTop >= document.getElementById("section4").offsetTop){
+            //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+            //         li.classList.remove("active")
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(4)").classList.add("active");
+            // }
+            // if(scrollTop >= document.getElementById("section5").offsetTop){
+            //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+            //         li.classList.remove("active")
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(5)").classList.add("active");
+            // }
+            // if(scrollTop >= document.getElementById("section6").offsetTop){
+            //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+            //         li.classList.remove("active")
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(6)").classList.add("active");
+            // }
+            // if(scrollTop >= document.getElementById("section7").offsetTop){
+            //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+            //         li.classList.remove("active")
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(7)").classList.add("active");
+            // }
+            // if(scrollTop >= document.getElementById("section8").offsetTop){
+            //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+            //         li.classList.remove("active")
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(8)").classList.add("active");
+            // }
+            // if(scrollTop >= document.getElementById("section9").offsetTop){
+            //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+            //         li.classList.remove("active")
+            //     })
+            //     document.querySelector("#parallax__nav li:nth-child(9)").classList.add("active");
+            // }
+
+            // for(let i=1; i<=9; i++){
+            //     if(scrollTop >= document.getElementById("section" + i).offsetTop){
+            //         document.querySelectorAll("#parallax__nav li").forEach(li=>{
+            //             li.classList.remove("active")
+            //         })
+            //         document.querySelector("#parallax__nav li:nth-child("+ i +")").classList.add("active");
+            //     }
+            // }
+
+            //forEach
+            document.querySelectorAll(".content__item").forEach((element, index)=>{
+                //오차범위를 위해 -2쓰는 것
+                if(scrollTop >= element.offsetTop -2){
+                    document.querySelectorAll(".header__menu li").forEach(li => {
+                        //메뉴바 active 모두 없애기
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".header__menu li:nth-child("+(index + 1)+")").classList.add("active")
+                }
+            })
+         })
+
+        //스크롤 이동
+        document.querySelectorAll(".header__menu li a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                //클릭하면 이벤트 막아줌(바로 딱 나오게 하는게 아니라 그 후에 부드럽게 나오게 하기 위함)
+                e.preventDefault();
+                //li = li a태그들 href = secton1,2,...
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    //부드럽게 움직이는 효과
+                    behavior: "smooth"
+                })
+            })
+        })
+
+    </script>
 </body>
 </html>

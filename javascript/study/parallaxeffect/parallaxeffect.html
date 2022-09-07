@@ -16,209 +16,465 @@
             📌 패럴랙스 이펙트는 좌표값 속성들을 통해 화면을 스크롤 할 때 자연스럽게 카테고리(메뉴)를 바꿔주는 이펙트입니다.<br>
         </p>
         <hr>
-        <h3 class="t_tit2">패럴랙스 이펙트 완성⭐️</h3>
-        <div class="t_iframe" style="min-height: 700px; padding-top: 0;">
-            <iframe src="https://KwonHyehyeon.github.io/coding/javascript/effect/parallaxType01.html"
-                frameborder="0"></iframe>
+        <h3 class="t_tit2">패럴랙스 이펙트를 피그마를 활용하여 설명</h3>
+        <div class="iframe">
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="700" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D2482%253A2964" allowfullscreen></iframe>
         </div>
-        <div class="t_link">
-            <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/parallaxEffect01.html" target="_blank"
-            >실제 사이트보기</a>
-            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/parallaxEffect01.html" target="_blank"
-            >원본 소스보기</a>
-        </div>  
-        <h3 class="t_tit2">HTML</h3>
+        <h3 class="t_tit2">➰ HTML</h3>
         <p class="t_desc2">
-            전체적인 틀을 짜주는 것입니다. 
+            1. parallax__nav id를 통해 상단 메뉴를 구현합니다. 
         </p>
         <div class="t_code">
-<pre><code class="language-js">&lt;body class="img01"&gt;
-    &lt;header id="header"&gt;
-        &lt;h1&gt;javascript Slider Effect01&lt;/h1&gt;
-        &lt;p&gt;슬라이드 이펙트 - 트랜지션 효과&lt;/p&gt;
-        &lt;ul&gt;
-            &lt;li class="active"&gt;&lt;a href="sliderEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="sliderEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="sliderEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="sliderEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="sliderEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="sliderEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="sliderEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/header&gt;
-    &lt;!-- header --&gt;
-    &lt;main id="main"&gt;
-        &lt;section id="sliderType01"&gt;
-            &lt;div class="slider__wrap"&gt;
-                &lt;div class="slider__img"&gt;
-                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg06.jpg" alt="이미지1"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg012.jpg" alt="이미지2"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg020.jpg" alt="이미지3"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg018.jpg" alt="이미지4"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg05.jpg" alt="이미지5"&gt;&lt;/div&gt;   &lt;!-- 슬라이드에 들어갈 이미지를 넣어줌 --&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/section&gt;
-    &lt;/main&gt;
-    &lt;!-- main --&gt;
-    &lt;footer id="footer"&gt;
-        &lt;div class="modal__wrap"&gt; &lt;!-- 화면 위에 화면창 만들어주기(부가적인 것 가능) --&gt;
-            &lt;div class="modal__btn"&gt;소스보기&lt;/div&gt;
-            &lt;div class="modal__cont"&gt;
-                &lt;div class="modal__box"&gt;
-                    &lt;div class="title"&gt;
-                        &lt;span class="dot" aria-label="true"&gt;&lt;/span&gt;
-                        &lt;div class="tabs"&gt;
-                            &lt;div class="active"&gt;
-                                &lt;span class="favicon" aria-label="true"&gt;
-                                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false"&gt;
-                                        &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
-                                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"&gt;&lt;/path&gt;
-                                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"&gt;&lt;/path&gt;
-                                      &lt;/svg&gt;
-                                &lt;/span&gt;
-                                &lt;em&gt;JAVASCRIPT&lt;/em&gt;
-                                &lt;span class="close"&gt;
-                                    &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
-                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                    &lt;/svg&gt;
-                                &lt;/span&gt;
-                            &lt;/div&gt;
-                            &lt;div&gt;
-                                &lt;span class="favicon" aria-label="true"&gt;
-                                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false"&gt;
-                                        &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
-                                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"&gt;&lt;/path&gt;
-                                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"&gt;&lt;/path&gt;
-                                      &lt;/svg&gt;
-                                &lt;/span&gt;
-                                &lt;em&gt;HTML&lt;/em&gt;
-                                &lt;span class="close"&gt;
-                                    &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
-                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                    &lt;/svg&gt;
-                                &lt;/span&gt;
-                            &lt;/div&gt;
-                            &lt;div&gt;
-                                &lt;span class="favicon" aria-label="true"&gt;
-                                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false"&gt;
-                                        &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
-                                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"&gt;&lt;/path&gt;
-                                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"&gt;&lt;/path&gt;
-                                    &lt;/svg&gt;
-                                &lt;/span&gt;
-                                &lt;em&gt;CSS&lt;/em&gt;
-                                &lt;span class="close"&gt;
-                                    &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
-                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                      &lt;/svg&gt;
-                                &lt;/span&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;span class="plus"&gt;
-                            &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
-                                &lt;path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                &lt;path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                            &lt;/svg&gt;
-                        &lt;/span&gt;
-                    &lt;/div&gt;    &lt;!-- 새로운 창 구조 정해주기 (밑에는 pre, code태그를 이용해 안에 들어갈 내용을 써주면 됨(생략함)) --&gt;
-
-                    &lt;!-- 창 닫기 구현 --&gt;
-                    &lt;div class="modal__close"&gt;
-                    &lt;span class="close"&gt;
-                        &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
-                            &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                            &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                        &lt;/svg&gt;
-                    &lt;/span&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
+<pre><code class="language-js">&lt;nav id="parallax__nav"&gt;
+    &lt;ul&gt;
+        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
 </code></pre>
     </div>
-    <h3 class="t_tit2">CSS</h3>
+        <p class="t_desc2">
+            2. 섹션(각 영역)별 번호, 제목, 명언을 작성해줍니다. [section1 - section9]
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">&lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+        &lt;section id="section1" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;오늘 할 수 있는 일에 전력을 다하라. 그러면 내일에는 한걸음 더 진보한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section1 --&gt;
+        &lt;section id="section2" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;게으르지 않음은 영원한 삶의 집이요, 게으름은 죽음의 집이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section2--&gt;
+        &lt;section id="section3" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;우리는 행복하기 때문에 웃는게 아니라, 웃기 때문에 행복하다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section3 --&gt;
+        &lt;section id="section4" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;인생은 가까이서 보면 비극, 멀리서 보면 희극이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section4 --&gt;
+        &lt;section id="section5" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;승자는 시간을 관리하며 살고 패자는 시간에 끌려 산다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section5 --&gt;
+        &lt;section id="section6" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;아무것도 하지 않으면 아무 일도 일어나지 않는다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section6 --&gt;
+        &lt;section id="section7" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;일단 시작해라. 나중에 완벽해지면 된다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section7 --&gt;
+        &lt;section id="section8" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;모든 이의 마음을 얻으려고 계산된 글은 그 누구의 마음도 얻지 못한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section8 --&gt;
+        &lt;section id="section9" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;우리 자신에게 실패를 허락하는 것이 성공을 허락하는 것이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section9 --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+    </div>
     <p class="t_desc2">
-        부분적인 CSS입니다.<br>
-        전체적인 CSS를 보시려면 위 CSS보기를 참고해주세요!
+        3. parallax__info id를 통해 왼쪽 하단에 좌표값이 나오도록 정해줍니다.(자바스크립트 활용해 좌표값을 구할 수 있습니다.)
     </p>
     <div class="t_code">
-<pre><code class="language-js">/* slider */
-.slider__wrap {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+<pre><code class="language-js">&lt;aside id="parallax__info"&gt;
+    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
+    &lt;div class="info"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;#section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;#section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;#section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;#section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;#section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;#section6 offset() : &lt;span class="offset6"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;#section7 offset() : &lt;span class="offset7"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;#section8 offset() : &lt;span class="offset8"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;#section9 offset() : &lt;span class="offset9"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;
+</code></pre>
+</div>
+    <h3 class="t_tit2">➰ CSS</h3>
+    <p class="t_desc2">
+        CSS를 통해서 스타일을 지정해줍니다.
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">/* parallax__nav */
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
 }
-.slider__img {
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+#parallax__nav li a{
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+#parallax__nav li.active a {
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
+#parallax__cont {
+    max-width: 1600px;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: rgba(255,255,255,0.1); */
+}
+.content__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255,255,255,0.3); */
+    text-align: left;
+    margin-right: 0;
     position: relative;
-    width: 800px;
-    height: 450px;
+    padding-top: 7vw;
 }
-.slider {
+.content__item:nth-child(2n){
+    /* 2n even 짝수 / 곱하기도 쓰기 가능 */
+    margin-left: 0;
+    text-align: right;
+}
+.content__item__num {
+    font-size: 35vw;
+    font-family: 'Lato';
+    font-weight: 100;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -5vw;
+    top: -16vw;
+    opacity: 0.07;
+    z-index: -2;
 }
-.slider::before {
-    position:absolute;
-    left: 5px;
-    top: 5px;
-    background: rgba(0, 0, 0, 0.4);
-    color:#fff;
-    padding: 5px 10px;
+.content__item:nth-child(even) .content__item__num {
+    /* left초기화 기준점 right로 바뀜*/
+    left: auto;
+    right: -5vw;
 }
-.slider:nth-child(1)::before {content: '이미지1';}
-.slider:nth-child(2)::before {content: '이미지2';}
-.slider:nth-child(3)::before {content: '이미지3';}
-.slider:nth-child(4)::before {content: '이미지4';}
-.slider:nth-child(5)::before {content: '이미지5';}
-.slider:nth-child(1) {z-index: 5;}
-.slider:nth-child(2) {z-index: 4;}
-.slider:nth-child(3) {z-index: 3;}
-.slider:nth-child(4) {z-index: 2;}
-.slider:nth-child(5) {z-index: 1;}
-@media (max-width: 800px){
-    .slider__img {
-        width: 400px;
-        height: 225px;
+.content__item__title {
+    font-weight: 400;
+    text-transform: capitalize;
 }
+.content__item__imgWrap {
+    width: 100%;
+    /* 이미지 영역 만들어주기 패딩으로 */
+    padding-bottom: 56.25%;
+    background: #000;
+    position: relative;
+    /* 사진 넘치는 거 가리기 */
+    overflow: hidden;
+    z-index: -1;
+}
+.content__item__img {
+    position: absolute;
+    background-image: url(../assets/img/effect_bg05.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+     /* 사진안짤리게 */
+     background-size: cover;
+    width: 110%;
+    height: 110%;
+    left: -5%;
+    top: -5%;
+    /* 흑백효과 */
+    filter: saturate(0%);
+    transition: all 1s;
+}
+.content__item:nth-child(1) .content__item__img {
+    background-image: url(../assets/img/effect_bg01.jpg);
+}
+.content__item:nth-child(2) .content__item__img {
+    background-image: url(../assets/img/effect_bg02.jpg);
+}
+.content__item:nth-child(3) .content__item__img {
+    background-image: url(../assets/img/effect_bg03.jpg);
+}
+.content__item:nth-child(4) .content__item__img {
+    background-image: url(../assets/img/effect_bg04.jpg);
+}
+.content__item:nth-child(5) .content__item__img {
+    background-image: url(../assets/img/effect_bg05.jpg);
+}
+.content__item:nth-child(6) .content__item__img {
+    background-image: url(../assets/img/effect_bg06.jpg);
+}
+.content__item:nth-child(7) .content__item__img {
+    background-image: url(../assets/img/effect_bg07.jpg);
+}
+.content__item:nth-child(8) .content__item__img {
+    background-image: url(../assets/img/effect_bg08.jpg);
+}
+.content__item:nth-child(9) .content__item__img {
+    background-image: url(../assets/img/effect_bg09.jpg);
+}
+.content__item__desc {
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+}
+#parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+#parallax__info li .scrollTop{
+    line-height: 1.4;
+}
+
+/* 홀수는 odd랍니다. */
+.content__item:nth-child(even) .content__item__desc {
+    margin-left: auto;
+    margin-right: -4vw;
+}
+@media(max-width:800px){
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 5px;
+        background-color: rgb(0,0,0,0.8);
+    }
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+    #parallax__nav li a{
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+    #parallax__nav li.active a {
+        border-radius: 5px;
+    }
+    #parallax__info {
+        left: 10px;
+        bottom: 10px;
+    }
 }
 </code></pre>
     </div>
             <hr>
-        <h3 class="t_tit2">▶ 자바스크립트 활용 (공통) </h3>
+        <h3 class="t_tit2">➰ 자바스크립트 활용</h3>
         <p class="t_desc2">
-            📌setInterval() : 일정 시간 간격을 두고 함수를 실행하는 것
+            1. window.addEventListener("scroll", () => {}) : (스크롤 값을 설정하기 위해서) 스크롤이 됐을 때<br>
+               ➿ let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; : scrollTop은 셋 중 하나, Y좌표값<br>
+               ➿ scroll.innerText = Math.round(scrollTop); : 스크롤 값을 문자값으로 나오게 하되 반올림 하여 값이 나옴<br>
+               ➿ for문과 forEach문을 이용하여 scrollTop(스크롤할때 Y축값)이 Section의 높이 좌표값, 즉 div박스 상단 Y축 좌표값이랑 같거나 클 때 메뉴 넘어감 표현<br>
+            2. 마우스 클릭 효과를 막고 스크롤 이동으로 부드럽게 href메뉴가 나타나도록 함.
         </p>
         <div class="t_code">
-<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap");
-const sliderImg = sliderWrap.querySelector(".slider__img");
-const slider = sliderWrap.querySelectorAll(".slider")
+<pre><code class="language-js">//스크롤 됐을 때
+window.addEventListener("scroll", () => {
+    // let scrollTop = window.pageYOffset;
+    //let scrollTop = window.scrollY;
+    //let scrollTop = document.documentElement.scrollTop;
 
-let currentIndex = 0;       //현재 보이는 이미지
-let sliderCount = slider.length;    //이미지 갯수
+    //셋 중 하나로 해도 다 된다는 뜻
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
-//만들어 놓은 함수 쓰는 것 //1000=1초  //1초마다 형성
-setInterval(() => {
-    let nextIndex = (currentIndex + 1) % sliderCount; //다음 이미지 //currentIndex가 0부터 시작하기 때문에 + 1
-    //1, 2, 3, 4, 5, 6, 7, 8, 9,...
-    //나머지 : 1, 2, 3, 4, 0, 1, 2, 3, 4, 0...
-    //console.log("실행")
-   
-   //첫번째 이미지 안보이게
-   //두번째 이미지 보이게
-   slider[currentIndex].style.opacity = "0"    //첫번째 이미지 안 보이게 처리
-   slider[nextIndex].style.opacity = "1"    //두번째 이미지 보이게 처리
-   currentIndex = nextIndex; //=: 오른쪽 값을 왼쪽으로 대입
-   //0 1 2 3 4 5 6 7 
-   //0 1 2 3 4 5 6 7 
-},3000)
+    //Math.round() 반올림 Math.ceil사용 가능
+    //scroll.innerText = Math.round(scrollTop);
+    //박스값이 스크롤 탑 값보다 커지거나 같으면
+    // if(scrollTop >= document.getElementById("section1").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+    //         li.classList.remove("active")
+    //     })
+    //     document.querySelector("#parallax__nav li:nth-child(1)").classList.add("active");
+    // }
+    // if(scrollTop >= document.getElementById("section2").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+    //         li.classList.remove("active")
+    //     })
+    //     document.querySelector("#parallax__nav li:nth-child(2)").classList.add("active");
+    // }
+    // if(scrollTop >= document.getElementById("section3").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+    //         li.classList.remove("active")
+    //     })
+    //     document.querySelector("#parallax__nav li:nth-child(3)").classList.add("active");
+    // }
+    // if(scrollTop >= document.getElementById("section4").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+    //         li.classList.remove("active")
+    //     })
+    //     document.querySelector("#parallax__nav li:nth-child(4)").classList.add("active");
+    // }
+    // if(scrollTop >= document.getElementById("section5").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+    //         li.classList.remove("active")
+    //     })
+    //     document.querySelector("#parallax__nav li:nth-child(5)").classList.add("active");
+    // }
+    // if(scrollTop >= document.getElementById("section6").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+    //         li.classList.remove("active")
+    //     })
+    //     document.querySelector("#parallax__nav li:nth-child(6)").classList.add("active");
+    // }
+    // if(scrollTop >= document.getElementById("section7").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+    //         li.classList.remove("active")
+    //     })
+    //     document.querySelector("#parallax__nav li:nth-child(7)").classList.add("active");
+    // }
+    // if(scrollTop >= document.getElementById("section8").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+    //         li.classList.remove("active")
+    //     })
+    //     document.querySelector("#parallax__nav li:nth-child(8)").classList.add("active");
+    // }
+    // if(scrollTop >= document.getElementById("section9").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li=>{
+    //         li.classList.remove("active")
+    //     })
+    //     document.querySelector("#parallax__nav li:nth-child(9)").classList.add("active");
+    // }
+    // for(let i=1; i&lt;=9; i++){
+    //     if(scrollTop >= document.getElementById("section" + i).offsetTop){
+    //         document.querySelectorAll("#parallax__nav li").forEach(li=>{
+    //             li.classList.remove("active")
+    //         })
+    //         document.querySelector("#parallax__nav li:nth-child("+ i +")").classList.add("active");
+    //     }
+    // }
+
+    //forEach
+    document.querySelectorAll(".content__item").forEach((element, index)=>{
+        //오차범위를 위해 -2쓰는 것
+        if(scrollTop >= element.offsetTop -2){
+            document.querySelectorAll("#parallax__nav li").forEach(li => {
+                //메뉴바 active 모두 없애기
+                li.classList.remove("active")
+            });
+            //index는 0부터 시작하니깐 index + 1을 해주어야함
+            document.querySelector("#parallax__nav li:nth-child("+(index + 1)+")").classList.add("active")
+        }
+    })
+
+    //info
+    document.querySelector(".scroll span").innerText = Math.round(scrollTop);
+    for(let i = 1; i&lt;=9; i++){
+        document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
+    }
+});
+
+//스크롤 이동
+document.querySelectorAll("#parallax__nav li a").forEach(li => {
+    li.addEventListener("click", (e) => {
+        //클릭하면 이벤트 막아줌(바로 딱 나오게 하는게 아니라 그 후에 부드럽게 나오게 하기 위함)
+        e.preventDefault();
+        //li = li a태그들 href = secton1,2,...
+        //getAttribute 속성값을 가져온다.
+        document.querySelector(li.getAttribute("href")).scrollIntoView({
+            //부드럽게 움직이는 효과
+            behavior: "smooth"
+        })
+    })
+})
+// document.querySelector(".offset1").innerText = document.getElementById("section1").offsetTop;
+// document.querySelector(".offset2").innerText = document.getElementById("section2").offsetTop;
+// document.querySelector(".offset3").innerText = document.getElementById("section3").offsetTop;
+// document.querySelector(".offset4").innerText = document.getElementById("section4").offsetTop;
+// document.querySelector(".offset5").innerText = document.getElementById("section5").offsetTop;
+// document.querySelector(".offset6").innerText = document.getElementById("section6").offsetTop;
+// document.querySelector(".offset7").innerText = document.getElementById("section7").offsetTop;
+// document.querySelector(".offset8").innerText = document.getElementById("section8").offsetTop;
+// document.querySelector(".offset9").innerText = document.getElementById("section9").offsetTop;
 </code></pre>
     </div>
+    <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+        <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/parallaxEffect01.html" frameborder="0"></iframe>
+    </div>
+    <div class="t_link">
+        <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/parallaxEffect01.html" target="_blank"
+        >실제 사이트보기</a>
+        <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/parallaxEffect01.html" target="_blank"
+        >원본 소스보기</a>
+    </div>  
     <!-- document -->
 
     <footer id="footer">

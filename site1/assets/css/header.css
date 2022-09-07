@@ -29,6 +29,11 @@
             width: 60%;
             text-align: center;
         }
+        .header__menu li.active a {
+            background: #000;
+            color: #fff;
+            border-radius: 5px;
+        }
         .header__menu li {
             display: inline;
         }
