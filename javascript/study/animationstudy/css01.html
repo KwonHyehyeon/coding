@@ -55,6 +55,8 @@
 </head>
 
 <body>
+    
+    <div class="bs-docs-section">
     <div class="document">
         <!-- Intro0 -->
             <h2 class="t_tit">📎 animation</h2>
@@ -189,6 +191,7 @@
                 </tbody>
             </table>
         </div>
+        </div>
         <!-- //Intro0 -->
         <style>
             .timing.bg1>div {
@@ -257,6 +260,7 @@
             }
         </style>
         <!-- Intro1 -->
+        <div class="bs-docs-section">
             <h2 id="intro1" class="t_tit">timing-function <button type="button"
                     class="btn btn-warning start1">Start</button></h2>
             <div class="sample">
@@ -344,6 +348,7 @@
 .timing11.show {animation: move 4s 1 steps(10, end);}
 </code></pre>
             </div>
+            </div>
             <hr>
             <style>
                 .step {
@@ -361,7 +366,7 @@
                     left: 50%;
                     top: 50%;
                     transform: translate(-50%, -50%);
-                    animation: ani 1s steps(24, start) infinite;
+                    animation: ani 0.8s steps(24, start) infinite;
                 }
 
                 .step .stepbox.start {
@@ -729,23 +734,23 @@
                 min-height: 400px;
             }
 
-            .timing.bg9>div.ani1 {
+            .timing.bg9 > div.ani1 {
                 animation: slideOutRight 1s ease;
             }
 
-            .timing.bg9>div.ani2 {
+            .timing.bg9 > div.ani2 {
                 animation: headShake 1s 10 ease;
             }
 
-            .timing.bg9>div.ani3 {}
+            .timing.bg9 > div.ani3 {}
 
-            .timing.bg9>div.ani4 {}
+            .timing.bg9 > div.ani4 {}
 
-            .timing.bg9>div.ani5 {}
+            .timing.bg9 > div.ani5 {}
 
-            .timing.bg9>div.ani6 {}
+            .timing.bg9 > div.ani6 {}
 
-            .timing.bg9>div.ani7 {}
+            .timing.bg9 > div.ani7 {}
 
             @keyframes slideOutRight {
                 from {
@@ -783,18 +788,35 @@
                     <div class="timing37"><span>timing37</span></div>
                 </div>
             </div>
-            <pre class="line-numbers language-css"><code>
+<pre class="line-numbers language-css"><code>.timing.bg9 {display: flex; justify-content: space-between; min-height: 400px;}
+.timing.bg9 &gt; div.ani1 {animation: slideOutRight 1s ease;}
+.timing.bg9 &gt; div.ani2 {animation: headShake 1s 10 ease;}
+.timing.bg9 &gt; div.ani3 {}
+.timing.bg9 &gt; div.ani4 {}
+.timing.bg9 &gt; div.ani5 {}
+.timing.bg9 &gt; div.ani6 {}
+.timing.bg9 &gt; div.ani7 {}
+@keyframes slideOutRight {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+}
 </code></pre>
         </div>
         <!-- //Intro9 -->
-
     </div>
 <!-- Bootstrap core JavaScript -->
-<script src="../assets/js/jquery-1.9.1.min.js"></script>
+<script src="https://github.com/KwonHyehyeon/coding/blob/main/assets/js/jquery-1.9.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-<script src="../assets/js/bootstrap.min.js"></script>
-<script src="../assets/js/docs.min.js"></script>
-<script src="../assets/js/prism.js"></script>
+<script src="https://github.com/KwonHyehyeon/coding/blob/main/assets/js/bootstrap.min.js"></script>
+<script src="https://github.com/KwonHyehyeon/coding/blob/main/assets/js/docs.min.js"></script>
+<script src="https://github.com/KwonHyehyeon/coding/blob/main/assets/js/prism.js"></script>
 <script>
 $(".start1").click(function () {
     $(".timing.bg1 > div").addClass("show");
@@ -854,6 +876,10 @@ $("#intro9 > button").click(function () {
     $(".timing.bg9 > div").removeClass("ani1 ani2 ani3 ani4 ani5 ani6 ani7").addClass(txt);
 });
 </script>   
+<script src="../../assets/js/highlight.min.js"></script>
+<script>
+    hljs.highlightAll();
+</script>
 </body>
 
 </html>
