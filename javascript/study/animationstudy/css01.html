@@ -48,8 +48,25 @@
             position: absolute; 
             left: 45px; top: 0;
         }
-        .t_tit2 {
-            margin-bottom: 20px !important;
+        .btn {
+          display: inline-block;
+          padding: 6px 12px;
+          margin-bottom: 0;
+          font-size: 14px;
+          font-weight: normal;
+          line-height: 1.428571429;
+          text-align: center;
+          white-space: nowrap;
+          vertical-align: middle;
+          cursor: pointer;
+          -webkit-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+               -o-user-select: none;
+                  user-select: none;
+          background-image: none;
+          border: 1px solid transparent;
+          border-radius: 4px;
         }
     </style>
 </head>
@@ -240,11 +257,14 @@
 
             .btn {
                 background-color: #f09819;
-                padding: 5px 10px 40px 5px;
+                padding: 5px;
                 text-align: center;
                 border-radius: 10px;
             }
-
+            .btn:hover {
+                background-color: #333;
+                color: #fff;
+            }
             @keyframes move {
                 0% {
                     left: 0%;
@@ -720,7 +740,7 @@
                 </div>
             </div>
             <div class="t_code">
-                <pre class="language-css"><code>.timing30.running {animation: move2 4s 100 ease; animation-play-state: running;}
+<pre class="language-css"><code>.timing30.running {animation: move2 4s 100 ease; animation-play-state: running;}
 .timing30.paused {animation: move2 4s 100 ease; animation-play-state: paused;}
 </code></pre>
             </div>
@@ -788,6 +808,7 @@
                     <div class="timing37"><span>timing37</span></div>
                 </div>
             </div>
+            <div class="t_code">
 <pre class="line-numbers language-css"><code>.timing.bg9 {display: flex; justify-content: space-between; min-height: 400px;}
 .timing.bg9 &gt; div.ani1 {animation: slideOutRight 1s ease;}
 .timing.bg9 &gt; div.ani2 {animation: headShake 1s 10 ease;}
