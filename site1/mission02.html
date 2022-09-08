@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헤더 타입</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal; /*제목 글 굵기 기본설정 해제*/
+        } 
+        em {
+            font-style: normal;
+        }
+        /* common */
+        .container {
+            width: 1000px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 50px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #666;
+        }
+        .section > span {
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            text-decoration: underline;
+            margin-bottom: 16px;
+        }
+
+        /* header */
+        .header__inner {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            /* background-color: #666; */
+            /* border-bottom: 1px solid #ccc; */
+        }
+        .header__logo {
+            width: 30%;
+        }
+        .header__logo > img {
+            width: 100px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        .header__menu {
+            width: 80%;
+            font-weight: 700;
+            text-align: right;
+            margin-bottom: 10px;
+            margin-right: 0;
+
+        }
+        .header__menu li {
+            display: inline;
+
+        }
+        .header__menu li a{
+            padding-left: 60px;
+            transition: background-color 0.3s;
+        }
+        .header__menu li a:last-child {
+            margin-right: 0px;
+        }
+        /* slider */
+        .slider__inner{
+            display: flex;
+            flex-wrap: wrap;
+            width: 4800px;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        .slider > img {
+            width: 1000px;
+            height: 450px;
+            overflow: hidden; 
+        }
+        .slider__img {
+            overflow: hidden;
+        }
+
+        #box {
+        }
+        .notice {
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .notice__all {
+            width: 49%;
+            border: 2px solid #f2f2f2;
+            background-color: #f2f2f2;
+            /* display: flex;
+            justify-content: space-between; */
+            padding: 30px 30px 20px 30px;
+            box-sizing: border-box;
+            margin-top: 30px;
+            position:relative;
+        }
+        .notice__title > h2 {
+            font-weight: 700;
+            font-size: 18px;      
+            margin-bottom: 10px;    
+        }
+        .notice__title > p {
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .notice__title .cookit{
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: 35px;
+            left: 380px;
+        }
+        .notice__title .baesong{
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: 35px;
+            left: 380px;
+        }
+
+        .box1 > img {
+            width: 12px;
+            height: 14px;
+            margin-right: 5px;
+            margin-top: 20px;
+        }
+        .box1 > span {
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .box2 > img {
+            width: 16px;
+            height: 16px;
+            margin-top: 20px;
+        }
+        .box2 .time {
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .box2 .time_kor {
+            font-size: 12px;
+            color: #666;
+        }
+        .advertise > img {
+            width: 580px;
+            height: 210px;
+        }
+        /* 실시간 */
+        #program >div {
+            display: flex;
+        }
+        #program > div > h3 {
+            font-size: 25px;
+            font-weight: 700;
+            margin: 30px 0;
+        }
+        #program div > .real__review {
+            font-size: 23px;
+            font-weight: 600;
+            color: #888;
+            margin-left: 8px;
+            margin: 30px 0 30px 8px;
+        }
+        .food__corner {
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .food__fighter{
+            width: 31%;
+            position: relative;
+        }
+        .food__fighter .tit{
+            font-weight: 600;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .food__fighter .desc em {
+            font-weight: 700;
+            color: #000;
+        }
+        .food__fighter .desc {
+            font-weight: 400;
+            color: #666;
+        }
+        .food__fighter .img {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 340px;
+            left: 273px;
+        }
+        .food01 {
+            height: 320px;
+            background: url(../site1/assets/img/mission02_07.jpg) no-repeat;
+            background-size: cover;
+            margin-bottom: 10px;
+        }
+        .food02 {
+            height: 320px;
+            background: url(../site1/assets/img/mission02_08.jpg) no-repeat;
+            background-size: cover;
+            margin-bottom: 10px;
+        }
+        .food03 {
+            height: 320px;
+            background: url(../site1/assets/img/missioin02_09.jpg) no-repeat;
+            background-size: cover;
+            margin-bottom: 10px;
+        }
+        .best {
+            background-color: #000;
+            color: #fff;
+            display: inline;
+            padding: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .best1{
+            background-color: #000;
+            color: #fff;
+            padding: 5px 10px 0 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .best2{
+            background-color: #000;
+            color: #fff;
+            padding: 0 24px 5px 10px;
+            position: absolute;
+            top: 33px;
+            left: 10px;
+        }
+        /* 푸터 */
+        .footer__inner {
+            height: 220px;
+            background-color: #202020;
+            color: #fff;
+        }
+        .footer__logo > img{
+            width: 200px;
+            height: 70px;
+            padding: 30px 220px;
+            position: relative;
+        }
+        .footer__menu {
+        }
+        .footer__menu p {
+            font-size: 13px;
+            font-weight: 300;
+            color: #888;
+            position: absolute;
+            top: 1330px;
+            left: 680px;
+            box-sizing: border-box;
+        }
+        .footer__menu .spangroup {
+            position: absolute;
+            top: 1270px;
+            left: 680px;
+        }
+        .footer__menu span a {
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+
+        }
+        .footer__menu span a em{
+            color: #666;
+            margin: 0 25px;
+            font-size: 12px;
+        }
+        /* modal__wrap */
+.modal__wrap {}
+.modal__cont {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: none;
+    /*flex가 우선 순위이기 때문에 밑에다 적어주어야 함*/
+    /* opacity: 0;  */
+    /* opacity 0 줘서 클릭 안됨 */
+    transform: scale(0);
+}
+.modal__btn {
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.modal__btn:hover {
+    background-color: #fff;
+    color: #3d3d63;
+}
+
+.modal__box {
+    /* display: none; */
+    width: 70%;
+    height: 70vh;
+    border-radius: 0.6rem;
+    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
+    transform: scale(0);
+    /* overflow: hidden; */
+}
+.modal__box .title {
+    padding-inline: 1rem;
+    cursor: grab;
+    background-color: #1B1C2E;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    height: 50px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.modal__box .title .dot {
+    width: 15px;
+    height: 15px;
+    background-color: #3B3D63;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 2rem;
+}
+.modal__box .title .dot::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: #3B3D63;
+    border-radius: 50%;
+}
+.modal__box .title .dot::after {
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: #3B3D63;
+    border-radius: 50%;
+}
+.modal__box .title .plus {
+    background: #282936;
+    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+    color: #7A7D9D;
+}
+.modal__box .title .tabs {
+    display: flex;
+    margin-left: 50px;
+}
+.modal__box .title .tabs > div {
+    color: #7A7D9D;
+    background-color: #282936;
+    padding: 0.35rem 0.8rem 0.25rem 0.8rem;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.modal__box .title .tabs > div.active {
+    background-color: #eee;
+}
+.modal__box .title .tabs > div em {
+    font-style: normal;
+}
+.modal__box .title .tabs > div .favicon {
+    margin-right: 0.4rem;
+    margin-top: 0.2rem;
+}
+.modal__box .title .tabs > div .close {
+    margin-left: 3rem;
+}
+.modal__box .cont {
+    background-color: #282936;
+    height: 100%;
+    box-sizing: border-box;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    overflow-y: auto;
+}
+.modal__box .cont > div {
+    display: none;
+}
+
+.modal__box .cont > div.active {
+    display: block;
+    height: 100%;
+}
+
+.modal__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #1f224a;
+    padding: 1rem 1rem 0.8rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 7px -5px rgba(25, 26, 26, 0.698);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+.modal__close:hover {
+    background-color: #33377d;
+}
+.modal__close svg {
+    color: #fff;
+}
+/* 모달 애니메이션 */
+.modal__cont.show {     /* 전체 배경 */
+    animation: foldOut 1s ease forwards;
+}
+.modal__cont.show .modal__box {     /* 스크립트 박스 */
+    animation: zoomOut 0.5s 1s ease forwards;
+}
+.modal__cont.show .modal__close {   /* 닫기 버튼 */
+    animation: opacityOut 0.5s 1s ease forwards;
+}
+
+.modal__cont.show.hide {    
+    animation: foldIn 0.3s 0.5s ease backwards;
+}
+.modal__cont.show.hide .modal__box {
+    animation: zoomIn 0.5s ease forwards;
+}
+.modal__cont.show.hide .modal__close {
+    animation: opacityIn 0.5s ease forwards;
+}
+
+@keyframes foldOut {
+    0%   {transform: scaleX(0) scaleY(0.001);}
+    50%  {transform: scaleX(1) scaleY(0.001);}
+    100% {transform: scaleX(1) scaleY(1);}
+}
+@keyframes foldIn {
+    0%   {transform: scaleX(1) scaleY(1);}
+    50%  {transform: scaleX(1) scaleY(0.001);}
+    100% {transform: scaleX(0) scaleY(0.001);}
+}
+@keyframes zoomOut {
+    0%   {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+@keyframes zoomIn {
+    0%   {transform: scale(1);}
+    100% {transform: scale(0);}
+}
+@keyframes opacityOut {
+    0%   {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes opacityIn {
+    0%   {opacity:1;}
+    100% {opacity:0;}
+}
+
+    </style>
+</head>
+<body>
+    <div class="mission container section">
+        <section id="header" class="header__wrap nexon">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <img src="../site1/assets/img/mission02_01.jpg" alt="헤더">
+                </div>
+                <div class="header__menu">
+                    <ul>
+                        <li><a href="#">COOKIT 소개</a></li>
+                        <li><a href="#">COOKIT 메뉴</a></li>
+                        <li><a href="#">리뷰</a></li>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">MY쿡킷</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- 헤더 영역 -->
+        <section id="slider">
+                <div class="slider__img">
+                    <div class="slider__inner">
+                        <div class="slider"><img src="../site1/assets/img/mission02_02_01.jpg" alt="이미지1"></div>
+                        <div class="slider"><img src="../site1/assets/img/mission02_02_02.jpg" alt="이미지2"></div>
+                        <div class="slider"><img src="../site1/assets/img/mission02_02_03.jpg" alt="이미지3"></div>
+                    </div>
+                </div>
+        </section>
+        <!-- 슬라이더 영역 -->
+        <section id="box">
+            <section class="notice">
+                <div class="notice__all">
+                    <div class="notice__title">
+                        <h2>우리집도 COOKIT 배송이 되나요?</h2>
+                        <p>배송 가능한지 알려드려요.</p>
+                        <div class="box1">
+                            <img src="../site1/assets/img/mission02_05.jpg" alt="">
+                            <span><a href="#">배송지 검색</a></span>
+                        </div>
+                        <img class="cookit" src="../site1/assets/img/mission02_03.jpg" alt="배송">
+                    </div>
+                </div>     
+                <div class="notice__all">
+                    <div class="notice__title">
+                        <h2>7월 30일(화)에 받을 수 있어요</h2>
+                        <p>오전 7시까지 주문하시면 다음날 배송됩니다.</p>
+                        <div class="box2">
+                            <img src="../site1/assets/img/mission02_06.jpg" alt="">
+                            <span class="time">63:28:32</span>
+                            <span class="time_kor">남은 시간</span>
+                        </div>
+                        <a href="#"><img class="baesong" src="../site1/assets/img/mission02_04.jpg" alt="배송">
+                            <div class="modal__wrap">
+                                <div class="modal__btn">소스 보기</div>
+                                <div class="modal__cont">
+                                    <div class="modal__box">
+                                        <div class="title">
+                                            <span class="dot" aria-label="true"></span>
+                                            <div class="tabs">
+                                                <div class="active">
+                                                    <span class="favicon" aria-label="true">
+                                                        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                                            <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                                            <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                                            <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                                          </svg>
+                                                    </span>
+                                                    <em>JAVASCRIPT</em>
+                                                    <span class="close">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="favicon" aria-label="true">
+                                                        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                                            <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                                            <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                                            <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                                          </svg>
+                                                    </span>
+                                                    <em>HTML</em>
+                                                    <span class="close">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="favicon" aria-label="true">
+                                                        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                                            <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                                            <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                                            <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                                        </svg>
+                                                    </span>
+                                                    <em>CSS</em>
+                                                    <span class="close">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                          </svg>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <span class="plus" aria-label="true">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                                    <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div class="cont">
+                                            <div class="active">
+                    <pre><code class="language-js">
+                    </code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal__close">
+                                        <span class="close">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                                <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div></a>
+                    </div>
+                </div>                   
+            </section>
+            <!--  box -->
+        </section>
+        <!-- 소식, 광고 영역 --> 
+        <section id="program">
+            <div>
+                <h3>실시간 베스트 |</h3>
+                <span class="real__review">생생한 리뷰</span>    
+            </div>
+            <div class="food__corner">
+                <div class="food__fighter">
+                    <div class="food01">
+                        <div class="best1">Best</div>
+                        <div class="best2">01</div>
+                    </div>
+                    <p class="tit">평양식 어복쟁반</p>
+                    <p class="desc"><em>33,800원</em> / 3인분</p>
+                    <img class="img" src="../site1/assets/img/mission02_09.jpg" alt="아이콘">
+                </div>
+                <div class="food__fighter">
+                    <div class="food02">
+                        <div class="best">02</div>
+                    </div>
+                    <p class="tit">새우주꾸미 삼겹살</p>
+                    <p class="desc"><em>29,800원</em> / 3인분</p>
+                    <img class="img" src="../site1/assets/img/mission02_09.jpg" alt="아이콘">
+    
+                </div>
+                <div class="food__fighter">
+                    <div class="food03">
+                        <div class="best">03</div>
+                    </div>
+                    <p class="tit">방풍나물 아귀찜</p>
+                    <p class="desc"><em>32,800원</em> / 3인분</p>
+                    <img class="img" src="../site1/assets/img/mission02_09.jpg" alt="아이콘">
+                </div>
+            </div>
+            </section>
+        <!-- 사진, 설명 -->
+    </div>
+    <footer id="footer">
+        <div class="footer__inner nexon">
+            <div class="footer__logo">
+                <img src="../site1/assets/img/mission02__10.jpg" alt="푸터">
+            </div>
+            <div class="footer__menu">
+                <div class="spangroup">
+                    <ul>
+                        <span><a href="#">이용약관 <em>|</em></a></span>
+                        <span><a href="#">개인정보처리 방침 <em>|</em></a></span>
+                        <span><a href="#">법적고지 <em>|</em></a></span>
+                        <span><a href="#">사업자정보 확인</a></span>
+                    </ul>
+                </div>
+                <p>
+                    씨제이 제일제당(주) | 대표자:신현재<br><br>
+                    주소:서울 중구 동호로 330 CJ제일제당 센터 (우)04560 | 사업자 등록 번호:104-86-09535<br><br>
+                    통신판매업신고 중구 제07767호 | 개인정보보호책임자:류화정
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- 푸터 영역 -->
+    <script>
+        const sliderWrap = document.querySelector(".slider__wrap")
+        const sliderImg = document.querySelector(".slider__img")        //보여지는 영역
+        const sliderInner = document.querySelector(".slider__inner")    //움직이는 영역
+        const slider = document.querySelectorAll(".slider")             //각각 이미지
+
+        let currentIndex = 0;       //현재 보이는 이미지
+        let sliderCount = slider.length //이미지 갯수
+        let sliderWidth = sliderImg.offsetWidth ;   //이미지 가로값 //위드값 구할 수 있음 offsetWidth
+        //첫번째 이미지 이미지 슬라이드 끝난 후 반복되게 복사
+        let sliderClone = sliderInner.firstElementChild.cloneNode(true); //첫번째 이미지 복사 //첫번째 요소 선택 firstElementChild //cloneNode(true) 이미지 복사 : true라고 적어줘야함
+        sliderInner.appendChild(sliderClone);   //첫번째 이미지를 마지막에 넣어줌 //appendChild 자식요소 넣어주는 것
+
+        function sliderEffect(){
+            //초에 사진 증가
+            currentIndex++;
+            sliderInner.style.transition = "all 0.6s";
+            sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)"
+            // sliderInner.style.transform = "translateX(-800px)";
+            // sliderInner.style.transform = "translateX(-1600px)";
+            // sliderInner.style.transform = "translateX(-2400px)";
+            // sliderInner.style.transform = "translateX(-3600px)";
+            // sliderInner.style.transform = "translateX(-4000px)";
+            // sliderInner.style.transform = "translateX(-4800px)";
+
+            //마지막 사진에 위치했을 때
+            if(currentIndex == sliderCount){
+                //setTimeout 시간 지정해주고 효과 주는 것
+                setTimeout(() => {
+                    sliderInner.style.transition = "0s"
+                    sliderInner.style.transform = "translateX(0px)";
+                }, 700);
+                
+                currentIndex = 0;
+            }
+            
+
+        }
+        setInterval(sliderEffect, 2000);
+
+        // 모달
+        const modalBtn = document.querySelector(".window__btn");
+        const modalClose = document.querySelector(".title-bar .close");
+        const modalCont = document.querySelector(".window__box");
+        modalBtn.addEventListener("click", () => {
+            modalCont.classList.add("show");
+            modalCont.classList.remove("hide");
+        });
+        modalClose.addEventListener("click", () => {
+            modalCont.classList.add("hide");
+        });
+
+
+        //탭 메뉴
+        const tabBtn = document.querySelectorAll(".window__box .menu-bar > div")
+        const tabCont = document.querySelectorAll(".window__box .main > div")
+
+        //클릭하면 active붙여주기
+        tabBtn.forEach((element, index) => {
+            //버튼 클릭하면
+            element.addEventListener("click", (event) => { //클릭시 event는 창 맨 위로 올라가는 것
+                event.preventDefault();                    //event는 클릭하면 위로 올라가는 것을 막아주기 위함
+
+
+                //클래스 active를 모두 제거함
+                //3개를 선택해서 엑티브 없애줘야함
+                tabBtn.forEach(el => { //el을 li로 적어줘도 됨 목록안에 있는 이름들(alphabet 등등)이니깐
+                    el.classList.remove("active");  //class지워주는 것 : classList.remove
+                });
+                //내가 클릭한 버튼에 active를 추가함
+                element.classList.add("active");
+            
+                //버튼을 클릭하면 모든 자식 박스 숨김
+                tabCont.forEach(div => {
+                    div.style.display = "none";
+                });
+                //[i]클릭한 버튼과 [i]관련 박스를 보이게 함
+                tabCont[index].style.display = "block";
+            });
+        });
+    </script>
+</body>
+</html>

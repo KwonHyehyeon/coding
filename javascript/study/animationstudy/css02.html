@@ -95,6 +95,77 @@
                 </div>
             </div>
         </div>
+        <div class="t_code">
+<pre class="line-numbers language-html"><code>&lt;div class="bs-docs-section"&gt;
+    &lt;h2 id="intro2" class="page-header"&gt;timing-function &lt;button type="button" class="btn btn-warning start2"&gt;Start&lt;/button&gt;&lt;/h2&gt;
+    &lt;div class="sample"&gt;
+        &lt;h3&gt;&lt;span&gt;&lt;/span&gt;&lt;em class="sr-only"&gt;border-radius&lt;/em&gt;&lt;/h3&gt;
+        &lt;div class="timing bg2"&gt;
+            &lt;div class="timing6"&gt;&lt;span&gt;step-start&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="timing7"&gt;&lt;span&gt;step-end&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="timing8"&gt;&lt;span&gt;steps(4, start)&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="timing9"&gt;&lt;span&gt;steps(4, end)&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="timing10"&gt;&lt;span&gt;steps(10, start)&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="timing11"&gt;&lt;span&gt;steps(10, start)&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;pre class="line-numbers language-css"&gt;&lt;code&gt;.timing6.show {animation: move 4s 1 step-start;}
+  .timing7.show {animation: move 4s 1 step-end;}
+  .timing8.show {animation: move 4s 1 steps(4, start);}
+  .timing9.show {animation: move 4s 1 steps(4, end);}
+  .timing10.show {animation: move 4s 1 steps(10, start);}
+  .timing11.show {animation: move 4s 1 steps(10, end);}
+  &lt;/code&gt;&lt;/pre&gt;       
+    &lt;style&gt;
+        .step {
+            height: 700px;
+            background: #3b0a76;
+            position: relative;
+        }
+        .step .stepbox {
+            width: 800px; height: 600px;
+            background: url(img/cuteheart.jpg);
+            border-radius: 0;
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            /* 1초에 24프레임으로 끊어서 보여준다 */
+            animation: ani 1s steps(24, start) infinite;
+        }
+        .step .stepbox.start {
+            animation-play-state: running;
+        }
+        .step .stepbox.stop {
+            animation-play-state: paused;
+        }
+        @keyframes ani {
+            0% {background-position: 0 0;}
+            100% {background-position: -19200px 0;}
+        }
+        .stepBtn {
+            position: absolute; left: 15px; top: 20px;
+        }
+        .stepBtn a {
+            background: #e16162; color: #fff;
+            padding: 10px;
+            margin: 3px;
+            border-radius: 3px;
+        }
+  
+    &lt;/style&gt;
+    &lt;div class="sample"&gt;
+        &lt;h3&gt;&lt;span&gt;&lt;/span&gt;&lt;em class="sr-only"&gt;border-radius&lt;/em&gt;&lt;/h3&gt;
+        &lt;div class="timing step"&gt;
+            &lt;div class="stepbox"&gt;&lt;/div&gt;
+            &lt;span class="stepBtn"&gt;
+                &lt;a href="#" class="stepBtnStart"&gt;Start&lt;/a&gt;
+                &lt;a href="#" class="stepBtnStop"&gt;Stop&lt;/a&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+                </div>
         <!-- //Intro2 -->
 
         

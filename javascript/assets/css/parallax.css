@@ -3,7 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'NexonLv1Gothic';
 }
 body {
@@ -22,22 +21,6 @@ a {
 }
 li {
     list-style: none;
-}
-/* scroll */
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.148);
-    border-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
 
 /* layout */
@@ -256,6 +239,24 @@ li {
 .modal__close svg {
     color: #fff;
 }
+/* scroll */
+/* 스크롤바 흰색부분 없어짐 */
+.modal__box ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.modal__box ::-webkit-scrollbar-track {
+    background: transparent;
+}
+.modal__box ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.148);
+    border-radius: 20px;
+}
+
+.modal__box ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 /* 모달 애니메이션 */
 .modal__cont.show {     /* 전체 배경 */
     animation: foldOut 1s ease forwards;
