@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>패럴랙스 이펙트 02</title>
+    <title>패럴랙스 이펙트 03</title>
 
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/dracula.css">
 </head>
 <body>
     <div class="document">
-        <h2 class="t_tit">🔮 패럴랙스 이펙트 - 사이드 메뉴</h2>
+        <h2 class="t_tit">🔮 패럴랙스 이펙트 - 숨김 메뉴</h2>
         <p class="t_desc">
-            📌 이번 이펙트는 사이드 메뉴를 클릭했을 때 해당하는 페이지로 이동하는 이펙트입니다.<br>
+            📌 이번 이펙트는 밑에서 위로 스크롤 했을 때 메뉴바가 나타나고 section9가 끝나는 지점에서 top버튼이 나타나 페이지 상단으로 갈 수 있도록 하는 이펙트입니다.<br>
         </p>
         <hr>
         <h3 class="t_tit2">패럴랙스 이펙트를 피그마를 활용하여 설명</h3>
         <div class="iframe">
-            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="700" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D3106%253A2165" allowfullscreen></iframe>
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="700" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D3152%253A2165" allowfullscreen></iframe>
         </div>
         <hr>
         <h3 class="t_tit2">➰ HTML</h3>
@@ -28,12 +28,12 @@
         <div class="t_code">
 <pre><code class="language-js">&lt;body class="img04"&gt;
     &lt;header id="header"&gt;
-        &lt;h1&gt;Javascript parallax Effect02&lt;/h1&gt;
-        &lt;p&gt;패럴랙스 이펙트 - 사이드 메뉴&lt;/p&gt;
+        &lt;h1&gt;Javascript parallax Effect03&lt;/h1&gt;
+        &lt;p&gt;패럴랙스 이펙트 - 숨김 메뉴&lt;/p&gt;
         &lt;ul&gt;
             &lt;li&gt;&lt;a href="parallaxEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
-            &lt;li class="active"&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallaxEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallaxEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallaxEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
@@ -41,20 +41,25 @@
         &lt;/ul&gt;
     &lt;/header&gt;
     &lt;!-- //header --&gt;
-    &lt;nav id="parallax__dot"&gt;
+    &lt;nav id="parallax__nav"&gt;
         &lt;ul&gt;
-            &lt;li class="active"&gt;&lt;a href="#section1"&gt;&lt;span&gt;메뉴1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section2"&gt;&lt;span&gt;메뉴2&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section3"&gt;&lt;span&gt;메뉴3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section4"&gt;&lt;span&gt;메뉴4&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section5"&gt;&lt;span&gt;메뉴5&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section6"&gt;&lt;span&gt;메뉴6&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section7"&gt;&lt;span&gt;메뉴7&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section8"&gt;&lt;span&gt;메뉴8&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section9"&gt;&lt;span&gt;메뉴9&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/nav&gt;
-    &lt;!-- //parallax__dot --&gt;
+    &lt;!-- //parallax__nav --&gt;
+
+    &lt;div id="parallax__top"&gt;
+        Top
+    &lt;/div&gt;
+    &lt;!-- parallax__top --&gt;
     &lt;main id="parallax__cont"&gt;
         &lt;div id="contents"&gt;
             &lt;section id="section1" class="content__item"&gt;
@@ -151,27 +156,35 @@
         </div>
         <h3 class="t_tit2">➿ 세부적으로 살펴봅시다!</h3>
         <p class="t_box">
-            ∙ parallax__dot은 사이드 바 부분입니다.
+            ∙ parallax__nav는 위로 스크롤 시 나타나는 메뉴바입니다. 
         </p>
         <div class="t_code">
-<pre><code class="language-js">&lt;nav id="parallax__dot"&gt;
+<pre><code class="language-js">&lt;nav id="parallax__nav"&gt;
     &lt;ul&gt;
-        &lt;li class="active"&gt;&lt;a href="#section1"&gt;&lt;span&gt;메뉴1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section2"&gt;&lt;span&gt;메뉴2&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section3"&gt;&lt;span&gt;메뉴3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section4"&gt;&lt;span&gt;메뉴4&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section5"&gt;&lt;span&gt;메뉴5&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section6"&gt;&lt;span&gt;메뉴6&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section7"&gt;&lt;span&gt;메뉴7&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section8"&gt;&lt;span&gt;메뉴8&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section9"&gt;&lt;span&gt;메뉴9&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;!-- //parallax__dot --&gt;
 </code></pre>
         </div>
         <p class="t_box">
-            ∙ parallax__cont는 컨텐츠 내용입니다. 
+            ∙ parallax__top은 화면을 Section9 밑까지 내렸을 때 나타나는 Top 버튼입니다.
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">&lt;div id="parallax__top"&gt;
+    Top
+&lt;/div&gt;
+</code></pre>
+        </div>
+        <p class="t_box">
+            ∙ parallax__cont은 페이지의 컨텐츠를 구성하는 내용입니다.
         </p>
         <div class="t_code">
 <pre><code class="language-js">&lt;main id="parallax__cont"&gt;
@@ -403,120 +416,157 @@
 </code></pre>
     </div>
     <p class="t_box">
-        ∙ parallax__dot(사이드 메뉴)에 해당하는 부분에 스타일을 입혀줍니다.
+        ∙ parallax__nav(스크롤시 나오는 상단 메뉴바)에 해당하는 부분에 스타일을 입혀줍니다.<br>
+        피그마 그림 설명을 확인해주세요!
     </p>
     <div class="t_code">
-<pre><code class="language-js">#parallax__dot {
+<pre><code class="language-js">/* parallax__nav */
+#parallax__nav {
     position: fixed;
     right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    /* z-index없으면 클릭이 안돼서 z-index로 맨 앞으로 빼준 것 */
-    z-index: 10000;
-    background: rgba(0,0,0,0.4);
-    padding: 20px 10px;
-    border-radius: 30px;
+    top: -200px;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+    transition: top .4s ease;
 }
-#parallax__dot li {
-    position: relative;
-    /* 동그라미 사이즈 */
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin: 12px 8px;
-    /* 모든 페이지 사이드 바 원 테두리 box-shadow 이용 */ 
-    box-shadow: 0 0 0 2px rgba(255,255,255,0);
-    transition: box-shadow 0.2s ease;
+/* show가 붙었을 때 탑 20 */
+#parallax__nav.show {
+    top: 20px;
 }
-#parallax__dot li a {
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+#parallax__nav li a{
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+#parallax__nav li.active a {
     background: #fff;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
+</code></pre>
+    </div>
+    <p class="t_box">
+        ∙ parallax__top(스크롤 시 밑에 나타나는 Top 버튼)에 해당하는 부분에 스타일을 입혀줍니다.
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">#parallax__top {
+    position: fixed;
+    left: 50%;
+    bottom: -200px;
+    z-index: 10000;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,0.4);
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
     border-radius: 50%;
-    /* 원 크기 변화 transition */
-    transition: transform 0.2s ease;
+    cursor: pointer;
 }
-#parallax__dot li.active {
-    /* 해당 페이지 사이드 바 작은 원 테두리 */ 
-    box-shadow: 0 0 0 2px rgba(255,255,255,1);
+#parallax__top.show {
+    bottom: 20px;
 }
-#parallax__dot li.active a {
-    /* 해당 페이지는 원 작게 */ 
-    transform: scale(0.4);
-}
-#parallax__dot li span {
-    /* 메뉴 글자 없애주기 */
-    display: none;
+#parallax__top:hover {
+    background: #fff;
+    color: #000;
 }
 </code></pre>
     </div>
             <hr>
         <h3 class="t_tit2">➰ 자바스크립트 활용</h3>
         <p class="t_desc2">
-            ➿ let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; : scrollTop은 셋 중 하나, Y좌표값<br>
-            나머지는 주석을 통해 확인해주세요!
-        </p>
-        <p class="t_box">
-            ∙ 사이드 메뉴 동그라미를 클릭했을 때의 효과
+            주석을 참고해주세요!
         </p>
         <div class="t_code">
-<pre><code class="language-js">document.querySelectorAll("#parallax__dot a").forEach( el =&gt; {
-    el.addEventListener("click", e =&gt; {
-        // a 링크 기능 차단
-        // 이걸 안 해주면 부드럽게 가지 않고 뚝뚝 끊겨서 감 : a태그의 기본 동작
-        // a 태그를 눌렀을때도 href 링크로 이동하지 않게 하기 위해 preventDefault를 사용하는데 이 기능을 통해 a태그의 기본 동작은 막아주고
-        e.preventDefault();
-        
-        //getAttribute속성에 href를 가져와 이 href를 출력할 때 부드럽게 출력하게 한다는 의미(부드러운 효과를 주기 위해선 a태그의 기본 동작을 막아주어야 하는 것) 
-        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"})
-    });
-});
-</code></pre>
-    </div>
-        <p class="t_box">
-            ∙ 스크롤 했을 때 좌표값 구하기<br>
-            ∙ 스크롤 했을 때 사이드 메뉴 해당 페이지에 스크롤이 도달했을 때 active 활성화시키기<br>
-        </p>
-        <div class="t_code">
-<pre><code class="language-js">
-window.addEventListener("scroll", () =&gt; {
+<pre><code class="language-js">window.addEventListener("scroll", () => {
+    //모두 같은 Y값인데 각 브라우저마다 호환이 될 수 있고 안될 수 있기 때문에 or연산자를 통해 다 가능하게끔! 
     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; 
 
-    //#parallax__info의 span(숫자나오는 부분)을 텍스트로 출력하되 소수점 뒤는 없이
-    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop); //Math.floor() : 버림 : 소수점 뒤에 다 버림
+    //01
+    // if(scrollTop > 0){
+    //     document.querySelector("#parallax__nav").classList.add("show");
+    // } else {
+    //     document.querySelector("parallax__nav").classList.remove("show")
+    // }
 
-    document.querySelectorAll(".content__item").forEach((e, i) =&gt; {
-        //scrollTop이 요소의 문서기준의 Y축값의 10을 뺀 값보다 크거나 같다면 : 스크롤이 해당페이지보다 더 내려갔거나 해당페이지라면
-        if(scrollTop &gt;= e.offsetTop-10){
-            document.querySelectorAll("#parallax__dot li").forEach(li =&gt; {
-                //li에 active 모두 제거
-                li.classList.remove("active");
-            });
-            //그러나 해당 li에는 active활성화
-            document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active");
-        }
-    })
+    //02
+    //(문서 전체 높이 - 브라우저 높이)
+    if(scrollTop >= (document.body.scrollHeight-window.innerHeight)){
+        document.querySelector("#parallax__top").classList.add("show");
+    } else {
+        document.querySelector("#parallax__top").classList.remove("show")
+    }
+    //Math.ceil() : 올림
+    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+
+    //top 버튼
+    document.querySelector("#parallax__top").addEventListener("click", ()=>{
+        window.scrollTo({left:0, top: 0, behavior: "smooth"});
+    });
 });
-        // window.scroll({leftTo: 0, top: 2000});
-        // window.scrollTo(0, 1000)
-        // window.scroll({leftTo: 0, top: 2000, behavior: "smooth"});
-        // window.scroll({leftTo: 0, top: 2000});
 
-        //window.scrollBy(0, 1000)
-        //window.scrollBy(0, 1000)
-        //window.scrollBy({leftT0: 0, top: 2000, behavior: "smooth"});
+    //03 시간차 두고 스크롤  
+    let nowScroll = true;       //실행되게 작업
+    //let nowScroll = false;      //실행 안되게 작업 //이런걸 트리거 함수라고 함
+    let lastScroll = 0
+    //스크롤 하면 scrollProgress 함수 실행됨
+    function scrollProgress(){
+        nowScroll = true
+  //스크롤 움직였을 때마다 움직이게 setInterval()메서드 이용
+        setInterval(()=>{
+            if(nowScroll){
+                //scroll(nowScroll)이 움직였을 때만 hasScroll작동
+                nowScroll=false;
+                //자주 인식하게 하는 함수 : 300이 있으니깐 0.3초마다 인식하게 함
+                hasScroll();
+            }
+        }, 300)
+    }
+
+    function hasScroll(){
+        //모두 같은 Y값인데 각 브라우저마다 호환이 될 수 있고 안될 수 있기 때문에 or연산자를 통해 다 가능하게끔! 
+        let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; 
+      //현재 스크롤값&lt;이전 스크롤값
+        if(scrollTop &lt; lastScroll){
+            document.querySelector("#parallax__nav").classList.add("show");
+
+        } else {
+            document.querySelector("#parallax__nav").classList.remove("show");
+        }
+        //메뉴 바 내에서 해당 페이지로 이동(해당 화면 갔을 때 해당 section메뉴에 active들어가 있음)
+        document.querySelectorAll(".content__item").forEach((element, index)=>{
+            if(scrollTop >= element.offsetTop - window.innerHeight/2){
+                document.querySelectorAll("#parallax__nav li").forEach(li => {
+                    //메뉴바 active 모두 없애기
+                    li.classList.remove("active")
+                });
+                //index는 0부터니깐 index+1
+                document.querySelector("#parallax__nav li:nth-child("+(index + 1)+")").classList.add("active")
+        }
+        })
+        //위 과정이 다 이루어지면 이전 스크롤값이 현재 스크롤값이 됨을 반복
+        lastScroll = scrollTop;
+    }        
+    window.addEventListener("scroll", scrollProgress)
 </code></pre>
     </div>
     <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
-        <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/parallaxEffect02.html" frameborder="0"></iframe>
+        <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/parallaxEffect03.html" frameborder="0"></iframe>
     </div>
     <div class="t_link">
-        <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/parallaxEffect02.html" target="_blank"
+        <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/parallaxEffect03.html" target="_blank"
         >실제 사이트보기</a>
-        <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/parallaxEffect02.html" target="_blank"
+        <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/parallaxEffect03.html" target="_blank"
         >원본 소스보기</a>
     </div>  
     <!-- document -->

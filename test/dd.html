@@ -4,10 +4,11 @@
     &lt;meta charset="UTF-8"&gt;
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;패럴랙스 이펙트02&lt;/title&gt;
+    &lt;title&gt;패럴랙스 이펙트03&lt;/title&gt;
+    &lt;link href="https://webfontwor0000ld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet"&gt;
     &lt;link rel="stylesheet" href="../assets/css/parallax.css"&gt;
     &lt;link rel="stylesheet" href="../assets/css/dracula.css"&gt;
-    &lt;link href="https://webfontwor0000ld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet"&gt;
+    
     &lt;link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet"&gt;
     &lt;link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet"&gt;
     &lt;style&gt;
@@ -15,11 +16,16 @@
         #parallax__nav {
             position: fixed;
             right: 20px;
-            top: 20px;
+            top: -200px;
             z-index: 2000;
             background-color: rgba(0,0,0,0.4);
             padding: 20px 30px;
             border-radius: 50px;
+            transition: top .4s ease;
+        }
+        /* show가 붙었을 때 탑 20 */
+        #parallax__nav.show {
+            top: 20px;
         }
         #parallax__nav li {
             display: inline;
@@ -187,58 +193,40 @@
                 left: 10px;
                 bottom: 10px;
             }
-            /* .content__item {
-                height: 100vh;
-            } 모바일일 때 화면 끝까지 가게 하기 위해서 */
         }
-        #parallax__dot {
+        #parallax__top {
             position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+            left: 50%;
+            bottom: -200px;
             z-index: 10000;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
             background: rgba(0,0,0,0.4);
-            padding: 20px 10px;
-            border-radius: 30px;
-        }
-        #parallax__dot li {
-            position: relative;
-            width: 20px;
-            height: 20px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
             border-radius: 50%;
-            margin: 12px 8px;
-            box-shadow: 0 0 0 2px rgba(255,255,255,0);
-            transition: box-shadow 0.2s ease;
+            cursor: pointer;
         }
-        #parallax__dot li a {
+        #parallax__top.show {
+            bottom: 20px;
+        }
+        #parallax__top:hover {
             background: #fff;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: 50%;
-            transition: transform 0.2s ease;
+            color: #000;
         }
-        #parallax__dot li.active {
-            box-shadow: 0 0 0 2px rgba(255,255,2551);
-        }
-        #parallax__dot li.active a {
-            transform: scale(0.4);
-        }
-        #parallax__dot li span {
-            display: none;
-        }
+
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body class="img04"&gt;
     &lt;header id="header"&gt;
-        &lt;h1&gt;Javascript parallax Effect02&lt;/h1&gt;
-        &lt;p&gt;패럴랙스 이펙트 - 사이드 메뉴&lt;/p&gt;
+        &lt;h1&gt;Javascript parallax Effect03&lt;/h1&gt;
+        &lt;p&gt;패럴랙스 이펙트 - 숨김 메뉴&lt;/p&gt;
         &lt;ul&gt;
             &lt;li&gt;&lt;a href="parallaxEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
-            &lt;li class="active"&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallaxEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallaxEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallaxEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
@@ -246,20 +234,25 @@
         &lt;/ul&gt;
     &lt;/header&gt;
     &lt;!-- //header --&gt;
-    &lt;nav id="parallax__dot"&gt;
+    &lt;nav id="parallax__nav"&gt;
         &lt;ul&gt;
-            &lt;li class="active"&gt;&lt;a href="#section1"&gt;&lt;span&gt;메뉴1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section2"&gt;&lt;span&gt;메뉴2&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section3"&gt;&lt;span&gt;메뉴3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section4"&gt;&lt;span&gt;메뉴4&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section5"&gt;&lt;span&gt;메뉴5&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section6"&gt;&lt;span&gt;메뉴6&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section7"&gt;&lt;span&gt;메뉴7&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section8"&gt;&lt;span&gt;메뉴8&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section9"&gt;&lt;span&gt;메뉴9&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/nav&gt;
     &lt;!-- //parallax__nav --&gt;
+
+    &lt;div id="parallax__top"&gt;
+        Top
+    &lt;/div&gt;
+    &lt;!-- parallax__top --&gt;
     &lt;main id="parallax__cont"&gt;
         &lt;div id="contents"&gt;
             &lt;section id="section1" class="content__item"&gt;
@@ -532,40 +525,58 @@ document.querySelectorAll(".mouse__wrap span").forEach( span =&gt; {
     &lt;script src="../assets/js/highlight.min.js"&gt;&lt;/script&gt;
     &lt;script src="../assets/js/common.js"&gt;&lt;/script&gt;
     &lt;script&gt;
-        document.querySelectorAll("#parallax__dot a").forEach( el =&gt; {
-            el.addEventListener("click", e =&gt; {
-                // a 링크 기능 차단
-                e.preventDefault();
-                
-                document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"})
-
-            });
-        });
-
         window.addEventListener("scroll", () =&gt; {
             let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; 
 
-            document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+            //01
+            // if(scrollTop &gt; 0){
+            //     document.querySelector("#parallax__nav").classList.add("show");
+            // } else {
+            //     document.querySelector("parallax__nav").classList.remove("show")
+            // }
 
-            document.querySelectorAll(".content__item").forEach((e, i) =&gt; {
-                if(scrollTop &gt;= e.offsetTop-10){
-                    document.querySelectorAll("#parallax__dot li").forEach(li =&gt; {
-                        li.classList.remove("active");
-                    });
-                    document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active");
-                }
-            })
+            //02
+            //(문서 전체 높이 - 브라우저 높이)
+            if(scrollTop &gt;= (document.body.scrollHeight-window.innerHeight)){
+                document.querySelector("#parallax__top").classList.add("show");
+            } else {
+                document.querySelector("#parallax__top").classList.remove("show")
+            }
+
+            document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+
+            //top 버튼
+            document.querySelector("#parallax__top").addEventListener("click", ()=&gt;{
+                window.scrollTo({left:0, top: 0, behavior: "smooth"});
+            });
         });
 
-                
-                // window.scroll({leftTo: 0, top: 2000});
-                // window.scrollTo(0, 1000)
-                //window.scroll({leftT0: 0, top: 2000, behavior: "smooth"});
-                // window.scroll({leftTo: 0, top: 2000});
+            //03 시간차 두고 스크롤  
+            let nowScroll = true;       //실행되게 작업
+            //let nowScroll = false;      //실행 안되게 작업 //이런걸 트리거 함수라고 함
+            let lastScroll = 0
+            function scrollProgress(){
+                nowScroll = true
+          //스크롤 움직였을 때마다 움직이게
+                setInterval(()=&gt;{
+                    if(nowScroll){
+                        nowScroll=false;
+                  //자주 인식하게 하는 함수 : 300이 있으니깐 0.3초마다 인식하게 함
+                        hasScroll();
+                    }
+                }, 300)
+            }
 
-                //window.scrollBy(0, 1000)
-                //window.scrollBy(0, 1000)
-                //window.scrollBy({leftT0: 0, top: 2000, behavior: "smooth"});
+            function hasScroll(){
+                let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; 
+              //현재 스크롤값&lt;이전 스크롤값
+                if(scrollTop &lt; lastScroll){
+                    document.querySelector("#parallax__nav").classList.add("show");
+                } else {
+                    document.querySelector("#parallax__nav").classList.remove("show");
+                }
+                lastScroll = scrollTop;
+            }            window.addEventListener("scroll", scrollProgress)
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;

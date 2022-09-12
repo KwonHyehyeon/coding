@@ -18,10 +18,10 @@
     color: #fff;
 }
 .image.img1 {
-    background: url(../img/cafe01.jpg) no-repeat center / cover;
+    background: url(../img/img01.jpg) no-repeat center / cover;
 }
 .image.img2 {
-    background: url(../img/cafe02.jpg) no-repeat center / cover;
+    background: url(../img/img02.jpg) no-repeat center / cover;
 }
 .image__title {
     font-size: 32px;
@@ -43,11 +43,11 @@
 .image__btn {
     font-size: 16px;
     font-weight: 300;
-    background: #EB3A13;
+    background: #626262;
     color: #fff;
     padding: 10px 20px;
     display: inline-block;
 }
 .image__btn.green {
-    background: #8EC534;
+    background: #1A4272;
 }

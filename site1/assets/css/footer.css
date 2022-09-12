@@ -1,9 +1,7 @@
 .footer__menu {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 70px;
-}
-.footer__menu > div {
-    width: 16%;
 }
 .footer__menu h3 {
     font-size: 18px;

@@ -24,13 +24,14 @@
         .header__logo em{
             font-size: 18px;
             font-weight: 400;
+            color: #999;
         }
         .header__menu {
             width: 60%;
             text-align: center;
         }
         .header__menu li.active a {
-            background: #000;
+            background: #e4b78e;
             color: #fff;
             border-radius: 5px;
         }
@@ -43,7 +44,8 @@
             transition: background-color 0.3s;
         }
         .header__menu li a:hover{
-            background-color: #f1f1f1;
+            background-color: #e4b88e81;
+            color: #fff;
             border-radius: 5px;
         }
         .header__member {

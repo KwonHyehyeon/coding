@@ -35,7 +35,7 @@
             height: 60px;
             border-radius: 50%;
             background-color: #000;
-            background: url(../img/text_icon.svg);
+            background: url(../img/textIcon.svg);
         }
         .text.t1 .text__title::before {
             background-position: 0 0;

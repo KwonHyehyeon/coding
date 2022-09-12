@@ -11,33 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
     <style>
-        /* parallax__nav */
-        #parallax__nav {
-            position: fixed;
-            right: 20px;
-            top: 20px;
-            z-index: 2000;
-            background-color: rgba(0,0,0,0.4);
-            padding: 20px 30px;
-            border-radius: 50px;
-        }
-        #parallax__nav li {
-            display: inline;
-            margin: 0 5px;
-        }
-        #parallax__nav li a{
-            display: inline-block;
-            height: 30px;
-            padding: 5px 20px;
-            text-align: center;
-            line-height: 30px;
-        }
-        #parallax__nav li.active a {
-            background: #fff;
-            color: #000;
-            border-radius: 20px;
-            box-sizing: content-box;
-        }
         #parallax__cont {
             max-width: 1600px;
             width: 98%;
@@ -137,6 +110,12 @@
             margin-left: -4vw;
             word-break: keep-all;
         }
+        /* 홀수는 odd랍니다. */
+        .content__item:nth-child(even) .content__item__desc {
+            margin-left: auto;
+            margin-right: -4vw;
+        }
+
         #parallax__info {
             position: fixed;
             left: 20px;
@@ -146,15 +125,6 @@
             color: #fff;
             padding: 20px;
             border-radius: 10px;
-        }
-        #parallax__info li .scrollTop{
-            line-height: 1.4;
-        }
-        
-        /* 홀수는 odd랍니다. */
-        .content__item:nth-child(even) .content__item__desc {
-            margin-left: auto;
-            margin-right: -4vw;
         }
         @media(max-width:800px){
             #parallax__cont {
@@ -560,7 +530,7 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
                 
                 // window.scroll({leftTo: 0, top: 2000});
                 // window.scrollTo(0, 1000)
-                //window.scroll({leftT0: 0, top: 2000, behavior: "smooth"});
+                //window.scroll({leftTo: 0, top: 2000, behavior: "smooth"});
                 // window.scroll({leftTo: 0, top: 2000});
 
                 //window.scrollBy(0, 1000)

@@ -34,7 +34,7 @@
     font-size: 20px;
     font-weight: 300;
     color: #fff;
-    line-height: 1.45;
+    line-height: 1.5;
     margin-bottom: 130px;
 }
 .slider__img .desc .btn {}
@@ -45,7 +45,7 @@
     display: inline-block;
 }
 .slider__img .desc .btn a.black {
-    background-color: #000;
+    background-color: #EA9B71;
     color: #fff;
 }
 .slider__arrow {}
@@ -86,3 +86,5 @@
 .slider__dot a.stop {
     background-position: -60px -70px;
 }
+
+@media

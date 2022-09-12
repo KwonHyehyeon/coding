@@ -32,6 +32,7 @@
             margin: 0 5px;
         }
         #parallax__nav li a{
+            /* background-color: #ffee00; */
             display: inline-block;
             height: 30px;
             padding: 5px 20px;
@@ -526,6 +527,7 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
     <script src="../assets/js/common.js"></script>
     <script>
         window.addEventListener("scroll", () => {
+            //모두 같은 Y값인데 각 브라우저마다 호환이 될 수 있고 안될 수 있기 때문에 or연산자를 통해 다 가능하게끔! 
             let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; 
 
             //01
@@ -542,7 +544,7 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
             } else {
                 document.querySelector("#parallax__top").classList.remove("show")
             }
-
+            //Math.ceil() : 올림
             document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
 
             //top 버튼
@@ -555,28 +557,45 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
             let nowScroll = true;       //실행되게 작업
             //let nowScroll = false;      //실행 안되게 작업 //이런걸 트리거 함수라고 함
             let lastScroll = 0
+            //스크롤 하면 scrollProgress 함수 실행됨
             function scrollProgress(){
                 nowScroll = true
-          //스크롤 움직였을 때마다 움직이게
+          //스크롤 움직였을 때마다 움직이게 setInterval()메서드 이용
                 setInterval(()=>{
                     if(nowScroll){
+                        //scroll(nowScroll)이 움직였을 때만 hasScroll작동
                         nowScroll=false;
-                  //자주 인식하게 하는 함수 : 300이 있으니깐 0.3초마다 인식하게 함
+                        //자주 인식하게 하는 함수 : 300이 있으니깐 0.3초마다 인식하게 함
                         hasScroll();
                     }
                 }, 300)
             }
 
             function hasScroll(){
+                //모두 같은 Y값인데 각 브라우저마다 호환이 될 수 있고 안될 수 있기 때문에 or연산자를 통해 다 가능하게끔! 
                 let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; 
               //현재 스크롤값<이전 스크롤값
                 if(scrollTop < lastScroll){
                     document.querySelector("#parallax__nav").classList.add("show");
+
                 } else {
                     document.querySelector("#parallax__nav").classList.remove("show");
                 }
+                //메뉴 바 내에서 해당 페이지로 이동(해당 화면 갔을 때 해당 section메뉴에 active들어가 있음)
+                document.querySelectorAll(".content__item").forEach((element, index)=>{
+                    if(scrollTop >= element.offsetTop - window.innerHeight/2){
+                        document.querySelectorAll("#parallax__nav li").forEach(li => {
+                            //메뉴바 active 모두 없애기
+                            li.classList.remove("active")
+                        });
+                        //index는 0부터니깐 index+1
+                        document.querySelector("#parallax__nav li:nth-child("+(index + 1)+")").classList.add("active")
+                }
+                })
+                //위 과정이 다 이루어지면 이전 스크롤값이 현재 스크롤값이 됨을 반복
                 lastScroll = scrollTop;
-            }            window.addEventListener("scroll", scrollProgress)
+            }        
+            window.addEventListener("scroll", scrollProgress)
     </script>
 </body>
 </html>
