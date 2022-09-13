@@ -27,18 +27,18 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/slider.css">
 
-
+    <script src="https://kit.fontawesome.com/cb8af15e16.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="skip">
-        <a href="#">헤더 영역 바로가기</a>
-        <a href="#">슬라이드 영역 바로가기</a>
-        <a href="#">이미지 영역 바로가기</a>
-        <a href="#">이미지/텍스트 영역 바로가기</a>
-        <a href="#">카드 영역 바로가기</a>
-        <a href="#">배너 영역 바로가기</a>
-        <a href="#">텍스트 영역 바로가기</a>
-        <a href="#">푸터 영역 바로가기</a>
+        <a href="#headerType">헤더 영역 바로가기</a>
+        <a href="#sliderType">슬라이드 영역 바로가기</a>
+        <a href="#imageType">이미지 영역 바로가기</a>
+        <a href="#imageTextType">이미지/텍스트 영역 바로가기</a>
+        <a href="#cardType">카드 영역 바로가기</a>
+        <a href="#bannerType">배너 영역 바로가기</a>
+        <a href="#textType">텍스트 영역 바로가기</a>
+        <a href="#footerType">푸터 영역 바로가기</a>
     </div>
     <!-- skip : 웹표준 준수 위해서 -->
     <header id="headerType" class="header__wrap nexon">
@@ -46,19 +46,25 @@
             <div class="header__logo">
                 <a href="#">MOMENTO <em>store</em></a>
             </div>
+            <div class="menu__bar">
+                <div class="menubar__icon"></div>
+            </div>
             <div class="header__menu">
                 <ul>
-                    <li class="active"><a href="#section1">main</a></li>
-                    <li><a href="#section2">best</a></li>
-                    <li><a href="#section3">codi</a></li>
-                    <li><a href="#section4">product</a></li>
-                    <li><a href="#section5">brand</a></li>
-                    <li><a href="#section6">SNS</a></li>
+                    <li class="active"><a href="#sliderType">main</a></li>
+                    <li><a href="#imageType">best</a></li>
+                    <li><a href="#imageTextType">codi</a></li>
+                    <li><a href="#cardType">product</a></li>
+                    <li><a href="#bannerType">brand</a></li>
+                    <li><a href="#textType">SNS</a></li>
                 </ul>
             </div>
             <div class="header__member">
                 <a href="#">로그인</a>
             </div>
+            <!-- <a href="" class="header__inner_toogleBtn">
+                <i class="fas fa-bars"></i>
+            </a> -->
         </div>
     </header>
     <!-- headerType -->
@@ -69,7 +75,7 @@
             <div class="slider__inner">
                 <div class="slider">
                     <div class="slider__img">
-                        <div class="desc">
+                        <div class="desc container">
                             <span>STORE</span>
                             <h3>MOMENTO’ s style</h3>
                             <p>
@@ -101,7 +107,7 @@
         <section id="imageType" class="image__wrap nexon section items">
             <h2>이 달의 BEST</h2>
             <p>9월 가장 인기가 많았던 제품 TOP 2 를 지금 바로 소개합니다.</p>
-            <div class="image__inner container">
+            <div class="image__inner">
                 <article class="image img1">
                     <h2 class="image__title">brin tweed jacket</h2>
                     <p class="image__desc">“브린 트위드 자켓" 은 화이트톤과 아이보리 톤의 조화로 체크무늬가 들어간 자켓으로, 하객룩으로 인기가 많은 제품입니다.</p>
@@ -146,7 +152,7 @@
         <section id="cardType" class="card__wrap nexon section gray items">
             <h2>이 달의 마켓</h2>
             <p>MOMENTO’s가 pick해 온 의류 품목들을 공개합니다.</p>
-            <div class="card__inner container">
+            <div class="card__inner">
                 <article class="card">
                     <!--시맨틱태그 안에는 제목이 꼭 들어가야함!-->
                     <figure class="card__header">
@@ -232,7 +238,7 @@
             <!-- 쓸 거 없을 때 div나 span -->
             <span>MOMENTO’s</span>
             <h2 class="mb70">SNS : MOMENTO’s LOOK</h2>
-            <div class="text__inner container">
+            <div class="text__inner">
                 <div class="text t1">
                     <h3 class="text__title">페이스북</h3>
                     <p class="text__desc">MOMENTO의 룩북영상과 홍보영상을 볼 수 있으며 매달 마켓 상품 품목들을 실시간으로 확인하실 수 있습니다.</p>
@@ -269,9 +275,9 @@
     </main>
     <!-- mainType -->
     
-    <footer id="footerType" class="footer__wrap nexon section gray items">
+    <footer id="footerType" class="footer__wrap nexon section gray">
         <h2 class="blind">푸터 영역</h2>
-        <div class="footer__inner container">
+        <div class="footer__inner">
             <div class="footer__menu">
                 <div>
                     <h3>MENU</h3>
@@ -341,7 +347,7 @@
            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
            //forEach
            document.querySelectorAll(".items").forEach((element, index)=>{
-               if(scrollTop >= element.offsetTop - window.innerHeight/6){
+               if(scrollTop >= element.offsetTop - 500){
                    document.querySelectorAll(".header__menu li").forEach(li => {
                        //메뉴바 active 모두 없애기
                        li.classList.remove("active")
@@ -352,17 +358,25 @@
        })
 
        //스크롤 이동
-       document.querySelectorAll(".header__menu li a").forEach(li => {
+       // 스크롤 이동
+       document.querySelectorAll("#headerType .header__inner .header__menu li a").forEach(li => {
             li.addEventListener("click", (e) => {
-                //클릭하면 이벤트 막아줌(바로 딱 나오게 하는게 아니라 그 후에 부드럽게 나오게 하기 위함)
                 e.preventDefault();
-                //li = li a태그들 href = secton1,2,...
                 document.querySelector(li.getAttribute("href")).scrollIntoView({
-                    //부드럽게 움직이는 효과
-                    behavior: "smooth"
-                })
-            })
-        })
+                    behavior: "smooth"  // 이동 부드럽게
+                });
+            });
+        });
+        //미디어쿼리 메뉴바 버튼 
+        const menubtn = document.querySelector(".menu__bar .menubar__icon");  
+        const menu = document.querySelector(".header__menu");   
+
+        menubtn.addEventListener("click", () => {
+            menu.classList.add("on");   
+        });
+        menu.addEventListener("mouseleave", () => {
+            menu.classList.remove("on");  
+        });
    </script>
 </body>
 </html>

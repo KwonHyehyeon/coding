@@ -3,11 +3,12 @@
 .image__wrap h2 {}
 .image__wrap p {} /*section의 요소들과 같아서 section에 넣어줌(코드 재활용을 위해서)*/
 #imageType01 {
-    height: 500px;
+    /* height: 500px; */
 }
 .image__wrap {}
 .image__inner {
     display: flex;
+    /* flex-wrap: wrap; */
     justify-content: space-between; /*컨테이너 있고 이거쓰면 양쪽 끝으로 붙어서 사진 사이 떨어지게 함*/
 }
 .image {
@@ -50,4 +51,35 @@
 }
 .image__btn.green {
     background: #1A4272;
+}
+/* 반응형 */
+@media (max-width: 1080px) {
+    .image__inner .image {
+        width: 100%;
+        margin-right: 20px;
+    }
+    .image__inner .image:last-child {
+        margin-right: 0;
+    }
+    #imageType > h2 {
+        font-size: 40px;
+    }
+    #imageType > p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image__inner {
+        flex-wrap: wrap;
+    }
+    .image__inner .image {
+        margin: 10px 0;
+    }
+    #imageType > h2 {
+        font-size: 30px;
+    }
+    #imageType > p {
+        font-size: 16px;
+    }
 }

@@ -19,7 +19,7 @@
 
 /* 컨테이너 */
  /* common */
- .container {
+.container {
     width: 1160px;
     padding: 0 20px;
     margin: 0 auto;
@@ -87,3 +87,4 @@
 .mt50 {margin-top: 50px !important;}
 .mt60 {margin-top: 60px !important;}
 .mt70 {margin-top: 70px !important;}
+

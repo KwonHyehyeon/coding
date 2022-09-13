@@ -1,6 +1,7 @@
 /* cardType */
 .card__inner {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     /*양쪽 정렬 맞춰주는 것*/
 }
@@ -17,6 +18,7 @@
 .card__body .tit {
     font-size: 24px;
     margin-bottom: 10px;
+    /* 한 줄 효과 */
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; 
@@ -31,7 +33,46 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;  /*줄효과 clamp : 3줄 효과*/
+    -webkit-line-clamp: 4;  /*줄효과 clamp : 4줄 효과*/
     -webkit-box-orient: vertical;
+}
+.card__body .btn:hover {
+    text-decoration: underline;
+}
+/* 반응형 */
+@media (max-width: 1080px) {
+    .card__inner {
+        justify-content: space-between;
+    }
+    #cardType > h2 {
+        font-size: 40px;
+    }
+    #cardType > p {
+        font-size: 18px;
+    }
+    .card__body .desc {
+        margin-bottom: 20px;
+    }
+}
 
+@media (max-width: 768px) {
+    #cardType > h2 {
+        font-size: 30px;
+    }
+    #cardType > p {
+        font-size: 16px;
+    }
+    .card__inner {
+        justify-content: space-around;
+    }
+    .card__inner .card {
+        width: 96%;
+        margin-bottom: 20px;
+    }
+    .card__body .title {
+        font-size: 20px;
+    }
+    .card__body .desc {
+        font-size: 16px;
+    }
 }
