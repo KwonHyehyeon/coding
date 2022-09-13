@@ -47,3 +47,15 @@
         font-size: 16px;
     }
 }
+@media(max-width : 460px){
+    .banner__inner {
+        width: 100%;
+    }
+
+    .banner__inner .title {
+        font-size: 30px;
+    }
+    .banner__inner .desc {
+        font-size: 12px;
+    }
+}

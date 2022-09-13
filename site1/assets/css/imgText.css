@@ -58,8 +58,8 @@
 }
 .imgText__img a {
     position: absolute;
-    left: 30px;
-    bottom: 30px;
+    left: 60px;
+    bottom: 20px;
     background-color: #7C2B39;
     color: #fff;
     font-size: 18px;
@@ -99,9 +99,6 @@
     .imgText__txt ul {
         margin-bottom: 40px;
     }
-    .imgText__txt ul li::before {
-        display: none;
-    }
     .imgText__img a {
         left: 20px;
         bottom: 20px;
@@ -128,3 +125,24 @@
         font-size: 16px;
     }
 }
+
+@media (max-width: 480px) {
+    .imgText__inner .imgText__txt {
+        margin: 0 auto;
+        width: 96%;
+        margin-bottom: 20px;
+    }
+    .imgText__inner .imgText__img {
+        width: 96%;
+        margin-bottom: 20px;
+    }
+    .imgText__txt > h3 {
+        font-size: 30px;
+    }
+    .imgText__txt > p {
+        font-size: 16px;
+    }
+    .imgText__txt ul {
+        font-size: 16px;
+    }
+} 

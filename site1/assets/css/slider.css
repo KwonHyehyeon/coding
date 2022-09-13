@@ -113,3 +113,28 @@
         font-size: 22px;
     }
 }
+@media(max-width : 460px){
+    .slider__img .desc span {
+        font-size: 12px;
+        margin-left: 110px;
+        margin-bottom: 20px;
+    }
+    .slider__img .desc h3 {
+        font-size: 24px;
+        padding-left: 50px;
+    }
+    .slider__img .desc p {
+        font-size: 16px;
+        padding-left: 10px;
+    }
+    .slider__img .desc .btn a{
+        font-size: 16px;
+        background-color: #fff;
+        padding: 11px 40px;
+        display: inline-block;
+    }
+    .slider__img .desc .btn a.black {
+        background-color: #EA9B71;
+        color: #fff;
+    }
+}
