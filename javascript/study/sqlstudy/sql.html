@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : jquery</title>
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+                <h2 class="t_tit">📎 MySQL</h2>
+                    <p class="t_desc2">
+                        MySQL은 데이터베이스 소프트웨어입니다.<br>
+                        일반적으로 데이터를 추가하거나 검색, 추출하는 기능을 모두 포함해서 데이터베이스라고 부릅니다.<br>
+                        MySQL은 세계에서 가장 많이 쓰는 오픈 소스의 관계형 데이터베이스 관리시스템(RDBMS)입니다.<br>
+                        MySQL은 PHP 스크립트 언어와 상호 연동이 잘 되면서 오픈소스를 개발된 무료 프로그램입니다.
+                    </p>
+                <h3 class="t_tit2">➰ MySQL 설치</h2>
+                <p class="t_box">
+                        MAMP란 웹사이트를 개발할 때 쓰이는 기술 스택인 macOS, Apache, MySQL, PHP 의 약어이자 솔루션 스택이다.<br>
+                            <a href="http://www.mamp.info/en/downlads/" target="_blank">http://www.mamp.info/en/downlads/</a>
+                </p>
+                <h3 class="t_tit2">➰ MySQL 실행</h3>
+                <p class="t_desc2">
+                    윈도우 : cs MAMP/bin/mysql/bin<br>
+                    로그인 : ./mysql -uroot -proot
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.7.24 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</code></pre>
+                </div>
+                <p class="t_desc2">
+                    맥 : cs Application/mamp/Library/bin<br>
+                    로그인 : ./mysql -uroot -proot
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">hyehyeon@gwonhyehyeon-ui-MacBookAir bin % ./mysql -uroot -proot
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 213
+Server version: 5.7.34 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</code></pre>
+                </div><br>
+                <h2 class="t_tit">📎 데이터베이스</h2>
+                <h3 class="t_tit2">➰ 데이터베이스 만들기</h3>
+                <p class="t_desc2">
+                    create database 데이터베이스 이름;
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">mysql> create database sample02;
+Query OK, 1 row affected (0.00 sec)
+</code></pre>   
+                </div>
+                    <h3 class="t_tit2">➰ 데이터베이스 보기</h3>
+                    <p class="t_desc2">
+                        show databases;
+                    </p>
+                <div class="t_code">
+<pre><code class="language-js">mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample01           |
+| sample02           |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+</code></pre>
+                </div>
+                    <h3 class="t_tit2">➰ 데이터베이스 사용</h3>
+                    <p class="t_desc2">
+                        use 데이터베이스 이름;
+                    </p>
+                <div class="t_code">
+<pre><code class="language-js">use sample01;
+Database changed    
+</code></pre>
+                </div>
+                    <h3 class="t_tit2">➰ 데이터베이스 삭제</h3>
+                    <p class="t_desc2">
+                        drop database 데이터베이스 이름;
+                    </p>
+                <div class="t_code">
+<pre><code class="language-js">mysql> drop database sample02;
+Query OK, 0 rows affected (0.00 sec)
+</code></pre>
+                </div><br>
+                <!-- intro4 -->
+
+                    <h2 class="t_tit">📎 테이블</h2>
+                    <h3 class="t_tit2">➰ 테이블 만들기</h3>
+                    <p class="t_desc2">
+                        create table 테이블 이름
+                    </p>
+                <div class="t_code">
+<pre><code class="language-js">create table member (
+    myMemberID int(10) unsigned auto_increment,
+    youEmail varchar(40) NOT NULL, 
+    youName varchar(20) NOT NULL,
+    youPass varchar(20) NOT NULL,
+    youBirth int(20) NOT NULL,
+    regTime int(20) NOT NULL,
+    PRIMARY KEY (myMemberID)
+) charset=utf8;
+</code></pre>
+                </div>
+                    <hh3 class="t_tit2">➰ 테이블 전체보기</h3>
+                    <p class="t_desc2">
+                        show tables;
+                    </p>
+                <div class="t_code">
+<pre><code class="language-js">mysql> show tables;
++--------------------+
+| Tables_in_sample01 |
++--------------------+
+| member             |
++--------------------+
+1 row in set (0.00 sec)
+</code></pre>
+                </div>
+                    <h3 class="t_tit2">➰ 테이블 보기</h3>
+                    <p class="t_desc2">
+                        desc 테이블 이름;
+                    </p>
+                <div class="t_code">
+<pre><code class="language-js">mysql> desc member;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youEmail   | varchar(40)      | NO   |     | NULL    |                |
+| youName    | varchar(20)      | NO   |     | NULL    |                |
+| youPass    | varchar(20)      | NO   |     | NULL    |                |
+| youBirth   | int(20)          | NO   |     | NULL    |                |
+| regTime    | int(20)          | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+6 rows in set (0.01 sec)
+</code></pre>
+                </div>
+                    <h3 class="t_tit2">➰ 테이블 삭제</h3>
+                    <p class="t_desc2">
+                        drop table 테이블 이름;
+                    </p>
+                <div class="t_code">
+<pre><code class="language-js">drop table member;
+Query OK, 0 rows affected (0.01 sec)
+</code></pre>
+                </div><br>
+            <!-- //intro5 -->
+                <h2 class="t_tit">📎 테이블 데이터</h2>
+                <h3 class="t_tit2">➰ 데이터 입력하기</h3>
+                <p class="t_desc2">
+                    INSERT INTO 테이블이름(필드명) VALUE(데이터)
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('webstoryboy@naver.com','황지락','1234','19990303','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('thdtjdgml415@naver.com', '송지락', '1234', '19970415', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('mo0647@naver.com', '김지락', '1234', '19970530', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('tjrwnsrkdtj@naver.com', '김지락', '1234', '19941009', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('jwor124@naver.com', '정지락', '1234', '19990303', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('leesh3432@naver.com','이지락','1234','19970205','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('sshin4882@naver.com','박지락','1234','19990303','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('to_before@naver.com', '김지락', '1234', '19970809', '04');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('kkb7528@naver.com','권지락','1234','19990303','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('piowm123@gmail.com', '문지락', '1234', '19990303', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ghkddbwls96@gmail.com', '황지락', '1234', '19990303', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('eodnjs9605@naver.com','김지락','1234','19960530','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('wjsqhdus971007@gmail.com','전지락','1234','19971007','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('noeyheyh@gmail.com','권지락','1234','19960331','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('hjkang306@gmail.com','강지락','1234','19990303','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('sunhey9810@gmail.com', '박지락', '1234', '19981010', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUE('kde66034@gmail.com', '김지락', '1234', '19700101', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('praise1109@gmail.com', '이지락', '1234', '19990303', '1234567');
+</code></pre>
+                </div>
+                <h3 class="t_tit2">➰ 데이터 불러오기</h3>
+                <p class="t_desc2">
+                    SELECT 필드명 FROM 테이블명 WHERE 조건명
+                </p>
+                <h4 class="t_tit3">➿ 전체 데이터 불러오기</h4>
+                <div class="t_code">
+<pre><code class="language-js">mysql> SELECT * FROM member;
++------------+--------------------------+------------+---------+----------+---------+
+| myMemberID | youEmail                 | youName    | youPass | youBirth | regTime |
++------------+--------------------------+------------+---------+----------+---------+
+|          1 | noeyheyh@gmail.com       | 권지락     | 1234    | 19960331 | 1234567 |
+|          2 | webstoryboy@naver.com    | 황지락     | 1234    | 19990303 | 1234567 |
+|          3 | thdtjdgml415@naver.com   | 송지락     | 1234    | 19970415 | 1234567 |
+|          4 | mo0647@naver.com         | 김지락     | 1234    | 19970530 | 1234567 |
+|          5 | tjrwnsrkdtj@naver.com    | 김지락     | 1234    | 19941009 | 1234567 |
+|          6 | jwor124@naver.com        | 정지락     | 1234    | 19990303 | 1234567 |
+|          7 | leesh3432@naver.com      | 이지락     | 1234    | 19970205 | 1234567 |
+|          8 | kkk5993@naver.com        | 김지락     | 1234    | 19960617 | 1234567 |
+|          9 | sshin4882@naver.com      | 박지락     | 1234    | 19990303 | 1234567 |
+|         10 | to_before@naver.com      | 김지락     | 1234    | 19970809 |       4 |
+|         11 | kkb7528@naver.com        | 권지락     | 1234    | 19990303 | 1234567 |
+|         12 | piowm123@gmail.com       | 문지락     | 1234    | 19990303 | 1234567 |
+|         13 | ghkddbwls96@gmail.com    | 황지락     | 1234    | 19990303 | 1234567 |
+|         14 | eodnjs9605@naver.com     | 김지락     | 1234    | 19960530 | 1234567 |
+|         15 | wjsqhdus971007@gmail.com | 전지락     | 1234    | 19971007 | 1234567 |
+|         16 | hjkang306@gmail.com      | 강지락     | 1234    | 19990303 | 1234567 |
+|         17 | sunhey9810@gmail.com     | 박지락     | 1234    | 19981010 | 1234567 |
+|         18 | kde66034@gmail.com       | 김지락     | 1234    | 19700101 | 1234567 |
+|         19 | praise1109@gmail.com     | 이지락     | 1234    | 19990303 | 1234567 |
+|         20 | oranssy@naver.com        | 최지락     | 3950    | 20010415 | 1234567 |
++------------+--------------------------+------------+---------+----------+---------+
+20 rows in set (0.00 sec)
+</code></pre>   
+                </div>
+                <h4 class="t_tit3">➿ myMemberID가 6번인 경우</h4>
+                <div class="t_code">
+<pre><code class="language-js">mysql> SELECT * FROM member WHERE myMemberID = 6;
++------------+-------------------+------------+---------+----------+---------+
+| myMemberID | youEmail          | youName    | youPass | youBirth | regTime |
++------------+-------------------+------------+---------+----------+---------+
+|          6 | jwor124@naver.com | 정장첸       | 1234    | 19990303 | 1234567 |
++------------+-------------------+------------+---------+----------+---------+
+1 row in set (0.00 sec)
+</code></pre>
+                </div>
+                <h4 class="t_tit3">➿ email 중에 naver 텍스트를 포함하고 있는 경우</h4>
+                <div class="t_code">
+<pre><code class="language-js">mysql> SELECT * FROM member WHERE youEmail LIKE '%naver%';
++------------+------------------------+------------+---------+----------+---------+
+| myMemberID | youEmail               | youName    | youPass | youBirth | regTime |
++------------+------------------------+------------+---------+----------+---------+
+|          2 | webstoryboy@naver.com  | 황장첸     | 1234    | 19990303 | 1234567 |
+|          3 | thdtjdgml415@naver.com | 송장첸     | 1234    | 19970415 | 1234567 |
+|          4 | mo0647@naver.com       | 김장첸     | 1234    | 19970530 | 1234567 |
+|          5 | tjrwnsrkdtj@naver.com  | 김장첸     | 1234    | 19941009 | 1234567 |
+|          6 | jwor124@naver.com      | 정장첸     | 1234    | 19990303 | 1234567 |
+|          7 | leesh3432@naver.com    | 이장첸     | 1234    | 19970205 | 1234567 |
+|          8 | kkk5993@naver.com      | 김장첸     | 1234    | 19960617 | 1234567 |
+|          9 | sshin4882@naver.com    | 박장첸     | 1234    | 19990303 | 1234567 |
+|         10 | to_before@naver.com    | 김장첸     | 1234    | 19970809 |       4 |
+|         11 | kkb7528@naver.com      | 권장첸     | 1234    | 19990303 | 1234567 |
+|         14 | eodnjs9605@naver.com   | 김장첸     | 1234    | 19960530 | 1234567 |
+|         20 | oranssy@naver.com      | 최장첸     | 3950    | 20010415 | 1234567 |
++------------+------------------------+------------+---------+----------+---------+
+12 rows in set (0.00 sec)
+</code></pre>
+            </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

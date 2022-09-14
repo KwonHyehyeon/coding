@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,8 +28,24 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/slider.css">
 
-    <script src="https://kit.fontawesome.com/cb8af15e16.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+    <style>
+        /* 애초에 스크롤바 안생기게, 해당페이지만 바꾸기 위함*/
+        #headerType {
+            display: none;
+        }
+
+        /* #sliderType {display: none;} */
+        /* #imageType {display: none;} */
+        /* #imageTextType {display: none;} */
+        /* #cardType {display: none;} */
+        /* #bannerType {display: none;} */
+        /* #textType {display: none;} */
+        /* #footerType {display: none;} */
+    </style>
 </head>
+
 <body>
     <div id="skip">
         <a href="#headerType">헤더 영역 바로가기</a>
@@ -68,12 +85,12 @@
         </div>
     </header>
     <!-- headerType -->
-    
+
     <main id="mainType">
         <section id="sliderType" class="slider__wrap items">
-            <h2>슬라이드 영역</h2>
+            <h2 class="blind">슬라이드 영역</h2>
             <div class="slider__inner">
-                <div class="slider">
+                <!-- <div class="slider">
                     <div class="slider__img">
                         <div class="desc container">
                             <span>STORE</span>
@@ -99,6 +116,56 @@
                         <a href="#" class="play"><span class="ir">플레이</span></a>
                         <a href="#" class="stop"><span class="ir">정지</span></a>
                     </div>
+                </div> -->
+
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>STORE</span>
+                                <h3>MOMENTO’ s style</h3>
+                                <p>
+                                    #모멘토는 스페인어로 “순간" 이라는 뜻으로,<br>
+                                    당신의 아름다운 순간을 선물해드립니다.
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히보기</a>
+                                    <a href="#" class="black">쇼핑가기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>STORE</span>
+                                <h3>MOMENTO’ s style</h3>
+                                <p>
+                                    #모멘토는 스페인어로 “순간" 이라는 뜻으로,<br>
+                                    당신의 아름다운 순간을 선물해드립니다.
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히보기</a>
+                                    <a href="#" class="black">쇼핑가기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>STORE</span>
+                                <h3>MOMENTO’ s style</h3>
+                                <p>
+                                    #모멘토는 스페인어로 “순간" 이라는 뜻으로,<br>
+                                    당신의 아름다운 순간을 선물해드립니다.
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히보기</a>
+                                    <a href="#" class="black">쇼핑가기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </section>
@@ -107,7 +174,7 @@
         <section id="imageType" class="image__wrap nexon section items">
             <h2>이 달의 BEST</h2>
             <p>9월 가장 인기가 많았던 제품 TOP 2 를 지금 바로 소개합니다.</p>
-            <div class="image__inner">
+            <div class="image__inner container">
                 <article class="image img1">
                     <h2 class="image__title">brin tweed jacket</h2>
                     <p class="image__desc">“브린 트위드 자켓" 은 화이트톤과 아이보리 톤의 조화로 체크무늬가 들어간 자켓으로, 하객룩으로 인기가 많은 제품입니다.</p>
@@ -124,7 +191,7 @@
 
         <section id="imageTextType" class="imageText__wrap nexon section gray items">
             <h2 class="blind">다가오는 가을 코디 추천</h2>
-            <div class="imgText__inner">
+            <div class="imgText__inner container">
                 <div class="imgText__txt">
                     <span>MOMENTO’s pick</span>
                     <h3>다가오는 <br>
@@ -145,7 +212,7 @@
                 <div class="imgText__img img2">
                     <a href="#" class="blue">늦가을 코디 보러가기</a>
                 </div>
-            </div>        
+            </div>
         </section>
         <!--//imgTextType-->
 
@@ -162,7 +229,8 @@
                     </figure>
                     <div class="card__body">
                         <h3 class="tit">코듀로이 팬츠</h3>
-                        <p class="desc">가을하면 코듀로이, 코듀로이하면 가을로 그만큼 대표적인 가을 소재라고 할 수 있는 코듀로이 팬츠를 가져왔습니다. 요즘 팬츠 색상이 다양한 게 트렌드인 만큼 여러 색상을 가져왔는데.........</p>
+                        <p class="desc">가을하면 코듀로이, 코듀로이하면 가을로 그만큼 대표적인 가을 소재라고 할 수 있는 코듀로이 팬츠를 가져왔습니다. 요즘 팬츠 색상이 다양한 게
+                            트렌드인 만큼 여러 색상을 가져왔는데.........</p>
                         <a class="btn" href="#">
                             더 자세히 보기
                             <span aria-hidden="true">
@@ -182,7 +250,8 @@
                     </figure>
                     <div class="card__body">
                         <h3 class="tit">블라우스</h3>
-                        <p class="desc">가을하면 빠질 수 없는 블라우스도 가져왔는데 여리여리 느낌을 줄 수 있는 블라우스를 가져오고 싶어서 레이스가 포인트인 블라우스를 가져왔습니다. 구김이 잘 가지 않는 소재로 데려왔......</p>
+                        <p class="desc">가을하면 빠질 수 없는 블라우스도 가져왔는데 여리여리 느낌을 줄 수 있는 블라우스를 가져오고 싶어서 레이스가 포인트인 블라우스를 가져왔습니다.
+                            구김이 잘 가지 않는 소재로 데려왔......</p>
                         <a class="btn" href="#">
                             더 자세히 보기
                             <span aria-hidden="true">
@@ -202,7 +271,8 @@
                     </figure>
                     <div class="card__body">
                         <h3 class="tit">트렌치 코트</h3>
-                        <p class="desc">가을하면 모두 트렌치 코트를 떠올리시잖아요? 그래서 가져왔습니다. 자칫하면 촌스러워보일 수 있는 색감의 트렌치코트는 제외하고 탄탄하고 오래 입을 수 있는 트렌치코트로 데려왔습니다.</p>
+                        <p class="desc">가을하면 모두 트렌치 코트를 떠올리시잖아요? 그래서 가져왔습니다. 자칫하면 촌스러워보일 수 있는 색감의 트렌치코트는 제외하고 탄탄하고 오래 입을
+                            수 있는 트렌치코트로 데려왔습니다.</p>
                         <a class="btn" href="#">
                             더 자세히 보기
                             <span aria-hidden="true">
@@ -274,7 +344,7 @@
         <!--//textType-->
     </main>
     <!-- mainType -->
-    
+
     <footer id="footerType" class="footer__wrap nexon section gray">
         <h2 class="blind">푸터 영역</h2>
         <div class="footer__inner">
@@ -341,25 +411,41 @@
         </div>
     </footer>
     <!-- footerType -->
+    <script src="assets/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay:2000,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            }
+        });
+    </script>
     <script>
         //스크롤 됐을 때
         window.addEventListener("scroll", () => {
-           let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-           //forEach
-           document.querySelectorAll(".items").forEach((element, index)=>{
-               if(scrollTop >= element.offsetTop - 500){
-                   document.querySelectorAll(".header__menu li").forEach(li => {
-                       //메뉴바 active 모두 없애기
-                       li.classList.remove("active")
-                   });
-                   document.querySelector(".header__menu li:nth-child("+(index + 1)+")").classList.add("active")
-               }
-           })
-       })
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+            //forEach
+            document.querySelectorAll(".items").forEach((element, index) => {
+                if (scrollTop >= element.offsetTop - 500) {
+                    document.querySelectorAll(".header__menu li").forEach(li => {
+                        //메뉴바 active 모두 없애기
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".header__menu li:nth-child(" + (index + 1) + ")").classList.add("active")
+                }
+            })
+        })
 
-       //스크롤 이동
-       // 스크롤 이동
-       document.querySelectorAll("#headerType .header__inner .header__menu li a").forEach(li => {
+        //스크롤 이동
+        // 스크롤 이동
+        document.querySelectorAll("#headerType .header__inner .header__menu li a").forEach(li => {
             li.addEventListener("click", (e) => {
                 e.preventDefault();
                 document.querySelector(li.getAttribute("href")).scrollIntoView({
@@ -368,15 +454,16 @@
             });
         });
         //미디어쿼리 메뉴바 버튼 
-        const menubtn = document.querySelector(".menu__bar .menubar__icon");  
-        const menu = document.querySelector(".header__menu");   
+        const menubtn = document.querySelector(".menu__bar .menubar__icon");
+        const menu = document.querySelector(".header__menu");
 
         menubtn.addEventListener("click", () => {
-            menu.classList.add("on");   
+            menu.classList.add("on");
         });
         menu.addEventListener("mouseleave", () => {
-            menu.classList.remove("on");  
+            menu.classList.remove("on");
         });
-   </script>
+    </script>
 </body>
+
 </html>

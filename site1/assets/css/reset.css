@@ -29,6 +29,7 @@ figure,
 figcaption {
     margin: 0;
     padding: 0;
+    /* -webkit-text-size-adjust: 100%; */
 }
 
 /* 시멘틱 태그 초기화 */

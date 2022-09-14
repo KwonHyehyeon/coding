@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 제작하기 : 반응형</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🧷 사이트를 제작해보자! 근데 이제 반응형을 곁들인...^^ [💁🏻‍♀️ 헤더 영역을 제외한! 아직 미완성이라굿! ]</h2>
+            <div class="t_box">
+                헤더(아직 미완성), 슬라이드, 이미지, 이미지텍스트, 카드, 배너, 텍스트, 푸터 유형으로 이루어진 사이트를 만들어봅시다. 마무리는 역시나 막시나 반응형까지 해주어야 완성이겠죠?
+            </div>
+            <h3 class="t_tit2">배너 유형을 함께 만들어 보아요❗️</h3>
+            <hr>
+            <h3 class="t_tit2">🔨 제작 방법</h3>
+            <h4 class="t_tit3">➰ Figma로 구성 짜기</h4>
+            <p class="t_desc2">
+                figma를 통해서 사이트를 어떤 유형으로 구성할 것인지, 유형마다 어떤 식으로 구성할 것인지를 구체적으로 짜주어야 합니다. (그래야 나중에 코딩할 때 수월하겠죠?🥹)
+            </p><br>
+            <div class="iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="700" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D3543%253A2165" allowfullscreen></iframe>
+            </div>
+            <hr>
+            <h3 class="t_tit2">📋 슬라이드 유형</h3>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>html편</i></h4>
+            <p class="t_desc2">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.<br>
+                슬라이드 효과를 넣어야 해서 swiper라는 사이트에서 원하는 슬라이드 효과를 가진 형식을 가져와 적용했습니다. 
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;section id="sliderType" class="slider__wrap items"&gt;
+    &lt;h2 class="blind"&gt;슬라이드 영역&lt;/h2&gt;
+    &lt;div class="slider__inner"&gt;
+        &lt;!-- &lt;div class="slider"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="desc container"&gt;
+                    &lt;span&gt;STORE&lt;/span&gt;
+                    &lt;h3&gt;MOMENTO’ s style&lt;/h3&gt;
+                    &lt;p&gt;
+                        #모멘토는 스페인어로 “순간" 이라는 뜻으로,&lt;br&gt;
+                        당신의 아름다운 순간을 선물해드립니다.
+                    &lt;/p&gt;
+                    &lt;div class="btn"&gt;
+                        &lt;a href="#"&gt;자세히보기&lt;/a&gt;
+                        &lt;a href="#" class="black"&gt;쇼핑가기&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__arrow"&gt;
+                &lt;a href="#" class="left"&gt;&lt;span class="ir"&gt;이전 이미지&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="right"&gt;&lt;span class="ir"&gt;다음 이미지&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__dot"&gt;
+                &lt;a href="#" class="dot active"&gt;&lt;span class="ir"&gt;1&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;2&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;3&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="play"&gt;&lt;span class="ir"&gt;플레이&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="stop"&gt;&lt;span class="ir"&gt;정지&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt; --&gt;
+        &lt;!-- 슬라이드 효과를 주기 위해 swiper라는 페이지에서 비슷한 슬라이드 형식 가져옴 --&gt;
+        &lt;div class="swiper mySwiper"&gt;
+            &lt;div class="swiper-wrapper"&gt;
+                &lt;div class="swiper-slide"&gt;
+                    &lt;div class="desc"&gt;
+                        &lt;span&gt;STORE&lt;/span&gt;
+                        &lt;h3&gt;MOMENTO’ s style&lt;/h3&gt;
+                        &lt;p&gt;
+                            #모멘토는 스페인어로 “순간" 이라는 뜻으로,&lt;br&gt;
+                            당신의 아름다운 순간을 선물해드립니다.
+                        &lt;/p&gt;
+                        &lt;div class="btn"&gt;
+                            &lt;a href="#"&gt;자세히보기&lt;/a&gt;
+                            &lt;a href="#" class="black"&gt;쇼핑가기&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="swiper-slide"&gt;
+                    &lt;div class="desc"&gt;
+                        &lt;span&gt;STORE&lt;/span&gt;
+                        &lt;h3&gt;MOMENTO’ s style&lt;/h3&gt;
+                        &lt;p&gt;
+                            #모멘토는 스페인어로 “순간" 이라는 뜻으로,&lt;br&gt;
+                            당신의 아름다운 순간을 선물해드립니다.
+                        &lt;/p&gt;
+                        &lt;div class="btn"&gt;
+                            &lt;a href="#"&gt;자세히보기&lt;/a&gt;
+                            &lt;a href="#" class="black"&gt;쇼핑가기&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="swiper-slide"&gt;
+                    &lt;div class="desc"&gt;
+                        &lt;span&gt;STORE&lt;/span&gt;
+                        &lt;h3&gt;MOMENTO’ s style&lt;/h3&gt;
+                        &lt;p&gt;
+                            #모멘토는 스페인어로 “순간" 이라는 뜻으로,&lt;br&gt;
+                            당신의 아름다운 순간을 선물해드립니다.
+                        &lt;/p&gt;
+                        &lt;div class="btn"&gt;
+                            &lt;a href="#"&gt;자세히보기&lt;/a&gt;
+                            &lt;a href="#" class="black"&gt;쇼핑가기&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+            &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+            &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <p class="t_desc2">
+                slider의 효과와 swiper의 효과가 겹치는 부분이 있어 안 먹힐 때가 종종 있는데 그럴 때 당황하지말고 먼저 먹혔으면 하는 부분에 !important를 사용해주면 됩니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">.slider__inner {
+    /* width: 100%; */
+    margin-top: 40px;
+}
+.slider {position: relative;}
+.slider__img {
+    /* width: 100%; */
+}
+.slider__img .desc {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+.slider__img .desc span {
+    font-size: 16px;
+    background-color: #fff;
+    padding: 1px 14px 0 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+    border-radius: 30px;
+}
+.slider__img .desc h3 {
+    font-size: 110px;
+    font-weight: 300;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-left: -8px;
+}
+.slider__img .desc p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 130px;
+}
+.slider__img .desc .btn {}
+.slider__img .desc .btn a{
+    font-size: 16px;
+    background-color: #fff;
+    padding: 11px 50px;
+    display: inline-block;
+}
+.slider__img .desc .btn a.black {
+    background-color: #EA9B71;
+    color: #fff;
+}
+.slider__arrow {}
+.slider__arrow a {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 56px;
+    background-image:url(../img/slider_icon.svg);
+    transform: translateY(-50%);
+}
+.slider__arrow a.left {
+    left: 20px;
+}
+.slider__arrow a.right {
+    right: 20px;
+    background-position: -50px 0;
+}
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+}
+.slider__dot  a {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/slider_icon.svg);
+    background-position: -20px -70px;
+}
+.slider__dot a.active {
+    background-position: 0 -70px;
+} 
+.slider__dot a.play {
+    background-position: -40px -70px;
+}
+.slider__dot a.stop {
+    background-position: -60px -70px;
+}
+/* swiper */
+.swiper-slide {
+    background: url(../img/slider_bg01.jpg) no-repeat center / cover;
+}
+.swiper-slide:nth-child(2) {
+    background: url(../img/slide_bg_02.jpg) no-repeat center / cover;
+}
+.swiper-slide:nth-child(3) {
+    background: url(../img/slide_bg_03.jpg) no-repeat center / cover;
+}
+.swiper-slide .desc {
+    width: 1160px;
+    /* width: 100%; */
+    margin: 0 auto;
+    padding: 100px 20px;
+    box-sizing: border-box;
+}
+.swiper-slide .desc span {
+    font-size: 16px;
+    background-color: #fff;
+    padding: 1px 14px 0 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+    border-radius: 30px;
+}
+.swiper-slide .desc h3 {
+    font-size: 110px;
+    font-weight: 300;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-left: -8px;
+}
+.swiper-slide .desc p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 130px;
+}
+.swiper-slide .desc .btn a{
+    font-size: 16px;
+    background-color: #fff;
+    padding: 11px 50px;
+    display: inline-block;
+}
+.swiper-slide .desc .btn a.black {
+    background-color: #121212;
+    color: #fff;
+}
+.swiper-button-next, 
+.swiper-button-prev {
+    width: 30px !important;
+    height: 56px !important;
+    background-image: url(../img/slider_icon.svg);
+}
+.swiper-button-next {
+    background-position: -50px 0;
+}
+.swiper-button-next::after, 
+.swiper-button-prev::after {
+    opacity: 0;
+}
+
+.swiper-pagination-bullet {
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url(../img/slider_icon.svg)!important;
+    background-position: -20px -70px !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+    background-position: 0px -70px !important;
+}
+</code></pre>
+            </div>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
+            <p class="t_desc2">
+                미디어쿼리를 통해 핸드폰에서도 볼 수 있게끔 만들어줍니다. 
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">/* 미디어쿼리 */
+@media (max-width: 960px) {
+    .swiper-slide .desc {
+        width: 100%;
+        text-align: center;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 600px) {
+    .swiper-slide .desc {
+        padding: 80px 0;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 40px;
+    }
+    .swiper-slide .desc p {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+    .swiper-slide .desc .btn a {
+        padding: 10px 25px;
+    }
+}
+</code></pre>
+            </div>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>JS편</i></h4>
+            <p class="t_desc2">
+                슬라이드가 자동으로도 움직이고, 수동으로도 움직일 수 있도록 하는 것을 자바스크립트를 통해 만들어줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">var swiper = new Swiper(".mySwiper", {
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+        delay:2000,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+    }
+});
+</code></pre>
+            </div>
+            <!-- 슬라이드 유형 -->
+            <hr>
+            <h3 class="t_tit2">📋 이미지 유형</h3>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>html편</i></h4>
+            <p class="t_desc2">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;section id="imageType" class="image__wrap nexon section items"&gt;
+    &lt;h2&gt;이 달의 BEST&lt;/h2&gt;
+    &lt;p&gt;9월 가장 인기가 많았던 제품 TOP 2 를 지금 바로 소개합니다.&lt;/p&gt;
+    &lt;div class="image__inner container"&gt;
+        &lt;article class="image img1"&gt;
+            &lt;h2 class="image__title"&gt;brin tweed jacket&lt;/h2&gt;
+            &lt;p class="image__desc"&gt;“브린 트위드 자켓" 은 화이트톤과 아이보리 톤의 조화로 체크무늬가 들어간 자켓으로, 하객룩으로 인기가 많은 제품입니다.&lt;/p&gt;
+            &lt;a class="image__btn" href="#" title="상세 보기"&gt;상세 보기&lt;/a&gt;
+        &lt;/article&gt;
+        &lt;article class="image img2"&gt;
+            &lt;h3 class="image__title"&gt;cross denim pants&lt;/h3&gt;
+            &lt;p class="image__desc"&gt;“크로스 데님 팬츠" 는 사선 버튼이 포인트인 청바지로 요즘 대세인 와이드 형태의 팬츠입니다. 사계절 내내 착용하실 수 있습니다.&lt;/p&gt;
+            &lt;a class="image__btn green" href="#" title="상세 보기"&gt;상세 보기&lt;/a&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <div class="t_code">
+<pre><code class="language-css">/* imageType */
+.image__wrap {}
+.image__wrap h2 {}
+.image__wrap p {} /*section의 요소들과 같아서 section에 넣어줌(코드 재활용을 위해서)*/
+#imageType01 {
+    /* height: 500px; */
+}
+.image__wrap {}
+.image__inner {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between; /*컨테이너 있고 이거쓰면 양쪽 끝으로 붙어서 사진 사이 떨어지게 함*/
+}
+.image {
+    width: 49%;
+    height: 370px;
+    padding: 200px 30px 30px 30px; /*글씨 옮기려고 넣는것*/
+    box-sizing: border-box;/*패딩을 쓰면 그만큼 커지기 때문에 이를 방지하는 것*/
+    color: #fff;
+}
+.image.img1 {
+    background: url(../img/img01.jpg) no-repeat center / cover;
+}
+.image.img2 {
+    background: url(../img/img02.jpg) no-repeat center / cover;
+}
+.image__title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    /* 한줄효과 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.image__desc {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-weight: 300;
+    padding-right: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis; /*텍스트 흘렀을 때 ...으로 바꿔줌*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    margin-bottom: 10px;
+}
+.image__btn {
+    font-size: 16px;
+    font-weight: 300;
+    background: #626262;
+    color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+}
+.image__btn.green {
+    background: #1A4272;
+}
+</code></pre>
+            </div>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
+            <p class="t_desc2">
+                width값이 600px일 때 사진이 좌우정렬에서 상하정렬로 바뀌게 하는 것이 특징입니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">/* 미디어쿼리 */
+@media (max-width: 600px) {
+    .image__inner {
+        flex-direction: column;
+    }
+    .image {
+        width: 100%;
+        padding: 205px 20px 20px 20px ;
+    }
+    .image:first-child {
+        margin-bottom: 20px;
+    }
+    .image__title {
+        font-size: 24px;
+    }
+    .image__desc  {
+        font-size: 16px;
+    }
+}
+</code></pre>
+            </div>
+            <!-- 이미지 유형 -->
+            <hr>
+            <h3 class="t_tit2">📋 이미지/텍스트 유형</h3>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>html편</i></h4>
+            <p class="t_desc2">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;section id="imageTextType" class="imageText__wrap nexon section gray items"&gt;
+    &lt;h2 class="blind"&gt;다가오는 가을 코디 추천&lt;/h2&gt;
+    &lt;div class="imgText__inner container"&gt;
+        &lt;div class="imgText__txt"&gt;
+            &lt;span&gt;MOMENTO’s pick&lt;/span&gt;
+            &lt;h3&gt;다가오는 &lt;br&gt;
+                가을 코디 추천&lt;/h3&gt;
+            &lt;p&gt;모멘토가 pick한 가을 색감 뿜뿜 코디 추천 지금 바로 공개합니다!&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;셔츠 + 핀턱 슬랙스 + 로퍼/운동화&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;니트 + 골덴 숏팬츠 + 부츠&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;가디건 + 반팔 티셔츠 + 팬츠&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;캡모자 + 쉬폰 원피스 + 운동화&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;라이더 자켓 + 반팔 티셔츠 + 팬츠&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;트렌치코트 + 티셔츠 + 면팬츠&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="imgText__img img1"&gt;
+            &lt;a href="#"&gt;초가을 코디 보러가기&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="imgText__img img2"&gt;
+            &lt;a href="#" class="blue"&gt;늦가을 코디 보러가기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <div class="t_code">
+<pre><code class="language-css">/* imageTextType */
+.imgText__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.imgText__inner > div {
+    width: 32%;
+    height: 500px;
+}
+.imgText__txt span{
+    font-size: 16px;
+    color: #666;
+    text-decoration: underline;
+    text-underline-position: under;
+    margin-bottom: 20px;
+    display: block;
+}
+.imgText__txt h3 {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+.imgText__txt p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 10px;
+}
+.imgText__txt ul {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.imgText__txt ul li {
+    position: relative; 
+    padding-left: 20px;
+}
+.imgText__txt ul li a {
+    color: #666;
+}
+.imgText__txt ul li::before{
+    content:'';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: #666;
+}
+.imgText__img {
+    border-radius: 10px;
+    position: relative;
+}
+.imgText__img a {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    background-color: #7C2B39;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    display: inline-block;
+}
+.imgText__img a.blue {
+    background-color: #784C23;
+}
+.imgText__img.img1 {
+    background: url(../img/imgText_bg01.jpg) no-repeat center / cover;
+}
+.imgText__img.img2 {
+    background: url(../img/imgText_bg02.jpg) no-repeat center / cover;
+}
+</code></pre>
+            </div>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
+            <p class="t_desc2">
+                화면이 줄수록 나중에는 사진이 좌우정렬에서 상하 정렬로 바뀌고 반응형이 나타날 때 설명부분이 빠집니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">/* 미디어쿼리 */
+@media (max-width: 960px) {
+    .imgText__inner{
+        flex-wrap: wrap;
+    }
+    .imgText__txt h3{
+        font-size: 40px;
+    }
+    .imgText__txt p {
+        margin-bottom: 60px;
+    }
+    .imgText__inner > div.imgText__txt {
+        width: 100%;
+        /* height값 초기화 */
+        height: auto;
+        text-align: center;
+    }
+    .imgText__inner > div.imgText__txt ul {
+        display: none;
+    }
+    .imgText__inner > div.imgText__img {
+        width: 49%;
+    }
+}
+
+@media (max-width: 600px) {
+    .imgText__txt span {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .imgText__txt h3{
+        font-size: 30px;
+    }
+    .imgText__txt p {
+        margin-bottom: 50px;
+        font-size: 16px;
+    }
+    .imgText__inner > div.imgText__img {
+        width: 100%;
+        height: 200px;
+    }
+    .imgText__inner > div.imgText__img:first-child{
+        margin-bottom: 20px;
+    }
+    .imgText__img a {
+        left: 20px;
+        bottom: 20px;
+    }
+} 
+</code></pre>
+            </div>
+            <!-- 이미지/텍스트 유형 -->
+            <hr>
+            <h3 class="t_tit2">📋 카드 유형</h3>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>html편</i></h4>
+            <p class="t_desc2">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;section id="cardType" class="card__wrap nexon section gray items"&gt;
+    &lt;h2&gt;이 달의 마켓&lt;/h2&gt;
+    &lt;p&gt;MOMENTO’s가 pick해 온 의류 품목들을 공개합니다.&lt;/p&gt;
+    &lt;div class="card__inner"&gt;
+        &lt;article class="card"&gt;
+            &lt;!--시맨틱태그 안에는 제목이 꼭 들어가야함!--&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;!--이미지 가져오는 새로운 기능--&gt;
+                &lt;img src="assets/img/card_bg01.jpg" alt="코듀로이 팬츠"&gt;
+                &lt;!--웹표준 준수하기 위함으로 alt적어주는 것 접근성을 향상 시키기 위함--&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;코듀로이 팬츠&lt;/h3&gt;
+                &lt;p class="desc"&gt;가을하면 코듀로이, 코듀로이하면 가을로 그만큼 대표적인 가을 소재라고 할 수 있는 코듀로이 팬츠를 가져왔습니다. 요즘 팬츠 색상이 다양한 게
+                    트렌드인 만큼 여러 색상을 가져왔는데.........&lt;/p&gt;
+                &lt;a class="btn" href="#"&gt;
+                    더 자세히 보기
+                    &lt;span aria-hidden="true"&gt;
+                        &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                            xmlns="http://www.w3.org/2000/svg"&gt;
+                            &lt;path
+                                d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                fill="black"&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="assets/img/card_bg02.jpg" alt="코끼리"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;블라우스&lt;/h3&gt;
+                &lt;p class="desc"&gt;가을하면 빠질 수 없는 블라우스도 가져왔는데 여리여리 느낌을 줄 수 있는 블라우스를 가져오고 싶어서 레이스가 포인트인 블라우스를 가져왔습니다.
+                    구김이 잘 가지 않는 소재로 데려왔......&lt;/p&gt;
+                &lt;a class="btn" href="#"&gt;
+                    더 자세히 보기
+                    &lt;span aria-hidden="true"&gt;
+                        &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                            xmlns="http://www.w3.org/2000/svg"&gt;
+                            &lt;path
+                                d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                fill="black"&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="assets/img/card_bg03.jpg" alt="돌고래"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;트렌치 코트&lt;/h3&gt;
+                &lt;p class="desc"&gt;가을하면 모두 트렌치 코트를 떠올리시잖아요? 그래서 가져왔습니다. 자칫하면 촌스러워보일 수 있는 색감의 트렌치코트는 제외하고 탄탄하고 오래 입을
+                    수 있는 트렌치코트로 데려왔습니다.&lt;/p&gt;
+                &lt;a class="btn" href="#"&gt;
+                    더 자세히 보기
+                    &lt;span aria-hidden="true"&gt;
+                        &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                            xmlns="http://www.w3.org/2000/svg"&gt;
+                            &lt;path
+                                d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                fill="black"&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <p class="t_desc2">
+                style을 통해 CSS를 설정해줍니다. <br>
+                하나하나 세심하게 스타일을 넣어주는 것이 중요합니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">/* cardType */
+.card__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*양쪽 정렬 맞춰주는 것*/
+}
+
+.card {
+    width: 32%;
+    background: #f5f5f5;
+}
+
+.card__body {
+    padding: 24px;
+}
+
+.card__body .tit {
+    font-size: 24px;
+    margin-bottom: 10px;
+    /* 한 줄 효과 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+}
+
+.card__body .desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;  /*줄효과 clamp : 4줄 효과*/
+    -webkit-box-orient: vertical;
+}
+.card__body .btn:hover {
+    text-decoration: underline;
+}
+</code></pre>
+            </div>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
+            <div class="t_code">
+<pre><code class="language-css">/* 미디어쿼리 */
+@media (max-width: 960px) {
+    .card__inner {
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 49%;
+    }
+    .card:last-child{
+        display: none;
+    }
+}
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+    .card:first-child{
+        margin-bottom: 20px;
+    }
+    .card__body {
+        padding: 20px;
+    }
+}
+</code></pre>
+            </div>
+            <!-- 카드 유형 -->
+            <hr>
+            <h3 class="t_tit2">📋 배너 유형</h3>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>html편</i></h4>
+            <p class="t_desc2">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;section id="bannerType" class="banner__wrap items"&gt;
+    &lt;h2 class="blind"&gt;배너 영역&lt;/h2&gt;
+    &lt;div class="banner__inner"&gt;
+        &lt;h3 class="title"&gt;MOMENTO는?&lt;/h3&gt;
+        &lt;p class="desc"&gt;
+            트렌드도 중요하지만 한 번 입고 옷장에 박혀있는 옷들 말고&lt;br&gt;
+            편안하면서도 오래 입을 수 있는 유행타지 않는 옷들을 추구합니다.
+            &lt;a href="#" title="유튜브 페이지로 이동"&gt;&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;span class="small"&gt;-MOMENTO 대표 드림-&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <p class="t_desc2">
+                style을 통해 CSS를 설정해줍니다. <br>
+                하나하나 세심하게 스타일을 넣어주는 것이 중요합니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">.banner__inner {
+    background-image: url(../img/banner_type01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
+}
+.banner__inner .title{
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+.banner__inner .desc{
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
+}
+.banner__inner .desc a {
+    color: #fff;
+    display: block;
+}
+.banner__inner .desc a:hover {
+    text-decoration: underline;
+}
+.banner__inner .small{
+    font-size: 16px;
+    text-decoration: underline;
+}
+</code></pre>
+            </div>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
+            <p class="t_desc2">
+                배너는 거의 비슷합니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">/* 미디어쿼리 */
+@media (max-width: 960px) {
+    .banner__inner {
+        padding: 100px 0;
+    }
+}
+@media (max-width: 600px) {
+    .banner__inner {
+        padding: 80px 0;
+    }
+    .banner__inner .title {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .banner__inner .desc {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+}
+</code></pre>
+            </div>
+            <!-- 배너 유형 -->
+            <hr>
+            <h3 class="t_tit2">📋 텍스트 유형</h3>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>html편</i></h4>
+            <p class="t_desc2">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html"> &lt;section id="textType" class="text__wrap nexon section items"&gt;
+    &lt;!-- 쓸 거 없을 때 div나 span --&gt;
+    &lt;span&gt;MOMENTO’s&lt;/span&gt;
+    &lt;h2 class="mb70"&gt;SNS : MOMENTO’s LOOK&lt;/h2&gt;
+    &lt;div class="text__inner"&gt;
+        &lt;div class="text t1"&gt;
+            &lt;h3 class="text__title"&gt;페이스북&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;MOMENTO의 룩북영상과 홍보영상을 볼 수 있으며 매달 마켓 상품 품목들을 실시간으로 확인하실 수 있습니다.&lt;/p&gt;
+            &lt;a class="text__btn" href="#"&gt;바로가기&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="text t2"&gt;
+            &lt;h3 class="text__title"&gt;인스타&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;MOMENTO의 실시간 라이브 영상을 볼 수 있으며 고객님들의 리뷰사진을 스토리에 공유합니다.&lt;/p&gt;
+            &lt;a class="text__btn" href="#"&gt;바로가기&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="text t3"&gt;
+            &lt;h3 class="text__title"&gt;유튜브&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;MOMENTO의 실시간 라이브 영상을 볼 수 있으며 촬영 비하인드 영상도 볼 수 있습니다. 그 외의 영상 계획도 있습니다.&lt;/p&gt;
+            &lt;a class="text__btn" href="#"&gt;바로가기&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="text t4"&gt;
+            &lt;h3 class="text__title"&gt;카카오톡&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;MOMENTO의 CS를 맡고 있으며 문의를 하고 싶으실 때 카카오톡을 통해 문의를 주시면 신속하게 답변하고 있습니다.&lt;/p&gt;
+            &lt;a class="text__btn" href="#"&gt;바로가기&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="text t5"&gt;
+            &lt;h3 class="text__title"&gt;트위터&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;MOMENTO 신상컷들을 업데이트 하고 있으며 업데이트 소식을 보다 빠르게 확인 할 수 있습니다.&lt;/p&gt;
+            &lt;a class="text__btn" href="#"&gt;바로가기&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="text t6"&gt;
+            &lt;h3 class="text__title"&gt;네이버 블로그&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;MOMENTO 공지사항이나 이벤트 소식 등을 전달하는 곳입니다. 추후에 진행할 플리마켓 공지도 여기서 확인할 수 있습니다.&lt;/p&gt;
+            &lt;a class="text__btn" href="#"&gt;바로가기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <p class="t_desc2">
+                style을 통해 CSS를 설정해줍니다. <br>
+                하나하나 세심하게 스타일을 넣어주는 것이 중요합니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">/* textType */
+.text__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.text {
+    width: 32%;
+    /* background: #f5f5f5; */
+    margin-bottom: 2%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    transition: background 0.4s;
+}
+.text:hover {
+    background: #f5f5f5;
+}
+.text__title {
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    padding-top: 75px;
+}
+.text__title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #000;
+    background: url(../img/textIcon.svg);
+}
+.text.t1 .text__title::before {
+    background-position: 0 0;
+}
+.text.t2 .text__title::before {
+    background-position: -60px 0;
+}
+.text.t3 .text__title::before {
+    background-position: -120px 0;
+}
+.text.t4 .text__title::before {
+    background-position: -180px 0;
+}
+.text.t5 .text__title::before {
+    background-position: -240px 0;
+}
+.text.t6 .text__title::before {
+    background-position: -300px 0;
+}
+.text__desc {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    color: #666;
+    margin-bottom: 20px;
+}
+.text__btn {
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: underline;
+    text-underline-position: under;
+    color: #666;
+}
+</code></pre>
+            </div>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
+            <p class="t_desc2">
+                사이트 화면 좁아질수록 2개씩 정렬
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">/* 미디어쿼리 */
+@media (max-width: 960px) {
+    .text {
+        width: 49%;
+        background: #f5f5f5;
+    }
+}
+
+@media (max-width: 600px) {
+    .text__title {
+        font-size: 20px;
+    }
+    .text__desc {
+        font-size: 16px;
+    }
+}
+@media (max-width: 480px) {
+    .text {
+        width: 100%;
+    }
+}
+</code></pre>
+            </div>
+            <!-- 텍스트 유형 -->
+            <hr>
+            <h3 class="t_tit2">📋 푸터 유형</h3>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>html편</i></h4>
+            <p class="t_desc2">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;footer id="footerType" class="footer__wrap nexon section gray"&gt;
+    &lt;h2 class="blind"&gt;푸터 영역&lt;/h2&gt;
+    &lt;div class="footer__inner"&gt;
+        &lt;div class="footer__menu"&gt;
+            &lt;div&gt;
+                &lt;h3&gt;MENU&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;OUTER&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;TOP&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;BOTTOM&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;DRESS&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;ACC&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;SHOP GUIDE&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;이용 약관&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;이용 안내&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;개인정보취급방침&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;MEMBERSHIP&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;로그인&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;회원가입&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;마이페이지&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;주문조회&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;BANK ACCOUNT&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;신한 : 123-4567-890&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;예금주 : (주)모멘토컴퍼니 &lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;ABOUT US&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;company.(주)모멘토컴퍼니&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;owner. 권혜현&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;tel. 031-123-4567&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;business no. 123-45-67&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3&gt;SNS&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;페이스북&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;인스타&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;유튜브&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;카카오톡&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;트위터&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;네이버 블로그&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="footer__right"&gt;
+            2022 NOEYHEYH. This is hyeon's Portfolio&lt;br&gt;
+            All rights reserved.
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;
+</code></pre>
+            </div><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <div class="t_code">
+<pre><code class="language-css">.footer__inner {
+    width: 85%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.footer__menu {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+.footer__menu h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.footer__menu li a {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    display: block;
+}
+.footer__right {
+    border-top: 1px solid #d9d9d9;
+    text-align: center;
+    padding-top: 48px;
+    color: #666;
+    line-height: 1.5;
+}
+</code></pre>
+            </div>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
+            <p class="t_desc2">
+                푸터는 오로지 글로만 이루어져 있어 반응형을 했을 때 다소 지저분해 보일 수 있으므로 width값이 작아졌을 때는 없애주었습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">/* 반응형 */
+@media (max-width: 960px) {
+    .footer__menu {
+        display: none;
+    }
+    .footer__right {
+        padding-top: 0;
+        border-top: 0;
+    }
+    .footer__wrap {
+        padding: 40px 0;
+    }
+}
+</code></pre>
+            </div>
+            <!-- 푸터 유형 -->
+            <hr>
+            <h3 class="t_tit2">▶완성본</h3>
+            <div class="t_iframe" style="min-height: 450px; padding-top: 0;">
+                <iframe src="https://KwonHyehyeon.github.io/coding/site1/index.html"
+                    frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://KwonHyehyeon.github.io/coding/site1/index.html" target="_blank">실제 사이트 보기</a>
+                <a href="https://github.com/KwonHyehyeon/coding/blob/main/site1/index.html"
+                    target="_blank">원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

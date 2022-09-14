@@ -39,42 +39,26 @@
 .card__body .btn:hover {
     text-decoration: underline;
 }
-/* 반응형 */
-@media (max-width: 1080px) {
+/* 미디어쿼리 */
+@media (max-width: 960px) {
     .card__inner {
-        justify-content: space-between;
+        flex-wrap: wrap;
     }
-    #cardType > h2 {
-        font-size: 40px;
+    .card {
+        width: 49%;
     }
-    #cardType > p {
-        font-size: 18px;
-    }
-    .card__body .desc {
-        margin-bottom: 20px;
+    .card:last-child{
+        display: none;
     }
 }
-
-@media (max-width: 768px) {
-    #cardType > h2 {
-        font-size: 30px;
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
     }
-    #cardType > p {
-        font-size: 16px;
-    }
-    .card__inner {
-        justify-content: space-around;
-    }
-    .card__inner .card {
-        width: 96%;
+    .card:first-child{
         margin-bottom: 20px;
     }
-    .card__body .title {
-        font-size: 20px;
+    .card__body {
+        padding: 20px;
     }
-    .card__body .desc {
-        font-size: 16px;
-    }
-}
-@media(max-width : 460px){
 }

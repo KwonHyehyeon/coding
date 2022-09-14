@@ -30,32 +30,22 @@
     font-size: 16px;
     text-decoration: underline;
 }
-/* 반응형 */
-@media (max-width: 1080px) {
-    .banner__inner .title {
-        font-size: 40px;
-    }
-    .banner__inner .desc {
-        font-size: 18px;
+/* 미디어쿼리 */
+@media (max-width: 960px) {
+    .banner__inner {
+        padding: 100px 0;
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+    .banner__inner {
+        padding: 80px 0;
+    }
     .banner__inner .title {
-        font-size: 32px;
+        font-size: 30px;
+        margin-bottom: 20px;
     }
     .banner__inner .desc {
         font-size: 16px;
-    }
-}
-@media(max-width : 460px){
-    .banner__inner {
-        width: 100%;
-    }
-
-    .banner__inner .title {
-        font-size: 30px;
-    }
-    .banner__inner .desc {
-        font-size: 12px;
+        margin-bottom: 40px;
     }
 }

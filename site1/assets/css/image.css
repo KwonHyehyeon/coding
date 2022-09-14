@@ -27,6 +27,10 @@
 .image__title {
     font-size: 32px;
     margin-bottom: 10px;
+    /* 한줄효과 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .image__desc {
     font-size: 16px;
@@ -52,34 +56,22 @@
 .image__btn.green {
     background: #1A4272;
 }
-/* 반응형 */
-@media (max-width: 1080px) {
-    .image__inner .image {
-        width: 100%;
-        margin-right: 20px;
-    }
-    .image__inner .image:last-child {
-        margin-right: 0;
-    }
-    #imageType > h2 {
-        font-size: 40px;
-    }
-    #imageType > p {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 768px) {
+/* 미디어쿼리 */
+@media (max-width: 600px) {
     .image__inner {
-        flex-wrap: wrap;
+        flex-direction: column;
     }
-    .image__inner .image {
-        margin: 10px 0;
+    .image {
+        width: 100%;
+        padding: 205px 20px 20px 20px ;
     }
-    #imageType > h2 {
-        font-size: 30px;
+    .image:first-child {
+        margin-bottom: 20px;
     }
-    #imageType > p {
+    .image__title {
+        font-size: 24px;
+    }
+    .image__desc  {
         font-size: 16px;
     }
 }

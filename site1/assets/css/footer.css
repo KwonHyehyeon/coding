@@ -5,7 +5,7 @@
 }
 .footer__menu {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
     margin-bottom: 70px;
 }
@@ -27,22 +27,15 @@
     line-height: 1.5;
 }
 /* 반응형 */
-@media (max-width: 768px) {
-    .footer__wrap {
-        padding-top:30px;
-    }
+@media (max-width: 960px) {
     .footer__menu {
-        width: 130px;
-        margin-bottom: 0;
+        display: none;
     }
-    .footer__menu > div h3 {
-        font-size: 16px;
+    .footer__right {
+        padding-top: 0;
+        border-top: 0;
     }
-    .footer__menu li a {
-        font-size: 12px;
-    }
-    .footer__menu li a:last-child{
-        margin-bottom: 25px;
-
+    .footer__wrap {
+        padding: 40px 0;
     }
 }

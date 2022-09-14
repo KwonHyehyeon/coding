@@ -24,11 +24,14 @@ html, body {
 /* 컨테이너 */
  /* common */
 .container {
-    width: 1160px;
+    width: 100%;
     padding: 0 20px;
     margin: 0 auto;
-    min-width: 1160px;
+    max-width: 1160px;
+    box-sizing: border-box;
 }
+
+@media (max-width: 1200px){}
 
 /* 섹션 공통요소 */
 .section {
@@ -51,6 +54,9 @@ html, body {
     color: #666;
     text-align: center;
     margin-bottom: 70px;
+    padding: 0 20px;
+    word-break: keep-all;
+    line-height: 1.5;
 }
 
 .section > span {
@@ -60,6 +66,31 @@ html, body {
     text-decoration: underline;
     text-underline-position: under;
     margin-bottom: 20px;
+}
+@media (max-width: 960px) {
+    .section {
+        padding: 100px 0;
+    }
+    .section > h2 {
+        font-size: 40px;
+    }
+    .section > p {
+        font-size: 18px;
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 80px 0;
+    }
+    .section > h2 {
+        font-size: 30px;
+    }
+    .section > p {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
 }
 
 /* 폰트 */
