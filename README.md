@@ -25,6 +25,7 @@ https://kwonhyehyeon.github.io/coding/javascript/effect/quizEffect05.html
 https://KwonHyehyeon.github.io/coding/site/cardType/cardType01.html
 https://KwonHyehyeon.github.io/coding/site/cardType/cardType02.html
 https://KwonHyehyeon.github.io/coding/site/cardType/cardType03.html
+https://KwonHyehyeon.github.io/coding/site1/index.html
 
 ### HTML 메인 페이지
 
