@@ -9,14 +9,27 @@
 
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        .result summary {
+            width: 100px;
+            height: 30px;
+            padding: 2px 0 2px 10px;
+            line-height: 30px;
+            /* text-align: center; */
+            border-radius: 10px;
+            background-color: rgba(186, 228, 252, 0.818);
+            box-shadow: 3px 3px 2px 0 rgb(0,0,0,0.15);
+        }
+    </style>
 </head>
 
 <body>
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">🧷 사이트를 제작해보자! 근데 이제 반응형을 곁들인...^^ [💁🏻‍♀️ 헤더 영역을 제외한! 아직 미완성이라굿! ]</h2>
+            <h2 class="t_tit">🧷 사이트를 제작해보자! 근데 이제 반응형을 곁들인...^^ [💁🏻‍♀️ 쉽지 않다편]</h2>
             <div class="t_box">
-                헤더(아직 미완성), 슬라이드, 이미지, 이미지텍스트, 카드, 배너, 텍스트, 푸터 유형으로 이루어진 사이트를 만들어봅시다. 마무리는 역시나 막시나 반응형까지 해주어야 완성이겠죠?
+                헤더, 슬라이드, 이미지, 이미지텍스트, 카드, 배너, 텍스트, 푸터 유형으로 이루어진 사이트를 만들어봅시다. 마무리는 역시나 막시나 반응형까지 해주어야 완성이겠죠?
             </div>
             <h3 class="t_tit2">함께 만들어 보아요❗️</h3>
             <hr>
@@ -29,6 +42,282 @@
                 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="700" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D3543%253A2165" allowfullscreen></iframe>
             </div>
             <hr>
+            <h3 class="t_tit2">📋 헤더 유형</h3>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>html편</i></h4>
+            <p class="t_desc2">
+               사이트 헤더 부분을 어떻게 구성해야할지 틀을 짜주어야 합니다.
+            </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language-html">&lt;header id="headerType" class="header__wrap nexon"&gt;
+    &lt;div class="header__inner"&gt;
+        &lt;div class="header__logo"&gt;
+            &lt;a href="#"&gt;MOMENTO &lt;em&gt;store&lt;/em&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="menu__bar"&gt;
+            &lt;div class="menubar__icon"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="header__menu"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#sliderType"&gt;main&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#imageType"&gt;best&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#imageTextType"&gt;codi&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#cardType"&gt;product&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#bannerType"&gt;brand&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#textType"&gt;SNS&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="header__member"&gt;
+            &lt;a href="#"&gt;로그인&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="header__ham"&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;span&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;!-- &lt;a href="" class="header__inner_toogleBtn"&gt;
+            &lt;i class="fas fa-bars"&gt;&lt;/i&gt;
+        &lt;/a&gt; --&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+</code></pre>
+            </div>
+        </details><br>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <p class="t_desc2">
+                헤더 부분의 CSS입니다. 햄버거메뉴가 핵심입니다.
+            </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language-css">/* headerType */
+.header__inner {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    background: #fff;
+    backdrop-filter: blur(10px);
+}
+.header__logo {
+    width: 20%;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.header__logo em {
+    font-size: 18px;
+    font-weight: 400;
+    color: #999;
+}
+.header__menu {
+    width: 60%;
+    /* background: #fff; */
+    text-align: center;
+}
+.header__menu li {
+    display: inline;
+}
+.header__menu li a {
+    padding: 12px 30px;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+.header__menu li a:hover {
+    background-color: #e4b88e81;
+    color: #fff;
+    border-radius: 5px;
+}
+.header__menu ul li.active a {
+    background-color: #e4b78e;
+    color: #fff;
+    border-radius: 5px;
+}
+.header__member {
+    width: 20%;
+    text-align: right;
+}
+.header__member a {
+    font-size: 16px;
+    border: 1px solid #000;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+.header__member a:hover {
+    background-color: #000;
+    color: #fff;
+}
+.header__ham {
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    /* background: blue; */
+    display: none;
+    cursor: pointer;
+}
+.header__ham span {
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 2px;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-top: 5px;
+    transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.header__ham span:nth-child(1){
+    margin-top: 17px;
+}
+.header__ham.active span {
+    /* 가운데 0.25s는 딜레이 */
+    transition: 0.25s margin, 0.25s transform 0.25s
+}
+.header__ham.active span:nth-child(1){
+    margin-top: 25px;
+    margin-bottom: -7px;
+    transform: rotate(45deg);
+}
+.header__ham.active span:nth-child(2){
+    transform: rotate(45deg);
+}
+.header__ham.active span:nth-child(3){
+    margin-top:-2px;
+    transform: rotate(135deg);
+}
+</code></pre>
+            </div>
+            </details>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
+            <p class="t_desc2">
+                반응형일 때 CSS는 햄버거 메뉴 클릭시 오른쪽에 나타나는 메뉴바의 스타일과 효과가 핵심입니다.
+            </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language-css">/* 미디어쿼리 */
+@media (max-width: 1300px) {
+    .header__menu {
+        position: fixed;
+        right: -100%;
+        top: 69px;
+        background: #fff;
+        width: 60%;
+        height: 100vh;
+        padding: 20px;
+        text-align: right;
+        transition: right 0.4s ease-in;
+    }
+    .header__menu ul li {
+        display: block;
+        margin: 20px;
+    }
+    .header__menu ul li a {
+        padding: 10px;
+        white-space: nowrap;
+    }
+    .header__menu.active {
+        right: 0;
+    }
+    .header_logo {
+        width: 50%;
+    }
+    .header__member {
+        margin-right: 50px;
+        width: 30%;
+        font-size: 10px;
+    }
+    .header__ham {
+        display: block;
+    }
+}
+</code></pre>
+            </div>
+            </details>
+            <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>JS편</i></h4>
+            <p class="t_desc2">
+                주석을 확인해주세요!
+            </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language-js">//헤더부분 반응형
+const btnHam = document.querySelector(".header__ham");
+const btnMenu = document.querySelector(".header__menu");
+const btnMenuList = btnMenu.querySelectorAll("ul li a");
+
+//햄버거 메뉴 클릭시, 햄버거메뉴 액티브 할거야(css참고)! 메뉴바도 액티브 추가! 문서 픽스해!
+btnHam.addEventListener("click", () =&gt; {
+    btnHam.classList.toggle("active");
+    btnMenu.classList.toggle("active");
+    document.body.classList.toggle("fixed");
+});
+//메뉴 리스트 클릭시, 문서 픽스 멈춰(클릭한 곳으로 이동)!, 메뉴바 없어져!, 햄메뉴도 돌아와!
+btnMenuList.forEach((list) =&gt; {
+        list.addEventListener("click", () =&gt; {
+            document.body.classList.remove("fixed");
+            btnMenu.classList.remove("active");
+            btnHam.classList.remove("active");
+        });
+    });
+//작은 화면에서 햄버거 메뉴를 켜놓고 화면의 사이즈를 최대로 했을 때, 햄버거 버튼은 사라지지만 스크롤이 안됨(화면 멈춤 = 햄버거 메뉴 초기화 안된 것)
+//버그 수정 
+window.addEventListener("resize", () =&gt;{
+    let width = window.innerWidth;
+    //console.log(width)
+    if(width &gt; 1300){
+        //햄버거 메뉴 초기화
+        document.body.classList.remove("fixed");
+        btnMenu.classList.remove("active");
+        btnHam.classList.remove("active");
+    }
+});
+
+//스크롤 됐을 때
+window.addEventListener("scroll", () =&gt; {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+    //forEach
+    document.querySelectorAll(".items").forEach((element, index) =&gt; {
+        if (scrollTop &gt;= element.offsetTop - 500) {
+            document.querySelectorAll(".header__menu li").forEach(li =&gt; {
+                //메뉴바 active 모두 없애기
+                li.classList.remove("active")
+            });
+            document.querySelector(".header__menu li:nth-child(" + (index + 1) + ")").classList.add("active")
+        }
+    })
+});
+
+// 스크롤 이동 // 화면 부드럽게 넘겨짐
+document.querySelectorAll("a").forEach(li =&gt; {
+    li.addEventListener("click", (e) =&gt; {
+        e.preventDefault();
+        document.querySelector(li.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"  // 이동 부드럽게
+        });
+    });
+});
+</code></pre>
+            </div>
+            </details>
+            <!-- 헤더 유형 -->
             <h3 class="t_tit2">📋 슬라이드 유형</h3>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>html편</i></h4>
             <p class="t_desc2">
@@ -36,6 +325,9 @@
                 html의 body 부분에 레이아웃 구역을 정해줍니다.<br>
                 슬라이드 효과를 넣어야 해서 swiper라는 사이트에서 원하는 슬라이드 효과를 가진 형식을 가져와 적용했습니다. 
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-html">&lt;section id="sliderType" class="slider__wrap items"&gt;
     &lt;h2 class="blind"&gt;슬라이드 영역&lt;/h2&gt;
@@ -120,11 +412,15 @@
     &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
-            </div><br>
+            </div>
+            </details><br>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
             <p class="t_desc2">
                 slider의 효과와 swiper의 효과가 겹치는 부분이 있어 안 먹힐 때가 종종 있는데 그럴 때 당황하지말고 먼저 먹혔으면 하는 부분에 !important를 사용해주면 됩니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">.slider__inner {
     /* width: 100%; */
@@ -292,10 +588,14 @@
 }
 </code></pre>
             </div>
+            </details>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
             <p class="t_desc2">
                 미디어쿼리를 통해 핸드폰에서도 볼 수 있게끔 만들어줍니다. 
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">/* 미디어쿼리 */
 @media (max-width: 960px) {
@@ -325,26 +625,54 @@
 }
 </code></pre>
             </div>
+            </details>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>JS편</i></h4>
             <p class="t_desc2">
                 슬라이드가 자동으로도 움직이고, 수동으로도 움직일 수 있도록 하는 것을 자바스크립트를 통해 만들어줍니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
-<pre><code class="language-js">var swiper = new Swiper(".mySwiper", {
+<pre><code class="language-js">//슬라이드 넘어가는 것
+var swiper = new Swiper(".mySwiper", {
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
     autoplay: {
         delay:2000,
+        // 슬라이드버그 : 드래그했을때 슬라이드 멈추는 거 보완
+        disableOnInteraction: false,
     },
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
+        //슬라이드 동그라미 클릭시 슬라이드 이동
+        clickable: true,
     }
+});
+//슬라이드 스타트버튼, 스탑버튼
+const btnStop = document.querySelector(".swiper-button-stop");
+const btnStart = document.querySelector(".swiper-button-play");
+
+//스타트 버튼 처음에 없게 하기
+btnStart.style.display = "none";
+//스탑버튼 클릭시, 슬라이드 자동넘김 멈춰!, 스탑버튼 눌렀으니 슬라이드 시작버튼 필요하니깐 생겨!, 스탑버튼 이제 사라져!
+btnStop.addEventListener("click", () =&gt; {
+    swiper.autoplay.stop();
+    btnStart.style.display = "block";
+    btnStop.style.display = "none";
+});
+//스타트버튼 클릭시, 슬라이드 자동넘김 넘어가!, 스타트 버튼 없어져!, 스탑버튼 다시 생겨! 
+btnStart.addEventListener("click", () =&gt; {
+    swiper.autoplay.start();
+    btnStart.style.display = "none";
+    btnStop.style.display = "block";
 });
 </code></pre>
             </div>
+            </details>
             <!-- 슬라이드 유형 -->
             <hr>
             <h3 class="t_tit2">📋 이미지 유형</h3>
@@ -353,6 +681,9 @@
                 레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
                 html의 body 부분에 레이아웃 구역을 정해줍니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-html">&lt;section id="imageType" class="image__wrap nexon section items"&gt;
     &lt;h2&gt;이 달의 BEST&lt;/h2&gt;
@@ -371,8 +702,12 @@
     &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
-            </div><br>
+            </div>
+            </details><br>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">/* imageType */
 .image__wrap {}
@@ -434,10 +769,14 @@
 }
 </code></pre>
             </div>
+            </details>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
             <p class="t_desc2">
                 width값이 600px일 때 사진이 좌우정렬에서 상하정렬로 바뀌게 하는 것이 특징입니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">/* 미디어쿼리 */
 @media (max-width: 600px) {
@@ -460,6 +799,7 @@
 }
 </code></pre>
             </div>
+            </details>
             <!-- 이미지 유형 -->
             <hr>
             <h3 class="t_tit2">📋 이미지/텍스트 유형</h3>
@@ -468,6 +808,9 @@
                 레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
                 html의 body 부분에 레이아웃 구역을 정해줍니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-html">&lt;section id="imageTextType" class="imageText__wrap nexon section gray items"&gt;
     &lt;h2 class="blind"&gt;다가오는 가을 코디 추천&lt;/h2&gt;
@@ -495,8 +838,12 @@
     &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
-            </div><br>
+            </div>
+            </details><br>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">/* imageTextType */
 .imgText__inner {
@@ -575,10 +922,14 @@
 }
 </code></pre>
             </div>
+            </details>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
             <p class="t_desc2">
                 화면이 줄수록 나중에는 사진이 좌우정렬에서 상하 정렬로 바뀌고 반응형이 나타날 때 설명부분이 빠집니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">/* 미디어쿼리 */
 @media (max-width: 960px) {
@@ -631,6 +982,7 @@
 } 
 </code></pre>
             </div>
+            </details>
             <!-- 이미지/텍스트 유형 -->
             <hr>
             <h3 class="t_tit2">📋 카드 유형</h3>
@@ -639,6 +991,9 @@
                 레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
                 html의 body 부분에 레이아웃 구역을 정해줍니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-html">&lt;section id="cardType" class="card__wrap nexon section gray items"&gt;
     &lt;h2&gt;이 달의 마켓&lt;/h2&gt;
@@ -713,12 +1068,16 @@
     &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
-            </div><br>
+            </div>
+            </details><br>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
             <p class="t_desc2">
                 style을 통해 CSS를 설정해줍니다. <br>
                 하나하나 세심하게 스타일을 넣어주는 것이 중요합니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">/* cardType */
 .card__inner {
@@ -763,7 +1122,11 @@
 }
 </code></pre>
             </div>
+            </details>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">/* 미디어쿼리 */
 @media (max-width: 960px) {
@@ -790,6 +1153,7 @@
 }
 </code></pre>
             </div>
+            </details>
             <!-- 카드 유형 -->
             <hr>
             <h3 class="t_tit2">📋 배너 유형</h3>
@@ -798,6 +1162,9 @@
                 레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
                 html의 body 부분에 레이아웃 구역을 정해줍니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-html">&lt;section id="bannerType" class="banner__wrap items"&gt;
     &lt;h2 class="blind"&gt;배너 영역&lt;/h2&gt;
@@ -812,12 +1179,16 @@
     &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
-            </div><br>
+            </div>
+            </details><br>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
             <p class="t_desc2">
                 style을 통해 CSS를 설정해줍니다. <br>
                 하나하나 세심하게 스타일을 넣어주는 것이 중요합니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">.banner__inner {
     background-image: url(../img/banner_type01.jpg);
@@ -853,10 +1224,14 @@
 }
 </code></pre>
             </div>
+            </details>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
             <p class="t_desc2">
                 배너는 거의 비슷합니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">/* 미디어쿼리 */
 @media (max-width: 960px) {
@@ -879,6 +1254,7 @@
 }
 </code></pre>
             </div>
+            </details>
             <!-- 배너 유형 -->
             <hr>
             <h3 class="t_tit2">📋 텍스트 유형</h3>
@@ -887,6 +1263,9 @@
                 레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
                 html의 body 부분에 레이아웃 구역을 정해줍니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-html"> &lt;section id="textType" class="text__wrap nexon section items"&gt;
     &lt;!-- 쓸 거 없을 때 div나 span --&gt;
@@ -926,12 +1305,16 @@
     &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
-            </div><br>
+            </div>
+            </details><br>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
             <p class="t_desc2">
                 style을 통해 CSS를 설정해줍니다. <br>
                 하나하나 세심하게 스타일을 넣어주는 것이 중요합니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">/* textType */
 .text__inner {
@@ -1010,10 +1393,14 @@
 }
 </code></pre>
             </div>
+            </details>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
             <p class="t_desc2">
                 사이트 화면 좁아질수록 2개씩 정렬
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">/* 미디어쿼리 */
 @media (max-width: 960px) {
@@ -1038,6 +1425,7 @@
 }
 </code></pre>
             </div>
+            </details>
             <!-- 텍스트 유형 -->
             <hr>
             <h3 class="t_tit2">📋 푸터 유형</h3>
@@ -1046,6 +1434,9 @@
                 레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
                 html의 body 부분에 레이아웃 구역을 정해줍니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-html">&lt;footer id="footerType" class="footer__wrap nexon section gray"&gt;
     &lt;h2 class="blind"&gt;푸터 영역&lt;/h2&gt;
@@ -1113,8 +1504,12 @@
     &lt;/div&gt;
 &lt;/footer&gt;
 </code></pre>
-            </div><br>
+            </div>
+            </details><br>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">.footer__inner {
     width: 85%;
@@ -1146,10 +1541,14 @@
 }
 </code></pre>
             </div>
+            </details>
             <h4 class="t_tit3">➰ vscode를 통해 코딩해주기! : <i>CSS 미디어쿼리편 (반응형)</i></h4>
             <p class="t_desc2">
                 푸터는 오로지 글로만 이루어져 있어 반응형을 했을 때 다소 지저분해 보일 수 있으므로 width값이 작아졌을 때는 없애주었습니다.
             </p>
+    <div class="result">
+        <details>
+            <summary>코드 보기</summary>
             <div class="t_code">
 <pre><code class="language-css">/* 미디어쿼리 */
 @media (max-width: 960px) {
@@ -1166,6 +1565,7 @@
 }
 </code></pre>
             </div>
+            </details>
             <!-- 푸터 유형 -->
             <hr>
             <h3 class="t_tit2">▶완성본</h3>

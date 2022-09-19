@@ -30,6 +30,7 @@
     //     $(this).find(".submenu").stop().hide(500);
     // });
 
+    //서브 메뉴
     //첫번째 유형
     $(".nav > ul > li").mouseover(function () {
         $(this).find(".submenu").stop().slideDown(200);

@@ -1,7 +1,7 @@
-html, body {
+/* html, body {
     max-width: 100%;
     overflow-x: hidden;
-}
+} */
 /* 스킵 메뉴 */
 #skip {
     position: relative;
@@ -103,7 +103,14 @@ html, body {
 .gray {
     background-color: #f5f5f5;
 }
-
+body {
+    overflow: overlay;
+}
+/* fixed */
+body.fixed {
+    height: 100vh;
+    overflow: hidden;
+}
 /* 간격셋팅 */
 .mb0 {margin-bottom: 0 !important;}
 .mb10 {margin-bottom: 10px !important;}

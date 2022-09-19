@@ -30,7 +30,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/swiper.css" />
-    <style>
+    <!-- <style>
         /* 애초에 스크롤바 안생기게, 해당페이지만 바꾸기 위함*/
         #headerType {
             display: none;
@@ -43,9 +43,9 @@
         /* #bannerType {display: none;} */
         /* #textType {display: none;} */
         /* #footerType {display: none;} */
-    </style>
+    </style> -->
 </head>
-
+<!-- body에 fixed는 햄버거 메뉴가 됐을 때 붙일것 -->
 <body>
     <div id="skip">
         <a href="#headerType">헤더 영역 바로가기</a>
@@ -63,12 +63,9 @@
             <div class="header__logo">
                 <a href="#">MOMENTO <em>store</em></a>
             </div>
-            <div class="menu__bar">
-                <div class="menubar__icon"></div>
-            </div>
             <div class="header__menu">
                 <ul>
-                    <li class="active"><a href="#sliderType">main</a></li>
+                    <li><a href="#sliderType">main</a></li>
                     <li><a href="#imageType">best</a></li>
                     <li><a href="#imageTextType">codi</a></li>
                     <li><a href="#cardType">product</a></li>
@@ -78,6 +75,11 @@
             </div>
             <div class="header__member">
                 <a href="#">로그인</a>
+            </div>
+            <div class="header__ham">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
             <!-- <a href="" class="header__inner_toogleBtn">
                 <i class="fas fa-bars"></i>
@@ -164,8 +166,13 @@
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
+
                 </div>
             </div>
         </section>
@@ -420,12 +427,61 @@
             },
             autoplay: {
                 delay:2000,
+                // 슬라이드버그 : 드래그했을때 슬라이드 멈추는 거 보완
+                disableOnInteraction: false,
             },
             pagination: {
                 el: '.swiper-pagination',
                 type: 'bullets',
+                clickable: true,
             }
         });
+
+        const btnStop = document.querySelector(".swiper-button-stop");
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnHam = document.querySelector(".header__ham")
+        const btnMenu = document.querySelector(".header__menu")
+        const btnMenuList = btnMenu.querySelectorAll("ul li a");
+
+        btnStart.style.display = "none";
+
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+
+        });
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStart.style.display = "none";
+            btnStop.style.display = "block";
+        });
+
+        btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("active");
+            document.body.classList.toggle("fixed");
+        });
+
+        btnMenuList.forEach((list) => {
+            list.addEventListener("click", () => {
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            });
+        })
+        //작은 화면에서 햄버거 메뉴를 켜놓고 화면의 사이즈를 최대로 했을 때, 햄버거 버튼은 사라지지만 스크롤이 안됩니다.(화면 멈춤 = 햄버거 메뉴 초기화 안된 것)
+        //버그 수정
+        window.addEventListener("resize", () =>{
+            let width = window.innerWidth;
+            //console.log(width)
+            if(width > 1300){
+                //햄버거 메뉴 초기화
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            }
+        })
     </script>
     <script>
         //스크롤 됐을 때
@@ -443,25 +499,14 @@
             })
         })
 
-        //스크롤 이동
-        // 스크롤 이동
-        document.querySelectorAll("#headerType .header__inner .header__menu li a").forEach(li => {
+        //스크롤 이동 //화면 부드럽게 넘겨짐
+        document.querySelectorAll("a").forEach(li => {
             li.addEventListener("click", (e) => {
                 e.preventDefault();
                 document.querySelector(li.getAttribute("href")).scrollIntoView({
                     behavior: "smooth"  // 이동 부드럽게
                 });
             });
-        });
-        //미디어쿼리 메뉴바 버튼 
-        const menubtn = document.querySelector(".menu__bar .menubar__icon");
-        const menu = document.querySelector(".header__menu");
-
-        menubtn.addEventListener("click", () => {
-            menu.classList.add("on");
-        });
-        menu.addEventListener("mouseleave", () => {
-            menu.classList.remove("on");
         });
     </script>
 </body>

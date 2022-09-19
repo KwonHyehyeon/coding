@@ -30,7 +30,7 @@
 
     &lt;!-- CSS --&gt;
     &lt;link rel="stylesheet" href="assets/css/swiper.css" /&gt;
-    &lt;style&gt;
+    &lt;!-- &lt;style&gt;
         /* 애초에 스크롤바 안생기게, 해당페이지만 바꾸기 위함*/
         #headerType {
             display: none;
@@ -43,9 +43,9 @@
         /* #bannerType {display: none;} */
         /* #textType {display: none;} */
         /* #footerType {display: none;} */
-    &lt;/style&gt;
+    &lt;/style&gt; --&gt;
 &lt;/head&gt;
-
+&lt;!-- body에 fixed는 햄버거 메뉴가 됐을 때 붙일것 --&gt;
 &lt;body&gt;
     &lt;div id="skip"&gt;
         &lt;a href="#headerType"&gt;헤더 영역 바로가기&lt;/a&gt;
@@ -68,7 +68,7 @@
             &lt;/div&gt;
             &lt;div class="header__menu"&gt;
                 &lt;ul&gt;
-                    &lt;li class="active"&gt;&lt;a href="#sliderType"&gt;main&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#sliderType"&gt;main&lt;/a&gt;&lt;/li&gt;
                     &lt;li&gt;&lt;a href="#imageType"&gt;best&lt;/a&gt;&lt;/li&gt;
                     &lt;li&gt;&lt;a href="#imageTextType"&gt;codi&lt;/a&gt;&lt;/li&gt;
                     &lt;li&gt;&lt;a href="#cardType"&gt;product&lt;/a&gt;&lt;/li&gt;
@@ -78,6 +78,11 @@
             &lt;/div&gt;
             &lt;div class="header__member"&gt;
                 &lt;a href="#"&gt;로그인&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="header__ham"&gt;
+                &lt;span&gt;&lt;/span&gt;
+                &lt;span&gt;&lt;/span&gt;
+                &lt;span&gt;&lt;/span&gt;
             &lt;/div&gt;
             &lt;!-- &lt;a href="" class="header__inner_toogleBtn"&gt;
                 &lt;i class="fas fa-bars"&gt;&lt;/i&gt;
@@ -117,7 +122,7 @@
                         &lt;a href="#" class="stop"&gt;&lt;span class="ir"&gt;정지&lt;/span&gt;&lt;/a&gt;
                     &lt;/div&gt;
                 &lt;/div&gt; --&gt;
-                &lt;!-- 슬라이드 효과를 주기 위해 swiper라는 페이지에서 비슷한 슬라이드 형식 가져옴 --&gt;
+
                 &lt;div class="swiper mySwiper"&gt;
                     &lt;div class="swiper-wrapper"&gt;
                         &lt;div class="swiper-slide"&gt;
@@ -164,8 +169,13 @@
                         &lt;/div&gt;
                     &lt;/div&gt;
                     &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+                    &lt;div class="swiper-button"&gt;
+                        &lt;div class="swiper-button-play"&gt;&lt;span class="ir"&gt;play&lt;/span&gt;&lt;/div&gt;
+                        &lt;div class="swiper-button-stop"&gt;&lt;span class="ir"&gt;stop&lt;/span&gt;&lt;/div&gt;
+                    &lt;/div&gt;
                     &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
                     &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/section&gt;
@@ -420,12 +430,59 @@
             },
             autoplay: {
                 delay:2000,
+                // 슬라이드버그 : 드래그했을때 슬라이드 멈추는 거 보완
+                disableOnInteraction: false,
             },
             pagination: {
                 el: '.swiper-pagination',
                 type: 'bullets',
+                clickable: true,
             }
         });
+
+        const btnStop = document.querySelector(".swiper-button-stop");
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnHam = document.querySelector(".header__ham")
+        const btnMenu = document.querySelector(".header__menu")
+        const btnMenuList = btnMenu.querySelectorAll("ul li a");
+
+        btnStart.style.display = "none";
+
+        btnStop.addEventListener("click", () =&gt; {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+
+        });
+        btnStart.addEventListener("click", () =&gt; {
+            swiper.autoplay.start();
+            btnStart.style.display = "none";
+            btnStop.style.display = "block";
+        });
+
+        btnHam.addEventListener("click", () =&gt; {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("active");
+            document.body.classList.toggle("fixed");
+        });
+
+        btnMenuList.forEach((list) =&gt; {
+            list.addEventListener("click", () =&gt; {
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            });
+        })
+
+        window.addEventListener("resize", () =&gt;{
+            let width = window.innerWidth;
+            //console.log(width)
+            if(width &gt; 1300){
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            }
+        })
     &lt;/script&gt;
     &lt;script&gt;
         //스크롤 됐을 때
@@ -443,9 +500,8 @@
             })
         })
 
-        //스크롤 이동
         // 스크롤 이동
-        document.querySelectorAll("#headerType .header__inner .header__menu li a").forEach(li =&gt; {
+        document.querySelectorAll("a").forEach(li =&gt; {
             li.addEventListener("click", (e) =&gt; {
                 e.preventDefault();
                 document.querySelector(li.getAttribute("href")).scrollIntoView({
@@ -465,5 +521,4 @@
         });
     &lt;/script&gt;
 &lt;/body&gt;
-
 &lt;/html&gt;
