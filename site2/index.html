@@ -9,8 +9,304 @@
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/common.css">
+
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+
+
+
 </head>
 <body>
+    <div id="skip">
+        <a href="#headerType">헤더 영역 바로가기</a>
+        <a href="#sliderType">슬라이드 영역 바로가기</a>
+        <a href="#imageType">이미지 영역 바로가기</a>
+        <a href="#imageTextType">이미지/텍스트 영역 바로가기</a>
+        <a href="#cardType">카드 영역 바로가기</a>
+        <a href="#bannerType">배너 영역 바로가기</a>
+        <a href="#textType">텍스트 영역 바로가기</a>
+        <a href="#footerType">푸터 영역 바로가기</a>
+    </div>
+    <!-- skip : 웹표준 준수 위해서 -->
+    <header id="headerType" class="header__wrap gmarket">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#">Playlist <em> for U</em></a>
+            </div>
+            <div class="header__menu">
+                <ul>
+                    <li><a href="#sliderType">메인</a></li>
+                    <li><a href="#imageType">신곡 추천</a></li>
+                    <li><a href="#imageTextType">TOP 3</a></li>
+                    <li><a href="#cardType">상황별 플리</a></li>
+                    <li><a href="#bannerType">이달의 플리</a></li>
+                    <li><a href="#textType">후기</a></li>
+                </ul>
+            </div>
+            <div class="header__member">
+                <a href="#">로그인</a>
+            </div>
+            <div class="header__ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- <a href="" class="header__inner_toogleBtn">
+                <i class="fas fa-bars"></i>
+            </a> -->
+        </div>
+    </header>
+    <!-- headerType -->
+
+    <main id="mainType">
+        <section id="sliderType" class="slider__wrap items">
+            <h2 class="blind">슬라이드 영역</h2>
+            <div class="slider__inner">
+                <!-- <div class="slider">
+                    <div class="slider__img">
+                        <div class="desc container">
+                            <span>STORE</span>
+                            <h3>MOMENTO’ s style</h3>
+                            <p>
+                                #모멘토는 스페인어로 “순간" 이라는 뜻으로,<br>
+                                당신의 아름다운 순간을 선물해드립니다.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히보기</a>
+                                <a href="#" class="black">쇼핑가기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__arrow">
+                        <a href="#" class="left"><span class="ir">이전 이미지</span></a>
+                        <a href="#" class="right"><span class="ir">다음 이미지</span></a>
+                    </div>
+                    <div class="slider__dot">
+                        <a href="#" class="dot active"><span class="ir">1</span></a>
+                        <a href="#" class="dot"><span class="ir">2</span></a>
+                        <a href="#" class="dot"><span class="ir">3</span></a>
+                        <a href="#" class="play"><span class="ir">플레이</span></a>
+                        <a href="#" class="stop"><span class="ir">정지</span></a>
+                    </div>
+                </div> -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>Playlist</span>
+                                <h3>essential;</h3>
+                                <p>
+                                    도입부가 요즘 날씨야...너무 좋아...🤎<br>
+                                    인트로부터 난리난 그루브팝
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히보기</a>
+                                </div>
+                            </div>
+                            <!-- <div class="deco">
+                                <span class="circle1" aria-hidden="true"></span>
+                                <span class="circle2" aria-hidden="true"></span>
+                                <span class="circle3" aria-hidden="true"></span>
+                                <span class="circle4" aria-hidden="true"></span>
+                                <span class="circle5" aria-hidden="true"></span>
+                                <span class="circle6" aria-hidden="true"></span>
+                            </div> -->
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>Playlist</span>
+                                <h3>떼껄룩</h3>
+                                <p>
+                                    이거 틀면 운전하다가<br>
+                                    옆차선에서 제목 알려달라 한다.
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히보기</a>
+                                </div>
+                            </div>
+                            <!-- <div class="deco">
+                                <span class="circle1" aria-hidden="true"></span>
+                                <span class="circle2" aria-hidden="true"></span>
+                                <span class="circle3" aria-hidden="true"></span>
+                                <span class="circle4" aria-hidden="true"></span>
+                                <span class="circle5" aria-hidden="true"></span>
+                                <span class="circle6" aria-hidden="true"></span>
+                            </div> -->
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>Playlist</span>
+                                <h3>눈에띠네</h3>
+                                <p>
+                                    띵곡들만 모아놨는데, <br>
+                                    들으실?
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히보기</a>
+                                </div>
+                            </div>
+                            <!-- <div class="deco">
+                                <span class="circle1" aria-hidden="true"></span>
+                                <span class="circle2" aria-hidden="true"></span>
+                                <span class="circle3" aria-hidden="true"></span>
+                                <span class="circle4" aria-hidden="true"></span>
+                                <span class="circle5" aria-hidden="true"></span>
+                                <span class="circle6" aria-hidden="true"></span>
+                            </div> -->
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>Playlist</span>
+                                <h3>찐막 JJINMAK</h3>
+                                <p>
+                                    🍂 가을 냄새가 물씬 풍기는 <br>
+                                    가을 감성 노래 모음
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히보기</a>
+                                </div>
+                            </div>
+                            <!-- <div class="deco">
+                                <span class="circle1" aria-hidden="true"></span>
+                                <span class="circle2" aria-hidden="true"></span>
+                                <span class="circle3" aria-hidden="true"></span>
+                                <span class="circle4" aria-hidden="true"></span>
+                                <span class="circle5" aria-hidden="true"></span>
+                                <span class="circle6" aria-hidden="true"></span>
+                            </div> -->
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>Playlist</span>
+                                <h3>릴숭어 lil mullet</h3>
+                                <p>
+                                    편하게 듣기 좋은<br>
+                                    120분 감성힙합/R&B 플레이리스트
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히보기</a>
+                                </div>
+                            </div>
+                            <!-- <div class="deco">
+                                <span class="circle1" aria-hidden="true"></span>
+                                <span class="circle2" aria-hidden="true"></span>
+                                <span class="circle3" aria-hidden="true"></span>
+                                <span class="circle4" aria-hidden="true"></span>
+                                <span class="circle5" aria-hidden="true"></span>
+                                <span class="circle6" aria-hidden="true"></span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    </div>
+                </div>
+                <div class="deco">
+                    <span class="circle1" aria-hidden="true"></span>
+                    <span class="circle2" aria-hidden="true"></span>
+                    <span class="circle3" aria-hidden="true"></span>
+                    <span class="circle4" aria-hidden="true"></span>
+                    <span class="circle5" aria-hidden="true"></span>
+                    <span class="circle6" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </section>
+        <!-- sliderType -->
+        <script src="assets/js/swiper.min.js"></script>
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                    delay:2000,
+                    // 슬라이드버그 : 드래그했을때 슬라이드 멈추는 거 보완
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    clickable: true,
+                }
+            });
     
+            const btnStop = document.querySelector(".swiper-button-stop");
+            const btnStart = document.querySelector(".swiper-button-play");
+            const btnHam = document.querySelector(".header__ham")
+            const btnMenu = document.querySelector(".header__menu")
+            const btnMenuList = btnMenu.querySelectorAll("ul li a");
+    
+            btnStart.style.display = "none";
+    
+            btnStop.addEventListener("click", () => {
+                swiper.autoplay.stop();
+                btnStart.style.display = "block";
+                btnStop.style.display = "none";
+    
+            });
+            btnStart.addEventListener("click", () => {
+                swiper.autoplay.start();
+                btnStart.style.display = "none";
+                btnStop.style.display = "block";
+            });
+    
+            btnHam.addEventListener("click", () => {
+                btnHam.classList.toggle("active");
+                btnMenu.classList.toggle("active");
+                document.body.classList.toggle("fixed");
+            });
+    
+            btnMenuList.forEach((list) => {
+                list.addEventListener("click", () => {
+                    document.body.classList.remove("fixed");
+                    btnMenu.classList.remove("active");
+                    btnHam.classList.remove("active");
+                });
+            })
+            //작은 화면에서 햄버거 메뉴를 켜놓고 화면의 사이즈를 최대로 했을 때, 햄버거 버튼은 사라지지만 스크롤이 안됩니다.(화면 멈춤 = 햄버거 메뉴 초기화 안된 것)
+            //버그 수정
+            window.addEventListener("resize", () =>{
+                let width = window.innerWidth;
+                //console.log(width)
+                if(width > 1300){
+                    //햄버거 메뉴 초기화
+                    document.body.classList.remove("fixed");
+                    btnMenu.classList.remove("active");
+                    btnHam.classList.remove("active");
+                }
+            })
+        </script>
+        <script>
+            //스크롤 됐을 때
+            window.addEventListener("scroll", () => {
+                let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+                //forEach
+                document.querySelectorAll(".items").forEach((element, index) => {
+                    if (scrollTop >= element.offsetTop - 500) {
+                        document.querySelectorAll(".header__menu li").forEach(li => {
+                            //메뉴바 active 모두 없애기
+                            li.classList.remove("active")
+                        });
+                        document.querySelector(".header__menu li:nth-child(" + (index + 1) + ")").classList.add("active")
+                    }
+                })
+            })
+    
+            //스크롤 이동 //화면 부드럽게 넘겨짐
+            document.querySelectorAll("a").forEach(li => {
+                li.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector(li.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth"  // 이동 부드럽게
+                    });
+                });
+            });
+        </script>
 </body>
 </html>
