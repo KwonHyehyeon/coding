@@ -348,7 +348,7 @@ setInterval(sliderEffect, 2000);
         sliderBtnPrev.addEventListener("click", () => {
             //1, 4, 3, 2, 1, 0, 
             //currentIndex : prev눌렀을 때 가는 페이지 인덱스
-            let prevIndex = (currentIndex+4) % sliderCount; //0, 4, 3, 2, 1, 0, 4...
+            let prevIndex = (currentIndex+(sliderCount-1)) % sliderCount; //0, 4, 3, 2, 1, 0, 4...
             gotoSlider(prevIndex);
         });
         //오른쪽 버튼 클릭했을 때

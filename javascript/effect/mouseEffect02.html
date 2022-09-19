@@ -98,7 +98,7 @@
         transform: scale(0)
       }
       .mouse__cursor2.active2{
-        border-color: #9bfd7d;
+        background-color: #9bfd7d;
         transform: scale(2) rotateY(720deg);
       }
     </style>
@@ -473,30 +473,24 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
                     cursor.classList.remove("active");
                     cursor2.classList.remove("active");
                 });
-                document.querySelector(".style1").addEventListener("mouseover", () => {
-                  cursor.classList.add("style1");
-                  cursor2.classList.add("style1");
+                document.querySelector(".active1").addEventListener("mouseover", () => {
+                  cursor.classList.add("active1");
+                  cursor2.classList.add("active1");
                 })
-                document.querySelector(".style1").addEventListener("mouseleave", () => {
-                  cursor.classList.remove("style1");
-                  cursor2.classList.remove("style1");
+                document.querySelector(".active1").addEventListener("mouseleave", () => {
+                  cursor.classList.remove("active1");
+                  cursor2.classList.remove("active1");
                 })
-                document.querySelector(".style2").addEventListener("mouseover", () => {
-                  cursor.classList.add("style2");
-                  cursor2.classList.add("style2");
+                document.querySelector(".active2").addEventListener("mouseover", () => {
+                  cursor.classList.add("active2");
+                  cursor2.classList.add("active2");
                 })
-                document.querySelector(".style2").addEventListener("mouseleave", () => {
-                  cursor.classList.remove("style2");
-                  cursor2.classList.remove("style2");
+                document.querySelector(".active2").addEventListener("mouseleave", () => {
+                  cursor.classList.remove("active2");
+                  cursor2.classList.remove("active2");
                 })
-                
             });
-
-            
-        });
-
-
-        
+        });   
     </script>
 </body>
 </html>
