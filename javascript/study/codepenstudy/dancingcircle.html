@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CSS : Sass</title>
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">codepen을 이용해서 저보다(?) 웨이브 잘하는 동그라미⚪️를 만들어봅시다!</h2><br>
+            <p class="t_desc2">
+                동그라미 여러개가 작아졌다 커졌다를 반복하면서 웨이브하는 느낌을 PUG와 SCSS의 animation 기능을 이용하여 만들어봅시다.<br>
+            </p>
+            <div class="iframe">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kwonhyehyeon/embed/QWrvOxr?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/QWrvOxr">
+                    Untitled</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <hr>
+            <h2 class="t_tit">코드 소스를 알아봅시다.💻</h2>
+            <h3 class="t_tit2">✔️PUG</h3>
+            <div class="t_desc">
+                동그라미 여러개를 가로 세로 12개씩 만들어줍니다.<br>
+                이 때 정렬을 잘 맞춰 주어야 오류가 나지 않습니다.
+            </div>
+            <div class="t_code">
+<pre><code>div.circle-wrap
+    - for  (var x = 1; x&lt;=12; x++)
+        div.row
+            - for (var y = 1; y&lt;=12; y++)
+                div.circle
+</code></pre>
+            </div>
+            <h3 class="t_tit2">✔️SCSS</h3>
+            <div class="t_desc">
+               ∙ @mixin은 여러 컴포넌트 간에 공통으로 사용하고 있는 기능들을 재사용하는 방법입니다.<br>
+               ∙ 묶어준 mixin을 @include를 통해 불러줄 수 있습니다.<br>
+            </div>
+            <div class="t_code">
+<pre><code>// mixin단축키
+@mixin center {
+  display : flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  @include center;
+  height: 100vh;
+  background-image: linear-gradient(45deg, #00DBDE 0%, #FC00FF 100%);
+}
+.row {
+  display: flex;
+  .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 5px 10px;
+    background: #fff;
+    transform-origin : top center;
+    animation : spin 1s linear infinite;
+  }
+  @keyframes spin {
+    0% {transform : scale(1.1) rotate(0deg);}
+    50% {transform : scale(0.2) rotate(180deg);}
+    100% {transform : scale(1.1) rotate(360deg);}
+  }
+}
+//SCSS에서의 for문 사용 방법
+@for $i from 1 through 12 {
+    .row:nth-child(#{$i}) .circle {animation-delay : 100ms * $i;}
+}
+</code></pre>
+            </div>
+            <hr>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SCSS 설치 방법</title>
 
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/dracula.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dracula.css" />
   </head>
 
   <body>
@@ -18,24 +18,36 @@
             SCSS를 VScode에서 사용하는 방법에 대해 알아봅시다!
         </p>
         <h3 class="t_tit2">➰ 설치</h3>
-        <p class="t_box">1. VScode에 Live Sass Compiler를 설치해줍니다.</p>
+        <p class="t_box">1. VScode에 <i>Live Sass Compiler</i>를 설치해줍니다.</p>
         <figure>
           <img
             style="width: 700px; height: 200px"
             src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/Live%20Sass%20Compiler.png?raw=true"
-            alt="prettier"
+            alt="Sass"
           />
         </figure>
-        <p class="t_box">2. 설치하셨다면 Sass 또한 설치해줍니다.</p>
+        <p class="t_box">2. 설치하셨다면 <i>Sass</i> 또한 설치해줍니다.</p>
         <figure>
           <img
-            style="width: 700px; height: 300px"
+            style="width: 700px; height: 200px"
             src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/Sass.png?raw=true"
-            alt="prettier"
+            alt="sass"
           />
         </figure>
+        <p class="t_box">3. Sass도 설치완료하였다면 밑에를 확인해야합니다. 창 하단에 <i>Watch Sass</i>가 뜬다면 설치완료한 것입니다.</p>
+        <figure>
+          <img
+            style="width: 700px; height: 150px"
+            src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202022-09-19%20%EC%98%A4%ED%9B%84%206.29.53.png?raw=true"
+            alt="sass"
+          />
+        </figure>
+        <h2 class="t_tit">📍 SCSS를 CSS로 컴파일하는 방법</h2>
         <p class="t_box">
-            "liveSassCompile.settings.generateMap": false,
+            settings에 들어간 후 json을 검색하여 Edit in settings.json을 클릭후 밑에와 같이 넣어주면 됩니다.<br>
+            map 파일을 생성하지 않으면 아래와 같이 써주면 됩니다.<br>
+            -> "liveSassCompile.settings.generateMap": false<br>
+            주석표시한 부분은 주석을 해주어야 .css파일이 작업 내용을 저장할 때마다 생기는 것을 방지할 수 있습니다.
         </p>
         <div class="t_code">
 <pre><code>"liveSassCompile.settings.generateMap": false,
@@ -60,7 +72,7 @@
       <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
     </footer>
     <!-- //footer -->
-    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/highlight.min.js"></script>
     <script>
       hljs.highlightAll();
     </script>

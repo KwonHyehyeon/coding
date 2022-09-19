@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>패럴랙스 이펙트 03</title>
+    <title>패럴랙스 이펙트 04</title>
 
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/dracula.css">
@@ -17,177 +17,30 @@
         </p>
         <hr>
         <!-- <h3 class="t_tit2">패럴랙스 이펙트를 피그마를 활용하여 설명</h3> -->
-        <div class="iframe">
-          
-        </div>
+        <!-- <div class="iframe">
+        </div> -->
         <hr>
         <h3 class="t_tit2">➰ HTML</h3>
         <p class="t_desc2">
-            footer를 제외한 전체 body 코드입니다.
+            컨텐츠, 컨텐츠 순번, 제목, 이미지, 설명 등의 구조를 짜줍니다.
         </p>
         <div class="t_code">
-<pre><code class="language-js">&lt;body class="img04"&gt;
-    &lt;header id="header"&gt;
-        &lt;h1&gt;Javascript parallax Effect03&lt;/h1&gt;
-        &lt;p&gt;패럴랙스 이펙트 - 숨김 메뉴&lt;/p&gt;
-        &lt;ul&gt;
-            &lt;li&gt;&lt;a href="parallaxEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-            &lt;li class="active"&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="parallaxEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="parallaxEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="parallaxEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="parallaxEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/header&gt;
-    &lt;!-- //header --&gt;
-    &lt;nav id="parallax__nav"&gt;
-        &lt;ul&gt;
-            &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;
-    &lt;!-- //parallax__nav --&gt;
-
-    &lt;div id="parallax__top"&gt;
-        Top
-    &lt;/div&gt;
-    &lt;!-- parallax__top --&gt;
-    &lt;main id="parallax__cont"&gt;
-        &lt;div id="contents"&gt;
-            &lt;section id="section1" class="content__item"&gt;
-                &lt;span class="content__item__num"&gt;01&lt;/span&gt;
-                &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
-                &lt;figure class="content__item__imgWrap"&gt;
-                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-                &lt;p class="content__item__desc"&gt;오늘 할 수 있는 일에 전력을 다하라. 그러면 내일에는 한걸음 더 진보한다.&lt;/p&gt;
-            &lt;/section&gt;
-            &lt;!-- //section1 --&gt;
-            &lt;section id="section2" class="content__item"&gt;
-                &lt;span class="content__item__num"&gt;02&lt;/span&gt;
-                &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
-                &lt;figure class="content__item__imgWrap"&gt;
-                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-                &lt;p class="content__item__desc"&gt;게으르지 않음은 영원한 삶의 집이요, 게으름은 죽음의 집이다.&lt;/p&gt;
-            &lt;/section&gt;
-            &lt;!-- //section2--&gt;
-            &lt;section id="section3" class="content__item"&gt;
-                &lt;span class="content__item__num"&gt;03&lt;/span&gt;
-                &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
-                &lt;figure class="content__item__imgWrap"&gt;
-                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-                &lt;p class="content__item__desc"&gt;우리는 행복하기 때문에 웃는게 아니라, 웃기 때문에 행복하다.&lt;/p&gt;
-            &lt;/section&gt;
-            &lt;!-- //section3 --&gt;
-            &lt;section id="section4" class="content__item"&gt;
-                &lt;span class="content__item__num"&gt;04&lt;/span&gt;
-                &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
-                &lt;figure class="content__item__imgWrap"&gt;
-                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-                &lt;p class="content__item__desc"&gt;인생은 가까이서 보면 비극, 멀리서 보면 희극이다.&lt;/p&gt;
-            &lt;/section&gt;
-            &lt;!-- //section4 --&gt;
-            &lt;section id="section5" class="content__item"&gt;
-                &lt;span class="content__item__num"&gt;05&lt;/span&gt;
-                &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
-                &lt;figure class="content__item__imgWrap"&gt;
-                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-                &lt;p class="content__item__desc"&gt;승자는 시간을 관리하며 살고 패자는 시간에 끌려 산다.&lt;/p&gt;
-            &lt;/section&gt;
-            &lt;!-- //section5 --&gt;
-            &lt;section id="section6" class="content__item"&gt;
-                &lt;span class="content__item__num"&gt;06&lt;/span&gt;
-                &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
-                &lt;figure class="content__item__imgWrap"&gt;
-                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-                &lt;p class="content__item__desc"&gt;아무것도 하지 않으면 아무 일도 일어나지 않는다.&lt;/p&gt;
-            &lt;/section&gt;
-            &lt;!-- //section6 --&gt;
-            &lt;section id="section7" class="content__item"&gt;
-                &lt;span class="content__item__num"&gt;07&lt;/span&gt;
-                &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
-                &lt;figure class="content__item__imgWrap"&gt;
-                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-                &lt;p class="content__item__desc"&gt;일단 시작해라. 나중에 완벽해지면 된다.&lt;/p&gt;
-            &lt;/section&gt;
-            &lt;!-- //section7 --&gt;
-            &lt;section id="section8" class="content__item"&gt;
-                &lt;span class="content__item__num"&gt;08&lt;/span&gt;
-                &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
-                &lt;figure class="content__item__imgWrap"&gt;
-                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-                &lt;p class="content__item__desc"&gt;모든 이의 마음을 얻으려고 계산된 글은 그 누구의 마음도 얻지 못한다.&lt;/p&gt;
-            &lt;/section&gt;
-            &lt;!-- //section8 --&gt;
-            &lt;section id="section9" class="content__item"&gt;
-                &lt;span class="content__item__num"&gt;09&lt;/span&gt;
-                &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
-                &lt;figure class="content__item__imgWrap"&gt;
-                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-                &lt;p class="content__item__desc"&gt;우리 자신에게 실패를 허락하는 것이 성공을 허락하는 것이다.&lt;/p&gt;
-            &lt;/section&gt;
-            &lt;!-- //section9 --&gt;
-        &lt;/div&gt;
-    &lt;/main&gt;
-    &lt;!-- //main --&gt;
-
-    &lt;aside id="parallax__info"&gt;
-        &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
-    &lt;/aside&gt;
-    &lt;!-- //parallax__info--&gt;
-&lt;/body&gt;
-</code></pre>
-        </div>
-        <h3 class="t_tit2">➿ 세부적으로 살펴봅시다!</h3>
-        <p class="t_box">
-            ∙ parallax__nav는 위로 스크롤 시 나타나는 메뉴바입니다. 
-        </p>
-        <div class="t_code">
-<pre><code class="language-js">&lt;nav id="parallax__nav"&gt;
+<pre><code class="language-js">&lt;header id="header"&gt;
+    &lt;h1&gt;Javascript parallax sliderEffect04&lt;/h1&gt;
+    &lt;p&gt;패럴랙스 이펙트 - 숫자, 사진, 글 다 움직이는 효과&lt;/p&gt;
     &lt;ul&gt;
-        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="parallaxEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="active"&gt;&lt;a href="parallaxEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="parallaxEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="parallaxEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="parallaxEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
-&lt;/nav&gt;
-</code></pre>
-        </div>
-        <p class="t_box">
-            ∙ parallax__top은 화면을 Section9 밑까지 내렸을 때 나타나는 Top 버튼입니다.
-        </p>
-        <div class="t_code">
-<pre><code class="language-js">&lt;div id="parallax__top"&gt;
-    Top
-&lt;/div&gt;
-</code></pre>
-        </div>
-        <p class="t_box">
-            ∙ parallax__cont은 페이지의 컨텐츠를 구성하는 내용입니다.
-        </p>
-        <div class="t_code">
-<pre><code class="language-js">&lt;main id="parallax__cont"&gt;
+&lt;/header&gt;
+&lt;!-- //header --&gt;
+
+&lt;main id="parallax__cont"&gt;
     &lt;div id="contents"&gt;
         &lt;section id="section1" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;01&lt;/span&gt;
@@ -274,26 +127,43 @@
 &lt;/main&gt;
 </code></pre>
         </div>
-        <p class="t_box">
-            ∙ parallax__info는 페이지 왼쪽 하단에 스크롤 좌표값을 알려주는 부분입니다.
-        </p>
-        <div class="t_code">
-<pre><code class="language-js">&lt;aside id="parallax__info"&gt;
-    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
-&lt;/aside&gt;
-</code></pre>
-        </div>
-        <!-- html -->
         <hr>
     <h3 class="t_tit2">➰ CSS</h3>
     <p class="t_desc2">
-        HTML로 만든 뼈대에 CSS스타일을 입혀 페이지 완성도를 더 높여줍니다.
-    </p>
-    <p class="t_box">
-        ∙ parallax__cont(컨텐츠 내용)에 해당하는 부분에 스타일을 입혀줍니다.
+        ∙ transition을 통해서 스크롤 내렸을 때 rotate등의 효과를 이미지에 주었습니다.<br>
+        ∙ 새로운 내용 : cubic-bezier()는 CSS에서 transition 속성 혹은 transition-timing-function 속성에서 전환 시작과 끝까지의 효과를 제어하는데 쓰입니다.
     </p>
     <div class="t_code">
-<pre><code class="language-js">#parallax__cont {
+<pre><code class="language-js">/* parallax__nav */
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: -200px;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+    transition: top .4s ease;
+}
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+#parallax__nav li a{
+    /* background-color: #ffee00; */
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+#parallax__nav li.active a {
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
+#parallax__cont {
     max-width: 1600px;
     width: 98%;
     margin: 0 auto;
@@ -392,93 +262,97 @@
     margin-left: -4vw;
     word-break: keep-all;
 }
-/* 홀수는 odd랍니다. */
+
+/* 홀수는 odd랍니다. 짝수 : 2n / even */
 .content__item:nth-child(even) .content__item__desc {
     margin-left: auto;
     margin-right: -4vw;
 }
-</code></pre>
-    </div>
-    <p class="t_box">
-        ∙ parallax__info(스크롤 좌표값)에 해당하는 부분에 스타일을 입혀줍니다.
-    </p>
-    <div class="t_code">
-<pre><code class="language-js">#parallax__info {
-    position: fixed;
-    left: 20px;
-    bottom: 20px;
-    z-index: 2000;
-    background: rgba(0,0,0,0.6);
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
+@media(max-width:800px){
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 5px;
+        background-color: rgb(0,0,0,0.8);
+    }
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+    #parallax__nav li a{
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+    #parallax__nav li.active a {
+        border-radius: 5px;
+    }
 }
-</code></pre>
-    </div>
-    <p class="t_box">
-        ∙ parallax__nav(스크롤시 나오는 상단 메뉴바)에 해당하는 부분에 스타일을 입혀줍니다.<br>
-        피그마 그림 설명을 확인해주세요!
-    </p>
-    <div class="t_code">
-<pre><code class="language-js">/* parallax__nav */
-#parallax__nav {
-    position: fixed;
-    right: 20px;
-    top: -200px;
-    z-index: 2000;
-    background-color: rgba(0,0,0,0.4);
-    padding: 20px 30px;
-    border-radius: 50px;
-    transition: top .4s ease;
+/* 한번에 나타나기 */
+/* #contents &gt; section {
+    opacity: 0;
+    transition: all 1s;
 }
-/* show가 붙었을 때 탑 20 */
-#parallax__nav.show {
-    top: 20px;
+#contents &gt; section.show {
+    opacity: 1;
+} */
+/* 개별적으로 나타나기 */
+#contents &gt; section .content__item__num {
+    opacity: 0;
+    /* 밑에서 위로 올라오는 효과 */
+    transform: translateY(200px);
+    transition: all 1s 0.1s cubic-bezier(0, 0.38, 0.21, 0.99);
 }
-#parallax__nav li {
-    display: inline;
-    margin: 0 5px;
+#contents &gt; section .content__item__title {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s 0.3s ease-in-out;
 }
-#parallax__nav li a{
-    display: inline-block;
-    height: 30px;
-    padding: 5px 20px;
-    text-align: center;
-    line-height: 30px;
+#contents &gt; section .content__item__imgWrap {
+    opacity: 0;
+    transform: translateY(200px) rotate(30deg) skew(20deg);
+    transition: all 1s 0.6s ease-in-out;
 }
-#parallax__nav li.active a {
-    background: #fff;
-    color: #000;
-    border-radius: 20px;
-    box-sizing: content-box;
+#contents &gt; section .content__item__desc {
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: all 1s 0.9s ease-in-out;
 }
-</code></pre>
-    </div>
-    <p class="t_box">
-        ∙ parallax__top(스크롤 시 밑에 나타나는 Top 버튼)에 해당하는 부분에 스타일을 입혀줍니다.
-    </p>
-    <div class="t_code">
-<pre><code class="language-js">#parallax__top {
-    position: fixed;
-    left: 50%;
-    bottom: -200px;
-    z-index: 10000;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(0,0,0,0.4);
-    text-align: center;
-    line-height: 40px;
-    color: #fff;
-    border-radius: 50%;
-    cursor: pointer;
+#contents &gt; section.show .content__item__num {
+    opacity: 0.07;
+    transform: translateY(0);
 }
-#parallax__top.show {
-    bottom: 20px;
+#contents &gt; section.show .content__item__title {
+    opacity: 1;
+    transform: translateX(0);
 }
-#parallax__top:hover {
-    background: #fff;
-    color: #000;
+#contents &gt; section.show .content__item__imgWrap {
+    opacity: 1;
+    transform: translateY(0) rotate(0) skew(0);
+}
+#contents &gt; section.show .content__item__desc {
+    opacity: 1;
+    transform: translateX(0);
+}
+#contents &gt; section:nth-child(even) .content__item__title {
+    transform: translateX(100px);
+}
+#contents &gt; section:nth-child(even).show .content__item__title {
+    transform: translateX(0);
+}
+#contents &gt; section:nth-child(even) .content__item__desc {
+    transform: translateX(-200px);
+}
+#contents &gt; section:nth-child(even).show .content__item__desc {
+    transform: translateX(0);
 }
 </code></pre>
     </div>
@@ -488,76 +362,23 @@
             주석을 참고해주세요!
         </p>
         <div class="t_code">
-<pre><code class="language-js">window.addEventListener("scroll", () => {
-    //모두 같은 Y값인데 각 브라우저마다 호환이 될 수 있고 안될 수 있기 때문에 or연산자를 통해 다 가능하게끔! 
-    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; 
+<pre><code class="language-js">//window.addEventListener("scroll", scrollProgress);
+//재귀 함수 : 자기 자신을 또 실행
+function scroll(){
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.screenY;
 
-    //01
-    // if(scrollTop > 0){
-    //     document.querySelector("#parallax__nav").classList.add("show");
-    // } else {
-    //     document.querySelector("parallax__nav").classList.remove("show")
-    // }
-
-    //02
-    //(문서 전체 높이 - 브라우저 높이)
-    if(scrollTop >= (document.body.scrollHeight-window.innerHeight)){
-        document.querySelector("#parallax__top").classList.add("show");
-    } else {
-        document.querySelector("#parallax__top").classList.remove("show")
-    }
-    //Math.ceil() : 올림
-    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
-
-    //top 버튼
-    document.querySelector("#parallax__top").addEventListener("click", ()=>{
-        window.scrollTo({left:0, top: 0, behavior: "smooth"});
+    document.querySelectorAll(".content__item").forEach(item =&gt; {
+        // 각 섹션의 탑값에서 윈도우 하이트값을 뺀 값보다 컸을 때 window.innerHeight값만 쓰면 너무 빨리 나와서 나누기 2
+        if(scrollTop &gt; item.offsetTop - window.innerHeight/2){
+            item.classList.add("show");
+        }
     });
-});
-
-    //03 시간차 두고 스크롤  
-    let nowScroll = true;       //실행되게 작업
-    //let nowScroll = false;      //실행 안되게 작업 //이런걸 트리거 함수라고 함
-    let lastScroll = 0
-    //스크롤 하면 scrollProgress 함수 실행됨
-    function scrollProgress(){
-        nowScroll = true
-  //스크롤 움직였을 때마다 움직이게 setInterval()메서드 이용
-        setInterval(()=>{
-            if(nowScroll){
-                //scroll(nowScroll)이 움직였을 때만 hasScroll작동
-                nowScroll=false;
-                //자주 인식하게 하는 함수 : 300이 있으니깐 0.3초마다 인식하게 함
-                hasScroll();
-            }
-        }, 300)
-    }
-
-    function hasScroll(){
-        //모두 같은 Y값인데 각 브라우저마다 호환이 될 수 있고 안될 수 있기 때문에 or연산자를 통해 다 가능하게끔! 
-        let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; 
-      //현재 스크롤값&lt;이전 스크롤값
-        if(scrollTop &lt; lastScroll){
-            document.querySelector("#parallax__nav").classList.add("show");
-
-        } else {
-            document.querySelector("#parallax__nav").classList.remove("show");
-        }
-        //메뉴 바 내에서 해당 페이지로 이동(해당 화면 갔을 때 해당 section메뉴에 active들어가 있음)
-        document.querySelectorAll(".content__item").forEach((element, index)=>{
-            if(scrollTop >= element.offsetTop - window.innerHeight/2){
-                document.querySelectorAll("#parallax__nav li").forEach(li => {
-                    //메뉴바 active 모두 없애기
-                    li.classList.remove("active")
-                });
-                //index는 0부터니깐 index+1
-                document.querySelector("#parallax__nav li:nth-child("+(index + 1)+")").classList.add("active")
-        }
-        })
-        //위 과정이 다 이루어지면 이전 스크롤값이 현재 스크롤값이 됨을 반복
-        lastScroll = scrollTop;
-    }        
-    window.addEventListener("scroll", scrollProgress)
+    
+    //1분에 60번 실행 //자기 호출
+    requestAnimationFrame(scroll)
+    //scroll() : 위에 넣어줬음
+}
+scroll();
 </code></pre>
     </div>
     <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
