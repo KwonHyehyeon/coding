@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCSS 설치 방법</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/dracula.css" />
+  </head>
+
+  <body>
+    <main id="main">
+      <div class="document">
+        <h2 class="t_tit">📍 SCSS를 VScode에서 사용하는 방법</h2>
+        <p class="t_desc2">
+            SCSS를 VScode에서 사용하는 방법에 대해 알아봅시다!
+        </p>
+        <h3 class="t_tit2">➰ 설치</h3>
+        <p class="t_box">1. VScode에 Live Sass Compiler를 설치해줍니다.</p>
+        <figure>
+          <img
+            style="width: 700px; height: 200px"
+            src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/prettier.png?raw=true"
+            alt="prettier"
+          />
+        </figure>
+        <p class="t_box">2. 설치하셨다면 Sass 또한 설치해줍니다.</p>
+        <figure>
+          <img
+            style="width: 700px; height: 300px"
+            src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/prettierbasic.png?raw=true"
+            alt="prettier"
+          />
+        </figure>
+        <p class="t_box">
+          3. 띄어쓰기를 해준 후 ctrl+s(맥 : command+s)를 눌렀을 때 자동
+          정렬이 되는지 확인해줍니다.
+        </p>
+        <figure>
+          <img
+            style="width: 700px; height: 300px"
+            src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/prettierspacing.png?raw=true"
+            alt="prettier"
+          >
+        </figure>
+        <p class="t_box">
+          4. ㅎ...안되는 걸 알 수 있습니다. 그렇다면 prettier의 기본 설정을
+          해주어야 하는데 proference(환경설정)에 들어갑니다.<br>
+          검색창에 "editor format on save"를 입력해준 후 체크 부분에 체크가
+          되어있는지 확인한 후 안되어있다면 체크를 해주어야 합니다.
+        </p>
+        <figure>
+          <img
+            style="width: 700px; height: 300px"
+            src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/jasoneditorformatonsave.png?raw=true"
+            alt="prettier"
+          >
+        </figure>
+        <p class="t_box">
+          5. "json"을 검색하여 Edit in settings.json을 눌러줍니다.
+        </p>
+        <figure>
+          <img style="width: 700px; height: 300px" src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/jasonedit.png?raw=true"
+            alt="prettier">
+        </figure>
+        <p class="t_box">
+          6. 밑에와 같은 코드들이 나오는데 저 때 "editor.FormatOnSave"에 true가 적혀있는지 확인해줍니다.
+        </p>
+        <figure>
+          <img style="width: 600px; height: 500px" src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/study/jsoneditor.png?raw=true"
+          alt="prettier">
+        </figure>
+        <p class="t_box">
+          7. 위와 같은 방법으로 했는데 prettier이 실행되지 않는다면 요리에 마법소스를 넣듯 밑의 코드를 넣어주세요. 그럼 해결된답니다!
+        </p>
+        <div class="t_code">
+<pre><code>"editor.defaultFormatter": "esbenp.prettier-vscode",
+"[typescriptreact]": {
+"editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[typescript]": {
+"editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+</code></pre>
+                </div>
+      </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+      <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
