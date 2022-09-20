@@ -740,6 +740,215 @@ document.write("d" in obj);
     </div>
 </div>
 <!-- //sample18 -->
+<div class="main_sample">
+    <div id="sample19" class="sample">
+        <h3>19. 객체 : 데이터 불러오기 : 펼침연산자 - 복사</h3>
+        <p>
+            <br>
+            
+        </p>
+        <div class="script">
+<pre><code class="language-js">const obj = {
+    a: 100, 
+    b: 200, 
+    c: "javascript"
+}
+const spread = { ...obj }
+document.write(spread.a);
+document.write(spread.b);
+document.write(spread.c);
+</code></pre>
+        </div>
+        <div class="result">
+            <details>
+                <summary>결과보기</summary>
+                <div class="sample19_result">
+                   <script>
+                        {        const obj = {
+                            a: 100, 
+                            b: 200, 
+                            c: "javascript"
+                        }
+                        const spread = { ...obj }
+                        document.write(spread.a);
+                        document.write(spread.b);
+                        document.write(spread.c);}
+                   </script>
+                </div>
+            </details>
+        </div>
+    </div>
+</div>
+<!-- //sample19 -->
+<div class="main_sample">
+    <div id="sample20" class="sample">
+        <h3>20. 객체 : 데이터 불러오기 : 펼침연산자-추가</h3>
+        <p>
+            hasOwnProperty 메서드는 객체가 특정 프로퍼티에 대한 소유 여부를 반환합니다. <br>
+            프로퍼티가 존재하면 true, 존재하지 않으면 false를 반환합니다.
+        </p>
+        <div class="script">
+<pre><code class="language-js">const obj = {
+    a: 100, 
+    b: 200, 
+    c: "javascript"
+}
+const spread = { ...obj, d: "jquery" }
+document.write(spread.a);
+document.write(spread.b);
+document.write(spread.c);
+document.write(spread.d);
+</code></pre>
+        </div>
+        <div class="result">
+            <details>
+                <summary>결과보기</summary>
+                <div class="sample20_result">
+                   <script>
+                    
+                   </script>
+                </div>
+            </details>
+        </div>
+    </div>
+</div>
+<!-- //sample20 -->
+<div class="main_sample">
+    <div id="sample21" class="sample">
+        <h3>21. 객체 : 데이터 불러오기 : 펼침연산자 - 결합</h3>
+        <p>
+            hasOwnProperty 메서드는 객체가 특정 프로퍼티에 대한 소유 여부를 반환합니다. <br>
+            프로퍼티가 존재하면 true, 존재하지 않으면 false를 반환합니다.
+        </p>
+        <div class="script">
+<pre><code class="language-js">const objA = {
+    a: 100,
+    b: 200
+}
+const objB = {
+    c: "javascript",
+    d: "jquery"
+}
+
+const spread = {...objA, ...objB}
+
+document.write(spread.a);
+document.write(spread.b);
+document.write(spread.c);
+document.write(spread.d); 
+</code></pre>
+        </div>
+        <div class="result">
+            <details>
+                <summary>결과보기</summary>
+                <div class="sample21_result">
+                   <script>
+                        {const objA = {
+                            a: 100,
+                            b: 200
+                        }
+                        const objB = {
+                            c: "javascript",
+                            d: "jquery"
+                        }
+                    
+                        const spread = {...objA, ...objB}
+                    
+                        document.write(spread.a);
+                        document.write(spread.b);
+                        document.write(spread.c);
+                        document.write(spread.d); }
+                   </script>
+                </div>
+            </details>
+        </div>
+    </div>
+</div>
+<!-- //sample21 -->
+<div class="main_sample">
+    <div id="sample22" class="sample">
+        <h3>22. 객체 : 데이터 불러오기 : 비구조화 할당</h3>
+        <p>
+            hasOwnProperty 메서드는 객체가 특정 프로퍼티에 대한 소유 여부를 반환합니다. <br>
+            프로퍼티가 존재하면 true, 존재하지 않으면 false를 반환합니다.
+        </p>
+        <div class="script">
+<pre><code class="language-js">const obj = {
+    a: 100,
+    b: 200,
+    c: "javascript"
+}
+const {a, b, c} = obj//많이 쓰임
+
+document.write(a);
+document.write(b);
+document.write(c);
+</code></pre>
+        </div>
+        <div class="result">
+            <details>
+                <summary>결과보기</summary>
+                <div class="sample22_result">
+                   <script>
+            {        const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            const {a, b, c} = obj//많이 쓰임
+
+            document.write(a);
+            document.write(b);
+            document.write(c);}
+                   </script>
+                </div>
+            </details>
+        </div>
+    </div>
+</div>
+<!-- //sample22 -->
+<div class="main_sample">
+    <div id="sample23" class="sample">
+        <h3>23. 객체 : 데이터 불러오기 : 객체구조분해할당</h3>
+        <p>
+        </p>
+        <div class="script">
+<pre><code class="language-js"> const obj = {
+    a: 100,
+    b: 200,
+    c: "javascript"
+}
+const {a: name1, b: name2, c: name3} = obj//많이 쓰임, 키값을 변경해서 쓸 수 있음
+
+document.write(name1);
+document.write(name2);
+document.write(name3);
+</code></pre>
+        </div>
+        <div class="result">
+            <details>
+                <summary>결과보기</summary>
+                <div class="sample23_result">
+                   <script>
+                        {
+                            const obj = {
+                                a: 100,
+                                b: 200,
+                                c: "javascript"
+                            }
+                            const {a: name1, b: name2, c: name3} = obj//많이 쓰임, 키값을 변경해서 쓸 수 있음
+                        
+                            document.write(name1), "<br>"
+                            document.write(name2);
+                            document.write(name3);
+                        }
+                   </script>
+                </div>
+            </details>
+        </div>
+    </div>
+</div>
+<!-- //sample23 -->
     </main>
     <!-- //main -->
     <footer id="footer">
@@ -962,6 +1171,75 @@ document.write("d" in obj);
             // document.write("b" in obj);
             // document.write("c" in obj);
             // document.write("d" in obj);
+        }
+        //19. 펼침연산자  : 복사
+        {
+            const obj = {
+                a: 100, 
+                b: 200, 
+                c: "javascript"
+            }
+            const spread = { ...obj }
+            //document.write(spread.a);
+            //document.write(spread.b);
+            //document.write(spread.c);
+        }
+        //20. 추가
+        {
+            const obj = {
+                a: 100, 
+                b: 200, 
+                c: "javascript"
+            }
+            const spread = { ...obj, d: "jquery" }
+            // document.write(spread.a);
+            // document.write(spread.b);
+            // document.write(spread.c);
+            // document.write(spread.d);
+        }
+        //21. 
+        {
+            const objA = {
+                a: 100,
+                b: 200
+            }
+            const objB = {
+                c: "javascript",
+                d: "jquery"
+            }
+
+            const spread = {...objA, ...objB}
+
+            // document.write(spread.a);
+            // document.write(spread.b);
+            // document.write(spread.c);
+            // document.write(spread.d); 
+        }
+        //22. 
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            const {a, b, c} = obj//많이 쓰임
+
+            // document.write(a);
+            // document.write(b);
+            // document.write(c);
+        }
+        //23.
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            const {a: name1, b: name2, c: name3} = obj//많이 쓰임, 키값을 변경해서 쓸 수 있음
+
+            document.write(name1);
+            document.write(name2);
+            document.write(name3);
         }
     </script>
 </body>

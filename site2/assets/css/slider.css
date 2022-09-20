@@ -46,10 +46,6 @@
     padding: 11px 50px;
     display: inline-block;
 }
-.slider__img .desc .btn a.black {
-    background-color: #EA9B71;
-    color: #fff;
-}
 .slider__arrow {}
 .slider__arrow a {
     position: absolute;
