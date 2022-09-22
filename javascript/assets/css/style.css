@@ -408,3 +408,27 @@ body {  /*body는 기본태그여서 앞에 뭐 안 붙음*/
     }
 }
 
+/* top 버튼 */
+#javascript__top {
+    position: fixed;
+    left: 95%;
+    bottom: -200px;
+    z-index: 10000;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(35, 170, 215, 0.566);
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#javascript__top.show {
+    bottom: 50px;
+}
+#javascript__top:hover {
+    background: #fff;
+    color: #000;
+}
+

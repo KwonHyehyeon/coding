@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트02</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">🖱 마우스 이펙트 : 조명 효과</h2>
+        <p class="t_desc">
+            📌 마우스 cursor 부분을 통해 이미지를 밝혀주는 이펙트입니다.<br>
+        </p>
+        <hr>
+        <h3 class="t_tit2">마우스 이펙트 완성본⭐️</h3>
+        <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/mouseEffect03.html" frameborder="0"></iframe>
+        </div>
+        <div class="t_link">
+            <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/mouseEffect03.html" target="_blank"
+            >마우스 이펙트가 궁금하다면?💡</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/mouseEffect03.html" target="_blank"
+            >원본 소스보기</a>
+        </div>  
+        <h3 class="t_tit2">➰ HTML</h3>
+        <p class="t_desc2">
+            마우스 커서를 만들어주고 마음에 드는 문장을 적어줍니다.
+        </p>
+                <div class="t_code">
+<pre><code class="language-js">&lt;header id="header"&gt;
+    &lt;h1&gt;&lt;a href="mouseEffect.html"&gt;Javascript Mouse Effect03&lt;/a&gt;&lt;/h1&gt;
+    &lt;p&gt;마우스 이펙트 - 조명효과&lt;/p&gt;
+    &lt;ul class="active1"&gt; 
+        &lt;li&gt;&lt;a href="mouseEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="active"&gt;&lt;a href="mouseEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/header&gt;
+&lt;!-- //header --&gt;
+&lt;main id="main"&gt;
+  &lt;section id="mouseType"&gt;
+    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+    &lt;div class="mouse__wrap"&gt;
+        &lt;p&gt;I &lt;span&gt;Dream&lt;/span&gt; my Painting and I paing my &lt;span&gt;Dream&lt;/span&gt;.&lt;/p&gt;
+        &lt;p&gt;나는 나의 그림을 &lt;span&gt;꿈&lt;/span&gt; 꾸고, 내 &lt;span&gt;꿈&lt;/span&gt;을 그린다.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+                </div>
+        <h3 class="t_tit2">➰ CSS</h3>
+    <p class="t_desc2">
+        css로 스타일을 입혀줍니다.
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">/* mouseType */
+body::after {
+    background: rgba(0, 0, 0, 0.6);
+    }       
+.mouse__wrap {
+  /* vw라고 써주면 스크롤바 생기기 때문에 */
+  width: 100%;
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+  /* 두 줄로 나오게 하기 */
+  flex-direction: column;
+  cursor: none;
+}
+.mouse__wrap p {
+  font-size: 2vw;
+  line-height: 2;
+  font-weight: 300;
+}
+.mouse__wrap p:last-child {
+  font-size: 3vw;
+  font-weight: 300;
+}
+.mouse__wrap p span {
+  border-bottom: 0.15vw dashed rgb(255, 253, 164); 
+  color: rgb(255, 253, 164);
+}
+@media (max-width: 800px) {
+  .mouse__wrap p {
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .mouse__wrap p:last-child {
+    font-size: 40px;
+    line-height: 1.5;
+    text-align: center;
+    /* 단어로 끊기 */
+    word-break: keep-all;
+  }
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+    background: #fff;
+    background-image: url(../assets/img/effect_bg@2x015.jpg);
+    background-size: cover;
+    background-position: center;
+    /* 뒤에 이미지 고정 */
+    background-attachment: fixed;
+    border: 5px solid #fff;
+    cursor: none;
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">➰ JS</h3>
+        <p class="t_desc2">
+            주석을 참고해주세요!
+        </p>
+                <div class="t_code">
+<pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor");
+//마우스커서 효과넣은 것 마우스 가운데로 오게 하기 width값 구하기
+//offsetWidth와 clientWidth값 차이 : 보더값 포함 미포함
+// const circleW = cursor.offsetWidth;
+// const circleH = cursor.offsetHeight; //200
+// const circle2 = cursor.clientWidth;  //190 : 보더값 제외
+const circle = cursor.getBoundingClientRect();
+//console.log(circle);
+// const DOMRect = {
+//     x: 0,
+//     y: 0,
+//     bottom : 200,
+//     height : 200,
+//     left: 0,
+//     right: 200,
+//     top : 0,
+//     width:200
+// }
+//마우스가 움직였을 때
+window.addEventListener("mousemove", (e) =&gt; {
+    // e.page마우스 좌표값
+    gsap.to(cursor, {
+        duration: 0.5, 
+        left: e.pageX - circle.width/2, 
+        top: e.pageY - circle.height/2,
+    });
+});
+</code></pre>
+                </div>
+<!-- document -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

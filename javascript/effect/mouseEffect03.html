@@ -4,113 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마우스 이펙트02</title>
+    <title>마우스 이펙트03</title>
     <link rel="stylesheet" href="../assets/css/mouse.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <style>
-      /* mouseType */
-      .mouse__wrap {
-        /* vw라고 써주면 스크롤바 생기기 때문에 */
-        width: 100%;
-        height: 100vh; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        overflow: hidden;
-        /* 두 줄로 나오게 하기 */
-        flex-direction: column;
-        cursor: none;
-      }
-      .mouse__wrap p {
-        font-size: 2vw;
-        line-height: 2;
-        font-weight: 300;
-      }
-      .mouse__wrap p:last-child {
-        font-size: 3vw;
-        font-weight: 300;
-      }
-      .mouse__wrap p span {
-        border-bottom: 0.15vw dashed rgb(255, 253, 164); 
-        color: rgb(255, 253, 164);
-      }
-      @media (max-width: 800px) {
+        /* mouseType */
+        body::after {
+        background: rgba(0, 0, 0, 0.6);
+        }       
+        .mouse__wrap {
+          /* vw라고 써주면 스크롤바 생기기 때문에 */
+          width: 100%;
+          height: 100vh; 
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          overflow: hidden;
+          /* 두 줄로 나오게 하기 */
+          flex-direction: column;
+          cursor: none;
+        }
         .mouse__wrap p {
-          font-size: 30px;
-          padding: 0 20px;
-          line-height: 1.5;
-          text-align: center;
-          margin-bottom: 10px;
+          font-size: 2vw;
+          line-height: 2;
+          font-weight: 300;
         }
         .mouse__wrap p:last-child {
-          font-size: 40px;
-          line-height: 1.5;
-          text-align: center;
-          /* 단어로 끊기 */
-          word-break: keep-all;
+          font-size: 3vw;
+          font-weight: 300;
         }
-      }
-      .mouse__cursor {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 10px;
-        height: 10px;
-        z-index: 9999;
-        border-radius: 50%;
-        background-color: rgba(225,225,225,0.1);
-        /* 선택이나 클릭 안되게 할 때 */
-        user-select: none;
-        pointer-events: none;
-        transition: transform 0.3s, opacity 0.2s;
-      }
-      .mouse__cursor2 {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 30px;
-        height: 30px;
-        z-index: 9998;
-        border-radius: 50%;
-        background-color: rgba(225,225,225,0.3);
-        /* 선택이나 클릭 안되게 할 때 */
-        user-select: none;
-        pointer-events: none;
-        transition: transform 0.3s, opacity 0.2s;
-      }
-      .mouse__cursor.active {
-        transform: scale(0);
-      }
-      .mouse__cursor2.active {
-        transform: scale(5);
-        background: rgba(255,166,0,0.6);
-      }
-      .mouse__cursor.active1{
-        transform: scale(0);
-      }
-      .mouse__cursor2.active1{
-        transform: scale(7);
-        background-color: rgba(229, 67, 215, 0.484);
-      }
-      .mouse__cursor.active2{
-        transform: scale(0)
-      }
-      .mouse__cursor2.active2{
-        background-color: #9bfd7d;
-        transform: scale(2) rotateY(720deg);
-      }
+        .mouse__wrap p span {
+          border-bottom: 0.15vw dashed rgb(255, 253, 164); 
+          color: rgb(255, 253, 164);
+        }
+        @media (max-width: 800px) {
+          .mouse__wrap p {
+            font-size: 30px;
+            padding: 0 20px;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 10px;
+          }
+          .mouse__wrap p:last-child {
+            font-size: 40px;
+            line-height: 1.5;
+            text-align: center;
+            /* 단어로 끊기 */
+            word-break: keep-all;
+          }
+        }
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            z-index: -1;
+            border-radius: 50%;
+            background: #fff;
+            background-image: url(../assets/img/effect_bg@2x015.jpg);
+            background-size: cover;
+            background-position: center;
+            /* 뒤에 이미지 고정 */
+            background-attachment: fixed;
+            border: 5px solid #fff;
+            cursor: none;
+        }
     </style>
 </head>
-<body class="img04">
+<body class="img05">
     <header id="header">
-        <h1><a href="mouseEffect.html">Javascript Mouse Effect02</a></h1>
-        <p>마우스 이펙트 - 마우스 따라다니기(GSAP)</p>
+        <h1><a href="mouseEffect.html">Javascript Mouse Effect03</a></h1>
+        <p>마우스 이펙트 - 조명효과</p>
         <ul class="active1"> 
             <li><a href="mouseEffect01.html">1</a></li>
-            <li class="active"><a href="mouseEffect02.html">2</a></li>
-            <li><a href="mouseEffect03.html">3</a></li>
+            <li><a href="mouseEffect02.html">2</a></li>
+            <li class="active"><a href="mouseEffect03.html">3</a></li>
             <li><a href="mouseEffect04.html">4</a></li>
             <li><a href="mouseEffect05.html">5</a></li>
             <li><a href="mouseEffect06.html">6</a></li>
@@ -121,11 +92,9 @@
     <main id="main">
       <section id="mouseType">
         <div class="mouse__cursor"></div>
-        <div class="mouse__cursor2"></div>
         <div class="mouse__wrap">
-            지금 시작하세요. 미래는 아무에게도 약속되지 않았습니다.
-            <p>Go for it <span class="style1">now</span>. The <span class="style2">future</span> is promise to<span class="style3"> no</span> one.</p>
-            <p><span class="style4">지금</span> 시작하세요. <span class="style5">미래</span>는 <span class="style6">아무</span>에게도 약속되지 않았습니다.</p>
+            <p>I <span>Dream</span> my Painting and I paing my <span>Dream</span>.</p>
+            <p>나는 나의 그림을 <span>꿈</span> 꾸고, 내 <span>꿈</span>을 그린다.</p>
         </div>
       </section>
     </main>
@@ -441,56 +410,37 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
 
     <script>
         const cursor = document.querySelector(".mouse__cursor");
-        const cursor2 = document.querySelector(".mouse__cursor2");     
-        const span = document.querySelectorAll(".mouse__wrap span");
-        //마우스 좌표값 e : event
-        window.addEventListener("mousemove", e => {
-            //커서 좌표값 할당
-            // cursor.style.left = e.pageX -5 + "px";
-            // cursor.style.top = e.pageY -5 + "px";
-            // cursor2.style.left = e.pageX -15 + "px";
-            // cursor2.style.top = e.pageY -15 + "px";
 
-            //GSAP
-            gsap.to(cursor, {duration: 0.3, left: e.pageX -5, top: e.pageY -5});
-            gsap.to(cursor2, {duration: 0.8, left: e.pageX -15, top: e.pageY -15});
+        //마우스커서 효과넣은 것 마우스 가운데로 오게 하기 width값 구하기
+        //offsetWidth와 clientWidth값 차이 : 
+        // const circleW = cursor.offsetWidth;
+        // const circleH = cursor.offsetHeight; //200
+        // const circle2 = cursor.clientWidth; //190 : 보더값 제외
 
-            //오버 효과
+         const circle = cursor.getBoundingClientRect();
+        // console.log(circle);
+        // const DOMRect = {
+        //     x: 0,
+        //     y: 0,
+        //     bottom : 200,
+        //     height : 200,
+        //     left: 0,
+        //     right: 200,
+        //     top : 0,
+        //     width:200
+        // }
 
-            //예전 버전 
-            // span.forEach(function(){
-            //     this.addEventListener("mouseenter", function(){})
-            // })
-
-            //최신 버전 : 화살표함수에서는 this 못 씀
-            span.forEach(span => {
-                //mouseenter / mouseover / 이벤트 버블링
-                span.addEventListener("mouseenter", () => {
-                    cursor.classList.add("active");
-                    cursor2.classList.add("active");
-                });
-                span.addEventListener("mouseleave", () => {
-                    cursor.classList.remove("active");
-                    cursor2.classList.remove("active");
-                });
-                document.querySelector(".active1").addEventListener("mouseover", () => {
-                  cursor.classList.add("active1");
-                  cursor2.classList.add("active1");
-                })
-                document.querySelector(".active1").addEventListener("mouseleave", () => {
-                  cursor.classList.remove("active1");
-                  cursor2.classList.remove("active1");
-                })
-                document.querySelector(".active2").addEventListener("mouseover", () => {
-                  cursor.classList.add("active2");
-                  cursor2.classList.add("active2");
-                })
-                document.querySelector(".active2").addEventListener("mouseleave", () => {
-                  cursor.classList.remove("active2");
-                  cursor2.classList.remove("active2");
-                })
+        //마우스 커서 e
+        window.addEventListener("mousemove", (e) => {
+            // e.page마우스 좌표값
+            gsap.to(cursor, {
+                duration: 0.5, 
+                //커서 가운데로 위치하기 위함
+                left: e.pageX - circle.width/2, 
+                top: e.pageY - circle.height/2,
             });
-        });   
+        });
+
     </script>
 </body>
 </html>

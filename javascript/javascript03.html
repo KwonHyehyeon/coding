@@ -42,7 +42,9 @@
         </nav>
     </header>
     <!-- //header -->
-
+    <div id="javascript__top">
+        Top
+    </div>
     <main id="main">
         <div class="container">
             <div class="main_menu">
@@ -1216,6 +1218,7 @@ info2.result2();
     </footer>
     <!-- //footer --> 
     <script src="assets/js/highlight.min.js"></script>
+    <script src="assets/js/top.js"></script>
     <script>
         hljs.highlightAll();
     </script>
@@ -1386,7 +1389,6 @@ info2.result2();
        // info.result2();
        // info.result3();
     }
-    document.write("<br>")
     //17. 함수 유형 : 객체 생성자 함수 (제일 많이 사용)
     //재활용 가능하도록 객체 + 함수를 합침 16번을 보완한 방법 
     {
@@ -1619,18 +1621,18 @@ info2.result2();
     }
     //27 내부 함수 
     {
-        function func(){
-            function funcA(){
-                document.write("함수가 실행되었습니다.");
-            };
-            funcA();
+        // function func(){
+        //     function funcA(){
+        //         document.write("함수가 실행되었습니다.");
+        //     };
+        //     funcA();
 
-            function funcB(){
-                document.write("함수가 실행되었습니다.");
-            }};
-            funcB();
-        }
-        func();
+        //     function funcB(){
+        //         document.write("함수가 실행되었습니다.");
+        //     }};
+        //     funcB();
+        // }
+        // func();
     }
     //클래스 : 함수의 집합체
     // {
@@ -1657,21 +1659,21 @@ info2.result2();
     //30. 클래스 상속
     {
         //확장
-        class study2 extends study {
-            constructor(num, name, job, age){
-                super(num, name, job);
-                this.age = age;
-            }
-            result(){
-                document.write(this.num + ".내 이름은 " +this.name + "이며, 직업은" + this.job +"이며 나이는 "+ this.age + "입니다.")
-            }
-        }
-        const info1 = new study("1", "웹쓰", "웹퍼블리셔");
-        const info2 = new study2("2", "웹쓰", "프론트엔드 개발자", 100);
+        // class study2 extends study {
+        //     constructor(num, name, job, age){
+        //         super(num, name, job);
+        //         this.age = age;
+        //     }
+        //     result(){
+        //         document.write(this.num + ".내 이름은 " +this.name + "이며, 직업은" + this.job +"이며 나이는 "+ this.age + "입니다.")
+        //     }
+        // }
+        // const info1 = new study("1", "웹쓰", "웹퍼블리셔");
+        // const info2 = new study2("2", "웹쓰", "프론트엔드 개발자", 100);
 
-        info1.result();
-        info2.result();
-        info2.result2();
+        // info1.result();
+        // info2.result();
+        // info2.result2();
 
     }
 

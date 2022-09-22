@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트04</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">🖱 마우스 이펙트 : 이미지 효과</h2>
+        <p class="t_desc">
+            📌 마우스 커서를 이미지 영역에서 움직일 때 이미지가 반대방향으로 살짝 움직이게 하는 이펙트입니다.<br>
+            이해하기가 쉽지 않았는데 많은 학우분들의 자세한 설명 덕분에 이해할 수 있었습니다:)
+        </p>
+        <hr>
+        <h3 class="t_tit2">마우스 이펙트 완성본⭐️</h3>
+        <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/mouseEffect04.html" frameborder="0"></iframe>
+        </div>
+        <div class="t_link">
+            <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/mouseEffect04.html" target="_blank"
+            >마우스 이펙트가 궁금하다면?💡</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/mouseEffect04.html" target="_blank"
+            >원본 소스보기</a>
+        </div>  
+        <h3 class="t_tit2">➰ HTML</h3>
+        <p class="t_desc2">
+            먼저 마우스 커서를 만들어주고 마우스 좌표값이 나오도록 mouse__info를 만들어줍니다.<br>
+            푸터를 제외한 부분입니다.
+        </p>
+                <div class="t_code">
+<pre><code class="language-js"> &lt;header id="header"&gt;
+    &lt;h1&gt;&lt;a href="mouseEffect.html"&gt;Javascript Mouse Effect03&lt;/a&gt;&lt;/h1&gt;
+    &lt;p&gt;마우스 이펙트 - 이미지 효과&lt;/p&gt;
+    &lt;ul class="active1"&gt; 
+        &lt;li&gt;&lt;a href="mouseEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="active"&gt;&lt;a href="mouseEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/header&gt;
+&lt;!-- //header --&gt;
+&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;figure&gt;
+                &lt;img src="../assets/img/effect_bg05.jpg" alt="이미지"&gt;
+                &lt;figcaption&gt;
+                    &lt;p&gt;When you have a dream, you've got to grab it and never let go.&lt;/p&gt;
+                    &lt;p&gt;꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.&lt;/p&gt;
+                &lt;/figcaption&gt;
+            &lt;/figure&gt;
+        &lt;/div&gt;   
+    &lt;/section&gt;
+
+    &lt;div class="mouse__info"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;mousePageX : &lt;span class="mousePageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+          &lt;li&gt;mousePageY : &lt;span class="mousePageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+          &lt;li&gt;centerPageX : &lt;span class="centerPageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+          &lt;li&gt;centerPageY : &lt;span class="centerPageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;!-- //main --&gt;
+</code></pre>
+                </div>
+        <h3 class="t_tit2">➰ CSS</h3>
+    <p class="t_desc2">
+        css로 스타일을 입혀줍니다.
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">        /* mouseType */
+.mouse__wrap {
+  /* vw라고 써주면 스크롤바 생기기 때문에 */
+  width: 100%;
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  overflow: hidden;
+  /* 두 줄로 나오게 하기 */
+  /* cursor: none; */
+}
+.mouse__wrap figure {
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    transition: transform 500ms ease;
+    cursor: none;
+}
+.mouse__wrap figure:hover {
+    transform: scale(1/025);
+}
+.mouse__wrap figure img {
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+    /* 반응형위해 백그라운드 사이즈 커버와 비슷한 효과 */
+    object-fit: cover;
+}
+.mouse__wrap figure figcaption{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 16px;
+    /* 한줄로 나오게하기 */
+    white-space: nowrap;
+    line-height: 1.4;
+    font-weight: 300;
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1000;
+    user-select: none;
+    pointer-events: none;
+}
+.mouse__info {
+position: absolute;
+left: 20px;
+bottom: 10px;
+font-size: 14px;
+line-height: 1.6;
+color: #fff;
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">➰ JS</h3>
+        <p class="t_desc2">
+            주석을 참고해주세요!
+        </p>
+                <div class="t_code">
+<pre><code class="language-js">        // 모든 좌표값 가져오기 getBoundingClientRect()
+const cursor = document.querySelector(".mouse__cursor");
+const cursorRect = cursor.getBoundingClientRect();
+
+//figure부분에서 마우스를 움직일 때
+document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) =&gt; {
+    // 커서
+    //0.5초 동안 
+    gsap.to(cursor, {
+        duration: .5,
+        // 동그라미 마우스 커서 방향별 값을 설정해주어야 움직임
+        left: e.pageX - cursorRect.width/2,
+        top: e.pageY - cursorRect.height/2,
+    });
+
+    //pageX, pageY : X좌표값, Y좌표값
+    //마우스 좌표 값 (페이지 기준)
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
+
+    //전체 가로
+    // window.innerWidth //1920 : 브라우저 크기 (스크롤 미포함)
+    // window.outerWidth //1920 : 브라우저 크기 (스크롤바 포함)
+    // window.screen.width //1920 : 화면 크기 
+
+    //마우스 좌표값 가운데로 초기화
+    //전체 길이/2 - 마우스 좌표값 == 0
+    //window.innerWidth/2, window.innerHeight/2은 화면의 중앙이고 고정되어 있음. 
+    //살짝의 오차를 주어 이미지에 움직이는 효과를 주기 위한 기본적인 방법으로 mousePageX, mousePageY(페이지 가운데 있다는 가정 하에 마우스 커서만큼의 값)을 빼주어야함.
+    //그럼 이미지의 움직임 가능(그림의 중앙 좌표값(?)centerPage이 바뀜)
+    //mousePageX 오른쪽으로 가면 페이지 절반 값보다 좌표값이 더 크므로 전체 - : 이미지 왼쪽으로 이동
+    //mousePageX 왼쪽으로 가면 페이지 절반 값보다 좌표값이 더 작으므로 전체 + : 이미지 오른쪽으로 이동
+    let centerPageX = window.innerWidth/2 - mousePageX;
+    let centerPageY= window.innerHeight/2 - mousePageY;
+
+    //이미지 움직이기
+    const imgMove = document.querySelector(".mouse__wrap figure img");
+    // imgMove.style.transform = "translate("+ centerPageX/20 +"px, "+ centerPageY/20 +"px)";
+
+    //gsap
+    //이미지를 움직이게 하는 0.3초동안의 움직임
+    //x축으로 centerPageX에서 20으로 나눈 값 : 조금 더 움직임을 위해? (더 많은 값으로 나눌수록 적게 이동함)
+    //커서와 같은 방향으로 움직이게 하려면 음수로 나누어주고, 반대방향으로 움직이게 하려면 양수로 나누어 주면 가능함.
+    // = imgMove.style.transform = "translate("+ centerPageX/20 +"px, "+ centerPageY/20 +"px)";
+    gsap.to (imgMove, {
+        duration: 0.3,
+        x: centerPageX/20,
+        y: centerPageY/20
+    })
+
+    //출력
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+});
+</code></pre>
+                </div>
+<!-- document -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

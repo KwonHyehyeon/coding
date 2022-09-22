@@ -1,176 +1,487 @@
 &lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
+&lt;html lang="en"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;이미지 유형 02&lt;/title&gt;
+    &lt;title&gt;마우스 이펙트04&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../assets/css/mouse.css"&gt;
+    &lt;link rel="stylesheet" href="../assets/css/dracula.css"&gt;
+    &lt;link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet"&gt;
     &lt;style&gt;
-        /* fonts */
-        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
-        .gmarket {
-            font-family: 'GmarketSans';
-            font-weight: 400;
+        /* mouseType */
+        .mouse__wrap {
+          /* vw라고 써주면 스크롤바 생기기 때문에 */
+          width: 100%;
+          height: 100vh; 
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          color: #fff;
+          overflow: hidden;
+          /* 두 줄로 나오게 하기 */
+          /* cursor: none; */
         }
-        /* reset */
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: normal;
-        }
-        a {
-            text-decoration: none;
-            color: #000;
-        }
-        img {
-            width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
-        }
-        /* common */
-        .container {
-            width: 1160px;
-            padding: 0 20px;
-            margin: 0 auto;
-            min-width: 1160px;  /* 반응형 할 때 없애줄 것 */
-        }
-        .section {
-            padding: 120px 0;
-        }
-        .section &gt; h1 {
-            font-size: 50px;
-            line-height: 1;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .section &gt; p {
-            font-size: 22px;
-            font-weight: 300;
-            text-align: center;
-            margin-bottom: 70px;
-            color: #666;
-        }
-        /* imageType */
-        .image__inner {
-            display: flex;
-            justify-content: space-between;
-        }
-        .image {
-            width: 32%;
+        .mouse__wrap figure {
+            width: 50vw;
+            height: 50vh;
             position: relative;
             overflow: hidden;
+            transition: transform 500ms ease;
+            cursor: none;
         }
-        .image__box {
-            height: 100%;
+        .mouse__wrap figure:hover {
+            transform: scale(1/025);
         }
-        .image__box img {
-            transition: all 0.5s ease-in-out;
-        }
-        .image__desc {
+        .mouse__wrap figure img {
             position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
+            left: -5%;
+            top: -5%;
+            width: 110%;
+            height: 110%;
+            /* 반응형위해 백그라운드 사이즈 커버와 비슷한 효과 */
+            object-fit: cover;
+        }
+        .mouse__wrap figure figcaption{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            padding: 20px;
-            box-sizing: border-box;     /* image__desc 박스 안넘치게 하기 */
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease-in-out;
-        }
-        .img1 .image__desc {
-            background: rgba(253, 167, 246, 0.5);
-        }
-        .img1 .image__desc h3 {
-            color: #fff;
-        }
-        .img1 .image__desc .more {
-            color: #fff;
-        }
-        .img2 .image__desc {
-            background-color: rgba(176, 233, 255, 0.5);
-        }
-        .img2 .image__desc h3 {
-            color: #006462;
-        }
-        .img2 .image__desc .more {
-            color: #006462;
-        }
-        .img3 .image__desc {
-            background-color: rgba(7, 139, 111, 0.5);
-        }
-        .img3 .image__desc h3 {
-            color: #183169;
-        }
-        .img3 .image__desc .more {
-            color: #183169;
-        }
-        .img1 .image__desc {
-            bottom: -100px;
-        }
-        .img1:hover .image__desc {
-            bottom: 0;
-        }
-        .img2 .image__desc {
-            bottom: -100px;
-        }
-        .img2:hover .image__desc {
-            bottom: 0;
-        }
-        .img3 .image__desc {
-            bottom: -100px;
-        }
-        .img3:hover .image__desc {
-            bottom: 0;
-        }
-        .image:hover .image__box img {
-            transform: scale(1.05);
-        }
-        .image__desc h3 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        .image__desc .more {
             font-size: 16px;
+            /* 한줄로 나오게하기 */
+            white-space: nowrap;
+            line-height: 1.4;
             font-weight: 300;
         }
-        .image__desc .more:hover {
-            text-decoration: underline;
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 1000;
+            user-select: none;
+            pointer-events: none;
+        }
+        .mouse__info {
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #fff;
         }
     &lt;/style&gt;
 &lt;/head&gt;
-&lt;body&gt;
-    &lt;section id="imageType02" class="image__wrap gmarket section"&gt;
-        &lt;h1&gt;북극곰의 귀여운 사진들&lt;/h1&gt;
-        &lt;p&gt;곰은 사람을 찢어~맞는 말이지만 그래도 한없이 귀여운 북극곰들&lt;/p&gt;
-        &lt;div class="image__inner container"&gt;
-            &lt;article class="image img1"&gt;
-                &lt;figure class="image__box"&gt;
-                    &lt;img src="img/polarbear1.jpg" alt="북극곰"&gt;
+&lt;body class="img06"&gt;
+    &lt;header id="header"&gt;
+        &lt;h1&gt;&lt;a href="mouseEffect.html"&gt;Javascript Mouse Effect03&lt;/a&gt;&lt;/h1&gt;
+        &lt;p&gt;마우스 이펙트 - 이미지 효과&lt;/p&gt;
+        &lt;ul class="active1"&gt; 
+            &lt;li&gt;&lt;a href="mouseEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="mouseEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="mouseEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="mouseEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="mouseEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="mouseEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="mouseEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/header&gt;
+    &lt;!-- //header --&gt;
+    &lt;main id="main"&gt;
+        &lt;section id="mouseType"&gt;
+            &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+            &lt;div class="mouse__wrap"&gt;
+                &lt;figure&gt;
+                    &lt;img src="../assets/img/effect_bg05.jpg" alt="이미지"&gt;
+                    &lt;figcaption&gt;
+                        &lt;p&gt;When you have a dream, you've got to grab it and never let go.&lt;/p&gt;
+                        &lt;p&gt;꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.&lt;/p&gt;
+                    &lt;/figcaption&gt;
                 &lt;/figure&gt;
-                &lt;div class="image__desc"&gt;
-                    &lt;h3&gt;인사하는 북극곰&lt;/h3&gt;
-                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
-                &lt;/div&gt;
-            &lt;/article&gt;
-            &lt;article class="image img2"&gt;
-                &lt;figure class="image__box"&gt;
-                    &lt;img src="img/polarbear2.jpg" alt="북극곰"&gt;
-                &lt;/figure&gt;
-                &lt;div class="image__desc"&gt;
-                    &lt;h3&gt;장난치는 북극곰&lt;/h3&gt;
-                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
-                &lt;/div&gt;
-            &lt;/article&gt;
-            &lt;article class="image img3"&gt;
-                &lt;figure class="image__box"&gt;
-                    &lt;img src="img/polarbear3.jpg" alt="북극곰"&gt;
-                &lt;/figure&gt;
-                &lt;div class="image__desc"&gt;
-                    &lt;h3&gt;수영하는 북극곰&lt;/h3&gt;
-                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
-                &lt;/div&gt;
-            &lt;/article&gt;
+            &lt;/div&gt;   
+        &lt;/section&gt;
+
+        &lt;div class="mouse__info"&gt;
+            &lt;ul&gt;
+              &lt;li&gt;mousePageX : &lt;span class="mousePageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+              &lt;li&gt;mousePageY : &lt;span class="mousePageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+              &lt;li&gt;centerPageX : &lt;span class="centerPageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+              &lt;li&gt;centerPageY : &lt;span class="centerPageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;/ul&gt;
         &lt;/div&gt;
-    &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;!-- //main --&gt;
+    &lt;footer id="footer"&gt;
+        &lt;div class="modal__wrap"&gt;
+            &lt;div class="modal__btn active2"&gt;소스 보기&lt;/div&gt;
+            &lt;div class="modal__cont"&gt;
+                &lt;div class="modal__box"&gt;
+                    &lt;div class="title"&gt;
+                        &lt;span class="dot" aria-label="true"&gt;&lt;/span&gt;
+                        &lt;div class="tabs"&gt;
+                            &lt;div class="active"&gt;
+                                &lt;span class="favicon" aria-label="true"&gt;
+                                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false"&gt;
+                                        &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
+                                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"&gt;&lt;/path&gt;
+                                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"&gt;&lt;/path&gt;
+                                    &lt;/svg&gt;
+                                &lt;/span&gt;
+                                &lt;em&gt;Javascript&lt;/em&gt;
+                                &lt;span class="close"&gt;
+                                    &lt;svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                    &lt;/svg&gt;
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;span class="favicon" aria-label="true"&gt;
+                                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false"&gt;
+                                        &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
+                                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"&gt;&lt;/path&gt;
+                                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"&gt;&lt;/path&gt;
+                                    &lt;/svg&gt;
+                                &lt;/span&gt;
+                                &lt;em&gt;HTML&lt;/em&gt;
+                                &lt;span class="close"&gt;
+                                    &lt;svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                    &lt;/svg&gt;
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;span class="favicon" aria-label="true"&gt;
+                                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false"&gt;
+                                        &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
+                                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"&gt;&lt;/path&gt;
+                                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"&gt;&lt;/path&gt;
+                                    &lt;/svg&gt;
+                                &lt;/span&gt;
+                                &lt;em&gt;CSS&lt;/em&gt;
+                                &lt;span class="close"&gt;
+                                    &lt;svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                    &lt;/svg&gt;
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;span class="plus" aria-label="true"&gt;
+                            &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                                &lt;path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                                &lt;path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="cont"&gt;
+                        &lt;div class="active"&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;      // 마우스 따라다니게 하기
+// 마우스가 움직였을 때 마우스 움직이는 값(event)을 가져올 수 있음
+window.addEventListener("mousemove", (event) =&gt; {
+  document.querySelector(".clientX").innerText = event.clientX
+  document.querySelector(".clientY").innerText = event.clientY
+  document.querySelector(".offsetX").innerText = event.offsetX
+  document.querySelector(".offsetY").innerText = event.offsetY
+  document.querySelector(".pageX").innerText = event.pageX
+  document.querySelector(".pageY").innerText = event.pageY
+  document.querySelector(".screenX").innerText = event.screenX
+  document.querySelector(".screenY").innerText = event.screenY
+});
+const cursor = document.querySelector(".mouse__cursor")
+window.addEventListener("mousemove", (e) =&gt; {
+  //const cursor = document.querySelector(".mouse__cursor")
+  //커서에 포지션 되어있기 때문에 left
+  //px 처럼 단위값을 써주어야 실행됨
+  cursor.style.left = e.clientX -25 + "px";
+  cursor.style.top = e.clientY -25 + "px";
+});
+// document.querySelector(".style1").addEventListener("mouseover", () =&gt; {
+//   //작동안함 : 위에 지역변수 이기 때문에
+//   //cursor.classList.add(".style1");
+//   cursor.classList.add("style1");
+// })
+// document.querySelector(".style1").addEventListener("mouseout", () =&gt; {
+//   cursor.classList.remove("style1");
+  
+// })
+// document.querySelector(".style2").addEventListener("mouseover", () =&gt; {
+//   cursor.classList.add("style2");
+// })
+// document.querySelector(".style2").addEventListener("mouseout", () =&gt; {
+//   cursor.classList.remove("style2");
+// })
+// document.querySelector(".style3").addEventListener("mouseover", () =&gt; {
+//   cursor.classList.add("style3");
+// })
+// document.querySelector(".style3").addEventListener("mouseout", () =&gt; {
+//   cursor.classList.remove("style3");
+// })
+// document.querySelector(".style4").addEventListener("mouseover", () =&gt; {
+//   cursor.classList.add("style4");
+// })
+// document.querySelector(".style4").addEventListener("mouseout", () =&gt; {
+//   cursor.classList.remove("style4");
+// })
+// document.querySelector(".style5").addEventListener("mouseover", () =&gt; {
+//   cursor.classList.add("style5");
+// })
+// document.querySelector(".style5").addEventListener("mouseout", () =&gt; {
+//   cursor.classList.remove("style5");
+// })
+// document.querySelector(".style6").addEventListener("mouseover", () =&gt; {
+//   cursor.classList.add("style6");
+// })
+// document.querySelector(".style6").addEventListener("mouseout", () =&gt; {
+//   cursor.classList.remove("style6");
+// })
+// for(let i=1; i&lt;7; i++){
+//   document.querySelector(".style" + i).addEventListener("mouseover", () =&gt; {
+//     cursor.classList.add("style" + i)})
+//   document.querySelector(".style" + i).addEventListener("mouseout", () =&gt; {
+//    cursor.classList.remove("style" + i)})
+// };
+//forEach() 나
+// const num = [1, 2, 3, 4, 5, 6]
+// num.forEach((el)=&gt;{
+//   document.querySelector(".style" + [el]).addEventListener("mouseover", () =&gt; {
+//     cursor.classList.add("style" + [el])})
+//   document.querySelector(".style" + [el]).addEventListener("mouseout", () =&gt; {
+//     cursor.classList.remove("style" + [el])})
+// })
+//forEach() 선생님
+// document.querySelectorAll(".mouse__wrap span").forEach((span, num) =&gt; {
+//   span.addEventListener("mouseover", () =&gt; {
+//     cursor.classList.add("style" + (num+1))
+//   })
+//   span.addEventListener("mouseout", () =&gt; {
+//     cursor.classList.remove("style" + (num+1))
+//   })
+// })
+//속성값 가져오기 (만약에 class="style55"이럴때 : 클래스 명이 바껴도 상관없게!)
+//getAttribute
+document.querySelectorAll(".mouse__wrap span").forEach( span =&gt; {
+  let attr = span.getAttribute("class");
+  span.addEventListener("mouseover", () =&gt; {
+    cursor.classList.add(attr)
+  })
+  span.addEventListener("mouseout", () =&gt; {
+    cursor.classList.remove(attr)
+  })
+})
+&lt;/code&gt;&lt;/pre&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&lt;main id="main"&gt;
+  &lt;section id="mouseType"&gt;
+    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+    &lt;div class="mouse__wrap"&gt;
+        &lt;p&gt;The &lt;span class="style1"&gt;future&lt;/span&gt; depends on what we &lt;span class="style2"&gt;do&lt;/span&gt; in the &lt;span class="style3"&gt;present&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;span class="style4"&gt;미래&lt;/span&gt;는 &lt;span class="style5"&gt;현재&lt;/span&gt; 우리가 무엇을 &lt;span class="style6"&gt;하는가&lt;/span&gt;에 달려 있다.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+    &lt;div class="mouse__info"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;clientX : &lt;span class="clientX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;clientY : &lt;span class="clientY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;offsetX : &lt;span class="offsetX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;offsetY : &lt;span class="offsetY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;pageX : &lt;span class="pageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;pageY : &lt;span class="pageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;screenX : &lt;span class="screenX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;screenY : &lt;span class="screenY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;/code&gt;&lt;/pre&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+&lt;pre&gt;&lt;code class="language-css"&gt;/* mouseType */
+.mouse__wrap {
+  /* vw라고 써주면 스크롤바 생기기 때문에 */
+  width: 100%;
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+  /* 두 줄로 나오게 하기 */
+  flex-direction: column;
+  cursor: none;
+}
+.mouse__wrap p {
+  font-size: 2vw;
+  line-height: 2;
+  font-weight: 300;
+}
+.mouse__wrap p:last-child {
+  font-size: 3vw;
+  font-weight: 300;
+}
+.mouse__wrap p span {
+  border-bottom: 0.15vw dashed rgb(255, 253, 164); 
+  color: rgb(255, 253, 164);
+}
+@media (max-width: 800px) {
+  .mouse__wrap p {
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .mouse__wrap p:last-child {
+    font-size: 40px;
+    line-height: 1.5;
+    text-align: center;
+    /* 단어로 끊기 */
+    word-break: keep-all;
+  }
+}
+.mouse__cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid#fff;
+  background-color: rgba(225,225,225,0.1);
+  /* 선택이나 클릭 안되게 할 때 */
+  user-select: none;
+  pointer-events: none;
+  transition: 
+    background-color 0.3s,
+    border-color 0.3s,
+    /* style 2에 트랜스폼줬으니 여기도 줘야함 */
+    transform 0.6s,
+    border-radius 0.3s
+    ;
+}
+.mouse__cursor.style1{
+  background-color: rgba(229, 67, 215, 0.484);
+  border-color: #de78f3;
+}
+.mouse__cursor.style2{
+  background-color: rgba(111, 235, 94, 0.584);
+  border-color: #9bfd7d;
+  /* 커지고 y축으로 회전 */
+  transform: scale(2) rotateY(720deg);
+}
+.mouse__cursor.style3{
+  background-color: rgba(90, 128, 233, 0.721);
+  border-color: #2f3cb4;
+  /* 커지고 x축으로 회전 */
+  transform: scale(1.5) rotateX(720deg);
+}
+.mouse__cursor.style4{
+  background-color: rgba(235, 235, 69, 0.606);
+  border-color: #f2fc59;
+  /* 커지는 효과 */
+  transform: scale(10);
+}
+.mouse__cursor.style5{
+  background-color: rgba(243, 209, 141, 0.868);
+  border-color: #f5ab77;
+}
+.mouse__cursor.style6{
+  background-color: rgba(145, 248, 131, 0.846);
+  border-color: #ccfdb0;
+  border-radius: 0;
+  /* 커지는 효과 */
+  transform: scale(5); 
+}
+.mouse__info {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+}
+&lt;/code&gt;&lt;/pre&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="modal__close"&gt;
+                    &lt;svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                    &lt;/svg&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+    &lt;!-- //footer --&gt;
+    &lt;script src="../assets/js/highlight.min.js"&gt;&lt;/script&gt;
+    &lt;script src="../assets/js/common.js"&gt;&lt;/script&gt;
+    &lt;script src="../assets/js/gsap.min.js"&gt;&lt;/script&gt;
+
+    &lt;script&gt;
+        // 모든 좌표값 가져오기 getBoundingClientRect()
+        const cursor = document.querySelector(".mouse__cursor");
+        const cursorRect = cursor.getBoundingClientRect();
+
+        //figure부분에서 마우스를 움직일 때
+        document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) =&gt; {
+            // 커서
+            //0.5초 동안 
+            gsap.to(cursor, {
+                duration: .5,
+                // 동그라미 마우스 커서 방향별 값을 설정해주어야 움직임
+                left: e.pageX - cursorRect.width/2,
+                top: e.pageY - cursorRect.height/2,
+            });
+
+            //pageX, pageY : X좌표값, Y좌표값
+            //마우스 좌표 값 (페이지 기준)
+            let mousePageX = e.pageX;
+            let mousePageY = e.pageY;
+            
+            //전체 가로
+            // window.innerWidth //1920 : 브라우저 크기 (스크롤 미포함)
+            // window.outerWidth //1920 : 브라우저 크기 (스크롤바 포함)
+            // window.screen.width //1920 : 화면 크기 
+
+            //마우스 좌표값 가운데로 초기화
+            //전체 길이/2 - 마우스 좌표값 == 0
+            //window.innerWidth/2, window.innerHeight/2은 화면의 중앙이고 고정되어 있음. 
+            //살짝의 오차를 주어 이미지에 움직이는 효과를 주기 위한 기본적인 방법으로 mousePageX, mousePageY(페이지 가운데 있다는 가정 하에 마우스 커서만큼의 값)을 빼주어야함.
+            //그럼 이미지의 움직임 가능(그림의 중앙 좌표값(?)centerPage이 바뀜)
+            //mousePageX 오른쪽으로 가면 페이지 절반 값보다 좌표값이 더 크므로 전체 - : 이미지 왼쪽으로 이동
+            //mousePageX 왼쪽으로 가면 페이지 절반 값보다 좌표값이 더 작으므로 전체 + : 이미지 오른쪽으로 이동
+            let centerPageX = window.innerWidth/2 - mousePageX;
+            let centerPageY= window.innerHeight/2 - mousePageY;
+
+            //이미지 움직이기
+            const imgMove = document.querySelector(".mouse__wrap figure img");
+            // imgMove.style.transform = "translate("+ centerPageX/20 +"px, "+ centerPageY/20 +"px)";
+
+            //gsap
+            //이미지를 움직이게 하는 0.3초동안의 움직임
+            //x축으로 centerPageX에서 20으로 나눈 값 : 조금 더 움직임을 위해? (더 많은 값으로 나눌수록 적게 이동함)
+            //커서와 같은 방향으로 움직이게 하려면 음수로 나누어주고, 반대방향으로 움직이게 하려면 양수로 나누어 주면 가능함.
+            // = imgMove.style.transform = "translate("+ centerPageX/20 +"px, "+ centerPageY/20 +"px)";
+            gsap.to (imgMove, {
+                duration: 0.3,
+                x: centerPageX/20,
+                y: centerPageY/20
+            })
+
+            //출력
+            document.querySelector(".mousePageX").textContent = mousePageX;
+            document.querySelector(".mousePageY").textContent = mousePageY;
+            document.querySelector(".centerPageX").textContent = centerPageX;
+            document.querySelector(".centerPageY").textContent = centerPageY;
+        });
+    &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;

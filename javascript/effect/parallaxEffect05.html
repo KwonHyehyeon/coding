@@ -483,26 +483,38 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
 
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
+        //Math.ceil 은 소수값이 존재할 때 값을 올리는 역활을 하는 함수
+        //스르롤할 때 스크롤값을 출력한다는 것(소수점이 있을 때는 올려서)
         document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
         
         document.querySelectorAll(".content__item").forEach(item =>{
+            //content__item에 속해있는 컨텐츠들(section들)을 모두 선택(querySelectorAll)하여 forEach문 실행!
+            //target1,2,3 을 만들어주어 content__item 속의 content__item__img,content__item__desc,content__item__num 부분에 약간의 차이를 두어 이질감 느끼도록!
            const target1 = item.querySelector(".content__item__img");
            const target2 = item.querySelector(".content__item__desc");
            const target3 = item.querySelector(".content__item__num");
             
            //현재 스크롤값 - 아이템 박스의 오프셋탑값
            //사진을 보고 있는 상태에서는 scrollTop = offsetTop
-           let offset1 = (scrollTop - item.offsetTop) * 0.1; //그러면 이론상 offset값은 0이 나옴 그래서 0.1을 곱해줌 (오차때문에)
+           let offset1 = (scrollTop - item.offsetTop) * 0.1; //그러면 이론상 offset값은 0이 나옴 그래서 0.1을 곱해줌 (오차생김)
            let offset2 = (scrollTop - item.offsetTop) * 0.15;
-           let offset3 = (scrollTop - item.offsetTop) * 0.2; 
+           let offset3 = (scrollTop - item.offsetTop) * 0.2; //곱하는 값이 크면 클수록 더욱 이질감 많이 생김(많이 움직여지기 때문)
             // target1.style.transform = `translateY(${offset}px)`;
             // target2.style.transform = `translateX(${offset}px)`;
 
+            //gsap.to(target, {duration: 시간, 속성 : 값}) ==> target 에게 시간동안 속성의 값을 서서히 변화시키는 애니메이션 
+            //duration : 애니메이션 지속 시간 : 기본값 0.5초
+            //효과를 y축 방향으로 나타나도록!
+            //ease: 애니메이션 변경 속도를 설정 : 기본 값 "power1.out" : power을 클수록 속도↑ 
+            //ease 중 expo는 시작(easein)과 끝(easeout)에서 강력한 방식으로 부드럽게 하는것
+            //expo.out은 빠르게 시작한 다음 감속하면서 강함이 완화되는 효과 <-> expo.in
             gsap.to(target1, {duration: .3, y: offset1, ease: "power4.out"})
             gsap.to(target2, {duration: .3, y: offset2})
             gsap.to(target3, {duration: .3, y: offset3, ease: "expo.out"})
         });
-        
+        //재귀 함수 : 자기 실행문 유
+        //requestAnimationFrame : 자바스크립트 애니메이션 실행문 : 1초에 60프레임 호출
+        //setInterval보다 부드러움
         requestAnimationFrame(scroll);
       }
       scroll();
