@@ -1,0 +1,214 @@
+.slider__innner {
+}
+.swiper-slide {
+    width: 100%;
+    position: relative;
+}
+.swiper-slide .desc {
+    width: 1160px;
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+.swiper-slide .desc h3 {
+    font-size: 110px;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 23px;
+}
+.swiper-slide .desc p {
+    font-size: 24px;
+    color: #0c0c0c;
+    line-height: 1.38;
+    margin-bottom: 29px;
+}
+.swiper-slide .desc .btn a {
+    font-size: 18px;
+    color: #fff;
+    background: #4857ec;
+    padding: 15px 67px 12px;
+    display: inline-block;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    width: 30px !important;
+    height: 56px !important;
+}
+.swiper-button-prev {
+    background: url(../img/sliderPrev.svg) no-repeat center;
+}
+.swiper-button-next {
+    background: url(../img/sliderNext.svg) no-repeat center;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    opacity: 0;
+}
+.swiper-pagination-bullet {
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url(../img/slider_icon.svg)!important;
+    background-color: red !important;
+    opacity: 1 !important;
+    margin: 0 10px !important;
+}
+.swiper-pagination-bullet-active {
+}
+.swiper-button {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    margin-left: 40px;
+    bottom: 36px;
+    z-index: 1000;
+}
+
+/* slide__img */
+.slide__circle {
+    width: 400px;
+    height: 400px;
+    background: url(../img/slider02_bg01.png) no-repeat center;
+    position: absolute;
+    top: 150px;
+    right: 350px;
+    z-index: -1;
+}
+.slide__camera {
+    width: 400px;
+    height: 400px;
+    background: url(../img/slider02_icon01.png) no-repeat center;
+    position: absolute;
+    top: 15px;
+    right: 430px;
+    z-index: -1;
+}
+.slide__movie {
+    width: 400px;
+    height: 400px;
+    background: url(../img/slider02_icon02.png) no-repeat center;
+    position: absolute;
+    top: 130px;
+    right: 230px;
+    z-index: -1;
+}
+.slide__umb {
+    width: 400px;
+    height: 400px;
+    background: url(../img/slider02_icon03.png) no-repeat center;
+    position: absolute;
+    top: 280px;
+    right: 490px;
+    z-index: -1;
+}
+.circle1 {
+    position: absolute;
+    left: 3%;
+    top: 58%;
+    width: 23px; 
+    height: 23px; 
+    border-radius: 50%; 
+    background-color: #4857EC;
+}
+.circle2 {
+    position: absolute;
+    left: 38.5%;
+    top: 70%;
+    width: 49px; 
+    height: 49px; 
+    border-radius: 50%; 
+    background-color: #4857EC;
+}
+.circle3 {
+    position: absolute;
+    left: 38.5%;
+    top: 37%;
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    background-color: #2FEFB1;
+}
+.circle4 {
+    position: absolute;
+    left: 82%;
+    top: 86%;
+    width: 35px; 
+    height: 35px; 
+    border-radius: 50%; 
+    background-color: #FF3344;
+}
+.circle5 {
+    position: absolute;
+    left: 93%;
+    top: 80%;
+    width: 32px; 
+    height: 32px; 
+    border-radius: 50%; 
+    background-color: #2FEFB1;
+}
+.circle6 {
+    position: absolute;
+    left: 19%;
+    top: 28%;
+    width: 18px; 
+    height: 18px; 
+    border-radius: 50%; 
+    background-color: #F7E36D;
+}
+
+
+/* media */
+@media(max-width: 960px) {
+    .swiper-slide .desc {
+        width: 100%;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 70px;
+    }
+    .slide__circle,
+    .circle1,
+    .circle2,
+    .circle3,
+    .circle4,
+    .circle5,
+    .circle6 {
+        display: none;
+    }
+    .slide__camera {
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+    }
+    .slide__movie {
+        top: 0;
+        right: 0;
+        opacity: 0.5;
+    }
+    .slide__umb {
+        bottom: 0;
+        left: 100px;
+        opacity: 0.5;
+    }
+}
+@media(max-width: 600px) {
+    .swiper-slide .desc {
+        padding: 80px 0;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 40px;
+    }
+    .swiper-slide .desc p {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+    .swiper-slide .desc .btn a {
+        padding: 10px 25px;
+    }
+    .slide__camera {
+        opacity: 0.2;
+    }
+    .slide__movie,
+    .slide__umb {
+        display: none;
+    }
+}

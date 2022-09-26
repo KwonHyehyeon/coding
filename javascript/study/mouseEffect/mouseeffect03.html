@@ -153,7 +153,8 @@ const circle = cursor.getBoundingClientRect();
 window.addEventListener("mousemove", (e) =&gt; {
     // e.page마우스 좌표값
     gsap.to(cursor, {
-        duration: 0.5, 
+        duration: 0.5,
+        //커서 가운데로 위치하기 위함 
         left: e.pageX - circle.width/2, 
         top: e.pageY - circle.height/2,
     });

@@ -1,0 +1,116 @@
+.banner__inner {
+    text-align: left;
+    position: relative;
+}
+.banner__inner h3 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+.banner__inner p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
+.banner__inner a {
+    background: #FF3344;
+    padding: 10px 60px;
+    color: #fff;
+}
+.banner__inner .img1 {
+    width: 300px;
+    position: absolute;
+    right: 0; 
+    top: -20px;
+    z-index: 100;
+}
+.banner__inner .img2 {
+    width: 350px;
+    position: absolute;
+    right: 60px; 
+    bottom: -120px;
+}
+.banner__wrap {
+    position: relative;
+}
+.banner__dot {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+}
+.banner__dot .circle1 {
+    position: absolute;
+    left: 90%;
+    top: 66%;
+    width: 23px; 
+    height: 23px; 
+    border-radius: 50%; 
+    background-color: #4857EC;
+}
+.banner__dot .circle2 {
+    position: absolute;
+    left: 4%;
+    top: 65%;
+    width: 49px; 
+    height: 49px; 
+    border-radius: 50%; 
+    background-color: #4857EC;
+}
+.banner__dot .circle3 {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    background-color: #2FEFB1;
+}
+.banner__dot .circle4 {
+    position: absolute;
+    left: 60%;
+    top: 75%;
+    width: 35px; 
+    height: 35px; 
+    border-radius: 50%; 
+    background-color: #FF3344;
+}
+.banner__dot .circle5 {
+    position: absolute;
+    left: 55%;
+    top: 15%;
+    width: 20px; 
+    height: 20px; 
+    border-radius: 50%; 
+    background-color: #2FEFB1;
+}
+.banner__dot .circle6 {
+    position: absolute;
+    left: 11%;
+    top: 5%;
+    width: 18px; 
+    height: 18px; 
+    border-radius: 50%; 
+    background-color: #F7E36D;
+}
+/* 미디어쿼리 */
+@media (max-width: 960px) {
+    .banner__inner {
+        width: 100%;
+        padding: 100px 0;
+    }
+}
+@media (max-width: 600px) {
+    .banner__inner {
+        padding: 80px 0;
+    }
+    .banner__inner h3 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .banner__inner p {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+}

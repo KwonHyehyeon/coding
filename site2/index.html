@@ -4,309 +4,533 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>사이트2</title>
 
+    <!-- SEO(검색엔진최적화) -->
+    <meta name="acthor" content="webstroyboy">
+    <meta name="description" content="웹 표준을 준수한 사이트입니다.">
+    <meta name="keywords" content="웹표준, 웹접근성, 웹호환성, 사이트제작, 사이트만들기, 포트폴리오">
+    <meta name="robots" content="all">
+
+    <!-- CSS(리셋) -->
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/common.css">
 
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/slider.css">
-    <link rel="stylesheet" href="assets/css/swiper.css">
-
-
-
+    <!-- CSS(섹션) -->
+    <link rel="stylesheet" href="assets/css/header2.css"> 
+    <link rel="stylesheet" href="assets/css/slider2.css">
+    <link rel="stylesheet" href="assets/css/swiper2.css">
+    <link rel="stylesheet" href="assets/css/text2.css">
+    <link rel="stylesheet" href="assets/css/image2.css"> 
+    <link rel="stylesheet" href="assets/css/card2.css"> 
+    <link rel="stylesheet" href="assets/css/banner2.css"> 
+    <link rel="stylesheet" href="assets/css/text3.css"> 
+    <link rel="stylesheet" href="assets/css/footer2.css"> 
 </head>
 <body>
-    <div id="skip">
-        <a href="#headerType">헤더 영역 바로가기</a>
-        <a href="#sliderType">슬라이드 영역 바로가기</a>
-        <a href="#imageType">이미지 영역 바로가기</a>
-        <a href="#imageTextType">이미지/텍스트 영역 바로가기</a>
-        <a href="#cardType">카드 영역 바로가기</a>
-        <a href="#bannerType">배너 영역 바로가기</a>
-        <a href="#textType">텍스트 영역 바로가기</a>
-        <a href="#footerType">푸터 영역 바로가기</a>
-    </div>
-    <!-- skip : 웹표준 준수 위해서 -->
-    <header id="headerType" class="header__wrap gmarket">
+    <header id="headerType" class="header__wrap gmarket gray2">
         <div class="header__inner">
-            <div class="header__logo">
-                <a href="#">Playlist <em> for U</em></a>
+            <div class="container">
+                <h1 class="header__logo">
+                    <a href="#">WEB <em>site</em></a>
+                </h1>
+                <div class="header__menu">
+                    <h2 class="ir">메인 메뉴</h2>
+                    <ul>
+                        <li><a href="#">레이아웃</a></li>
+                        <li><a href="#">메뉴 영역</a></li>
+                        <li><a href="#">헤더 영역</a></li>
+                        <li><a href="#">컨텐츠 영역</a></li>
+                        <li><a href="#">푸터 영역</a></li>
+                    </ul>
+                </div>
+                <div class="header__ham">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            <div class="header__menu">
-                <ul>
-                    <li><a href="#sliderType">메인</a></li>
-                    <li><a href="#imageType">신곡 추천</a></li>
-                    <li><a href="#imageTextType">TOP 3</a></li>
-                    <li><a href="#cardType">상황별 플리</a></li>
-                    <li><a href="#bannerType">이달의 플리</a></li>
-                    <li><a href="#textType">후기</a></li>
-                </ul>
-            </div>
-            <div class="header__member">
-                <a href="#">로그인</a>
-            </div>
-            <div class="header__ham">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <!-- <a href="" class="header__inner_toogleBtn">
-                <i class="fas fa-bars"></i>
-            </a> -->
         </div>
     </header>
-    <!-- headerType -->
+    <!-- //headerType -->
 
-    <main id="mainType">
-        <section id="sliderType" class="slider__wrap items">
+    <main id="main">
+        <section id="sliderType" class="slider__wrap">
             <h2 class="blind">슬라이드 영역</h2>
-            <div class="slider__inner">
-                <!-- <div class="slider">
-                    <div class="slider__img">
-                        <div class="desc container">
-                            <span>STORE</span>
-                            <h3>MOMENTO’ s style</h3>
-                            <p>
-                                #모멘토는 스페인어로 “순간" 이라는 뜻으로,<br>
-                                당신의 아름다운 순간을 선물해드립니다.
-                            </p>
-                            <div class="btn">
-                                <a href="#">자세히보기</a>
-                                <a href="#" class="black">쇼핑가기</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider__arrow">
-                        <a href="#" class="left"><span class="ir">이전 이미지</span></a>
-                        <a href="#" class="right"><span class="ir">다음 이미지</span></a>
-                    </div>
-                    <div class="slider__dot">
-                        <a href="#" class="dot active"><span class="ir">1</span></a>
-                        <a href="#" class="dot"><span class="ir">2</span></a>
-                        <a href="#" class="dot"><span class="ir">3</span></a>
-                        <a href="#" class="play"><span class="ir">플레이</span></a>
-                        <a href="#" class="stop"><span class="ir">정지</span></a>
-                    </div>
-                </div> -->
+            <div class="slider__innner">
+                <!-- Swiper -->
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="desc">
-                                <span>Playlist</span>
-                                <h3>essential;</h3>
-                                <p>
-                                    도입부가 요즘 날씨야...너무 좋아...🤎<br>
-                                    인트로부터 난리난 그루브팝
-                                </p>
-                                <div class="btn">
-                                    <a href="#">자세히보기</a>
-                                </div>
+                    <div class="swiper-slide">
+                        <div class="desc">
+                            <h3>NEW<br>PORTFOLIO</h3>
+                            <p>
+                                너무 무리하지 말아요!<br>
+                                이미 당신은 해내고 있고<br>
+                                앞으로도 잘 할 수 있을거예요!
+                            </p>
+                            <div class="btn">
+                                <a href="#">더 알아보기</a>
                             </div>
-                            <!-- <div class="deco">
-                                <span class="circle1" aria-hidden="true"></span>
-                                <span class="circle2" aria-hidden="true"></span>
-                                <span class="circle3" aria-hidden="true"></span>
-                                <span class="circle4" aria-hidden="true"></span>
-                                <span class="circle5" aria-hidden="true"></span>
-                                <span class="circle6" aria-hidden="true"></span>
-                            </div> -->
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="desc">
-                                <span>Playlist</span>
-                                <h3>떼껄룩</h3>
-                                <p>
-                                    이거 틀면 운전하다가<br>
-                                    옆차선에서 제목 알려달라 한다.
-                                </p>
-                                <div class="btn">
-                                    <a href="#">자세히보기</a>
-                                </div>
+                            <div class="slide__img">
+                                <div class="slide__circle"></div>
+                                <div class="slide__camera"></div>
+                                <div class="slide__movie"></div>
+                                <div class="slide__umb"></div>
+                                <div class="circle1"></div>
+                                <div class="circle2"></div>
+                                <div class="circle3"></div>
+                                <div class="circle4"></div>
+                                <div class="circle5"></div>
+                                <div class="circle6"></div>
                             </div>
-                            <!-- <div class="deco">
-                                <span class="circle1" aria-hidden="true"></span>
-                                <span class="circle2" aria-hidden="true"></span>
-                                <span class="circle3" aria-hidden="true"></span>
-                                <span class="circle4" aria-hidden="true"></span>
-                                <span class="circle5" aria-hidden="true"></span>
-                                <span class="circle6" aria-hidden="true"></span>
-                            </div> -->
                         </div>
-                        <div class="swiper-slide">
-                            <div class="desc">
-                                <span>Playlist</span>
-                                <h3>눈에띠네</h3>
-                                <p>
-                                    띵곡들만 모아놨는데, <br>
-                                    들으실?
-                                </p>
-                                <div class="btn">
-                                    <a href="#">자세히보기</a>
-                                </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="desc">
+                            <h3>NEW<br>PORTFOLIO</h3>
+                            <p>
+                                너무 무리하지 말아요!<br>
+                                이미 당신은 해내고 있고<br>
+                                앞으로도 잘 할 수 있을거예요!
+                            </p>
+                            <div class="btn">
+                                <a href="#">더 알아보기</a>
                             </div>
-                            <!-- <div class="deco">
-                                <span class="circle1" aria-hidden="true"></span>
-                                <span class="circle2" aria-hidden="true"></span>
-                                <span class="circle3" aria-hidden="true"></span>
-                                <span class="circle4" aria-hidden="true"></span>
-                                <span class="circle5" aria-hidden="true"></span>
-                                <span class="circle6" aria-hidden="true"></span>
-                            </div> -->
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="desc">
-                                <span>Playlist</span>
-                                <h3>찐막 JJINMAK</h3>
-                                <p>
-                                    🍂 가을 냄새가 물씬 풍기는 <br>
-                                    가을 감성 노래 모음
-                                </p>
-                                <div class="btn">
-                                    <a href="#">자세히보기</a>
-                                </div>
+                            <div class="slide__img">
+                                <div class="slide__circle"></div>
+                                <div class="slide__camera"></div>
+                                <div class="slide__movie"></div>
+                                <div class="slide__umb"></div>
+                                <div class="circle1"></div>
+                                <div class="circle2"></div>
+                                <div class="circle3"></div>
+                                <div class="circle4"></div>
+                                <div class="circle5"></div>
+                                <div class="circle6"></div>
                             </div>
-                            <!-- <div class="deco">
-                                <span class="circle1" aria-hidden="true"></span>
-                                <span class="circle2" aria-hidden="true"></span>
-                                <span class="circle3" aria-hidden="true"></span>
-                                <span class="circle4" aria-hidden="true"></span>
-                                <span class="circle5" aria-hidden="true"></span>
-                                <span class="circle6" aria-hidden="true"></span>
-                            </div> -->
                         </div>
-                        <div class="swiper-slide">
-                            <div class="desc">
-                                <span>Playlist</span>
-                                <h3>릴숭어 lil mullet</h3>
-                                <p>
-                                    편하게 듣기 좋은<br>
-                                    120분 감성힙합/R&B 플레이리스트
-                                </p>
-                                <div class="btn">
-                                    <a href="#">자세히보기</a>
-                                </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="desc">
+                            <h3>NEW<br>PORTFOLIO</h3>
+                            <p>
+                                너무 무리하지 말아요!<br>
+                                이미 당신은 해내고 있고<br>
+                                앞으로도 잘 할 수 있을거예요!
+                            </p>
+                            <div class="btn">
+                                <a href="#">더 알아보기</a>
                             </div>
-                            <!-- <div class="deco">
-                                <span class="circle1" aria-hidden="true"></span>
-                                <span class="circle2" aria-hidden="true"></span>
-                                <span class="circle3" aria-hidden="true"></span>
-                                <span class="circle4" aria-hidden="true"></span>
-                                <span class="circle5" aria-hidden="true"></span>
-                                <span class="circle6" aria-hidden="true"></span>
-                            </div> -->
+                            <div class="slide__img">
+                                <div class="slide__circle"></div>
+                                <div class="slide__camera"></div>
+                                <div class="slide__movie"></div>
+                                <div class="slide__umb"></div>
+                                <div class="circle1"></div>
+                                <div class="circle2"></div>
+                                <div class="circle3"></div>
+                                <div class="circle4"></div>
+                                <div class="circle5"></div>
+                                <div class="circle6"></div>
+                            </div>
                         </div>
+                    </div>
                     </div>
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button">
                         <div class="swiper-button-play"><span class="ir">play</span></div>
                         <div class="swiper-button-stop"><span class="ir">stop</span></div>
                     </div>
-                </div>
-                <div class="deco">
-                    <span class="circle1"></span>
-                    <span class="circle2"></span>
-                    <span class="circle3"></span>
-                    <span class="circle4"></span>
-                    <span class="circle5"></span>
-                    <span class="circle6"></span>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </section>
-        <!-- sliderType -->
-        <script src="assets/js/swiper.min.js"></script>
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-                autoplay: {
-                    delay:2000,
-                    // 슬라이드버그 : 드래그했을때 슬라이드 멈추는 거 보완
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    type: 'bullets',
-                    clickable: true,
-                }
+        <!-- //sliderType-->
+
+        <section id="textType" class="text__wrap section gmarket gray2">
+            <h2 class="ir">텍스트 유형2</h2>
+            <div class="text__inner container type2">
+                <div class="text__title">
+                    <span>frontent</span>
+                    <h3>프론트앤드 과정</h3>
+                    <p>
+                        프론트앤드 개발자로 취업하기 위한<br>
+                        전문 과정입니다.<br>
+                        여러분들도 도전해보세요!
+                    </p>
+                </div>
+                <div class="text__text">
+                    <div class="text">
+                        <h3>웹 디자인</h3>
+                        <p>웹디자이너가 포함된 웹 및 멀티미디어 디자이너는 다른 직업과 비교하여 임금과 복리후생이 낮은 편이다.</p>
+                    </div>
+                    <div class="text">
+                        <h3>웹 퍼블리셔</h3>
+                        <p>퍼블리싱은 웹 사이트를 제작할 때, 웹 디자이너가 디자인한 것을 웹 표준성과 접근성에 부합하도록 재정</p>
+                    </div>
+                    <div class="text">
+                        <h3>프론트앤드 개발자</h3>
+                        <p>사이트와 상호작용하는 모든 부분에 대한 개발, 관리, 유지 보수를 하는 것 솔루션의 프로세스</p>
+                    </div>
+                    <div class="text">
+                        <h3>백앤드 개발자</h3>
+                        <p>용어 자체에서 알 수 있듯이, 백엔드는 웹사이트나 웹 애플리케이션 또는 모바일 솔루션의 프로세스와 관련된입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <!-- //텍스트 영역(유형2) -->
+
+        <section id="imageType" class="image__wrap section gmarket">
+            <h2>웹쓰 스터디 멤버</h2>
+            <p>웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자 멤버를 소개합니다.</p>
+            <div class="image__inner container">
+                <ul>
+                    <li>
+                        <img src="assets/img/image02_bg01.jpeg" alt="스터디1">
+                        <span>
+                            <strong>웹쓰 24기 전현정</strong>
+                            <a href="#">자세히 보기</a>
+                        </span>
+                    </li>
+                    <li>
+                        <img src="assets/img/image02_bg02.jpeg" alt="스터디2">
+                        <span>
+                            <strong>웹쓰 24기 전현정</strong>
+                            <a href="#">자세히 보기</a>
+                        </span>
+                    </li>
+                    <li>
+                        <img src="assets/img/image02_bg03.jpeg" alt="스터디3">
+                        <span>
+                            <strong>웹쓰 24기 전현정</strong>
+                            <a href="#">자세히 보기</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- //이미지 영역(유형2) -->
+
+        <section id="cardType" class="card__wrap section gmarket gray2">
+            <h2>포트폴리오 구경하기</h2>
+            <p>웹 디자이너, 웹 퍼블리셔, 프론트앤드 개발자 포폴입니다.</p>
+            <div class="card__inner container">
+                <article class="card">
+                    <div class="card__header">
+                        <img src="assets/img/card02_bg01.jpeg" alt="카드 이미지1">
+                    </div>
+                    <div class="card__body">
+                        <h3>김현정, 포폴!</h3>
+                        <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                        <a href="#"><span class="ir">더보기</span></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="assets/img/card02_bg02.jpeg" alt="카드 이미지2">
+                    </div>
+                    <div class="card__body">
+                        <h3>김현정, 포폴!</h3>
+                        <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                        <a href="#"><span class="ir">더보기</span></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="assets/img/card02_bg03.jpeg" alt="카드 이미지3">
+                    </div>
+                    <div class="card__body">
+                        <h3>김현정, 포폴!</h3>
+                        <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                        <a href="#"><span class="ir">더보기</span></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="assets/img/card02_bg04.jpeg" alt="카드 이미지4">
+                    </div>
+                    <div class="card__body">
+                        <h3>김현정, 포폴!</h3>
+                        <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                        <a href="#"><span class="ir">더보기</span></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="assets/img/card02_bg05.jpeg" alt="카드 이미지5">
+                    </div>
+                    <div class="card__body">
+                        <h3>김현정, 포폴!</h3>
+                        <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                        <a href="#"><span class="ir">더보기</span></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="assets/img/card02_bg06.jpeg" alt="카드 이미지6">
+                    </div>
+                    <div class="card__body">
+                        <h3>김현정, 포폴!</h3>
+                        <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                        <a href="#"><span class="ir">더보기</span></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="assets/img/card02_bg07.jpeg" alt="카드 이미지7">
+                    </div>
+                    <div class="card__body">
+                        <h3>김현정, 포폴!</h3>
+                        <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                        <a href="#"><span class="ir">더보기</span></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="assets/img/card02_bg08.jpeg" alt="카드 이미지8">
+                    </div>
+                    <div class="card__body">
+                        <h3>김현정, 포폴!</h3>
+                        <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                        <a href="#"><span class="ir">더보기</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- //카드 영역(유형2)-->
+
+        <section id="bannerType" class="banner__wrap section gmarket">
+            <h2 class="ir_so">배너 영역</h2>
+            <div class="banner__inner container">
+                <h3>유튜브 웹보이</h3>
+                <p>
+                    더 다양한 강의는 유튜브를 통해 제공하고 있습니다.<br>
+                    구독과 좋아요! 부탁드립니다.
+                </p>
+                <a href="#">바로가기</a>
+                <span class="img1"><img src="assets/img/banner02_icon01.png" alt="유튜브"></span>
+                <span class="img2"><img src="assets/img/slider02_bg01.png" alt="유튜브"></span>
+            </div>
+            <div class="banner__dot">
+                <span class="circle1" aria-hidden="true"></span>
+                <span class="circle2" aria-hidden="true"></span>
+                <span class="circle3" aria-hidden="true"></span>
+                <span class="circle4" aria-hidden="true"></span>
+                <span class="circle5" aria-hidden="true"></span>
+                <span class="circle6" aria-hidden="true"></span>
+            </div>
+        </section>
+        <!-- //배너 영역(유형2) -->
+        
+        <section id="textType" class="review__wrap section gray2 gmarket">
+            <h2>스터디 후기</h2>
+            <p>취업을 축하해요😍 정성스러운 후기 감사합니다.</p>
+            <div class="review__inner container">
+                <article class="review">
+                    <p class="review__desc nexon">
+                        불과 3달전만해도 여러 원인들로 인해 자존감이 밑바닥이였던 저에게 이 스터디는 너무 소중한 시간이었어요. 매일 마음속으로 울고싶다를 외쳤던 저였는데 이제는 조금이나마 이겨 낼 수 있을 것 같네요. 다음에 선생님 만났을 때는 많이 발전해있는 제가 되었으면 좋겠네요...버리지 않아주셔서 감사...합니다
+                    </p>
+                    <div class="review__info icon1">
+                        <h3>이태용 <em>웹스 24기</em></h3>
+                        <div class="star">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="review__more"><a href="#">자세히 보기</a></div>
+                </article>
+                <article class="review">
+                    <p class="review__desc nexon">
+                        진심 학교나 학원보다 더 많이 배운거라고 생각하고, 무지하고 말안듣고 자존감바닥인 저를 팩폭도 해주시고, 버리지 않아주셔서 감사...합니다 쌤!!!!!!!!!! 회사에서 잘리지않고,,, 존버하겠습니다!!!!!!!!!!!!  버리지 않아주셔서 감사...합니다
+                    </p>
+                    <div class="review__info icon2">
+                        <h3>이희진 <em>웹스 24기</em></h3>
+                        <div class="star">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span class="not"></span>
+                        </div>
+                    </div>
+                    <div class="review__more"><a href="#">자세히 보기</a></div>
+                </article>
+                <article class="review">
+                    <p class="review__desc nexon">
+                        제가 게을러서 의도치않게 자꾸 말을 안듣는 학생이 되었었지만 정말 선생님 말씀 틀린거 하나도 없었다는거 잘 알고있습니다,,, ㅎㅎ 아 그리고 마지막 하고 싶은 말은 저 새벽 5~6시에 자는 ㄹㅇ올빼미형인간인데... 쌤이랑 두달 공부했다고.....
+                    </p>
+                    <div class="review__info icon3">
+                        <h3>정승연 <em>웹스 24기</em></h3>
+                        <div class="star">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="review__more"><a href="#">자세히 보기</a></div>
+                </article>
+            </div>
+        </section>
+        <!-- //텍스트 유형 -->
+    </main>
+    
+    <footer id="footerType" class="footer__wrap section nexon">
+        <h2 class="ir_so">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__logo">
+                <h3>Webstoryboy</h3>
+                <p>
+                    안녕하세요!<br>
+                    문의사항은 메일로 부탁드립니다.<br>
+                    <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+                </p>
+                <div class="sns">
+                    <ul>
+                        <li><a href="#"><span class="ir">페이스북</span></a></li>
+                        <li><a href="#"><span class="ir">인스타</span></a></li>
+                        <li><a href="#"><span class="ir">유튜브</span></a></li>
+                        <li><a href="#"><span class="ir">깃헙</span></a></li>
+                        <li><a href="#"><span class="ir">디스코드</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__menu">
+                <div>
+                    <h3>레이아웃 영역</h3>
+                    <ul>
+                        <li><a href="#">레이아웃 유형01</a></li>
+                        <li><a href="#">레이아웃 유형02</a></li>
+                        <li><a href="#">레이아웃 유형03</a></li>
+                        <li><a href="#">레이아웃 유형04</a></li>
+                        <li><a href="#">레이아웃 유형05</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>메인 영역</h3>
+                    <ul>
+                        <li><a href="#">이미지 유형01</a></li>
+                        <li><a href="#">동영상 유형02</a></li>
+                        <li><a href="#">슬라이드 유형03</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>컨텐츠 영역</h3>
+                    <ul>
+                        <li><a href="#">텍스트 유형01</a></li>
+                        <li><a href="#">이미지 유형02</a></li>
+                        <li><a href="#">이미지/텍스트03</a></li>
+                        <li><a href="#">카드 유형04</a></li>
+                        <li><a href="#">배너 유형05</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>푸터 영역</h3>
+                    <ul>
+                        <li><a href="#">컨택트 유형01</a></li>
+                        <li><a href="#">푸터 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>사이트 영역</h3>
+                    <ul>
+                        <li><a href="#">웹표준 사이트</a></li>
+                        <li><a href="#">반응형 사이트</a></li>
+                        <li><a href="#">패럴랙스 사이트</a></li>
+                        <li><a href="#">포트폴리오 사이트</a></li>
+                    </ul>
+                </div>
+            </div>
+            <address class="footer__right">
+                ©2022 webstroyboy. All rights reserved.
+            </address>
+        </div>
+    </footer>
+    <!-- //푸터 영역(유형2) -->
+    <script src="assets/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay:2000,
+                // 슬라이드버그 : 드래그했을때 슬라이드 멈추는 거 보완
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            }
+        });
+
+
+        const btnHam2 = document.querySelector(".header__ham")
+        const btnMenu2 = document.querySelector(".header__menu")
+        const btnMenuList2 = btnMenu2.querySelectorAll("ul li a");
+
+        btnHam2.addEventListener("click", () => {
+            btnHam2.classList.toggle("active");
+            btnMenu2.classList.toggle("active");
+            document.body.classList.toggle("fixed");
+        });
+
+        btnMenuList2.forEach((list) => {
+            list.addEventListener("click", () => {
+                document.body.classList.remove("fixed");
+                btnMenu2.classList.remove("active");
+                btnHam2.classList.remove("active");
             });
-    
-            const btnStop = document.querySelector(".swiper-button-stop");
-            const btnStart = document.querySelector(".swiper-button-play");
-            const btnHam = document.querySelector(".header__ham")
-            const btnMenu = document.querySelector(".header__menu")
-            const btnMenuList = btnMenu.querySelectorAll("ul li a");
-    
-            btnStart.style.display = "none";
-    
-            btnStop.addEventListener("click", () => {
-                swiper.autoplay.stop();
-                btnStart.style.display = "block";
-                btnStop.style.display = "none";
-    
-            });
-            btnStart.addEventListener("click", () => {
-                swiper.autoplay.start();
-                btnStart.style.display = "none";
-                btnStop.style.display = "block";
-            });
-    
-            btnHam.addEventListener("click", () => {
-                btnHam.classList.toggle("active");
-                btnMenu.classList.toggle("active");
-                document.body.classList.toggle("fixed");
-            });
-    
-            btnMenuList.forEach((list) => {
-                list.addEventListener("click", () => {
-                    document.body.classList.remove("fixed");
-                    btnMenu.classList.remove("active");
-                    btnHam.classList.remove("active");
-                });
-            })
-            //작은 화면에서 햄버거 메뉴를 켜놓고 화면의 사이즈를 최대로 했을 때, 햄버거 버튼은 사라지지만 스크롤이 안됩니다.(화면 멈춤 = 햄버거 메뉴 초기화 안된 것)
-            //버그 수정
-            window.addEventListener("resize", () =>{
-                let width = window.innerWidth;
-                //console.log(width)
-                if(width > 1300){
-                    //햄버거 메뉴 초기화
-                    document.body.classList.remove("fixed");
-                    btnMenu.classList.remove("active");
-                    btnHam.classList.remove("active");
-                }
-            })
-        </script>
-        <script>
-            //스크롤 됐을 때
-            window.addEventListener("scroll", () => {
-                let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-                //forEach
-                document.querySelectorAll(".items").forEach((element, index) => {
-                    if (scrollTop >= element.offsetTop - 500) {
-                        document.querySelectorAll(".header__menu li").forEach(li => {
-                            //메뉴바 active 모두 없애기
-                            li.classList.remove("active")
-                        });
-                        document.querySelector(".header__menu li:nth-child(" + (index + 1) + ")").classList.add("active")
-                    }
-                })
-            })
-    
-            //스크롤 이동 //화면 부드럽게 넘겨짐
-            document.querySelectorAll("a").forEach(li => {
-                li.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    document.querySelector(li.getAttribute("href")).scrollIntoView({
-                        behavior: "smooth"  // 이동 부드럽게
+        })
+        //작은 화면에서 햄버거 메뉴를 켜놓고 화면의 사이즈를 최대로 했을 때, 햄버거 버튼은 사라지지만 스크롤이 안됩니다.(화면 멈춤 = 햄버거 메뉴 초기화 안된 것)
+        //버그 수정
+        window.addEventListener("resize", () =>{
+            let width = window.innerWidth;
+            //console.log(width)
+            if(width > 1300){
+                //햄버거 메뉴 초기화
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            }
+        })
+    </script>
+    <script>
+        //스크롤 됐을 때
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+            //forEach
+            document.querySelectorAll(".items").forEach((element, index) => {
+                if (scrollTop >= element.offsetTop - 500) {
+                    document.querySelectorAll(".header__menu li").forEach(li => {
+                        //메뉴바 active 모두 없애기
+                        li.classList.remove("active")
                     });
+                    document.querySelector(".header__menu li:nth-child(" + (index + 1) + ")").classList.add("active")
+                }
+            })
+        })
+
+        //스크롤 이동 //화면 부드럽게 넘겨짐
+        document.querySelectorAll("a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"  // 이동 부드럽게
                 });
             });
-        </script>
+        });
+    </script>
 </body>
 </html>

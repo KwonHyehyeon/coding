@@ -1,0 +1,113 @@
+/* headerType */
+.header__inner {
+    padding: 0 20px;
+    text-align: center;
+}
+.header__logo a {
+    font-size: 30px;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px 0;
+}
+.header__menu {
+    text-align: center;
+}
+.header__menu li {
+    display: inline;
+}
+.header__menu li a {
+    padding: 10px 5%;
+    display: inline-block;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.header__menu li a:hover {
+    background: #fff;
+}
+.header__ham {
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    /* background: blue; */
+    display: none;
+    cursor: pointer;
+}
+.header__ham span {
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 2px;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-top: 5px;
+    transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.header__ham span:nth-child(1){
+    margin-top: 17px;
+}
+.header__ham.active span {
+    /* 가운데 0.25s는 딜레이 */
+    transition: 0.25s margin, 0.25s transform 0.25s
+}
+.header__ham.active span:nth-child(1){
+    margin-top: 25px;
+    margin-bottom: -7px;
+    transform: rotate(45deg);
+}
+.header__ham.active span:nth-child(2){
+    transform: rotate(45deg);
+}
+.header__ham.active span:nth-child(3){
+    margin-top:-2px;
+    transform: rotate(135deg);
+}
+
+/* 미디어쿼리 */
+@media (max-width: 1300px) {
+    .header__menu {
+        position: fixed;
+        right: -100%;
+        top: 69px;
+        background: rgba(0,0,0,0.7);
+        width: 60%;
+        height: 100vh;
+        padding: 20px;
+        text-align: right;
+        transition: right 0.4s ease-in;
+        z-index: 10000;
+    }
+    .header__menu ul li {
+        display: block;
+        margin: 20px;
+    }
+    .header__menu ul li a {
+        padding: 10px;
+        white-space: nowrap;
+        color: #fff;
+    }
+    .header__menu.active {
+        right: 0;
+    }
+    .header__logo {
+        width: 100%;
+    }
+    .header__member {
+        margin-right: 50px;
+        width: 30%;
+        font-size: 10px;
+    }
+    .header__ham {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .header__logo a{
+        float: left;
+    }
+}
+
+

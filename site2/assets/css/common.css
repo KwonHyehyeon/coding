@@ -94,6 +94,9 @@
 }
 
 /* 폰트 */
+.gmarket {
+    font-family: "GmarketSans";
+}
 .nexon {
     font-family: 'NexonLv1Gothic';
     font-weight: 400;
@@ -102,6 +105,9 @@
 /* 배경 */
 .gray {
     background-color: #f5f5f5;
+}
+.gray2 {
+    background-color: #F6F8FD;
 }
 body {
     overflow: overlay;

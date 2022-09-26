@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기1</title>
+
+    <!-- CSS 폰트는 제일 위에 올려야 적용됨-->
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+
+    <style>
+        /* imageTextType */
+        .imgText__wrap {
+            background-color: #fff;
+        }
+        .imgText__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .imgText__inner > div {
+            width: 32%;
+            height: 500px;
+        }
+        .imgText__txt span{
+            font-size: 16px;
+            color: #666;
+            text-decoration: underline;
+            text-underline-position: under;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .imgText__txt h3 {
+            font-size: 50px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .imgText__txt p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.5;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .imgText__txt ul {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        .imgText__txt ul li {
+            position: relative; 
+            padding-left: 20px;
+        }
+        .imgText__txt ul li a {
+            color: #666;
+        }
+        .imgText__txt ul li::before{
+            content:'';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            position: absolute;
+            left: 5px;
+            top: 9px;
+            background: #666;
+        }
+        .imgText__txt > a {
+            left: 30px;
+            bottom: 30px;
+            background-color: #7C2B39;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 30px;
+            display: inline-block;
+            margin-top: 25px;
+        }
+        .imgText__img {
+            border-radius: 10px;
+        }
+        .imgText__img.img1 {
+            background: url(../IMG/IMG/imgText_bg01.jpg) no-repeat center / cover;
+            width: 350px;
+            height: 500px;
+            position: absolute;
+            top: 180px;
+            left: 550px;
+        }
+        .imgText__img.img2 {
+            background: url(../site1/assets/img/imgText_bg02.jpg) no-repeat center / cover;
+            width: 350px;
+            height: 500px;
+            position: absolute;
+            top: 80px;
+            left: 920px;
+        }
+        .imgText__img.img2:hover::after {
+            content: 'view';
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0,0,0,0.4);
+            color: #fff;
+            /* position: absolute; */
+            margin: 200px 160px ;
+            display: block;
+            text-align: center;
+            line-height: 60px;
+            border-radius: 50%;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <section id="imgTextType" class="imgText__wrap nexon section gray">
+        <h2 class="blind">가을 코디 살펴보기</h2>
+        <div class="imgText__inner container">
+            <div class="imgText__txt">
+                <span>fall styling</span>
+                <h3>가을 코디 살펴보기</h3>
+                <p>가을무드를 느낄 수 있는 룩들을 추천합니다.</p>
+                <ul>
+                    <li><a href="/">트렌치 코트 코디</a></li>
+                    <li><a href="/">코듀로이 팬츠 코디</a></li>
+                    <li><a href="/">셔트 코디</a></li>
+                </ul>
+                <a href="/">코디 보러가기</a>
+            </div>
+            <div><a href="#" class="imgText__img img1"></a></div>
+            <div><a href="#" class="imgText__img img2"></a></div>
+        </div>
+    </section>
+    <!-- //imgTextType -->
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정부24</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        /* h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }  */
+        em {
+            font-style: normal;
+        }
+        /* common */
+        .container {
+            width: 1000px;
+            padding: 20px;
+            margin: 20px auto;
+        }
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;    
+        }
+        /* 블라인드 효과 */
+        .blind{
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden
+        }
+
+        /* 이미지 대체(ir) 효과 */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: -9999px;
+        }
+        /* header_inner */
+        #header__inner {
+            width: 20%;
+            margin-right: 5%;
+        }
+        .header__logo {
+            width: 130px;
+            height: 50px;
+            margin-bottom: 20px;
+        }
+        li {
+            list-style: none;
+        }
+        .first__menu {
+            color: blue;
+            margin-top: 30px;
+        }
+        .menu__bar a{
+            display: block;
+            font-size: 20px;
+            padding: 15px 0;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+        .menu__bar .little {
+            font-size: 16px;
+            padding: 10px;
+            font-weight: normal;
+        }
+        .menu__bar .little::after {
+            content: '';
+            display: flex;
+            width: 100%;
+            height: 1px;
+            background-color: #666;
+            margin-top: 10px;
+        }
+        /* main */
+        #main {
+            width: 75%;
+        }
+        .slider__wrap {
+            display: flex;
+            
+        }
+        .slider__img{
+            width: 700px;
+            height: 450px;
+            overflow: hidden; 
+        }
+        .slider__wrap {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+        .slider__inner {
+            width: 2400px;
+        }
+        .slider {
+            box-sizing: border-box;
+        }   
+        /* 탭메뉴 */
+        /* service */
+        #service {
+            margin: 30px 0;
+        }
+        .tab-menu .tab-btn {
+            display: flex;
+            justify-content: center;
+            padding: 30px 0;
+        }
+        .tab-menu .tab-btn ul {
+            overflow: hidden;
+        }
+
+        .tab-menu .tab-btn li {
+            float: left;
+            margin-right: 15px;
+        }
+
+        .tab-menu .tab-btn li a {
+            display: block;
+            color: #999;
+            font-size: 24px;
+            padding-bottom: 10px;
+        }
+
+        .tab-menu .tab-btn li.active a {
+            color: #000;
+        }
+        .tab-cont .ofter__service {
+
+        }
+        .tab-cont .ofter__service figure {
+            float: left;
+            width: 38%;
+            margin-right: 2%;
+        }
+
+        .tab-cont .ofter__service figure img {
+            width: 100%;
+        }
+        .tab-cont .ofter__service figure figcaption {
+            font-size: 12px;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+        .tab-cont .ofter__service figure:last-child {
+            margin-right: 0;
+        }
+
+        #service h2 {
+            font-size: 24px;
+            padding-bottom: 10px;
+        }
+
+        #service .ofter__service figure {
+            float: left;
+            width: 15%;
+            margin: 0 2%;
+        }
+
+        #service .ofter__service figure img {
+            width: 100%;
+        }
+
+        #service .ofter__service figure:last-child {
+            margin-right: 0;
+        }
+        
+        /* card */
+        .card__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #f5f5f5;
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+        .card {
+            width: 24%;
+            border: 1px solid #eee;
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            position: relative;
+        }
+        .card > div {
+            text-align: center;
+            font-weight: 700;
+            font-weight: 24px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .card .icon {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 3px;
+            left: 150px;
+        }
+        .card .card__img {
+            width: 100px;
+            height: 90px;
+            margin-bottom: 20px;
+            padding-left: 28px;
+        }
+        .card > li {
+            font-size: 12px;
+            width:155px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 10px;
+        }
+        /* footer */
+        #footer {
+            width: 94%;
+            /* height: 200px; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #EDF2F8;
+            padding: 5px;
+        }
+        .gov24 img {
+            width: 80px;
+            height: 100px;
+        }
+        .footer__desc {
+            /* width: 40%; */
+            font-size: 14px;
+        }
+        .footer__icon img{
+            width: 200px;
+            height: 50px;
+            margin: 30px 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <section class="section nexon container">
+        <header id="header__inner">
+            <h2 class="ir">정부24</h2>
+            <img class="header__logo" src="../mission/assets/img/mission03_01.jpg" alt="로고">
+            <ul>
+                <li class="menu__bar">
+                    <a href="#" class="first__menu">서비스</a>
+                    <a href="#" class="little">분야별 정책정보</a>
+                    <a href="#" class="little">정책뉴스</a>
+                    <a href="#" class="little">연구보고서</a>
+                    <a href="#" class="little">간행물</a>
+                    <a href="#" class="little">정책자료</a>
+                    <a href="#">정책정보</a>
+                    <a href="#">기관정보</a>
+                    <a href="#">고객센터</a>
+                </li>
+            </ul>
+        </header>
+        <main id="main">
+            <section id="sliderType">
+                <div class="slider__wrap">
+                    <div class="slider__img">
+                        <div class="slider__inner">
+                            <div class="slider"><img src="../mission/assets/img/mission03_02_01.jpg" alt="이미지1"></div>
+                            <div class="slider"><img src="../mission/assets/img/mission03_02_02.jpg" alt="이미지2"></div>
+                            <div class="slider"><img src="../mission/assets/img/mission03_02_03.jpg" alt="이미지3"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="service">
+                <div class="tab-menu">
+                    <div class="tab-btn">
+                        <ul>
+                            <li class="active"><a href="#">자주 찾는 서비스 |</a></li>
+                            <li><a href="#">키워드 서비스</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-cont">
+                        <div class="ofter__service clearfix">
+                            <figure>
+                                <img src="../mission/assets/img/mission03_03_01.jpg" alt="서비스">
+                                <figcaption>
+                                    주민등록표등복<br>(초본)교부
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src="../mission/assets/img/mission03_03_02.jpg" alt="서비스">
+                                <figcaption>
+                                    토지(임야)대장<br>열람/등본 발급신청
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src="../mission/assets/img/mission03_03_03.jpg" alt="서비스">
+                                <figcaption>
+                                    건축물대장 등/초본<br>열람/등본 발급신청
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src="../mission/assets/img/mission03_03_04.jpg" alt="서비스">
+                                <figcaption>
+                                    지방세 납세증명
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src="../mission/assets/img/mission03_03_05.jpg" alt="서비스">
+                                <figcaption>
+                                    지적도(임야도) 등본 발급 및 열람
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <!-- ofter__service -->
+                        <div class="ofter__service clearfix">
+                            <figure>
+                                <img src="../mission/assets/img/mission03_03_06.jpg" alt="서비스">
+                                <figcaption>
+                                    주민등록표등복<br>(초본)교부
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src="../mission/assets/img/mission03_03_07.jpg" alt="서비스">
+                                <figcaption>
+                                    토지(임야)대장<br>열람/등본 발급신청
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src="../mission/assets/img/mission03_03_08.jpg" alt="서비스">
+                                <figcaption>
+                                    건축물대장 등/초본<br>열람/등본 발급신청
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src="../mission/assets/img/mission03_03_09.jpg" alt="서비스">
+                                <figcaption>
+                                    지방세 납세증명
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src="../mission/assets/img/mission03_03_10.jpg" alt="서비스">
+                                <figcaption>
+                                    지적도(임야도) 등본 발급 및 열람
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="cardType">
+                <div class="card__inner">
+                    <div class="card">
+                        <div>공지사항</div>
+                        <img class="icon" src="../mission/assets/img/mission03_04.jpg" alt="플러스">
+                        <img class="card__img" src="../mission/assets/img/mission03_05_01.jpg" alt="카드">
+                        <p>
+                            <li>∙ [어디서나 대학인원]호서대학교 팩스를 팩스를 팩스를팩스를팩스를팩스를팩스를</li>
+                            <li>∙ [전라북도 고창군] 세율행정시스템 DEFAULTDEFAULTD</li>
+                            <li>∙ 교육부 행정전자서명인증센터 시스템을 촉구해서 알ㄹㄹ아리나얼미</li>
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div>자료실</div>
+                        <img class="icon" src="../mission/assets/img/mission03_04.jpg" alt="플러스">
+                        <img class="card__img" src="../mission/assets/img/mission03_05_02.jpg" alt="카드">
+                        <p>
+                            <li>∙ 어디서나 대학인원]호서대학교 팩스를 팩스를 팩스를팩스를팩스를팩스를팩스를</li>
+                            <li>∙ [전라북도 고창군] 세율행정시스템 DEFAULTDEFAULTDEFA</li>
+                            <li>∙ 교육부 행정전자서명인증센터 시스템을 촉구해서 알ㄹㄹ아리나얼미</li>
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div>FAQ</div>
+                        <img class="icon" src="../mission/assets/img/mission03_04.jpg" alt="플러스">
+                        <img class="card__img" src="../mission/assets/img/mission03_05_03.jpg" alt="카드">
+                        <p>
+                            <li>∙ [어디서나 대학인원]호서대학교 팩스를 팩스를 팩스를팩스를팩스를팩스를팩스를</li>
+                            <li>∙ [전라북도 고창군] 세율행정시스템 DEFAULTDEFAULTDEFA</li>
+                            <li>∙ 교육부 행정전자서명인증센터 시스템을 촉구해서 알ㄹㄹ아리나얼미</li>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <figure class="gov24">
+                <img src="../mission/assets/img/mission03_07.jpg" alt="정부로고">
+            </figure>
+            <div class="footer__desc">
+                <p>03171 서울특별시 세종대로 209 (세종로) 행정안전부</p>
+                <p>정부24 콜센터 1588-2188 정부민원안내콜센터 국번없이 110</p>
+                <p>Copyright @ Ministry of Interior and Safety. All Rights reserved.</p>
+            </div>
+            <figure class="footer__icon">
+                <img src="../mission/assets/img/mission03_06.jpg" alt="">
+            </figure>
+        </footer>
+    </section>
+    
+    
+    
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+    // 탭 메뉴
+    var tabBtn = $(".tab-btn > ul > li");
+    var tabCont = $(".tab-cont > div");
+    
+    //제이커리 순서 eq
+    tabCont.hide().eq(0).show();
+    
+    tabBtn.click(function(event){
+        event.preventDefault();
+        // 누굴 클릭할지 모르니깐 target //this: 여러개의 버튼이 있을 때 어떤 대상을 클릭했는지 정확하게 알고 싶을 때 사용
+        var target = $(this);
+        // 타켓 번호 매기기
+        var index = target.index();
+        //alert(index);
+        // 버튼을 클릭하면 엑티브가 사라지고
+        tabBtn.removeClass("active");
+        // 타겟(클릭한)에만 엑티브가 활성화됨
+        target.addClass("active");
+        tabCont.css("display","none");
+        // 클릭하면 첫번째 박스, 두번째 박스가 나옴...index
+        tabCont.eq(index).css("display","block");
+    });
+    </script>
+</body>
+</html>

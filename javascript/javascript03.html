@@ -693,8 +693,9 @@ info3.result();
         <!-- //section17 -->
         <div class="main_sample">
             <div id="sample18" class="sample">
-                <h3>18. 함수 유형 : 함수와 매개변수를 이용한 형태</h3>
-                <p>함수 : 실행문, 재활용
+                <h3>18. 함수 유형 : 객체 생성자 함수</h3>
+                <p>function 함수명(매개변수){}<br>
+                    new로 객체 생성
                 </p>
                 <div class="script">
 <pre><code class="language-js">function func(num, name, word){
@@ -881,11 +882,25 @@ func("함수가 실행되었습니다.", "함수가 실행되었습니다.")
                 <p>자기 자신을 호출해주는 함수
                 </p>
                 <div class="script">
-<pre><code class="language-js">function func(a, b){
-    document.write(arguments[0]);
-    document.write(arguments[1]);
+<pre><code class="language-js">//반복적으로
+function func(num){
+    if(num &lt;= 1){
+        document.write("함수가 실행되었습니다." + num);
+    } else {
+        document.write("함수가 실행되었습니다." + num);
+        func(num - 1);
+    }
+ 
 }
-func("함수가 실행되었습니다.", "함수가 실행되었습니다.")
+func(10);
+ 
+//애니메이션
+function animation(){
+    document.write("함수가 실행되었습니다.");
+ 
+    requestAnimationFrame(animation);
+}
+animation();
 </code></pre>                    
                 </div>
                 <div class="result">
