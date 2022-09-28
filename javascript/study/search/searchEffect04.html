@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서치이펙트04</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">🗒 서치이펙트 05</h2>
+        <p class="t_desc">
+            📌 <i>fine()</i>을 이용하여 검색 화면을 만들어 봅시다.<br>
+            📌 원하는 css속성을 적으면 해당 값이 나오게 하며, 또 다른 방법으로 css속성을 클릭하면 돋보기 옆으로 설명이 나오게 하는 이펙트입니다. 
+        </p>
+        <hr>
+        <h3 class="t_tit2">CSS 속성 검색창 만들기!</h3>
+        <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/searchEffect04.html" frameborder="0"></iframe>
+        </div>
+        <div class="t_link">
+            <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/searchEffect04.html" target="_blank"
+            >실제 사이트보기</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/searchEffect04.html" target="_blank"
+            >원본 소스보기</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/assets/css/search.css" target="_blank"
+            >CSS 소스보기</a>
+        </div>  
+        <h3 class="t_tit2">HTML</h3>
+        <p class="t_desc2">
+            ∙ search__box에 input을 넣어줍니다.<br>
+            ∙ search__desc은 속성에 대한 설명을 나오게 합니다.
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">&lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;find()을 이용하여 속성을 검색하면 설명 보여주기&lt;/span&gt;
+        &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+        &lt;div class="search__box"&gt;
+            &lt;label for="search"&gt;검색하기&lt;/label&gt;
+            &lt;input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!"&gt;
+        &lt;/div&gt;
+        &lt;div class="search__desc"&gt;
+            속성을 검색하시면 설명이 나타납니다.
+        &lt;/div&gt;
+
+        &lt;div class="search__info"&gt;
+            &lt;div&gt;전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="search__list"&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+    </div>
+    <h3 class="t_tit2">CSS</h3>
+    <p class="t_desc2">
+        새로 추가된 CSS 부분입니다.<br>
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">.search__desc {
+    padding: 20px 40px 20px 60px;
+    margin-bottom: 50px;
+    background: #fff;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: var(--htmlColor);
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 22px 17px;
+}
+.search__list span {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    margin: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.search__list span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+</code></pre>
+    </div>
+            <hr>
+        <h3 class="t_tit2">▶ 자바스크립트 활용 (공통) </h3>
+        <p class="t_desc2">
+            주석을 참고해주세요!
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">//배열, 객체
+const cssProperty = [
+{ name: "accent-color", desc: " 요소의 강조 색상을 지정합니다. " },
+{ name: "align-content", desc: " 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다." },
+
+];
+const searchList = document.querySelector(".search__list");
+const searchNum = document.querySelector(".search__info .num");
+const searchBox = document.querySelector(".search__box input");
+const searchDesc = document.querySelector(".search__desc")
+    
+//출력하기
+cssProperty.map((element, index) => {
+    // searchNum에 index 넣어주기
+    //searchNum.innerText = cssProperty.length;
+    searchNum.innerText = index + 1;
+    // 리스트 이름: 설명 불러오기
+    //searchList.innerHTML += `&lt;li>&lt;strong>${element.name}&lt;/strong> : ${element.desc}&lt;/li>`
+    //이름 한줄로 나오게 하기
+    searchList.innerHTML += `&lt;span>${element.name}&lt;/span>`
+});
+
+//입력하기 //키를 눌렀을 때
+searchBox.addEventListener("keyup", () => {
+    //사용자가 쓴 값 불러오기(value)
+    const searchWord = searchBox.value;
+    //console.log(searchWord);
+    //findProperty함수 만들어서 실행시켜줘야함(속성찾기에서)
+    findProperty(searchWord);
+});
+
+//속성 찾기
+//findProperty 함수 만들어줌
+function findProperty(searchData){
+    //cssProperty 찾기
+    //데이터 네임과 내가 쓴 값과 같아야 속성찾을 수 있음
+    //searchword가 지역변수이기 때문에 마음대로 쓸 수 없어서 전역변수로 바꾸거나 매개변수로 연결시켜주어야 하기 때문에 위에 findProperty()안에 넣어주어야 매개변수로 연결됨.
+    //==값이 true이기만 하면 되는 것 , === 값과 값의 종류가 같아야 됨 엄격한 연산자임
+    const targetData = cssProperty.find((data) => data.name === searchData);
+    
+    //desc undefined 버그 해결
+    if(targetData == undefined){
+        searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!";
+        
+        //그래도 버그가 해결되지 않음 : return결과값도 있지만 종료의 의미도 있음 
+        //searchDesc.textContent = targetData.desc;때문에 값이 없는데도 계속 값이 들어가니깐 버그가 나는 거여서 return으로 값이 없을 때 값을 찾지 않고 종료해야함
+        return;
+    }
+    searchDesc.textContent = targetData.desc;
+}
+//클릭효과
+//클릭했을 때 속성값을 돋보기 옆에 보여주기 위한 변수 선언
+ const searchProperty = document.querySelectorAll(".search__list span");
+searchProperty.forEach((e, i) => {
+    e.addEventListener("click", () => {
+        searchDesc.textContent = cssProperty[i].desc;
+    });
+});
+</code></pre>
+    </div>
+    <!-- document -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

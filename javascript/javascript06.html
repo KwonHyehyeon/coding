@@ -1843,7 +1843,7 @@ document.querySelector(".sample14_P3").innerHTML = result3;
             console.log(result17);
             //4
             const number18 = [100,200,300,400,500,600,700,800,900];
-            const result18 = number19.slice(-6,-4);
+            const result18 = number18.slice(-6,-4);
             console.log(result18);
             //5
             const number19 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
@@ -1853,17 +1853,53 @@ document.querySelector(".sample14_P3").innerHTML = result3;
 
             //9.28미션
 
-            const num = [a,b,c,d,e,f,g,h,i,k]
+            const num1 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
 
             //b d f h k 출력방법 4가지(짝수)
             //1
-
+            const result_num1 = num1.slice(1,2) + num1.slice(3,4) + num1.slice(5,6) + num1.slice(7,8) + num1.slice(9);
+            console.log(result_num1)
+            
             //2
+            const num2 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            num2.splice(0,1);
+            num2.splice(1,1);
+            num2.splice(2,1);
+            num2.splice(3,1);
+            num2.splice(4,1);
+
+            console.log(num2)
+            
             //3
+            const num4 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            for(let i=0; i<num4.length; i++){
+                if( i % 2 == 1){
+                    console.log(num4[i]);
+                }
+            }
+            
             //4
+            const num5 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            [...num5].map((el, i)=> {
+                if( i % 2 == 1){
+                    console.log(num5[i]);
+                }
+            });
 
 
-        }
+
+            //3
+            // const num3 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            // const result_num3 = num3.filter(el => el === "b" && el === "d" && el === "f" && el === "h" && el === "k");
+            // console.log(result_num3)
+
+            //5
+            //  let arr2 = arr.map((v) => { return (v%2 ==0)? '짝수' : '홀수'});
+            // const num5 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            // [...num5].map((el, i) => {
+            //     return (i % 2 == 1) ? )
+            // }
+            }
     </script>
 </body>
 </html>

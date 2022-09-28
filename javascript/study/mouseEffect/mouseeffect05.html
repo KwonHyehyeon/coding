@@ -66,7 +66,8 @@
                 </div>
         <h3 class="t_tit2">➰ CSS</h3>
     <p class="t_desc2">
-        css로 스타일을 입혀줍니다.
+        마우스 반전 효과 : <br>
+        mix-blend-mode: difference;
     </p>
     <div class="t_code">
 <pre><code class="language-js">/* mouseType */
@@ -158,6 +159,7 @@ let centerPageX = window.innerWidth/2 - mousePageX;
 let centerPageY = window.innerHeight/2 - mousePageY;
     
 //최소값은 -100 최대값은 100
+//Math.ma최대값 /  Math.min최소값
 let maxPageX =  Math.max(-100, Math.min(100,centerPageX));
 let maxPageY = Math.max(-100, Math.min(100,centerPageY));
     
