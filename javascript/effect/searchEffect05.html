@@ -42,18 +42,18 @@
                     <li data-star="5"><a href="#">★★★★★</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">1개 이상</a></li>
-                    <li><a href="#">2개 이상</a></li>
-                    <li><a href="#">3개 이상</a></li>
-                    <li><a href="#">4개 이상</a></li>
+                    <li data-star="0"><a href="#">1개 이상</a></li>
+                    <li data-star="1"><a href="#">2개 이상</a></li>
+                    <li data-star="2"><a href="#">3개 이상</a></li>
+                    <li data-star="3"><a href="#">4개 이상</a></li>
                 </ul>
             </div>
             <div class="search__info">
                 <div>전체 속성 갯수 : <span class="num">0</span></div>
+                <div>찾은 속성 갯수 : <span class="num2">0</span></div>
             </div>
             <div class="search__list">
                 <ul class="line">
-
                 </ul>
             </div>
         </div>
@@ -1425,8 +1425,9 @@ li {
         { star: 4, name: "z-index", desc: " 엘리먼트의 겹쳐지는 순서를 지정한다." }
         ];
         const searchList = document.querySelector(".search__list ul")
-        const searchClick = document.querySelectorAll(".search__click ul li")
-        
+        const searchClick = document.querySelectorAll(".search__click ul:nth-child(1) li")
+        const searchClick2 = document.querySelectorAll(".search__click ul:nth-child(2) li")
+        let count = 0;
         // 실행순서 : 
         //  출력하기 //4번이랑 다르게 뿌려주기를 함수화
         // 매개변수list
@@ -1435,15 +1436,33 @@ li {
             //for of 문 사용
             for(const data of list){
                 //위에 ul까지 있으니깐 li로 뿌려주기
-                listCSS += `<li>${data.name} : ${data.desc} <em>${data.star}</em></li>`;
+                // listCSS += `<li>${data.name} : ${data.desc} <em>${data.star}</em></li>`;
+                if (data.star == 0) {
+                    listCSS += `<li>${data.name} : ${data.desc} <em>☆☆☆☆☆</em></li>`;
+                }
+                if (data.star == 1) {
+                    listCSS += `<li>${data.name} : ${data.desc} <em>★☆☆☆☆</em></li>`;
+                }
+                if (data.star == 2) {
+                    listCSS += `<li>${data.name} : ${data.desc} <em>★★☆☆☆</em></li>`;
+                }
+                if (data.star == 3) {
+                    listCSS += `<li>${data.name} : ${data.desc} <em>★★★☆☆</em></li>`;
+                }
+                if (data.star == 4) {
+                    listCSS += `<li>${data.name} : ${data.desc} <em>★★★★☆</em></li>`;
+                }
+                if (data.star == 5) {
+                    listCSS += `<li>${data.name} : ${data.desc} <em>★★★★★</em></li>`;
+                }
             }
-
             searchList.innerHTML = listCSS;
         }
         updateList(cssProperty); //재활용 가능
 
-        //클릭하기
-        searchClick.forEach(star => {
+        //클릭하기(별점에 해당하는 결과 나오게 하기)
+        //별점 클릭시
+        searchClick.forEach((star) => {
             //스타 클릭했을 때
             star.addEventListener("click", () => {
                 //콜백함수 쓰기 //데이터에서 스타찾기 //여기서는 filter=find
@@ -1451,16 +1470,34 @@ li {
                 const target = star.dataset.star;
                 const filterList = cssProperty.filter(data => data.star == target);
 
+                //찾은 속성 값
+                count = filterList.length;
+                document.querySelector(".num2").innerHTML = count;
                 //찾은 값filterList 를 함수에 보내주기
                 updateList(filterList);
             });
         })
+        //1개이상 2개이상...클릭시
+        searchClick2.forEach((star) => {
+            star.addEventListener("click", () => {
+                const target = star.dataset.star;
+                // >= ~이상이 되므로 searchClick과의 차이
+                const filterList = cssProperty.filter(data => data.star >= target);
+                count = filterList.length;
+                document.querySelector(".num2").innerHTML = count;
+                updateList(filterList);
+            });
+        });
+        //all
 
-        //숫자 1일때 별1개
-        //숫자를 별로 치환해주기!
+
+        //전체속성 구해주기
+        const count2 = cssProperty.length;
+        document.querySelector(".num").innerHTML = count2;
+
+        
         //dataset 안쓰고 가져오는 방법(고민) 위의 타겟 (index값 가져와서 하면 됨)
         //1개이상, 2개 이상 조건문 들어간거 완료하기
-        //전체 속성 갯수 표시
     </script>
 </body>
 </html>

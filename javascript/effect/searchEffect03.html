@@ -62,8 +62,8 @@
                     <span>y</span>
                     <span>z</span>
                 </div>
-                <div>전체 속성 갯수 : <span class="num">0</span></div>
-                <div>찾은 속성 갯수 : <span class="num2">0</span></div>
+                <div class="all">전체 속성 갯수 : <span class="num">0</span></div>
+                <div class="find">찾은 속성 갯수 : <span class="num2">0</span></div>
 
             </div>
             <div class="search__list">
@@ -792,6 +792,7 @@ li {
         const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
         const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
         const searchInfo2 = document.querySelector(".search__info .num2");
+        const searchInfoFind = document.querySelector(".search__info .find");        //찾은속성
 
         let count = 0;
         // 전체 개수 구하기
@@ -816,13 +817,16 @@ li {
                 // count = 0;
                     if (searchWord === "all"){
                             el.classList.remove("hide");
+                            searchInfoFind.style.display = "none"
                         } else if (searchWord.charAt(0) === cssName.charAt(0)) {
                             el.classList.remove("hide");
+                            searchInfoFind.style.display = "inline-block"
                             count++;
                         } else {
                             el.classList.add("hide");
+                            searchInfoFind.style.display = "inline-block"
                         }
-                        searchInfo.textContent = count;
+                        searchInfo.textContent = searchList.length;
                     });
                     count = 0;
                     const findNum = document.querySelectorAll(".search__list ul li.hide");
