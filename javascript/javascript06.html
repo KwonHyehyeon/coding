@@ -1886,6 +1886,48 @@ document.querySelector(".sample14_P3").innerHTML = result3;
                 }
             });
 
+            const num11 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            const result11 = [...num11].map(el => el);
+            for (let result11=1; result11 < num11.length; result11 += 2){
+                console.log(num11[result11]);
+            }
+            const num12 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            const result12 = [...num12].map(el => el);
+            for (let result12=1; result12 < num12.length; result12++){
+                if (result12%2 == 1){
+                    console.log(num2[result12]);
+                }
+            }
+            const num13 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            const result13 = num13.filter(function(e, i){
+                return i%2 == 1 ? true : false;
+            })
+            console.log(result13);
+            const num14 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            for(i=1; i<num14.length; i+=2){
+                const result14 = num14.slice(i,i+1);
+                console.log(result14);
+            }
+
+            //e,f 만 출력 3가지 slice, splice쓰지말고
+            //1
+            const num15 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            for(let i = 4; i<6; i++){
+                console.log(num15[i]);
+            }
+            //2
+            const num16 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            const num_result16 = num16.filter(el => el >= "e" && el < "g");
+            console.log(num_result16)
+            //3
+            const num17 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            num17.map((el, i) => {
+                if ( i >= 4 && i < 6) {
+                    console.log(num17[i])
+                }
+            });
+
+
 
 
             //3

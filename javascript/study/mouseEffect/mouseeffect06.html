@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트05</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">🖱 마우스 이펙트 : 텍스트 효과</h2>
+        <p class="t_desc">
+            📌 이번 마우스 이펙트는 마우스를 텍스트에 가져다다 놓았을 때 텍스트는 줄마다 서로 반대방향으로 길어지고, 마우스는 반전효과가 나타나도록 하는 이펙트입니다. 
+        </p>
+        <hr>
+        <h3 class="t_tit2">마우스 이펙트 완성본⭐️</h3>
+        <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/mouseEffect06.html" frameborder="0"></iframe>
+        </div>
+        <div class="t_link">
+            <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/mouseEffect06.html" target="_blank"
+            >마우스 이펙트가 궁금하다면?💡</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/mouseEffect06.html" target="_blank"
+            >원본 소스보기</a>
+        </div>  
+        <h3 class="t_tit2">➰ HTML</h3>
+        <p class="t_desc2">
+            ∙ mouse__textd에 line에 left와 right를 설정해줍니다. 나중에 글씨가 반대방향으로 가게 하기 위함입니다.
+        </p>
+                <div class="t_code">
+<pre><code class="language-js">&lt;header id="header"&gt;
+    &lt;h1&gt;&lt;a href="mouseEffect.html"&gt;Javascript Mouse Effect06&lt;/a&gt;&lt;/h1&gt;
+    &lt;p&gt;마우스 이펙트 - 텍스트 효과&lt;/p&gt;
+    &lt;ul class="active1"&gt; 
+        &lt;li&gt;&lt;a href="mouseEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+        &lt;li  class="active"&gt;&lt;a href="mouseEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/header&gt;
+&lt;!-- //header --&gt;
+&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;div class="mouse__img"&gt;
+                &lt;figure&gt;
+                    &lt;img src="../assets/img/effect_bg08.jpg" alt=""&gt;
+                &lt;/figure&gt;
+            &lt;/div&gt;
+            &lt;div class="mouse__text"&gt;
+                &lt;div class="line"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;div class="spanSlow"&gt;Pain Past&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;div class="spanSlow"&gt;Pain Past&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="line"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;div class="spanFast"&gt;is pleasure.&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;div class="spanFast"&gt;is pleasure.&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="line"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;div class="spanSlow"&gt;지나간 고통은&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;div class="spanSlow"&gt;지나간 고통은&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="line"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;div class="spanFast"&gt;쾌락이다.&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;div class="spanFast"&gt;쾌락이다.&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;   
+    &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+                </div>
+        <h3 class="t_tit2">➰ CSS</h3>
+    <p class="t_desc2">
+        마우스 반전 효과 : <br>
+        mix-blend-mode: difference;
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">/* mouseType */
+.mouse__wrap {
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    cursor: none;
+}
+.mouse__img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.mouse__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -20%);
+    font-size: 3vw;
+    line-height: 1.5;
+}
+.mouse__text .line {
+    width: 100%;
+    display: flex;
+}
+.mouse__text .line .left{
+    width: 50vw;
+    color: orange;
+    overflow: hidden;
+    /* skew:기울기 */
+    transform: skew(0deg, -15deg);
+}
+.mouse__text .line .left .spanWrap{
+    width: 100vw;
+    text-align: center;
+}
+.mouse__text .line .right{
+    width: 50vw;
+    /* 하면 두 개가 겹쳐보임 */
+    overflow: hidden;
+    transform: skew(0deg, 15deg);
+}
+.mouse__text .line .right .spanWrap{
+    width: 100vw;
+    text-align: center;
+    /* 가운데 오게 */
+    transform: translateX(-50vw);
+}
+.mouse__text span {
+    /* 인라인 구조이기 때문에 이걸 넣어야 움직임 */
+    display: inline-block;
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    z-index: 9999;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    user-select: none;
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">➰ JS</h3>
+        <p class="t_desc2">
+            주석을 참고해주세요!
+        </p>
+                <div class="t_code">
+<pre><code class="language-js">const mouseMove = (e) =&gt; {
+    // 반 값 빼주고 현재위치값 빼주면 가운데 정렬
+    let positionSlow = (e.pageX - (window.innerWidth/2)) * 0.1;
+    let positionFast = (e.pageX - (window.innerWidth/2)) * 0.2;
+
+    gsap.to(".spanSlow", {duration: 0.4, x: positionSlow});
+    gsap.to(".spanFast", {duration: 0.4, x: -positionFast});
+    gsap.to(".mouse__cursor", {duration: 0.3, left: e.pageX -5, top: e.pageY -5});
+}
+window.addEventListener("mousemove", mouseMove);
+
+//마우스 커서가 글씨 위에 올라가면 크기는 5배 정도 크게 작업 원5배크게...
+const cursor = document.querySelector(".mouse__cursor")
+document.querySelector(".mouse__text").addEventListener("mouseover", () =&gt; {
+    cursor.style.transform = "scale(5)"
+
+})
+document.querySelector(".mouse__text").addEventListener("mouseout", () =&gt; {
+    cursor.style.transform = "scale(1)"
+});
+</code></pre>
+                </div>
+<!-- document -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
