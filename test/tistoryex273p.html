@@ -1,163 +1,69 @@
 &lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+&lt;html lang="ko"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;마우스 이펙트06&lt;/title&gt;
-    &lt;link rel="stylesheet" href="../assets/css/mouse.css"&gt;
-    &lt;link rel="stylesheet" href="../assets/css/dracula.css"&gt;
+    &lt;title&gt;검색 이펙트&lt;/title&gt;
+
+    &lt;link rel="stylesheet" href="../assets/css/search.css"&gt;
+    &lt;link rel="stylesheet" href="../assets/css/draculasearch.css"&gt;
+
+    &lt;link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet"&gt;
     &lt;link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet"&gt;
-    &lt;style&gt;
-        /* mouseType */
-        .mouse__wrap {
-            color: #fff;
-            width: 100%;
-            height: 100vh;
-            cursor: none;
-        }
-        .mouse__img {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        }
-        .mouse__text {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -20%);
-            font-size: 3vw;
-            line-height: 1.5;
-        }
-        .mouse__text .line {
-            width: 100%;
-            display: flex;
-        }
-        .mouse__text .line .left{
-            width: 50vw;
-            color: orange;
-            overflow: hidden;
-            /* skew:기울기 */
-            transform: skew(0deg, -15deg);
-        }
-        .mouse__text .line .left .spanWrap{
-            width: 100vw;
-            text-align: center;
-        }
-        .mouse__text .line .right{
-            width: 50vw;
-            /* 하면 두 개가 겹쳐보임 */
-            overflow: hidden;
-            transform: skew(0deg, 15deg);
-        }
-        .mouse__text .line .right .spanWrap{
-            width: 100vw;
-            text-align: center;
-            /* 가운데 오게 */
-            transform: translateX(-50vw);
-        }
-        .mouse__text span {
-            /* 인라인 구조이기 때문에 이걸 넣어야 움직임 */
-            display: inline-block;
-        }
-        .mouse__cursor {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            z-index: 9999;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.9);
-            user-select: none;
-            pointer-events: none;
-            mix-blend-mode: difference;
-        }
-    &lt;/style&gt;
 &lt;/head&gt;
-&lt;body class="img07"&gt;
-    &lt;header id="header"&gt;
-        &lt;h1&gt;&lt;a href="mouseEffect.html"&gt;Javascript Mouse Effect06&lt;/a&gt;&lt;/h1&gt;
-        &lt;p&gt;마우스 이펙트 - 텍스트 효과&lt;/p&gt;
-        &lt;ul class="active1"&gt; 
-            &lt;li&gt;&lt;a href="mouseEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="mouseEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="mouseEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="mouseEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="mouseEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
-            &lt;li  class="active"&gt;&lt;a href="mouseEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="mouseEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
+&lt;body&gt;
+    &lt;header id="header"&gt; 
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="searchEffect01.html"&gt;1&lt;/a&gt;
+                &lt;li&gt;&lt;a href="searchEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="active"&gt;&lt;a href="searchEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
     &lt;/header&gt;
-    &lt;!-- //header --&gt;
+    &lt;!-- header --&gt;
+
     &lt;main id="main"&gt;
-        &lt;section id="mouseType"&gt;
-            &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
-            &lt;div class="mouse__wrap"&gt;
-                &lt;div class="mouse__img"&gt;
-                    &lt;figure&gt;
-                        &lt;img src="../assets/img/effect_bg08.jpg" alt=""&gt;
-                    &lt;/figure&gt;
-                &lt;/div&gt;
-                &lt;div class="mouse__text"&gt;
-                    &lt;div class="line"&gt;
-                        &lt;div class="left"&gt;
-                            &lt;div class="spanWrap"&gt;
-                                &lt;div class="spanSlow"&gt;Pain Past&lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class="right"&gt;
-                            &lt;div class="spanWrap"&gt;
-                                &lt;div class="spanSlow"&gt;Pain Past&lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class="line"&gt;
-                        &lt;div class="left"&gt;
-                            &lt;div class="spanWrap"&gt;
-                                &lt;div class="spanFast"&gt;is pleasure.&lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class="right"&gt;
-                            &lt;div class="spanWrap"&gt;
-                                &lt;div class="spanFast"&gt;is pleasure.&lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class="line"&gt;
-                        &lt;div class="left"&gt;
-                            &lt;div class="spanWrap"&gt;
-                                &lt;div class="spanSlow"&gt;지나간 고통은&lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class="right"&gt;
-                            &lt;div class="spanWrap"&gt;
-                                &lt;div class="spanSlow"&gt;지나간 고통은&lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class="line"&gt;
-                        &lt;div class="left"&gt;
-                            &lt;div class="spanWrap"&gt;
-                                &lt;div class="spanFast"&gt;쾌락이다.&lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class="right"&gt;
-                            &lt;div class="spanWrap"&gt;
-                                &lt;div class="spanFast"&gt;쾌락이다.&lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;   
-        &lt;/section&gt;
+        &lt;div class="search__wrap"&gt;
+            &lt;span&gt;filter()을 이용하여 속성의 중요도 보여주기&lt;/span&gt;
+            &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+
+            &lt;div class="search__click"&gt;
+                &lt;ul&gt;
+                    &lt;li data-star="0"&gt;&lt;a href="#"&gt;☆☆☆☆☆&lt;/a&gt;&lt;/li&gt;
+                    &lt;li data-star="1"&gt;&lt;a href="#"&gt;★☆☆☆☆&lt;/a&gt;&lt;/li&gt;
+                    &lt;li data-star="2"&gt;&lt;a href="#"&gt;★★☆☆☆&lt;/a&gt;&lt;/li&gt;
+                    &lt;li data-star="3"&gt;&lt;a href="#"&gt;★★★☆☆&lt;/a&gt;&lt;/li&gt;
+                    &lt;li data-star="4"&gt;&lt;a href="#"&gt;★★★★☆&lt;/a&gt;&lt;/li&gt;
+                    &lt;li data-star="5"&gt;&lt;a href="#"&gt;★★★★★&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul&gt;
+                    &lt;li data-star="0"&gt;&lt;a href="#"&gt;1개 이상&lt;/a&gt;&lt;/li&gt;
+                    &lt;li data-star="1"&gt;&lt;a href="#"&gt;2개 이상&lt;/a&gt;&lt;/li&gt;
+                    &lt;li data-star="2"&gt;&lt;a href="#"&gt;3개 이상&lt;/a&gt;&lt;/li&gt;
+                    &lt;li data-star="3"&gt;&lt;a href="#"&gt;4개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="search__info"&gt;
+                &lt;div&gt;전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+                &lt;div&gt;찾은 속성 갯수 : &lt;span class="num2"&gt;0&lt;/span&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="search__list"&gt;
+                &lt;ul class="line"&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
     &lt;/main&gt;
-    &lt;!-- //main --&gt;
+    &lt;!-- main --&gt;
+
     &lt;footer id="footer"&gt;
+        &lt;a href="mailto:noeyheyh9357@gmail.com"&gt;noeyheyh9357@gmail.com&lt;/a&gt;
         &lt;div class="modal__wrap"&gt;
-            &lt;div class="modal__btn active2"&gt;소스 보기&lt;/div&gt;
+            &lt;div class="modal__btn"&gt;소스 보기&lt;/div&gt;
             &lt;div class="modal__cont"&gt;
                 &lt;div class="modal__box"&gt;
                     &lt;div class="title"&gt;
@@ -169,15 +75,9 @@
                                         &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
                                         &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"&gt;&lt;/path&gt;
                                         &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"&gt;&lt;/path&gt;
-                                    &lt;/svg&gt;
+                                      &lt;/svg&gt;
                                 &lt;/span&gt;
-                                &lt;em&gt;Javascript&lt;/em&gt;
-                                &lt;span class="close"&gt;
-                                    &lt;svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
-                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                    &lt;/svg&gt;
-                                &lt;/span&gt;
+                                &lt;em&gt;JAVASCRIPT&lt;/em&gt;
                             &lt;/div&gt;
                             &lt;div&gt;
                                 &lt;span class="favicon" aria-label="true"&gt;
@@ -185,15 +85,9 @@
                                         &lt;circle cx="9" cy="9" r="9" fill="#fff"&gt;&lt;/circle&gt;
                                         &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"&gt;&lt;/path&gt;
                                         &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"&gt;&lt;/path&gt;
-                                    &lt;/svg&gt;
+                                      &lt;/svg&gt;
                                 &lt;/span&gt;
                                 &lt;em&gt;HTML&lt;/em&gt;
-                                &lt;span class="close"&gt;
-                                    &lt;svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
-                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                    &lt;/svg&gt;
-                                &lt;/span&gt;
                             &lt;/div&gt;
                             &lt;div&gt;
                                 &lt;span class="favicon" aria-label="true"&gt;
@@ -204,299 +98,1406 @@
                                     &lt;/svg&gt;
                                 &lt;/span&gt;
                                 &lt;em&gt;CSS&lt;/em&gt;
-                                &lt;span class="close"&gt;
-                                    &lt;svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
-                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                    &lt;/svg&gt;
-                                &lt;/span&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
-                        &lt;span class="plus" aria-label="true"&gt;
-                            &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
-                                &lt;path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                                &lt;path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                            &lt;/svg&gt;
-                        &lt;/span&gt;
                     &lt;/div&gt;
                     &lt;div class="cont"&gt;
                         &lt;div class="active"&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;      // 마우스 따라다니게 하기
-// 마우스가 움직였을 때 마우스 움직이는 값(event)을 가져올 수 있음
-window.addEventListener("mousemove", (event) =&gt; {
-  document.querySelector(".clientX").innerText = event.clientX
-  document.querySelector(".clientY").innerText = event.clientY
-  document.querySelector(".offsetX").innerText = event.offsetX
-  document.querySelector(".offsetY").innerText = event.offsetY
-  document.querySelector(".pageX").innerText = event.pageX
-  document.querySelector(".pageY").innerText = event.pageY
-  document.querySelector(".screenX").innerText = event.screenX
-  document.querySelector(".screenY").innerText = event.screenY
+&lt;pre&gt;&lt;code class="language-js"&gt;//배열, 객체
+const cssProperty = [
+{ name: "accent-color", desc: " 요소의 강조 색상을 지정합니다. " },
+{ name: "align-content", desc: " 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다." },
+{ name: "align-items", desc: " 교차축에서 아이템 정렬 하는 속성입니다. 주로 flex에서 item들을 정렬할 때 사용됩니다." },
+{ name: "align-self", desc: " 특정 item의 정렬을 따로 하고 싶을 때 사용합니다." },
+{ name: "all", desc: " CSS 사용자 지정 속성을 제외한 모든 속성을 초기화합니다. 초깃값, 상속값, 아니면 다른 스타일시트 출처의 값로 설정할 수 있습니다." },
+{ name: "animation", desc: " 애니메이션과 관련된 속성을 일괄적로 처리합니다." },
+{ name: "animation-delay", desc: " 애니메이션 지연 시간을 설정합니다." },
+{ name: "animation-direction", desc: " 애니메이션 움직임 방향을 설정합니다." },
+{ name: "animation-duration", desc: " 애니메이션 움직인 시간을 설정합니다." },
+{ name: "animation-fill-mode", desc: " 애니메이션이 끝난 후의 상태를 설정합니다." },
+{ name: "animation-iteration-count", desc: " 애니메이션의 반복 횟수를 설정합니다." },
+{ name: "animation-name", desc: " 애니메이션 keyframe 이름을 설정합니다." },
+{ name: "animation-play-state", desc: " 애니메이션 진행상태를 설정합니다." },
+{ name: "animation-timeline", desc: " 애니메이션의 타임라인을 설정합니다." },
+{ name: "animation-timing-function", desc: " 애니메이션 움직임의 속도를 설정합니다." },
+{ name: "appearance", desc: " 운영체제 및 브라우저에 기본적로 설정되어 있는 테마를 기반로 요소를 표현한다." },
+{ name: "aspect-ratio", desc: " 요소의 크기를 비율대로 조정할 수 있게 한다." },
+{ name: "backdrop-filter", desc: " 요소 뒤 영역에 흐림이나 색상 시프트 등 그래픽 효과를 적용할 수 있는 속성입니다." },
+{ name: "backface-visibility", desc: " 요소의 뒷쪽에서 앞면이 보이게 할지 정하는 속성입니다." },
+{ name: "background", desc: " 백그라운드 속성을 일괄적로 설정합니다. " },
+{ name: "background-attachment", desc: " 배경 이미지의 고정 여부를 설정합니다." },
+{ name: "background-blend-mode", desc: " 배경을 혼합했을 때 그래픽 효과를 설정합니다." },
+{ name: "background-clip", desc: " 백그라운드 이미지의 위치 기준점을 설정합니다." },
+{ name: "background-color", desc: " 백그라운드 색을 설정합니다." },
+{ name: "background-image", desc: " 백그라운드 이미지 속성을 설정합니다." },
+{ name: "background-origin", desc: " 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다." },
+{ name: "background-position", desc: " 백그라운드 이미지의 위치 영역을 설정합니다." },
+{ name: "background-position-x", desc: " 백그라운드 이미지의 X축위치 영역을 설정합니다." },
+{ name: "background-position-y", desc: " 백그라운드 이미지의 Y축위치 영역을 설정합니다." },
+{ name: "background-repeat", desc: "백그라운드 이미지 반복 여부를 설정합니다." },
+{ name: "background-size", desc: " 백그라운드 이미지 사이즈를 설정합니다." },
+{ name: "block-size", desc: " 블럭의 크기를 지정합니다." },
+{ name: "border", desc: " 테두리 속성을 일괄적로 설정합니다." },
+{ name: "border-block", desc: " 보더블럭 속성을 지정합니다. " },
+{ name: "border-block-color", desc: " 보더블럭 색상을 지정합니다." },
+{ name: "border-block-end", desc: " 보더블럭 끝부분을 설정합니다." },
+{ name: "border-block-end-color", desc: " 보더블럭 끝부분 색상을 설정합니다." },
+{ name: "border-block-end-style", desc: " 보더블럭 끝부분 스타일을 설정합니다." },
+{ name: "border-block-end-width", desc: " 보더블럭 끝부분 너비를 설정합니다." },
+{ name: "border-block-start", desc: " 보더블럭의 시작부분을 설정합니다." },
+{ name: "border-block-start-color", desc: " 보더블럭 시작부분을 설정합니다." },
+{ name: "border-block-start-style", desc: " 보더블럭 시작부분 스타일을 설정합니다." },
+{ name: "border-block-start-width", desc: " 보더블럭 시작부분 너비값을 설정합니다." },
+{ name: "border-block-style", desc: " 보더블럭 스타일을 설정합니다." },
+{ name: "border-block-width", desc: " 보더블럭의 너비값을 지정합니다." },
+{ name: "border-bottom", desc: " 아래쪽 속성을 일괄적로 설정합니다." },
+{ name: "border-bottom-color", desc: " 테두리 아래쪽 색 속성을 설정합니다." },
+{ name: "border-bottom-left-radius", desc: " 아래 왼쪽 모서리 굴곡을 설정합니다." },
+{ name: "border-bottom-right-radius", desc: " 아래 오른쪽 모서리 굴곡을 설정합니다." },
+{ name: "border-bottom-style", desc: " 테두리 아래쪽 스타일 속성을 설정합니다." },
+{ name: "border-bottom-width", desc: " 테두리 아래쪽 두께 속성을 설정합니다." },
+{ name: "border-collapse", desc: " 테이블 cell 테두리의 겹침 속성을 설정한다." },
+{ name: "border-color", desc: " 테두리의 색상을 지정합니다. " },
+{ name: "border-end-end-radius", desc: " 속성은 요소의에 따라 물리적 경계 반경에 매핑하는 요소에 논리적 경계 반경 정의 writing-mode , direction , 및 text-orientation . 이것은 텍스트 방향 및 쓰기 모드에 관계없이 작업 할 스타일을 작성할 때 유용 합니다 ." },
+{ name: "border-end-start-radius", desc: " 이 속성은 요소의 블록 끝과 인라인 시작면 사이의 모서리에 영향을줍니다." },
+{ name: "border-image", desc: " 테두리의 이미지를 지정합니다. " },
+{ name: "border-image-outset", desc: " 테두리를 벗어나는 이미지 양을 지정." },
+{ name: "border-image-repeat", desc: " 원본 이미지의 모서리 영역을 요소의 테두리 이미지 크기에 맞춰 조절할 때 사용할 방법을 지정합니다." },
+{ name: "border-image-slice", desc: " border-image-source로 설정한 이미지를 여러 개의 영역로 나눕니다." },
+{ name: "border-image-source", desc: " 요소의 테두리 이미지로 사용할 원본 이미지를 지정합니다." },
+{ name: "border-image-width", desc: " 요소의 테두리 이미지로 사용할 원본 이미지를 지정합니다." },
+{ name: "border-inline", desc: " 스타일 시트에서 하나의 장소에서 각각의 논리적 인라인 border 속성 값을 설정합니다." },
+{ name: "border-inline-color", desc: " 논리적 인라인 테두리의 색상을 정의합니다." },
+{ name: "border-inline-end", desc: " 요소의 논리적 인라인 엔드 테두리 폭을 정의합니다." },
+{ name: "border-inline-end-color", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 색상에 매핑하는 요소의 논리적 인라인 엔드 테두리 색상을 정의합니다." },
+{ name: "border-inline-end-style", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 스타일에 매핑하는 요소의 논리적 인라인 끝 테두리 스타일을 정의합니다." },
+{ name: "border-inline-end-width", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 폭 물리적 경계에 매핑하는 요소의 논리적 인라인 엔드 테두리 폭을 정의합니다." },
+{ name: "border-inline-start", desc: " 스타일 시트에서 하나의 장소에서 각각의 논리적 인라인 시작 border 속성 값을 설정합니다." },
+{ name: "border-inline-start-color", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 색상에 매핑하는 요소의 논리적 인라인 시작 테두리 색상을 정의합니다." },
+{ name: "border-inline-start-style", desc: " 속성은 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 스타일에 매핑하는 요소의 논리적 인라인 시작 테두리 스타일을 정의합니다." },
+{ name: "border-inline-start-width", desc: " 속성은 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 폭 물리적 경계에 매핑하는 요소의 논리적 인라인 시작 테두리 폭을 정의합니다." },
+{ name: "border", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 스타일에 매핑하는 요소의 논리적 인라인 테두리의 스타일을 정의합니다." },
+{ name: "border-inline-width", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 폭 물리적 경계에 매핑하는 요소의 논리적 인라인 테두리의 폭을 정의합니다." },
+{ name: "border-left", desc: " 왼쪽 테두리를 설정합니다." },
+{ name: "border-left-color", desc: " 박스의 왼쪽 테두리 색상을 지정합니다." },
+{ name: "border-left-style", desc: " 박스의 왼쪽 테두리 영역의 스타일을 지정합니다." },
+{ name: "border-left-width", desc: " 박스의 왼쪽 테두리 영역의 너비를 지정합니다." },
+{ name: "border-radius", desc: " 테두리를 둥글게 만들 수 있는 속성입니다." },
+{ name: "border-right", desc: " 오른쪽 테두리를 설정합니다. " },
+{ name: "border-right-color", desc: " 박스의 오른쪽 테두리 색상을 지정합니다." },
+{ name: "border-right-style", desc: " 박스의 오른쪽 테두리 영역의 스타일을 지정합니다." },
+{ name: "border-right-width", desc: " 박스의 오른쪽 테두리 영역의 너비를 지정합니다." },
+{ name: "border-spacing", desc: " 테이블 cell과 테두리와의 간격을 지정한다." },
+{ name: "border-start-end-radius", desc: " 이것은 텍스트 방향 및 쓰기 모드에 관계없이 작업 할 스타일을 작성할 때 유용 합니다 ." },
+{ name: "border-start-start-radius", desc: " 이것은 텍스트 방향 및 쓰기 모드에 관계없이 작업 할 스타일을 작성할 때 유용 합니다 ." },
+{ name: "border-style", desc: " 박스의 테두리 영역의 스타일을 지정합니다." },
+{ name: "border-top", desc: " 위쪽 테두리를 설정합니다." },
+{ name: "border-top-color ", desc: " 박스의 상단 테두리 색상을 지정합니다." },
+{ name: "border-top-left-radius", desc: " 라운드 코너의 곡률을 규정하는 타원의 반경 (또는 세미 메이저 및 세미 마이너 축의 반경)을 지정하여 소자의 왼쪽 상단." },
+{ name: "border-top-right-radius", desc: " 속성 라운드 코너의 곡률을 규정하는 타원의 반경 (또는 세미 메이저 및 세미 마이너 축의 반경)을 지정하여 소자의 오른쪽 상단." },
+{ name: "border-top-style", desc: " 박스의 상단 테두리 영역의 스타일을 지정합니다." },
+{ name: "border-top-width", desc: " 박스의 상단 테두리 영역의 너비를 지정합니다." },
+{ name: "border-width", desc: " 박스의 테두리 영역의 너비를 지정합니다." },
+{ name: "bottom", desc: " 용기블럭의 높이를 참조합니다. 요소가 밑에서부터 어디쯤 배치 될 지 결정합니다." },
+{ name: "box-decoration-break", desc: " 요소의 방법 속성을 지정 조각이 여러 행, 열 또는 페이지에 걸쳐 깨진 경우 렌더링해야합니다." },
+{ name: "box-shadow", desc: " 요소의 프레임 주위에 그림자 효과를 추가합니다." },
+{ name: "box-sizing", desc: " 박스의 크기를 어떤 것을 기준로 계산할지를 정하는 속성입니다." },
+{ name: "break-after", desc: " 속성 설정 페이지, 열, 또는 지역 구분은 생성 된 박스 후 행동해야하는 방법. 생성 된 상자가 없으면 속성이 무시됩니다." },
+{ name: "break-before", desc: " 세트 페이지, 열, 또는 지역 구분은 생성 된 박스 전에 행동해야하는 방법. 생성 된 상자가 없으면 속성이 무시됩니다." },
+{ name: "break-inside", desc: " 속성 설정 페이지, 열, 또는 지역 나누기 생성 된 상자 안에 행동해야하는 방법. 생성 된 상자가 없으면 속성이 무시됩니다." },
+{ name: "caption-side", desc: " 표(table)의 캡션의 위치를 정하는 속성" },
+{ name: "caret-color", desc: " 색상 설정 삽입 캐럿 , 다음 문자 입력 된 삽입 될 볼 마커를. 이를 텍스트 입력 커서 라고도합니다 ." },
+{ name: "clear", desc: " float 속성을 해제한다." },
+{ name: "clip", desc: " 요소의 보이는 부분을 정의합니다." },
+{ name: "clip-path", desc: " 요소의 어떤 부분 집합을 표시 할 것인지 클리핑 영역을 생성한다." },
+{ name: "color", desc: " 텍스트 내용의 글자 색상을 지정합니다." },
+{ name: "color-scheme", desc: " 요소가 편안하게 렌더링 할 수있는 색 구성표 표시 할 수 있습니다." },
+{ name: "column-count", desc: " 해당 요소를 몇 개의 칼럼(column)로 나눌지를 설정합니다." },
+{ name: "column-fill", desc: " 컬럼로 쪼갤 때, 얼마나 요소들이 균형이 맞는지 컨트롤 합니다." },
+{ name: "column-gap (grid-column-gap)", desc: " 그리드 레이아웃에서 컬럼 간의 간격을 정의합니다." },
+{ name: "column-rule", desc: " 다중 열 레이아웃의 열 사이에 그려진 라인의 폭, 스타일, 색상을 설정한다." },
+{ name: "column-rule-color", desc: " 다중 열 레이아웃의 열 사이에 그려진 라인의 색을 설정한다." },
+{ name: "column-rule-style", desc: " 다중 열 레이아웃에서 열 사이에 그려진 라인의 스타일을 설정합니다." },
+{ name: "column-rule-width", desc: " 다중 열 레이아웃의 열 사이에 그려진 라인의 폭을 설정한다." },
+{ name: "column-span", desc: " 컬럼 span을 설정합니다." },
+{ name: "column-width", desc: " 다중 열 레이아웃에서 이상적인 컬럼 폭을 설정한다." },
+{ name: "columns", desc: " 다단을 정의 - 단축 속성" },
+{ name: "contain", desc: " 특정 요소와 콘텐츠가 문서 트리의 다른 부위와 독립되어있음을 나타낼 때 사용합니다." },
+{ name: "content", desc: " 엘리먼트의 앞(:before)이나 뒤(:after)에 내용을 생성합니다." },
+{ name: "content-visibility", desc: " 페이지로드 성능을 개선하는 데 가장 영향력있는 속성" },
+{ name: "counter-increment", desc: " counter-reset로 설정한 값을 증가시키는 역할" },
+{ name: "counter-reset", desc: " 카운터를 사용하려면, counter-reset로 먼저 카운터 이름과 시작값을 설정 해야 합니다" },
+{ name: "counter-set", desc: " CSS 카운터 를 주어진 값로 설정합니다." },
+{ name: "cursor", desc: " 마우스 커서의 모양을 지정한다." },
+{ name: "direction", desc: " 텍스트의 표기 방향을 지정한다." },
+{ name: "display", desc: " 엘리먼트의 디스플레이 속성을 지정한다." },
+{ name: "empty-cells", desc: " 테두리와 배경이 주위에 표시할지 여부 " },
+{ name: "filter", desc: " 요소 흐림 또는 색상 변화와 같은 그래픽 효과를 적용한다." },
+{ name: "flex", desc: " 요소들을 자유자제로 위치 시키는 속성로, 레이아웃을 쉽게 잡을 수 있다." },
+{ name: "flex-basis", desc: " 플렉스 항목의 초기 기본 크기를 설정합니다." },
+{ name: "flex-direction", desc: " CSS3에 추가된 속성로 flexible item이 flex 컨테이너 안에 위치되는 방법을 지정한다." },
+{ name: "flex-flow", desc: " 플렉스 컨테이너의 방향,뿐만 아니라 포장 동작을 지정한다." },
+{ name: "flex-grow", desc: " flex-item 요소가, flex-container 요소 내부에서 할당 가능한 공간의 정도를 선언합니다." },
+{ name: "flex-shrink", desc: " 공간을 넘어갈 경우에 각 아이템들을 줄이는 방법을 설정하는 방법입니다." },
+{ name: "flex-wrap", desc: " flexible item을 wrap 할것인지 아닌지를 지정한다." },
+{ name: "float", desc: " 용기박스를 왼쪽 또는 오른쪽로 이동하거나 이동하지 않음을 지정한다." },
+{ name: "font", desc: " 엘리먼트안의 텍스트 컨텐츠의 font-style, font-variant, font-weight, font-size, line-height, font-family를 설정하는 약식속성이다." },
+{ name: "font-family", desc: " 특정 글꼴이나 대표 글꼴을 지정한다. " },
+{ name: "font-feature-settings", desc: " 오픈타입 폰트의 다양한 오픈타입 피처를 설정합니다." },
+{ name: "border", desc: " 저장된 폰트 자간 정보의 사용을 설정한다. " },
+{ name: "font-language-override", desc: " 서체에서 특정 언어의 상형 문자의 사용을 제어합니다." },
+{ name: "font-optical-sizing", desc: " 서로 다른 크기로 볼 수 있도록 최적화되어 있는지 설정합니다." },
+{ name: "font-size", desc: " 글꼴의 크기를 지정한다." },
+{ name: "font-size-adjust", desc: " (대문자의 크기를 정의하는) 현재의 폰트 크기에 대한 소문자의 크기를 설정한다." },
+{ name: "font-stretch", desc: " 글꼴 에서 노멀, 압축 또는 확장면을 선택합니다." },
+{ name: "font-style", desc: "font-family에서 지정된 폰트의 스타일을 지정합니다." },
+{ name: "font-synthesis", desc: " 브라우저가 굵은 글꼴과 이탤릭 글꼴을 합성하는 것을 허용할지 설정합니다." },
+{ name: "font-variant", desc: " 소문자를 작은 대문자, 즉 소문자 크기의 대문자로 바꾸는 속성입니다." },
+{ name: "font-variant-alternates", desc: " 대체 글리프의 사용을 제어합니다." },
+{ name: "font-variant-caps", desc: " 대문자를위한 대체 글리프의 사용을 제어합니다." },
+{ name: "font-variant-east-asian", desc: " 일본과 중국 등 동아시아 스크립트를 대체 글리프의 사용." },
+{ name: "font-variant-ligatures", desc: " ligatures 글꼴의 글자들을 서로 더 조화롭게 보이도록 하는 기능을 지정합니다." },
+{ name: "font-variant-numeric", desc: " 숫자, 분수 및 서수 마커 대체 글리프의 사용을 제어합니다." },
+{ name: "font-variant-position", desc: " 글꼴에 내장된 윗 첨자 또는 아랫첨자를 사용하도록 지정합니다." },
+{ name: "font-variation-settings", desc: " Variable fonts(가변 폰트) 의 폰트 스타일을 제어하는 CSS 속성입니다." },
+{ name: "font-weight", desc: " 글꼴의 굵기를 지정한다." },
+{ name: "forced-color-adjust", desc: " 강제 색상 모드 중 선택 하여 특정 요소에 대한 저장을 할 수 있습니다." },
+{ name: "gap (grid-gap)", desc: " row-gap 및 column-gap 의 약어 입니다. (갭제어)" },
+{ name: "grid", desc: " 2차원 표형태의 레이아웃을 만들 수 있는 속성입니다." },
+{ name: "grid-area", desc: " grid-templete-areas에 지정한 영역을 정의해준다." },
+{ name: "grid-auto-columns", desc: " 암시 적로 생성 된 그리드 컬럼의 크기를 지정 트랙 이나 트랙의 패턴을 지정합니다." },
+{ name: "grid-auto-flow", desc: " 자동 배치 알고리즘이 자동 배치 항목을 그리드로 유입 얻을 방법을 정확하게 지정 작동 방식 CSS 속성을 제어합니다." },
+{ name: "grid-auto-rows", desc: " 암시 적로 생성 된 그리드 행의 크기를 지정 트랙 이나 트랙의 패턴을 지정합니다." },
+{ name: "grid-column", desc: " 격자 아이템의 크기 및 위치 지정 합니다." },
+{ name: "grid-column-end", desc: " 그리드 열 내에서 그리드 항목의 끝 위치를 지정합니다." },
+{ name: "grid-column-start", desc: " 그리드 열 내에서 그리드 항목의 시작 위치를 지정합니다." },
+{ name: "grid-row", desc: " 그리드의 인라인 시작 및 인라인 끝 가장자리를 지정합니다." },
+{ name: "grid-row-end", desc: " 그리드 영역 의 인라인 끝 가장자리를 지정합니다." },
+{ name: "grid-row-start", desc: " 그리드 영역 의 인라인 시작 가장자리를 지정합니다." },
+{ name: "grid-template", desc: " 그리드의 열, 행 및 지역을 정의하기위한 약식속성입니다." },
+{ name: "grid-template-areas", desc: " 레이아웃이 어떤 형태로 구성되는지 설계도의 역할을 한다." },
+{ name: " grid-template-columns", desc: " 열 넓이를 지정한다." },
+{ name: "grid-template-rows", desc: " 행 높이를 지정한다." },
+{ name: "hanging-punctuation", desc: " 구두점이 시작 정지 또는 텍스트 행의 종료 여부를 속성 지정합니다." },
+{ name: "height", desc: " 블럭레벨 요소의 높이를 지정한다." },
+{ name: "hyphenate-character", desc: " 하이픈 나누기 전 줄 끝에서 사용되는 문자(또는 문자열)를 설정합니다." },
+{ name: "hyphens", desc: " 단어를 여러 줄에 걸쳐 때 텍스트 랩을 하이픈되어야하는 속성을 지정합니다." },
+{ name: "image-orientation", desc: " 이미지 방향에 대한 레이아웃 독립적 수정을 지정합니다." },
+{ name: "image-rendering", desc: " 이미지 스케일링 알고리즘을 설정한다." },
+{ name: "image-resolution", desc: " 해상도를 설정합니다. " },
+{ name: "ime-mode", desc: " IME(Input Method Editor)의 상태를 반환하거나 설정합니다." },
+{ name: "initial-letter", desc: " 세트, 떨어 제기하고, 침몰 초기 문자에 대한 스타일링." },
+{ name: "initial-letter-align", desc: " 단락 내에서 초기 문자의 정렬을 지정합니다." },
+{ name: "inline-size", desc: " 요소의 블록의 수평과 수직 크기를 정의한다." },
+{ name: "inset", desc: " element와 테두리 사이의 element 내부에 있는 공간을 의미합니다." },
+{ name: "inset-block", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 실제 오프셋에 매핑하는 요소의 논리 블록의 시작과 끝 오프셋을 정의합니다." },
+{ name: "inset-block-end", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 인 세트에 매핑하는 요소의 오프셋 (offset) 논리 블록의 끝을 정의합니다." },
+{ name: "inset-block-start", desc: " 논리적 블록 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 인 세트에 매핑하는 요소의 오프셋 시작을 정의합니다." },
+{ name: "inset-inline", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 실제 오프셋에 매핑 인라인 방향로 요소의 논리적 시작과 끝 오프셋을 정의합니다." },
+{ name: "inset-inline-end", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 오프셋에 매핑하는 요소의 논리적 인라인 최종 삽입을 정의합니다." },
+{ name: "inset-inline-start", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 오프셋에 매핑하는 요소의 논리적 인라인 시작 인 세트를 정의합니다." },
+{ name: "isolation", desc: " 요소가 새로운 생성해야하는지 여부를 결정합니다. " },
+{ name: "justify-content", desc: " 가로축 - 중심축을 기준로 아이템들을 정렬한다. 주로 flex랑 사용된다." },
+{ name: "justify-items", desc: " 수직축을 중심로 좌우로 위치를 조정하는 속성입니다. Flexbox와 같은 개념입니다." },
+{ name: "justify-self", desc: " 상자가 적절한 축 방향의 정렬 컨테이너 내부 정당화되는 방법을 설정합니다." },
+{ name: "left", desc: " 용기블럭의 너비를 참조합니다. 요소가 왼쪽에서 어느 위치에 배치 될 지 결정합니다." },
+{ name: "letter-spacing", desc: " 텍스트 문자 사이의 수평 간격 동작을 설정합니다." },
+{ name: "line-break", desc: " 줄 바꿈 규칙을 어떻게 할지 결정합니다. " },
+{ name: "line-height", desc: " 인라인 박스의 높이를 지정한다. " },
+{ name: "line-height-step", desc: " 라인 박스의 높이에 대한 공정 유닛을 설정한다." },
+{ name: "list-style", desc: " 목록 항목의 속성들(list-style-type, list-style-position, list-style-image)을 한꺼번에 지정하는 약식속성입니다." },
+{ name: "list-style-image", desc: " 목록 항목 마커로 사용되는 이미지를 설정합니다." },
+{ name: "list-style-position", desc: " 속성의 위치 설정 합니다." },
+{ name: "list-style-type", desc: " 목록 항목 요소 (예 : 디스크, 문자, 또는 사용자 정의 카운터 스타일 등) 마커를 설정합니다" },
+{ name: "margin", desc: " 엘리먼트와 엘리먼트 사이의 간격을 지정" },
+{ name: "margin-block", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리 블록의 시작과 끝 여백을 정의합니다." },
+{ name: "margin-block-end", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 블록 끝 마진을 정의합니다." },
+{ name: "margin-block-start", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리 블록 시작 마진을 정의합니다." },
+{ name: "margin-bottom", desc: " 요소 밑에 쪽 마진을 설정합니다. " },
+{ name: "margin-inline", desc: " 약식 속성입니다 정의하는 두 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 인라인 시작과 끝 여백." },
+{ name: "margin-inline-end", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 인라인 끝 마진을 정의합니다." },
+{ name: "margin-inline-start", desc: " 속성은 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 인라인 시작 마진을 정의합니다." },
+{ name: "margin-left", desc: " 소 왼쪽의 여백 영역을 설정 합니다. " },
+{ name: "margin-right", desc: " 엘리먼트의 오른쪽 마진을 지정한다. " },
+{ name: "margin-top", desc: " 엘리먼트의 상단 마진을 지정한다." },
+{ name: "margin-trim", desc: " 컨테이너가 컨테이너의 가장자리에 인접한 자식의 여백을 트리밍할 수 있습니다 ." },
+{ name: "mask", desc: " 아이템이 부분적로만 보여지게 하거나 혹은 완전히 가려서 보여지지 않게 할 수 있는 기능을 가지고 있습니다." },
+{ name: "mask-border", desc: " 요소의 경계의 가장자리를 따라 마스크를 만들 수 있습니다." },
+{ name: "mask-border-mode", desc: " 블렌딩 모드를 지정하는 마스크의 테두리" },
+{ name: "mask-border-outset", desc: " 요소의있는 거리 지정 마스크 보더 의 경계 상자에서 밖로 설정됩니다." },
+{ name: "mask-border-repeat", desc: " 속성 세트 에지 영역 , 소스 이미지가 요소의의 크기에 맞게 조정되는 마스크 테두리." },
+{ name: "mask-border-slice", desc: " 요소 마스크 테두리 의 구성 요소를 형성하는 데 사용됩니다 ." },
+{ name: "mask-border-source", desc: " 동적 최종 마스크 테두리에 적용되는 영역로 소스 이미지를 분할하는데 사용된다." },
+{ name: "mask-border-width", desc: " 속성은 엘레멘트의 너비 설정 마스크 경계를 설정합니다." },
+{ name: "mask-clip", desc: " 마스크에 의해 영향을받는 영역을 결정한다. " },
+{ name: "mask-composite", desc: " 그 다음 마스크 층과 현재의 마스크 층에 사용되는 합성 동작을 나타낸다." },
+{ name: "mask-image", desc: " 마스크 층로서 사용되는 화상을 설정한다. " },
+{ name: "mask-mode", desc: " 정의 된 마스크 참조 여부 속성 세트" },
+{ name: "mask-origin", desc: " 마스크의 원점을 설정합니다." },
+{ name: "mask-position", desc: " 마스크의 위치를 설정합니다. " },
+{ name: "mask-repeat", desc: " 마스크 이미지를 반복하는 방법을 속성 집합을 설정합니다." },
+{ name: "mask-size", desc: " 마스크 이미지의 크기를 지정합니다." },
+{ name: "mask-type", desc: " 마스크 타입을 설정합니다." },
+{ name: "max-block-size", desc: " 기입 방향로 규정되는 방향의 반대측에있는 요소들의 최대 크기를 지정하는 writing-mode . 즉, 쓰기 방향이 수평이면 max-block-size 는 max-height 와 같습니다 . " },
+{ name: "max-height", desc: " 엘리먼트의 최대 높이를 지정한다." },
+{ name: "max-inline-size", desc: " 기록 모드에 따라서, 요소의 블록의 수평 또는 수직의 최대 크기를 정의한다." },
+{ name: "max-width", desc: " 엘리먼트의 최대 넒이를 지정한다." },
+{ name: "min-block-size", desc: " 기록 모드에 따라서, 요소의 블록의 최소 수평 또는 수직 크기를 정의한다." },
+{ name: "min-height", desc: " 엘리먼트의 내용영역 높이의 최소값을 지정한다. 음수값은 지정할 수 없다." },
+{ name: "min-inline-size", desc: " 기록 모드에 따라서, 요소의 블록의 수평 또는 수직의 최소 크기를 정의한다." },
+{ name: "min-width", desc: " 엘리먼트의 최소 넓이를 지정한다." },
+{ name: "mix-blend-mode", desc: " 요소의 내용은 요소의 부모의 내용과 요소의 배경로 혼합하는 방법." },
+{ name: "object-fit", desc: " img 나 video 요소와 같은 대체 요소의 콘텐츠 크기를 어떤 방식로 조절해 요소에 맞출 것인지 지정합니다." },
+{ name: "object-position", desc: " 대체 요소의 콘텐츠 정렬 방식을 지정합니다." },
+{ name: "offset", desc: " 정의 된 경로를 따라 애니메이션화 된 요소에 필요한 모든 속성을 설정한다." },
+{ name: "offset-anchor", desc: " 실제로 경로를 따라 움직이는 offset-path 를 따라 이동하는 요소의 상자 내부 지점을 지정합니다 ." },
+{ name: "offset-distance", desc: " CSS 속성 지정은 함께 위치 offset-path 요소의 위치가된다." },
+{ name: "offset-path", desc: " 수행 할 요소의 이동 경로를 지정하고, 부모 컨테이너 내의 요소의 위치를 정의 또는 SVG 좌표계." },
+{ name: "offset-position", desc: " 오프셋의 위치값을 설정합니다." },
+{ name: "offset-rotate", desc: " 소자의 배향 / 정의 방향 offset-path ." },
+{ name: "opacity", desc: " 요소의 투명도를 결정합니다." },
+{ name: "order", desc: " 플렉스 또는 그리드 컨테이너에서 항목을 배치하는 순서를 설정합니다." },
+{ name: "orphans", desc: " 표시해야하는 블록 컨테이너 선의 최소 설정 저면 (A)의 페이지 , 영역 또는 컬럼 ." },
+{ name: "outline", desc: " 단일 선언에서 대부분의 개요 속성을 설정합니다 . " },
+{ name: "outline-color", desc: " 요소의 외곽선의 색상을 설정합니다." },
+{ name: "outline-offset", desc: " 간 공간 설정 윤곽 요소의 가장자리 또는 경계." },
+{ name: "outline-style", desc: " 요소의 윤곽의 스타일을 설정합니다. 윤곽선은 border 외부의 요소 주위에 그려지는 선입니다 ." },
+{ name: "outline-width", desc: " 엘레멘트의 윤곽의 두께를 설정합니다." },
+{ name: "overflow", desc: " 내용이 박스보다 큰 경우 밖로 넘친 부분을 어떻게 표시할지를 지정한다." },
+{ name: "overflow-anchor", desc: " 조정 스크롤 위치가 내용의 변화를 최소화하기 위해 브라우저의 스크롤 고정 행동을 거부 할 수있는 방법을 제공합니다." },
+{ name: "overflow-block", desc: " 상자의 블록 시작과 블록 끝 가장자리를 오버 플로우 어떤 쇼 속성 집합. 이것은 아무것도, 스크롤 막대 또는 오버플로 내용 일 수 있습니다." },
+{ name: "overflow-clip-margin", desc: " 얼마나 외부의 경계를 가지는 요소를 결정" },
+{ name: "overflow-inline", desc: " 내용이 상자의 인라인 시작과 끝 가장자리를 오버 플로우 어떤 쇼 속성 집합." },
+{ name: "overflow-wrap", desc: " 라우저가 줄 상자를 넘쳐에서 텍스트를 방지하기 위해 다른 깨지지 않는 문자열 내에서 줄 바꿈을 삽입할지 여부를 설정, 인라인 요소에 적용됩니다." },
+{ name: "overflow-x", desc: " 블록 레벨 요소의 왼쪽과 오른쪽 가장자리를 오버 플로우 어떤 쇼 속성 집합." },
+{ name: "overflow-y", desc: " 블록 레벨 엘리먼트의 상부 및 하부 가장자리를 넘쳐 어떤 방송 속성 세트. 이것은 아무것도 아니거나 스크롤 막대 또는 오버플로 내용 일 수 있습니다." },
+{ name: "overscroll-behavior", desc: " 스크롤 영역의 경계에 도달 할 때 브라우저가 무엇 CSS 속성을 설정합니다." },
+{ name: "overscroll-behavior-block", desc: " 스크롤 영역의 블록 방향 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다." },
+{ name: "overscroll-behavior-inline", desc: " 스크롤 영역의 인라인 방향의 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다." },
+{ name: "overscroll-behavior-x", desc: " 스크롤 영역의 수평 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다." },
+{ name: "overscroll-behavior-y", desc: " 스크롤 영역의 수직 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다." },
+{ name: "padding", desc: " 엘리먼트의 상, 하, 좌, 우 여백을 한꺼번에 지정합니다." },
+{ name: "padding-block-end", desc: " 속성은 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리적 블록 끝 패딩을 정의합니다." },
+{ name: "padding-block-start", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리 블록 시작 패딩을 정의합니다." },
+{ name: "padding-bottom", desc: " 요소 내부의 아래쪽 여백을 설정합니다." },
+{ name: "padding-inline-end", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리적 인라인 최종 패딩을 정의합니다." },
+{ name: "padding-inline-start", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리적 인라인 시작 패딩을 정의합니다." },
+{ name: "padding-left", desc: " 엘리먼트의 왼쪽 여백을 지정한다. " },
+{ name: "padding-right", desc: " 엘리먼트의 오른쪽 여백을 지정한다." },
+{ name: "padding-top", desc: " 요소의 위쪽 패딩을 결정합니다." },
+{ name: "page-break-after", desc: " 페이지 나누기 후 현재 요소." },
+{ name: "page-break-before", desc: " 이 속성은 break-before 속성 로 대체되었습니다 ." },
+{ name: "page-break-inside", desc: " 이 속성은 break-inside 속성로 대체되었습니다 ." },
+{ name: "perspective", desc: " 3 차원 위치 요소 일부 관점을 제공하기 위해, Z = 0 인 평면과 사용자 사이의 거리를 결정한다." },
+{ name: "perspective-origin", desc: " 변형되는 요소에 배치되는 perspective() 변형 함수 와 달리 3차원 공간에서 변형된 자식의 부모에 첨부됩니다 ." },
+{ name: "place-content", desc: " CSS의 단축형 속성 (즉, 한 번에 블록 및 인라인 두 방향을 따라 정렬 내용을 수행 할 수 있습니다 align-content 및 justify-content 등 관련 레이아웃 시스템의 특성) 그리드 또는 인 flexbox ." },
+{ name: "place-items", desc: " 약식 속성은 한 번에 블록 및 인라인 두 방향을 따라 정렬 항목을 수행 할 수 있습니다 (즉, align-items 및 justify-items 속성)과 같은 관련 레이아웃 시스템에 그리드 또는 인 flexbox . 두 번째 값이 설정되지 않은 경우 첫 번째 값도 사용됩니다." },
+{ name: "place-self", desc: " 단축형 속성은 당신이 (즉, 한 번에 블록과 인라인 방향 모두에서 개별 항목을 정렬 할 수 있습니다" },
+{ name: "pointer-events", desc: " 어떤 상황 (있는 경우)에 따라 속성 집합은 특정 그래픽 요소가 될 수있는 대상 포인터 이벤트." },
+{ name: "position", desc: " 엘리먼트의 배치방법을 지정한다." },
+{ name: "print-color-adjust", desc: " 출력 장치에서 요소의 모양을 최적화하기 위해 사용자 에이전트 가 수행할 수 있는 작업을 설정합니다." },
+{ name: "quotes", desc: " 브라우저가 사용하는 추가 인용 부호를 렌더링하는 방법을 속성 집합을 설정합니다." },
+{ name: "resize", desc: " 요소 의 크기를 조정할 수 있는지 여부와 방향을 결정합니다." },
+{ name: "right", desc: " 용기블럭의 너비를 참조합니다. 요소가 오른쪽에서 어디에 배치 될 지 결정합니다." },
+{ name: "rotate", desc: " 각각 독립적로의 회전 변환을 지정할 수 있습니다 " },
+{ name: "row-gap (grid-row-gap)", desc: " 요소의 행 사이 의 간격( gutter ) 크기를 설정합니다." },
+{ name: "ruby-align", desc: " 기재 위에 다른 루비 원소의 분포를 정의한다." },
+{ name: "ruby-position", desc: " 기본 요소에 루비 요소 친척의 위치를 정의합니다. 요소 위( over ), 요소 아래( under ) 또는 오른쪽에 있는 문자 사이( inter-character )에 위치할 수 있습니다" },
+{ name: "scale", desc: " 개별적로 독립적 규모의 변환을 지정할 수 있습니다." },
+{ name: "scroll-behavior", desc: " 탐색 또는 CSSOM 스크롤 API에서 트리거 스크롤 할 때 속성은 스크롤 상자의 동작을 설정합니다." },
+{ name: "scroll-margin", desc: " 훨씬처럼 값을 지정, 한 번에 요소의 스크롤 여백의 모든 설정합니다." },
+{ name: "scroll-margin-block", desc: " 블록 차원의 요소의 스크롤 마진을 설정한다." },
+{ name: "scroll-margin-block-end", desc: " 상자를 스냅포트에 맞추는 데 사용되는 블록 차원의 끝에서 스크롤 스냅 영역의 여백을 정의합니다 ." },
+{ name: "scroll-margin-block-start", desc: " 이 상자를 스냅포트에 맞추는 데 사용되는 블록 차원의 시작 부분에서 스크롤 스냅 영역의 여백을 정의합니다." },
+{ name: "scroll-margin-bottom", desc: " 엘리먼트의 하단 마진을 지정한다." },
+{ name: "scroll-margin-inline", desc: " 인라인 차원의 요소의 스크롤 마진을 설정한다." },
+{ name: "scroll-margin-inline-end", desc: " 이 상자를 snapport에 맞추는 데 사용되는 인라인 차원의 끝에서 스크롤 스냅 영역의 여백을 정의합니다 ." },
+{ name: "scroll-margin-inline-start", desc: " 이 상자를 snapport에 맞추는 데 사용되는 인라인 차원의 시작 부분에서 스크롤 스냅 영역의 여백을 정의합니다 ." },
+{ name: "scroll-margin-left", desc: " 엘리먼트의 왼쪽 마진을 지정한다." },
+{ name: "scroll-margin-right", desc: " 이 상자를 snapport에 맞추는 데 사용되는 스크롤 스냅 영역의 오른쪽 여백을 정의합니다." },
+{ name: "scroll-margin-top", desc: " 이 상자를 snapport에 맞추는 데 사용되는 스크롤 스냅 영역의 위쪽 여백을 정의합니다." },
+{ name: "scroll-padding", desc: " 한 번에 요소의 모든면에 세트 스크롤 패딩을 설정합니다." },
+{ name: "scroll-padding-block", desc: " 블록 차원의 요소의 스크롤 패딩을 설정한다." },
+{ name: "scroll-padding-block-end", desc: " 블록 사이즈의 단부 에지 오프셋을 정의합니다." },
+{ name: "scroll-padding-block-start", desc: " 블록 사이즈의 시작 에지에 대한 속성을 정의 오프셋을 설정합니다." },
+{ name: "scroll-padding-bottom", desc: " 밑바닥 오프셋을 정의" },
+{ name: "scroll-padding-inline", desc: " 인라인 차원의 요소의 스크롤 패딩을 설정한다." },
+{ name: "scroll-padding-inline-end", desc: " 인라인 측정에 단부 가장자리의 속성을 정의" },
+{ name: "scroll-padding-inline-start", desc: " 인라인 측정의 시작 에지에 대한 속성을 정의 옵셋 영역 보는 최적의 사용자의 관점에서 일을 배치하기위한 대상 영역" },
+{ name: "scroll-padding-left", desc: " 좌측의 속성을 정의 옵셋 최적 가시 영역 은 사용자의 관점에서 일을 배치하기위한 대상 영역로서 사용하는 영역을 정의합니다." },
+{ name: "scroll-padding-right", desc: " 우측에 대한 오프셋을 정의합니다." },
+{ name: "scroll-padding-top", desc: " 속성의 상단에 대해 오프셋을 정의" },
+{ name: "scroll-snap-align", desc: " 상자의 스냅 위치를 스냅 컨테이너의 스냅포트(정렬 컨테이너) 내에서 스냅 영역(정렬 주제)의 정렬로 지정합니다." },
+{ name: "scroll-snap-coordinate", desc: " 이 기능은 더 이상 권장되지 않습니다." },
+{ name: "scroll-snap-destination", desc: " 이 기능은 더 이상 권장되지 않습니다." },
+{ name: "scroll-snap-points-x", desc: " 물리보다는 논리상 방향과 차원 맵핑을 통해 레이아웃을 제어하는 능력을 제공하는 속성 및 값을 정의하는 CSS 모듈입니다." },
+{ name: "scroll-snap-points-y", desc: " 물리보다는 논리상 방향과 차원 맵핑을 통해 레이아웃을 제어하는 능력을 제공하는 속성 및 값을 정의하는 CSS 모듈입니다" },
+{ name: "scroll-snap-stop", desc: " 스크롤 컨테이너가 가능한 스냅 위치에 허용되는지 여부 속성을 정의합니다." },
+{ name: "scroll-snap-type", desc: " 포인트를 고정하는 방법을 엄격 속성 집합 하나가 경우에 스크롤 컨테이너에 적용됩니다" },
+{ name: "scrollbar-color", desc: " 속성은 스크롤 트랙과 엄지 손가락의 색상을 설정합니다." },
+{ name: "scrollbar-width", desc: " 사용하면 작성자가 요소 의 스크롤 막대가 표시될 때 최대 두께를 설정할 수 있습니다." },
+{ name: "shape-image-threshold", desc: " 속성에 대한 값로 이미지를 이용한 형상 추출 할 알파 채널 임계 값을 설정합니다." },
+{ name: "shape-margin", desc: " 속성 집합은 CSS 모양의 마진을 사용하여 생성 된 shape-outside ." },
+{ name: "shape-outside", desc: " 속성은 인접한 인라인 콘텐츠가 둘러싸야 하는 사각형이 아닐 수 있는 모양을 정의합니다 " },
+{ name: "tab-size", desc: " 탭 문자 (+ 0009 U)의 폭을 지정하는 데 사용됩니다." },
+{ name: "table-layout", desc: " 테이블의 레이아웃을 정의합니다. " },
+{ name: "text-align", desc: " 블럭안 인라인 인라인 요소의 수평 정렬을 지정한다" },
+{ name: "text-align-last", desc: " 블록 또는 행의 마지막 줄 오른쪽 강제 줄 바꿈하기 전에, 정렬되는 방식 CSS 속성을 설정합니다." },
+{ name: "text-combine-upright", desc: " 속성 세트는 문자의 조합을 단일 문자의 공간로. 결합 된 텍스트가 1em보다 넓은 경우 사용자 에이전트는 1em 이내의 콘텐츠에 맞아야합니다." },
+{ name: "text-decoration", desc: " 텍스트에 밑줄, 윗줄, 가운데줄이나 깜빡거림의 장식적인 요소를 지정한다." },
+{ name: "text-decoration-color", desc: " 텍스트 요소의 밑줄의 색깔을 결정합니다." },
+{ name: "text-decoration-line", desc: " 속성 집합 같은 밑줄 또는 윗줄로, 요소의 텍스트에 사용되는 장식의 종류." },
+{ name: "text-decoration-skip", desc: " 요소에 영향을 미치는 텍스트 장식이 건너뛰어야 하는 요소 콘텐츠의 부분을 설정합니다." },
+{ name: "text-decoration-skip-ink", desc: " 글리프 센더와 디 센더를 통해 통과 할 때 overlines와 밑줄이 그려하는 방법 속성 지정합니다." },
+{ name: "text-decoration-style", desc: " 속성에 의해 지정된 라인의 스타일 설정 text-decoration-line . 스타일은 text-decoration-line 로 설정된 모든 행에 적용됩니다 . " },
+{ name: "text-emphasis", desc: " 텍스트에 강조 표시를 적용합니다." },
+{ name: "text-emphasis-color", desc: " 속성을 강조 마크의 색상을 설정합니다." },
+{ name: "text-emphasis-position", desc: " 루비 텍스트처럼 강조 표시를위한 공간이 충분하지 않으면 줄 높이가 증가합니다." },
+{ name: "text-emphasis-style", desc: " 속성이 강조 표시의 모양을 설정합니다." },
+{ name: "text-indent", desc: " 블록의 텍스트 행하기 전에 넣어 빈 공간 (들여 쓰기)의 길이를 설정합니다." },
+{ name: "text-justify", desc: " 텍스트에 적용되어야한다" },
+{ name: "text-orientation", desc: " 속성은 행의 텍스트 문자의 방향을 설정합니다." },
+{ name: "text-overflow", desc: " 숨겨진 오버플로 콘텐츠가 사용자에게 신호되는 방식을 설정합니다." },
+{ name: "text-rendering", desc: " 텍스트를 렌더링 할 때 최적화 할 작업에 대한 렌더링 엔진에 대한 정보를 제공합니다." },
+{ name: "text-shadow", desc: " 텍스트에 그림자를 추가합니다." },
+{ name: "text-size-adjust", desc: " (모바일 폰트 크기 조정 관련)" },
+{ name: "text-transform", desc: " 텍스트를 활용하는 CSS 속성을 지정합니다." },
+{ name: "text-underline-position", desc: " 속성은 사용하여 설정 밑줄의 위치를 지정합니다." },
+{ name: "top", desc: " 용기블럭의 높이를 참조합니다. 위쪽에서 요소가 어디에 배치 될 것인가 결정합니다." },
+{ name: "touch-action", desc: " 터치 스크린 사용자가 조작 할 수있는 방법을 CSS 속성을 설정합니다." },
+{ name: "transform", desc: " 요소를 변형시킬 수 있습니다." },
+{ name: "transform-box", desc: " 박스의 변형효과를 설정합니다." },
+{ name: "transform-origin", desc: " 요소의 변환에 대한 원점을 설정합니다." },
+{ name: "transform-style", desc: " 요소의 아이들이 3D 공간에 위치하거나 요소의 평면에 평평 여부 속성 집합." },
+{ name: "transition", desc: " 애니메이션 효과를 입힐 때 속도를 조절하는 방법을 제공합니다." },
+{ name: "transition-delay", desc: " 속성의 시작하기 전에 대기하는 CSS 속성 지정 기간 전환 효과 때 그 값 변경." },
+{ name: "transition-duration", desc: " 전환 애니메이션 완료하는 데 소요되는 시간을 설정합니다." },
+{ name: "transition-property", desc: " 트렌지션 프로퍼티를 설정합니다." },
+{ name: "transition-timing-function", desc: " 트랜지션의 타이밍을 설정합니다." },
+{ name: "translate", desc: " transform 속성로 요소에 회전, 크기 조절, 기울이기, 이동 효과를 부여할 수 있습니다." },
+{ name: "unicode-bidi", desc: " 함께와 direction 특성, 문서의 양방향 텍스트가 처리되는 방법을 결정합니다." },
+{ name: "user-select", desc: " 사용자가 텍스트를 선택할 수 있는지 여부를 속성을 제어합니다." },
+{ name: "vertical-align", desc: " 인라인 엘리먼트나 테이블의 셀 안에서 수직정렬을 지정한다." },
+{ name: "visibility", desc: " 문서의 레이아웃을 변경하지 않고 CSS 속성 표시하거나 숨기는 소자입니다." },
+{ name: "white-space", desc: " 공백문자를 어떻게 다룰것인가를 정의 한다." },
+{ name: "widows", desc: " 표시해야하는 블록 컨테이너 선의 최소 개수 설정 상부 (A)의 페이지 , 영역 또는 컬럼 ." },
+{ name: "width", desc: " 블록 레벨 요소의 너비를 지정한다." },
+{ name: "will-change", desc: " 요소에 예상되는 변화의 종류에 관한 힌트를 브라우저에 제공케 한다." },
+{ name: "word-break", desc: " 단어의 분리를 어떻게 할 것인지 결정합니다." },
+{ name: "word-spacing", desc: " 단어 사이의 간격을 지정한다. " },
+{ name: "writing-mode", desc: " 텍스트의 선이 수평 또는 수직으로 배치 여부 속성 집합뿐만 아니라 블록이 진행되는 방향." },
+{ name: "z-index", desc: " 엘리먼트의 겹쳐지는 순서를 지정한다." }
+];
+const searchList = document.querySelector(".search__list");
+const searchNum = document.querySelector(".search__info .num");
+const searchBox = document.querySelector(".search__box input");
+const searchDesc = document.querySelector(".search__desc")
+    
+//출력하기
+cssProperty.map((element, index) =&gt; {
+    // searchNum에 index 넣어주기
+    //searchNum.innerText = cssProperty.length;
+    searchNum.innerText = index + 1;
+    // 리스트 이름: 설명 불러오기
+    //searchList.innerHTML += `&lt;li&gt;&lt;strong&gt;${element.name}&lt;/strong&gt; : ${element.desc}&lt;/li&gt;`
+    //이름 한줄로 나오게 하기
+    searchList.innerHTML += `&lt;span&gt;${element.name}&lt;/span&gt;`
 });
-const cursor = document.querySelector(".mouse__cursor")
-window.addEventListener("mousemove", (e) =&gt; {
-  //const cursor = document.querySelector(".mouse__cursor")
-  //커서에 포지션 되어있기 때문에 left
-  //px 처럼 단위값을 써주어야 실행됨
-  cursor.style.left = e.clientX -25 + "px";
-  cursor.style.top = e.clientY -25 + "px";
+
+//입력하기 //키를 눌렀을 때
+searchBox.addEventListener("keyup", () =&gt; {
+    //사용자가 쓴 값 불러오기(value)
+    const searchWord = searchBox.value;
+    //console.log(searchWord);
+    //findProperty함수 만들어서 실행시켜줘야함(속성찾기에서)
+    findProperty(searchWord);
 });
-// document.querySelector(".style1").addEventListener("mouseover", () =&gt; {
-//   //작동안함 : 위에 지역변수 이기 때문에
-//   //cursor.classList.add(".style1");
-//   cursor.classList.add("style1");
-// })
-// document.querySelector(".style1").addEventListener("mouseout", () =&gt; {
-//   cursor.classList.remove("style1");
-  
-// })
-// document.querySelector(".style2").addEventListener("mouseover", () =&gt; {
-//   cursor.classList.add("style2");
-// })
-// document.querySelector(".style2").addEventListener("mouseout", () =&gt; {
-//   cursor.classList.remove("style2");
-// })
-// document.querySelector(".style3").addEventListener("mouseover", () =&gt; {
-//   cursor.classList.add("style3");
-// })
-// document.querySelector(".style3").addEventListener("mouseout", () =&gt; {
-//   cursor.classList.remove("style3");
-// })
-// document.querySelector(".style4").addEventListener("mouseover", () =&gt; {
-//   cursor.classList.add("style4");
-// })
-// document.querySelector(".style4").addEventListener("mouseout", () =&gt; {
-//   cursor.classList.remove("style4");
-// })
-// document.querySelector(".style5").addEventListener("mouseover", () =&gt; {
-//   cursor.classList.add("style5");
-// })
-// document.querySelector(".style5").addEventListener("mouseout", () =&gt; {
-//   cursor.classList.remove("style5");
-// })
-// document.querySelector(".style6").addEventListener("mouseover", () =&gt; {
-//   cursor.classList.add("style6");
-// })
-// document.querySelector(".style6").addEventListener("mouseout", () =&gt; {
-//   cursor.classList.remove("style6");
-// })
-// for(let i=1; i&lt;7; i++){
-//   document.querySelector(".style" + i).addEventListener("mouseover", () =&gt; {
-//     cursor.classList.add("style" + i)})
-//   document.querySelector(".style" + i).addEventListener("mouseout", () =&gt; {
-//    cursor.classList.remove("style" + i)})
-// };
-//forEach() 나
-// const num = [1, 2, 3, 4, 5, 6]
-// num.forEach((el)=&gt;{
-//   document.querySelector(".style" + [el]).addEventListener("mouseover", () =&gt; {
-//     cursor.classList.add("style" + [el])})
-//   document.querySelector(".style" + [el]).addEventListener("mouseout", () =&gt; {
-//     cursor.classList.remove("style" + [el])})
-// })
-//forEach() 선생님
-// document.querySelectorAll(".mouse__wrap span").forEach((span, num) =&gt; {
-//   span.addEventListener("mouseover", () =&gt; {
-//     cursor.classList.add("style" + (num+1))
-//   })
-//   span.addEventListener("mouseout", () =&gt; {
-//     cursor.classList.remove("style" + (num+1))
-//   })
-// })
-//속성값 가져오기 (만약에 class="style55"이럴때 : 클래스 명이 바껴도 상관없게!)
-//getAttribute
-document.querySelectorAll(".mouse__wrap span").forEach( span =&gt; {
-  let attr = span.getAttribute("class");
-  span.addEventListener("mouseover", () =&gt; {
-    cursor.classList.add(attr)
-  })
-  span.addEventListener("mouseout", () =&gt; {
-    cursor.classList.remove(attr)
-  })
-})
+
+//속성 찾기
+//findProperty 함수 만들어줌
+function findProperty(searchData){
+    //cssProperty 찾기
+    //데이터 네임과 내가 쓴 값과 같아야 속성찾을 수 있음
+    //searchword가 지역변수이기 때문에 마음대로 쓸 수 없어서 전역변수로 바꾸거나 매개변수로 연결시켜주어야 하기 때문에 위에 findProperty()안에 넣어주어야 매개변수로 연결됨.
+    //==값이 true이기만 하면 되는 것 , === 값과 값의 종류가 같아야 됨 엄격한 연산자임
+    const targetData = cssProperty.find((data) =&gt; data.name === searchData);
+    
+    //desc undefined 버그 해결
+    if(targetData == undefined){
+        searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!";
+        
+        //그래도 버그가 해결되지 않음 : return결과값도 있지만 종료의 의미도 있음 
+        //searchDesc.textContent = targetData.desc;때문에 값이 없는데도 계속 값이 들어가니깐 버그가 나는 거여서 return으로 값이 없을 때 값을 찾지 않고 종료해야함
+        return;
+    }
+    searchDesc.textContent = targetData.desc;
+}
+//클릭효과
+//클릭했을 때 속성값을 돋보기 옆에 보여주기 위한 변수 선언
+const searchProperty = document.querySelectorAll(".search__list span");
+searchProperty.forEach((e, i) =&gt; {
+    e.addEventListener("click", () =&gt; {
+        searchDesc.textContent = cssProperty[i].desc;
+    });
+});
 &lt;/code&gt;&lt;/pre&gt;
                         &lt;/div&gt;
-                        &lt;div&gt;
+                        &lt;div style="height: 100%"&gt;
 &lt;pre&gt;&lt;code class="language-html"&gt;&lt;main id="main"&gt;
-  &lt;section id="mouseType"&gt;
-    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
-    &lt;div class="mouse__wrap"&gt;
-        &lt;p&gt;The &lt;span class="style1"&gt;future&lt;/span&gt; depends on what we &lt;span class="style2"&gt;do&lt;/span&gt; in the &lt;span class="style3"&gt;present&lt;/span&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;span class="style4"&gt;미래&lt;/span&gt;는 &lt;span class="style5"&gt;현재&lt;/span&gt; 우리가 무엇을 &lt;span class="style6"&gt;하는가&lt;/span&gt;에 달려 있다.&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;find()을 이용하여 속성을 검색하면 설명 보여주기&lt;/span&gt;
+        &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+        &lt;div class="search__box"&gt;
+            &lt;label for="search"&gt;검색하기&lt;/label&gt;
+            &lt;input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!"&gt;
+        &lt;/div&gt;
+        &lt;div class="search__desc"&gt;
+            속성을 검색하시면 설명이 나타납니다.
+        &lt;/div&gt;
 
-    &lt;div class="mouse__info"&gt;
-      &lt;ul&gt;
-        &lt;li&gt;clientX : &lt;span class="clientX"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;clientY : &lt;span class="clientY"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;offsetX : &lt;span class="offsetX"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;offsetY : &lt;span class="offsetY"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;pageX : &lt;span class="pageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;pageY : &lt;span class="pageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;screenX : &lt;span class="screenX"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;screenY : &lt;span class="screenY"&gt;0&lt;/span&gt;px&lt;/li&gt;
-      &lt;/ul&gt;
+        &lt;div class="search__info"&gt;
+            &lt;div&gt;전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="search__list"&gt;
+
+        &lt;/div&gt;
     &lt;/div&gt;
 &lt;/main&gt;
 &lt;/code&gt;&lt;/pre&gt;
                         &lt;/div&gt;
-                        &lt;div&gt;
-&lt;pre&gt;&lt;code class="language-css"&gt;/* mouseType */
-.mouse__wrap {
-  /* vw라고 써주면 스크롤바 생기기 때문에 */
-  width: 100%;
-  height: 100vh; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  overflow: hidden;
-  /* 두 줄로 나오게 하기 */
-  flex-direction: column;
-  cursor: none;
+                        &lt;div style="height: 100%"&gt;
+&lt;pre&gt;&lt;code class="language-css"&gt;:root {
+    --htmlColor : #223547;
+    --cssColor : #472222;
+    --javascriptColor : #224736;
 }
-.mouse__wrap p {
-  font-size: 2vw;
-  line-height: 2;
-  font-weight: 300;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'NexonLv1Gothic';
+    color: var(--htmlColor) ;
 }
-.mouse__wrap p:last-child {
-  font-size: 3vw;
-  font-weight: 300;
+*, *:before, *:after {
+    box-sizing:border-box;
 }
-.mouse__wrap p span {
-  border-bottom: 0.15vw dashed rgb(255, 253, 164); 
-  color: rgb(255, 253, 164);
+a {
+    text-decoration: none;
+    color:  var(--htmlColor) ;
 }
-@media (max-width: 800px) {
-  .mouse__wrap p {
-    font-size: 30px;
-    padding: 0 20px;
-    line-height: 1.5;
+li {
+    list-style: none;
+}
+
+/* header */
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+#header nav {
+    margin: 10px;
+}
+#header nav li {
+    position: relative;
+    display: inline;
+}
+#header nav li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid  var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'NexonLv1Gothic';
+}
+#header nav li.active a {
+    background-color:  var(--htmlColor);
+    color: #fff;
+}
+#header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+}
+#header nav li .sub li a {
+    width: auto;
+    background-color: transparent;
+    color:  var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+#header nav li .sub li.active a {
+    text-decoration: underline;
+}
+/* main */
+#main {
+    margin: 50px 10px;
+}
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid  var(--htmlColor);
+    border-radius: 20px;
+    background-color: #f1f3f6;
+    text-align: center;
+    padding: 30px;
+}
+.search__wrap &gt; span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.search__wrap &gt; h1 {
+    font-family: 'Tmon';
+    color:  var(--htmlColor);
+    font-size: 6vw;
+    margin-bottom: 10px;
+}
+.search__box {
+    margin-bottom: 20px;
+}
+.search__box label{
+    position:absolute;
+    clip:rect(0 0 0 0);
+    width:1px;
+    height:1px;
+    margin:-1px;
+    overflow:hidden
+}
+.search__box input {
+    border: 2px solid  var(--htmlColor);
+    padding: 15px 40px;
+    width: 70%;
+    border-radius: 50px;
+    font-size: 20px;
+}
+.search__tab li.active a {
+    background-color:  var(--htmlColor);
+    color: #fff;
+}
+.search__list {}
+.search__list li {
+    text-align-last: left;
+    line-height: 1.7;
+}
+.search__list li.hide {
+    display: none;
+}
+.search__list li.show {
+    display: block;
+}
+.search__list span {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    margin: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.search__list span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+.search__info {
+    text-align: right;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--htmlColor);
+}
+.search__info .type {
     text-align: center;
     margin-bottom: 10px;
-  }
-  .mouse__wrap p:last-child {
-    font-size: 40px;
-    line-height: 1.5;
+}
+.search__info .keyword {
     text-align: center;
-    /* 단어로 끊기 */
-    word-break: keep-all;
-  }
+    margin-bottom: 10px;
 }
-.mouse__cursor {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 3px solid#fff;
-  background-color: rgba(225,225,225,0.1);
-  /* 선택이나 클릭 안되게 할 때 */
-  user-select: none;
-  pointer-events: none;
-  transition: 
-    background-color 0.3s,
-    border-color 0.3s,
-    /* style 2에 트랜스폼줬으니 여기도 줘야함 */
-    transform 0.6s,
-    border-radius 0.3s
-    ;
+.search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
 }
-.mouse__cursor.style1{
-  background-color: rgba(229, 67, 215, 0.484);
-  border-color: #de78f3;
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
 }
-.mouse__cursor.style2{
-  background-color: rgba(111, 235, 94, 0.584);
-  border-color: #9bfd7d;
-  /* 커지고 y축으로 회전 */
-  transform: scale(2) rotateY(720deg);
+.search__desc {
+    padding: 20px 40px 20px 60px;
+    margin-bottom: 50px;
+    background: #fff;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: var(--htmlColor);
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 22px 17px;
 }
-.mouse__cursor.style3{
-  background-color: rgba(90, 128, 233, 0.721);
-  border-color: #2f3cb4;
-  /* 커지고 x축으로 회전 */
-  transform: scale(1.5) rotateX(720deg);
+
+
+@media (max-width: 600px){
+    .search__wrap {
+        padding: 20px;
+    }
+    .search__wrap &gt; span {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .search__wrap &gt; h1 {
+        font-size: 44px;
+    }
+    .search__box input {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
 }
-.mouse__cursor.style4{
-  background-color: rgba(235, 235, 69, 0.606);
-  border-color: #f2fc59;
-  /* 커지는 효과 */
-  transform: scale(10);
+/* footer */
+#footer {
+    text-align: center;
 }
-.mouse__cursor.style5{
-  background-color: rgba(243, 209, 141, 0.868);
-  border-color: #f5ab77;
+#footer a {
+    color: #000;
+    font-family: 'NexonLv1Gothic';
+    padding-bottom: 50px;
 }
-.mouse__cursor.style6{
-  background-color: rgba(145, 248, 131, 0.846);
-  border-color: #ccfdb0;
-  border-radius: 0;
-  /* 커지는 효과 */
-  transform: scale(5); 
+#footer a:hover {
+    text-decoration: underline;
 }
-.mouse__info {
-  position: absolute;
-  left: 20px;
-  bottom: 10px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #fff;
+
+/* search 모달 */
+.modal__wrap {}
+.modal__cont {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: none;
+    /*flex가 우선 순위이기 때문에 밑에다 적어주어야 함*/
+    /* opacity: 0;  */
+    /* opacity 0 줘서 클릭 안됨 */
+    transform: scale(0);
+}
+.modal__btn {
+    cursor: pointer;
+    color: #000;
+    border: 1px solid #666;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 20px;
+}
+.modal__btn:hover {
+    background-color: #1B1C2E;
+    color: #fff;
+}
+
+.modal__box {
+    /* display: none; */
+    width: 70%;
+    height: 70vh;
+    border-radius: 0.6rem;
+    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
+    transform: scale(0);
+    /* overflow: hidden; */
+}
+.modal__box .title {
+    padding-inline: 1rem;
+    cursor: grab;
+    background-color: #222224;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    height: 50px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.modal__box .title .dot {
+    width: 14px;
+    height: 14px;
+    background-color: #c6b823;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 2rem;
+}
+.modal__box .title .dot::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    background-color: #03952f;
+    border-radius: 50%;
+}
+.modal__box .title .dot::after {
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    background-color: #b11b1b;
+    border-radius: 50%;
+}
+.modal__box .title .tabs {
+    display: flex;
+    margin-left: 50px;
+
+}
+.modal__box .title .tabs &gt; div {
+    color: #fff;
+    background-color: #222224;;
+    padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+    margin-top: 15px;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-top-right-radius: 0.4rem;
+    border-top-left-radius: 0.4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.modal__box .title .tabs &gt; div.active {
+    background-color: #333;
+    
+}
+.modal__box .title .tabs &gt; div em {
+    font-style: normal;
+    color: #fff;
+    font-weight: 300;
+}
+.modal__box .title .tabs &gt; div .favicon {
+    margin-right: 0.4rem;
+    margin-top: 0.2rem;
+}
+.modal__box .title .tabs &gt; div .close {
+    margin-left: 3rem;
+    background-color: #fff;
+    border-radius: 20px;
+    /* padding: 3px 1px 0 1px; */
+}
+.modal__box .title .tabs &gt; div .close &gt; svg {
+    width: 11px;
+    height: 12px;
+}
+.modal__box .cont {
+    background-color: #333;
+    height: 100%;
+    box-sizing: border-box;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    overflow-y: auto;
+    text-align: left;
+    line-height: 1.5;
+}
+.modal__box .cont &gt; div {
+    display: none;
+}
+
+.modal__box .cont &gt; div.active {
+    display: block;
+    height: 100%;
+}
+
+.modal__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #ffffff;
+    border: 1px solid #3d3f5c48;
+    padding: 1rem 1rem 0.8rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 7px -5px rgba(25, 26, 26, 0.698);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+.modal__close:hover {
+    background-color: rgb(164, 164, 164);
+}
+.modal__close svg {
+    color: #fff;
+}
+/* 모달 애니메이션 */
+.modal__cont.show {     /* 전체 배경 */
+    animation: foldOut 1s ease forwards;
+}
+.modal__cont.show .modal__box {     /* 스크립트 박스 */
+    animation: zoomOut 0.5s 1s ease forwards;
+}
+.modal__cont.show .modal__close {   /* 닫기 버튼 */
+    animation: opacityOut 0.5s 1s ease forwards;
+}
+
+.modal__cont.show.hide {    
+    animation: foldIn 0.3s 0.5s ease backwards;
+}
+.modal__cont.show.hide .modal__box {
+    animation: zoomIn 0.5s ease forwards;
+}
+.modal__cont.show.hide .modal__close {
+    animation: opacityIn 0.5s ease forwards;
+}
+
+@keyframes foldOut {
+    0%   {transform: scaleX(0) scaleY(0.001);}
+    50%  {transform: scaleX(1) scaleY(0.001);}
+    100% {transform: scaleX(1) scaleY(1);}
+}
+@keyframes foldIn {
+    0%   {transform: scaleX(1) scaleY(1);}
+    50%  {transform: scaleX(1) scaleY(0.001);}
+    100% {transform: scaleX(0) scaleY(0.001);}
+}
+@keyframes zoomOut {
+    0%   {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+@keyframes zoomIn {
+    0%   {transform: scale(1);}
+    100% {transform: scale(0);}
+}
+@keyframes opacityOut {
+    0%   {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes opacityIn {
+    0%   {opacity:1;}
+    100% {opacity:0;}
+}
+
+@media (max-width: 1100px){
+    .modal__box .title {
+        overflow: hidden;
+    }
+    .modal__box .title .dot {
+        display: none;
+    }
+    .modal__box .title .tabs {
+        margin-left: 0;
+    }
+    .modal__box .title .tabs &gt; div .close {
+        display: none;
+    }
+}
+@media (max-width: 800px){
+    #header {
+        width: 100%;
+        text-align: center;
+    }
+    #header h1 {
+        line-height: 1.4;
+    }
+    .modal__box {
+        width: 96%;
+    }
+}
+
+/* 코드블럭 글씨 */
+.hljs-property {
+    color: 
+    pink;
+}
+.hljs-name {
+    color: rgb(217, 124, 124);
 }
 &lt;/code&gt;&lt;/pre&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
                 &lt;div class="modal__close"&gt;
-                    &lt;svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
-                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
-                    &lt;/svg&gt;
+                    &lt;span class="close"&gt;
+                        &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                            &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                            &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/footer&gt;
-    &lt;!-- //footer --&gt;
-    &lt;script src="../assets/js/highlight.min.js"&gt;&lt;/script&gt;
+    &lt;!-- footer --&gt;
+    
+    &lt;script src="../assets/js/highlight.min.search.js"&gt;&lt;/script&gt;
     &lt;script src="../assets/js/common.js"&gt;&lt;/script&gt;
-    &lt;script src="../assets/js/gsap.min.js"&gt;&lt;/script&gt;
-
     &lt;script&gt;
-        const mouseMove = (e) =&gt; {
-            // 반 값 빼주고 현재위치값 빼주면 가운데 정렬
-            let positionSlow = (e.pageX - (window.innerWidth/2)) * 0.1;
-            let positionFast = (e.pageX - (window.innerWidth/2)) * 0.2;
-
-            gsap.to(".spanSlow", {duration: 0.4, x: positionSlow});
-            gsap.to(".spanFast", {duration: 0.4, x: -positionFast});
-            gsap.to(".mouse__cursor", {duration: 0.3, left: e.pageX -5, top: e.pageY -5});
+        //배열, 객체
+        const cssProperty = [
+        { star: 1, name: "accent-color", desc: " 요소의 강조 색상을 지정합니다. " },
+        { star: 5, name: "align-content", desc: " 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다." },
+        { star: 5, name: "align-items", desc: " 교차축에서 아이템 정렬 하는 속성입니다. 주로 flex에서 item들을 정렬할 때 사용됩니다." },
+        { star: 5, name: "align-self", desc: " 특정 item의 정렬을 따로 하고 싶을 때 사용합니다." },
+        { star: 5, name: "all", desc: " CSS 사용자 지정 속성을 제외한 모든 속성을 초기화합니다. 초깃값, 상속값, 아니면 다른 스타일시트 출처의 값로 설정할 수 있습니다." },
+        { star: 5, name: "animation", desc: " 애니메이션과 관련된 속성을 일괄적로 처리합니다." },
+        { star: 0, name: "animation-delay", desc: " 애니메이션 지연 시간을 설정합니다." },
+        { star: 5, name: "animation-direction", desc: " 애니메이션 움직임 방향을 설정합니다." },
+        { star: 5, name: "animation-duration", desc: " 애니메이션 움직인 시간을 설정합니다." },
+        { star: 5, name: "animation-fill-mode", desc: " 애니메이션이 끝난 후의 상태를 설정합니다." },
+        { star: 5, name: "animation-iteration-count", desc: " 애니메이션의 반복 횟수를 설정합니다." },
+        { star: 5, name: "animation-name", desc: " 애니메이션 keyframe 이름을 설정합니다." },
+        { star: 3, name: "animation-play-state", desc: " 애니메이션 진행상태를 설정합니다." },
+        { star: 1, name: "animation-timeline", desc: " 애니메이션의 타임라인을 설정합니다." },
+        { star: 1, name: "animation-timing-function", desc: " 애니메이션 움직임의 속도를 설정합니다." },
+        { star: 1, name: "appearance", desc: " 운영체제 및 브라우저에 기본적로 설정되어 있는 테마를 기반로 요소를 표현한다." },
+        { star: 1, name: "aspect-ratio", desc: " 요소의 크기를 비율대로 조정할 수 있게 한다." },
+        { star: 1, name: "backdrop-filter", desc: " 요소 뒤 영역에 흐림이나 색상 시프트 등 그래픽 효과를 적용할 수 있는 속성입니다." },
+        { star: 1, name: "backface-visibility", desc: " 요소의 뒷쪽에서 앞면이 보이게 할지 정하는 속성입니다." },
+        { star: 1, name: "background", desc: " 백그라운드 속성을 일괄적로 설정합니다. " },
+        { star: 1, name: "background-attachment", desc: " 배경 이미지의 고정 여부를 설정합니다." },
+        { star: 1, name: "background-blend-mode", desc: " 배경을 혼합했을 때 그래픽 효과를 설정합니다." },
+        { star: 1, name: "background-clip", desc: " 백그라운드 이미지의 위치 기준점을 설정합니다." },
+        { star: 1, name: "background-color", desc: " 백그라운드 색을 설정합니다." },
+        { star: 1, name: "background-image", desc: " 백그라운드 이미지 속성을 설정합니다." },
+        { star: 1, name: "background-origin", desc: " 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다." },
+        { star: 1, name: "background-position", desc: " 백그라운드 이미지의 위치 영역을 설정합니다." },
+        { star: 1, name: "background-position-x", desc: " 백그라운드 이미지의 X축위치 영역을 설정합니다." },
+        { star: 1, name: "background-position-y", desc: " 백그라운드 이미지의 Y축위치 영역을 설정합니다." },
+        { star: 1, name: "background-repeat", desc: "백그라운드 이미지 반복 여부를 설정합니다." },
+        { star: 2, name: "background-size", desc: " 백그라운드 이미지 사이즈를 설정합니다." },
+        { star: 3, name: "block-size", desc: " 블럭의 크기를 지정합니다." },
+        { star: 4, name: "border", desc: " 테두리 속성을 일괄적로 설정합니다." },
+        { star: 3, name: "border-block", desc: " 보더블럭 속성을 지정합니다. " },
+        { star: 2, name: "border-block-color", desc: " 보더블럭 색상을 지정합니다." },
+        { star: 1, name: "border-block-end", desc: " 보더블럭 끝부분을 설정합니다." },
+        { star: 1, name: "border-block-end-color", desc: " 보더블럭 끝부분 색상을 설정합니다." },
+        { star: 1, name: "border-block-end-style", desc: " 보더블럭 끝부분 스타일을 설정합니다." },
+        { star: 1, name: "border-block-end-width", desc: " 보더블럭 끝부분 너비를 설정합니다." },
+        { star: 1, name: "border-block-start", desc: " 보더블럭의 시작부분을 설정합니다." },
+        { star: 1, name: "border-block-start-color", desc: " 보더블럭 시작부분을 설정합니다." },
+        { star: 1, name: "border-block-start-style", desc: " 보더블럭 시작부분 스타일을 설정합니다." },
+        { star: 1, name: "border-block-start-width", desc: " 보더블럭 시작부분 너비값을 설정합니다." },
+        { star: 1, name: "border-block-style", desc: " 보더블럭 스타일을 설정합니다." },
+        { star: 1, name: "border-block-width", desc: " 보더블럭의 너비값을 지정합니다." },
+        { star: 1, name: "border-bottom", desc: " 아래쪽 속성을 일괄적로 설정합니다." },
+        { star: 1, name: "border-bottom-color", desc: " 테두리 아래쪽 색 속성을 설정합니다." },
+        { star: 1, name: "border-bottom-left-radius", desc: " 아래 왼쪽 모서리 굴곡을 설정합니다." },
+        { star: 1, name: "border-bottom-right-radius", desc: " 아래 오른쪽 모서리 굴곡을 설정합니다." },
+        { star: 1, name: "border-bottom-style", desc: " 테두리 아래쪽 스타일 속성을 설정합니다." },
+        { star: 1, name: "border-bottom-width", desc: " 테두리 아래쪽 두께 속성을 설정합니다." },
+        { star: 1, name: "border-collapse", desc: " 테이블 cell 테두리의 겹침 속성을 설정한다." },
+        { star: 1, name: "border-color", desc: " 테두리의 색상을 지정합니다. " },
+        { star: 1, name: "border-end-end-radius", desc: " 속성은 요소의에 따라 물리적 경계 반경에 매핑하는 요소에 논리적 경계 반경 정의 writing-mode , direction , 및 text-orientation . 이것은 텍스트 방향 및 쓰기 모드에 관계없이 작업 할 스타일을 작성할 때 유용 합니다 ." },
+        { star: 1, name: "border-end-start-radius", desc: " 이 속성은 요소의 블록 끝과 인라인 시작면 사이의 모서리에 영향을줍니다." },
+        { star: 1, name: "border-image", desc: " 테두리의 이미지를 지정합니다. " },
+        { star: 1, name: "border-image-outset", desc: " 테두리를 벗어나는 이미지 양을 지정." },
+        { star: 1, name: "border-image-repeat", desc: " 원본 이미지의 모서리 영역을 요소의 테두리 이미지 크기에 맞춰 조절할 때 사용할 방법을 지정합니다." },
+        { star: 1, name: "border-image-slice", desc: " border-image-source로 설정한 이미지를 여러 개의 영역로 나눕니다." },
+        { star: 1, name: "border-image-source", desc: " 요소의 테두리 이미지로 사용할 원본 이미지를 지정합니다." },
+        { star: 1, name: "border-image-width", desc: " 요소의 테두리 이미지로 사용할 원본 이미지를 지정합니다." },
+        { star: 1, name: "border-inline", desc: " 스타일 시트에서 하나의 장소에서 각각의 논리적 인라인 border 속성 값을 설정합니다." },
+        { star: 1, name: "border-inline-color", desc: " 논리적 인라인 테두리의 색상을 정의합니다." },
+        { star: 1, name: "border-inline-end", desc: " 요소의 논리적 인라인 엔드 테두리 폭을 정의합니다." },
+        { star: 1, name: "border-inline-end-color", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 색상에 매핑하는 요소의 논리적 인라인 엔드 테두리 색상을 정의합니다." },
+        { star: 1, name: "border-inline-end-style", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 스타일에 매핑하는 요소의 논리적 인라인 끝 테두리 스타일을 정의합니다." },
+        { star: 1, name: "border-inline-end-width", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 폭 물리적 경계에 매핑하는 요소의 논리적 인라인 엔드 테두리 폭을 정의합니다." },
+        { star: 1, name: "border-inline-start", desc: " 스타일 시트에서 하나의 장소에서 각각의 논리적 인라인 시작 border 속성 값을 설정합니다." },
+        { star: 1, name: "border-inline-start-color", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 색상에 매핑하는 요소의 논리적 인라인 시작 테두리 색상을 정의합니다." },
+        { star: 1, name: "border-inline-start-style", desc: " 속성은 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 스타일에 매핑하는 요소의 논리적 인라인 시작 테두리 스타일을 정의합니다." },
+        { star: 1, name: "border-inline-start-width", desc: " 속성은 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 폭 물리적 경계에 매핑하는 요소의 논리적 인라인 시작 테두리 폭을 정의합니다." },
+        { star: 1, name: "border", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 스타일에 매핑하는 요소의 논리적 인라인 테두리의 스타일을 정의합니다." },
+        { star: 1, name: "border-inline-width", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 폭 물리적 경계에 매핑하는 요소의 논리적 인라인 테두리의 폭을 정의합니다." },
+        { star: 1, name: "border-left", desc: " 왼쪽 테두리를 설정합니다." },
+        { star: 1, name: "border-left-color", desc: " 박스의 왼쪽 테두리 색상을 지정합니다." },
+        { star: 1, name: "border-left-style", desc: " 박스의 왼쪽 테두리 영역의 스타일을 지정합니다." },
+        { star: 1, name: "border-left-width", desc: " 박스의 왼쪽 테두리 영역의 너비를 지정합니다." },
+        { star: 1, name: "border-radius", desc: " 테두리를 둥글게 만들 수 있는 속성입니다." },
+        { star: 1, name: "border-right", desc: " 오른쪽 테두리를 설정합니다. " },
+        { star: 1, name: "border-right-color", desc: " 박스의 오른쪽 테두리 색상을 지정합니다." },
+        { star: 1, name: "border-right-style", desc: " 박스의 오른쪽 테두리 영역의 스타일을 지정합니다." },
+        { star: 1, name: "border-right-width", desc: " 박스의 오른쪽 테두리 영역의 너비를 지정합니다." },
+        { star: 1, name: "border-spacing", desc: " 테이블 cell과 테두리와의 간격을 지정한다." },
+        { star: 1, name: "border-start-end-radius", desc: " 이것은 텍스트 방향 및 쓰기 모드에 관계없이 작업 할 스타일을 작성할 때 유용 합니다 ." },
+        { star: 1, name: "border-start-start-radius", desc: " 이것은 텍스트 방향 및 쓰기 모드에 관계없이 작업 할 스타일을 작성할 때 유용 합니다 ." },
+        { star: 1, name: "border-style", desc: " 박스의 테두리 영역의 스타일을 지정합니다." },
+        { star: 1, name: "border-top", desc: " 위쪽 테두리를 설정합니다." },
+        { star: 1, name: "border-top-color ", desc: " 박스의 상단 테두리 색상을 지정합니다." },
+        { star: 1, name: "border-top-left-radius", desc: " 라운드 코너의 곡률을 규정하는 타원의 반경 (또는 세미 메이저 및 세미 마이너 축의 반경)을 지정하여 소자의 왼쪽 상단." },
+        { star: 1, name: "border-top-right-radius", desc: " 속성 라운드 코너의 곡률을 규정하는 타원의 반경 (또는 세미 메이저 및 세미 마이너 축의 반경)을 지정하여 소자의 오른쪽 상단." },
+        { star: 1, name: "border-top-style", desc: " 박스의 상단 테두리 영역의 스타일을 지정합니다." },
+        { star: 1, name: "border-top-width", desc: " 박스의 상단 테두리 영역의 너비를 지정합니다." },
+        { star: 1, name: "border-width", desc: " 박스의 테두리 영역의 너비를 지정합니다." },
+        { star: 1, name: "bottom", desc: " 용기블럭의 높이를 참조합니다. 요소가 밑에서부터 어디쯤 배치 될 지 결정합니다." },
+        { star: 1, name: "box-decoration-break", desc: " 요소의 방법 속성을 지정 조각이 여러 행, 열 또는 페이지에 걸쳐 깨진 경우 렌더링해야합니다." },
+        { star: 1, name: "box-shadow", desc: " 요소의 프레임 주위에 그림자 효과를 추가합니다." },
+        { star: 1, name: "box-sizing", desc: " 박스의 크기를 어떤 것을 기준로 계산할지를 정하는 속성입니다." },
+        { star: 1, name: "break-after", desc: " 속성 설정 페이지, 열, 또는 지역 구분은 생성 된 박스 후 행동해야하는 방법. 생성 된 상자가 없으면 속성이 무시됩니다." },
+        { star: 1, name: "break-before", desc: " 세트 페이지, 열, 또는 지역 구분은 생성 된 박스 전에 행동해야하는 방법. 생성 된 상자가 없으면 속성이 무시됩니다." },
+        { star: 1, name: "break-inside", desc: " 속성 설정 페이지, 열, 또는 지역 나누기 생성 된 상자 안에 행동해야하는 방법. 생성 된 상자가 없으면 속성이 무시됩니다." },
+        { star: 1, name: "caption-side", desc: " 표(table)의 캡션의 위치를 정하는 속성" },
+        { star: 1, name: "caret-color", desc: " 색상 설정 삽입 캐럿 , 다음 문자 입력 된 삽입 될 볼 마커를. 이를 텍스트 입력 커서 라고도합니다 ." },
+        { star: 1, name: "clear", desc: " float 속성을 해제한다." },
+        { star: 1, name: "clip", desc: " 요소의 보이는 부분을 정의합니다." },
+        { star: 1, name: "clip-path", desc: " 요소의 어떤 부분 집합을 표시 할 것인지 클리핑 영역을 생성한다." },
+        { star: 1, name: "color", desc: " 텍스트 내용의 글자 색상을 지정합니다." },
+        { star: 1, name: "color-scheme", desc: " 요소가 편안하게 렌더링 할 수있는 색 구성표 표시 할 수 있습니다." },
+        { star: 1, name: "column-count", desc: " 해당 요소를 몇 개의 칼럼(column)로 나눌지를 설정합니다." },
+        { star: 1, name: "column-fill", desc: " 컬럼로 쪼갤 때, 얼마나 요소들이 균형이 맞는지 컨트롤 합니다." },
+        { star: 1, name: "column-gap (grid-column-gap)", desc: " 그리드 레이아웃에서 컬럼 간의 간격을 정의합니다." },
+        { star: 1, name: "column-rule", desc: " 다중 열 레이아웃의 열 사이에 그려진 라인의 폭, 스타일, 색상을 설정한다." },
+        { star: 1, name: "column-rule-color", desc: " 다중 열 레이아웃의 열 사이에 그려진 라인의 색을 설정한다." },
+        { star: 1, name: "column-rule-style", desc: " 다중 열 레이아웃에서 열 사이에 그려진 라인의 스타일을 설정합니다." },
+        { star: 1, name: "column-rule-width", desc: " 다중 열 레이아웃의 열 사이에 그려진 라인의 폭을 설정한다." },
+        { star: 1, name: "column-span", desc: " 컬럼 span을 설정합니다." },
+        { star: 1, name: "column-width", desc: " 다중 열 레이아웃에서 이상적인 컬럼 폭을 설정한다." },
+        { star: 1, name: "columns", desc: " 다단을 정의 - 단축 속성" },
+        { star: 1, name: "contain", desc: " 특정 요소와 콘텐츠가 문서 트리의 다른 부위와 독립되어있음을 나타낼 때 사용합니다." },
+        { star: 1, name: "content", desc: " 엘리먼트의 앞(:before)이나 뒤(:after)에 내용을 생성합니다." },
+        { star: 1, name: "content-visibility", desc: " 페이지로드 성능을 개선하는 데 가장 영향력있는 속성" },
+        { star: 1, name: "counter-increment", desc: " counter-reset로 설정한 값을 증가시키는 역할" },
+        { star: 1, name: "counter-reset", desc: " 카운터를 사용하려면, counter-reset로 먼저 카운터 이름과 시작값을 설정 해야 합니다" },
+        { star: 1, name: "counter-set", desc: " CSS 카운터 를 주어진 값로 설정합니다." },
+        { star: 1, name: "cursor", desc: " 마우스 커서의 모양을 지정한다." },
+        { star: 1, name: "direction", desc: " 텍스트의 표기 방향을 지정한다." },
+        { star: 1, name: "display", desc: " 엘리먼트의 디스플레이 속성을 지정한다." },
+        { star: 1, name: "empty-cells", desc: " 테두리와 배경이 주위에 표시할지 여부 " },
+        { star: 1, name: "filter", desc: " 요소 흐림 또는 색상 변화와 같은 그래픽 효과를 적용한다." },
+        { star: 1, name: "flex", desc: " 요소들을 자유자제로 위치 시키는 속성로, 레이아웃을 쉽게 잡을 수 있다." },
+        { star: 1, name: "flex-basis", desc: " 플렉스 항목의 초기 기본 크기를 설정합니다." },
+        { star: 1, name: "flex-direction", desc: " CSS3에 추가된 속성로 flexible item이 flex 컨테이너 안에 위치되는 방법을 지정한다." },
+        { star: 1, name: "flex-flow", desc: " 플렉스 컨테이너의 방향,뿐만 아니라 포장 동작을 지정한다." },
+        { star: 1, name: "flex-grow", desc: " flex-item 요소가, flex-container 요소 내부에서 할당 가능한 공간의 정도를 선언합니다." },
+        { star: 1, name: "flex-shrink", desc: " 공간을 넘어갈 경우에 각 아이템들을 줄이는 방법을 설정하는 방법입니다." },
+        { star: 1, name: "flex-wrap", desc: " flexible item을 wrap 할것인지 아닌지를 지정한다." },
+        { star: 1, name: "float", desc: " 용기박스를 왼쪽 또는 오른쪽로 이동하거나 이동하지 않음을 지정한다." },
+        { star: 1, name: "font", desc: " 엘리먼트안의 텍스트 컨텐츠의 font-style, font-variant, font-weight, font-size, line-height, font-family를 설정하는 약식속성이다." },
+        { star: 1, name: "font-family", desc: " 특정 글꼴이나 대표 글꼴을 지정한다. " },
+        { star: 1, name: "font-feature-settings", desc: " 오픈타입 폰트의 다양한 오픈타입 피처를 설정합니다." },
+        { star: 1, name: "border", desc: " 저장된 폰트 자간 정보의 사용을 설정한다. " },
+        { star: 1, name: "font-language-override", desc: " 서체에서 특정 언어의 상형 문자의 사용을 제어합니다." },
+        { star: 1, name: "font-optical-sizing", desc: " 서로 다른 크기로 볼 수 있도록 최적화되어 있는지 설정합니다." },
+        { star: 1, name: "font-size", desc: " 글꼴의 크기를 지정한다." },
+        { star: 1, name: "font-size-adjust", desc: " (대문자의 크기를 정의하는) 현재의 폰트 크기에 대한 소문자의 크기를 설정한다." },
+        { star: 1, name: "font-stretch", desc: " 글꼴 에서 노멀, 압축 또는 확장면을 선택합니다." },
+        { star: 1, name: "font-style", desc: "font-family에서 지정된 폰트의 스타일을 지정합니다." },
+        { star: 1, name: "font-synthesis", desc: " 브라우저가 굵은 글꼴과 이탤릭 글꼴을 합성하는 것을 허용할지 설정합니다." },
+        { star: 1, name: "font-variant", desc: " 소문자를 작은 대문자, 즉 소문자 크기의 대문자로 바꾸는 속성입니다." },
+        { star: 1, name: "font-variant-alternates", desc: " 대체 글리프의 사용을 제어합니다." },
+        { star: 1, name: "font-variant-caps", desc: " 대문자를위한 대체 글리프의 사용을 제어합니다." },
+        { star: 1, name: "font-variant-east-asian", desc: " 일본과 중국 등 동아시아 스크립트를 대체 글리프의 사용." },
+        { star: 1, name: "font-variant-ligatures", desc: " ligatures 글꼴의 글자들을 서로 더 조화롭게 보이도록 하는 기능을 지정합니다." },
+        { star: 1, name: "font-variant-numeric", desc: " 숫자, 분수 및 서수 마커 대체 글리프의 사용을 제어합니다." },
+        { star: 1, name: "font-variant-position", desc: " 글꼴에 내장된 윗 첨자 또는 아랫첨자를 사용하도록 지정합니다." },
+        { star: 1, name: "font-variation-settings", desc: " Variable fonts(가변 폰트) 의 폰트 스타일을 제어하는 CSS 속성입니다." },
+        { star: 1, name: "font-weight", desc: " 글꼴의 굵기를 지정한다." },
+        { star: 1, name: "forced-color-adjust", desc: " 강제 색상 모드 중 선택 하여 특정 요소에 대한 저장을 할 수 있습니다." },
+        { star: 1, name: "gap (grid-gap)", desc: " row-gap 및 column-gap 의 약어 입니다. (갭제어)" },
+        { star: 1, name: "grid", desc: " 2차원 표형태의 레이아웃을 만들 수 있는 속성입니다." },
+        { star: 1, name: "grid-area", desc: " grid-templete-areas에 지정한 영역을 정의해준다." },
+        { star: 1, name: "grid-auto-columns", desc: " 암시 적로 생성 된 그리드 컬럼의 크기를 지정 트랙 이나 트랙의 패턴을 지정합니다." },
+        { star: 1, name: "grid-auto-flow", desc: " 자동 배치 알고리즘이 자동 배치 항목을 그리드로 유입 얻을 방법을 정확하게 지정 작동 방식 CSS 속성을 제어합니다." },
+        { star: 1, name: "grid-auto-rows", desc: " 암시 적로 생성 된 그리드 행의 크기를 지정 트랙 이나 트랙의 패턴을 지정합니다." },
+        { star: 1, name: "grid-column", desc: " 격자 아이템의 크기 및 위치 지정 합니다." },
+        { star: 1, name: "grid-column-end", desc: " 그리드 열 내에서 그리드 항목의 끝 위치를 지정합니다." },
+        { star: 1, name: "grid-column-start", desc: " 그리드 열 내에서 그리드 항목의 시작 위치를 지정합니다." },
+        { star: 1, name: "grid-row", desc: " 그리드의 인라인 시작 및 인라인 끝 가장자리를 지정합니다." },
+        { star: 1, name: "grid-row-end", desc: " 그리드 영역 의 인라인 끝 가장자리를 지정합니다." },
+        { star: 1, name: "grid-row-start", desc: " 그리드 영역 의 인라인 시작 가장자리를 지정합니다." },
+        { star: 1, name: "grid-template", desc: " 그리드의 열, 행 및 지역을 정의하기위한 약식속성입니다." },
+        { star: 1, name: "grid-template-areas", desc: " 레이아웃이 어떤 형태로 구성되는지 설계도의 역할을 한다." },
+        { star: 1, name: " grid-template-columns", desc: " 열 넓이를 지정한다." },
+        { star: 1, name: "grid-template-rows", desc: " 행 높이를 지정한다." },
+        { star: 1, name: "hanging-punctuation", desc: " 구두점이 시작 정지 또는 텍스트 행의 종료 여부를 속성 지정합니다." },
+        { star: 1, name: "height", desc: " 블럭레벨 요소의 높이를 지정한다." },
+        { star: 1, name: "hyphenate-character", desc: " 하이픈 나누기 전 줄 끝에서 사용되는 문자(또는 문자열)를 설정합니다." },
+        { star: 1, name: "hyphens", desc: " 단어를 여러 줄에 걸쳐 때 텍스트 랩을 하이픈되어야하는 속성을 지정합니다." },
+        { star: 1, name: "image-orientation", desc: " 이미지 방향에 대한 레이아웃 독립적 수정을 지정합니다." },
+        { star: 1, name: "image-rendering", desc: " 이미지 스케일링 알고리즘을 설정한다." },
+        { star: 1, name: "image-resolution", desc: " 해상도를 설정합니다. " },
+        { star: 1, name: "ime-mode", desc: " IME(Input Method Editor)의 상태를 반환하거나 설정합니다." },
+        { star: 1, name: "initial-letter", desc: " 세트, 떨어 제기하고, 침몰 초기 문자에 대한 스타일링." },
+        { star: 1, name: "initial-letter-align", desc: " 단락 내에서 초기 문자의 정렬을 지정합니다." },
+        { star: 1, name: "inline-size", desc: " 요소의 블록의 수평과 수직 크기를 정의한다." },
+        { star: 1, name: "inset", desc: " element와 테두리 사이의 element 내부에 있는 공간을 의미합니다." },
+        { star: 1, name: "inset-block", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 실제 오프셋에 매핑하는 요소의 논리 블록의 시작과 끝 오프셋을 정의합니다." },
+        { star: 1, name: "inset-block-end", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 인 세트에 매핑하는 요소의 오프셋 (offset) 논리 블록의 끝을 정의합니다." },
+        { star: 1, name: "inset-block-start", desc: " 논리적 블록 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 인 세트에 매핑하는 요소의 오프셋 시작을 정의합니다." },
+        { star: 1, name: "inset-inline", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 실제 오프셋에 매핑 인라인 방향로 요소의 논리적 시작과 끝 오프셋을 정의합니다." },
+        { star: 1, name: "inset-inline-end", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 오프셋에 매핑하는 요소의 논리적 인라인 최종 삽입을 정의합니다." },
+        { star: 1, name: "inset-inline-start", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 오프셋에 매핑하는 요소의 논리적 인라인 시작 인 세트를 정의합니다." },
+        { star: 1, name: "isolation", desc: " 요소가 새로운 생성해야하는지 여부를 결정합니다. " },
+        { star: 1, name: "justify-content", desc: " 가로축 - 중심축을 기준로 아이템들을 정렬한다. 주로 flex랑 사용된다." },
+        { star: 1, name: "justify-items", desc: " 수직축을 중심로 좌우로 위치를 조정하는 속성입니다. Flexbox와 같은 개념입니다." },
+        { star: 1, name: "justify-self", desc: " 상자가 적절한 축 방향의 정렬 컨테이너 내부 정당화되는 방법을 설정합니다." },
+        { star: 1, name: "left", desc: " 용기블럭의 너비를 참조합니다. 요소가 왼쪽에서 어느 위치에 배치 될 지 결정합니다." },
+        { star: 1, name: "letter-spacing", desc: " 텍스트 문자 사이의 수평 간격 동작을 설정합니다." },
+        { star: 1, name: "line-break", desc: " 줄 바꿈 규칙을 어떻게 할지 결정합니다. " },
+        { star: 1, name: "line-height", desc: " 인라인 박스의 높이를 지정한다. " },
+        { star: 1, name: "line-height-step", desc: " 라인 박스의 높이에 대한 공정 유닛을 설정한다." },
+        { star: 1, name: "list-style", desc: " 목록 항목의 속성들(list-style-type, list-style-position, list-style-image)을 한꺼번에 지정하는 약식속성입니다." },
+        { star: 1, name: "list-style-image", desc: " 목록 항목 마커로 사용되는 이미지를 설정합니다." },
+        { star: 1, name: "list-style-position", desc: " 속성의 위치 설정 합니다." },
+        { star: 1, name: "list-style-type", desc: " 목록 항목 요소 (예 : 디스크, 문자, 또는 사용자 정의 카운터 스타일 등) 마커를 설정합니다" },
+        { star: 1, name: "margin", desc: " 엘리먼트와 엘리먼트 사이의 간격을 지정" },
+        { star: 1, name: "margin-block", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리 블록의 시작과 끝 여백을 정의합니다." },
+        { star: 1, name: "margin-block-end", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 블록 끝 마진을 정의합니다." },
+        { star: 1, name: "margin-block-start", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리 블록 시작 마진을 정의합니다." },
+        { star: 1, name: "margin-bottom", desc: " 요소 밑에 쪽 마진을 설정합니다. " },
+        { star: 1, name: "margin-inline", desc: " 약식 속성입니다 정의하는 두 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 인라인 시작과 끝 여백." },
+        { star: 1, name: "margin-inline-end", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 인라인 끝 마진을 정의합니다." },
+        { star: 1, name: "margin-inline-start", desc: " 속성은 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 인라인 시작 마진을 정의합니다." },
+        { star: 1, name: "margin-left", desc: " 소 왼쪽의 여백 영역을 설정 합니다. " },
+        { star: 1, name: "margin-right", desc: " 엘리먼트의 오른쪽 마진을 지정한다. " },
+        { star: 1, name: "margin-top", desc: " 엘리먼트의 상단 마진을 지정한다." },
+        { star: 1, name: "margin-trim", desc: " 컨테이너가 컨테이너의 가장자리에 인접한 자식의 여백을 트리밍할 수 있습니다 ." },
+        { star: 1, name: "mask", desc: " 아이템이 부분적로만 보여지게 하거나 혹은 완전히 가려서 보여지지 않게 할 수 있는 기능을 가지고 있습니다." },
+        { star: 1, name: "mask-border", desc: " 요소의 경계의 가장자리를 따라 마스크를 만들 수 있습니다." },
+        { star: 1, name: "mask-border-mode", desc: " 블렌딩 모드를 지정하는 마스크의 테두리" },
+        { star: 1, name: "mask-border-outset", desc: " 요소의있는 거리 지정 마스크 보더 의 경계 상자에서 밖로 설정됩니다." },
+        { star: 1, name: "mask-border-repeat", desc: " 속성 세트 에지 영역 , 소스 이미지가 요소의의 크기에 맞게 조정되는 마스크 테두리." },
+        { star: 1, name: "mask-border-slice", desc: " 요소 마스크 테두리 의 구성 요소를 형성하는 데 사용됩니다 ." },
+        { star: 1, name: "mask-border-source", desc: " 동적 최종 마스크 테두리에 적용되는 영역로 소스 이미지를 분할하는데 사용된다." },
+        { star: 1, name: "mask-border-width", desc: " 속성은 엘레멘트의 너비 설정 마스크 경계를 설정합니다." },
+        { star: 1, name: "mask-clip", desc: " 마스크에 의해 영향을받는 영역을 결정한다. " },
+        { star: 1, name: "mask-composite", desc: " 그 다음 마스크 층과 현재의 마스크 층에 사용되는 합성 동작을 나타낸다." },
+        { star: 1, name: "mask-image", desc: " 마스크 층로서 사용되는 화상을 설정한다. " },
+        { star: 1, name: "mask-mode", desc: " 정의 된 마스크 참조 여부 속성 세트" },
+        { star: 1, name: "mask-origin", desc: " 마스크의 원점을 설정합니다." },
+        { star: 1, name: "mask-position", desc: " 마스크의 위치를 설정합니다. " },
+        { star: 1, name: "mask-repeat", desc: " 마스크 이미지를 반복하는 방법을 속성 집합을 설정합니다." },
+        { star: 1, name: "mask-size", desc: " 마스크 이미지의 크기를 지정합니다." },
+        { star: 1, name: "mask-type", desc: " 마스크 타입을 설정합니다." },
+        { star: 1, name: "max-block-size", desc: " 기입 방향로 규정되는 방향의 반대측에있는 요소들의 최대 크기를 지정하는 writing-mode . 즉, 쓰기 방향이 수평이면 max-block-size 는 max-height 와 같습니다 . " },
+        { star: 1, name: "max-height", desc: " 엘리먼트의 최대 높이를 지정한다." },
+        { star: 1, name: "max-inline-size", desc: " 기록 모드에 따라서, 요소의 블록의 수평 또는 수직의 최대 크기를 정의한다." },
+        { star: 1, name: "max-width", desc: " 엘리먼트의 최대 넒이를 지정한다." },
+        { star: 1, name: "min-block-size", desc: " 기록 모드에 따라서, 요소의 블록의 최소 수평 또는 수직 크기를 정의한다." },
+        { star: 1, name: "min-height", desc: " 엘리먼트의 내용영역 높이의 최소값을 지정한다. 음수값은 지정할 수 없다." },
+        { star: 1, name: "min-inline-size", desc: " 기록 모드에 따라서, 요소의 블록의 수평 또는 수직의 최소 크기를 정의한다." },
+        { star: 1, name: "min-width", desc: " 엘리먼트의 최소 넓이를 지정한다." },
+        { star: 1, name: "mix-blend-mode", desc: " 요소의 내용은 요소의 부모의 내용과 요소의 배경로 혼합하는 방법." },
+        { star: 1, name: "object-fit", desc: " img 나 video 요소와 같은 대체 요소의 콘텐츠 크기를 어떤 방식로 조절해 요소에 맞출 것인지 지정합니다." },
+        { star: 1, name: "object-position", desc: " 대체 요소의 콘텐츠 정렬 방식을 지정합니다." },
+        { star: 1, name: "offset", desc: " 정의 된 경로를 따라 애니메이션화 된 요소에 필요한 모든 속성을 설정한다." },
+        { star: 1, name: "offset-anchor", desc: " 실제로 경로를 따라 움직이는 offset-path 를 따라 이동하는 요소의 상자 내부 지점을 지정합니다 ." },
+        { star: 1, name: "offset-distance", desc: " CSS 속성 지정은 함께 위치 offset-path 요소의 위치가된다." },
+        { star: 1, name: "offset-path", desc: " 수행 할 요소의 이동 경로를 지정하고, 부모 컨테이너 내의 요소의 위치를 정의 또는 SVG 좌표계." },
+        { star: 1, name: "offset-position", desc: " 오프셋의 위치값을 설정합니다." },
+        { star: 1, name: "offset-rotate", desc: " 소자의 배향 / 정의 방향 offset-path ." },
+        { star: 1, name: "opacity", desc: " 요소의 투명도를 결정합니다." },
+        { star: 1, name: "order", desc: " 플렉스 또는 그리드 컨테이너에서 항목을 배치하는 순서를 설정합니다." },
+        { star: 1, name: "orphans", desc: " 표시해야하는 블록 컨테이너 선의 최소 설정 저면 (A)의 페이지 , 영역 또는 컬럼 ." },
+        { star: 1, name: "outline", desc: " 단일 선언에서 대부분의 개요 속성을 설정합니다 . " },
+        { star: 1, name: "outline-color", desc: " 요소의 외곽선의 색상을 설정합니다." },
+        { star: 1, name: "outline-offset", desc: " 간 공간 설정 윤곽 요소의 가장자리 또는 경계." },
+        { star: 1, name: "outline-style", desc: " 요소의 윤곽의 스타일을 설정합니다. 윤곽선은 border 외부의 요소 주위에 그려지는 선입니다 ." },
+        { star: 1, name: "outline-width", desc: " 엘레멘트의 윤곽의 두께를 설정합니다." },
+        { star: 1, name: "overflow", desc: " 내용이 박스보다 큰 경우 밖로 넘친 부분을 어떻게 표시할지를 지정한다." },
+        { star: 1, name: "overflow-anchor", desc: " 조정 스크롤 위치가 내용의 변화를 최소화하기 위해 브라우저의 스크롤 고정 행동을 거부 할 수있는 방법을 제공합니다." },
+        { star: 1, name: "overflow-block", desc: " 상자의 블록 시작과 블록 끝 가장자리를 오버 플로우 어떤 쇼 속성 집합. 이것은 아무것도, 스크롤 막대 또는 오버플로 내용 일 수 있습니다." },
+        { star: 1, name: "overflow-clip-margin", desc: " 얼마나 외부의 경계를 가지는 요소를 결정" },
+        { star: 1, name: "overflow-inline", desc: " 내용이 상자의 인라인 시작과 끝 가장자리를 오버 플로우 어떤 쇼 속성 집합." },
+        { star: 1, name: "overflow-wrap", desc: " 라우저가 줄 상자를 넘쳐에서 텍스트를 방지하기 위해 다른 깨지지 않는 문자열 내에서 줄 바꿈을 삽입할지 여부를 설정, 인라인 요소에 적용됩니다." },
+        { star: 1, name: "overflow-x", desc: " 블록 레벨 요소의 왼쪽과 오른쪽 가장자리를 오버 플로우 어떤 쇼 속성 집합." },
+        { star: 1, name: "overflow-y", desc: " 블록 레벨 엘리먼트의 상부 및 하부 가장자리를 넘쳐 어떤 방송 속성 세트. 이것은 아무것도 아니거나 스크롤 막대 또는 오버플로 내용 일 수 있습니다." },
+        { star: 1, name: "overscroll-behavior", desc: " 스크롤 영역의 경계에 도달 할 때 브라우저가 무엇 CSS 속성을 설정합니다." },
+        { star: 1, name: "overscroll-behavior-block", desc: " 스크롤 영역의 블록 방향 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다." },
+        { star: 1, name: "overscroll-behavior-inline", desc: " 스크롤 영역의 인라인 방향의 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다." },
+        { star: 1, name: "overscroll-behavior-x", desc: " 스크롤 영역의 수평 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다." },
+        { star: 1, name: "overscroll-behavior-y", desc: " 스크롤 영역의 수직 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다." },
+        { star: 1, name: "padding", desc: " 엘리먼트의 상, 하, 좌, 우 여백을 한꺼번에 지정합니다." },
+        { star: 1, name: "padding-block-end", desc: " 속성은 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리적 블록 끝 패딩을 정의합니다." },
+        { star: 1, name: "padding-block-start", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리 블록 시작 패딩을 정의합니다." },
+        { star: 1, name: "padding-bottom", desc: " 요소 내부의 아래쪽 여백을 설정합니다." },
+        { star: 1, name: "padding-inline-end", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리적 인라인 최종 패딩을 정의합니다." },
+        { star: 1, name: "padding-inline-start", desc: " 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리적 인라인 시작 패딩을 정의합니다." },
+        { star: 1, name: "padding-left", desc: " 엘리먼트의 왼쪽 여백을 지정한다. " },
+        { star: 1, name: "padding-right", desc: " 엘리먼트의 오른쪽 여백을 지정한다." },
+        { star: 1, name: "padding-top", desc: " 요소의 위쪽 패딩을 결정합니다." },
+        { star: 1, name: "page-break-after", desc: " 페이지 나누기 후 현재 요소." },
+        { star: 1, name: "page-break-before", desc: " 이 속성은 break-before 속성 로 대체되었습니다 ." },
+        { star: 1, name: "page-break-inside", desc: " 이 속성은 break-inside 속성로 대체되었습니다 ." },
+        { star: 1, name: "perspective", desc: " 3 차원 위치 요소 일부 관점을 제공하기 위해, Z = 0 인 평면과 사용자 사이의 거리를 결정한다." },
+        { star: 1, name: "perspective-origin", desc: " 변형되는 요소에 배치되는 perspective() 변형 함수 와 달리 3차원 공간에서 변형된 자식의 부모에 첨부됩니다 ." },
+        { star: 1, name: "place-content", desc: " CSS의 단축형 속성 (즉, 한 번에 블록 및 인라인 두 방향을 따라 정렬 내용을 수행 할 수 있습니다 align-content 및 justify-content 등 관련 레이아웃 시스템의 특성) 그리드 또는 인 flexbox ." },
+        { star: 1, name: "place-items", desc: " 약식 속성은 한 번에 블록 및 인라인 두 방향을 따라 정렬 항목을 수행 할 수 있습니다 (즉, align-items 및 justify-items 속성)과 같은 관련 레이아웃 시스템에 그리드 또는 인 flexbox . 두 번째 값이 설정되지 않은 경우 첫 번째 값도 사용됩니다." },
+        { star: 1, name: "place-self", desc: " 단축형 속성은 당신이 (즉, 한 번에 블록과 인라인 방향 모두에서 개별 항목을 정렬 할 수 있습니다" },
+        { star: 1, name: "pointer-events", desc: " 어떤 상황 (있는 경우)에 따라 속성 집합은 특정 그래픽 요소가 될 수있는 대상 포인터 이벤트." },
+        { star: 1, name: "position", desc: " 엘리먼트의 배치방법을 지정한다." },
+        { star: 1, name: "print-color-adjust", desc: " 출력 장치에서 요소의 모양을 최적화하기 위해 사용자 에이전트 가 수행할 수 있는 작업을 설정합니다." },
+        { star: 1, name: "quotes", desc: " 브라우저가 사용하는 추가 인용 부호를 렌더링하는 방법을 속성 집합을 설정합니다." },
+        { star: 1, name: "resize", desc: " 요소 의 크기를 조정할 수 있는지 여부와 방향을 결정합니다." },
+        { star: 1, name: "right", desc: " 용기블럭의 너비를 참조합니다. 요소가 오른쪽에서 어디에 배치 될 지 결정합니다." },
+        { star: 1, name: "rotate", desc: " 각각 독립적로의 회전 변환을 지정할 수 있습니다 " },
+        { star: 1, name: "row-gap (grid-row-gap)", desc: " 요소의 행 사이 의 간격( gutter ) 크기를 설정합니다." },
+        { star: 1, name: "ruby-align", desc: " 기재 위에 다른 루비 원소의 분포를 정의한다." },
+        { star: 1, name: "ruby-position", desc: " 기본 요소에 루비 요소 친척의 위치를 정의합니다. 요소 위( over ), 요소 아래( under ) 또는 오른쪽에 있는 문자 사이( inter-character )에 위치할 수 있습니다" },
+        { star: 1, name: "scale", desc: " 개별적로 독립적 규모의 변환을 지정할 수 있습니다." },
+        { star: 1, name: "scroll-behavior", desc: " 탐색 또는 CSSOM 스크롤 API에서 트리거 스크롤 할 때 속성은 스크롤 상자의 동작을 설정합니다." },
+        { star: 1, name: "scroll-margin", desc: " 훨씬처럼 값을 지정, 한 번에 요소의 스크롤 여백의 모든 설정합니다." },
+        { star: 1, name: "scroll-margin-block", desc: " 블록 차원의 요소의 스크롤 마진을 설정한다." },
+        { star: 1, name: "scroll-margin-block-end", desc: " 상자를 스냅포트에 맞추는 데 사용되는 블록 차원의 끝에서 스크롤 스냅 영역의 여백을 정의합니다 ." },
+        { star: 1, name: "scroll-margin-block-start", desc: " 이 상자를 스냅포트에 맞추는 데 사용되는 블록 차원의 시작 부분에서 스크롤 스냅 영역의 여백을 정의합니다." },
+        { star: 1, name: "scroll-margin-bottom", desc: " 엘리먼트의 하단 마진을 지정한다." },
+        { star: 1, name: "scroll-margin-inline", desc: " 인라인 차원의 요소의 스크롤 마진을 설정한다." },
+        { star: 1, name: "scroll-margin-inline-end", desc: " 이 상자를 snapport에 맞추는 데 사용되는 인라인 차원의 끝에서 스크롤 스냅 영역의 여백을 정의합니다 ." },
+        { star: 1, name: "scroll-margin-inline-start", desc: " 이 상자를 snapport에 맞추는 데 사용되는 인라인 차원의 시작 부분에서 스크롤 스냅 영역의 여백을 정의합니다 ." },
+        { star: 1, name: "scroll-margin-left", desc: " 엘리먼트의 왼쪽 마진을 지정한다." },
+        { star: 1, name: "scroll-margin-right", desc: " 이 상자를 snapport에 맞추는 데 사용되는 스크롤 스냅 영역의 오른쪽 여백을 정의합니다." },
+        { star: 1, name: "scroll-margin-top", desc: " 이 상자를 snapport에 맞추는 데 사용되는 스크롤 스냅 영역의 위쪽 여백을 정의합니다." },
+        { star: 1, name: "scroll-padding", desc: " 한 번에 요소의 모든면에 세트 스크롤 패딩을 설정합니다." },
+        { star: 1, name: "scroll-padding-block", desc: " 블록 차원의 요소의 스크롤 패딩을 설정한다." },
+        { star: 1, name: "scroll-padding-block-end", desc: " 블록 사이즈의 단부 에지 오프셋을 정의합니다." },
+        { star: 1, name: "scroll-padding-block-start", desc: " 블록 사이즈의 시작 에지에 대한 속성을 정의 오프셋을 설정합니다." },
+        { star: 1, name: "scroll-padding-bottom", desc: " 밑바닥 오프셋을 정의" },
+        { star: 1, name: "scroll-padding-inline", desc: " 인라인 차원의 요소의 스크롤 패딩을 설정한다." },
+        { star: 1, name: "scroll-padding-inline-end", desc: " 인라인 측정에 단부 가장자리의 속성을 정의" },
+        { star: 1, name: "scroll-padding-inline-start", desc: " 인라인 측정의 시작 에지에 대한 속성을 정의 옵셋 영역 보는 최적의 사용자의 관점에서 일을 배치하기위한 대상 영역" },
+        { star: 1, name: "scroll-padding-left", desc: " 좌측의 속성을 정의 옵셋 최적 가시 영역 은 사용자의 관점에서 일을 배치하기위한 대상 영역로서 사용하는 영역을 정의합니다." },
+        { star: 1, name: "scroll-padding-right", desc: " 우측에 대한 오프셋을 정의합니다." },
+        { star: 1, name: "scroll-padding-top", desc: " 속성의 상단에 대해 오프셋을 정의" },
+        { star: 1, name: "scroll-snap-align", desc: " 상자의 스냅 위치를 스냅 컨테이너의 스냅포트(정렬 컨테이너) 내에서 스냅 영역(정렬 주제)의 정렬로 지정합니다." },
+        { star: 1, name: "scroll-snap-coordinate", desc: " 이 기능은 더 이상 권장되지 않습니다." },
+        { star: 1, name: "scroll-snap-destination", desc: " 이 기능은 더 이상 권장되지 않습니다." },
+        { star: 1, name: "scroll-snap-points-x", desc: " 물리보다는 논리상 방향과 차원 맵핑을 통해 레이아웃을 제어하는 능력을 제공하는 속성 및 값을 정의하는 CSS 모듈입니다." },
+        { star: 1, name: "scroll-snap-points-y", desc: " 물리보다는 논리상 방향과 차원 맵핑을 통해 레이아웃을 제어하는 능력을 제공하는 속성 및 값을 정의하는 CSS 모듈입니다" },
+        { star: 1, name: "scroll-snap-stop", desc: " 스크롤 컨테이너가 가능한 스냅 위치에 허용되는지 여부 속성을 정의합니다." },
+        { star: 1, name: "scroll-snap-type", desc: " 포인트를 고정하는 방법을 엄격 속성 집합 하나가 경우에 스크롤 컨테이너에 적용됩니다" },
+        { star: 1, name: "scrollbar-color", desc: " 속성은 스크롤 트랙과 엄지 손가락의 색상을 설정합니다." },
+        { star: 1, name: "scrollbar-width", desc: " 사용하면 작성자가 요소 의 스크롤 막대가 표시될 때 최대 두께를 설정할 수 있습니다." },
+        { star: 1, name: "shape-image-threshold", desc: " 속성에 대한 값로 이미지를 이용한 형상 추출 할 알파 채널 임계 값을 설정합니다." },
+        { star: 1, name: "shape-margin", desc: " 속성 집합은 CSS 모양의 마진을 사용하여 생성 된 shape-outside ." },
+        { star: 1, name: "shape-outside", desc: " 속성은 인접한 인라인 콘텐츠가 둘러싸야 하는 사각형이 아닐 수 있는 모양을 정의합니다 " },
+        { star: 1, name: "tab-size", desc: " 탭 문자 (+ 0009 U)의 폭을 지정하는 데 사용됩니다." },
+        { star: 1, name: "table-layout", desc: " 테이블의 레이아웃을 정의합니다. " },
+        { star: 1, name: "text-align", desc: " 블럭안 인라인 인라인 요소의 수평 정렬을 지정한다" },
+        { star: 1, name: "text-align-last", desc: " 블록 또는 행의 마지막 줄 오른쪽 강제 줄 바꿈하기 전에, 정렬되는 방식 CSS 속성을 설정합니다." },
+        { star: 1, name: "text-combine-upright", desc: " 속성 세트는 문자의 조합을 단일 문자의 공간로. 결합 된 텍스트가 1em보다 넓은 경우 사용자 에이전트는 1em 이내의 콘텐츠에 맞아야합니다." },
+        { star: 1, name: "text-decoration", desc: " 텍스트에 밑줄, 윗줄, 가운데줄이나 깜빡거림의 장식적인 요소를 지정한다." },
+        { star: 1, name: "text-decoration-color", desc: " 텍스트 요소의 밑줄의 색깔을 결정합니다." },
+        { star: 1, name: "text-decoration-line", desc: " 속성 집합 같은 밑줄 또는 윗줄로, 요소의 텍스트에 사용되는 장식의 종류." },
+        { star: 1, name: "text-decoration-skip", desc: " 요소에 영향을 미치는 텍스트 장식이 건너뛰어야 하는 요소 콘텐츠의 부분을 설정합니다." },
+        { star: 1, name: "text-decoration-skip-ink", desc: " 글리프 센더와 디 센더를 통해 통과 할 때 overlines와 밑줄이 그려하는 방법 속성 지정합니다." },
+        { star: 1, name: "text-decoration-style", desc: " 속성에 의해 지정된 라인의 스타일 설정 text-decoration-line . 스타일은 text-decoration-line 로 설정된 모든 행에 적용됩니다 . " },
+        { star: 1, name: "text-emphasis", desc: " 텍스트에 강조 표시를 적용합니다." },
+        { star: 1, name: "text-emphasis-color", desc: " 속성을 강조 마크의 색상을 설정합니다." },
+        { star: 1, name: "text-emphasis-position", desc: " 루비 텍스트처럼 강조 표시를위한 공간이 충분하지 않으면 줄 높이가 증가합니다." },
+        { star: 1, name: "text-emphasis-style", desc: " 속성이 강조 표시의 모양을 설정합니다." },
+        { star: 1, name: "text-indent", desc: " 블록의 텍스트 행하기 전에 넣어 빈 공간 (들여 쓰기)의 길이를 설정합니다." },
+        { star: 1, name: "text-justify", desc: " 텍스트에 적용되어야한다" },
+        { star: 1, name: "text-orientation", desc: " 속성은 행의 텍스트 문자의 방향을 설정합니다." },
+        { star: 1, name: "text-overflow", desc: " 숨겨진 오버플로 콘텐츠가 사용자에게 신호되는 방식을 설정합니다." },
+        { star: 1, name: "text-rendering", desc: " 텍스트를 렌더링 할 때 최적화 할 작업에 대한 렌더링 엔진에 대한 정보를 제공합니다." },
+        { star: 1, name: "text-shadow", desc: " 텍스트에 그림자를 추가합니다." },
+        { star: 1, name: "text-size-adjust", desc: " (모바일 폰트 크기 조정 관련)" },
+        { star: 1, name: "text-transform", desc: " 텍스트를 활용하는 CSS 속성을 지정합니다." },
+        { star: 1, name: "text-underline-position", desc: " 속성은 사용하여 설정 밑줄의 위치를 지정합니다." },
+        { star: 1, name: "top", desc: " 용기블럭의 높이를 참조합니다. 위쪽에서 요소가 어디에 배치 될 것인가 결정합니다." },
+        { star: 1, name: "touch-action", desc: " 터치 스크린 사용자가 조작 할 수있는 방법을 CSS 속성을 설정합니다." },
+        { star: 1, name: "transform", desc: " 요소를 변형시킬 수 있습니다." },
+        { star: 1, name: "transform-box", desc: " 박스의 변형효과를 설정합니다." },
+        { star: 1, name: "transform-origin", desc: " 요소의 변환에 대한 원점을 설정합니다." },
+        { star: 1, name: "transform-style", desc: " 요소의 아이들이 3D 공간에 위치하거나 요소의 평면에 평평 여부 속성 집합." },
+        { star: 1, name: "transition", desc: " 애니메이션 효과를 입힐 때 속도를 조절하는 방법을 제공합니다." },
+        { star: 1, name: "transition-delay", desc: " 속성의 시작하기 전에 대기하는 CSS 속성 지정 기간 전환 효과 때 그 값 변경." },
+        { star: 1, name: "transition-duration", desc: " 전환 애니메이션 완료하는 데 소요되는 시간을 설정합니다." },
+        { star: 1, name: "transition-property", desc: " 트렌지션 프로퍼티를 설정합니다." },
+        { star: 1, name: "transition-timing-function", desc: " 트랜지션의 타이밍을 설정합니다." },
+        { star: 1, name: "translate", desc: " transform 속성로 요소에 회전, 크기 조절, 기울이기, 이동 효과를 부여할 수 있습니다." },
+        { star: 1, name: "unicode-bidi", desc: " 함께와 direction 특성, 문서의 양방향 텍스트가 처리되는 방법을 결정합니다." },
+        { star: 1, name: "user-select", desc: " 사용자가 텍스트를 선택할 수 있는지 여부를 속성을 제어합니다." },
+        { star: 1, name: "vertical-align", desc: " 인라인 엘리먼트나 테이블의 셀 안에서 수직정렬을 지정한다." },
+        { star: 1, name: "visibility", desc: " 문서의 레이아웃을 변경하지 않고 CSS 속성 표시하거나 숨기는 소자입니다." },
+        { star: 1, name: "white-space", desc: " 공백문자를 어떻게 다룰것인가를 정의 한다." },
+        { star: 1, name: "widows", desc: " 표시해야하는 블록 컨테이너 선의 최소 개수 설정 상부 (A)의 페이지 , 영역 또는 컬럼 ." },
+        { star: 5, name: "width", desc: " 블록 레벨 요소의 너비를 지정한다." },
+        { star: 1, name: "will-change", desc: " 요소에 예상되는 변화의 종류에 관한 힌트를 브라우저에 제공케 한다." },
+        { star: 1, name: "word-break", desc: " 단어의 분리를 어떻게 할 것인지 결정합니다." },
+        { star: 1, name: "word-spacing", desc: " 단어 사이의 간격을 지정한다. " },
+        { star: 1, name: "writing-mode", desc: " 텍스트의 선이 수평 또는 수직으로 배치 여부 속성 집합뿐만 아니라 블록이 진행되는 방향." },
+        { star: 4, name: "z-index", desc: " 엘리먼트의 겹쳐지는 순서를 지정한다." }
+        ];
+        const searchList = document.querySelector(".search__list ul")
+        const searchClick = document.querySelectorAll(".search__click ul:nth-child(1) li")
+        const searchClick2 = document.querySelectorAll(".search__click ul:nth-child(2) li")
+        let count = 0;
+        // 실행순서 : 
+        //  출력하기 //4번이랑 다르게 뿌려주기를 함수화
+        // 매개변수list
+        function updateList(list){
+            listCSS = "";
+            //for of 문 사용
+            for(const data of list){
+                //위에 ul까지 있으니깐 li로 뿌려주기
+                // listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;${data.star}&lt;/em&gt;&lt;/li&gt;`;
+                if (data.star == 0) {
+                    listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;☆☆☆☆☆&lt;/em&gt;&lt;/li&gt;`;
+                }
+                if (data.star == 1) {
+                    listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;★☆☆☆☆&lt;/em&gt;&lt;/li&gt;`;
+                }
+                if (data.star == 2) {
+                    listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;★★☆☆☆&lt;/em&gt;&lt;/li&gt;`;
+                }
+                if (data.star == 3) {
+                    listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;★★★☆☆&lt;/em&gt;&lt;/li&gt;`;
+                }
+                if (data.star == 4) {
+                    listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;★★★★☆&lt;/em&gt;&lt;/li&gt;`;
+                }
+                if (data.star == 5) {
+                    listCSS += `&lt;li&gt;${data.name} : ${data.desc} &lt;em&gt;★★★★★&lt;/em&gt;&lt;/li&gt;`;
+                }
+            }
+            searchList.innerHTML = listCSS;
         }
-        window.addEventListener("mousemove", mouseMove);
+        updateList(cssProperty); //재활용 가능
 
+        //클릭하기(별점에 해당하는 결과 나오게 하기)
+        //별점 클릭시
+        searchClick.forEach((star) =&gt; {
+            //스타 클릭했을 때
+            star.addEventListener("click", () =&gt; {
+                //콜백함수 쓰기 //데이터에서 스타찾기 //여기서는 filter=find
+                //dataset은 위의 data-star="i"값을 가져오는 것
+                const target = star.dataset.star;
+                const filterList = cssProperty.filter(data =&gt; data.star == target);
 
-        //마우스 커서가 글씨 위에 올라가면 크기는 5배 정도 크게 작업 원5배크게... 글씨 반전효과 추가
-        // const mouseLine = document.querySelectorAll(".mouse__text")
-        // mouseLine.addEventListener("mouseover", (e) =&gt; {
-        //     const mouseCursor = document.querySelector(".mouse__cursor")
-        //     mouseCursor.style.transform = scale(5);
-        // })
-        const cursor = document.querySelector(".mouse__cursor")
-        document.querySelector(".mouse__text").addEventListener("mouseover", () =&gt; {
-            cursor.style.transform = "scale(5)"
-
+                //찾은 속성 값
+                count = filterList.length;
+                document.querySelector(".num2").innerHTML = count;
+                //찾은 값filterList 를 함수에 보내주기
+                updateList(filterList);
+            });
         })
-        document.querySelector(".mouse__text").addEventListener("mouseout", () =&gt; {
-            cursor.style.transform = "scale(1)"
+        //1개이상 2개이상...클릭시
+        searchClick2.forEach((star) =&gt; {
+            star.addEventListener("click", () =&gt; {
+                const target = star.dataset.star;
+                // &gt;= ~이상이 되므로 searchClick과의 차이
+                const filterList = cssProperty.filter(data =&gt; data.star &gt;= target);
+                count = filterList.length;
+                document.querySelector(".num2").innerHTML = count;
+                updateList(filterList);
+            });
         });
-        // document.querySelector(".mouse__text").addEventListener("mouseover", () =&gt; {
-        //     cursor.style.transform = "scale(5)"
-        // })
-        // document.querySelector(".mouse__text").addEventListener("mouseout", () =&gt; {
-        //     cursor.style.transform = "scale(1)"
-        // });
+        //all
+
+
+        //전체속성 구해주기
+        const count2 = cssProperty.length;
+        document.querySelector(".num").innerHTML = count2;
+
+        
+        //dataset 안쓰고 가져오는 방법(고민) 위의 타겟 (index값 가져와서 하면 됨)
+        //1개이상, 2개 이상 조건문 들어간거 완료하기
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
