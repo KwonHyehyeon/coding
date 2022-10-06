@@ -1502,11 +1502,11 @@ document.querySelector(".sample14_P3").innerHTML = result3;
             document.querySelector(".sample07_P4").innerHTML = arrReduce4; 
 
             const arrNum5 = ["javascript", "react", "vue"];
-            const arrReduce5 = arrNum5.reduce((p, c) => p + c);
+            const arrReduce5 = arrNum5.reduceRight((p, c) => p + c);
 
             document.querySelector(".sample07_N5").innerHTML = "5";
             document.querySelector(".sample07_Q5").innerHTML = "['javascript', 'react', 'vue']";
-            document.querySelector(".sample07_M5").innerHTML = "reduce((p, c) => p + c)"; 
+            document.querySelector(".sample07_M5").innerHTML = "reduceRight((p, c) => p + c)"; 
             document.querySelector(".sample07_P5").innerHTML = arrReduce5; 
         }
         {
@@ -1635,7 +1635,7 @@ document.querySelector(".sample14_P3").innerHTML = result3;
 
             document.querySelector(".sample10_N2").innerHTML = "2";
             document.querySelector(".sample10_Q2").innerHTML = "[100, 200, 300, 400, 500]";
-            document.querySelector(".sample10_M2").innerHTML = "arrNum.indexOf(200)";
+            document.querySelector(".sample10_M2").innerHTML = "arrNum.indexOf(300)";
             document.querySelector(".sample10_P2").innerHTML = arrIndex2;
 
             const arrNum3 = [100, 200, 300, 400, 500];
