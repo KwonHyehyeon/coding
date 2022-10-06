@@ -242,41 +242,41 @@
         opacity: 0;
         min-width: 1vw;
         transition: all 0.3s cubic-bezier(0,0.28,0,1.2);
-         }
-         .style1.split span.show{
-            opacity: 1;
-         }
-         .style2.split span{
-            opacity: 0;
-            min-width: 1vw;
-            transform: translateY(50px);
-            display: inline-block;
-            transition: all 0.3s cubic-bezier(0,0.28,0,1.2);
-         }
-         .style2.split span.show{
-            opacity: 1;
-            transform: translateY(0);
-         }
-         .style3.split span{
-            opacity: 0;
-            min-width: 1vw;
-            transform: translateY(50px) translateX(30px) rotate(360deg);
-            display: inline-block;
-            transition: all 0.3s cubic-bezier(0,0.28,0,1.2);
-         }
-         .style3.split span.show {
-            opacity: 1;
-            transform: translateY(0) translateX(0) translateZ(0);
-         }
-         .style4.split span {
-            opacity: 0;
-            min-width: 1vw;
-            display: inline-block;
-         }
-         .style4.split span.show {
-            animation: wobble 0.5s 1 ease-in forwards;
-         }
-         @keyframes wobble {
+        }
+        .style1.split span.show{
+           opacity: 1;
+        }
+        .style2.split span{
+           opacity: 0;
+           min-width: 1vw;
+           transform: translateY(50px);
+           display: inline-block;
+           transition: all 0.3s cubic-bezier(0,0.28,0,1.2);
+        }
+        .style2.split span.show{
+           opacity: 1;
+           transform: translateY(0);
+        }
+        .style3.split span{
+           opacity: 0;
+           min-width: 1vw;
+           transform: translateY(50px) translateX(30px) rotate(180deg);
+           display: inline-block;
+           transition: all 0.3s cubic-bezier(0,0.28,0,1.2);
+        }
+        .style3.split span.show {
+           opacity: 1;
+           transform: translateY(0) translateX(0) translateZ(0);
+        }
+        .style4.split span {
+           opacity: 0;
+           min-width: 1vw;
+           display: inline-block;
+        }
+        .style4.split span.show {
+           animation: wobble 0.5s 1 ease-in forwards;
+        }
+        @keyframes wobble {
           0%  {transform: translate3d(0, 0, 0); opacity: 0;}
           15% {transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);}
           30% {transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);}
@@ -289,17 +289,111 @@
             opacity: 0;
             min-width: 1vw;
             display: inline-block;
-         }
-         .style5.split span.show {
-            animation: wobble 0.5s 1 ease-in forwards;
-         }
-         /* 숙제 5678다 입히기 애니메이션 애니메이션 사이트에서 */
-
-
-
-
-
-
+        }
+        .style5.split span.show {
+            animation: lightSpeedInLeft 0.5s 1 ease-in forwards;
+        }
+        @keyframes lightSpeedInLeft {
+          from {
+            transform: translate3d(-100%, 0, 0) skewX(30deg);
+            opacity: 0;
+          }
+      
+          60% {
+            transform: skewX(-20deg);
+            opacity: 1;
+          }
+      
+          80% {
+            transform: skewX(5deg);
+          }
+      
+          to {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+          }
+        }
+        .style6.split span {
+            opacity: 0;
+            min-width: 1vw;
+            display: inline-block;
+        }
+        .style6.split span.show {
+            animation: rotateInUpRight 0.5s 1 ease-in forwards;
+        }
+        @keyframes rotateInUpRight {
+          from {
+            transform: rotate3d(0, 0, 1, -90deg);
+            opacity: 0;
+          }
+      
+          to {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+          }
+        }
+        .style7.split span {
+            opacity: 0;
+            min-width: 1vw;
+            display: inline-block;
+        }
+        .style7.split span.show {
+            animation: zoomInUp 1.5s 1 ease-in forwards;
+        }
+        @keyframes zoomInUp {
+          from {
+            opacity: 0;
+            transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          }
+      
+          60% {
+            opacity: 1;
+            transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        .style8.split span {
+            opacity: 0;
+            min-width: 1vw;
+            display: inline-block;
+        }
+        .style8.split span.show {
+            animation: fadeInTopLeft 0.3s 1 ease-in forwards;
+        }
+        @keyframes fadeInTopLeft {
+          from {
+            opacity: 0;
+            transform: translate3d(-100%, -100%, 0);
+          }
+          to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+          }
+        }
+        .style9.split span {
+            opacity: 0;
+            min-width: 1vw;
+            display: inline-block;
+        }
+        .style9.split span.show {
+            animation: flash 0.3s 1 ease-in forwards;
+        }
+        @keyframes flash {
+          from,
+          50%,
+          to {
+            opacity: 1;
+          }
+      
+          25%,
+          75% {
+            opacity: 0;
+          }
+        }
 
     </style>    
 </head>
@@ -363,7 +457,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split style1\">승자는 시간을 관리하며 살고 패자는 시간에 끌려 산다.</p>
+                <p class="content__item__desc split style5">승자는 시간을 관리하며 살고 패자는 시간에 끌려 산다.</p>
             </section>
             <!-- //section5 -->
             <section id="section6" class="content__item">
@@ -372,7 +466,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split">아무것도 하지 않으면 아무 일도 일어나지 않는다.</p>
+                <p class="content__item__desc split style6">아무것도 하지 않으면 아무 일도 일어나지 않는다.</p>
             </section>
             <!-- //section6 -->
             <section id="section7" class="content__item">
@@ -381,7 +475,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split style1">일단 시작해라. 나중에 완벽해지면 된다.</p>
+                <p class="content__item__desc split style7">일단 시작해라. 나중에 완벽해지면 된다.</p>
             </section>
             <!-- //section7 -->
             <section id="section8" class="content__item">
@@ -390,7 +484,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split style1">모든 이의 마음을 얻으려고 계산된 글은 그 누구의 마음도 얻지 못한다.</p>
+                <p class="content__item__desc split style8">모든 이의 마음을 얻으려고 계산된 글은 그 누구의 마음도 얻지 못한다.</p>
             </section>
             <!-- //section8 -->
             <section id="section9" class="content__item">
@@ -399,7 +493,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split style1">우리 자신에게 실패를 허락하는 것이 성공을 허락하는 것이다.</p>
+                <p class="content__item__desc split style9">우리 자신에게 실패를 허락하는 것이 성공을 허락하는 것이다.</p>
             </section>
             <!-- //section9 -->
         </div>
@@ -614,7 +708,7 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
         //스크롤값 보여주기
         function scroll(){
             let scrollTop = window.scrollY;
-            document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop);
+            document.querySelector("#parallax__info .scroll span").innerText = Math.round(scrollTop);
 
             //css클래스 추가 (노가다)
             // document.querySelectorAll(".content__item").forEach(item => {
@@ -626,7 +720,7 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
             document.querySelectorAll(".content__item").forEach(item => {
                 if(scrollTop >= item.offsetTop){
                     item.querySelectorAll(".split span").forEach((span, index) => {
-                        span.classList.add("show");
+                        //span.classList.add("show");
                         //힌트는 인덱스 인덱스를 이용해서
                         //첫 번째 span --> 0.01
                         //두 번째 span --> 0.02

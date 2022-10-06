@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>패럴랙스 이펙트05</title>
+    <title>패럴랙스 이펙트07</title>
     <link href="https://webfontwor0000ld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/parallax.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -200,8 +200,8 @@
             position: relative;
         }
         .reveal::before {
-            content: '';
             position: absolute;
+            content: '';
             left: 0;
             top: 0;
             width: 0;
@@ -210,8 +210,8 @@
             z-index: 1;
         }
         .reveal.reveal-TWO::after {
-            content: '';
             position: absolute;
+            content: '';
             left: 0;
             top: 0;
             width: 0;
@@ -247,7 +247,10 @@
         .reveal.reveal-BTT.show::after {
             animation: reveal-BTT 1s 0.3s
         }
-
+        .content__item__num,
+        .content__item__title {
+            display: none;
+        }
         @keyframes opacity {
             0% {opacity: 0;}
             60% {opacity: 0;}
@@ -312,7 +315,7 @@
                     <div class="content__item__img"></div>
                 </figure>
                 <!-- 그냥 reveal을 붙이면 아까 reveal>div했던 것처럼 해야 붙는데 따로 박스가 없어서 안됨 그래서 span을 줘야함 -->
-                <p class="content__item__desc reveal">오늘 할 수 있는 일에 전력을 다하라. 그러면 내일에는 한걸음 더 진보한다.</p>
+                <p class="content__item__desc split reveal">오늘 할 수 있는 일에 전력을 다하라. 그러면 내일에는 한걸음 더 진보한다.</p>
             </section>
             <!-- //section1 -->
             <section id="section2" class="content__item">
@@ -322,7 +325,7 @@
                 <figure class="content__item__imgWrap reveal reveal-RTL">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal reveal-RTL" data-delay="500">게으르지 않음은 영원한 삶의 집이요, 게으름은 죽음의 집이다.</p>
+                <p class="content__item__desc split reveal reveal-RTL" data-delay="500">게으르지 않음은 영원한 삶의 집이요, 게으름은 죽음의 집이다.</p>
             </section>
             <!-- //section2-->
             <section id="section3" class="content__item">
@@ -331,7 +334,7 @@
                 <figure class="content__item__imgWrap reveal reveal-TTB">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal reveal-TTB">우리는 행복하기 때문에 웃는게 아니라, 웃기 때문에 행복하다.</p>
+                <p class="content__item__desc split reveal reveal-TTB">우리는 행복하기 때문에 웃는게 아니라, 웃기 때문에 행복하다.</p>
             </section>
             <!-- //section3 -->
             <section id="section4" class="content__item">
@@ -382,10 +385,10 @@
             <section id="section9" class="content__item">
                 <span class="content__item__num">09</span>
                 <h2 class="content__item__title">section9</h2>
-                <figure class="content__item__imgWrap reveal">
+                <figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal">우리 자신에게 실패를 허락하는 것이 성공을 허락하는 것이다.</p>
+                <p class="content__item__desc reveal reveal-TWO reveal-BTT">우리 자신에게 실패를 허락하는 것이 성공을 허락하는 것이다.</p>
             </section>
             <!-- //section9 -->
         </div>
@@ -577,24 +580,28 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
     <script src="../assets/js/gsap.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
+        const reveal = document.querySelectorAll(".reveal");
 
         //reveal 클래스 자식에 글씨가 있다면, 가상으로 span태그를 만들어서 넣어주세요. 6번참고
-        // text.forEach(desc => {
-        //     let splitText = desc.innerText;
-        //     let splitWrap = splitText.split('').join('</span><span>');
-        //     //앞뒤 span 완전하게 안나와서 splitWrap = "<span>" + splitWrap + "</span>" 써주고 innerHTML로 저장 후 뿌려주기
-        //     desc.innerHTML = splitWrap = "<span>" + splitWrap + "</span>" ;
-        // })
+        reveal.forEach((e) => {
+            //innerText로 텍스트가 있는 것만 뽑음
+            let revealText = e.innerText;
+            if (revealText) {
+                e.innerHTML = "<span>" + revealText + "</span>";
+            }
+        });
+
 
         // console.log(splitWrapAll)
 
-        function scroll(){
+        function scroll() {
             let scrollTop = window.scrollY;
 
-            //reveal 여러개 선택할 수 있음
-            const reveal = document.querySelectorAll(".reveal");
 
-            reveal.forEach(el => {
+            //reveal 여러개 선택할 수 있음
+            //const reveal = document.querySelectorAll(".reveal");
+
+            reveal.forEach((el) => {
                 let revealOffset = el.offsetTop + el.parentElement.offsetTop;
                 let revealDelay = el.dataset.delay;
                 //첫번째 섹션보다 클 때 리빌 오프셋값을 구해야 함.
@@ -605,17 +612,17 @@ document.querySelectorAll(".mouse__wrap span").forEach( span => {
                 //     el.classList.add("show");
                 // }
 
-                if(scrollTop >= revealOffset - window.innerHeight){
-                    if(revealDelay == undefined){
-                        el.classListadd("show");
+                if (scrollTop >= revealOffset - window.innerHeight) {
+                    if (revealDelay == undefined) {
+                        el.classList.add("show");
                     } else {
-                        setTimeout(()=>{
+                        setTimeout(() => {
                             el.classList.add("show");
-                        }, revealDelay)
+                        }, revealDelay);
                     }
                 }
-            })
-            document.querySelectorAll(".scrollTop span").innerText = Math.round(scrollTop);
+            });
+            document.querySelector("#parallax__info .scroll span").innerText = Math.round(scrollTop);
             requestAnimationFrame(scroll);
         }
         scroll();
