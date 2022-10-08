@@ -4,124 +4,115 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>패럴랙스 이펙트 04</title>
+    <title>패럴랙스 이펙트 07</title>
 
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/dracula.css">
 </head>
 <body>
     <div class="document">
-        <h2 class="t_tit">🔮 패럴랙스 이펙트 - 텍스트 효과</h2>
+        <h2 class="t_tit">🔮 패럴랙스 이펙트 - 리빌 효과</h2>
         <p class="t_desc">
-            📌 이번 이펙트는 스크롤했을 때 글자가 한 글자씩 transition-delay를 통해 도로로로로 나타나는 이펙트입니다. <br>
+            📌 이번 이펙트는 이미지와 텍스트 등을 점진적으로 나타나게 하는 이펙트입니다. <br>
         </p>
         <!-- <h3 class="t_tit2">패럴랙스 이펙트를 피그마를 활용하여 설명</h3> -->
         <!-- <div class="iframe">
         </div> -->
         <h3 class="t_tit2">➰ HTML</h3>
         <p class="t_desc2">
-            스크롤값도 나오게 해줄 것이므로 parallax__info도 만들어줍니다.
+            애니메이션 방향<br>
+            ∙reveal : 왼쪽에서 오른쪽으로<br>
+            ∙reveal-RTL : Right To Left<br>
+            ∙reveal-TTB : Top To Bottom<br>
+            ∙reveal-BTT : Bottom To Top<br>
         </p>
         <div class="result">
             <details>
                 <summary>코드 보기</summary>
                 <div class="t_code">
-<pre><code class="language-html">    &lt;header id="header"&gt;
-    &lt;h1&gt;&lt;a href="parallaxEffect.html"&gt; Javascript parallax sliderEffect06&lt;/a&gt;&lt;/h1&gt;
-    &lt;p&gt;패럴랙스 이펙트 - 텍스트 효과&lt;/p&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
-        &lt;li class="active"&gt;&lt;a href="parallaxEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/header&gt;
-&lt;!-- //header --&gt;
-
-&lt;main id="parallax__cont"&gt;
+<pre><code class="language-html">&lt;main id="parallax__cont"&gt;
     &lt;div id="contents"&gt;
         &lt;section id="section1" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;01&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split"&gt;오늘 할 수 있는 일에 전력을 다하라. 그러면 내일에는 한걸음 더 진보한다.&lt;/p&gt;
+            &lt;!-- 그냥 reveal을 붙이면 아까 reveal&gt;div했던 것처럼 해야 붙는데 따로 박스가 없어서 안됨 그래서 span을 줘야함 --&gt;
+            &lt;p class="content__item__desc split reveal"&gt;오늘 할 수 있는 일에 전력을 다하라. 그러면 내일에는 한걸음 더 진보한다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section1 --&gt;
         &lt;section id="section2" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;02&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;!-- reveal-RTL옵션으로 공통요소 만들기 자동으로 작동되도록! --&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-RTL"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split"&gt;게으르지 않음은 영원한 삶의 집이요, 게으름은 죽음의 집이다.&lt;/p&gt;
+            &lt;p class="content__item__desc split reveal reveal-RTL" data-delay="500"&gt;게으르지 않음은 영원한 삶의 집이요, 게으름은 죽음의 집이다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section2--&gt;
         &lt;section id="section3" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;03&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TTB"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split"&gt;우리는 행복하기 때문에 웃는게 아니라, 웃기 때문에 행복하다.&lt;/p&gt;
+            &lt;p class="content__item__desc split reveal reveal-TTB"&gt;우리는 행복하기 때문에 웃는게 아니라, 웃기 때문에 행복하다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section3 --&gt;
         &lt;section id="section4" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;04&lt;/span&gt;
             &lt;h2 class="content__item__title split"&gt;section4&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-BTT"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split"&gt;인생은 가까이서 보면 비극, 멀리서 보면 희극이다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal reveal-BTT"&gt;인생은 가까이서 보면 비극, 멀리서 보면 희극이다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section4 --&gt;
         &lt;section id="section5" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;05&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split"&gt;승자는 시간을 관리하며 살고 패자는 시간에 끌려 산다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO"&gt;승자는 시간을 관리하며 살고 패자는 시간에 끌려 산다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section5 --&gt;
         &lt;section id="section6" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;06&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split"&gt;아무것도 하지 않으면 아무 일도 일어나지 않는다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal-TWO reveal-RTL"&gt;아무것도 하지 않으면 아무 일도 일어나지 않는다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section6 --&gt;
         &lt;section id="section7" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;07&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split"&gt;일단 시작해라. 나중에 완벽해지면 된다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-TTB"&gt;일단 시작해라. 나중에 완벽해지면 된다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section7 --&gt;
         &lt;section id="section8" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;08&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split"&gt;모든 이의 마음을 얻으려고 계산된 글은 그 누구의 마음도 얻지 못한다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-BTT"&gt;모든 이의 마음을 얻으려고 계산된 글은 그 누구의 마음도 얻지 못한다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section8 --&gt;
         &lt;section id="section9" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;09&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split"&gt;우리 자신에게 실패를 허락하는 것이 성공을 허락하는 것이다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-BTT"&gt;우리 자신에게 실패를 허락하는 것이 성공을 허락하는 것이다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section9 --&gt;
     &lt;/div&gt;
@@ -135,7 +126,7 @@
             </details><br>
     <h3 class="t_tit2">➰ CSS</h3>
     <p class="t_desc2">
-        html틀을 구성해 준 다음, 그에 맞는 스타일을 줍니다.
+        html틀을 구성해 준 다음, 그에 맞는 스타일을 줍니다. 주석을 참고해주세요!
     </p>
     <div class="result">
         <details>
@@ -214,7 +205,6 @@
     width: 100%;
     /* 이미지 영역 만들어주기 패딩으로 */
     padding-bottom: 56.25%;
-    background: #000;
     position: relative;
     /* 사진 넘치는 거 가리기 */
     overflow: hidden;
@@ -318,53 +308,103 @@
 }
 
 /* option */
-.split span{
+.reveal &gt; div,
+.reveal &gt; span {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.3s cubic-bezier(0, 0.71, 0.11,);
-    display: inline-block;
-    min-width: 1vw;
 }
-.split span.show{
-    opacity: 1;
-    transform: translateY(0);
+/* reveal에 show가 붙었을 때 */
+/* linear : 애니메이션 효과가 처음부터 끝까지 일정한 속도로 진행 */
+.reveal.show &gt; div, 
+.reveal.show &gt; span {
+    animation: opacity 1s linear forwards;
 }
-/* 노가다 -&gt; 나중에 스크립트로 처리 */
-/* .split span:nth-child(1) {transition-delay: 100ms;}
-.split span:nth-child(2) {transition-delay: 150ms;}
-.split span:nth-child(3) {transition-delay: 200ms;}
-.split span:nth-child(4) {transition-delay: 250ms;}
-.split span:nth-child(5) {transition-delay: 300ms;}
-.split span:nth-child(6) {transition-delay: 350ms;}
-.split span:nth-child(7) {transition-delay: 400ms;}
-.split span:nth-child(8) {transition-delay: 450ms;}
-.split span:nth-child(9) {transition-delay: 500ms;}
-.split span:nth-child(10) {transition-delay: 550ms;}
-.split span:nth-child(11) {transition-delay: 600ms;}
-.split span:nth-child(12) {transition-delay: 650ms;}
-.split span:nth-child(13) {transition-delay: 700ms;}
-.split span:nth-child(14) {transition-delay: 750ms;}
-.split span:nth-child(15) {transition-delay: 800ms;}
-.split span:nth-child(16) {transition-delay: 850ms;}
-.split span:nth-child(17) {transition-delay: 900ms;}
-.split span:nth-child(18) {transition-delay: 950ms;}
-.split span:nth-child(19) {transition-delay: 1000ms;}
-.split span:nth-child(20) {transition-delay: 1050ms;}
-.split span:nth-child(21) {transition-delay: 1100ms;}
-.split span:nth-child(22) {transition-delay: 1150ms;}
-.split span:nth-child(23) {transition-delay: 1200ms;}
-.split span:nth-child(24) {transition-delay: 1250ms;}
-.split span:nth-child(25) {transition-delay: 1300ms;}
-.split span:nth-child(26) {transition-delay: 1350ms;}
-.split span:nth-child(27) {transition-delay: 1400ms;}
-.split span:nth-child(28) {transition-delay: 1450ms;}
-.split span:nth-child(29) {transition-delay: 1500ms;}
-.split span:nth-child(30) {transition-delay: 1550ms;}
-.split span:nth-child(31) {transition-delay: 1600ms;}
-.split span:nth-child(32) {transition-delay: 1650ms;}
-.split span:nth-child(33) {transition-delay: 1700ms;}
-.split span:nth-child(34) {transition-delay: 1750ms;}
-.split span:nth-child(35) {transition-delay: 1800ms;} */
+.reveal {
+    position: relative;
+}
+/* 흰색 바탕 */
+.reveal::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #fff;
+    z-index: 1;
+}
+.reveal.reveal-TWO::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: 1;
+    background: skyblue;
+}
+/* 1개 */
+.reveal.show::before {
+    animation: reveal 1s;
+}
+.reveal.reveal-RTL.show::before {
+    animation: reveal-RTL 1s;
+}
+.reveal.reveal-TTB.show::before {
+    animation: reveal-TTB 1s;
+}
+.reveal.reveal-BTT.show::before {
+    animation: reveal-BTT 1s;
+}
+/* 2개 */
+.reveal.show::after {
+    animation: reveal 1s 0.3s
+}
+.reveal.reveal-RTL.show::after {
+    animation: reveal-RTL 1s 0.3s
+}
+.reveal.reveal-TTB.show::after {
+    animation: reveal-TTB 1s 0.3s
+}
+.reveal.reveal-BTT.show::after {
+    animation: reveal-BTT 1s 0.3s
+}
+.content__item__num,
+.content__item__title {
+    display: none;
+}
+@keyframes opacity {
+    0% {opacity: 0;}
+    60% {opacity: 0;}
+    70% {opacity: 1;}
+    100% {opacity: 1;}
+}
+/* 박스가 왼쪽에서 오른쪽으로 */
+@keyframes reveal {
+    0% {width: 0; left: 0}
+    50% {width: 100%; left: 0}
+    80% {width: 100%; left: 0}
+    100% {width: 0; left: 100%}
+}
+/* reveal-RTL는 반대로 / left값을 초기화 시켜줘야 됨(left: auto;) 위에 기준점있기 때문에 */
+@keyframes reveal-RTL {
+    0% {width: 0; right: 0; left: auto;}
+    50% {width: 100%; right: 0; left: auto;}
+    80% {width: 100%; right: 0; left: auto;}
+    100% {width: 0; right: 100%; left: auto;}
+}
+/* height값이 기준 */
+@keyframes reveal-TTB {
+    0% {width: 100%; height: 0; top: 0;}
+    50% {width: 100%; height: 100%; top: 0;}
+    80% {width: 100%; height: 100%; top: 0;}
+    100% {width: 100%; height: 0; top: 100%;}
+}
+@keyframes reveal-BTT {
+    0% {width: 100%; height: 0; bottom: 0; top: auto;}
+    50% {width: 100%; height: 100%; bottom: 0; top: auto;}
+    80% {width: 100%; height: 100%; bottom: 0; top: auto;}
+    100% {width: 100%; height: 0; bottom: 100%; top: auto;}
+}
 </code></pre>
             </div>
         </details><br>
@@ -376,56 +416,47 @@
             <details>
                 <summary>코드 보기</summary>
                 <div class="t_code">
-<pre><code class="language-js">//글씨 쪼개기
-let text = document.querySelectorAll("#contents .content__item__desc");
-// let splitText = text.innerText;
-// let splitWrap = splitText.split('').join('</span><span>');
-// 앞뒤 span 완전하게 안나와서 splitWrap = "<span>" + splitWrap + "</span>" 써주고 innerHTML로 저장 후 뿌려주기
-// text.innerHTML = splitWrap = "<span>" + splitWrap + "</span>" ;
+<pre><code class="language-js">const reveal = document.querySelectorAll(".reveal");
 
-//글씨 쪼개기(다중이)
-document.querySelectorAll(".split").forEach(text => {
-    //글씨 가져오기
-    let splitText = text.innerText;
-    //쪼개기
-    let splitWrap = splitText.split('').join(("</span><span aria-hidden='true'>"));
-    //감싸주기
-    splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
-    text.innerHTML = splitWrap;
-    //클래스 속성 주기
-    text.setAttribute("aria-label", splitText);
+//reveal 클래스 자식에 글씨가 있다면, 가상으로 span태그를 만들어서 넣어주세요. 6번참고
+reveal.forEach((e) =&gt; {
+    //innerText로 텍스트가 있는 것만 뽑음
+    let revealText = e.innerText;
+    if (revealText) {
+        e.innerHTML = "&lt;span&gt;" + revealText + "&lt;/span&gt;";
+    }
 });
 
-//스크롤값 보여주기
-function scroll(){
-    let scrollTop = window.scrollY;
-    document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop);
+// console.log(splitWrapAll)
 
-    //css클래스 추가 (노가다)
-    // document.querySelectorAll(".content__item").forEach(item => {
-    //     if(scrollTop >= item.offsetTop) {
-    //         item.querySelector(".split").classList.add("show");
-    //     }
-    // });
+function scroll() {
+    let scrollTop = window.scrollY;
     
-    document.querySelectorAll(".content__item").forEach(item => {
-        if(scrollTop >= item.offsetTop){
-            item.querySelectorAll(".split span").forEach((span, index) => {
-                span.classList.add("show");
-                //힌트는 인덱스 인덱스를 이용해서
-                //첫 번째 span --> 0.01
-                //두 번째 span --> 0.02
-                //세 번째 span --> 0.03
-                //네 번째 span --> 0.04
-                //다섯 번째 span --> 0.05
-                //여섯 번째 span --> 0.06
-                //일곱 번째 span --> 0.07
-                span.style.transitionDelay = `${index * 50}ms`
-            });
+    //reveal 여러개 선택할 수 있음
+    //const reveal = document.querySelectorAll(".reveal");
+    reveal.forEach((el) =&gt; {
+        let revealOffset = el.offsetTop + el.parentElement.offsetTop;
+        let revealDelay = el.dataset.delay;
+        
+        //첫번째 섹션보다 클 때 리빌 오프셋값을 구해야 함.
+        //섹션의 오프셋값과 리빌의 오프셋값을 가져와야함 왜냐하면 섹션이 리빌 구역보다 더 크기 때문
+    
+        //중간정도에서 나타나게 (더 빨리 나타나게 하기 위함) : - window.innerHeight/2 //바로 나오게 하기 : - window.innerHeight
+        // if(scrollTop &gt; revealOffset - window.innerHeight){
+        //     el.classList.add("show");
+        // }
+    
+        if (scrollTop &gt;= revealOffset - window.innerHeight) {
+            if (revealDelay == undefined) {
+                el.classList.add("show");
+            } else {
+                setTimeout(() =&gt; {
+                    el.classList.add("show");
+                }, revealDelay);
+            }
         }
     });
-    
-    //scrollTo보다 이걸 사용하는 것이 더 좋음
+    document.querySelector("#parallax__info .scroll span").innerText = Math.round(scrollTop);
     requestAnimationFrame(scroll);
 }
 scroll();

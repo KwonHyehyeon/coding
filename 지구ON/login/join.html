@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP 사이트 만들기</title>
+
+    
+    <link rel="stylesheet" href="../assets/css/join.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/font.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+        <section id="join" class="container">
+            <h2>회원가입</h2>
+            <div class="join__inner">
+                <h3>회원 정보 입력</h3>
+                    <fieldset>
+                        <legend>회원가입</legend>
+                        <p class="required__N">*필수사항 입니다.</p>
+                        <div class="join__box">
+                            <div>
+                                <label for="youName">*이름</label>
+                                <input type="email" id="youName" name="youName" placeholder="이름을 적어주세요!" required>
+                            </div>
+                            <span>
+                                <label for="youGender">*성별</label>
+                                <fieldset class="gender">
+                                      <input class="gender__btn" type="radio" name="gender" value="man"/>
+                                      <span>남</span>
+                                      <input class="gender__btn" type="radio" name="gender" value="woman"/>
+                                      <span>여</span>
+                                </fieldset>
+                            </span>
+                            <div>
+                                <label for="youEmail">*아이디 (이메일 주소)</label>
+                                <input type="text" id="youName" name="youName" placeholder="이메일을 적어주세요!" required>
+                                <div class="email_C">
+                                    <span><a class="double__check" href="#">중복 확인</a></span>
+                                    <p class="id__already">이미 사용중인 아이디입니다.</p>
+                                    <p class="id__able">사용 가능한 아이디입니다.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="youPass">*비밀번호</label>
+                                <input type="password" id="youPass" name="youPass" placeholder="비밀번호를 적어주세요!" required>
+                            </div>
+                            <div>
+                                <label for="youPassC">*비밀번호 확인</label>
+                                <input type="password" id="youPassC" name="youPassC" placeholder="확인 비밀번호를 적어주세요!" required>
+                            </div>
+                            <div>
+                                <label for="youPhone">*전화번호</label>
+                                <input type="text" id="youPhone" name="youPhone" placeholder="휴대폰번호를 적어주세요!" required>
+                            </div>
+                        </div>
+                        <div class="joinend__btn">
+                            <a href="joinAgree.html">이전 단계로</a>
+                            <button type="submit"><a class="joinfinish" href="joinResult.html">회원가입</a></button>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="join__footer">지구 ON</div>
+            </div>
+        </section>
+        <!-- //join -->
+    </main>
+    <!-- //main -->
+        </div>
+    </div>
+
+</body>
+</html>
