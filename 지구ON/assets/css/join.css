@@ -1,11 +1,11 @@
 /* joinAgree페이지 */
 #joinAgree {
-    padding: 170px 0;
+    padding: 120px 0;
     position: relative;
 }
 #joinAgree h2 {
     text-align: center;
-    font-size: 36px;
+    font-size: 28px;
     color: #006241;
     font-weight: 700;
 }
@@ -16,7 +16,7 @@
     height: 5px;
     background: #000;
     left: 0;
-    top:250px;
+    top:190px;
 }
 #joinAgree h2::after {
     position: absolute;
@@ -25,18 +25,18 @@
     height: 2px;
     background: #000;
     left: 0;
-    top: 245px;
+    top: 185px;
 }
 .agree__inner {
-    padding: 100px 200px;
+    margin: 150px 200px;
 }
 .agree__inner > div {
     display: inline;
 }
 .agree__inner > h3 {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 700;
-    width: 110px;
+    width: 77px;
     border-bottom: 2px solid #000;
     margin-bottom: 50px;
 }
@@ -62,9 +62,9 @@ input[id="agreeCheck1"] {
 }
 .joinAgree_check > div {
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 30px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     color: #006241;
 }
@@ -89,9 +89,9 @@ input[id="agreeCheck2"] {
 }
 .joinAgree_check2 > div {
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 30px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     color: #006241;
 }
@@ -120,16 +120,15 @@ input[id="agreeCheck3"] {
 .joinAgree_check3 > div {
     position: absolute;
     width: 300px;
-    top: -8px;
+    top: -7px;
     left: 30px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     color: #006241;
 }
 .joinAgree_check3 > div em {
     font-weight: 700;
 }
-
 .agree__inner > div .desc {
   background-color: #f5f5f5;
   color: #666;
@@ -139,7 +138,7 @@ input[id="agreeCheck3"] {
   height: 150px;
   border-radius: 10px;
   overflow-y: scroll;
-  font-size: 1.1em;
+  font-size: 0.8em;
   margin-bottom: 50px;
 }
 .agree__inner > div .desc:last-child {
@@ -173,22 +172,22 @@ input[id="agreeCheck3"] {
     border: 2px solid #006241;
     color: #006241;
     padding: 1rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
     width: 160px;
     border-radius: 30px;
     cursor: pointer;
     margin-top: 20px;
 }
 .join__btn .btn2 {
-    display: inline-block;
-    text-align: center;
+    /* display: inline-block;
+    text-align: center; */
     background-color: #006241;
     color: #fff;
-    padding: 1rem;
-    font-size: 1.3rem;
+    /* padding: 1rem;
+    font-size: 1rem;
     width: 160px;
     border-radius: 30px;
-    cursor: pointer;
+    cursor: pointer; */
     margin-left: 30px;
 }
 .join__btn a::before {
@@ -198,7 +197,7 @@ input[id="agreeCheck3"] {
     height: 5px;
     background: #000;
     left: 0;
-    bottom: 200px;  
+    bottom: 180px;  
 }
 .join__btn a::after {
     position: absolute;
@@ -207,25 +206,94 @@ input[id="agreeCheck3"] {
     height: 2px;
     background: #000;
     left: 0;
-    bottom: 195px;
+    bottom: 175px;
 }
-.join__footer {
+/* 공통 푸터 */
+#join__footer {
     color: #006241;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 700;
-    position: absolute;
-    bottom: 8%;
-    left: 46%;
+    text-align: center;
 }
-
+/* 미디어쿼리 */
+@media (max-width:1280px) {
+    .agree__inner {
+        padding: 170px 80px;
+        margin: 0;
+    }
+    .join__btn a {
+        display: block;
+        margin: 0 auto;
+        width: 220px;
+    }
+    .join__btn .btn2 {
+        width: 220px;
+        display: block;
+        margin: 20px auto 0 auto;
+    }
+}
+@media (max-width:786px) {
+    #joinAgree {
+        padding: 50px 0 ;
+        position: relative;
+        background-color: #006241;
+    }
+    #joinAgree h2 {
+        background-color: #006241;
+        color: #fff;
+    }
+    #joinAgree h2::before {
+        display: none;
+    }
+    #joinAgree h2::after {
+        display: none;
+    }
+    .agree__inner {
+        padding: 50px 50px;
+        margin-top: 50px;
+        background-color: #fff;
+    }
+    .join__btn a {
+        width: 160px;
+    }
+    .join__btn .btn2 {
+        width: 160px;
+        margin-bottom: 0;
+    }
+    .join__btn a::before {
+        display: none;
+    }
+    .join__btn a::after {
+        display: none;
+    }
+    #join__footer {
+        color: #fff;
+        margin-top: 50px;
+    }
+}
+@media (max-width:480px) {
+    .agree__inner {
+        padding: 50px 40px;
+        margin-top: 50px;
+    }
+    .join__btn a {
+        width: 130px;
+    }
+    .join__btn .btn2 {
+        width: 130px;
+    }
+    .agree__inner > div .desc {
+        height: 70px;
+    }
+}
 /* 회원가입 페이지 */
 #join {
-    padding: 170px 0;
+    padding: 120px 0;
     position: relative;
 }
 #join h2 {
     text-align: center;
-    font-size: 36px;
+    font-size: 28px;
     color: #006241;
     font-weight: 700;
 }
@@ -236,7 +304,7 @@ input[id="agreeCheck3"] {
     height: 5px;
     background: #000;
     left: 0;
-    top:250px;
+    top:190px;
 }
 #join h2::after {
     position: absolute;
@@ -245,10 +313,10 @@ input[id="agreeCheck3"] {
     height: 2px;
     background: #000;
     left: 0;
-    top: 245px;
+    top: 185px;
 }
 .join__inner {
-    padding: 100px 200px;
+    margin: 150px 200px;
 }
 .join__inner legend {
   position: absolute;
@@ -260,9 +328,9 @@ input[id="agreeCheck3"] {
 }
 /* 회원가입 요소들 */
 .join__inner > h3 {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 700;
-    width: 180px;
+    width: 127px;
     border-bottom: 2px solid #000;
     margin-bottom: 50px;
 }
@@ -271,7 +339,7 @@ input[id="agreeCheck3"] {
 }
 .join__box > div label {
   display: inline-block;
-  font-size: 20px;
+  font-size: 14px;
   margin-bottom: 5px;
   color: #006241;
   border-bottom: 2px solid #CDEAE0;
@@ -281,8 +349,8 @@ input[id="agreeCheck3"] {
   background-color: #f5f5f5;
   width: 100%;
   border-radius: 15px;
-  padding: 20px 30px;
-  font-size: 20px;
+  padding: 15px 30px;
+  font-size: 14px;
   font-weight: 300;
   box-sizing: border-box;
   margin-top: 10px;
@@ -291,13 +359,14 @@ input[id="agreeCheck3"] {
 .required__N {
     color: #006241;
     position: absolute;
-    top: 23%;
-    left: 74%;
+    font-size: 12px;
+    top: 25%;
+    right: 16%;
 }
 /* 성별 버튼 */
 .join__box > span label {
     display: inline-block;
-    font-size: 20px;
+    font-size: 14px;
     margin-bottom: 20px;
     color: #006241;
     border-bottom: 2px solid #CDEAE0;
@@ -320,19 +389,19 @@ input[id="agreeCheck3"] {
 [type="radio"] {
     vertical-align: middle;
     appearance: none;
-    border: max(2px, 0.1em) solid gray;
+    border: max(0.5px, 0.1em) solid gray;
     border-radius: 90%;
-    width: 1.5em;
-    height: 1.5em;
+    width: 1em;
+    height: 1em;
     transition: border 0.5s ease-in-out;
 }
 span {
   margin-right: 30px;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 [type="radio"]:checked {
-  border: 0.5em solid #006241;
+  border: 0.3em solid #006241;
 }
 
 [type="radio"]:hover {
@@ -357,21 +426,27 @@ span {
 }
 .double__check {
     color: #fff;
-    font-size: 20px;
+    font-size: 12px;
     text-align: center;
-    padding: 20px 10px;
+    padding: 15px 5px;
     border-radius: 15px;
     background-color: #006241;
     position: absolute;
     width: 85px;
-    top: -72px;
-    left: 900px;
+    top: -300%;
+    left: 101%;
 }
 /* 사용 가능한 아이디 아닌 아이디 */
 .id__already {
+    font-size: 10px;
+    color: blue;
     display: none;
+    margin-top: -20px;
 }
 .id__able {
+    font-size: 10px;
+    color: red;
+    margin-top: -20px;
     display: none;
 }
 /* 버튼 및 가상요소 */
@@ -382,7 +457,7 @@ span {
     border: 2px solid #006241;
     color: #006241;
     padding: 1rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
     width: 160px;
     border-radius: 30px;
     cursor: pointer;
@@ -395,7 +470,7 @@ span {
     background-color: #006241;
     color: #fff;
     padding: 1rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
     width: 160px;
     border-radius: 30px;
     cursor: pointer;
@@ -410,7 +485,7 @@ span {
     height: 5px;
     background: #000;
     left: 0;
-    bottom: 200px;  
+    bottom: 180px;  
 }
 .joinend__btn a::after {
     position: absolute;
@@ -419,19 +494,29 @@ span {
     height: 2px;
     background: #000;
     left: 0;
-    bottom: 195px;
+    bottom: 175px;
 }
+/* 미디어쿼리 */
+
+
+
+
+
+
 /* 회원가입 완료 */
 #joinResult {
-    padding: 170px 0;
+    padding: 120px 0;
     position: relative;
 }
 .joinResultWrap {
     display: flex;
     justify-content: center;
 }
-.joinResultWrap h2 {
-    font-size: 40px;
+.joinResultWrap > a {
+    display: flex;
+}
+.joinResultWrap > a >h2 {
+    font-size: 28px;
     color: #006241;
     font-weight: 700;
 }
@@ -442,7 +527,7 @@ span {
     height: 5px;
     background: #000;
     left: 0;
-    top:250px;
+    top:190px;
 }
 .joinResultWrap h2::after {
     position: absolute;
@@ -451,15 +536,15 @@ span {
     height: 2px;
     background: #000;
     left: 0;
-    top: 245px;
+    top: 185px;
 }
-.joinResultWrap > figure > img {
-    width: 75px;
-    height: 44px;
+.joinResultWrap > a > figure > img {
+    width: 100%;
+    height: 32px;
     margin-left: 10px;
 }
 .result__inner {
-    padding: 100px 200px;
+    margin: 80px 200px 150px 200px;
 }
 .result__inner legend {
   position: absolute;
@@ -477,8 +562,8 @@ span {
     text-align: center;
 }
 .result__inner > figure > img {
-    width: 300px;
-    height: 250px;
+    width: 250px;
+    height: 200px;
     display: block;
     margin: 0 auto;
     margin-bottom: 70px;
@@ -496,5 +581,48 @@ span {
     margin-bottom: 100px;
     color: #006241;
 }
+/* 버튼 및 가상요소 */
+.result__btn a::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 5px;
+    background: #000;
+    left: 0;
+    bottom: 180px;  
+}
+.result__btn a::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #000;
+    left: 0;
+    bottom: 175px;
+}
+.result__btn .result__btn__img {
+    background: url(../img/earthonbtndesign.png) no-repeat;
+    background-size: contain;
+    width: 200px;
+    margin: 0 auto;
+}
+.result__btn .result__btn__img:first-child {
+    margin-bottom: 15px;
+}
+.result__btn {
+    justify-content: center;
+}
+.result__btn a {
+    display: block;
+    color: #006241;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    padding: 11px 30px 10px 50px;
+}
+
+/* 미디어쿼리 */
+
+
 
 
