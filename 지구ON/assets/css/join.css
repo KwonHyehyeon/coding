@@ -41,7 +41,7 @@
     margin-bottom: 50px;
 }
 /* input 버튼 */
-.joinAgree_check {
+.joinAgree_check1 {
     position: relative;
     margin-bottom: 40px;
 }
@@ -60,7 +60,7 @@ input[id="agreeCheck1"]:checked + label {
 input[id="agreeCheck1"] {
 	display: none;
 }
-.joinAgree_check > div {
+.joinAgree_check1 > div {
     position: absolute;
     top: 2px;
     left: 30px;
@@ -283,6 +283,40 @@ input[id="agreeCheck3"] {
     .agree__inner {
         padding: 50px 40px;
         margin-top: 50px;
+    }
+    .agree__inner > h3 {
+        font-size: 18px;
+        font-weight: 700;
+        width: 70px;
+        border-bottom: 2px solid #000;
+        margin-bottom: 50px;
+    }
+    .joinAgree_check1 > div {
+        font-size: 14px;
+        top: 3%;
+        left: 7%;
+    }
+    input[id="agreeCheck1"] + label {
+        width: 13px;
+        height: 13px;
+    }
+    .joinAgree_check2 > div {
+        font-size: 14px;
+        top: 3%;
+        left: 7%
+    }
+    input[id="agreeCheck2"] + label {
+        width: 13px;
+        height: 13px;
+    }
+    .joinAgree_check3 > div {
+        font-size: 14px;
+        top: -20%;
+        left: 150%
+    }
+    input[id="agreeCheck3"] + label {
+        width: 13px;
+        height: 13px;
     }
     .join__btn a {
         width: 130px;
@@ -601,6 +635,13 @@ span {
 @media (max-width:480px) {
     .join__inner {
         padding: 50px 40px;
+    }
+    .join__inner > h3 {
+        font-size: 18px;
+        font-weight: 700;
+        width: 114px;
+        border-bottom: 2px solid #000;
+        margin-bottom: 50px;
     }
     .joinend__btn a {
         width: 130px;
