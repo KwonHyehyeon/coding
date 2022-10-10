@@ -294,7 +294,7 @@ input[id="agreeCheck3"] {
     .joinAgree_check1 > div {
         font-size: 14px;
         top: 3%;
-        left: 7%;
+        left: 23px;
     }
     input[id="agreeCheck1"] + label {
         width: 13px;
@@ -303,7 +303,7 @@ input[id="agreeCheck3"] {
     .joinAgree_check2 > div {
         font-size: 14px;
         top: 3%;
-        left: 7%
+        left: 23px;
     }
     input[id="agreeCheck2"] + label {
         width: 13px;
@@ -312,7 +312,7 @@ input[id="agreeCheck3"] {
     .joinAgree_check3 > div {
         font-size: 14px;
         top: -20%;
-        left: 150%
+        left: 23px;
     }
     input[id="agreeCheck3"] + label {
         width: 13px;
