@@ -232,6 +232,14 @@ input[id="agreeCheck3"] {
         margin: 20px auto 0 auto;
     }
 }
+@media (max-width:1090px) {
+    .join__btn a {
+        width: 180px;
+    }
+    .join__btn .btn2 {
+        width: 180px;
+    }
+}
 @media (max-width:786px) {
     #joinAgree {
         padding: 50px 0 ;
@@ -335,26 +343,28 @@ input[id="agreeCheck3"] {
     margin-bottom: 50px;
 }
 .join__box > div {
-  margin-bottom: 30px;
+    width: 100%;
+    margin-bottom: 30px;
 }
 .join__box > div label {
-  display: inline-block;
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #006241;
-  border-bottom: 2px solid #CDEAE0;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #006241;
+    border-bottom: 2px solid #CDEAE0;
 }
 .join__box > div input {
-  border: 0;
-  background-color: #f5f5f5;
-  width: 100%;
-  border-radius: 15px;
-  padding: 15px 30px;
-  font-size: 14px;
-  font-weight: 300;
-  box-sizing: border-box;
-  margin-top: 10px;
-  margin-bottom: 10px;
+    display: block;
+    border: 0;
+    background-color: #f5f5f5;
+    width: 100%;
+    border-radius: 15px;
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: 300;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .required__N {
     color: #006241;
@@ -432,7 +442,7 @@ span {
     border-radius: 15px;
     background-color: #006241;
     position: absolute;
-    width: 85px;
+    width: 7.5%;
     top: -300%;
     left: 101%;
 }
@@ -498,14 +508,105 @@ span {
 }
 /* 미디어쿼리 */
 @media (max-width:1280px) {
+    .join__inner {
+        padding: 170px 80px;
+        margin: 0;
+    }
+    .required__N {
+        right: 7%;
+    }
+    .join__box > div > .input__width {
+        width: 86%;
+    }
+    .double__check {
+        width: 11%;
+        left: 87%;
+    }
+    .joinend__btn {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
     .joinend__btn a{
         width: 220px;
-        display: block;
         margin: 0 auto;
     }
     .joinend__btn a.joinfinish {
         width: 220px;
-        display: block;
+        margin: 0;
+        margin-top: 20px;
+    }
+}
+@media (max-width:1170px) {
+    .required__N {
+        display: none;
+    }
+}
+@media (max-width:1090px) {
+    .joinend__btn a{
+        width: 180px;
+    }
+    .joinend__btn a.joinfinish {
+        width: 180px;
+    }
+}
+@media (max-width:786px) {
+    #join {
+        padding: 50px 0 ;
+        position: relative;
+        background-color: #006241;
+    }
+    #join h2 {
+        background-color: #006241;
+        color: #fff;
+    }
+    #join h2::before {
+        display: none;
+    }
+    #join h2::after {
+        display: none;
+    }
+    .join__inner {
+        padding: 50px 50px;
+        margin-top: 50px;
+        background-color: #fff;
+    }
+    .joinend__btn a {
+        width: 160px;
+        margin-top: 20px;
+    }
+    .joinend__btn a.joinfinish {
+        width: 160px;
+    }
+    .joinend__btn a::before {
+        display: none;
+    }
+    .joinend__btn a::after {
+        display: none;
+    }
+    #join__footer {
+        color: #fff;
+        margin-top: 50px;
+    }
+}
+@media (max-width:550px) {
+    .double__check {
+        width: 16%;
+        left: 82%;
+    }
+    .join__box > div > .input__width {
+        width: 80%;
+    }
+}
+@media (max-width:480px) {
+    .join__inner {
+        padding: 50px 40px;
+    }
+    .joinend__btn a {
+        width: 130px;
+    }
+    .joinend__btn a.joinfinish {
+        width: 130px;
     }
 }
 
@@ -554,7 +655,8 @@ span {
     margin-left: 10px;
 }
 .result__inner {
-    margin: 80px 200px 150px 200px;
+    width: 100%;
+    margin: 200px 0;
 }
 .result__inner legend {
   position: absolute;
@@ -590,6 +692,7 @@ span {
     line-height: 1.7;
     margin-bottom: 100px;
     color: #006241;
+    word-break: keep-all;
 }
 /* 버튼 및 가상요소 */
 .result__btn a::before {
@@ -632,6 +735,71 @@ span {
 }
 
 /* 미디어쿼리 */
+@media (max-width:1280px) {
+    .result__inner {
+        padding: 170px 0;
+        margin: 0;
+    }
+}
+@media (max-width:1060px) {
+    .result__inner > h3 {
+        font-size: 20px;
+    }
+    .result__inner > p {
+        font-size: 14px;
+    }
+}
+@media (max-width:880px) {
+    .result__inner > p {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .result__btn {
+        margin-top: 100px;
+    }
+}
+@media (max-width:786px) {
+    #joinResult {
+        padding: 50px 0 ;
+        position: relative;
+        background-color: #006241;
+    }
+    #joinResult h2 {
+        background-color: #006241;
+        color: #fff;
+    }
+    #joinResult h2::before {
+        display: none;
+    }
+    #joinResult h2::after {
+        display: none;
+    }
+    .result__inner {
+        padding: 50px 0;
+        margin-top: 50px;
+        background-color: #fff;
+    }
+    .result__inner > p {
+        font-size: 14px;
+    }
+    .result__btn a::before {
+        display: none;
+    }
+    .result__btn a::after {
+        display: none;
+    }
+}
+@media (max-width:480px) {
+    .join__inner {
+        padding: 50px 40px;
+    }
+    .joinend__btn a {
+        width: 130px;
+    }
+    .joinend__btn a.joinfinish {
+        width: 130px;
+    }
+}
 
 
 
