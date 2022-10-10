@@ -609,7 +609,15 @@ span {
         width: 130px;
     }
 }
-
+@media (max-width:390px) {
+    .double__check {
+        width: 20%;
+        left: 77%;
+    }
+    .join__box > div > .input__width {
+        width: 75%;
+    }
+}
 
 
 
