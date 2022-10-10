@@ -497,7 +497,17 @@ span {
     bottom: 175px;
 }
 /* 미디어쿼리 */
-
+@media (max-width:1280px) {
+    .joinend__btn a{
+        width: 220px;
+        display: block;
+        margin: 0 auto;
+    }
+    .joinend__btn a.joinfinish {
+        width: 220px;
+        display: block;
+    }
+}
 
 
 
