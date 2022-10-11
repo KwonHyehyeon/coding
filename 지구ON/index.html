@@ -5,143 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>지구ON 사이트 만들기</title>
-    <style>
-        /* fonts */
-         @font-face {
-            font-family: 'GmarketSans';
-            font-weight: 300;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
-                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
-                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
-                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'GmarketSans';
-            font-weight: 500;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
-                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
-                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
-                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'GmarketSans';
-            font-weight: 700;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
-                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
-                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
-                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
-            font-display: swap;
-        }
-        /* reset */
-        li {
-            list-style: none;
-        }
-        h1 {
-            margin: 70px 0;
-        }
-        em {
-            font-style: normal;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        a {
-            text-decoration: none;
-            color: blue;
-        }
-        /* common */
-        body {
-            font-family: 'GmarketSans';
-            font-size: 20px;
-            background-color: rgb(231, 247, 255);
-            /* border: 8px solid #f5f5f5; */
-        }
-        li {
-            font-size: 22px;
-        }
-        p {
-            font-size: 17px;
-        }
-        /* header */
-        #header {
-            text-align: center;
-        }
-        h1 em {
-            width: 50px;
-            height: 50px;
-            background-color: #fff;
-            border-radius: 50%;
-            padding: 12px;
-            color: rgb(14, 242, 120);
-            border: 2px solid #f5f5f5;
-        }
-        /* main */
-        #main {
-            display: flex;
-            justify-content: space-between;
-            margin: 30px;
-        }
-        #Figma {
-            width: 30%;
-            background-color: rgb(176, 235, 255);
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-        #Figma:hover {
-            background-color: rgb(255, 255, 255);
-        }
-        #Figma > ul > li {
-            padding-bottom: 30px;
-        }
-        #HTML {
-            width: 30%;
-            background-color: rgb(176, 235, 255);
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-        #HTML:hover {
-            background-color: #fff;
-        }
-        #HTML > ul > li {
-            padding-bottom: 30px;
-        }
-        #PHP {
-            width: 30%;
-            background-color: rgb(176, 235, 255);
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-        #PHP:hover {
-            background-color: #fff;
-        }
-        #PHP > ul > li {
-            position: relative;
-            padding-bottom: 30px;
-        }
-        .login__All {
-            text-align: center;
-            margin-right: 40px;
-        }
-        .login__All a {
-            color: #000;
-            border: 2px solid #eee;
-            border-radius: 30px;
-            padding: 15px 80px;
-            background-color: #fff;
-        }
-        .login__All a:hover {
-            background-color: rgb(206, 248, 255);
-        }
-    </style>
+
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../지구ON/assets/css/index.css">
 </head>
 <body>
     <header id="header">
@@ -151,60 +17,167 @@
         <section id="Figma">
             <h2>Figma</h2>
             <ul>
-                <li>1. 로그인<br>
-                    <p>💡 로그인 팝업<a href="figma/login_popup.html"> login_popup.html</a></p>
+                <li><h3>1. 로그인 / 회원가입 / 마이 페이지</h3>
+                    <p>💡 로그인 팝업 <a href="figma/login_popup_F.html">VIEW</a></p>
                 </li>
                 <li>
-                    2. 아이디 찾기<br>
-                    <p>💡 아이디 찾기 팝업1<a href="figma/find_ID_01.html"> find_ID_01.html</a></p>
-                    <p>💡 아이디 찾기 팝업2<a href="figma/find_ID_02.html"> find_ID_02.html</a></p>
-                    <p>💡 아이디 찾기 팝업3<a href="figma/find_ID_03.html"> find_ID_03.html</a></p>
-                    <p>💡 아이디 찾기 팝업4<a href="figma/find_ID_04.html"> find_ID_04.html</a></p>
+                    <h4>1-1. 아이디 찾기</h4>
+                    <p>💡 아이디 찾기 팝업1 <a href="figma/find_ID_01_F.html"> VIEW</a></p>
+                    <p>💡 아이디 찾기 팝업2-1 (휴대폰) <a href="figma/find_ID_02_F.html"> VIEW</a></p>
+                    <p>💡 아이디 찾기 팝업2-2 (이메일) <a href="figma/find_ID_02_F 2.html"> VIEW</a></p>
+                    <p>💡 아이디 찾기 팝업4 (아이디 확인) <a href="figma/find_ID_03_F.html"> VIEW</a></p>
                 </li>
                 <li>
-                    3. 비밀번호 찾기<br> 
-                    <p>💡 비밀번호 찾기 팝업1<a href="figma/find_PW_01.html"> find_PW_01.html</a></p>
-                    <p>💡 비밀번호 찾기 팝업2<a href="figma/find_PW_02.html"> find_PW_02.html</a></p>
-                    <p>💡 비밀번호 찾기 팝업3<a href="figma/find_PW_03.html"> find_PW_03.html</a></p>
-                    <p>💡 비밀번호 찾기 팝업4<a href="figma/find_PW_04.html"> find_PW_04.html</a></p>
+                    <h4>1-2. 비밀번호 찾기</h4>
+                    <p>💡 비밀번호 찾기 팝업1 <a href="figma/find_PW_01_F.html">VIEW</a></p>
+                    <p>💡 비밀번호 찾기 팝업2 (휴대폰) <a href="figma/find_PW_02_F.html">VIEW</a></p>
+                    <p>💡 비밀번호 찾기 팝업3 (이메일) <a href="figma/find_PW_03_F.html">VIEW</a></p>
+                    <p>💡 비밀번호 찾기 팝업4 (비밀번호 재설정) <a href="figma/find_PW_04_F.html">VIEW</a></p>
                 </li>
                 <li>
-                    4. 회원가입
-                    <p>💡 회원가입 약관 및 동의<a href="figma/joinAgree.html"> joinAgree.html</a></p>
-                    <p>💡 회원가입 페이지<a href="figma/join.html"> join.html</a></p>
-                    <p>💡 회원가입 완료 페이지<a href="figma/joinResult.html"> joinResult.html</a></p>
+                    <h4>1-3. 회원가입</h4>
+                    <p>💡 회원가입 약관 및 동의 <a href="figma/joinAgree_F.html">VIEW</a></p>
+                    <p>💡 회원 정보 입력 페이지 <a href="figma/join_F.html">VIEW</a></p>
+                    <p>💡 회원 정보 입력 페이지 (인증 성공시) <a href="figma/join_succ_F.html">VIEW</a></p>
+                    <p>💡 회원 정보 입력 페이지 (인증 실패시) <a href="figma/join_fail_F.html">VIEW</a></p>
+                    <p>💡 회원가입 완료 페이지 <a href="figma/joinResult_F.html">VIEW</a></p>
                 </li>
-                <li class="login__All"><a href="figma/login_All.html">전체보기 👉🏻</a></li>
+                <li>
+                    <h4>1-4. 마이 페이지</h4>
+                    <p>💡 비밀번호 확인 <a href="figma/my_page_checkPW_F.html">VIEW</a></p>
+                    <p>💡 회원 정보 수정 <a href="figma/my_pageEdit_F.html">VIEW</a></p>
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <h3>2. 게시판</h3>
+                    <p>💡 이야기방 <a href="figma/board_F.html">VIEW</a></p>
+                    <p>💡 공지사항 <a href="figma/board_notice_F.html">VIEW</a></p>
+                    <p>💡 게시글 열람 <a href="figma/board_read_F.html">VIEW</a></p>
+                    <p>💡 게시글 작성 <a href="figma/board_write_F.html">VIEW</a></p>
+                    <p>💡 게시글 수정 <a href="figma/board_edit_F.html">VIEW</a></p>
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                <li><h3>3. 기후실천 리스트</h3>
+                    <p>💡 기후실천 리스트 메인 페이지 <a href="figma/gihusilcheon_list_main_F.html">VIEW</a></p>
+                </li>
+                <li>
+                    <h4>3-1. MY LIST</h4>
+                    <p>💡 MY LIST <a href="figma/gihusilcheon_mylist_F.html">VIEW</a></p>
+                </li>
+                <li>
+                    <h4>3-2. MY GARDEN</h4>
+                    <p>💡 MY GARDEN 메인 페이지 <a href="figma/gihusilcheon_mygarden_F.html">VIEW</a></p>
+                    <p>💡 식물도감 페이지 <a href="figma/gihusilcheon_dogam_F.html"> VIEW</a></p>
+                </li>
+                <li class="btn__All"><a href="https://www.figma.com/file/QFeMZg6WG5LRRjqYxARmFd/%EC%A7%80%EA%B5%ACON?node-id=0%3A1">전체보기 👉🏻</a></li>
             </ul>
         </section>
         <section id="HTML">
             <h2>HTML</h2>
             <ul>
-                <!-- <li>1.</li>
-                <li>2.</li>
-                <li>3.</li>
-                <li>4.</li>
-                <li>5.</li>
-                <li>6.</li>
-                <li>7.</li>
-                <li>8.</li>
-                <li>9.</li>
-                <li>10.</li> -->
+                <li>
+                    <h3>0. 기본 세팅</h3>
+                    <p>💡 헤더 <a href="header/header.html">VIEW</a></p>
+                    <p>💡 푸터 <a href="footer/footer.html">VIEW</a></p>
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <h3>1. 로그인</h3>
+                    <p>💡 로그인 팝업 <a href="login/login.html">VIEW</a></p>
+                </li>
+                <li>
+                    <h4>1-1. 아이디 찾기</h4>
+                    <p>💡 아이디 찾기 팝업1 <a href="login/find_ID.html"> VIEW</a></p>
+                    <p>💡 아이디 찾기 팝업2 (완료) <a href="login/find_IDcheck.html"> VIEW</a></p>
+                </li>
+                <li>
+                    <h4>1-2. 비밀번호 찾기</h4>
+                    <p>💡 비밀번호 찾기 팝업1 <a href="login/find_PW.html">VIEW</a></p>
+                    <p>💡 비밀번호 찾기 팝업2 (휴대폰) <a href="login/find_PWphone.html">VIEW</a></p>
+                    <p>💡 비밀번호 찾기 팝업3 (이메일) <a href="login/find_PWemail.html">VIEW</a></p>
+                    <p>💡 비밀번호 찾기 팝업4 (비밀번호 재설정) <a href="login/find_PWresult.html">VIEW</a></p>
+                </li>
+                <li>
+                    <h4>1-3. 회원가입</h4>
+                    <p>💡 회원가입 약관 및 동의 <a href="join/joinAgree.html">VIEW</a></p>
+                    <p>💡 회원 정보 입력 페이지 <a href="join/join.html">VIEW</a></p>
+                    <p>💡 회원가입 완료 페이지 <a href="join/joinResult.html">VIEW</a></p>
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <h3>2. 게시판</h3>
+                    <p>💡 공지사항 <a href="board/boardNotice.html">VIEW</a></p>
+                    <p>💡 이야기방 <a href="board/boardStory.html">VIEW</a></p>
+                </li>
+                <li>
+                    <h4>2-1. 게시글 작성</h4>
+                    <p>💡 글쓰기 <a href="board/boardWrite.html">VIEW</a></p>
+                    <p>💡 수정하기 <a href="board/boardEdit.html">VIEW</a></p>
+                </li>
+                <li>
+                    <h4>2-2. 게시글 열람</h4>
+                    <p>💡 공지사항 게시글 열람 <a href="board/boardNoticeView.html">VIEW</a></p>
+                    <p>💡 이야기방 게시글 열람 <a href="board/boardView.html">VIEW</a></p>
+                </li>
             </ul>
         </section>
         <section id="PHP">
             <h2>PHP</h2>
             <ul>
-                <!-- <li>1.</li>
-                <li>2.</li>
-                <li>3.</li>
-                <li>4.</li>
-                <li>5.</li>
-                <li>6.</li>
-                <li>7.</li>
-                <li>8.</li>
-                <li>9.</li>
-                <li>10.</li> -->
+                <li>
+                    <h3>0. 메인 페이지</h3>
+                    <p>💡 지구ON 소개 (스토리) <a href="#"></a></p>
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <h3>1. 회원가입</h3>
+                    <p>💡 로그인 <a href="#">VIEW</a></p>
+                    <p>💡 회원가입 <a href="#">VIEW</a></p>
+                    <p>💡 마이 페이지 <a href="#"></a></p>
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <h3>2. 기후 소식</h3>
+                    <p>💡 국내 뉴스 <a href="#"></a></p>
+                    <p>💡 해외 뉴스 <a href="#"></a></p>
+                    <p>💡 캠페인 & 이벤트 <a href="#"></a></p>
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <h3>3. 기후 실천</h3>
+                    <p>💡 실천 다이어리 <a href="#"></a></p>
+                    <p>💡 식물 키우기 <a href="#"></a></p>
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <h3>4. 제로 웨이스트</h3>
+                    <p>💡 상품 추천 <a href="#"></a></p>
+                    <p>💡  <a href="#"></a></p>
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <h3>5. 커뮤니티 (게시판)</h3>
+                    <p>💡 공지사항 <a href="#"></a></p>
+                    <p>💡 이야기방 <a href="#"></a></p>
+                </li>
             </ul>
         </section>
     </main>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지구ON 사이트 만들기</title>
+    <style>
+        /* fonts */
+         @font-face {
+            font-family: 'GmarketSans';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'GmarketSans';
+            font-weight: 500;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'GmarketSans';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+            font-display: swap;
+        }
+        /* reset */
+        li {
+            list-style: none;
+        }
+        h1 {
+            margin: 70px 0;
+        }
+        em {
+            font-style: normal;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        /* common */
+        body {
+            font-family: 'GmarketSans';
+            font-size: 20px;
+            background-color: rgb(231, 247, 255);
+            /* border: 8px solid #f5f5f5; */
+        }
+        li {
+            font-size: 22px;
+        }
+        p {
+            font-size: 17px;
+        }
+        /* header */
+        #header {
+            text-align: center;
+        }
+        h1 em {
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 12px;
+            color: rgb(14, 242, 120);
+            border: 2px solid #f5f5f5;
+        }
+        /* main */
+        #main {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px;
+        }
+        #Figma {
+            width: 30%;
+            background-color: rgb(176, 235, 255);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        #Figma:hover {
+            background-color: rgb(255, 255, 255);
+        }
+        #Figma > ul > li {
+            padding-bottom: 30px;
+        }
+        #HTML {
+            width: 30%;
+            background-color: rgb(176, 235, 255);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        #HTML:hover {
+            background-color: #fff;
+        }
+        #HTML > ul > li {
+            padding-bottom: 30px;
+        }
+        #PHP {
+            width: 30%;
+            background-color: rgb(176, 235, 255);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        #PHP:hover {
+            background-color: #fff;
+        }
+        #PHP > ul > li {
+            position: relative;
+            padding-bottom: 30px;
+        }
+        .login__All {
+            text-align: center;
+            margin-right: 40px;
+        }
+        .login__All a {
+            color: #000;
+            border: 2px solid #eee;
+            border-radius: 30px;
+            padding: 15px 80px;
+            background-color: #fff;
+        }
+        .login__All a:hover {
+            background-color: rgb(206, 248, 255);
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>5조 :  " 지구 <em>ON</em> " 사이트 만들기</h1>
+    </header>
+    <main id="main">
+        <section id="Figma">
+            <h2>Figma</h2>
+            <ul>
+                <li>1. 로그인<br>
+                    <p>💡 로그인 팝업<a href="figma/login_popup.html"> login_popup.html</a></p>
+                </li>
+                <li>
+                    2. 아이디 찾기<br>
+                    <p>💡 아이디 찾기 팝업1<a href="figma/find_ID_01.html"> find_ID_01.html</a></p>
+                    <p>💡 아이디 찾기 팝업2<a href="figma/find_ID_02.html"> find_ID_02.html</a></p>
+                    <p>💡 아이디 찾기 팝업3<a href="figma/find_ID_03.html"> find_ID_03.html</a></p>
+                    <p>💡 아이디 찾기 팝업4<a href="figma/find_ID_04.html"> find_ID_04.html</a></p>
+                </li>
+                <li>
+                    3. 비밀번호 찾기<br> 
+                    <p>💡 비밀번호 찾기 팝업1<a href="figma/find_PW_01.html"> find_PW_01.html</a></p>
+                    <p>💡 비밀번호 찾기 팝업2<a href="figma/find_PW_02.html"> find_PW_02.html</a></p>
+                    <p>💡 비밀번호 찾기 팝업3<a href="figma/find_PW_03.html"> find_PW_03.html</a></p>
+                    <p>💡 비밀번호 찾기 팝업4<a href="figma/find_PW_04.html"> find_PW_04.html</a></p>
+                </li>
+                <li>
+                    4. 회원가입
+                    <p>💡 회원가입 약관 및 동의<a href="figma/joinAgree.html"> joinAgree.html</a></p>
+                    <p>💡 회원가입 페이지<a href="figma/join.html"> join.html</a></p>
+                    <p>💡 회원가입 완료 페이지<a href="figma/joinResult.html"> joinResult.html</a></p>
+                </li>
+                <li class="login__All"><a href="figma/login_All.html">전체보기 👉🏻</a></li>
+            </ul>
+        </section>
+        <section id="HTML">
+            <h2>HTML</h2>
+            <ul>
+                <!-- <li>1.</li>
+                <li>2.</li>
+                <li>3.</li>
+                <li>4.</li>
+                <li>5.</li>
+                <li>6.</li>
+                <li>7.</li>
+                <li>8.</li>
+                <li>9.</li>
+                <li>10.</li> -->
+            </ul>
+        </section>
+        <section id="PHP">
+            <h2>PHP</h2>
+            <ul>
+                <!-- <li>1.</li>
+                <li>2.</li>
+                <li>3.</li>
+                <li>4.</li>
+                <li>5.</li>
+                <li>6.</li>
+                <li>7.</li>
+                <li>8.</li>
+                <li>9.</li>
+                <li>10.</li> -->
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

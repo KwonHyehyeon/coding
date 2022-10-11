@@ -1,0 +1,44 @@
+/* footer */
+#footer {
+    padding: 20px 0;
+    background: #096C47;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#footer__wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+#footer h2 img {
+    width: 150px;
+}
+
+#footer .foot {
+    margin-top: 30px;
+}
+
+#footer .foot ul {
+    padding-bottom: 10px;
+}
+#footer .foot ul em,
+#footer .foot address em
+{
+    color: #fff;
+    font-weight: 300;
+}
+
+#footer .foot ul li {
+    display: inline;
+}
+
+#footer .foot ul li a {
+    color: #fff;
+    padding-right: 10px;
+}
+
+#footer .foot address {
+    font-style: normal;
+    color: #fff;
+    line-height: 1.4;
+}

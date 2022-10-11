@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>푸터 01</title>
+
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+  </head>
+  <body>
+    <footer id="footer" class="clearfix">
+        <div id="footer__wrap" class="container">
+            <h2><img src="../assets/img/footer_logo.png" alt="지구ON Footer 로고"></h2>
+            <div class="foot">
+                <ul>
+                    <li><a href="#">이용안내</a></li><em>|</em>
+                    <li><a href="#">개인정보처리방침</a></li><em>|</em>
+                    <li><a href="#">이용약관</a></li><em>|</em>
+                    <li><a href="#">개인정보수집·이용동의</a></li>
+                </ul>
+                <address>
+                    주소 : 경기도 성남시 분당구 판교로 지구빌딩 5층<em> | </em>대표전화 : 010-2123-3049<br>
+                    Copyright &copy; 2022 지구ON, All Rights Reserved.
+                </address>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer-->
+  </body>
+</html>

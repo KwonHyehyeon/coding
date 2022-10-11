@@ -249,6 +249,7 @@ input[id="agreeCheck3"] {
     #joinAgree h2 {
         background-color: #006241;
         color: #fff;
+        margin-top: 70px;
     }
     #joinAgree h2::before {
         display: none;
@@ -593,6 +594,7 @@ span {
     #join h2 {
         background-color: #006241;
         color: #fff;
+        margin-top: 70px;
     }
     #join h2::before {
         display: none;
@@ -700,7 +702,7 @@ span {
 }
 .joinResultWrap > a > figure > img {
     width: 100%;
-    height: 32px;
+    height: 30px;
     margin-left: 10px;
 }
 .result__inner {
@@ -708,12 +710,12 @@ span {
     margin: 200px 0;
 }
 .result__inner legend {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
 }
 /* 회원가입 요소들 */
 .result__inner > h3 {
@@ -816,12 +818,17 @@ span {
     #joinResult h2 {
         background-color: #006241;
         color: #fff;
+        margin-top: 70px;
     }
     #joinResult h2::before {
         display: none;
     }
     #joinResult h2::after {
         display: none;
+    }
+    .joinResultWrap > a > figure > img {
+        padding-top: 70px;
+        margin-left: 5px;
     }
     .result__inner {
         padding: 50px 0;

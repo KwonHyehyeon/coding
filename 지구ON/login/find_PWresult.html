@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비밀번호 찾기 : 휴대폰</title>
+
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+
+    <style>
+        .findPW__popup {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 5000;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            display: none;
+        }
+
+        .findPW__popup.open {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .findPW__inner {
+            width: 500px;
+            background-color: #fff;
+            border-radius: 50px;
+            padding: 40px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .findPW__header h3 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 1rem;
+            margin-bottom: 4px;
+            position: relative;
+            color: #006241;
+            border-bottom: 3px solid #000;
+        }
+
+        .findPW__header h3::before {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background: #000;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+        }
+
+        .find__btn {
+            display: flex;
+        }
+
+        .find__btn a {
+            font-size: 1.2rem;
+            width: 50%;
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #000;
+        }
+
+        .find__btn a.active {
+            background: #CDEAE0;
+            border-bottom: 4px solid #000;
+        }
+
+        .findPW__contents {
+            position: relative;
+            border-bottom: 3px solid #000;
+            padding-bottom: 20px;
+            padding-top: 10px;
+        }
+
+        .findPW__contents::before {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background: #000;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+        }
+
+        .findPW__contents .findPW__desc {
+            font-size: 1rem;
+            color: #006241;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .findPW__contents legend,
+        .findPW__contents label {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        .findPW__contents .findPWContents__btn {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            height: inherit;
+        }
+
+        .findPW__contents .findPWContents__btn a {
+            width: 40%;
+            display: inline-block;
+            border: 2px solid #006241;
+            color: #006241;
+            border-radius: 10px;
+            text-align: center;
+            padding: 1em 0.8em;
+            box-sizing: border-box;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .findPW__contents .findPWContents__btn a:hover {
+            background: #006241;
+            color: #fff;
+        }
+
+        .findPW__contents .findPWContents__btn a:nth-child(1) {
+            margin-right: 20px;
+        }
+
+        .findPW__footer {
+            padding: 30px 0 0;
+        }
+
+        .findPW__footer .btn {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            height: inherit;
+        }
+
+        .findPW__footer .btn a {
+            width: 32%;
+            display: inline-block;
+            border: 2px solid #006241;
+            color: #006241;
+            border-radius: 10px;
+            text-align: center;
+            padding: 1em 0.8em;
+            box-sizing: border-box;
+            transition: all 0.3s;
+        }
+
+        .findPW__footer .btn a:hover {
+            background: #006241;
+            color: #fff;
+        }
+
+        .findPW__footer .desc {
+            line-height: 1.3;
+            color: #006241;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .findPW__footer .btn-close {
+            position: absolute;
+            right: 225px;
+            top: -25px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #000;
+            background-image: url("data:image/svg+xml,%3csvg width='17' height='18' viewBox='0 0 17 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.569087 16.9239C0.235697 16.5923 0.235697 16.0548 0.569087 15.7232L15.4593 0.915408C15.7927 0.583862 16.3332 0.583861 16.6666 0.915407C17 1.24695 17 1.7845 16.6666 2.11604L1.7764 16.9239C1.44301 17.2554 0.902478 17.2554 0.569087 16.9239Z' fill='white'/%3e%3cpath d='M0.500043 1.0763C0.833434 0.744756 1.37397 0.744756 1.70736 1.0763L16.5976 15.8841C16.931 16.2157 16.931 16.7532 16.5976 17.0848C16.2642 17.4163 15.7237 17.4163 15.3903 17.0848L0.500043 2.27694C0.166653 1.94539 0.166652 1.40785 0.500043 1.0763Z' fill='white'/%3e%3c/svg%3e");
+            background-position: center center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+
+        .findPW__footer .btn-close span {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        .input_and_button {
+            display: flex;
+        }
+
+        .input__style {
+            background-color: #f5f5f5;
+            font-size: 1rem;
+            padding: 1rem;
+            width: 70%;
+            border: 0;
+            box-sizing: border-box;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
+
+        .input__button {
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1rem;
+            padding: 1rem;
+            background-color: #006241;
+            color: #fff;
+            cursor: pointer;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+        }
+
+        .loginPopup__btn {
+            margin-top: 10px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 1rem;
+            padding: 1rem;
+            background-color: #006241;
+            color: #fff;
+            cursor: pointer;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 비밀번호 찾기 팝업 -->
+    <div class="findPW__popup open">
+        <div class="findPW__inner">
+            <div class="findPW__header">
+                <h3>아이디·비밀번호 찾기</h3>
+            </div>
+            <div class="find__btn">
+                <a class="findID__btn" href="find_ID.html">아이디</a></li>
+                <a class="findPW__btn active" href="find_PW.html">비밀번호</a></li>
+            </div>
+            <div class="findPW__contents">
+                <p class="findPW__desc">
+                    비밀번호가 변경되었습니다. <br>
+                    변경된 비밀번호로 다시 로그인 해주세요.
+                </p>
+                <form name="login" action="../login/login.php" method="post">
+                    <button class="input__button">로그인 하러가기</button>
+                </form>
+            </div>
+            <div class="findPW__footer">
+                <ul class="desc">
+                    <li>지구ON</li>
+                </ul>
+                <button type="button" class="btn-close"><span>닫기</span></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

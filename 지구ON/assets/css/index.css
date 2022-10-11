@@ -1,0 +1,101 @@
+        /* reset */
+        li {
+            list-style: none;
+        }
+        h1 {
+            margin: 70px 0;
+        }
+        em {
+            font-style: normal;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        /* common */
+        body {
+            font-family: 'GmarketSans';
+            font-size: 20px;
+            background-color: rgb(231, 247, 255);
+            /* border: 8px solid #f5f5f5; */
+        }
+        li {
+            font-size: 22px;
+        }
+        p {
+            font-size: 17px;
+        }
+        /* header */
+        #header {
+            text-align: center;
+        }
+        h1 em {
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 12px;
+            color: rgb(14, 242, 120);
+            border: 2px solid #f5f5f5;
+        }
+        /* main */
+        #main {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px;
+        }
+        #Figma {
+            width: 30%;
+            background-color: rgb(176, 235, 255);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        #Figma:hover {
+            background-color: rgb(255, 255, 255);
+        }
+        #Figma > ul > li {
+            padding-bottom: 30px;
+        }
+        #HTML {
+            width: 30%;
+            background-color: rgb(176, 235, 255);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        #HTML:hover {
+            background-color: #fff;
+        }
+        #HTML > ul > li {
+            padding-bottom: 30px;
+        }
+        #PHP {
+            width: 30%;
+            background-color: rgb(176, 235, 255);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        #PHP:hover {
+            background-color: #fff;
+        }
+        #PHP > ul > li {
+            position: relative;
+            padding-bottom: 30px;
+        }
+        .btn__All {
+            text-align: center;
+            margin-right: 40px;
+        }
+        .btn__All a {
+            color: #000;
+            border: 2px solid #eee;
+            border-radius: 30px;
+            padding: 15px 80px;
+            background-color: #fff;
+        }
+        .btn__All a:hover {
+            background-color: rgb(206, 248, 255);
+        }
