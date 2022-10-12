@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../assets/css/bg.css">
+    <link rel="stylesheet" href="../assets/css/game.css">
+    <link rel="stylesheet" href="../assets/css/music.css">
+</head>
+<body>    
+    <header id="header">
+        <h1>Welcome to noeyheyh's Game Place</h1>
+        <div class="time"></div>
+    </header>
+    <!-- //header -->
+
+    <div class="mouse__cursor">
+        <img src="../assets/img/cursor.png" alt="마우스 커서">
+    </div>
+
+    <main id="main">
+        <div class="icon_box">
+            <div class="icon1">
+                <img src="../assets/img/icon1.png" alt="뮤직">
+                <span>HTML</span>
+            </div>
+            <div class="icon2">
+                <img src="../assets/img/icon2.png" alt="뮤직">
+                <span>CSS</span>
+            </div>
+            <div class="icon3">
+                <img src="../assets/img/icon3.png" alt="뮤직">
+                <span>JS</span>
+            </div>
+            <div class="icon4">
+                <img src="../assets/img/icon4.png" alt="뮤직">
+                <span>Figma</span>
+            </div>
+            <div class="icon5">
+                <img src="../assets/img/icon5.png" alt="뮤직">
+                <span>Playlist</span>
+            </div>
+            <div class="icon6">
+                <img src="../assets/img/icon6.png" alt="뮤직">
+                <span>휴지통</span>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <div class="agent">agent</div>
+    </footer>
+    <!-- /footer -->
+
+    <!-- 뮤직 플레이어 -->
+    <div class="music__wrap">
+        <div class="music__inner">
+            <div class="music__header">
+                <div>🎀   ***</div>
+                <h2>noeyheyh Player</h2>
+                <div>***   🎀</div>
+            </div>
+            <div class="music__contents">
+                <div class="music__view">
+                    <div class="img">
+                        <img src="../assets/img/music_img1.png" alt="앨범">
+                    </div>
+                    <div class="title">
+                        <h3>RYYZN - Secrets</h3>
+                        <p>youtube music</p>
+                    </div>
+                </div>
+                <div class="music__control">
+                    <div class="progress">
+                        <div class="bar">
+                            <audio id="main-audio" src="../assets/audio/music_audio01.mp3"></audio>
+                        </div>
+                        <div class="timer">
+                            <span class="current">0:00</span>
+                            <span class="duration">4:00</span>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <!-- id값을 활용해주는 것이 좋음 한번 밖에 사용 못하니깐 충돌 위험 X -->
+                        <i title="전체 반복" class="repeat" id="control-repeat"></i>
+                        <!-- <i title="한곡 반복" class="repeat_one">repeat</i>
+                        <i title="랜덤 반복" class="shuffle">repeat</i> -->
+                        <i title="이전곡 재생" class="prev" id="control-prev"></i>
+                        <i title="재생" class="play" id="control-play"></i>
+                        <!-- <i title="정지" class="stop" id="control-stop"></i> -->
+                        <i title="다음곡 재생" class="next" id="control-next"></i>
+                        <i title="재생 목록" class="list" id="control-list"></i>    
+                    </div>
+                </div>
+            </div>
+            <div class="music__footer">
+                <div class="music__list">
+                    <h3><span class="list"></span>뮤직 리스트</h3>
+                    <ul>
+                        <!-- <li>
+                            <strong>제목</strong>
+                            <em>아티스트</em>
+                            <span>재생시간</span>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //뮤직 플레이어 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- 제이쿼리UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="../assets/js/music.js"></script>
+    <script>
+        $( ".icon1" ).draggable({
+            drag: function() {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor1.png")
+            }
+        });
+        $( ".icon2" ).draggable({
+            drag: function() {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor2.png")
+            }
+        });
+        $( ".icon3" ).draggable({
+            drag: function() {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor3.png")
+            }
+        });
+        $( ".icon4" ).draggable({
+            drag: function() {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor4.png")
+            }
+        });
+        $( ".icon5" ).draggable({
+            drag: function() {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor5.png")
+            }
+        });
+        $( ".icon6" ).draggable({
+            drag: function() {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor6.png")
+            }
+        });
+        $( ".music__wrap" ).draggable({
+            drag: function() {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor7.png")
+            }
+        });
+        //시계
+        function printTime(){
+            //지금 시간 넣기기
+            const clock = document.querySelector(".time");
+            const now = new Date();
+
+            //한자리 숫자 앞에다 0을 넣어주기 위한 변수
+            let nowHours = now.getHours();
+            let nowMins = now.getMinutes();
+            let nowSecs = now.getSeconds();
+            if(nowHours > 12) {
+                nowHours = `${nowHours - 12}`
+            } else if(nowHours >= 0 &&  nowHours<=9){
+                nowHours = `0${nowHours}`
+            };
+            if(nowMins < 10) nowMins = `0${nowMins}`;
+            if(nowSecs < 10) nowSecs = `0${nowSecs}`;
+
+
+            let nowMonth = now.getMonth() + 1;
+            let nowDate = now.getDate();
+            if(nowMonth  < 10 ) nowMonth = `0${nowMonth}`
+            if(nowDate < 10 ) nowDate = `0${nowDate}`
+
+            //데이터에서 연도만 가져오기
+            const nowTime = "Today is " + now.getFullYear() + "년 " +  nowMonth + "월 " + nowDate + "일 " + nowHours + "시 " + nowMins + "분 " + nowSecs + "초입니다."
+            
+            clock.innerText = nowTime;
+            setTimeout("printTime()", 1000);
+
+    
+        }
+
+        //footer
+        function printAgent(){
+            const agent = document.querySelector(".agent");
+            const os = navigator.userAgent.toLocaleLowerCase();
+
+            agent.innerText = os;
+
+            if(os.indexOf("window") >= 0){
+                agent.innerText = "현재 window를 사용하고 있습니다. 화면 크기는 " + screen.width + " * " + screen.height + "입니다."
+                //이렇게 하면 css에 기종마다 따로따로 스타일을 입힐 수 있다.
+                document.querySelector("body").classList.add("window");
+            } else if(os.indexOf("macintosh") >= 0){
+                agent.innerText = "현재 mac을 사용하고 있습니다. 화면 크기는 " + screen.width + " * " + screen.height + "입니다."
+                document.querySelector("body").classList.add("mac");
+            } else if(os.indexOf("iphone") >= 0){
+                agent.innerText = "현재 아이폰을 사용하고 있습니다. 화면 크기는 " + screen.width + " * " + screen.height + "입니다."
+                document.querySelector("body").classList.add("iphone");
+            } else if(os.indexOf("android") >= 0){
+                agent.innerText = "현재 안드로이드를 사용하고 있습니다. 화면 크기는 " + screen.width + " * " + screen.height + "입니다."
+                document.querySelector("body").classList.add("android");
+            }
+        }
+
+        window.onload = function(){
+            printTime();
+            printAgent();
+        }
+
+        // 마우스
+        const cursor = document.querySelector(".mouse__cursor")
+
+        window.addEventListener("mousemove", (e) => {
+        //const cursor = document.querySelector(".mouse__cursor")
+        //커서에 포지션 되어있기 때문에 left
+        //px 처럼 단위값을 써주어야 실행됨
+        cursor.style.left = e.clientX - 0 + "px";
+        cursor.style.top = e.clientY - 0 + "px";
+      });
+    </script>
+</body>
+</html>
