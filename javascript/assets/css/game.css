@@ -20,7 +20,7 @@ body {
     width: 0px;
     height: 0px;
     /* 선택이나 클릭 안되게 할 때 */
-    /* */
+    /* 전체에 cursor:none 걸어주면 해당부분에 pointer-events: none; 걸어줘야 없어짐*/
     pointer-events: none;
     user-select: none;
     z-index: 1;
