@@ -52,6 +52,23 @@
     <!-- //main -->
     <footer id="footer">
         <div class="agent">agent</div>
+        <!-- 모달창 -->
+        <div class="modal__wrap">
+            <div class="modal__btn">소스 보기</div>
+            <div class="modal__cont">
+                <div class="modal__box">
+                        <div class="cont">
+                            <iframe src="https://github1s.com/kwonhyehyeon/coding" frameborder="0"></iframe>
+                        </div>
+                </div>
+                <div class="modal__close">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- /footer -->
 
@@ -72,7 +89,14 @@
                         <h3>RYYZN - Secrets</h3>
                         <p>youtube music</p>
                     </div>
+                    <div class="volumeOn">
+                        <i title="볼륨" class="volume" id="control-volume"></i>
+                        <img src="../assets/img/volumeO.png" alt="볼륨ON">
+                        <div class="volumeBar" aria-hidden="true"><div class="volumeSize"></div></div>
+                        <!-- <i title="음소거" class="volumeNo" id="control-volume"></i> -->
+                    </div>
                 </div>
+                
                 <div class="music__control">
                     <div class="progress">
                         <div class="bar">
@@ -220,6 +244,60 @@
         cursor.style.left = e.clientX - 0 + "px";
         cursor.style.top = e.clientY - 0 + "px";
       });
+
+
+
+
+        // 모달
+        const modalBtn = document.querySelector(".modal__btn");
+        const modalClose = document.querySelector(".modal__close");
+        const modalCont = document.querySelector(".modal__cont");
+        const musicInner = document.querySelector(".music__inner")
+        modalBtn.addEventListener("click", () => {
+            modalCont.classList.add("show");
+            modalCont.classList.remove("hide");
+            cursor.style.display = "none";
+            musicInner.style.display = "none";
+        });
+        modalClose.addEventListener("click", () => {
+            modalCont.classList.add("hide");
+            cursor.style.display = "block";
+
+        });
+
+        //파일 누르면 뮤직 이너 뜨게
+        let Icon = document.querySelector(".icon5");
+        Icon.addEventListener("click", ()=>{
+            musicInner.style.display ="block"
+        })
+
+        //탭 메뉴
+        const tabBtn = document.querySelectorAll(".modal__box .tabs > div")
+        const tabCont = document.querySelectorAll(".modal__box .cont > div")
+            
+        //클릭하면 active붙여주기
+        tabBtn.forEach((element, index) => {
+            //버튼 클릭하면
+            element.addEventListener("click", (event) => { //클릭시 event는 창 맨 위로 올라가는 것
+                event.preventDefault();                    //event는 클릭하면 위로 올라가는 것을 막아주기 위함
+                
+                
+                //클래스 active를 모두 제거함
+                //3개를 선택해서 엑티브 없애줘야함
+                tabBtn.forEach(el => { //el을 li로 적어줘도 됨 목록안에 있는 이름들(alphabet 등등)이니깐
+                    el.classList.remove("active");  //class지워주는 것 : classList.remove
+                });
+                //내가 클릭한 버튼에 active를 추가함
+                element.classList.add("active");
+            
+                //버튼을 클릭하면 모든 자식 박스 숨김
+                tabCont.forEach(div => {
+                    div.style.display = "none";
+                });
+                //[i]클릭한 버튼과 [i]관련 박스를 보이게 함
+                tabCont[index].style.display = "block";
+            });
+        });
     </script>
 </body>
 </html>

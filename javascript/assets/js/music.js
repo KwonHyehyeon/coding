@@ -287,6 +287,7 @@ musicListClose.addEventListener("click", () => {
     musicFooter.classList.remove("show"); 
 })
 
+
 // 뮤직 리스트를 클릭하면 재생시켜주기
 function playListMusic(){
     const musicListAll = musicListUl.querySelectorAll("li");    //뮤직 리스트 목록
@@ -320,8 +321,39 @@ function clicked(el){
     playListMusic();            //음악 리스트 없뎃
 }
 
+// 볼륨 조절
+const volumeBtn = document.querySelector(".volumeOn > img");
+const volumeBar = document.querySelector(".volumeBar");
+const volumeBarSize = document.querySelector(".volumeSize");
+
+// 볼륨 조절 자바스크립트
+musicAudio.volume = 0.3;
+volumeBar.addEventListener("click", (e)=>{
+    let volumeBarWidth = volumeBar.clientWidth;     // 볼륨바 전체 길이
+    let clickedOffsetX = e.offsetX;                 // 볼륨바 기준으로 측정되는 클릭된 부분의 X좌표
+    let Volume = musicAudio.volume;
+
+    musicAudio.volume = (clickedOffsetX / volumeBarWidth); //클릭 부분이 전체에서 차지하는 비율을 백분율로 표시
+    if(musicAudio.volume == 0){
+        volumeBtn.classList.add("mute");
+        volumeBtn.setAttribute("title", "음소거 됨");
+    } else {
+        volumeBtn.classList.remove("mute");
+        volumeBtn.setAttribute("title", "음량 조절");
+    }
+});
+// 볼륨이 바뀌면 볼륨바의 너비를 바꾸기
+musicAudio.addEventListener("volumechange", e =>{
+    const currentVolume = e.target.volume;
+    let volumeBarWidth = currentVolume * 100;
+
+    volumeBarSize.style.width = `${volumeBarWidth}%`;
+});
+
 
 window.addEventListener("load", () => {
     loadMusic(musicIndex);  //음악 재생
     playListMusic();        //리스트 초기화
 });
+
+
