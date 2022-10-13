@@ -47,9 +47,11 @@
     margin-bottom: 5px;
     font-size: 25px;
     line-height: 1.2;
+    font-weight: bold;
 }
 .music__view .title p {
-    color: red;
+    color: hotpink;
+    font-weight: bold;
 }
 .music__control {
     width: 100%;
@@ -65,7 +67,7 @@
 }
 /* 뮤직흘러가는 색깔 처리 */
 .music__control .progress .bar {
-    width: 30%;
+    width: 0;
     height: inherit;
     background: #7fff5b;
     border-radius: 5px;
@@ -91,16 +93,16 @@
     width: 24px;
     height: 24px;
     background: url(../img/music__icon_nobg.svg) no-repeat;
-    background-size: 200px;
-    background-position: -125px 0px;
+    background-size: 250px;
+    background-position: -140px 0px;
 }
 .music__control .control .repeat_one {
     display: block;
     width: 24px;
     height: 24px;
     background: url(../img/music__icon_nobg.svg) no-repeat;
-    background-size: 200px;
-    background-position: -150px 0px;
+    background-size: 250px;
+    background-position: -170px 0px;
 
 }
 .music__control .control .shuffle {
@@ -108,16 +110,16 @@
     width: 24px;
     height: 24px;
     background: url(../img/music__icon_nobg.svg) no-repeat;
-    background-size: 200px;
-    background-position: -174px 0px;
+    background-size: 250px;
+    background-position: -195px 0px;
 }
 .music__control .control .prev {
     display: block;
     width: 24px;
     height: 24px;
     background: url(../img/music__icon_nobg.svg) no-repeat;
-    background-size: 200px;
-    background-position: -50px 0px;
+    background-size: 250px;
+    background-position: -60px 0px;
 
 }
 .music__control .control .next {
@@ -125,8 +127,8 @@
     width: 24px;
     height: 24px;
     background: url(../img/music__icon_nobg.svg) no-repeat;
-    background-size: 200px;
-    background-position: -75px 0px;
+    background-size: 250px;
+    background-position: -85px 0px;
 
 }
 .music__control .control .play {
@@ -134,8 +136,8 @@
     width: 24px;
     height: 24px;
     background: url(../img/music__icon_nobg.svg) no-repeat;
-    background-size: 200px;
-    background-position: 1px 0px;
+    background-size: 250px;
+    background-position: 2px 0px;
 
 }
 .music__control .control .stop {
@@ -143,23 +145,29 @@
     width: 24px;
     height: 24px;
     background: url(../img/music__icon_nobg.svg) no-repeat;
-    background-size: 200px;
-    background-position: -25px 0px;
+    background-size: 250px;
+    background-position: -30px 0px;
 }
 .music__control .control .list {
     display: block;
     width: 24px;
     height: 24px;
     background: url(../img/music__icon_nobg.svg) no-repeat;
-    background-size: 200px;
-    background-position: -100px 0px;
+    background-size: 250px;
+    background-position: -110px 0px;
 
 }
 .music__footer {
+    display: none;
+}
+.music__footer.show{
+    display: block;
     background: #c4c4c4;
 }
+
 .music__list {
     padding: 20px;
+    position: relative;
 }
 .music__list h3 {
     font-size: 24px;
@@ -173,19 +181,34 @@
     height: 24px;
     background: url(../img/music__icon_nobg.svg) no-repeat;
     background-size: 200px;
-    background-position: -100px 0px;
+    background-position: -88px -3px;
     margin-right: 5px;
     vertical-align: -5px;
 }
-.music__list ul {
+#music__list__close {
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(../img/music__icon_nobg.svg) no-repeat;
+    background-size: 200px;
+    background-position: -175px 0px;
+}
+.music__list ul{
     max-height: 200px;
     overflow-y: scroll;
 }
+
 .music__list li {
     border-bottom: 1px solid #000;
     list-style: none;
     padding: 7px 0 5px;
     position: relative;
+}
+.music__list li.playing {
+    color: hotpink;
 }
 .music__list li strong {
     display: block;
