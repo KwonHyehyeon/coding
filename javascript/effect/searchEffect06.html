@@ -50,19 +50,19 @@
                     <li data-category="3"><a href="#" class="ct4">clip</a></li>
                     <li data-category="4"><a href="#" class="ct5">flex</a></li>
                     <li data-category="5"><a href="#" class="ct6">font</a></li>
-                    <li data-category="6"><a href="#" class="ct8">grid</a></li>
-                    <li data-category="7"><a href="#" class="ct9">image</a></li>
-                    <li data-category="8"><a href="#" class="ct10">inset</a></li>
-                    <li data-category="9"><a href="#" class="ct11">margin</a></li>
-                    <li data-category="10"><a href="#" class="ct12">mask</a></li>
-                    <li data-category="11"><a href="#" class="ct13">offset</a></li>
-                    <li data-category="12"><a href="#" class="ct14">overflow</a></li>
-                    <li data-category="13"><a href="#" class="ct15">scroll</a></li>
-                    <li data-category="14"><a href="#" class="ct16">padding</a></li>
-                    <li data-category="15"><a href="#" class="ct17">text</a></li>
-                    <li data-category="16"><a href="#" class="ct18">transform</a></li>
-                    <li data-category="17"><a href="#" class="ct19">transition</a></li>
-                    <li data-category="18"><a href="#" class="ct20">etc</a></li>
+                    <li data-category="6"><a href="#" class="ct7">grid</a></li>
+                    <li data-category="7"><a href="#" class="ct8">image</a></li>
+                    <li data-category="8"><a href="#" class="ct9">inset</a></li>
+                    <li data-category="9"><a href="#" class="ct10">margin</a></li>
+                    <li data-category="10"><a href="#" class="ct11">mask</a></li>
+                    <li data-category="11"><a href="#" class="ct12">offset</a></li>
+                    <li data-category="12"><a href="#" class="ct13">overflow</a></li>
+                    <li data-category="13"><a href="#" class="ct14">scroll</a></li>
+                    <li data-category="14"><a href="#" class="ct15">padding</a></li>
+                    <li data-category="15"><a href="#" class="ct16">text</a></li>
+                    <li data-category="16"><a href="#" class="ct17">transform</a></li>
+                    <li data-category="17"><a href="#" class="ct18">transition</a></li>
+                    <li data-category="18"><a href="#" class="ct19">etc</a></li>
                 </ul>
             </div>
             <div class="search__info">
@@ -1505,6 +1505,7 @@ li {
             cssProperty.reverse();
             updateList();
             searchClick2.style.display = "none";
+            searchNumSec.style.display = "none";
         });
         // 오름차순 정렬 클릭
         document.querySelector(".btn2").addEventListener("click", (e) => {
@@ -1514,6 +1515,7 @@ li {
             });
             updateList();
             searchClick2.style.display = "none";
+            searchNumSec.style.display = "none";
         });
         // 내림차순 정렬 클릭
         document.querySelector(".btn3").addEventListener("click", (e) => {
@@ -1523,6 +1525,7 @@ li {
             });
             updateList();
             searchClick2.style.display = "none";
+            searchNumSec.style.display = "none";
         });
         // 알파벳 정렬(a~z) 클릭
         document.querySelector(".btn4").addEventListener("click", (e) => {
@@ -1534,6 +1537,7 @@ li {
             });
             updateList();
             searchClick2.style.display = "none";
+            searchNumSec.style.display = "none";
         });
         // 알파벳 정렬(z~a) 클릭
         document.querySelector(".btn5").addEventListener("click", (e) => {
@@ -1545,6 +1549,7 @@ li {
             });
             updateList();
             searchClick2.style.display = "none";
+            searchNumSec.style.display = "none";
         });
         // 랜덤 정렬
         document.querySelector(".btn6").addEventListener("click", (e) => {
@@ -1556,6 +1561,7 @@ li {
             }
             updateList();
             searchClick2.style.display = "none";
+            searchNumSec.style.display = "none";
         });
         // 랜덤정렬 다른 방법
         // 피셔 에이츠 알고리즘 //매개함수
@@ -1612,11 +1618,188 @@ li {
                 cssList.innerText = listCSS;
             })
         });
+        document.querySelector(".ct2").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'background')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>background</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct3").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'border')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>border</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct4").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'clip')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>clip</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct5").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'flex')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>flex</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct6").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'font')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>font</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct7").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'grid')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>grid</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct8").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'image')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>image</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct9").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'inset')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>inset</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct10").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'margin')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>margin</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct11").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'mask')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>mask</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct12").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'offset')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>offset</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct13").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'overflow')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>overflow</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct14").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'scroll')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>scroll</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct15").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'padding')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>padding</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct16").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'text')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>text</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct17").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'transform')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>transform</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct18").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'transition')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>transition</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+        document.querySelector(".ct19").addEventListener("click" , () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                if(cssProperty[index].category === 'etc')  {
+                    listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>etc</em></li>`;
+                };
+                cssList.innerText = listCSS;
+            })
+        });
+
+
         // 카테고리 정렬 클릭시 카테고리 버튼 나오게.
         document.querySelector(".btn7").addEventListener("click", () => {
             searchClick2.style.display = "block";
+            searchNumSec.style.display = "block";
+
         });
 
+
+        // 전체속성갯수 구하기
+        const searchNum = document.querySelector(".search__info .num");
+        const searchNum2 = document.querySelector(".search__info .num2");
+        const searchNumSec = document.querySelector(".search__info div:nth-child(2)");
+        cssProperty.map((element, index) => {
+            // searchNum에 index 넣어주기
+            //searchNum.innerText = cssProperty.length;
+            searchNum.innerText = index + 1;
+            searchNumSec.style.display = "none";
+        });
 
         
 
