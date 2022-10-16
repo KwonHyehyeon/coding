@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>슬라이드 이펙트 04</title>
+    <title>슬라이드 이펙트 05</title>
 
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/dracula.css">
 </head>
 <body>
     <div class="document">
-        <h2 class="t_tit">🎞 슬라이드 이펙트 - 좌우로 움직이기(버튼을 이용하여)</h2>
+        <h2 class="t_tit">🎞 슬라이드 이펙트 - 이미지 슬라이드(버튼, 닷메뉴)</h2>
         <p class="t_desc">
-            📌 prev와 next 버튼을 이용하여 슬라이드를 좌우로 움직일 수 있게 만들어봅시다!<br>
+            📌 prev와 next 버튼을 이용하여 슬라이드를 좌우로 움직이는 동시에 밑에 닷메뉴도 이동하는 슬라이드를 만들어봅시다!<br>
         </p>
         <hr>
-        <h3 class="t_tit2">슬라이드 이펙트 - 좌우로 움직이기(버튼을 이용하여) 효과 완성⭐️</h3>
+        <h3 class="t_tit2">슬라이드 이펙트 - 이미지 슬라이드(버튼, 닷메뉴) 효과 완성⭐️</h3>
         <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
-            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect04.html" frameborder="0"></iframe>
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect05.html" frameborder="0"></iframe>
         </div>
         <div class="t_link">
-            <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect04.html" target="_blank"
+            <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect05.html" target="_blank"
             >움직이는 슬라이드가 궁금하다면?💡</a>
-            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/sliderEffect04.html" target="_blank"
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/sliderEffect05.html" target="_blank"
             >원본 소스보기</a>
             <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/assets/css/slider.css" target="_blank"
             >CSS 소스보기</a>
@@ -31,28 +31,13 @@
         <h3 class="t_tit2">HTML</h3>
         <p class="t_desc2">
             코드 보기를 펼쳐 봐주세요 :)<br>
-            슬라이드에 들어갈 이미지를 넣어준 후 소스보기에 넣어줘야 할 틀을 구성해줍니다.
+            헤더 부분은 이전 것과 동일하여 메인부분만 넣었습니다!
         </p>
-
         <div class="result">
             <details>
                 <summary>코드 보기</summary>
                 <div class="t_code">
-<pre><code class="language-js">&lt;header id="header"&gt;
-    &lt;h1&gt;javascript Slider Effect04&lt;/h1&gt;
-    &lt;p&gt;슬라이드 이펙트 - 좌우로 움직이기(버튼을 이용하여)&lt;/p&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href="sliderEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="sliderEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="sliderEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
-        &lt;li class="active"&gt;&lt;a href="sliderEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="sliderEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="sliderEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="sliderEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/header&gt;
-&lt;!-- header --&gt;
-&lt;main id="main"&gt;
+<pre><code class="language-js">&lt;main id="main"&gt;
     &lt;section id="sliderType01"&gt;
         &lt;div class="slider__wrap"&gt;
             &lt;div class="slider__img"&gt;
@@ -68,6 +53,13 @@
                 &lt;a href="#" class="prev" role="button" aria-label="왼쪽 이미지"&gt;prev&lt;/a&gt;
                 &lt;a href="#" class="next" role="button" aria-label="오른쪽 이미지"&gt;next&lt;/a&gt;
             &lt;/div&gt;
+            &lt;div class="slider__dot"&gt;
+                &lt;!-- &lt;a href="#" class="dot active"&gt;이미지1&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지2&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지3&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지4&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지5&lt;/a&gt; --&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
     &lt;/section&gt;
 &lt;/main&gt;
@@ -76,9 +68,9 @@
             </details>
         </div>
 
-        <h3 class="t_tit2">CSS</h3>
+    <h3 class="t_tit2">CSS</h3>
     <p class="t_desc2">
-        부분적인 CSS입니다. 미디어쿼리도 사용했습니다.<br>
+        부분적인 CSS입니다.<br>
         전체적인 CSS를 보시려면 위 CSS보기를 참고해주세요!
     </p>
     <div class="result">
@@ -107,7 +99,7 @@
     flex-wrap: wrap;
     width: 4800px; /*위에를 써주고 이걸 써주어야 가로로 정렬됨 , 첫이미지 복사했으니까 기존 4000에서 4800으로 변경해주어야함*/ 
     height: 450px;
-    /* position: relative; 제이쿼리 썼을 때 이미지 넘겨지게 설정-&gt;제이쿼리에서 따로 설정해줌 */
+    /* position: relative; 제이쿼리 썼을 때 이미지 넘겨지게 설정->제이쿼리에서 따로 설정해줌 */
 }
 /* slider : 개별적인 이미지 */
 .slider {
@@ -160,6 +152,26 @@
 .slider__btn a.next {
     right: 0;
 }
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+slider__dot .dot {
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.4);
+    display: inline-block;
+    border-radius: 50%;
+    /* 들여쓰기 */
+    text-indent: -9999px;
+    transition: all 0.3s;
+    margin: 2px;
+}
+.slider__dot .dot.active {
+     background: rgba(255,255,255,0.9);
+}
 </code></pre>
             </div>
         </details>
@@ -168,7 +180,8 @@
     <p class="t_desc2">
         자바스크립트를 통해 prev버튼을 눌렀을 때 이전으로,<br>
         next버튼을 눌렀을 때 다음으로 가게 해주어야 합니다.<br>
-        특히, 처음 인덱스로 왔을 때 다시 마지막인덱스로 이어지게 하려면 어떻게 해야하는지가 관건입니다!
+        동시에 dot버튼도 이동하게끔 만들어주어야 합니다.<br>
+        설명은 주석을 참고해주세요!
     </p>
     <div class="result">
     <details>
@@ -177,36 +190,66 @@
 <pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap")
 const sliderImg = document.querySelector(".slider__img")        //보여지는 영역
 const sliderInner = document.querySelector(".slider__inner")    //움직이는 영역
-const slider = document.querySelectorAll(".slider")             //각각 이미지
-const sliderBtn = document.querySelector(".slider__btn");    //버튼
-const sliderBtnPrev = document.querySelector(".prev");       //왼쪽버튼
-const sliderBtnNext = document.querySelector(".next");       //오른쪽버튼
+const slider = document.querySelectorAll(".slider")             //이미지
+const sliderDot = document.querySelector(".slider__dot");       //닷메뉴
 
-let currentIndex = 0;       //현재 이미지
-let sliderCount = slider.length;//이미지 갯수
+let currentIndex = 0;   //현재 이미지
+let sliderCount = slider.length; //이미지 갯수
 let sliderWidth = sliderImg.offsetWidth; //이미지 가로값
 
-//이미지 움직이는 영역
-function gotoSlider(num){
-    sliderInner.style.transition = "all 400ms";
-    sliderInner.style.transform = "translateX("+ -sliderWidth * num+"px)";
-    //이걸 안 써주면 currentIndex이 계속 0이므로 계속안가고 한 번 가고 0돼서 멈춤
-    currentIndex = num;
+let dotIndex ="";
+// 초기값 설정
+function init(){
+    slider.forEach(() =&gt; dotIndex +="&lt;a href='#' class='dot'&gt;이미지1&lt;/a&gt;");
+    sliderDot.innerHTML = dotIndex;
+    // 첫 번째 닷 버튼한테 활성화 표시
+    sliderDot.firstChild.classList.add("active");
+    // = (비슷)sliderDot.firstElementChild.classList.add("active");
 }
-// gotoSlider();
-    
+init();
 
-//왼쪽 버튼 클릭했을 때
-sliderBtnPrev.addEventListener("click", () =&gt; {
-    //1, 4, 3, 2, 1, 0, 
-    //currentIndex : prev눌렀을 때 가는 페이지 인덱스
-    let prevIndex = (currentIndex+(sliderCount-1)) % sliderCount; //0, 4, 3, 2, 1, 0, 4...
-    gotoSlider(prevIndex);
-});
-//오른쪽 버튼 클릭했을 때
-sliderBtnNext.addEventListener("click", () =&gt; {
-    let nextIndex = (currentIndex + 1) % sliderCount //5이미지갯수로 나누기
-    gotoSlider(nextIndex);
+// 이미지 이동
+function gotoSlider(num){
+    // 사진 움직이게 하기
+    sliderInner.style.transition = "all 400ms"
+    // 왼쪽으로 가야하니깐 -
+    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
+    currentIndex = num;
+
+    // 두번째 이미지 ==&gt; 두번째 닷 클래스 추가
+    // 1. 닷 메뉴 클래스 모두 삭제
+    // 2. 해당 이미지 해당 닷 메뉴 클래스 추가
+        
+    let slideDotActive = document.querySelectorAll(".slider__dot .dot");
+    // 전체 닷메뉴
+    slideDotActive.forEach(el =&gt; el.classList.remove("active"));
+    slideDotActive[num].classList.add("active");
+    
+    // // 해당 닷 클릭시 해당 이미지로 가게끔
+    // slideDotActive[num].addEventListener("click", () =&gt; {
+    //     gotoSlider()
+    // })
+}
+
+// 버튼 클릭했을 때
+document.querySelectorAll(".slider__btn a").forEach((btn, index) =&gt; {
+    btn.addEventListener("click", () =&gt; {
+        // 이전: 현재 인데스에서 전체 슬라이드 카운트에서 -1
+        let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+        let nextIndex = (currentIndex + 1) % sliderCount;
+
+        if(btn.classList.contains("prev")){
+            gotoSlider(prevIndex);
+        } else {
+            gotoSlider(nextIndex);
+        }
+    });
+})
+// 닷 버튼 클릭했을 때
+document.querySelectorAll(".slider__dot .dot").forEach((dot, index) =&gt; {
+    dot.addEventListener("click", () =&gt; {
+        gotoSlider(index);
+    })
 });
 </code></pre>
             </div>
