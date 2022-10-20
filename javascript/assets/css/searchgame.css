@@ -1,0 +1,379 @@
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+:root {
+    --htmlColor : #223547;
+    --cssColor : #472222;
+    --javascriptColor : #224736;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* color: var(--htmlColor) ; */
+}
+*, *:before, *:after {
+    box-sizing:border-box;
+}
+a {
+    text-decoration: none;
+    color:  var(--htmlColor) ;
+}
+li {
+    list-style: none;
+}
+.wrap {
+    width: 1440px;
+}
+/* main */
+#main {
+    margin: 50px 10px;
+}
+.searchgame__wrap {
+    width: 70%;
+    height: 650px;
+    justify-content: center;
+    overflow-y: scroll;
+    border-radius: 0px;
+    background-color: #f1f3f6;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-right: 5px solid blue;
+    border-left: 5px solid blue;
+    border-bottom: 5px solid blue;
+    /* border: 3px solid  var(--htmlColor); */
+    /* border-radius: 20px; */
+    text-align: center;
+    display: none;
+    /* border-bottom: 3px solid #000; */
+    /* border-bottom-left-radius: 20px; */
+    /* border-bottom-right-radius: 20px; */
+    /* z-index: -2; */
+}
+.search__header{
+    position: fixed;
+    width: 69.3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;   
+    /* background-color: rgb(62, 95, 106); */
+    background-color: blue;
+    padding: 5px 20px;
+    z-index: 9999;
+    font-family: 'Galmuri11';
+    
+}
+.search__header h2 {
+    font-size: 14px;
+    color: #fff;
+    font-family: 'Galmuri11';
+}
+.search__inner {
+    padding: 50px;
+}
+.search__wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-family: 'NexonLv1Gothic';
+}
+.search__wrap > h1 {
+    font-family: 'NexonLv1Gothic';
+    color: var(--htmlColor);
+    font-size: 4vw;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.search__wrap .desc {
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+.search__wrap .search__time {
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    background: var(--htmlColor);
+}
+.search__wrap .search__time span {
+    color: #fff;
+    font-size: 34px;
+    font-weight: 100;
+    font-family: 'NexonLv1Gothic';
+}
+.search__box {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.search__box label{
+    position:absolute;
+    clip:rect(0 0 0 0);
+    width:1px;
+    height:1px;
+    margin:-1px;
+    overflow:hidden
+}
+.search__box .start {
+    position: absolute;
+    left: 50%; bottom: 0;
+    transform: translateX(-50%);
+    background: #223547;
+    width: 30%;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'NexonLv1Gothic';
+}
+.search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 30%;
+    border-radius: 50px;
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: 'NexonLv1Gothic';
+}
+
+.search__tab li.active a {
+    background-color:  var(--htmlColor);
+    color: #fff;
+}
+.search__list {}
+.search__list li {
+    text-align: left;
+    line-height: 1.7;
+}
+.search__list li.hide {
+    display: none;
+}
+.search__list li.show {
+    display: block;
+}
+.search__list span {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    margin: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.search__list span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+.search__list em {
+    float: right;
+    font-style: normal;
+}
+.search__list .line {
+    margin: 50px 0;
+}
+.search__list .line li{
+    background: #e3eaf5;
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+}
+.search__list .line li:hover {
+    background: #d3e2fa;
+    cursor: pointer;
+}
+.search__info {
+    font-family: 'NexonLv1Gothic';
+    text-align: right;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--htmlColor);
+}
+.search__info.center{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gap 은 grid-gap이었는데 flex에도 쓰게 바뀜*/
+    gap: 10px;
+    padding-bottom: 100px;
+}
+.search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+}
+
+.search__desc {
+    padding: 20px 40px 20px 60px;
+    margin-bottom: 50px;
+    background: #fff;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: var(--htmlColor);
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 22px 17px;
+}
+.search__click {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.search__click li {
+    display: inline;
+}
+.search__click li a {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 5px 0;
+}
+.search__click li a:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+
+
+@media (max-width: 600px){
+    .search__wrap {
+        padding: 20px;
+    }
+    .search__wrap > span {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .search__wrap > h1 {
+        font-size: 44px;
+    }
+    .search__box input {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+/* footer */
+#footer {
+    text-align: center;
+}
+#footer a {
+    color: #000;
+    font-family: 'NexonLv1Gothic';
+    padding-bottom: 50px;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+.search__answers {
+    border-bottom: 2px dashed var(--htmlColor);
+    padding-bottom: 60px;
+}
+.search__answers span {
+  display: inline-block;
+  background: var(--htmlColor);
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 30px;
+  margin: 3px;
+}
+.search__missAnswers {
+  border-bottom: 2px dashed var(--htmlColor);
+  padding: 40px 0;
+}
+.search__missAnswers span {
+  display: inline-block;
+  border: 1px solid var(--htmlColor);
+  color: var(--htmlColor);
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin: 3px;
+}
+.search__audio {
+    margin-bottom: 10px;
+    cursor:pointer;
+}
+.search__audio .play {
+    display: none;
+}
+.search__result {
+    position: absolute;
+    /* pointer-events: none; */
+    right: 0vw;
+    top:9vw;
+    /* transform: translate(-50%, -50%); */
+    width: 100%;
+    height: 38vw;
+    background: #f1f3f6;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-radius: 50%; */
+    /* border: 6px solid #946bc5; */
+    transform: scale3d(0, 0, 0);
+    z-index: 1;
+}
+.search__result.show {
+    display: flex;
+    animation: rubberBand 1s 0.6s ease forwards;
+}
+.search__result .result {
+    margin-top: 30px;
+    font-size: 1.4vw;
+    line-height: 1.4;
+}
+.search__result .restart {
+    background: #946bc5;
+    color: #fff;
+    border: 0;
+    font-size: 20px;
+    padding: 10px 10px;
+    border-radius: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+@keyframes rubberBand {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+}
+
+

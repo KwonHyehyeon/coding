@@ -3,7 +3,6 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   font-family: 'Galmuri11';
    font-weight: normal;
    cursor: none;
 }
@@ -23,14 +22,14 @@ body {
     /* 전체에 cursor:none 걸어주면 해당부분에 pointer-events: none; 걸어줘야 없어짐*/
     pointer-events: none;
     user-select: none;
-    z-index: 1000 !important;
+    z-index: 10000 !important;
 }
 .mouse__cursor img {
     width: 20px;
     height: 25px;
 }
 #header {
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     background: #000;
     display: flex;
@@ -43,10 +42,12 @@ body {
     color: #fff;
     padding: 5px 0;
     font-weight: bold;
+    font-family: 'Galmuri11';
 }
 #header .time {
     color: #fff;
     transform: translateY(1px);
+    font-family: 'Galmuri11';
 }
 .icon_box img {
     width: 100%;
@@ -57,6 +58,7 @@ body {
     display: block;
     background: #000;
     border-radius: 3px;
+    font-family: 'Galmuri11';
     font-size: 14px;
     /* padding: 2px; */
     /* white-space: nowrap; */
@@ -66,6 +68,7 @@ body {
     left: 30px;
     top: 60px;
     width: 54px;
+    display: none;
 }
 .icon1:hover {
     background: rgba(225,225,225,0.3);
@@ -78,7 +81,29 @@ body {
     display: block;
     background: #000;
     color: #fff;
-    font-size: 14px;
+    font-size: 12px;
+    padding: 2px;
+    white-space: nowrap;
+}
+.icon1_off {
+    position: absolute;
+    left: 30px;
+    top: 60px;
+    width: 54px;
+    display: block;
+}
+.icon1_off:hover {
+    background: rgba(225,225,225,0.3);
+    border-radius: 2px;
+}
+.icon1_off img {
+    width: 100%;
+}
+.icon1_off span {
+    display: block;
+    background: #000;
+    color: #fff;
+    font-size: 12px;
     padding: 2px;
     white-space: nowrap;
 }
@@ -150,6 +175,7 @@ body {
     left: 30px;
     top: 500px;
     width: 54px;
+    display: none;
 }
 .icon5:hover {
     background: rgba(225,225,225,0.3);
@@ -159,6 +185,33 @@ body {
     width: 100%;
 }
 .icon5 span {
+    display: block;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px;
+    width:100%;
+    /* 한줄효과 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 줄바꿈 안되게 */
+    white-space: nowrap;
+}
+.icon5_off {
+    position: absolute;
+    left: 30px;
+    top: 500px;
+    width: 54px;
+    display: block;
+}
+.icon5_off:hover {
+    background: rgba(225,225,225,0.3);
+    border-radius: 2px;
+}
+.icon5_off img {
+    width: 100%;
+}
+.icon5_off span {
     display: block;
     background: #000;
     color: #fff;
@@ -202,8 +255,9 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 5px 10px;
-    color: #fff;
+    color: #fff !important;
     text-align: center;
+    font-family: 'Galmuri11';
 }
 #footer .agent {
 }
@@ -243,6 +297,7 @@ body {
     right: 10px;
     bottom: 40px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Galmuri11';
 }
 .modal__btn:hover {
     background-color: #fff;

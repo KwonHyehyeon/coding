@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트 05</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">🎞 슬라이드 이펙트 - 이미지 슬라이드((버튼, 닷메뉴, 플레이 버튼, 정지 버튼, 자동 플레이)</h2>
+        <p class="t_desc">
+            📌 prev와 next 버튼을 이용하여 슬라이드를 좌우로 움직이는 동시에 밑에 닷메뉴도 이동하는데 무한으로 작동하는 슬라이드를 만들어봅시다!<br>
+            📌 플레이하면 자동으로 플레이 되고 정지버튼을 통해 정지도 가능한 것이 특징합니다.<br>
+        </p>
+        <hr>
+        <h3 class="t_tit2">슬라이드 이펙트 - 이미지 슬라이드((버튼, 닷메뉴, 플레이 버튼, 정지 버튼, 자동 플레이) 효과 완성⭐️</h3>
+        <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect07.html" frameborder="0"></iframe>
+        </div>
+        <div class="t_link">
+            <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect07.html" target="_blank"
+            >움직이는 슬라이드가 궁금하다면?💡</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/sliderEffect07.html" target="_blank"
+            >원본 소스보기</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/assets/css/slider.css" target="_blank"
+            >CSS 소스보기</a>
+        </div>  
+        <h3 class="t_tit2">HTML</h3>
+        <p class="t_desc2">
+            코드 보기를 펼쳐 봐주세요 :)<br>
+            헤더 부분은 이전 것과 동일하여 메인부분만 넣었습니다!
+        </p>
+        <div class="result">
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">&lt;main id="main"&gt;
+    &lt;section id="sliderType01"&gt;
+        &lt;div class="slider__wrap"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="slider__inner"&gt;
+                    &lt;div class="slider s1"&gt;&lt;span&gt;이미지1&lt;/span&gt;&lt;img src="../assets/img/effect_bg03.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                    &lt;div class="slider s2"&gt;&lt;span&gt;이미지2&lt;/span&gt;&lt;img src="../assets/img/effect_bg018.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                    &lt;div class="slider s3"&gt;&lt;span&gt;이미지3&lt;/span&gt;&lt;img src="../assets/img/effect_bg05.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                    &lt;div class="slider s4"&gt;&lt;span&gt;이미지4&lt;/span&gt;&lt;img src="../assets/img/effect_bg08.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                    &lt;div class="slider s5"&gt;&lt;span&gt;이미지5&lt;/span&gt;&lt;img src="../assets/img/effect_bg010.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__btn"&gt;
+                &lt;button class="prev"&gt;prev&lt;/button&gt;
+                &lt;button class="next"&gt;next&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__dot"&gt;
+                &lt;!-- &lt;a href="#" class="dot active"&gt;이미지1&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지2&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지3&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지4&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지5&lt;/a&gt; --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+                </div>
+            </details>
+        </div>
+
+    <h3 class="t_tit2">CSS</h3>
+    <p class="t_desc2">
+        부분적인 CSS입니다.<br>
+        전체적인 CSS를 보시려면 위 CSS보기를 참고해주세요!
+    </p>
+    <div class="result">
+    <details>
+    <summary>코드 보기</summary>
+    <div class="t_code">
+<pre><code class="language-js">/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider__img {  /*이미지가 보이는 영역*/
+    position: relative;
+    width: 800px;
+    height: 450px;
+    overflow: hidden;
+}
+.slider__inner {    /*이미지를 감싸고 있는 부모 : 움직이는 부분*/
+    display: flex;
+    flex-wrap: wrap;
+    width: 10000px;  /* 총 이미지 6개 */
+    height: 450px;
+    position: relative;
+    left: -800px;
+}
+.slider__inner.transition {
+    transition: all 0.3s;
+}
+.slider {       /*개별적인 이미지*/
+    position: relative;
+    width: 800px;
+    height: 450px;
+}
+.slider span {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 5px 10px;
+
+@media (max-width: 800px) {
+    .slider__img {
+        width: 400px;
+        height: 224px;
+    }
+
+.slider__btn button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.4);
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.2s ease;
+    display: block;
+    color: #fff;
+    pointer-events: auto;
+    border: 0;
+    cursor: pointer;
+}
+.slider__btn.disable button{
+    pointer-events: none;
+}
+.slider__btn button:hover {
+    background: rgb(240, 155, 209);
+    border-radius: 50px;
+}
+.slider__btn button.prev {
+    left: 0;
+}
+.slider__btn button.next {
+    right: 0;
+}
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+.slider__dot .dot {
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.4);
+    display: inline-block;
+    border-radius: 50%;
+    text-indent: -9999px;
+    transition: all 0.3s;
+    margin: 3px;
+}
+.slider__dot .dot.active {
+    background: rgba(255,255,255,0.9);
+}
+.slider__dot .play {
+    display: none;
+}
+.slider__dot .play.show {
+    display: inline-block;
+    width: 23px;
+    height: 20px;
+    margin-left: 7px;
+    /* 마진 안먹힐 때 */
+    vertical-align: 3px;
+    border-left: 14px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.slider__dot .stop {
+    display: none;
+}
+.slider__dot .stop.show {
+    display: inline-block;
+    margin-left: 7px;
+    width: 14px;
+    height: 20px;
+    vertical-align: 3px;
+    position: relative;
+
+.slider__dot .stop::before {
+    content: '';
+    width: 5px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.slider__dot .stop::after {
+    content: '';
+    width: 5px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+        &lt;/style&gt;
+</code></pre>
+            </div>
+        </details>
+    </div>
+    <h3 class="t_tit2">Javascript</h3>
+    <p class="t_desc2">
+        자바스크립트를 통해 prev버튼을 눌렀을 때 이전으로,<br>
+        next버튼을 눌렀을 때 다음으로 가게 해주어야 합니다.<br>
+        동시에 dot버튼도 이동하게끔 만들어주어야 합니다.<br>
+        또한, 마지막 사진이 끝났을 때 처음사진이, 처음사진이 끝났을 때 마지막사진이 나오도록(무한적으로) 코드를 작성합니다.<br>
+        플레이 버튼을 누르면 자동으로 플레이가 되며 정지버튼을 통해 정지가 가능하도록 코드를 작성합니다.<br>
+        설명은 주석을 참고해주세요!
+    </p>
+    <div class="result">
+    <details>
+    <summary>코드 보기</summary>
+    <div class="t_code">
+<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg = document.querySelector(".slider__img");        //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner");    //움직이는 영역
+const slider = document.querySelectorAll(".slider");             //이미지
+const sliderDot = document.querySelector(".slider__dot");       //닷메뉴
+const sliderBtn = document.querySelector(".slider__btn");       // 버튼
+const sliderBtnPrev = document.querySelector(".slider__btn .prev"); //왼쪽 버튼
+const sliderBtnNext = document.querySelector(".slider__btn .next"); //오른쪽 버튼
+const sliderBtnPlay = document.querySelector(".slider__dot .play");      //플레이 버튼
+const sliderBtnStop = document.querySelector(".slider__dot .stop");      //정지 버튼
+
+let currentIndex = 0,   //현재 이미지
+    sliderLength = slider.length,
+    sliderWidth = slider[0].offsetWidth,
+    sliderFirst = slider[0],              //첫번째 이미지
+    sliderLast = slider[sliderLength - 1], //인덱스 값이니깐 //마지막 이미지
+    // 복사하려면 .cloneNode(true) true를 써줘야 함
+    cloneFirst = sliderFirst.cloneNode(true),  //첫번째 이미지 복사
+    cloneLast = sliderLast.cloneNode(true);  //마지막 이미지 복사
+    dotIndex = "";
+    interval = 3000;
+    // 지역변수였어서 전역변수로!
+    sliderTimer = "";
+
+    let dotActive = document.querySelectorAll(".slider__dot .dot");
+
+function init(){
+    imgClone();     //이미지 복사
+    createDot();    //닷 버튼 생성
+    // autoPlay();     //자동 재생
+}
+init();
+
+function autoPlay(){
+    sliderTimer = setInterval(() =&gt; {
+        let intervalNum = currentIndex + 1;
+        gotoSlider(intervalNum);
+
+        if(intervalNum &gt; 4){
+            let dotActive = document.querySelectorAll(".slider__dot .dot");
+            dotActive.forEach(el =&gt; el.classList.remove("active"));
+            dotActive[0].classList.add("active");
+        } else {
+            let dotActive = document.querySelectorAll(".slider__dot .dot");
+            dotActive.forEach(el =&gt; el.classList.remove("active"));
+            dotActive[intervalNum].classList.add("active");
+        }
+    }, interval);
+}
+
+function stopPlay(){
+    // setInterval 불러오려면 변수화해야함
+    clearInterval(sliderTimer);
+}
+ 
+function imgClone(){
+    sliderInner.appendChild(cloneFirst);
+    sliderInner.insertBefore(cloneLast, sliderFirst);
+}
+
+// 이미지 갯수만큼 닷 메뉴 생성
+function createDot(){
+    for(let i=0; i&lt;slider.length; i++){
+        dotIndex += "&lt;a href='#'' class='dot'&gt;&lt;/a&gt;";
+    }
+    dotIndex += "&lt;a href='#' class='play show'&gt;&lt;/a&gt;";
+    dotIndex += "&lt;a href='#' class='stop'&gt;&lt;/a&gt;";
+    
+    sliderDot.innerHTML = dotIndex;
+    sliderDot.firstElementChild.classList.add("active");
+}
+// 버튼 움직이기
+function gotoSlider(index){
+    sliderInner.classList.add("transition");
+    let posInitial = sliderInner.offsetLeft;        // -800
+
+    sliderInner.style.left = - sliderWidth * (index + 1) + "px";
+
+    currentIndex = index;       // 인덱스 값이 증가할 때마다 currentIndex 도 증가하도록 설정
+}
+
+function checkIndex (){
+    sliderInner.classList.remove("transition");
+
+    // console.log(currentIndex)
+    // 마지막 이미지 갔을 때
+    if(currentIndex == sliderLength){
+        sliderInner.style.left = -(1 * sliderWidth) + 'px';
+        currentIndex = 0;
+    }
+
+    if(currentIndex == -1){
+        sliderInner.style.left = -(sliderLength * sliderWidth) + "px";
+        currentIndex = sliderLength -1 ;
+    }
+}
+
+sliderBtnPrev.addEventListener("click", () =&gt; {
+    let prevIndex = currentIndex -1;            // currentIndex 이 증가해야 하는데 증가하지 않아서 한 번만 누를 수 있음. 위의 식을 넣어주어야 함
+    gotoSlider(prevIndex);
+    
+    let dotActive = document.querySelectorAll(".slider__dot .dot");
+    if(prevIndex &lt; 0){
+        dotActive.forEach(el =&gt; el.classList.remove("active"));
+        dotActive[sliderLength - 1].classList.add("active");
+    } else {
+        dotActive.forEach(el =&gt; el.classList.remove("active"));
+        dotActive[prevIndex].classList.add("active");
+    }
+});
+
+document.querySelectorAll(".slider__dot .dot").forEach((dot, index)=&gt;{
+    dot.addEventListener("click", ()=&gt;{
+        let dotActive = document.querySelectorAll(".slider__dot .dot");
+        dotActive.forEach(el =&gt; el.classList.remove("active"));
+        dotActive[index].classList.add("active");
+        gotoSlider(index);
+    })
+})
+
+sliderBtnNext.addEventListener("click", () =&gt; {
+    let nextIndex = currentIndex +1;
+    gotoSlider(nextIndex);
+
+    let dotActive = document.querySelectorAll(".slider__dot .dot");
+    if(nextIndex &lt; 5) {
+        dotActive.forEach(el =&gt; el.classList.remove("active"));
+        dotActive[nextIndex].classList.add("active");
+    } else {
+        dotActive.forEach(el =&gt; el.classList.remove("active"));
+        dotActive[0].classList.add("active");
+    }
+    
+});
+
+// 버튼 바꿔주기
+document.querySelector(".slider__dot .play").addEventListener("click", ()=&gt;{
+
+document.querySelector(".slider__dot .stop").classList.add("show")
+document.querySelector(".slider__dot .play").classList.remove("show")
+autoPlay();         
+})
+
+document.querySelector(".slider__dot .stop").addEventListener("click", ()=&gt;{
+
+document.querySelector(".slider__dot .stop").classList.remove("show")
+document.querySelector(".slider__dot .play").classList.add("show")
+stopPlay();
+})
+
+// sliderInner.addEventListener("mouseenter", stopPlay);
+// sliderInner.addEventListener("mouseleave", autoPlay);
+sliderInner.addEventListener("transitionend", checkIndex);
+</code></pre>
+            </div>
+        </details>
+    </div>
+<!-- document -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

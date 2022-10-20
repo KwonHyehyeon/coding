@@ -1603,19 +1603,19 @@ li {
             });
             updateList();
         });
-
+ㄴ
         // 카테고리 클릭시 해당 데이터 나오게 처리
-
         const searchClick2 = document.querySelector(".search__click ul:nth-child(2)");
         const searchClickC = document.querySelectorAll(".search__click ul:nth-child(2) li");
-        
+        let count = 0;
+
         document.querySelector(".ct1").addEventListener("click" , () => {
             let listCSS = "";
             cssProperty.forEach((data, index) => {
                 if(cssProperty[index].category === 'animation')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>animation</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct2").addEventListener("click" , () => {
@@ -1624,7 +1624,7 @@ li {
                 if(cssProperty[index].category === 'background')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>background</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct3").addEventListener("click" , () => {
@@ -1633,7 +1633,7 @@ li {
                 if(cssProperty[index].category === 'border')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>border</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct4").addEventListener("click" , () => {
@@ -1642,7 +1642,7 @@ li {
                 if(cssProperty[index].category === 'clip')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>clip</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct5").addEventListener("click" , () => {
@@ -1651,7 +1651,7 @@ li {
                 if(cssProperty[index].category === 'flex')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>flex</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct6").addEventListener("click" , () => {
@@ -1660,7 +1660,7 @@ li {
                 if(cssProperty[index].category === 'font')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>font</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct7").addEventListener("click" , () => {
@@ -1669,7 +1669,7 @@ li {
                 if(cssProperty[index].category === 'grid')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>grid</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct8").addEventListener("click" , () => {
@@ -1678,7 +1678,7 @@ li {
                 if(cssProperty[index].category === 'image')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>image</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct9").addEventListener("click" , () => {
@@ -1687,7 +1687,7 @@ li {
                 if(cssProperty[index].category === 'inset')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>inset</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct10").addEventListener("click" , () => {
@@ -1696,7 +1696,7 @@ li {
                 if(cssProperty[index].category === 'margin')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>margin</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct11").addEventListener("click" , () => {
@@ -1705,7 +1705,7 @@ li {
                 if(cssProperty[index].category === 'mask')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>mask</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct12").addEventListener("click" , () => {
@@ -1714,7 +1714,7 @@ li {
                 if(cssProperty[index].category === 'offset')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>offset</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct13").addEventListener("click" , () => {
@@ -1723,7 +1723,7 @@ li {
                 if(cssProperty[index].category === 'overflow')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>overflow</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct14").addEventListener("click" , () => {
@@ -1732,7 +1732,7 @@ li {
                 if(cssProperty[index].category === 'scroll')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>scroll</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct15").addEventListener("click" , () => {
@@ -1741,7 +1741,7 @@ li {
                 if(cssProperty[index].category === 'padding')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>padding</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct16").addEventListener("click" , () => {
@@ -1750,7 +1750,7 @@ li {
                 if(cssProperty[index].category === 'text')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>text</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct17").addEventListener("click" , () => {
@@ -1759,7 +1759,7 @@ li {
                 if(cssProperty[index].category === 'transform')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>transform</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct18").addEventListener("click" , () => {
@@ -1768,7 +1768,7 @@ li {
                 if(cssProperty[index].category === 'transition')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>transition</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
         document.querySelector(".ct19").addEventListener("click" , () => {
@@ -1777,7 +1777,7 @@ li {
                 if(cssProperty[index].category === 'etc')  {
                     listCSS += `<li>${data.num}. ${data.name} : ${data.desc} <em>etc</em></li>`;
                 };
-                cssList.innerText = listCSS;
+                cssList.innerHTML = listCSS;
             })
         });
 
@@ -1786,7 +1786,6 @@ li {
         document.querySelector(".btn7").addEventListener("click", () => {
             searchClick2.style.display = "block";
             searchNumSec.style.display = "block";
-
         });
 
 
@@ -1800,11 +1799,7 @@ li {
             searchNum.innerText = index + 1;
             searchNumSec.style.display = "none";
         });
-
-        
-
-
-        
+            
     </script>
 </body>
 </html>

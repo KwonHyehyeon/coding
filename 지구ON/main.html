@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인 카드</title>
+    <link rel="stylesheet" href="../지구ON/assets/css/reset.css">
+    <link rel="stylesheet" href="../지구ON/assets/css/common.css">
+    <style>
+        /* 지마켓 산스 */
+        @font-face {
+            font-family: 'GmarketSans';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+            font-display: swap;
+        } 
+        @font-face {
+            font-family: 'GmarketSans';
+            font-weight: 500;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+            font-display: swap;
+        } 
+        @font-face {
+            font-family: 'GmarketSans';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+            font-display: swap;
+        } 
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* mainRisk */
+            .card__wrap {
+                margin-top: 70px;
+            }
+            .card__first,
+            .card__second,
+            .card__third {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 34px;
+            }
+            .card__first .card__cont {
+                background: #00553E;
+            }
+            .card__first .bg1:hover {
+                /* background: #ccc; */
+                background: url(../img/main_card01.jpg) no-repeat;
+                background-size: contain;
+                width: 31%;
+            }
+            .card__second .card__cont {
+                background: #003627;
+            }
+            .card__third .card__cont {
+                background: #001D15;
+            }
+            .card__cont {
+                width: 31%;
+                height: 280px;
+                border-radius: 0 0 50px 0;
+                padding: 35px 45px;
+                box-sizing: border-box;
+            }
+            .card__cont h3 {
+                font-size: 26px;
+                font-weight: 500;
+                line-height: 1.4;
+                color: #fff;
+                margin-bottom: 60px;
+            }
+            .card__cont .total {
+                font-size: 26px;
+                font-weight: 500;
+                color: #00FF85;
+                margin-bottom: 10px;
+            }
+            .card__cont .total em {
+                font-size: 14px;
+                color: #C9C9C9;
+            }
+            .card__cont .refer {
+                font-size: 14px;
+                color: #fff;
+                line-height: 1.4;
+            }
+
+            /* 백그라운드 고정 글만 움직이는 효과 */
+            #mainBanner {
+                background-attachment : fixed;
+                background-image : url('/지구ON/assets/img/earthON_main03_02.jpg');
+                background-size: cover;
+                color : white;
+                font-size : 26px !important;
+                height : 800px;
+                width : 100%;
+                /* z-index : 999; */
+            }
+            .banner {
+                width: 60%;
+                margin: 0 auto;
+                padding-top: 250px;
+            }
+            .banner > h2 {
+                font-size: 40px;
+                font-weight: bold;
+                margin-bottom: 50px;
+                text-shadow : 0 0 10px black, 0 0 10px black;
+                text-transform: capitalize;
+            }
+            .banner > p {
+                font-size: 22px;
+                line-height: 2;
+                font-weight: 400;
+                text-shadow : 0 0 10px black, 0 0 10px black;
+                text-transform: capitalize;
+            }
+
+            /* 개별적으로 나타나게 하기 */
+            .banner .b_title {
+                opacity: 0;
+                /* 밑에서 위로 올라오는 효과 */
+                transform: translateY(70px);
+                transition: all 2s 0.1s cubic-bezier(0, 0.38, 0.21, 0.99);
+            }   
+
+            .banner.show .b_title {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .banner .b_desc1 {
+                opacity: 0;
+                /* 밑에서 위로 올라오는 효과 */
+                transform: translateY(70px);
+                transition: all 2s 0.4s cubic-bezier(0, 0.38, 0.21, 0.99);
+            }   
+            .banner.show .b_desc1 {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .banner .b_desc2 {
+                opacity: 0;
+                /* 밑에서 위로 올라오는 효과 */
+                transform: translateY(70px);
+                transition: all 2s 0.6s cubic-bezier(0, 0.38, 0.21, 0.99);
+            }   
+            .banner.show .b_desc2 {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .banner .b_desc3 {
+                opacity: 0;
+                /* 밑에서 위로 올라오는 효과 */
+                transform: translateY(70px);
+                transition: all 2s 0.8s cubic-bezier(0, 0.38, 0.21, 0.99);
+            }   
+            .banner.show .b_desc3 {
+                opacity: 1;
+                transform: translateY(0);
+            }
+    </style>
+</head>
+<body>
+    <section id="mainRisk" class="container">
+        <h2 class="blind">오염 및 피해 현황</h2>
+        <div class="card__wrap">
+            <div class="card__first">
+                <div class="card__cont bg1">
+                    <h3>폐기물 <br>발생량</h3>
+                    <p class="total">534,055 <em>톤 /일</em></p>
+                    <p class="refer">
+                        # 전년 대비 약 7.4% 증가 <br>
+                        # 우리나라 20년 기준
+                    </p>
+                </div>
+                <div class="card__cont bg2">
+                    <h3>화학물질 <br>배출량</h3>
+                    <p class="total">53,732 <em>톤 /년</em></p>
+                    <p class="refer">
+                        # 전년 대비 약 4.5% 감소 <br>
+                        # 우리나라 20년 기준
+                    </p>
+                </div>
+                <div class="card__cont bg3">
+                    <h3>온실가스 <br>배출량</h3>
+                    <p class="total">701 <em>만 톤/년</em></p>
+                    <p class="refer">
+                        # 전년 대비 약 9.3% 증가
+                    </p>
+                </div>
+            </div>
+            <!-- //card__first -->
+            <div class="card__second">
+                <div class="card__cont bg4">
+                    <h3>미세먼지(PM2.5 농도)</h3>
+                    <p class="total">21 <em>㎍/㎥</em></p>
+                    <p class="refer">
+                        # 전년 대비 약 16% 감소 <br>
+                        # 20년 서울 기준
+                    </p>
+                </div>
+                <div class="card__cont bg5">
+                    <h3>한파, 고온 현상으로 인한 <br>기온 변동폭</h3>
+                    <p class="total">19.7 <em>°C</em></p>
+                    <p class="refer">
+                        # 역대 최고 기록 <br>
+                        # 우리나라 21년 1월 기준
+                    </p>
+                </div>
+                <div class="card__cont bg6">
+                    <h3>평균 기온 및 <br>개화시기 변화</h3>
+                    <p class="total">8.7 <em>kg</em> <span>3.24</span> <em>월.일</em></p>
+                    <p class="refer">
+                        # 역대 최고 기록
+                        # 우리나라 21년 3월 기준
+                    </p>
+                </div>
+            </div>
+            <!-- //card__second -->
+            <div class="card__third">
+                <div class="card__cont bg7">
+                    <h3>월별 극도의 <br>폭염 발생 증가율</h3>
+                    <p class="total">90 <em>배 증가</em></p>
+                    <p class="refer">
+                        # 1951~1980년 대비
+                        # 전 세계 21년 기준
+                    </p>
+                </div>
+                <div class="card__cont bg8">
+                    <h3>우리나라 <br>자연재해 피해액</h3>
+                    <p class="total">1,318 <em>십억 원</em></p>
+                    <p class="refer">
+                        # 전년 대비 512% 증가
+                        # 20년 기준
+                    </p>
+                </div>
+                <div class="card__cont bg9">
+                    <h3>전 세계 <br>자연재해 피해액</h3>
+                    <p class="total">20 <em>조</em> <span>2906</span> <em>억원</em></p>
+                    <p class="refer">
+                        # 평균 대비 4.7% 증가
+                        # 22년 기준
+                    </p>
+                </div>
+            </div>
+            <!-- //card__third -->
+        </div>
+    </section>
+    <!-- //mainCard -->
+
+    <!-- mainBanner -->
+    <section id="mainBanner" class="mainBanner">
+        <div class="banner">
+            <h2 class="b_title">지구 ON</h2>
+            <p class="b_desc1">자유롭고 안전하게 살아갈 권리,<br></p>
+            <p class="b_desc2">생명에 대한 권리를 지키기 위해 존재합니다.<br></p>    
+            <p class="b_desc3">기후 위기 대응을 위한 실천에 함께 해주세요.</p>
+        </div> 
+    </section>
+
+    <!-- //mainBanner -->
+    <section id="mainRisk" class="container">
+        <h2 class="blind">오염 및 피해 현황</h2>
+        <div class="card__wrap">
+            <div class="card__first">
+                <div class="card__cont bg1">
+                    <h3>폐기물 <br>발생량</h3>
+                    <p class="total">534,055 <em>톤 /일</em></p>
+                    <p class="refer">
+                        # 전년 대비 약 7.4% 증가 <br>
+                        # 우리나라 20년 기준
+                    </p>
+                </div>
+                <div class="card__cont bg2">
+                    <h3>화학물질 <br>배출량</h3>
+                    <p class="total">53,732 <em>톤 /년</em></p>
+                    <p class="refer">
+                        # 전년 대비 약 4.5% 감소 <br>
+                        # 우리나라 20년 기준
+                    </p>
+                </div>
+                <div class="card__cont bg3">
+                    <h3>온실가스 <br>배출량</h3>
+                    <p class="total">701 <em>만 톤/년</em></p>
+                    <p class="refer">
+                        # 전년 대비 약 9.3% 증가
+                    </p>
+                </div>
+            </div>
+            <!-- //card__first -->
+            <div class="card__second">
+                <div class="card__cont bg4">
+                    <h3>미세먼지(PM2.5 농도)</h3>
+                    <p class="total">21 <em>㎍/㎥</em></p>
+                    <p class="refer">
+                        # 전년 대비 약 16% 감소 <br>
+                        # 20년 서울 기준
+                    </p>
+                </div>
+                <div class="card__cont bg5">
+                    <h3>한파, 고온 현상으로 인한 <br>기온 변동폭</h3>
+                    <p class="total">19.7 <em>°C</em></p>
+                    <p class="refer">
+                        # 역대 최고 기록 <br>
+                        # 우리나라 21년 1월 기준
+                    </p>
+                </div>
+                <div class="card__cont bg6">
+                    <h3>평균 기온 및 <br>개화시기 변화</h3>
+                    <p class="total">8.7 <em>kg</em> <span>3.24</span> <em>월.일</em></p>
+                    <p class="refer">
+                        # 역대 최고 기록
+                        # 우리나라 21년 3월 기준
+                    </p>
+                </div>
+            </div>
+            <!-- //card__second -->
+            <div class="card__third">
+                <div class="card__cont bg7">
+                    <h3>월별 극도의 <br>폭염 발생 증가율</h3>
+                    <p class="total">90 <em>배 증가</em></p>
+                    <p class="refer">
+                        # 1951~1980년 대비
+                        # 전 세계 21년 기준
+                    </p>
+                </div>
+                <div class="card__cont bg8">
+                    <h3>우리나라 <br>자연재해 피해액</h3>
+                    <p class="total">1,318 <em>십억 원</em></p>
+                    <p class="refer">
+                        # 전년 대비 512% 증가
+                        # 20년 기준
+                    </p>
+                </div>
+                <div class="card__cont bg9">
+                    <h3>전 세계 <br>자연재해 피해액</h3>
+                    <p class="total">20 <em>조</em> <span>2906</span> <em>억원</em></p>
+                    <p class="refer">
+                        # 평균 대비 4.7% 증가
+                        # 22년 기준
+                    </p>
+                </div>
+            </div>
+            <!-- //card__third -->
+        </div>
+    </section>
+    <!-- //mainLetter -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        const Ban = document.querySelector(".banner");
+
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.screenY;
+
+            document.querySelectorAll(".banner").forEach(item => {
+                // 각 섹션의 탑값에서 윈도우 하이트값을 뺀 값보다 컸을 때 window.innerHeight값만 쓰면 너무 빨리 나와서 나누기 2
+                if(scrollTop > item.offsetTop - window.innerHeight/2){
+                    Ban.classList.add("show");
+                }
+            });
+            
+            //1초에 60번 실행 //자기 호출
+            requestAnimationFrame(scroll)
+            //scroll() : 위에 넣어줬음
+        }
+        scroll();
+    </script>
+</body>
+</html>
